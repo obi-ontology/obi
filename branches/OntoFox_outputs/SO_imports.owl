@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&obo;obi/SO_imports.owl#"
+     xml:base="&obo;obi/SO_imports.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&obo;obi/dev/import/SO_imports.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000111"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001573 -->
+
+    <owl:Class rdf:about="&obo;OBI_0001573"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000001 -->
+
+    <owl:Class rdf:about="&obo;SO_0000001">
+        <rdfs:label rdf:datatype="&xsd;string">region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000031"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">region</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000104 -->
+
+    <owl:Class rdf:about="&obo;SO_0000104">
+        <rdfs:label rdf:datatype="&xsd;string">polypeptide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;SO_0000001"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of amino acids linked by peptide bonds which may lack appreciable tertiary structure and may not be liable to irreversible denaturation.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">polypeptide</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000276 -->
+
+    <owl:Class rdf:about="&obo;SO_0000276">
+        <rdfs:label rdf:datatype="&xsd;string">miRNA</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;SO_0000001"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">Small, ~22-nt, RNA molecule that is the endogenous transcript of a miRNA gene. Micro RNAs are produced from precursor molecules (SO:0000647) that can form local hairpin structures, which ordinarily are processed (via the Dicer pathway) such that a single miRNA molecule accumulates from one arm of a hairpin precursor molecule. Micro RNAs may trigger the cleavage of their target molecules or act as translational repressors.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">miRNA</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000988 -->
+
+    <owl:Class rdf:about="&obo;SO_0000988">
+        <rdfs:label rdf:datatype="&xsd;string">circular</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;PATO_0001237"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A quality of a nucleotide polymer that has no terminal nucleotide residues.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">circular</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+        
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000148 -->
+
+    <owl:Class rdf:about="&obo;SO_0000148">
+        <rdfs:label rdf:datatype="&xsd;string">supercontig</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;SO_0000353"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">One or more contigs that have been ordered and oriented using end-read information. Contains gaps that are filled with N&apos;s.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">supercontig</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000149 -->
+
+    <owl:Class rdf:about="&obo;SO_0000149">
+        <rdfs:label rdf:datatype="&xsd;string">contig</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;SO_0000353"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N&apos;s from unavailable bases.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">contig</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000353 -->
+
+    <owl:Class rdf:about="&obo;SO_0000353">
+        <rdfs:label rdf:datatype="&xsd;string">sequence_assembly</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;SO_0001248"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A sequence of nucleotides that has been algorithmically derived from an alignment of two or more different sequences.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">sequence_assembly</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0001248 -->
+
+    <owl:Class rdf:about="&obo;SO_0001248">
+        <rdfs:label rdf:datatype="&xsd;string">assembly</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;SO_0000001"/>
+        <obo:IAO_0000115 rdf:datatype="&xsd;string">A region of the genome of known length that is composed by ordering and aligning two or more different regions.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="&xsd;string">assembly</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="&obo;so.owl"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
