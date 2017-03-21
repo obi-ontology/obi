@@ -398,6 +398,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0036392 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0036392"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0042098 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0042098"/>
@@ -13088,6 +13094,62 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002108"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002133 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002133">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002134"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000920"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assay of epitope specific chemokine (C-C motif) ligand 20 production by T cells that uses a cytometric bead array assay.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Randi Vita, James Overton, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCL20/MIP-3a release|cytometric bead array</obo:OBI_9991118>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytometric bead array assay measuring  epitope specific chemokine (C-C motif) ligand 20 production by T cells</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002134 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002134">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_1110129"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0036392"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A T cell epitope specific cytokine production assay that detects chemokine (C-C motif) ligand 20 production by T cells.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Randi Vita, James Overton, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCL20/MIP-3a release|biological activity</obo:OBI_9991118>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological activity assay measuring epitope specific chemokine (C-C motif) ligand 20 production by T cells</rdfs:label>
+    </owl:Class>
     
 
 
