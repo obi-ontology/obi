@@ -37198,6 +37198,52 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002136 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002136">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000109"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002137"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>RNA Integrity Number calculation</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>A data transformation using the RIN algorithm to generate a quality measure of RNA based on features from an electrophoretic trace.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000118>RIN calculation</obo:IAO_0000118>
+        <obo:IAO_0000119>https://www.agilent.com/cs/library/applications/5989-1165EN.pdf</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">RNA Integrity Number calculation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002137 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002137">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <obo:IAO_0000111>RNA Integrity Number value specification</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A value specification that specifies the value of the RNA Integrity Number as a real value between 1 (most degraded) and 10 (most intact).</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000118>RIN value specification</obo:IAO_0000118>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">RNA Integrity Number value specification</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
