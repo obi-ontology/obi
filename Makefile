@@ -47,7 +47,7 @@ ROBOT := java -jar robot.jar
 # See https://github.com/ontodev/robot/blob/master/docs/template.md
 src/ontology/modules/%.owl: src/ontology/templates/%.tsv | robot.jar
 	echo '' > $@
-	robot merge \
+	$(ROBOT) merge \
 	--input src/ontology/obi-edit.owl \
 	template \
 	--template $< \
@@ -73,7 +73,7 @@ build:
 	mkdir -p build/
 
 obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
-	robot merge \
+	$(ROBOT) merge \
 	--input $< \
 	annotate \
 	--ontology-iri "$(OBO)/obi.owl" \
@@ -83,7 +83,7 @@ obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
 	sed -i '' '/<owl:imports/d' $@
 
 obi_core.owl: obi.owl src/ontology/core.txt
-	robot extract \
+	$(ROBOT) extract \
 	--input obi.owl \
 	--method STAR \
 	--term-file src/ontology/core.txt \
