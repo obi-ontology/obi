@@ -20,6 +20,14 @@ SHELL := bash
 .SUFFIXES:
 .SECONDARY:
 
+### Definitions
+
+SHELL   := /bin/bash
+OBO     := http://purl.obolibrary.org/obo
+OBI     := $(OBO)/OBI_
+DEV     := $(OBO)/obi/dev
+MODULES := $(DEV)/modules
+
 
 ### ROBOT
 #
@@ -31,7 +39,63 @@ robot.jar:
 ROBOT := java -jar robot.jar
 
 
-### Testing
+### Templates
+#
+# The `src/ontology/templates/` directory contains spreadsheets
+# used to generate OWL files with ROBOT.
+# The first step is to erase any contents of the module OWL file.
+# See https://github.com/ontodev/robot/blob/master/docs/template.md
+src/ontology/modules/%.owl: src/ontology/templates/%.tsv | robot.jar
+	echo '' > $@
+	robot merge \
+	--input src/ontology/obi-edit.owl \
+	template \
+	--template $< \
+	annotate \
+	--ontology-iri "$(MODULES)/$(notdir $@)" \
+	--output $@
+
+# Update all modules.
+# NOTE: GNU Make will compare timestamps to see which updates are required.
+MODULE_NAMES := obsolete biobank-specimens midlevel-assays epitope-assays
+MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
+
+.PHONY: modules
+modules: $(MODULE_FILES)
+
+
+### Build
+#
+# Here we create a standalone OWL file appropriate for release.
+# This involves merging, reasoning, annotating,
+# and removing any remaining import declarations.
+build:
+	mkdir -p build/
+
+obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
+	robot merge \
+	--input $< \
+	annotate \
+	--ontology-iri "$(OBO)/obi.owl" \
+	--version-iri "$(OBO)/obi/$(shell date +%Y-%m-%d)/obi.owl" \
+	--annotation owl:versionInfo "$(shell date +%Y-%m-%d)" \
+	--output $@
+	sed -i '' '/<owl:imports/d' $@
+
+obi_core.owl: obi.owl src/ontology/core.txt
+	robot extract \
+	--input obi.owl \
+	--method STAR \
+	--term-file src/ontology/core.txt \
+	--strip-term obo:CL_0000010 \
+	--strip-term obo:CL_0000001 \
+	--strip-term obo:OBI_0001866 \
+	--strip-term obo:CLO_0000001 \
+	--copy-annotations \
+	--output obi_core.owl
+
+
+### Test
 #
 # Run main tests
 .PHONY: test
@@ -44,4 +108,4 @@ test: | robot.jar
 #
 # Full build
 .PHONY: all
-all: test
+all: obi.owl obi_core.owl
