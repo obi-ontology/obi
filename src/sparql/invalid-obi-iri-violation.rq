@@ -1,0 +1,14 @@
+# Every IRI in the OBI namespace must have a seven digit ID.
+
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?s ?label
+WHERE {
+  ?s ?p ?o .
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+  FILTER (!regex(str(?s), "^http://purl.obolibrary.org/obo/OBI_\\d{7}$"))
+  OPTIONAL { ?s rdfs:label ?label }
+
+  # Ignore known problem OBI:00001975
+  FILTER (str(?s) != "http://purl.obolibrary.org/obo/OBI_00001975")
+}
