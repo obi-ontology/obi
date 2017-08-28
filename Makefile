@@ -128,4 +128,4 @@ all: obi.owl obi_core.owl
 # Remove generated files
 .PHONY: clean
 clean:
-	rm -rf reports
+	rm -rf robot.jar reports
