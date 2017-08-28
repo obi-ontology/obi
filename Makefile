@@ -106,6 +106,12 @@ VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 reports:
 	mkdir -p reports/
 
+reports/terms-report.csv: src/ontology/obi-edit.owl modules src/sparql/terms-report.rq | robot.jar reports
+	$(ROBOT) merge \
+	--input $< \
+	query \
+	--select src/sparql/terms-report.rq reports/terms-report.csv
+
 # Run validation queries and exit on error.
 .PHONY: verify
 verify: src/ontology/obi-edit.owl modules $(VIOLATION_QUERIES) | robot.jar reports
