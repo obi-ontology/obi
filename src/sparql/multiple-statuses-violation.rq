@@ -1,0 +1,16 @@
+# OBI terms must not have more than one 'has curation status' annotation.
+# <http://purl.obolibrary.org/obo/IAO_0000114>
+
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+SELECT ?s
+  (COUNT(?status) AS ?status_count)
+  (GROUP_CONCAT(DISTINCT ?status_label;separator="|") AS ?status_labels)
+WHERE {
+  ?s IAO:0000114 ?status .
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+  ?status rdfs:label ?status_label .
+}
+GROUP BY ?s
+HAVING (?status_count > 1)
