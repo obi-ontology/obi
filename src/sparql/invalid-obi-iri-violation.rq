@@ -9,6 +9,6 @@ WHERE {
   FILTER (!regex(str(?s), "^http://purl.obolibrary.org/obo/OBI_\\d{7}$"))
   OPTIONAL { ?s rdfs:label ?label }
 
-  # Ignore known problem OBI:00001975
+  # Ignore known problem OBI:00001975, see #858
   FILTER (str(?s) != "http://purl.obolibrary.org/obo/OBI_00001975")
 }
