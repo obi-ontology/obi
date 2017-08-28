@@ -1,0 +1,35 @@
+# All OBI terms must have a logical definition.
+# The details vary by type.
+
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+SELECT ?s ?label ?type
+WHERE {
+  ?s rdfs:label ?label ;
+     rdf:type ?type .
+  FILTER (!isBlank(?s))
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+  MINUS {
+    ?s rdf:type owl:Class ;
+       rdfs:subClassOf ?parent .
+  }
+  MINUS {
+    ?s rdf:type owl:Class ;
+       owl:equivalentClass ?equivalent .
+  }
+  MINUS {
+    ?s rdf:type owl:AnnotationProperty .
+  }
+  MINUS {
+    ?s rdf:type owl:ObjectProperty .
+  }
+  MINUS {
+    ?s rdf:type owl:DatatypeProperty .
+  }
+  MINUS {
+    ?s rdf:type owl:NamedIndividual .
+  }
+}

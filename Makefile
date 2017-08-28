@@ -108,7 +108,7 @@ reports:
 
 # Run validation queries and exit on error.
 .PHONY: verify
-verify: src/ontology/obi-edit.owl modules $(VIOLATION_QUERIES) | reports
+verify: src/ontology/obi-edit.owl modules $(VIOLATION_QUERIES) | robot.jar reports
 	$(ROBOT) merge \
 	--input $< \
 	verify \
