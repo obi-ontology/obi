@@ -100,10 +100,22 @@ obi_core.owl: obi.owl src/ontology/core.txt
 ### Test
 #
 # Run main tests
+VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+
+reports:
+	mkdir -p reports/
+
+# Run validation queries and exit on error.
+.PHONY: verify
+verify: src/ontology/obi-edit.owl modules $(VIOLATION_QUERIES) | reports
+	robot merge \
+	--input $< \
+	verify \
+	--report-dir reports \
+	--queries $(VIOLATION_QUERIES)
+
 .PHONY: test
-test: | robot.jar
-	$(ROBOT) --help
-	echo "Tests succeeded!"
+test: verify
 
 
 ### General
@@ -111,3 +123,8 @@ test: | robot.jar
 # Full build
 .PHONY: all
 all: obi.owl obi_core.owl
+
+# Remove generated files
+.PHONY: clean
+clean:
+	rm -rf reports
