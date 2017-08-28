@@ -80,7 +80,7 @@ obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
 	--version-iri "$(OBO)/obi/$(shell date +%Y-%m-%d)/obi.owl" \
 	--annotation owl:versionInfo "$(shell date +%Y-%m-%d)" \
 	--output $@
-	sed -i '' '/<owl:imports/d' $@
+	sed -i='' '/<owl:imports/d' $@
 
 obi_core.owl: obi.owl src/ontology/core.txt
 	$(ROBOT) extract \
