@@ -21,11 +21,22 @@ SHELL := bash
 .SECONDARY:
 
 
+### ROBOT
+#
+# We use a forked version of ROBOT for builds.
+# TODO: Switch to official version.
+robot.jar:
+	curl -LO https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.0/robot.jar
+
+ROBOT := java -jar robot.jar
+
+
 ### Testing
 #
 # Run main tests
 .PHONY: test
-test:
+test: | robot.jar
+	$(ROBOT) --help
 	echo "Tests succeeded!"
 
 
