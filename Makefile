@@ -34,7 +34,7 @@ MODULES := $(DEV)/modules
 # We use a forked version of ROBOT for builds.
 # TODO: Switch to official version.
 robot.jar:
-	curl -LO https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.0/robot.jar
+	curl -LO https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
 
 ROBOT := java -jar robot.jar
 
@@ -81,8 +81,9 @@ obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
 	--annotation owl:versionInfo "$(shell date +%Y-%m-%d)" \
 	reason \
 	--reasoner HermiT \
-	--output $@
-	sed -i='' '/<owl:imports/d' $@
+	--output tmp.owl
+	sed '/<owl:imports/d' tmp.owl > $@
+	rm tmp.owl
 
 obi_core.owl: obi.owl src/ontology/core.txt
 	$(ROBOT) extract \
@@ -108,7 +109,7 @@ reports:
 # Run validation queries and exit on error.
 .PHONY: verify
 verify: src/ontology/obi-edit.owl modules $(VIOLATION_QUERIES) | reports
-	robot merge \
+	$(ROBOT) merge \
 	--input $< \
 	verify \
 	--report-dir reports \
