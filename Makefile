@@ -79,6 +79,8 @@ obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
 	--ontology-iri "$(OBO)/obi.owl" \
 	--version-iri "$(OBO)/obi/$(shell date +%Y-%m-%d)/obi.owl" \
 	--annotation owl:versionInfo "$(shell date +%Y-%m-%d)" \
+	reason \
+	--reasoner HermiT \
 	--output $@
 	sed -i='' '/<owl:imports/d' $@
 
