@@ -27,16 +27,23 @@ OBO     := http://purl.obolibrary.org/obo
 OBI     := $(OBO)/OBI_
 DEV     := $(OBO)/obi/dev
 MODULES := $(DEV)/modules
+TODAY   := $(shell date +%Y-%m-%d)
+
+### Directories
+#
+# This is a temporary place to put things.
+build:
+	mkdir -p $@
 
 
 ### ROBOT
 #
 # We use a forked version of ROBOT for builds.
 # TODO: Switch to official version.
-robot.jar:
-	curl -LO https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
+build/robot.jar: | build
+	curl -L -o $@ https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
 
-ROBOT := java -jar robot.jar
+ROBOT := java -jar build/robot.jar
 
 
 ### Templates
@@ -45,7 +52,7 @@ ROBOT := java -jar robot.jar
 # used to generate OWL files with ROBOT.
 # The first step is to erase any contents of the module OWL file.
 # See https://github.com/ontodev/robot/blob/master/docs/template.md
-src/ontology/modules/%.owl: src/ontology/templates/%.tsv | robot.jar
+src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 	echo '' > $@
 	$(ROBOT) merge \
 	--input src/ontology/obi-edit.owl \
@@ -69,25 +76,37 @@ modules: $(MODULE_FILES)
 # Here we create a standalone OWL file appropriate for release.
 # This involves merging, reasoning, annotating,
 # and removing any remaining import declarations.
-build:
-	mkdir -p build/
-
-obi.owl: src/ontology/obi-edit.owl $(MODULE_FILES)
+build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq | build/robot.jar build
 	$(ROBOT) merge \
 	--input $< \
+	query \
+	--format TTL \
+	--construct src/sparql/add-editor-preferred-term-construct.rq build/editor-preferred-terms.ttl \
+	--construct src/sparql/add-curation-status-construct.rq build/curation-status.ttl \
+	merge \
+	--input build/editor-preferred-terms.ttl \
+	--input build/curation-status.ttl \
+	annotate \
+	--ontology-iri "$(OBO)/obi/obi_merged.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/obi_merged.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--output build/obi_merged.tmp.owl
+	sed '/<owl:imports/d' build/obi_merged.tmp.owl > $@
+	rm build/obi_merged.tmp.owl
+
+obi.owl: build/obi_merged.owl
+	$(ROBOT) reason \
+	--input $< \
+	--reasoner HermiT \
 	annotate \
 	--ontology-iri "$(OBO)/obi.owl" \
-	--version-iri "$(OBO)/obi/$(shell date +%Y-%m-%d)/obi.owl" \
-	--annotation owl:versionInfo "$(shell date +%Y-%m-%d)" \
-	reason \
-	--reasoner HermiT \
-	--output tmp.owl
-	sed '/<owl:imports/d' tmp.owl > $@
-	rm tmp.owl
+	--version-iri "$(OBO)/obi/$(TODAY)/obi.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--output $@
 
 obi_core.owl: obi.owl src/ontology/core.txt
 	$(ROBOT) extract \
-	--input obi.owl \
+	--input $< \
 	--method STAR \
 	--term-file src/ontology/core.txt \
 	--strip-term obo:CL_0000010 \
@@ -95,7 +114,11 @@ obi_core.owl: obi.owl src/ontology/core.txt
 	--strip-term obo:OBI_0001866 \
 	--strip-term obo:CLO_0000001 \
 	--copy-annotations \
-	--output obi_core.owl
+	annotate \
+	--ontology-iri "$(OBO)/obi/obi_core.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/obi_core.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--output $@
 
 
 ### Test
@@ -103,22 +126,19 @@ obi_core.owl: obi.owl src/ontology/core.txt
 # Run main tests
 VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 
-reports:
-	mkdir -p reports/
-
-reports/terms-report.csv: src/ontology/obi-edit.owl modules src/sparql/terms-report.rq | robot.jar reports
+build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) merge \
 	--input $< \
 	query \
-	--select src/sparql/terms-report.rq reports/terms-report.csv
+	--select src/sparql/terms-report.rq build/terms-report.csv
 
 # Run validation queries and exit on error.
 .PHONY: verify
-verify: src/ontology/obi-edit.owl modules $(VIOLATION_QUERIES) | robot.jar reports
+verify: build/obi_merged.owl $(VIOLATION_QUERIES) | build
 	$(ROBOT) merge \
 	--input $< \
 	verify \
-	--report-dir reports \
+	--report-dir build \
 	--queries $(VIOLATION_QUERIES)
 
 .PHONY: test
@@ -129,9 +149,9 @@ test: verify
 #
 # Full build
 .PHONY: all
-all: obi.owl obi_core.owl
+all: obi.owl obi_core.owl build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean
 clean:
-	rm -rf robot.jar reports
+	rm -rf build
