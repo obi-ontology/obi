@@ -1,0 +1,13 @@
+# All OBI terms must have exactly one rdfs:label.
+
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s
+  (COUNT(?label) AS ?label_count)
+  (GROUP_CONCAT(DISTINCT ?label;separator="|") AS ?labels)
+WHERE {
+  ?s rdfs:label ?label .
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+}
+GROUP BY ?s
+HAVING (?label_count > 1)

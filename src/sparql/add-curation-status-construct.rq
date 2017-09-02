@@ -1,0 +1,26 @@
+# OBI terms should have a 'has curation status' annotation.
+# <http://purl.obolibrary.org/obo/IAO_0000114>
+# This rule checks and assigns 'metadata complete' or 'metadata incomplete'.
+# <http://purl.obolibrary.org/obo/IAO_0000120>
+# <http://purl.obolibrary.org/obo/IAO_0000123>
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+CONSTRUCT {
+  ?s IAO:0000114 ?new_status .
+}
+WHERE {
+  ?s rdfs:label ?label .
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+  MINUS { ?s IAO:0000114 ?curation_status }
+  OPTIONAL {
+    ?s rdf:type    ?type ;
+       IAO:0000115 ?definition ;
+       IAO:0000119 ?definition_source ;
+       IAO:0000117 ?term_editor .
+    BIND("true" AS ?complete)
+  }
+  BIND (IF(BOUND(?complete), IAO:0000120, IAO:0000123) AS ?new_status)
+}

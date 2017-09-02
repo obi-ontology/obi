@@ -1,0 +1,11 @@
+# All OBI terms must have an rdfs:label.
+
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s
+WHERE {
+  ?s ?p ?o .
+  FILTER (!isBlank(?s))
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+  MINUS { ?s rdfs:label ?label }
+}

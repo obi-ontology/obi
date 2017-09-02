@@ -1,0 +1,15 @@
+# OBI terms should have an 'editor preferred term' annotation
+# that matches the rdfs:label.
+# <http://purl.obolibrary.org/obo/IAO_0000111>
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+CONSTRUCT {
+  ?s IAO:0000111 ?label .
+}
+WHERE {
+  ?s rdfs:label ?label .
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+  MINUS { ?s IAO:0000111 ?editor_preferred_term }
+}

@@ -1,0 +1,15 @@
+# OBI terms must not have more than one textual definition.
+# <http://purl.obolibrary.org/obo/IAO_0000115>
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+SELECT ?s
+  (COUNT(?definition) AS ?definition_count)
+  (GROUP_CONCAT(DISTINCT ?definition;separator="|") AS ?definitions)
+WHERE {
+  ?s IAO:0000115 ?definition .
+  FILTER (STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_"))
+}
+GROUP BY ?s
+HAVING (?definition_count > 1)
