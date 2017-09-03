@@ -46,6 +46,18 @@ build/robot.jar: | build
 ROBOT := java -jar build/robot.jar
 
 
+### Imports
+#
+# Use Ontofox to import various modules.
+src/ontology/OntoFox_outputs/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt
+	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+
+IMPORT_FILES := $(wildcard src/ontology/OntoFox_outputs/*_imports.owl)
+
+.PHONY: imports
+imports: $(IMPORT_FILES)
+
+
 ### Templates
 #
 # The `src/ontology/templates/` directory contains spreadsheets
