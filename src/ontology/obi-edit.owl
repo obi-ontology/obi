@@ -16,7 +16,6 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl">
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/assays.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/midlevel-assays.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ChEBI_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/NCBITaxon_imports.owl"/>
@@ -34,6 +33,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OBO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/UO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/external-byhand.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/assays.owl"/>
         <dc:creator xml:lang="en">Pierre Grenon</dc:creator>
         <dc:creator xml:lang="en">Bjoern Peters</dc:creator>
         <dc:creator xml:lang="en">Matthew Pocock</dc:creator>
@@ -48,8 +48,8 @@
         <dc:creator xml:lang="en">Yongqun He</dc:creator>
         <dc:creator xml:lang="en">Jie Zheng</dc:creator>
         <dc:creator xml:lang="en">Tanya Gray</dc:creator>
-        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-07-31</dc:date>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-07-31</dc:date>
         <dc:creator xml:lang="en">Bill Bug</dc:creator>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
         <dc:creator xml:lang="en">Lawrence Hunter</dc:creator>
@@ -1376,8 +1376,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
 
     <!-- http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty -->
 
-    <owl:ObjectProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty">
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteProperty"/>
     
 
 
@@ -37428,6 +37427,128 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002190 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002190">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000245"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000947"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001580"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>courier organization</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>An organization that delivers messages, packages, and mail.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000118>courier</obo:IAO_0000118>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Courier</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">courier organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002191 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002191">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <obo:IAO_0000111>courier tracking number</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A centrally registered identifier symbol assigned by a courier organization in order to track the delivery of an item.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>OBIB</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">courier tracking number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002192 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002192">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001064"/>
+        <obo:IAO_0000111>Leica Peloris rapid tissue processor</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>An automatic tissue processor that is a dual retort tissue processor manufactured by the Leica company to provide fast, high quality tissue processing for histology laboratories.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>http://drp8p5tqcb2p5.cloudfront.net/fileadmin/downloads_lbs/Leica%20PELORIS/User%20Manuals/Leica_Peloris_manual_EN.pdf</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">Leica Peloris rapid tissue processor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002194 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002194">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400168"/>
+        <obo:IAO_0000111>Microm Ergostar HM200</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A microtome that is manufactured by Microm and uses a vertical cutting stroke common to all rotary microtomes engaged by a horizontal sliding movement. An operating arm replaces the handwheel and is attached to both sides of the instrument for greater convenience to permit control of sectioning from the left or right.</obo:IAO_0000115>
+        <obo:IAO_0000115>http://www.ultra-medical.com/Microm-Ergostar-HM200-Microtome/en</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">Microm Ergostar HM200</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002195 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002195">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000111>microtome blade</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A device that is the part of a microtome used to slice specimens to a desired thickness.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Microtome</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">microtome blade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002196 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002196">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002195"/>
+        <obo:IAO_0000111>Sakura Low profile Accu-Edge microtome blade</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A microtome blade that is manufactured by Feather and is disposable. The ultra-sharp blades section specimens without striations, distortion or chattering.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>http://www.sakura.eu/Our-products/item/8/Microtomy/29/Accu-Edge-Disposable-Microtome-Blades</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">Sakura Low profile Accu-Edge microtome blade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002197 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002197">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000408"/>
+        <obo:IAO_0000111>tissue section thickness</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A length measurement datum that is the result of an assay measuring the thickness of a tissue section.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>NCI BBRB, OBIB</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">tissue section thickness</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002555 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002555">
@@ -52767,6 +52888,20 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         </rdf:type>
         <obo:IAO_0000115>An organization that supplies life science tools for translational research and molecular diagnostics based on a novel digital molecular barcoding technology. The NanoString platform can provide simple, multiplexed digital profiling of single molecules.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">NanoString Technologies</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002193 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002193">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000245"/>
+        <obo:IAO_0000111>Thermo Fisher Scientific</obo:IAO_0000111>
+        <obo:IAO_0000115>An organization that is an American multinational, biotechnology product development company, created in 2006 by the merger of Thermo Electron and Fisher Scientific.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Thermo_Fisher_Scientific</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">Thermo Fisher Scientific</rdfs:label>
     </owl:NamedIndividual>
     
 
