@@ -48,8 +48,8 @@
         <dc:creator xml:lang="en">Yongqun He</dc:creator>
         <dc:creator xml:lang="en">Jie Zheng</dc:creator>
         <dc:creator xml:lang="en">Tanya Gray</dc:creator>
-        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-07-31</dc:date>
+        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <dc:creator xml:lang="en">Bill Bug</dc:creator>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
         <dc:creator xml:lang="en">Lawrence Hunter</dc:creator>
@@ -37496,8 +37496,8 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000111>Microm Ergostar HM200</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115>A microtome that is manufactured by Microm and uses a vertical cutting stroke common to all rotary microtomes engaged by a horizontal sliding movement. An operating arm replaces the handwheel and is attached to both sides of the instrument for greater convenience to permit control of sectioning from the left or right.</obo:IAO_0000115>
-        <obo:IAO_0000119>http://www.ultra-medical.com/Microm-Ergostar-HM200-Microtome/en</obo:IAO_0000119>
         <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000119>http://www.ultra-medical.com/Microm-Ergostar-HM200-Microtome/en</obo:IAO_0000119>
         <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
         <rdfs:label xml:lang="en">Microm Ergostar HM200</rdfs:label>
     </owl:Class>
@@ -37545,6 +37545,44 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000119>NCI BBRB, OBIB</obo:IAO_0000119>
         <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
         <rdfs:label xml:lang="en">tissue section thickness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002198 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002198">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000947"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001547"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000245"/>
+        <obo:IAO_0000111>molecular analysis facility organization</obo:IAO_0000111>
+        <obo:IAO_0000112>An analysis facility that includes analysis of molecular metabolites, as well as the various DNAs and RNAs.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>An organization that provides molecular analysis service.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
+        <obo:IAO_0000118>MAF</obo:IAO_0000118>
+        <obo:IAO_0000119>NCI BBRB, OBIB</obo:IAO_0000119>
+        <obo:IAO_0000234>NCI BBRB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">molecular analysis facility organization</rdfs:label>
     </owl:Class>
     
 
