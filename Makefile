@@ -38,12 +38,18 @@ build:
 
 ### ROBOT
 #
-# We use a forked version of ROBOT for builds.
-# TODO: Switch to official version.
+# We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
+	curl -L -o $@ https://build.berkeleybop.org/job/robot/lastSuccessfulBuild/artifact/bin/robot.jar
 
 ROBOT := java -jar build/robot.jar
+
+# We use a forked version of ROBOT for generating obi_core.owl
+# TODO: Switch to official version for all tasks
+build/rogue-robot.jar: | build
+	curl -L -o $@ https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
+
+ROGUE_ROBOT := java -jar build/rogue-robot.jar
 
 
 ### Imports
@@ -116,8 +122,8 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-obi_core.owl: obi.owl src/ontology/core.txt
-	$(ROBOT) extract \
+obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
+	$(ROGUE_ROBOT) extract \
 	--input $< \
 	--method STAR \
 	--term-file src/ontology/core.txt \
