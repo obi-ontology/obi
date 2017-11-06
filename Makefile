@@ -82,7 +82,7 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 
 # Update all modules.
 # NOTE: GNU Make will compare timestamps to see which updates are required.
-MODULE_NAMES := obsolete biobank-specimens assays midlevel-assays epitope-assays
+MODULE_NAMES := obsolete biobank-specimens assays midlevel-assays epitope-assays value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 
 .PHONY: modules
@@ -156,7 +156,7 @@ verify: build/obi_merged.owl $(VIOLATION_QUERIES) | build
 	$(ROBOT) merge \
 	--input $< \
 	verify \
-	--report-dir build \
+	--output-dir build \
 	--queries $(VIOLATION_QUERIES)
 
 .PHONY: test
