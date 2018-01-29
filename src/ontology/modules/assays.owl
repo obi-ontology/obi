@@ -176,6 +176,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0010467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0010467"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0097458 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0097458"/>
@@ -200,9 +206,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000253 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000253"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000275 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000424 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000424"/>
     
 
 
@@ -236,9 +254,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000880 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000880"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000893 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000893"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000973 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000973"/>
     
 
 
@@ -293,6 +323,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001632 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001632"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001851 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001851"/>
     
 
 
@@ -1373,6 +1409,94 @@
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:6435669</obo:IAO_0000119>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">methidiumpropyl-EDTA-iron(II) footprinting assay</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002445 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002445">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0010467"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001851"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transcription profiling assay in which the transcription start site for a gene is determined by identifying the 5&apos; end of mRNA. A radio-labeled primer is annealed to a complementary mRNA sequence near the 3&apos; end, then cDNA is synthesized until the 5&apos; end is reached.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca Tauber</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23378648</obo:IAO_0000119>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://en.wikipedia.org/wiki/Primer_extension</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transcription start site mapping by primer extension assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002446 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002446">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A study design in which proteins in a sample are detected, quantified or otherwise analysed.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI:0001441</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proteomic profiling design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002447 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002447">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000253"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An artificially induced nucleic acid hybridization that is performed to compare gene expression in different cell or tissue types based on normalization and suppression, which creates a subtracted cDNA or genomic DNA library.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca Tauber</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SSH</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subtractive hybridization</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:14970460</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suppression subtractive hybridization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002448 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002448">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000253"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An artificially induced nucleic acid hybridization that is performed to identify differentially expressed genes through hybridization of cDNA probes.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca Tauber</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DSH</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">differential screening</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:25472628</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">differential screening hybridization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0500000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0500000"/>
     
 
 
