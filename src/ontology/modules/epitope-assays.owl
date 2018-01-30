@@ -12121,7 +12121,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001703"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002449"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001976"/>
@@ -12129,7 +12129,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A B cell epitope qualitative binding to antibody assay that uses a hydrogen/deuterium exchange assay.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A footprinting assay that uses hydrogen/deuterium exchange to measure B cell epitope qualitative binding to antibody.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
         <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative binding|hydrogen/deuterium exchange</obo:OBI_9991118>
@@ -13149,6 +13149,60 @@
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
         <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCL20/MIP-3a release|biological activity</obo:OBI_9991118>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological activity assay measuring epitope specific chemokine (C-C motif) ligand 20 production by T cells</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002162 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002162"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002442 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002442"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002449 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002449">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001703"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002162"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A B cell epitope qualitative binding to antibody assay that uses a footprinting assay.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Randi Vita, James Overton, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative binding|footprinting assay</obo:OBI_9991118>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">footprinting assay measuring binding of a B cell epitope:antibody complex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002450 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002450">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002449"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002442"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A footprinting assay that uses hydroxyl-radical footprinting to measure B cell epitope qualitative binding to antibody.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Randi Vita, James Overton, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative binding|hydroxyl-radical footprinting assay</obo:OBI_9991118>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxyl-radical footprinting assay measuring binding of a B cell epitope:antibody complex</rdfs:label>
     </owl:Class>
     
 
