@@ -55,8 +55,12 @@ ROGUE_ROBOT := java -jar build/rogue-robot.jar
 ### Imports
 #
 # Use Ontofox to import various modules.
-src/ontology/OntoFox_outputs/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt
+build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
 	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+
+# Use ROBOT to ensure that serialization is consistent.
+src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
+	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
 IMPORT_FILES := $(wildcard src/ontology/OntoFox_outputs/*_imports.owl)
 
