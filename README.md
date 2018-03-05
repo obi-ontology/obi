@@ -54,25 +54,25 @@ If you're not using macOS or Excel, you should ignore these instructions.
 
 Before you start using a new clone of the repository under macOS, please set up a git hook that checks for bad line endings before every commit. From the repository root, run:
 
-   ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
+    ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
 
 This will check that all files have Unix endings once files have been staged (so after git's `crlf` treatment). You can run it manually to check by running
 
-   src/scripts/check-line-endings.sh
+    src/scripts/check-line-endings.sh
 
 which looks at staged files only, or
 
-   src/scripts/check_line_endings.sh tsv
+    src/scripts/check_line_endings.sh tsv
 
 which looks at *all* tsv files in the project, including uncommitted, unstaged, ignored files, etc.
 
 To *fix* line endings, run
 
-   src/scripts/fix-eol.sh path/to/file.tsv
+    src/scripts/fix-eol.sh path/to/file.tsv
 
 To fix *all* files in the project, run
 
-   src/scripts/fix-eol-all.sh
+    src/scripts/fix-eol-all.sh
 
 which looks at all tsv files, regardless of git status, ending correctness, etc.
 
