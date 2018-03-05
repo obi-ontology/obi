@@ -171,9 +171,19 @@ test: verify
 #
 # Full build
 .PHONY: all
-all: obi.owl obi_core.owl build/terms-report.csv
+all: test obi.owl obi_core.owl build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean
 clean:
 	rm -rf build
+
+# Check for problems such as bad line-endings
+.PHONY: check
+check:
+	src/scripts/check-line-endings.sh tsv
+
+# Fix simple problems such as bad line-endings
+.PHONY: fix
+fix:
+	src/scripts/fix-eol-all.sh
