@@ -22,7 +22,7 @@ Before you can start developing with OBI, you will need to do some initial setup
 4. [clone the OBI repository](https://help.github.com/articles/cloning-a-repository/)
 5. if you're using macOS and Excel, set up a pre-commit hook (see below for details):
 
-    ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
+       ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
 
 
 ## Making Changes
