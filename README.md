@@ -53,7 +53,7 @@ The [`Makefile`](Makefile) contains scripts for building OBI. On macOS or Linux,
 
 We use git and GitHub to develop OBI. There's a lot of good documentation on both:
 
-- git [website](https://git-scm.com)
+- git [website](https://git-scm.com) with files and documentation
 - GitHub [Help](https://help.github.com) and [Flow](https://guides.github.com/introduction/flow/)
 - [git command-line overview](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html)
 
@@ -68,7 +68,7 @@ Before you can start developing with OBI, you will need to do some initial setup
 4. [clone the OBI repository](https://help.github.com/articles/cloning-a-repository/)
 5. if you're using macOS and Excel, set up a pre-commit hook (see below for details):
 
-    ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
+       ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
 
 
 ## Making Changes
@@ -100,25 +100,25 @@ If you're not using macOS or Excel, you should ignore these instructions.
 
 Before you start using a new clone of the repository under macOS, please set up a git hook that checks for bad line endings before every commit. From the repository root, run:
 
-   ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
+    ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
 
 This will check that all files have Unix endings once files have been staged (so after git's `crlf` treatment). You can run it manually to check by running
 
-   src/scripts/check-line-endings.sh
+    src/scripts/check-line-endings.sh
 
 which looks at staged files only, or
 
-   src/scripts/check_line_endings.sh tsv
+    src/scripts/check_line_endings.sh tsv
 
 which looks at *all* tsv files in the project, including uncommitted, unstaged, ignored files, etc.
 
 To *fix* line endings, run
 
-   src/scripts/fix-eol.sh path/to/file.tsv
+    src/scripts/fix-eol.sh path/to/file.tsv
 
 To fix *all* files in the project, run
 
-   src/scripts/fix-eol-all.sh
+    src/scripts/fix-eol-all.sh
 
 which looks at all tsv files, regardless of git status, ending correctness, etc.
 
