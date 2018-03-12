@@ -3,11 +3,57 @@
 [![Build Status](https://travis-ci.org/obi-ontology/obi.svg?branch=master)](https://travis-ci.org/obi-ontology/obi)
 
 
+# Editing
+
+Our ontology terms come in three groups:
+
+1. external terms (from other ontologies): We use [OntoFox](http://ontofox.hegroup.org) for imports. Edit the corresponding [`src/ontology/OntoFox_inputs/`](src/ontology/OntoFox_inputs/) file.
+2. template terms: We use [ROBOT templates](http://robot.obolibrary.org/template) to convert spreadsheets to OWL. Edit the relevant [`src/ontology/templates/`](src/ontology/templates/) file.
+3. other terms: Edit [`src/ontology/obi-edit.owl`](src/ontology/obi-edit.owl) in Protege.
+
+See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
+
+
+# Files
+
+- [`README.md`](README.md) this overview document
+- [`obi.owl`](obi.owl) the latest release of OBI
+- [`obi_core.owl`](obi_core.owl) the latest release of OBI Core: ~100 key terms
+- [`Makefile`](Makefile) scripts for building OBI
+- [`src/`](src/)
+    - [`ontology/`](src/ontology/) source files for OBI
+        - [`obi-edit.owl`](src/ontology/obi-edit.owl) the main OBI OWL file
+        - [`core.txt`](src/ontology/core.txt) the list of OBI Core terms
+        - [`external-byhand.owl`](src/ontology/external-byhand.owl) some custom imports from other ontologies
+        - [`catalog-v001.xml`](src/ontology/catalog-v001.xml) an artisinal list of OWL import overrides
+        - [`templates/`](src/ontology/templates/) ROBOT template files for various branches of OBI
+        - [`modules/`](src/ontology/modules/) the results of the ROBOT templates
+        - [`OntoFox_inputs/`](src/ontology/OntoFox_inputs) OntoFox configuration files for importing from other ontologies
+        - [`OntoFox_outputs/`](src/ontology/OntoFox_outputs) OntoFox result files
+    - [`sparql/`](src/sparql/) SPARQL queries for building and validating OBI
+    - [`scripts/`](src/scripts/) utility scripts
+
+
+# Building
+
+The [`Makefile`](Makefile) contains scripts for building OBI. On macOS or Linux, you should just be able to run `make` or one of the specific tasks below. On Windows consider using some sort of Linux virtual machine such as Docker or Vagrant. Most results will be in the `build/` directory. If you have trouble, contact [James](mailto:james@overton.ca).
+
+- `make all` prepare for a release
+- `make obi.owl` build the release file; reasoning can take about 10 minutes
+- `make imports` update OntoFox imports
+- `make modules` update ROBOT templates
+- `make build/obi_merged.owl` merge `obi-edit.owl` into a single file, don't reason
+- `make clean` remove temporary files
+- `make test` merge and run SPARQL tests
+- `make check` check for bad line-endings (see below)
+- `make fix` fix bad line-endings (see below)
+
+
 # Development
 
 We use git and GitHub to develop OBI. There's a lot of good documentation on both:
 
-- git [website](https://git-scm.com) and [book]
+- git [website](https://git-scm.com)
 - GitHub [Help](https://help.github.com) and [Flow](https://guides.github.com/introduction/flow/)
 - [git command-line overview](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html)
 
@@ -33,13 +79,13 @@ Start from a local copy of the `master` branch of the OBI repository. Make sure 
 
 These are the steps with their CLI commands. When using a GUI application the steps will be the same.
 
-1. `git fetch` -- make sure your local copy is up-to-date
-2. `git checkout master` -- start on the `master` branch
-3. `git checkout -b your-branch-name` -- create a new branch named for the change you're making
+1. `git fetch` make sure your local copy is up-to-date
+2. `git checkout master` start on the `master` branch
+3. `git checkout -b your-branch-name` create a new branch named for the change you're making
 4. make your changes
-5. `git status` and `git diff` -- inspect your changes
-6. `git add --update` -- add all updated files to staging
-7. `git commit --message "Desciption, issue #123"` -- commit staged changes with a message; it's good to include an issue number
+5. `git status` and `git diff` inspect your changes
+6. `git add --update` add all updated files to staging
+7. `git commit --message "Desciption, issue #123"` commit staged changes with a message; it's good to include an issue number
 8. `git push --set-upstream origin your-branch-name` push your commit to GitHub
 9. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
