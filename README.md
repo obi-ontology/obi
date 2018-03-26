@@ -8,7 +8,13 @@
 Our ontology terms come in three groups:
 
 1. external terms (from other ontologies): We use [OntoFox](http://ontofox.hegroup.org) for imports. Edit the corresponding [`src/ontology/OntoFox_inputs/`](src/ontology/OntoFox_inputs/) file.
-2. template terms: We use [ROBOT templates](http://robot.obolibrary.org/template) to convert spreadsheets to OWL. Edit the relevant [`src/ontology/templates/`](src/ontology/templates/) file.
+2. template terms: We use [ROBOT templates](http://robot.obolibrary.org/template) to convert spreadsheets to OWL. Edit the relevant [`src/ontology/templates/`](src/ontology/templates/) file:
+    - [`obsolete.tsv`](src/ontology/templates/obsolete.tsv) for obsolete terms
+    - [`assays.tsv`](src/ontology/templates/assays.tsv) for general assays
+    - [`epitope-assays.tsv`](src/ontology/templates/epitope-assays.tsv) specifically for immune epitope assays
+    - [`value-specifications.tsv`](src/ontology/templates/value-specifications.tsv)
+    - [`biobank-specimens.tsv`](src/ontology/templates/biobank-specimens.tsv)
+    - [`medical-history.tsv`](src/ontology/templates/medical-history.tsv) for medical history classifications and related selection criteria
 3. other terms: Edit [`src/ontology/obi-edit.owl`](src/ontology/obi-edit.owl) in Protege.
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
