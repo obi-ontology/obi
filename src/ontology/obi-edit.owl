@@ -78,6 +78,7 @@
         <dc:creator xml:lang="en">Philippe Rocca-Serra</dc:creator>
         <dc:creator xml:lang="en">Elisabetta Manduchi</dc:creator>
         <dc:format xml:lang="en">OWL-DL</dc:format>
+        <dcterms:license>http://creativecommons.org/licenses/by/4.0/</dcterms:license>
         <dc:creator xml:lang="en">Mervi Heiskanen</dc:creator>
         <dc:creator xml:lang="en">Richard Bruskiewich</dc:creator>
         <dc:creator xml:lang="en">Robert Stevens</dc:creator>
@@ -92,7 +93,6 @@
         <dc:creator xml:lang="en">Richard Scheuermann</dc:creator>
         <dc:creator xml:lang="en">John Westbrook</dc:creator>
         <dc:creator xml:lang="en">Barry Smith</dc:creator>
-        <dcterms:license>http://creativecommons.org/licenses/by/4.0/</dcterms:license>
         <dc:creator xml:lang="en">Carlo Torniai</dc:creator>
         <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</protege:defaultLanguage>
         <dc:creator xml:lang="en">Jay Greenbaum</dc:creator>
@@ -25353,6 +25353,12 @@ http://en.wikipedia.org/wiki/Strain_%28biology%29</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000848"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -37817,12 +37823,106 @@ https://www.doi.org/</obo:IAO_0000119>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112>Kolbert, Christopher P., et al. &quot;Multi-platform analysis of microRNA expression measurements in RNA from fresh frozen and FFPE tissues.&quot; PloS one 8.1 (2013): e52517. PMID:23382819</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115>A mouse array which is manufacutred by NanoString Technologies. Built upon color-coded molecular barcodes technology, the array profiles miRNA with increased specificity and sensitivty than microarrays.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Venkat Malladi, Chris Stoeckert, Jie Zheng, Alan Ruttenberg.  Mark A. Miller added based on http://purl.obolibrary.org/obo/OBI_0002013</obo:IAO_0000117>
         <obo:IAO_0000119>http://www.nanostring.com/media/pdf/PDS_nCounter_Human_v2_miRNA_Assay.pdf</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T14:04:41Z</dc:date>
         <dc:source>ENCODE project</dc:source>
         <rdfs:label>nCounter Mouse miRNA Expression array</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002571 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002571">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000848"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000869"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>polyA-selected RNA sequencing assay</obo:IAO_0000111>
+        <obo:IAO_0000115>An RNA-seq assay to study transcriptomes through the enrichment of polyadenylated transcripts or removal of ribosomal RNA prior to high-throughput sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>mRNA-seq</obo:IAO_0000118>
+        <obo:IAO_0000118>polyA RNA-seq</obo:IAO_0000118>
+        <obo:IAO_0000118>polyA mRNA RNA-seq</obo:IAO_0000118>
+        <obo:IAO_0000119>https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-419</obo:IAO_0000119>
+        <dc:contributor>Jason Hilton, ENCODE</dc:contributor>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T14:47:35Z</dc:date>
+        <rdfs:label>polyA-selected RNA sequencing assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002572 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002572">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002574"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002573"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>polyA-depleted RNA sequencing assay</obo:IAO_0000111>
+        <obo:IAO_0000115>An RNA-seq assay to study non-polyadenylated transcripts, such as, but not exclusive to unspliced and circular isoforms, through the depletion of polyadenylated transcripts prior to high-throughput sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>polyA-depleted RNA-seq</obo:IAO_0000118>
+        <obo:IAO_0000119>http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0030733, http://www.tandfonline.com/doi/full/10.1080/15476286.2015.1110676</obo:IAO_0000119>
+        <dc:contributor>Jason Hilton, ENCODE</dc:contributor>
+        <rdfs:label>polyA-depleted RNA sequencing assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002573 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002573">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002574"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyA depleted RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A RNA extract that is the output of an extraction process in which RNA molecules lacking poly A tails at thier 3&apos; ends are purified.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller, based on http://purl.obolibrary.org/obo/OBI_0000869</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UPenn Group</obo:IAO_0000119>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T16:35:11Z</dc:date>
+        <rdfs:label>polyA depleted RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002574 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002574">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0666666"/>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RNA extraction with polyA depletion</obo:IAO_0000111>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A RNA extraction process in which only RNAs lacking a polyA tail are retained</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller, based on</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UPenn Group</obo:IAO_0000119>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T15:01:14Z</dc:date>
+        <rdfs:label>RNA extraction with polyA depletion</rdfs:label>
     </owl:Class>
     
 
