@@ -40,7 +40,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://build.berkeleybop.org/job/robot/lastSuccessfulBuild/artifact/bin/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.0.0/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
