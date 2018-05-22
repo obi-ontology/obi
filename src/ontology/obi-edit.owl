@@ -3590,10 +3590,6 @@ objectives is a planned process.</obo:IAO_0000116>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
                     </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
-                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -51807,7 +51803,17 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#ERCC_RNA_spike-in -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#ERCC_RNA_spike-in">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000111>ERCC RNA spike-in</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A processed material developed by the External RNA Controls Consortium (ERCC) that  consists of 92 transcripts, derived and traceable from NIST-certified DNA plasmids.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
@@ -51820,7 +51826,17 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#SIRV_RNA_spike-in -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#SIRV_RNA_spike-in">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">SIRV RNA spike-in</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A processed material that consists of transcript isoforms of 7 spike-in RNA variant (SIRV) genes and possibly the 92 External RNA Controls Consortium (ERCC) RNA spike-in genes.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
