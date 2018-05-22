@@ -30135,7 +30135,7 @@ PMID: 21918373</obo:IAO_0000112>
     <!-- http://purl.obolibrary.org/obo/OBI_0001672 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001672">
-        <owl:equivalentClass>
+        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Class>
@@ -30167,7 +30167,7 @@ PMID: 21918373</obo:IAO_0000112>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">gene knock-down assay</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">is an assay which transiently disrupts gene transcripts by expressing antisense RNA constructs or delivering RNA interfering molecules in cells.</obo:IAO_0000115>
@@ -35711,7 +35711,7 @@ https://sourceforge.net/p/obi/obi-terms/766/</obo:IAO_0000116>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115>A human array which is manufacutred by NanoString Technologies. Built upon color-coded molecular barcodes technology, the array profiles miRNA with increased specificity and sensitivty than microarrays.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Venkat Malladi, Chris Stoeckert, Jie Zheng, Alan Ruttenberg.  Mark A. Miller removed &quot;V2&quot; per https://github.com/obi-ontology/obi/issues/831 on 20180511.</obo:IAO_0000117>
-        <obo:IAO_0000119>http://www.nanostring.com/media/pdf/PDS_nCounter_Human_v2_miRNA_Assay.pdf</obo:IAO_0000119>
+        <obo:IAO_0000119>https://www.nanostring.com/products/mirna-assays/mirna-panels</obo:IAO_0000119>
         <dc:source>ENCODE project</dc:source>
         <rdfs:label>nCounter Human miRNA Expression array</rdfs:label>
     </owl:Class>
@@ -37153,6 +37153,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115 xml:lang="en">A DNA sequencer manufactured by Solexa as one of its first sequencer lines, launched in 2006, and capable of sequencing 1 gigabase (Gb) of data in a single run.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jason Hilton</obo:IAO_0000117>
+        <obo:IAO_0000118>Illumina Genome Analyzer I</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">http://www.illumina.com/technology/next-generation-sequencing/solexa-technology.html</obo:IAO_0000119>
         <dc:source xml:lang="en">ENCODE project</dc:source>
         <rdfs:label xml:lang="en">Illumina Genome Analyzer</rdfs:label>
@@ -37683,6 +37684,22 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002460">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0500027"/>
+        <obo:IAO_0000111>defined population inclusion criterion</obo:IAO_0000111>
+        <obo:IAO_0000112>inclusion based on age, sex, and living region (rural area or specified city).</obo:IAO_0000112>
+        <obo:IAO_0000115>An inclusion criterion that is based on fitting within the defined characteristics of a population based study design.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000119>MIABIS 2.0</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">920</obo:IAO_0000233>
+        <obo:IAO_0000234>MIABIS 2.0</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">defined population inclusion criterion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002555 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002555">
@@ -37811,7 +37828,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600020"/>
         <obo:IAO_0000115 xml:lang="en">A histology assay that is intended to check for the presence or level of a specific disease.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">OBI developers</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">histopathology</rdfs:label>
+        <rdfs:label xml:lang="en">histopathology assay</rdfs:label>
     </owl:Class>
     
 
@@ -37830,7 +37847,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115>A mouse array which is manufacutred by NanoString Technologies. Built upon color-coded molecular barcodes technology, the array profiles miRNA with increased specificity and sensitivty than microarrays.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Venkat Malladi, Chris Stoeckert, Jie Zheng, Alan Ruttenberg.  Mark A. Miller added based on http://purl.obolibrary.org/obo/OBI_0002013</obo:IAO_0000117>
-        <obo:IAO_0000119>http://www.nanostring.com/media/pdf/PDS_nCounter_Human_v2_miRNA_Assay.pdf</obo:IAO_0000119>
+        <obo:IAO_0000119>https://www.nanostring.com/products/mirna-assays/mirna-panels</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T14:04:41Z</dc:date>
         <dc:source>ENCODE project</dc:source>
         <rdfs:label>nCounter Mouse miRNA Expression array</rdfs:label>
@@ -37842,12 +37859,6 @@ https://www.doi.org/</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002571">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000848"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -37872,12 +37883,6 @@ https://www.doi.org/</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002572">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002574"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -37923,10 +37928,24 @@ https://www.doi.org/</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0666666"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RNA extraction with polyA depletion</obo:IAO_0000111>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A RNA extraction process in which only RNAs lacking a polyA tail are retained</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller, based on</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller, based on OBI_0000848</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UPenn Group</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T15:01:14Z</dc:date>
         <rdfs:label>RNA extraction with polyA depletion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002575">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <obo:IAO_0000111>isoform sequencing</obo:IAO_0000111>
+        <obo:IAO_0000112>Novel transcript forms were assessed by isoform sequencing.</obo:IAO_0000112>
+        <obo:IAO_0000115>A method for sequencing isoforms by enriching a cDNA library for full-length reads spanning entire transcript isoforms.</obo:IAO_0000115>
+        <obo:IAO_0000118>ISO-seq</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.pacb.com/blog/intro-to-iso-seq-method-full-leng/</obo:IAO_0000119>
+        <rdfs:label>isoform sequencing</rdfs:label>
     </owl:Class>
     
 
@@ -47674,7 +47693,7 @@ discussed on obi-dev call 9/28/2015, details see: https://sourceforge.net/p/obi/
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRS:20090901: addition of alternative term = histopathology</obo:IAO_0000232>
         <obo:IAO_0000232 xml:lang="en">need to incorporate parts\n---\nThis is a very vague term, it should be in the same place as transcriptomics, proteomics metaboloimcs. It is the &apos;study&apos; of tissues, not the process of studying tissues\n</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">histology</rdfs:label>
+        <rdfs:label xml:lang="en">histology assay</rdfs:label>
     </owl:Class>
     
 
@@ -53675,5 +53694,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
