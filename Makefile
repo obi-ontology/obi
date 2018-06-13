@@ -162,13 +162,13 @@ verify: verify-edit verify-merged
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
-verify-edit: src/ontology/obi-edit.owl $(EDIT_VIOLATION_QUERIES)
+verify-edit: src/ontology/obi-edit.owl $(EDIT_VIOLATION_QUERIES) | build/robot.jar
 	$(ROBOT) verify --input $< --output-dir build \
 	--queries $(EDIT_VIOLATION_QUERIES)
 
 # Run validation queries on obi_merged and exit on error.
 .PHONY: verify-merged
-verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES)
+verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.jar
 	$(ROBOT) merge \
 	--input $< \
 	verify \
@@ -176,7 +176,7 @@ verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES)
 	--queries $(MERGED_VIOLATION_QUERIES)
 
 .PHONY: test
-test: | build/robot.jar verify
+test: verify
 
 ### General
 #
