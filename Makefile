@@ -161,7 +161,7 @@ verify: verify-edit verify-merged
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
-verify-edit: src/ontology/obi-edit.owl  $(EDIT_VIOLATION_QUERIES)
+verify-edit: src/ontology/obi-edit.owl  $(EDIT_VIOLATION_QUERIES) | build
 	$(ROBOT) verify --input $< --output-dir build \
 	--queries $(EDIT_VIOLATION_QUERIES)
 
