@@ -146,7 +146,8 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
 ### Test
 #
 # Run main tests
-VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) merge \
@@ -154,18 +155,27 @@ build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	query \
 	--select src/sparql/terms-report.rq build/terms-report.csv
 
-# Run validation queries and exit on error.
+# Run all validation queries and exit on error.
 .PHONY: verify
-verify: build/obi_merged.owl $(VIOLATION_QUERIES) | build
+verify: verify-edit verify-merged
+
+# Run validation queries on obi-edit and exit on error.
+.PHONY: verify-edit
+verify-edit: src/ontology/obi-edit.owl  $(EDIT_VIOLATION_QUERIES)
+	$(ROBOT) verify --input $< --output-dir build \
+	--queries $(EDIT_VIOLATION_QUERIES)
+
+# Run validation queries on obi_merged and exit on error.
+.PHONY: verify-merged
+verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build
 	$(ROBOT) merge \
 	--input $< \
 	verify \
 	--output-dir build \
-	--queries $(VIOLATION_QUERIES)
+	--queries $(MERGED_VIOLATION_QUERIES)
 
 .PHONY: test
 test: verify
-
 
 ### General
 #
