@@ -39,6 +39,7 @@ build:
 ### ROBOT
 #
 # We use the official development version of ROBOT for most things.
+.PHONY: build/robot.jar
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.0.0/robot.jar
 
@@ -161,13 +162,13 @@ verify: verify-edit verify-merged
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
-verify-edit: src/ontology/obi-edit.owl  $(EDIT_VIOLATION_QUERIES) | build
+verify-edit: src/ontology/obi-edit.owl $(EDIT_VIOLATION_QUERIES)
 	$(ROBOT) verify --input $< --output-dir build \
 	--queries $(EDIT_VIOLATION_QUERIES)
 
 # Run validation queries on obi_merged and exit on error.
 .PHONY: verify-merged
-verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build
+verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES)
 	$(ROBOT) merge \
 	--input $< \
 	verify \
@@ -175,7 +176,7 @@ verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build
 	--queries $(MERGED_VIOLATION_QUERIES)
 
 .PHONY: test
-test: verify
+test: | build/robot.jar verify
 
 ### General
 #
