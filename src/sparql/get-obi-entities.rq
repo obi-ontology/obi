@@ -1,0 +1,4 @@
+SELECT ?s WHERE {
+	?s a ?o .
+	FILTER STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_")
+}
