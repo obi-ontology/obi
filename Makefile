@@ -149,6 +149,7 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
 # Run main tests
 MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
+CLASS_QUERY := 'src/sparql/get-obi-classes.rq'
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) merge \
@@ -158,7 +159,7 @@ build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 
 # Run all validation queries and exit on error.
 .PHONY: verify
-verify: verify-edit verify-merged
+verify: verify-edit verify-merged verify-classes
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
@@ -175,8 +176,16 @@ verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.ja
 	--output-dir build \
 	--queries $(MERGED_VIOLATION_QUERIES)
 
+# Check if any classes have been dropped and exit on error.
+.PHONY: verify-classes
+verify-classes: build/obi_merged.owl | build/robot.jar
+	$(ROBOT) query --input obi.owl --query $(CLASS_QUERY) 'build/previous-classes.tsv' \
+	&& $(ROBOT) query --input $< --query $(CLASS_QUERY) 'build/current-classes.tsv' \
+	&& python src/scripts/check-dropped-classes.py
+
 .PHONY: test
 test: verify
+
 
 ### General
 #
