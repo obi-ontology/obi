@@ -1830,7 +1830,17 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030097"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030097"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Co-associations between insulin sensitivity and measures of liver function, subclinical inflammation, and hematology._PMID:18702943</obo:IAO_0000112>
@@ -2129,14 +2139,7 @@
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000690"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000711"/>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000697"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000706"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000724"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000730"/>
-                                </owl:unionOf>
-                            </owl:Class>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -4563,6 +4566,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0000991 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000991"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000992 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000992"/>
     
 
 
@@ -8993,8 +9002,8 @@
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001852"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -9253,7 +9262,7 @@
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000690"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000711"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000800"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -9345,7 +9354,7 @@
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000690"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000711"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000800"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -9524,8 +9533,8 @@
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000626"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000711"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000992"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600050"/>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -9734,7 +9743,7 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000711"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600023"/>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -9769,6 +9778,12 @@
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22936248</obo:IAO_0000119>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RNA Annotation and Mapping of Promoters for the Analysis of Gene Expression assay</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001904 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
     
 
 
@@ -11589,8 +11604,8 @@
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001904"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002028"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600047"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
