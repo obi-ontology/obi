@@ -1,4 +1,6 @@
-SELECT ?s WHERE {
-	?s a ?o .
-	FILTER STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_")
+SELECT DISTINCT ?s
+WHERE {
+  ?s ?p ?o .
+  FILTER STRSTARTS(str(?s), "http://purl.obolibrary.org/obo/OBI_")
 }
+ORDER BY ?s

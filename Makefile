@@ -39,7 +39,6 @@ build:
 ### ROBOT
 #
 # We use the official development version of ROBOT for most things.
-.PHONY: build/robot.jar
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.0.0/robot.jar
 
@@ -149,13 +148,21 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
 # Run main tests
 MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
-ENTITIES_QUERY := 'src/sparql/get-obi-entities.rq'
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
-	$(ROBOT) merge \
-	--input $< \
-	query \
-	--select src/sparql/terms-report.rq build/terms-report.csv
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+
+build/obi-previous-release.owl: | build
+	curl -L -o $@ "http://purl.obolibrary.org/obo/obi.owl"
+
+build/released-entities.tsv: build/obi-previous-release.owl src/sparql/get-obi-entities.rq | build/robot.jar
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+
+build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq | build/robot.jar
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+
+build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
+	comm -23 $^ > $@
 
 # Run all validation queries and exit on error.
 .PHONY: verify
@@ -170,19 +177,15 @@ verify-edit: src/ontology/obi-edit.owl $(EDIT_VIOLATION_QUERIES) | build/robot.j
 # Run validation queries on obi_merged and exit on error.
 .PHONY: verify-merged
 verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.jar
-	$(ROBOT) merge \
-	--input $< \
-	verify \
-	--output-dir build \
+	$(ROBOT) verify --input $< --output-dir build \
 	--queries $(MERGED_VIOLATION_QUERIES)
 
 # Check if any entities have been dropped and exit on error.
 .PHONY: verify-entities
-verify-entities: build/obi_merged.owl | build/robot.jar
-	$(ROBOT) query --input obi.owl --query $(ENTITIES_QUERY) 'build/previous-entities.tsv' \
-	&& $(ROBOT) merge --input $< --collapse-import-closure true \
-	query --query $(ENTITIES_QUERY) 'build/current-entities.tsv' \
-	&& python src/scripts/check-dropped-entities.py
+verify-entities: build/dropped-entities.tsv
+	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
+	@! test -s $<
+
 
 .PHONY: test
 test: verify
