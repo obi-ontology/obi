@@ -3590,10 +3590,6 @@ objectives is a planned process.</obo:IAO_0000116>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
                     </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
-                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -30135,7 +30131,7 @@ PMID: 21918373</obo:IAO_0000112>
     <!-- http://purl.obolibrary.org/obo/OBI_0001672 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001672">
-        <owl:equivalentClass>
+        <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Class>
@@ -30167,7 +30163,7 @@ PMID: 21918373</obo:IAO_0000112>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">gene knock-down assay</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">is an assay which transiently disrupts gene transcripts by expressing antisense RNA constructs or delivering RNA interfering molecules in cells.</obo:IAO_0000115>
@@ -35711,7 +35707,7 @@ https://sourceforge.net/p/obi/obi-terms/766/</obo:IAO_0000116>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115>A human array which is manufacutred by NanoString Technologies. Built upon color-coded molecular barcodes technology, the array profiles miRNA with increased specificity and sensitivty than microarrays.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Venkat Malladi, Chris Stoeckert, Jie Zheng, Alan Ruttenberg.  Mark A. Miller removed &quot;V2&quot; per https://github.com/obi-ontology/obi/issues/831 on 20180511.</obo:IAO_0000117>
-        <obo:IAO_0000119>http://www.nanostring.com/media/pdf/PDS_nCounter_Human_v2_miRNA_Assay.pdf</obo:IAO_0000119>
+        <obo:IAO_0000119>https://www.nanostring.com/products/mirna-assays/mirna-panels</obo:IAO_0000119>
         <dc:source>ENCODE project</dc:source>
         <rdfs:label>nCounter Human miRNA Expression array</rdfs:label>
     </owl:Class>
@@ -37153,6 +37149,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115 xml:lang="en">A DNA sequencer manufactured by Solexa as one of its first sequencer lines, launched in 2006, and capable of sequencing 1 gigabase (Gb) of data in a single run.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jason Hilton</obo:IAO_0000117>
+        <obo:IAO_0000118>Illumina Genome Analyzer I</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">http://www.illumina.com/technology/next-generation-sequencing/solexa-technology.html</obo:IAO_0000119>
         <dc:source xml:lang="en">ENCODE project</dc:source>
         <rdfs:label xml:lang="en">Illumina Genome Analyzer</rdfs:label>
@@ -37683,6 +37680,396 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002460">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0500027"/>
+        <obo:IAO_0000111>defined population inclusion criterion</obo:IAO_0000111>
+        <obo:IAO_0000112>inclusion based on age, sex, and living region (rural area or specified city).</obo:IAO_0000112>
+        <obo:IAO_0000115>An inclusion criterion that is based on fitting within the defined characteristics of a population based study design.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000119>MIABIS 2.0</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">920</obo:IAO_0000233>
+        <obo:IAO_0000234>MIABIS 2.0</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">defined population inclusion criterion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002461 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002461">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000098"/>
+        <obo:IAO_0000111 xml:lang="en">BCL format</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A data format specification that is a binary file containing base calling data. These files are created by sequencing machines during the act of sequencing, and contain data about each of the nucleotide clusters on a sequencing flow cell.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">BCL format</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002462 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002462">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>ERCC RNA spike-in</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A processed material developed by the External RNA Controls Consortium (ERCC) that  consists of 92 transcripts, derived and traceable from NIST-certified DNA plasmids.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://www.thermofisher.com/order/catalog/product/4456740</obo:IAO_0000119>
+        <rdfs:label>ERCC RNA spike-in</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002463 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002463">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">SIRV RNA spike-in</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A processed material that consists of transcript isoforms of 7 spike-in RNA variant (SIRV) genes and possibly the 92 External RNA Controls Consortium (ERCC) RNA spike-in genes.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://www.lexogen.com/sirvs/design/</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">SIRV RNA spike-in</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002464 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002464">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <obo:IAO_0000111 xml:lang="en">SRS identifier</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An accession number that applies to a database record for an individual sample object in an NCBI Sequence Read Archive (SRA) submission. These records are imported from the NCBI BioSample database.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen Fisher, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">SRA sample accession number</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">SRS identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002465 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002465">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001167"/>
+        <obo:IAO_0000111 xml:lang="en">age since culture seeding measurement datum</obo:IAO_0000111>
+        <obo:IAO_0000115>An age measurement datum that is the result of the measurement of the age of a cell since cultured (the process of seeding cells onto a culture dish).</obo:IAO_0000115>
+        <obo:IAO_0000117>Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118>age of culture</obo:IAO_0000118>
+        <rdfs:label>age since culture seeding measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002466 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002466">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000064"/>
+        <obo:IAO_0000111 xml:lang="en">alignment counting algorithm</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An algorithm used to assign aligned sequence reads, resulting from a reference genome transcriptome alignment algorithm, to sequence features (e.g. genes or transcripts).</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label>alignment counting algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002467">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000594"/>
+        <obo:IAO_0000111 xml:lang="en">alignment counting application</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A software application that implements an alignment counting algorithm, used to count the overlap of aligned sequencing reads with genes.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">doi:10.1093/bioinformatics/btu638</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">alignment counting application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002468 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002468">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000064"/>
+        <obo:IAO_0000111 xml:lang="en">base calling algorithm</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An algorithm that assigns nucleotides to temporal or spatial peaks generated by a detector, such as peaks of light intensities generated by a DNA sequencer</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">base calling algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002469 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002469">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000594"/>
+        <obo:IAO_0000111 xml:lang="en">base calling application</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A base-calling application that implments a base-calling algorithm to convert BCL (binary base call) files, (e.g., those generated by Illumina sequencing systems) to standard FASTQ file formats for downstream analysis.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">base calling application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002470 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002470">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002469"/>
+        <obo:IAO_0000111 xml:lang="en">bcl2fastq software application</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A base calling application that implments a base calling algorithm to convert BCL (binary base call) files generated by Illumina sequencing systems to standard FASTQ file formats for downstream analysis.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">bcl2fastq software application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002471 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002471">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111 xml:lang="en">date process started</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A data item that is the date when a process was initiated.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Chris Stoeckert, Daniel Berrios, Stephen A. Fisher</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">date process started</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002472 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002472">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
+        <obo:IAO_0000111 xml:lang="en">dbGaP study identifier</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A central registered identifier symbol that denotes a specific study in dbGaP.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">dbGaP accession number</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">doi:10.1038/ng1007-1181</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">dbGaP study identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002473 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002473">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
+        <obo:IAO_0000111 xml:lang="en">material amplification role</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A worker role played by the person who runs the enzymatic amplifying process.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">material amplification role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002474 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002474">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
+        <obo:IAO_0000111 xml:lang="en">material sequencing library preparation role</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A worker role played by the person who performs the library preparation process to generate a sequencing library for a sample to be sequenced.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">material sequencing library preparation role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002475 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002475">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111 xml:lang="en">number of PCR cycles during library construction</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A data item that is the number of PCR cycles used during the construction of a sequencing library.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">library construction PCR cycles</obo:IAO_0000118>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Polymerase_chain_reaction</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">number of PCR cycles during library construction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002476 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002476">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111 xml:lang="en">number of rounds of amplification</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A data item that is the number of times an amplification reaction happened.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">number of rounds of amplification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002477 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002477">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000025"/>
+        <obo:IAO_0000111 xml:lang="en">reference genome role</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A reference substance role that is played by a reference genome when used during sequence alignment.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">reference genome role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002478 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002478">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000064"/>
+        <obo:IAO_0000111 xml:lang="en">reference genome-transcriptome alignment algorithm</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An algorithm that attempts to align a nucleic acid sequence to a reference genome and transcriptome.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">reference genome-transcriptome alignment algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002479 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002479">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000111 xml:lang="en">sequence read length measurement datum</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A measurement datum that is the result of the measurement of the number of bases in a DNA or RNA sequence.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">read length, read length measurement datum</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">sequence read length measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002480 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002480">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
+        <obo:IAO_0000111 xml:lang="en">sequencing library input quantity measurement datum</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A scalar measurement datum that indicates the amount of sequencing library used as input for a sequencer.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">library input amount</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">sequencing library input quantity measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002481 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002481">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000164"/>
+        <obo:IAO_0000111 xml:lang="en">single-end library</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A cDNA library that is a collection of short tags from only one end of DNA fragments.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">single-end library</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002482 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002482">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+        <obo:IAO_0000111 xml:lang="en">specimen harvest quantity</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A scalar measurement datum that indicates the amount of specimen collected.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">harvest quantity</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">specimen harvest quantity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002483 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002483">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111 xml:lang="en">spike-in dilution factor</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A data item that indicates the dilution of spike-in added to a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">spike-in dilution factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002484 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002484">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002478"/>
+        <obo:IAO_0000111 xml:lang="en">star algorithm</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A reference genome transcriptome alignment algorithm that is a standalone RNA-seq alignment algorithm that uses uncompressed suffix arrays and a mapping algorithm similar to those used in large-scale genome alignment tools to align RNA-seq reads to a genomic reference.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">https://www.ncbi.nlm.nih.gov/pubmed/23104886</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">star algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002485 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002485">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600047"/>
+        <obo:IAO_0000111 xml:lang="en">transcript analysis by single-end sequencing</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A sequencing assay that incorporates single-end reads and sequencing technology to determine transcripts, gene structures, and gene expressions.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://www.illumina.com/science/technology/next-generation-sequencing/paired-end-vs-single-read-sequencing.html</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">transcript analysis by single-end sequencing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002486 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002486">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002466"/>
+        <obo:IAO_0000111 xml:lang="en">verse algorithm</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An alignment counting algorithm that assigns gene features to genomic alignments using a hierarchical assignment scheme, which allows simultaneous quantification of multiple feature types or annotation levels without repeatedly assigning reads.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">http://kim.bio.upenn.edu/software/verse.shtml or http://biorxiv.org/content/early/2016/05/14/053306</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">verse algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002487 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002487">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000932"/>
+        <obo:IAO_0000111 xml:lang="en">microraft</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A material separation device also commerically known as Isoraft, that is used to isolate single cells.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Microrafts</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">microraft</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002488 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002488">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000111 xml:lang="en">pipette</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A device that is a laboratory tool commonly used in chemistry, biology and medicine to transport a measured volume of liquid, often as a media dispenser.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Pipette</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">pipette</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002555 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002555">
@@ -37811,7 +38198,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600020"/>
         <obo:IAO_0000115 xml:lang="en">A histology assay that is intended to check for the presence or level of a specific disease.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">OBI developers</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">histopathology</rdfs:label>
+        <rdfs:label xml:lang="en">histopathology assay</rdfs:label>
     </owl:Class>
     
 
@@ -37830,7 +38217,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115>A mouse array which is manufacutred by NanoString Technologies. Built upon color-coded molecular barcodes technology, the array profiles miRNA with increased specificity and sensitivty than microarrays.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Venkat Malladi, Chris Stoeckert, Jie Zheng, Alan Ruttenberg.  Mark A. Miller added based on http://purl.obolibrary.org/obo/OBI_0002013</obo:IAO_0000117>
-        <obo:IAO_0000119>http://www.nanostring.com/media/pdf/PDS_nCounter_Human_v2_miRNA_Assay.pdf</obo:IAO_0000119>
+        <obo:IAO_0000119>https://www.nanostring.com/products/mirna-assays/mirna-panels</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T14:04:41Z</dc:date>
         <dc:source>ENCODE project</dc:source>
         <rdfs:label>nCounter Mouse miRNA Expression array</rdfs:label>
@@ -37842,12 +38229,6 @@ https://www.doi.org/</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002571">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000848"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -37872,12 +38253,6 @@ https://www.doi.org/</obo:IAO_0000119>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002572">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002574"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -37923,10 +38298,24 @@ https://www.doi.org/</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0666666"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RNA extraction with polyA depletion</obo:IAO_0000111>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A RNA extraction process in which only RNAs lacking a polyA tail are retained</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller, based on</obo:IAO_0000117>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mark A. Miller, based on OBI_0000848</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UPenn Group</obo:IAO_0000119>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T15:01:14Z</dc:date>
         <rdfs:label>RNA extraction with polyA depletion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002575">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <obo:IAO_0000111>isoform sequencing</obo:IAO_0000111>
+        <obo:IAO_0000112>Novel transcript forms were assessed by isoform sequencing.</obo:IAO_0000112>
+        <obo:IAO_0000115>A method for sequencing isoforms by enriching a cDNA library for full-length reads spanning entire transcript isoforms.</obo:IAO_0000115>
+        <obo:IAO_0000118>ISO-seq</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.pacb.com/blog/intro-to-iso-seq-method-full-leng/</obo:IAO_0000119>
+        <rdfs:label>isoform sequencing</rdfs:label>
     </owl:Class>
     
 
@@ -47674,7 +48063,7 @@ discussed on obi-dev call 9/28/2015, details see: https://sourceforge.net/p/obi/
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRS:20090901: addition of alternative term = histopathology</obo:IAO_0000232>
         <obo:IAO_0000232 xml:lang="en">need to incorporate parts\n---\nThis is a very vague term, it should be in the same place as transcriptomics, proteomics metaboloimcs. It is the &apos;study&apos; of tissues, not the process of studying tissues\n</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">histology</rdfs:label>
+        <rdfs:label xml:lang="en">histology assay</rdfs:label>
     </owl:Class>
     
 
@@ -51773,360 +52162,6 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#BCL_format -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#BCL_format">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000098"/>
-        <obo:IAO_0000111 xml:lang="en">BCL format</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A data format specification that is a binary file containing base calling data. These files are created by sequencing machines during the act of sequencing, and contain data about each of the nucleotide clusters on a sequencing flow cell.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">BCL format</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#ERCC_RNA_spike-in -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#ERCC_RNA_spike-in">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
-        <obo:IAO_0000111>ERCC RNA spike-in</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A processed material developed by the External RNA Controls Consortium (ERCC) that  consists of 92 transcripts, derived and traceable from NIST-certified DNA plasmids.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">https://www.thermofisher.com/order/catalog/product/4456740</obo:IAO_0000119>
-        <rdfs:label>ERCC RNA spike-in</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#SIRV_RNA_spike-in -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#SIRV_RNA_spike-in">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
-        <obo:IAO_0000111 xml:lang="en">SIRV RNA spike-in</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A processed material that consists of transcript isoforms of 7 spike-in RNA variant (SIRV) genes and possibly the 92 External RNA Controls Consortium (ERCC) RNA spike-in genes.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">https://www.lexogen.com/sirvs/design/</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">SIRV RNA spike-in</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#SRS_identifier -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#SRS_identifier">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
-        <obo:IAO_0000111 xml:lang="en">SRS identifier</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">An accession number that applies to a database record for an individual sample object in an NCBI Sequence Read Archive (SRA) submission. These records are imported from the NCBI BioSample database.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen Fisher, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">SRA sample accession number</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">SRS identifier</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#age_since_culture_seeding_measurement_datum -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#age_since_culture_seeding_measurement_datum">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001167"/>
-        <obo:IAO_0000111 xml:lang="en">age since culture seeding measurement datum</obo:IAO_0000111>
-        <obo:IAO_0000115>An age measurement datum that is the result of the measurement of the age of a cell since cultured (the process of seeding cells onto a culture dish).</obo:IAO_0000115>
-        <obo:IAO_0000117>Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118>age of culture</obo:IAO_0000118>
-        <rdfs:label>age since culture seeding measurement datum</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#alignment_counting_algorithm -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#alignment_counting_algorithm">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000064"/>
-        <obo:IAO_0000111 xml:lang="en">alignment counting algorithm</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">An algorithm used to assign aligned sequence reads, resulting from a reference genome transcriptome alignment algorithm, to sequence features (e.g. genes or transcripts).</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label>alignment counting algorithm</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#alignment_counting_application -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#alignment_counting_application">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000594"/>
-        <obo:IAO_0000111 xml:lang="en">alignment counting application</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A software application that implements an alignment counting algorithm, used to count the overlap of aligned sequencing reads with genes.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">doi:10.1093/bioinformatics/btu638</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">alignment counting application</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#base_calling_algorithm -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#base_calling_algorithm">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000064"/>
-        <obo:IAO_0000111 xml:lang="en">base calling algorithm</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">An algorithm that assigns nucleotides to temporal or spatial peaks generated by a detector, such as peaks of light intensities generated by a DNA sequencer</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">base calling algorithm</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#base_calling_application -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#base_calling_application">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000594"/>
-        <obo:IAO_0000111 xml:lang="en">base calling application</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A base-calling application that implments a base-calling algorithm to convert BCL (binary base call) files, (e.g., those generated by Illumina sequencing systems) to standard FASTQ file formats for downstream analysis.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">base calling application</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#bcl2fastq_software_application -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#bcl2fastq_software_application">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#base_calling_application"/>
-        <obo:IAO_0000111 xml:lang="en">bcl2fastq software application</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A base calling application that implments a base calling algorithm to convert BCL (binary base call) files generated by Illumina sequencing systems to standard FASTQ file formats for downstream analysis.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">bcl2fastq software application</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#date_process_started -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#date_process_started">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-        <obo:IAO_0000111 xml:lang="en">date process started</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A data item that is the date when a process was initiated.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Chris Stoeckert, Daniel Berrios, Stephen A. Fisher</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">date process started</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#dbGaP_study_identifier -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#dbGaP_study_identifier">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000577"/>
-        <obo:IAO_0000111 xml:lang="en">dbGaP study identifier</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A central registered identifier symbol that denotes a specific study in dbGaP.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">dbGaP accession number</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">doi:10.1038/ng1007-1181</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">dbGaP study identifier</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#material_amplification_role -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#material_amplification_role">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
-        <obo:IAO_0000111 xml:lang="en">material amplification role</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A worker role played by the person who runs the enzymatic amplifying process.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">material amplification role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#material_sequencing_library_preparation_role -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#material_sequencing_library_preparation_role">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
-        <obo:IAO_0000111 xml:lang="en">material sequencing library preparation role</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A worker role played by the person who performs the library preparation process to generate a sequencing library for a sample to be sequenced.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">material sequencing library preparation role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#microraft -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#microraft">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000932"/>
-        <obo:IAO_0000111 xml:lang="en">microraft</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A material separation device also commerically known as Isoraft, that is used to isolate single cells.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Microrafts</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">microraft</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#number_of_PCR_cycles_during_library_construction -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#number_of_PCR_cycles_during_library_construction">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-        <obo:IAO_0000111 xml:lang="en">number of PCR cycles during library construction</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A data item that is the number of PCR cycles used during the construction of a sequencing library.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">library construction PCR cycles</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Polymerase_chain_reaction</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">number of PCR cycles during library construction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#number_of_rounds_of_amplification -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#number_of_rounds_of_amplification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-        <obo:IAO_0000111 xml:lang="en">number of rounds of amplification</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A data item that is the number of times an amplification reaction happened.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">number of rounds of amplification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#pipette -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#pipette">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
-        <obo:IAO_0000111 xml:lang="en">pipette</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A device that is a laboratory tool commonly used in chemistry, biology and medicine to transport a measured volume of liquid, often as a media dispenser.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Pipette</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">pipette</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#reference_genome-transcriptome_alignment_algorithm -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#reference_genome-transcriptome_alignment_algorithm">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000064"/>
-        <obo:IAO_0000111 xml:lang="en">reference genome-transcriptome alignment algorithm</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">An algorithm that attempts to align a nucleic acid sequence to a reference genome and transcriptome.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">reference genome-transcriptome alignment algorithm</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#reference_genome_role -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#reference_genome_role">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000025"/>
-        <obo:IAO_0000111 xml:lang="en">reference genome role</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A reference substance role that is played by a reference genome when used during sequence alignment.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">reference genome role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#sequence_read_length_measurement_datum -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#sequence_read_length_measurement_datum">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
-        <obo:IAO_0000111 xml:lang="en">sequence read length measurement datum</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A measurement datum that is the result of the measurement of the number of bases in a DNA or RNA sequence.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">read length, read length measurement datum</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">sequence read length measurement datum</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#sequencing_library_input_quantity_measurement_datum -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#sequencing_library_input_quantity_measurement_datum">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
-        <obo:IAO_0000111 xml:lang="en">sequencing library input quantity measurement datum</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A scalar measurement datum that indicates the amount of sequencing library used as input for a sequencer.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">library input amount</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">sequencing library input quantity measurement datum</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#single-end_library -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#single-end_library">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000164"/>
-        <obo:IAO_0000111 xml:lang="en">single-end library</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A cDNA library that is a collection of short tags from only one end of DNA fragments.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">single-end library</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#specimen_harvest_quantity -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#specimen_harvest_quantity">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
-        <obo:IAO_0000111 xml:lang="en">specimen harvest quantity</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A scalar measurement datum that indicates the amount of specimen collected.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">harvest quantity</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">specimen harvest quantity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#spike-in_dilution_factor -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#spike-in_dilution_factor">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-        <obo:IAO_0000111 xml:lang="en">spike-in dilution factor</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A data item that indicates the dilution of spike-in added to a specimen.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">spike-in dilution factor</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#star_algorithm -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#star_algorithm">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#reference_genome-transcriptome_alignment_algorithm"/>
-        <obo:IAO_0000111 xml:lang="en">star algorithm</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A reference genome transcriptome alignment algorithm that is a standalone RNA-seq alignment algorithm that uses uncompressed suffix arrays and a mapping algorithm similar to those used in large-scale genome alignment tools to align RNA-seq reads to a genomic reference.</obo:IAO_0000115>
-        <obo:IAO_0000119 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000119>
-        <obo:IAO_0000119 xml:lang="en">https://www.ncbi.nlm.nih.gov/pubmed/23104886</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">star algorithm</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#transcript_analysis_by_single-end_sequencing -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#transcript_analysis_by_single-end_sequencing">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600047"/>
-        <obo:IAO_0000111 xml:lang="en">transcript analysis by single-end sequencing</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A sequencing assay that incorporates single-end reads and sequencing technology to determine transcripts, gene structures, and gene expressions.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">https://www.illumina.com/science/technology/next-generation-sequencing/paired-end-vs-single-read-sequencing.html</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">transcript analysis by single-end sequencing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#verse_algorithm -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#verse_algorithm">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#alignment_counting_algorithm"/>
-        <obo:IAO_0000111 xml:lang="en">verse algorithm</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">An alignment counting algorithm that assigns gene features to genomic alignments using a hierarchical assignment scheme, which allows simultaneous quantification of multiple feature types or annotation levels without repeatedly assigning reads.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">http://kim.bio.upenn.edu/software/verse.shtml or http://biorxiv.org/content/early/2016/05/14/053306</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">verse algorithm</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.geneontology.org/formats/oboInOwl#ObsoleteClass -->
 
     <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass">
@@ -53675,5 +53710,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
