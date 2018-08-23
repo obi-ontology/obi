@@ -1,0 +1,9 @@
+# 'assay' should have no asserted children in obi-edit.owl
+
+PREFIX obo:  <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s WHERE {
+	?s rdfs:subClassOf* obo:OBI_0000070 .
+	FILTER (str(?s) != "http://purl.obolibrary.org/obo/OBI_0000070")
+}

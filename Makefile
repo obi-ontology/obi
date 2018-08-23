@@ -40,7 +40,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.0.0/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.1.0/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
@@ -146,22 +146,46 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
 ### Test
 #
 # Run main tests
-VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
-	$(ROBOT) merge \
-	--input $< \
-	query \
-	--select src/sparql/terms-report.rq build/terms-report.csv
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
-# Run validation queries and exit on error.
+build/obi-previous-release.owl: | build
+	curl -L -o $@ "http://purl.obolibrary.org/obo/obi.owl"
+
+build/released-entities.tsv: build/obi-previous-release.owl src/sparql/get-obi-entities.rq | build/robot.jar
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+
+build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq | build/robot.jar
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+
+build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
+	comm -23 $^ > $@
+
+# Run all validation queries and exit on error.
 .PHONY: verify
-verify: build/obi_merged.owl $(VIOLATION_QUERIES) | build
-	$(ROBOT) merge \
-	--input $< \
-	verify \
-	--output-dir build \
-	--queries $(VIOLATION_QUERIES)
+verify: verify-edit verify-merged verify-entities
+
+# Run validation queries on obi-edit and exit on error.
+.PHONY: verify-edit
+verify-edit: src/ontology/obi-edit.owl $(EDIT_VIOLATION_QUERIES) | build/robot.jar
+	$(ROBOT) verify --input $< --output-dir build \
+	--queries $(EDIT_VIOLATION_QUERIES)
+
+# Run validation queries on obi_merged and exit on error.
+.PHONY: verify-merged
+verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.jar
+	$(ROBOT) verify --input $< --output-dir build \
+	--queries $(MERGED_VIOLATION_QUERIES)
+
+# Check if any entities have been dropped and exit on error.
+.PHONY: verify-entities
+verify-entities: build/dropped-entities.tsv
+	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
+	@! test -s $<
+
 
 .PHONY: test
 test: verify
