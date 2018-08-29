@@ -186,9 +186,13 @@ verify-entities: build/dropped-entities.tsv
 	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
 	@! test -s $<
 
+# Run a basic reasoner to find inconsistencies
+.PHONY: reason
+reason: build/obi_merged.owl | build/robot.jar
+	$(ROBOT) reason --input $< --reasoner ELK
 
 .PHONY: test
-test: verify
+test: reason verify
 
 
 ### General
