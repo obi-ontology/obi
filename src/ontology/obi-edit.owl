@@ -17,6 +17,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sequence-analysis.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ChEBI_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/NCBITaxon_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/UO_instance_imports.owl"/>
@@ -36,7 +37,6 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/medical-history.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/external-byhand.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/assays.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sequence-analysis.owl"/>
         <dc:creator xml:lang="en">Pierre Grenon</dc:creator>
         <dc:creator xml:lang="en">Bjoern Peters</dc:creator>
         <dc:creator xml:lang="en">Matthew Pocock</dc:creator>
@@ -29186,6 +29186,19 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Unsupervised_learning</obo:IAO_0000119>
         <dc:contributor>https://github.com/TrisSN</dc:contributor>
         <rdfs:label>unsupervised machine learning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002598 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002598">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000415"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A polymerase chain reaction which amplifies DNA with only one known sequence from which primers may be designed. A series of restriction digestions and ligations result in a looped DNA fragment which can be primed for PCR.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca Tauber</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inverse PCR</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://en.wikipedia.org/wiki/Chromosome_conformation_capture</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inverse polymerase chain reaction</rdfs:label>
     </owl:Class>
     
 
