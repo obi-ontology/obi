@@ -86,7 +86,14 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 
 # Update all modules.
 # NOTE: GNU Make will compare timestamps to see which updates are required.
-MODULE_NAMES := obsolete biobank-specimens assays epitope-assays value-specifications medical-history sequence-analysis
+MODULE_NAMES := assays\
+ biobank-specimens\
+ epitope-assays\
+ medical-history\
+ obsolete\
+ study-designs\
+ sequence-analysis\
+ value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 
 .PHONY: modules
