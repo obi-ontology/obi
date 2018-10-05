@@ -17,7 +17,6 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl">
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sequence-analysis.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ChEBI_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/NCBITaxon_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/UO_instance_imports.owl"/>
@@ -37,6 +36,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/medical-history.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/external-byhand.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/assays.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sequence-analysis.owl"/>
         <dc:creator xml:lang="en">Pierre Grenon</dc:creator>
         <dc:creator xml:lang="en">Bjoern Peters</dc:creator>
         <dc:creator xml:lang="en">Matthew Pocock</dc:creator>
@@ -4287,7 +4287,7 @@ In regard to the statement that reagents are &apos;distinct&apos; from the speci
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001970"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -4298,13 +4298,13 @@ In regard to the statement that reagents are &apos;distinct&apos; from the speci
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#multiplexed_sequence_data"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -11024,8 +11024,7 @@ Finally, note that there is no such thing as a concentration of 0. A concentrati
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <obo:IAO_0000111 xml:lang="en">differential expression analysis data transformation</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A differential expression analysis data transformation is a data transformation that has an objective of differential expression analysis.  Frequently this data transformation involves summarizing or otherwise aggregating signals from various samples categorized into groups, and calculating measures of group differences from these aggregated signals.</obo:IAO_0000115>
-        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">A differential expression analysis data transformation is a data transformation that has objective differential expression analysis and that consists of</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">James Malone</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Melanie Courtot</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Monnie McGee</obo:IAO_0000117>
@@ -26895,11 +26894,10 @@ PMID: 23587118.
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
         <obo:IAO_0000112 xml:lang="en">http://www.illumina.com/technology/multiplexing_sequencing_assay.ilmn</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process which consists in running a set of samples as a pool on a sequencing instrument, while retaining the ability to associate individual results to each of the individual input samples through the use of a ligated oligonucleotide (the &quot;multiplex identifier sequence&quot;). This oligonucleotide is  introduced during the sequence library preparation, and is unique to and specific for all library fragments derived from each sample in a sample pool.</obo:IAO_0000115>
-        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">a planned process which consists in running a set of samples as a pool in one single instrument run of data acquisition process while retaining the ability to associate individual results to each of the individual input samples thanks to the use of a multiplex identifier, introduced during the ligation step of the individual library preparation and specific to a given sample.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON:Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">multiplexed nucleotide library sequencing</rdfs:label>
+        <rdfs:label xml:lang="en">sequencing library multiplexing</rdfs:label>
     </owl:Class>
     
 
@@ -27003,10 +27001,10 @@ PMID: 23587118.
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">is a data transformation which uses sequence alignment and  &apos;multiplex identifier sequence&apos; information to separate all reads belonging to a given single sample following the sequencing of a multiplexed library</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">is a data transformation which uses sequence alignment and  &apos;multiplex identifier sequence&apos; information to pull together all reads belonging to a given single sample following the sequencing of a multiplexed library which combining several samples in one sequencing event</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">PRS for OBI</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">sequence library data demultiplexing</rdfs:label>
+        <rdfs:label xml:lang="en">sequence library deconvolution</rdfs:label>
     </owl:Class>
     
 
@@ -29913,7 +29911,7 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0200031"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0200166"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
@@ -29941,6 +29939,24 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -42554,33 +42570,6 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/UO_0000051 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000051"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#demultiplexed_sequence_data -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#demultiplexed_sequence_data">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
-        <obo:IAO_0000111>demultiplexed sequence data</obo:IAO_0000111>
-        <obo:IAO_0000115>Sequence data in which an identifier subsequence has been used to categorize each reads by source.</obo:IAO_0000115>
-        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119>OBI</obo:IAO_0000119>
-        <rdfs:label>demultiplexed sequence data</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#multiplexed_sequence_data -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#multiplexed_sequence_data">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
-        <obo:IAO_0000111>multiplexed sequence data</obo:IAO_0000111>
-        <obo:IAO_0000115>Sequence data from a sequence library generated from at least two different sources, where each read in the sequence data includes base calls from a multiplex identifier sequence that can be used to trace the source of the read to its source.</obo:IAO_0000115>
-        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000118>multiplexed sequencing data</obo:IAO_0000118>
-        <obo:IAO_0000119>OBI</obo:IAO_0000119>
-        <rdfs:label>multiplexed sequence data</rdfs:label>
-    </owl:Class>
     
 
 
