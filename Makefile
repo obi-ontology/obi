@@ -44,13 +44,6 @@ build/robot.jar: | build
 
 ROBOT := java -jar build/robot.jar
 
-# We use a forked version of ROBOT for generating obi_core.owl
-# TODO: Switch to official version for all tasks
-build/rogue-robot.jar: | build
-	curl -L -o $@ https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
-
-ROGUE_ROBOT := java -jar build/rogue-robot.jar
-
 
 ### Imports
 #
@@ -133,16 +126,19 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
-	$(ROGUE_ROBOT) extract \
+obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
+	$(ROBOT) remove \
 	--input $< \
+	--term obo:OBI_0600036 \
+	--term obo:OBI_0600037 \
+	--term obo:OBI_0000838 \
+	--select "self descendants" \
+	--preserve-structure false \
+	extract \
 	--method STAR \
 	--term-file src/ontology/core.txt \
-	--strip-term obo:CL_0000010 \
-	--strip-term obo:CL_0000001 \
-	--strip-term obo:OBI_0001866 \
-	--strip-term obo:CLO_0000001 \
-	--copy-annotations \
+	--individuals definitions \
+	--copy-ontology-annotations true \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi_core.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_core.owl" \
