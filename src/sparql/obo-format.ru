@@ -5,18 +5,23 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
+# Change 'alternative term' to OBO synonym
 INSERT { ?s oboInOwl:hasExactSynonym ?syn }
 WHERE { ?s obo:IAO_0000118 ?syn } ;
 
+# Change 'NIADID GSCID-BRC alternative term ' to OBO synonym
 INSERT { ?s oboInOwl:hasExactSynonym ?syn }
 WHERE { ?s obo:OBI_0001886 ?syn } ;
 
+# Change 'ISA alternative term' to OBO synonym
 INSERT { ?s oboInOwl:hasExactSynonym ?syn }
 WHERE { ?s obo:OBI_0001847 ?syn } ;
 
+# Change 'IEDB alternative term' to OBO synonym
 INSERT { ?s oboInOwl:hasExactSynonym ?syn }
 WHERE { ?s obo:OBI_9991118 ?syn } ;
 
+# Change 'term editor' to created by (making a list to prevent OBO error)
 INSERT { ?s oboInOwl:created_by ?termEds }
 WHERE { SELECT (GROUP_CONCAT(?termEd;separator=", ") AS ?termEds) WHERE {
         	?s obo:IAO_0000117 ?termEd 
