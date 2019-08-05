@@ -28,7 +28,7 @@ OBI     := $(OBO)/OBI_
 DEV     := $(OBO)/obi/dev
 MODULES := $(DEV)/modules
 TODAY   := $(shell date +%Y-%m-%d)
-TS 		:= $(shell date +'%d:%m:%Y %H:%M')
+TS      := $(shell date +'%d:%m:%Y %H:%M')
 
 ### Directories
 #
@@ -137,8 +137,6 @@ obi.obo: obi.owl | build/robot.jar
 	remove \
 	--term-file src/scripts/remove-for-obo.txt \
 	--trim true \
-	repair \
-	--merge-axiom-annotations true \
 	annotate \
 	--ontology-iri "$(OBO)/obi.obo" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi.obo" \
