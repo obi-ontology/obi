@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/obi-ontology/obi.svg?branch=master)](https://travis-ci.org/obi-ontology/obi)
 
+The Ontology for Biomedical Investigations (OBI) helps you communicate clearly about scientific investigations by defining more than 2500 terms for assays, devices, objectives, and more.
+
+This is the developer repository for OBI. You can download the most up-to-date OBI products [here](http://obofoundry.org/ontology/obi.html) and learn more about OBI through [our documentation](https://github.com/obi-ontology/obi/wiki).
 
 # Editing
 
