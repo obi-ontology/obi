@@ -28,6 +28,7 @@ OBI     := $(OBO)/OBI_
 DEV     := $(OBO)/obi/dev
 MODULES := $(DEV)/modules
 TODAY   := $(shell date +%Y-%m-%d)
+TS      := $(shell date +'%d:%m:%Y %H:%M')
 
 ### Directories
 #
@@ -40,16 +41,9 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.1.0/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.1/robot.jar
 
 ROBOT := java -jar build/robot.jar
-
-# We use a forked version of ROBOT for generating obi_core.owl
-# TODO: Switch to official version for all tasks
-build/rogue-robot.jar: | build
-	curl -L -o $@ https://github.com/jamesaoverton/rogue-robot/releases/download/0.0.1/robot.jar
-
-ROGUE_ROBOT := java -jar build/rogue-robot.jar
 
 
 ### Imports
@@ -86,7 +80,14 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 
 # Update all modules.
 # NOTE: GNU Make will compare timestamps to see which updates are required.
-MODULE_NAMES := obsolete biobank-specimens assays epitope-assays value-specifications medical-history sequence-analysis
+MODULE_NAMES := assays\
+ biobank-specimens\
+ epitope-assays\
+ medical-history\
+ obsolete\
+ study-designs\
+ sequence-analysis\
+ value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 
 .PHONY: modules
@@ -126,16 +127,39 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-obi_core.owl: obi.owl src/ontology/core.txt | build/rogue-robot.jar
-	$(ROGUE_ROBOT) extract \
+obi.obo: obi.owl | build/robot.jar
+	$(ROBOT) query \
 	--input $< \
+	--update src/sparql/obo-format.ru \
+	remove \
+	--select "parents equivalents" \
+	--select "anonymous" \
+	remove \
+	--term-file src/scripts/remove-for-obo.txt \
+	--trim true \
+	annotate \
+	--ontology-iri "$(OBO)/obi.obo" \
+	--version-iri "$(OBO)/obi/$(TODAY)/obi.obo" \
+	convert \
+	--output $(basename $@)-temp.obo && \
+	grep -v ^owl-axioms $(basename $@)-temp.obo | \
+	grep -v ^date | \
+	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
+	rm $(basename $@)-temp.obo
+
+obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
+	$(ROBOT) remove \
+	--input $< \
+	--term obo:OBI_0600036 \
+	--term obo:OBI_0600037 \
+	--term obo:OBI_0000838 \
+	--select "self descendants" \
+	--preserve-structure false \
+	extract \
 	--method STAR \
 	--term-file src/ontology/core.txt \
-	--strip-term obo:CL_0000010 \
-	--strip-term obo:CL_0000001 \
-	--strip-term obo:OBI_0001866 \
-	--strip-term obo:CLO_0000001 \
-	--copy-annotations \
+	--individuals definitions \
+	--copy-ontology-annotations true \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi_core.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_core.owl" \
