@@ -28,6 +28,7 @@ OBI     := $(OBO)/OBI_
 DEV     := $(OBO)/obi/dev
 MODULES := $(DEV)/modules
 TODAY   := $(shell date +%Y-%m-%d)
+TS      := $(shell date +'%d:%m:%Y %H:%M')
 
 ### Directories
 #
@@ -40,7 +41,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.0/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.1/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
@@ -125,6 +126,26 @@ obi.owl: build/obi_merged.owl
 	--version-iri "$(OBO)/obi/$(TODAY)/obi.owl" \
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
+
+obi.obo: obi.owl | build/robot.jar
+	$(ROBOT) query \
+	--input $< \
+	--update src/sparql/obo-format.ru \
+	remove \
+	--select "parents equivalents" \
+	--select "anonymous" \
+	remove \
+	--term-file src/scripts/remove-for-obo.txt \
+	--trim true \
+	annotate \
+	--ontology-iri "$(OBO)/obi.obo" \
+	--version-iri "$(OBO)/obi/$(TODAY)/obi.obo" \
+	convert \
+	--output $(basename $@)-temp.obo && \
+	grep -v ^owl-axioms $(basename $@)-temp.obo | \
+	grep -v ^date | \
+	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
+	rm $(basename $@)-temp.obo
 
 obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 	$(ROBOT) remove \
