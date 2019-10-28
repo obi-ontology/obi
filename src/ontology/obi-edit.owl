@@ -2516,6 +2516,21 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0032991 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032991">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>A ribosome is a protein complex.</obo:IAO_0000112>
+        <obo:IAO_0000118>protein complex</obo:IAO_0000118>
+    </rdf:Description>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0033036 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0033036"/>
@@ -2618,20 +2633,6 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     <!-- http://purl.obolibrary.org/obo/GO_0042611 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0042611"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0043234 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043234">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ribosome is a protein complex</obo:IAO_0000112>
-    </owl:Class>
     
 
 
@@ -7537,7 +7538,7 @@ activity)</obo:IAO_0000115>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_33697"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0043234"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032991"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000000001"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -7545,7 +7546,7 @@ activity)</obo:IAO_0000115>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043234"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -29304,6 +29305,51 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002619 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002619">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001154"/>
+        <obo:IAO_0000112>Site-directed mutagenesis was used to prepare mutants of the Hypoxia-inducible factor-1 (HIF-1) alpha subunit to investigate the role of certain amino acids in hypoxia. (PMID:12393189)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>An induced mutation in which a specific base change is programmed into the sequence of a synthetic primer.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000119>url:https://www.ncbi.nlm.nih.gov/books/NBK21945/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1058</obo:IAO_0000233>
+        <rdfs:label>site-directed mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002620 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002620">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001154"/>
+        <obo:IAO_0000112>Error-prone PCR was used to introduce amino acid mutations to the cAMP receptor protein (CRP) of E. coli to investigate strain engineering to improve osmotolerance for industrial requirements. (PMID:22179860)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>An induced mutation that produces a random mutation, either by introducing the organism to mutagens, or through a process such as error-prone PCR.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000119>PMID:15153637</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1058</obo:IAO_0000233>
+        <rdfs:label>random mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002627 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002627">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA-depleted RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Looking at the reads for each ribosomal RNA-depleted RNA extract, the vast majority align to protein coding genes based on the ENSEMBL annotation.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An extract of RNA which is produced through rRNA (ribosomal RNA) depletion (the removal of highly abundant rRNA species).</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4585-1</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA-depleted RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
@@ -42672,21 +42718,6 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/UO_0000051 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000051"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#ribosomal_RNA-depleted_RNA_extract -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#ribosomal_RNA-depleted_RNA_extract">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA-depleted RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Looking at the reads for each ribosomal RNA-depleted RNA extract, the vast majority align to protein coding genes based on the ENSEMBL annotation.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An extract of RNA which is produced through rRNA (ribosomal RNA) depletion (the removal of highly abundant rRNA species).</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4585-1</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA-depleted RNA extract</rdfs:label>
-    </owl:Class>
     
 
 
