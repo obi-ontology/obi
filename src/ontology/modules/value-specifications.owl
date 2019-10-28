@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/modules/value-specifications.owl#"
      xml:base="http://purl.obolibrary.org/obo/obi/dev/modules/value-specifications.owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:obo="http://purl.obolibrary.org/obo/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/modules/value-specifications.owl"/>
     
 
@@ -58,12 +58,6 @@
     
 
 
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -90,6 +84,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001930 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001930"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001931"/>
     
 
 
@@ -496,6 +496,34 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002490 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002490">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A scalar value specification that specifies the point in time that a human participant under investigation self-administers a medication material</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medication timepoint</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
+        <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VEuPathDB</obo:IAO_0000234>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medication time value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002491 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002491">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001931"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A scalar value specification that specifies the value of the quantity of a material entity administered to an organism as a treatment</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medication dose</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
+        <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VEuPathDB</obo:IAO_0000234>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medication dose value specification</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -510,12 +538,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002206 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002206">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to AJCC 7th edition indicating that the tumor cells and the organization of the tumor tissue appear close to normal.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.cancer.gov/about-cancer/diagnosis-staging/prognosis/tumor-grade-fact-sheet</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G1: Well differentiated</rdfs:label>
     </owl:NamedIndividual>
     
@@ -524,12 +552,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002207 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002207">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to AJCC 7th edition indicating that the tumor cells are moderately differentiated and reflect an intermediate grade.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.cancer.gov/about-cancer/diagnosis-staging/prognosis/tumor-grade-fact-sheet</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G2: Moderately differentiated</rdfs:label>
     </owl:NamedIndividual>
     
@@ -538,12 +566,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002208 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002208">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to AJCC 7th edition indicating that the tumor cells are poorly differentiated and do not look like normal cells and tissue.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G3</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.cancer.gov/about-cancer/diagnosis-staging/prognosis/tumor-grade-fact-sheet</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G3: Poorly differentiated</rdfs:label>
     </owl:NamedIndividual>
     
@@ -552,12 +580,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002209 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002209">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to AJCC 7th edition indicating that the tumor cells are undifferentiated and do not look like normal cells and tissue.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G4</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.cancer.gov/about-cancer/diagnosis-staging/prognosis/tumor-grade-fact-sheet</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002205"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G4: Undifferentiated</rdfs:label>
     </owl:NamedIndividual>
     
@@ -566,12 +594,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002211 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002211">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to the Fuhrman Nuclear Grading System indicating that nuclei are round, uniform, approximately 10um and that nucleoli are inconspicuous or absent.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grade 1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G1 (Fuhrman)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -580,12 +608,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002212 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002212">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to the Fuhrman Nuclear Grading System indicating that nuclei are slightly irregular, approximately 15um and nucleoli are evident.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grade 2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G2 (Fuhrman)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -594,12 +622,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002213 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002213">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to the Fuhrman Nuclear Grading System indicating that nuclei are very irregular, approximately 20um and nucleoli large and prominent.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grade 3</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G3 (Fuhrman)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -608,12 +636,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002214 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002214">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade according to the Fuhrman Nuclear Grading System indicating that nuclei arei bizarre and multilobulated, 20um or greater and nucleoli are prominent and chromatin clumped.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grade 4</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002210"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G4 (Fuhrman)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -622,12 +650,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002217 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002217">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002216"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade for ovarian tumor according to a two-tier grading system indicating that the tumor is low grade.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Low grade</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002216"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Low grade ovarian tumor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -636,12 +664,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002218 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002218">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002216"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade for ovarian tumor according to a two-tier grading system indicating that the tumor is high grade.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High grade</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002216"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High grade ovarian tumor</rdfs:label>
     </owl:NamedIndividual>
     
@@ -650,12 +678,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002220 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002220">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade for ovarian tumor according to the World Health Organization indicating that the tumor is well differentiated.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G1 (WHO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -664,12 +692,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002221 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002221">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade for ovarian tumor according to the World Health Organization indicating that the tumor is moderately differentiated.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G2 (WHO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -678,12 +706,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002222 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002222">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade for ovarian tumor according to the World Health Organization indicating that the tumor is poorly differentiated.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G3</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G3 (WHO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -692,12 +720,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002223 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002223">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A histologic grade for ovarian tumor according to the World Health Organization indicating that the tumor is undifferentiated.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G4</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002219"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G4 (WHO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -706,11 +734,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002225 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002225">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating that there is no evidence of primary tumor.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT0 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -719,11 +747,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002226 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002226">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating carcinoma in situ (intraepithelial or invasion of lamina propria).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pTis (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -732,11 +760,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002227 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002227">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating that the tumor invades submucosa.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -745,11 +773,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002228 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002228">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating that the tumor invades muscularis propria.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -758,11 +786,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002229 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002229">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating that the tumor invades subserosa or into non-peritionealized pericolic or perirectal tissues.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -771,11 +799,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002230 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002230">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating that the tumor perforates visceral peritoneum.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT4a (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -784,11 +812,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002231 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002231">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for colon and rectum according to AJCC 7th edition indicating that the tumor directly invades other organs or structures.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002224"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT4b (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -797,11 +825,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002233 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002233">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that there is no evidence of primary tumor.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT0 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -810,11 +838,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002234 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002234">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating carcinoma in situ.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pTis (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -823,11 +851,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002235 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002235">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is 3 cm or less in greatest dimension, surrounded by lung or visceral pleura without bronchoscopic evidence of invasion more proximal than the lobar bronchus (i.e., not in the main bronchus).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -836,11 +864,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002236 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002236">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is 2 cm or less in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1a (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -849,11 +877,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002237 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002237">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is more than 2 cm but not more than 3 cm in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1b (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -862,11 +890,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002238 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002238">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is more than 3 cm but not more than 7 cm or the tumor has any of the following features: involves main bronchus, 2 cm or more distal to the carina, invades visceral pleura, associated with atelectasis or obstructive pneumonitis that extends to the hilar region but does not involve the entire lung.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -875,11 +903,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002239 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002239">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is more than 3 cm but not more than 5 cm in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2a (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -888,11 +916,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002240 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002240">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is more than 5 cm but not more than 7 cm in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2b (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -901,11 +929,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002241 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002241">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor is more than 7 cm or one that directly invades any of: parietal pleura, chest wall (including superior sulcus tumors), diaphragm, phrenic nerve, mediastinal pleura, parietal pericardiu or the tumor is in the main bronchus less than 2 cm distal to the carina but without  involvement of the carina or there is associated atelectasis or obstructive pneumonitis of the entire lung or there is separate tumor nodule(s) in the same lobe as the primary.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -914,11 +942,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002242 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002242">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for lung according to AJCC 7th edition indicating that the tumor of any size that invades any of the following: mediastinum, heart, great vessels, trachea, recurrent laryngeal nerve, esophagus, vertebral body, carina or there is separate tumor nodule(s) in a different ipsilateral lobe to that of the primary.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002232"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT4 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -927,11 +955,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002244 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002244">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that there is no evidence of primary tumor.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT0 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -940,11 +968,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002245 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002245">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor is 7 cm or less in greatest dimension and limited to the kidney.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -953,11 +981,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002246 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002246">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor is 4 cm or less.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1a (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -966,11 +994,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002247 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002247">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor is more than 4 cm but not more than 7 cm.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1b (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -979,11 +1007,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002248 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002248">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor is more than 7 cm in greatest dimension and limited to the kidney.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -992,11 +1020,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002249 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002249">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor is more than 7 cm but not more than 10 cm.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2a (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1005,11 +1033,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002250 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002250">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor is more than 10 cm and limited to the kidney.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2b (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1018,11 +1046,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002251 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002251">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor extends into major veins or perinephric tissues but not into the ipsilateral adrenal gland and not beyond the Gerota fascia.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1031,11 +1059,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002252 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002252">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor grossly extends into the renal vein or its segmental (muscle containing) branches, or the tumor invades perirenal and/or renal sinus fat (peripelvic) fat but not beyond Gerota fascia.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3a (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1044,11 +1072,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002253 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002253">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor grossly extends into vena cava below diaphragm.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3b (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1057,11 +1085,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002254 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002254">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor grossly extends into vena cava above the diaphragm or Invades the wall of the vena cava.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3c (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1070,11 +1098,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002255 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002255">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for kidney according to AJCC 7th edition indicating that the tumor invades beyond Gerota fascia (including contiguous extension into the ipsilateral adrenal gland).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002243"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT4 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1083,11 +1111,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002257 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002257">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that there is no evidence of primary tumor.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT0 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1096,11 +1124,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002258 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002258">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor is limited to the ovaries (one or both).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1109,11 +1137,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002259 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002259">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor is limited to one ovary; capsule intact, no tumor on ovarian surface and no malignant cells in ascites or peritoneal washings.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1a (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1122,11 +1150,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002260 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002260">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor is limited to both ovaries; capsule intact, no tumor on ovarian surface and no malignant cells in ascites or peritoneal washings.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1b (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1135,11 +1163,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002261 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002261">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor is limited to one or both ovaries with capsule ruptured, tumor on ovarian surface, or malignant cells in ascites or peritoneal washings.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT1c (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1148,11 +1176,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002262 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002262">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor involves one or both ovaries with pelvic extension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1161,11 +1189,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002263 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002263">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor has extension and/or implants on uterus and/or tube(s) and no malignant cells in ascites or peritoneal washings.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2a (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1174,11 +1202,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002264 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002264">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor has extension to other pelvic tissues and no malignant cells in ascites or peritoneal washings.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2b (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1187,11 +1215,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002265 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002265">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor has pelvic extension with malignant cells in ascites or peritoneal washings.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT2c (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1200,11 +1228,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002266 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002266">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor involves one or both ovaries with microscopically confirmed peritoneal metastasis outside the pelvis and/or regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1213,11 +1241,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002267 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002267">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor has microscopic peritoneal metastasis beyond pelvis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3a (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1226,11 +1254,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002268 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002268">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor has macroscopic peritoneal, metastatasis beyond pelvis, 2 cm or less in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3b (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1239,11 +1267,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002269 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002269">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic primary tumor stage for ovary according to AJCC 7th edition indicating that the tumor has peritoneal metastasis beyond pelvis, more than 2 cm in greatest dimension and/or regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_t/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002256"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pT3c (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1252,11 +1280,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002271 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002271">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating no regional lymph node metastsis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN0 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1265,11 +1293,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002272 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002272">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating metastasis in 1-3 regional lymph nodes.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1278,11 +1306,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002273 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002273">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating metastasis in 1 regional lymph node.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1a (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1291,11 +1319,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002274 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002274">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating metastasis in 2-3 regional lymph nodes.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1b (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1304,11 +1332,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002275 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002275">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating tumor deposit(s), i.e., satellites in the subserosa, or in non-peritonealized pericolic or perirectal soft tissue without regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1c (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1317,11 +1345,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002276 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002276">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating metastasis in 4 or more regional lymph nodes.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN2 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1330,11 +1358,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002277 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002277">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating metastasis in 4 to 6 regional lymph nodes.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN2a (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1343,11 +1371,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002278 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002278">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for colon and rectum according to AJCC 7th edition indicating metastasis in 7 or more regional lymph nodes.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002270"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN2b (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1356,11 +1384,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002280 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002280">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for lung according to AJCC 7th edition indicating no regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN0 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1369,11 +1397,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002281 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002281">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for lung according to AJCC 7th edition indicating metastasis in ipsilateral peribronchial and/or ipsilateral hilar lymph nodes and intrapulmonary nodes, including involvement by direct extension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1382,11 +1410,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002282 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002282">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for lung according to AJCC 7th edition indicating metastasis in ipsilateral mediastinal and/or subcarinal lymph node(s).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN2 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1395,11 +1423,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002283 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002283">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for lung according to AJCC 7th edition indicating metastasis in contralateral mediastinal, contralateral hilar, ipsilateral or contralateral scalene, or supraclavicular lymph node(s).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002279"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN3 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1408,11 +1436,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002285 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002285">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002284"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for kidney according to AJCC 7th edition indicating that there is no regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002284"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN0 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1421,11 +1449,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002286 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002286">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002284"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for kidney according to AJCC 7th edition indicating that there is regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002284"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1434,11 +1462,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002288 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002288">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002287"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for ovary according to AJCC 7th edition indicating that there is no regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002287"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN0 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1447,11 +1475,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002289 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002289">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002287"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic lymph node stage for ovary according to AJCC 7th edition indicating that there is regional lymph node metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_n/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002287"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pN1 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1460,11 +1488,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002291 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002291">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that there are no symptoms or signs of distant metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging#Pathological_M_Categorization_.28cM_and_pM.29</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM0 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1473,11 +1501,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002292 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002292">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that there is clinical evidence of distant metastases by history, physical examination, imaging studies, or invasive procedures, but without microscopic evidence of the presumed distant metastases.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging#Pathological_M_Categorization_.28cM_and_pM.29</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1486,11 +1514,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002293 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002293">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that metastasis is confined to one organ based on clinical assessment.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1a (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1499,11 +1527,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002294 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002294">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that metastasis is in more than one organ or the peritoneum based on clinical assessment.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1b (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1512,11 +1540,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002295 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002295">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that there is microscopic evidence confirming distant metastatic disease.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1 (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1525,11 +1553,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002296 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002296">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that metastasis is confined to one organ and histologically confirmed.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1a (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1538,11 +1566,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002297 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002297">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for colon according to AJCC 7th edition indicating that metastasis is in more than one organ or the peritoneum and histologically confirmed.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/colon/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002290"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1b (colon)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1551,11 +1579,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002299 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002299">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that there is no distant metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM0 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1564,11 +1592,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002300 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002300">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that there are distant metastases based on clinical assessment.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1577,11 +1605,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002301 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002301">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that metastasis is based on clinical assessment and a separate tumor nodule(s) in a contralateral lobe; tumor with pleural nodules OR malignant pleural or pericardial effusion.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1a (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1590,11 +1618,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002302 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002302">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that there is a distant metastases based on clinical assessment.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1b (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1603,11 +1631,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002303 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002303">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that there is a distant metastases that is histologically confirmed.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1 (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1616,11 +1644,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002304 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002304">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that metastasis is histologically confirmed and a separate tumor nodule(s) in a contralateral lobe; tumor with pleural nodules OR malignant pleural or pericardial effusion.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1a (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1629,11 +1657,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002305 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002305">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for lung according to AJCC 7th edition indicating that there is a distant metastases that is histologically confirmed.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/lung/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002298"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1b (lung)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1642,11 +1670,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002307 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002307">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002306"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for kidney according to AJCC 7th edition indicating that there is no distant metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002306"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM0 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1655,11 +1683,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002308 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002308">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002306"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for kidney according to AJCC 7th edition indicating that there are distant metastases based on clinical assessment.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002306"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1668,11 +1696,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002309 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002309">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002306"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for kidney according to AJCC 7th edition indicating that there is a distant metastases that is histologically confirmed.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/kidney_parenchyma/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002306"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1 (kidney)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1681,11 +1709,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002311 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002311">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002310"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for ovary according to AJCC 7th edition indicating that there is no distant metastasis.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002310"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM0 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1694,11 +1722,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002312 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002312">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002310"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for ovary according to AJCC 7th edition indicating that there is distant metastasis except peritoneal metastasis based on clinical assessment.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002310"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cM1 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1707,11 +1735,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002313 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002313">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002310"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathologic distant metastases stage for ovary according to AJCC 7th edition indicating that there is distant metastasis except peritoneal metastasis that is histologically confirmed.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_m/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002310"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pM1 (ovary)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1720,12 +1748,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002315 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002315">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating a small carcinoma, either asymptomatic or giving rise to metastases without symptoms due to the primary carcinoma.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occult Carcinoma</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.medilexicon.com/dictionary/14371</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occult Carcinoma (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1734,12 +1762,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002316 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002316">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating a carcinoma in situ (or melanoma in situ for melanoma of the skin or germ cell neoplasia in situ for testicular germ cell tumors) and generally is considered to have no metastatic potential. </obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 0</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 0 (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1748,12 +1776,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002317 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002317">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers that are smaller or less deeply invasive without regional disease or nodes.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage I</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage I (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1762,12 +1790,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002318 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002318">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers with increasing tumor or nodal extent but less than in Stage III and with differing characteristics from IIB and IIC.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1776,12 +1804,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002319 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002319">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers with increasing tumor or nodal extent but less than in Stage III and with differing characteristics from IIA and IIC.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIB (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1790,12 +1818,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002320 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002320">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers with increasing tumor or nodal extent but less than in Stage III and with differing characteristics from IIA and IIB.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIC</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIC (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1804,12 +1832,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002321 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002321">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers with increasing tumor or nodal extent greater than in Stage II and with differing characteristics from IIIB and IIIC.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIA (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1818,12 +1846,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002322 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002322">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers with increasing tumor or nodal extent greater than in Stage II and with differing characteristics from IIIA and IIIC.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIB (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1832,12 +1860,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002323 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002323">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers with increasing tumor or nodal extent greater than in Stage II and with differing characteristics from IIIA and IIIB.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIC</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIC (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1846,12 +1874,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002324 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002324">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers in patients who present with distant metastases at diagnosis and with differing characteristics from IVB.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVA (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1860,12 +1888,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002325 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002325">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A clinical tumor stage group according to AJCC 7th edition indicating cancers in patients who present with distant metastases at diagnosis and with differing characteristics from IVA.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002314"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVB (AJCC 7th)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1874,12 +1902,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002327 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002327">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating invasive carcinoma which can be diagnosed only by microscopy, with deepest invasion &lt;5 mm and the largest extension &lt;7 mm.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IA (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1888,12 +1916,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002328 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002328">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating measured stromal invasion of &lt;3.0 mm in depth and extension of &lt;7.0 mm.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IA1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IA1 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1902,12 +1930,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002329 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002329">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating measured stromal invasion of &gt;3.0 mm and not &gt;5.0 mm with an extension of not &gt;7.0 mm.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IA2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IA2 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1916,12 +1944,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002330 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002330">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating clinically visible lesions limited to the cervix uteri or pre-clinical cancers greater than stage IA</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IB (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1930,12 +1958,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002331 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002331">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating clinically visible lesion limited to the cervix uteri or pre-clinical cancers greater than stage IA &lt;4.0 cm in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IB1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IB1 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1944,12 +1972,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002332 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002332">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating clinically visible lesion limited to the cervix uteri or pre-clinical cancers greater than stage IA &gt;4.0 cm in greatest dimension.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IB2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IB2 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1958,12 +1986,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002333 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002333">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating cervical carcinoma invades beyond the uterus, but not to the pelvic wall or to the lower third of the vagina without parametrial invasion. </obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1972,12 +2000,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002334 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002334">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating cervical carcinoma invades beyond the uterus, but not to the pelvic wall or to the lower third of the vagina without parametrial invasion and clinically visible lesion &lt;4.0 cm in greatest dimension. </obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA1 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1986,12 +2014,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002335 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002335">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating cervical carcinoma invades beyond the uterus, but not to the pelvic wall or to the lower third of the vagina without parametrial invasion and clinically visible lesion &gt;4.0 cm in greatest dimension. </obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIA2 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2000,12 +2028,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002336 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002336">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating cervical carcinoma invades beyond the uterus, but not to the pelvic wall or to the lower third of the vagina with obvious parametrial invasion. </obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIB (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2014,12 +2042,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002337 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002337">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating tumour involves lower third of the vagina, with no extension to the pelvic wall.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIA (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2028,12 +2056,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002338 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002338">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating extension to the pelvic wall and/or hydronephrosis or non-functioning kidney.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IIIB (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2042,12 +2070,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002339 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002339">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating spread of the growth to adjacent organs.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVA</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVA (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2056,12 +2084,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002340 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002340">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An International Federation of Gynecology and Obstetrics cervical cancer stage value specification indicating spread to distant organs.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVB</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cervical_cancer_staging</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002326"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage IVB (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2070,12 +2098,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002342 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002342">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T1, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2084,12 +2112,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002343 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002343">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T1a, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1A</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1A (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2098,12 +2126,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002344 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002344">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T1b, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1B</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1B (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2112,12 +2140,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002345 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002345">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T1c, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1C</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 1C (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2126,12 +2154,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002346 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002346">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T2, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2140,12 +2168,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002347 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002347">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T2a, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2A</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2A (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2154,12 +2182,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002348 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002348">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T2b, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2B</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2B (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2168,12 +2196,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002349 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002349">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T2c, N0, and M0.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2C</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 2C (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2182,12 +2210,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002350 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002350">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of (T3, N0, and M0) or (T3,3a,3b, NX, and M0).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2196,12 +2224,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002351 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002351">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T3a, N0, and M0 .</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3A</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3A (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2210,12 +2238,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002352 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002352">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of T3b, N0, and M0 .</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3B</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3B (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2224,12 +2252,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002353 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002353">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of (T3c, N0,X and M0) or (any T, N1 and M0).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3C</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 3C (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2238,12 +2266,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002354 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002354">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of any T, any N, and M1.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 4</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage 4 (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2252,12 +2280,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002355 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002355">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A International Federation of Gynecology and Obstetrics ovarian cancer stage value specification associated with TNM stage values of (T0, N0, and M0) or (T1,1a-1c,2,2a-2c, NX, and M0) or (TX, N0,X, M0).</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage Unknown</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://staging.seer.cancer.gov/tnm/input/1.0/ovary/path_stage_group_direct/</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002341"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stage Unknown (FIGO)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2266,11 +2294,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002358 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002358">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Eastern Cooperative Oncology Group score value specification indicating a patient is symptomatic and in bed for more than 50% of the day but is not bed ridden.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3: symptomatic in bed more than 50% of the day but not bed ridden</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2279,11 +2307,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002359 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002359">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Eastern Cooperative Oncology Group score value specification indicating a patient is symptomatic but is in bed for less than 50% of the day.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2: symptomatic but in bed less than 50% of the day</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2292,11 +2320,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002360 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002360">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Eastern Cooperative Oncology Group score value specification indicating a patient is symptomatic and is bed ridden.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4: bed ridden</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2305,11 +2333,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002361 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002361">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Eastern Cooperative Oncology Group score value specification indicating a patient is asymptomatic.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0: asymptomatic</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2318,11 +2346,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002362 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002362">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Eastern Cooperative Oncology Group score value specification indicating a patient is symptomatic but is fully ambulatory.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002357"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1: symptomatic but fully ambulatory</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2331,11 +2359,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002364 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002364">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Karnofsky score vaue specification indicating that a patient is asymptomatic.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">100: asymptomatic</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2344,11 +2372,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002365 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002365">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Karnofsky score vaue specification indicating that a patient is symptomatic but fully ambulatory.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">80-90: symptomatic but fully ambulatory</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2357,11 +2385,11 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002366 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002366">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Karnofsky score vaue specification indicating that a patient is symptomatic but in bed less than 50% of the day.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">60-70: symptomatic but in bed less than 50% of the day</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2370,16 +2398,16 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002367 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0002367">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Karnofsky score vaue specification indicating that a patient is symptomatic, in bed more than 50% of the day, but not bed ridden.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Stoeckert, Helena Ellis</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB, OBI</obo:IAO_0000119>
         <obo:IAO_0000234 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI BBRB</obo:IAO_0000234>
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0002363"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">40-50: symptomatic, in bed more than 50% of the day, but not bed ridden</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
 
