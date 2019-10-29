@@ -45,6 +45,11 @@ build/robot.jar: | build
 
 ROBOT := java -jar build/robot.jar
 
+# ROBOT JAR with feature to remove foreign axioms
+build/robot-test.jar: | build
+	curl -Lk -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/foreign-ax/lastSuccessfulBuild/artifact/bin/robot.jar
+
+ROBOT_TEST := java -jar build/robot-test.jar
 
 ### Imports
 #
@@ -166,6 +171,16 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
+obi_base.owl: obi.owl | build/robot-test.jar
+	$(ROBOT_TEST) remove \
+	 --base-iri http://purl.obolibrary.org/obo/OBI_ \
+	 --axioms internal \
+	annotate \
+	 --ontology-iri "$(OBO)/obi/$@" \
+	 --version-iri "$(OBO)/obi/$(TODAY)/$@" \
+	 --annotation owl:versionInfo "$(TODAY)" \
+	 --output $@
+
 
 ### Test
 #
@@ -187,6 +202,25 @@ build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq 
 
 build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
 	comm -23 $^ > $@
+
+build/bfo-classes.owl:
+	curl -Lk -o $@ http://purl.obolibrary.org/obo/bfo/classes.owl
+
+build/ro-core.owl:
+	curl -Lk -o $@ http://purl.obolibrary.org/obo/ro/core.owl
+
+build/iao-metadata.owl:
+	curl -Lk -o $@ http://purl.obolibrary.org/obo/iao/ontology-metadata.owl
+
+build/integration-test.owl: build/bfo-classes.owl build/ro-core.owl build/iao-metadata.owl obi_base.owl | build/robot.jar
+	$(ROBOT) merge \
+	 --input $< \
+	 --input $(word 2,$^) \
+	 --input $(word 3,$^) \
+	 --input $(word 4,$^) \
+	reason \
+	 --reasoner HermiT \
+	 --output $@
 
 # Run all validation queries and exit on error.
 .PHONY: verify
