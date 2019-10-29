@@ -41,7 +41,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.1/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
@@ -170,7 +170,7 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 ### Test
 #
 # Run main tests
-MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq) 
 EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
