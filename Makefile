@@ -41,7 +41,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.1/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
@@ -170,7 +170,7 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 ### Test
 #
 # Run main tests
-MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
+MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq) 
 EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
@@ -190,7 +190,7 @@ build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.t
 
 # Run all validation queries and exit on error.
 .PHONY: verify
-verify: verify-edit verify-merged verify-entities verify-iris
+verify: verify-edit verify-merged verify-entities
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
@@ -209,14 +209,6 @@ verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.ja
 verify-entities: build/dropped-entities.tsv
 	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
 	@! test -s $<
-
-# Check if any obolibrary classes do not follow the valid IRI pattern
-.PHONY: verify-iris
-verify-iris: build/obi_merged.owl src/sparql/get-bad-iris.rq | build/robot.jar
-	$(ROBOT) verify \
-	--input $< \
-	--output-dir build \
-	--queries $(word 2, $^)
 
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
