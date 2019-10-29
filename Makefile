@@ -30,6 +30,15 @@ MODULES := $(DEV)/modules
 TODAY   := $(shell date +%Y-%m-%d)
 TS      := $(shell date +'%d:%m:%Y %H:%M')
 
+# Detect the OS and provide proper command
+# WARNING - will not work with Windows OS
+UNAME = $(shell uname)
+ifeq ($(UNAME), Darwin)
+	SED = sed -i ''
+else
+	SED = sed -i
+endif
+
 ### Directories
 #
 # This is a temporary place to put things.
@@ -188,9 +197,13 @@ build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq 
 build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
 	comm -23 $^ > $@
 
+build/bad-iris.tsv: build/obi_merged.owl src/sparql/get-bad-iris.rq | build/robot.jar
+	$(ROBOT) query --input $< --query $(word 2,$^) $@
+	@$(SED) '1d' $@
+
 # Run all validation queries and exit on error.
 .PHONY: verify
-verify: verify-edit verify-merged verify-entities
+verify: verify-edit verify-merged verify-entities verify-iris
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
@@ -208,6 +221,14 @@ verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.ja
 .PHONY: verify-entities
 verify-entities: build/dropped-entities.tsv
 	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
+	@! test -s $<
+
+# Check if any obolibrary classes do not follow the valid IRI pattern
+.PHONY: verify-iris
+verify-iris: build/bad-iris.tsv
+	@echo $(shell < $< wc -l) "invalid IRIs found"
+	@cat $<
+	@echo ""
 	@! test -s $<
 
 # Run a basic reasoner to find inconsistencies
