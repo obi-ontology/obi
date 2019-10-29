@@ -173,8 +173,9 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 
 obi_base.owl: obi.owl | build/robot-test.jar
 	$(ROBOT_TEST) remove \
+	 --input $< \
 	 --base-iri http://purl.obolibrary.org/obo/OBI_ \
-	 --axioms internal \
+	 --axioms external \
 	annotate \
 	 --ontology-iri "$(OBO)/obi/$@" \
 	 --version-iri "$(OBO)/obi/$(TODAY)/$@" \
@@ -218,8 +219,6 @@ build/integration-test.owl: build/bfo-classes.owl build/ro-core.owl build/iao-me
 	 --input $(word 2,$^) \
 	 --input $(word 3,$^) \
 	 --input $(word 4,$^) \
-	reason \
-	 --reasoner HermiT \
 	 --output $@
 
 # Run all validation queries and exit on error.
