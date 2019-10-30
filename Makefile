@@ -204,6 +204,7 @@ build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq 
 build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
 	comm -23 $^ > $@
 
+# Files to create pseudo-core
 build/bfo-classes.owl:
 	curl -Lk -o $@ http://purl.obolibrary.org/obo/bfo/classes.owl
 
@@ -213,17 +214,12 @@ build/ro-core.owl:
 build/iao-metadata.owl:
 	curl -Lk -o $@ http://purl.obolibrary.org/obo/iao/ontology-metadata.owl
 
-build/integration-test.owl: build/bfo-classes.owl build/ro-core.owl build/iao-metadata.owl obi_base.owl | build/robot.jar
-	$(ROBOT) merge \
-	 --input $< \
-	 --input $(word 2,$^) \
-	 --input $(word 3,$^) \
-	 --input $(word 4,$^) \
-	 --output $@
-
 # Run all validation queries and exit on error.
 .PHONY: verify
 verify: verify-edit verify-merged verify-entities
+
+.PHONY: verify-all
+verify-all: verify verify-integration
 
 # Run validation queries on obi-edit and exit on error.
 .PHONY: verify-edit
@@ -240,8 +236,56 @@ verify-merged: build/obi_merged.owl $(MERGED_VIOLATION_QUERIES) | build/robot.ja
 # Check if any entities have been dropped and exit on error.
 .PHONY: verify-entities
 verify-entities: build/dropped-entities.tsv
-	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
+	@echo $(shell < $< wc -l) "OBI IRIs have been dropped"
 	@! test -s $<
+
+# Merge OBI base with BFO, RO, and IAO and reason with HermiT
+# HermiT might not work on Travis so we don't include this in the Travis test
+# If this fails with an OntologyLogicException, it creates a build/unsatisfiable.owl file
+# All console output is logged in build/integration-log.txt
+# Only run 'make explain' on failure
+verify-integration: build/pseudo-core-plus-obi.owl
+build/pseudo-core-plus-obi.owl: build/bfo-classes.owl build/ro-core.owl build/iao-metadata.owl obi_base.owl | build/robot.jar
+	@echo "Running integration test (this may take a few minutes)..."
+	@$(ROBOT) merge \
+	 --input $< \
+	 --input $(word 2,$^) \
+	 --input $(word 3,$^) \
+	 --input $(word 4,$^) \
+	reason \
+	 --reasoner HermiT \
+	 --dump-unsatisfiable build/unsatisfiable.owl \
+	 --output $@ > build/integration-log.txt \
+	&& ([ $$? -eq 0 ] && echo "Integration test success!") \
+	  || (echo "Integration test failed! See build/integration-log.txt for details." \
+	      && make explain)
+
+# Extract unsatisfiable classes from the log
+# build/unsatisfiable.txt will be deleted if it is empty
+extract-unsat: build/unsatisfiable.txt
+build/unsatisfiable.txt: build/integration-log.txt
+	@cat $< | sed -ne 's/.*unsatisfiable: \([^ ]*\)$$/\1/p' > $@
+	@if [ ! -s $@ ] ; then \
+	  rm $@; \
+	fi
+
+# Explain unsatisfiable - always fails so that 'make' exits with failure
+.PHONY: explain
+explain: extract-unsat | build/robot.jar
+	@test -s build/unsatisfiable.txt \
+	 || (echo "No unsatisfiable classes to explain." && false)
+	@test -s build/unsatisfiable.owl \
+	 || (echo "No unsatisfiable classes to explain." && false)
+	@mkdir -p build/explain
+	@while read line; do \
+		FILE=`echo $$line | sed 's/.*obo\/\(.*\)$$/\1/'`; \
+		echo "Creating explanation: build/explain/$$FILE.md"; \
+		$(ROBOT) explain \
+		 --input build/unsatisfiable.owl \
+		 --axiom "$$line SubClassOf owl:Nothing" \
+		 --reasoner HermiT \
+		 --explanation build/explain/$$FILE.md; \
+	done < build/unsatisfiable.txt && false
 
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
@@ -256,7 +300,18 @@ test: reason verify
 #
 # Full build
 .PHONY: all
-all: test obi.owl obi_core.owl build/terms-report.csv
+all:
+	@echo "------------- RUNNING UNIT TESTS --------------"
+	@make test 
+	@echo ""
+	@echo "---------- CREATING RELEASE PRODUCTS ----------"
+	@make obi.owl obi_core.owl obi_base.owl 
+	@echo ""
+	@echo "------------------ REPORTING ------------------"
+	@make build/terms-report.csv
+	@echo ""
+	@echo "---------- RUNNING INTEGRATION TEST -----------"
+	@make verify-integration
 
 # Remove generated files
 .PHONY: clean
