@@ -5596,28 +5596,30 @@ An individual or juridicial or other body authorized under applicable law to con
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000234">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                                 <owl:someValuesFrom>
                                     <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500001"/>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500001"/>
+                                            </owl:Restriction>
+                                        </owl:someValuesFrom>
                                     </owl:Restriction>
                                 </owl:someValuesFrom>
                             </owl:Restriction>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trial statistician role</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
@@ -29390,7 +29392,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000119>url:https://en.wikipedia.org/wiki/Gene_knockdown</obo:IAO_0000119>
         <rdfs:label>RNAi gene knockdown</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0002627 -->
@@ -29407,6 +29409,7 @@ https://www.doi.org/</obo:IAO_0000119>
     </owl:Class>
     
 
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002629 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002629">
@@ -29421,6 +29424,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000234>jahilton</obo:IAO_0000234>
         <rdfs:label>direct RNA sequencing assay</rdfs:label>
     </owl:Class>
+    
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
