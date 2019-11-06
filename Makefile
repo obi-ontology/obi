@@ -201,7 +201,8 @@ build/modules/%.owl: src/ontology/modules/%.owl | build/robot.jar
 build/modules/merged.owl: src/ontology/obi-edit.owl $(PHONY_MODULES) | build/robot.jar
 	$(eval INPUTS := $(foreach x,$(PHONY_MODULES),--input $(x) ))
 	$(ROBOT) remove --input $< --select imports \
-	merge $(INPUTS) --output $@
+	merge $(INPUTS) \
+	reason --output $@
 
 # Run all validation queries and exit on error.
 .PHONY: verify
