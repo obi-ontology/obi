@@ -1,0 +1,9 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?s WHERE {
+	?s ?p ?o .
+	FILTER(REGEX(STR(?s), "obolibrary"))
+	FILTER(!REGEX(STR(?s), "http:\\/\\/purl\\.obolibrary\\.org\\/obo\\/[A-Za-z]+_[0-9]{1,9}"))
+	FILTER(!STRENDS(STR(?s), ".owl"))
+	FILTER(!STRENDS(STR(?s), ".obo"))
+}

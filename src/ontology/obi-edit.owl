@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl/"
-     xml:base="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl/"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#"
+     xml:base="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obi="http://purl.obolibrary.org/obo/obi/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
@@ -10,6 +10,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
@@ -2516,6 +2517,21 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0032991 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032991">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000112>A ribosome is a protein complex.</obo:IAO_0000112>
+        <obo:IAO_0000118>protein complex</obo:IAO_0000118>
+    </rdf:Description>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0033036 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0033036"/>
@@ -2618,20 +2634,6 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     <!-- http://purl.obolibrary.org/obo/GO_0042611 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0042611"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0043234 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043234">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ribosome is a protein complex</obo:IAO_0000112>
-    </owl:Class>
     
 
 
@@ -5595,28 +5597,30 @@ An individual or juridicial or other body authorized under applicable law to con
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000234">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                                 <owl:someValuesFrom>
                                     <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500001"/>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500001"/>
+                                            </owl:Restriction>
+                                        </owl:someValuesFrom>
                                     </owl:Restriction>
                                 </owl:someValuesFrom>
                             </owl:Restriction>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trial statistician role</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
@@ -7537,7 +7541,7 @@ activity)</obo:IAO_0000115>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_33697"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0043234"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032991"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000000001"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -7545,7 +7549,7 @@ activity)</obo:IAO_0000115>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043234"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -15734,10 +15738,7 @@ Biochimie. 2010 Feb 18.</obo:IAO_0000112>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000319"/>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600007"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
                         <owl:someValuesFrom>
@@ -15764,7 +15765,7 @@ Biochimie. 2010 Feb 18.</obo:IAO_0000112>
         </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oral administration</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The administration of a substance into the mouth of an organism</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An administering substance in vivo into the mouth of an organism</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oral administration</rdfs:label>
     </owl:Class>
@@ -25735,22 +25736,17 @@ In regard to the statement that reagents are &apos;distinct&apos; from the speci
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
                         <owl:someValuesFrom>
                             <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-                                    <owl:Class>
-                                        <owl:unionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
-                                            </owl:Restriction>
-                                        </owl:unionOf>
-                                    </owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
                                     </owl:Restriction>
-                                </owl:intersectionOf>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+                                    </owl:Restriction>
+                                </owl:unionOf>
                             </owl:Class>
                         </owl:someValuesFrom>
                     </owl:Restriction>
@@ -28546,6 +28542,46 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002446 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002446">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A study design in which proteins in a sample are detected, quantified or otherwise analysed.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI:0001441</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proteomic profiling design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002447 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002447">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000253"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An artificially induced nucleic acid hybridization that is performed to compare gene expression in different cell or tissue types based on normalization and suppression, which creates a subtracted cDNA or genomic DNA library.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SSH</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subtractive hybridization</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:14970460</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suppression subtractive hybridization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002448 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002448">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000253"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An artificially induced nucleic acid hybridization that is performed to identify differentially expressed genes through hybridization of cDNA probes.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DSH</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">differential screening</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:25472628</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">differential screening hybridization</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002453 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002453">
@@ -28975,6 +29011,30 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002492 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002492">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000097"/>
+        <obo:IAO_0000115 xml:lang="en">A role that is borne by a case-control study design participant under investigation that is associated with the outcome mentioned in the study design.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">John Judkins, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">case role in case-control study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002493 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002493">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000097"/>
+        <obo:IAO_0000115 xml:lang="en">A role that is borne by a case-control study design participant under investigation that is not associated with the outcome mentioned in the study design.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">John Judkins, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">control role in case-control study</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002555 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002555">
@@ -29308,6 +29368,138 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarah Bost</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIABIS contributors</obo:IAO_0000119>
         <rdfs:label xml:lang="en">national biomedical registry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002619 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002619">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001154"/>
+        <obo:IAO_0000112>Site-directed mutagenesis was used to prepare mutants of the Hypoxia-inducible factor-1 (HIF-1) alpha subunit to investigate the role of certain amino acids in hypoxia. (PMID:12393189)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>An induced mutation in which a specific base change is programmed into the sequence of a synthetic primer.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000119>url:https://www.ncbi.nlm.nih.gov/books/NBK21945/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1058</obo:IAO_0000233>
+        <rdfs:label>site-directed mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002620 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002620">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001154"/>
+        <obo:IAO_0000112>Error-prone PCR was used to introduce amino acid mutations to the cAMP receptor protein (CRP) of E. coli to investigate strain engineering to improve osmotolerance for industrial requirements. (PMID:22179860)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>An induced mutation that produces a random mutation, either by introducing the organism to mutagens, or through a process such as error-prone PCR.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000119>PMID:15153637</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1058</obo:IAO_0000233>
+        <rdfs:label>random mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002625 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002625">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600043"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>A genetic transformation which reduces the expression of a specific gene or genes in an organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000118>gene knock-down</obo:IAO_0000118>
+        <obo:IAO_0000119>url:https://en.wikipedia.org/wiki/Gene_knockdown</obo:IAO_0000119>
+        <rdfs:label>gene knockdown</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002626 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002626">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002625"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001152"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>A gene knockdown that silences genes through artificially-induced RNA interference. This is accomplished by introducing small double-stranded interfering RNA complementary to the target mRNA to be silenced, which is then cleaved by a ribonuclease.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000118>RNA interference gene knockdown</obo:IAO_0000118>
+        <obo:IAO_0000119>url:https://en.wikipedia.org/wiki/Gene_knockdown</obo:IAO_0000119>
+        <rdfs:label>RNAi gene knockdown</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002627 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002627">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA-depleted RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Looking at the reads for each ribosomal RNA-depleted RNA extract, the vast majority align to protein coding genes based on the ENSEMBL annotation.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An extract of RNA which is produced through rRNA (ribosomal RNA) depletion (the removal of highly abundant rRNA species).</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4585-1</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA-depleted RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002630 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002630">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0000759"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>Illumina NovaSeq 6000</obo:IAO_0000111>
+        <obo:IAO_0000112>&quot;Genomic DNA of Xenophilus sp. E41 was extracted and sequenced using an Illumina NovaSeq 6000 system.&quot;</obo:IAO_0000112>
+        <obo:IAO_0000115>A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and an output of up to 6000 Gb (32-40 B reads per run). The sequencer utilizes synthesis technology and patterned flow cells to optimize throughput and even spacing of sequencing clusters.</obo:IAO_0000115>
+        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118>NovaSeq 6000</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.illumina.com/systems/sequencing-platforms/novaseq.html</obo:IAO_0000119>
+        <rdfs:label>Illumina NovaSeq 6000</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002632 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002632">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <obo:IAO_0000111>PacBio Sequel</obo:IAO_0000111>
+        <obo:IAO_0000112>The cDNAs were sequenced on the PacBio Sequel platform.</obo:IAO_0000112>
+        <obo:IAO_0000115>A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation with long reads and high consensus accuracy, and manufactured by the Pacific Biosciences corporation</obo:IAO_0000115>
+        <obo:IAO_0000117>Bonita Lam
+Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118>Pacific BioSciences Sequel</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.pacb.com/products-and-services/pacbio-systems/sequel/</obo:IAO_0000119>
+        <rdfs:label>PacBio Sequel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002633 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002633">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <obo:IAO_0000111>PacBio Sequel II</obo:IAO_0000111>
+        <obo:IAO_0000112>The cDNAs were sequenced on the PacBio Sequel II platform.</obo:IAO_0000112>
+        <obo:IAO_0000115>A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation of highly accurate (&quot;HiFi&quot;) long reads, and which is manufactured by the Pacific Biosciences corporation.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bonita Lam
+Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000118>Pacific BioSciences Sequel II</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.pacb.com/products-and-services/pacbio-systems/sequel/</obo:IAO_0000119>
+        <rdfs:label>PacBio Sequel II</rdfs:label>
     </owl:Class>
     
 
