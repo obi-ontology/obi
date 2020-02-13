@@ -18,6 +18,7 @@ Our ontology terms come in three groups:
     - [`value-specifications.tsv`](src/ontology/templates/value-specifications.tsv)
     - [`biobank-specimens.tsv`](src/ontology/templates/biobank-specimens.tsv)
     - [`medical-history.tsv`](src/ontology/templates/medical-history.tsv) for medical history classifications and related selection criteria
+    - [`study-designs.tsv`](src/ontology/templates/study-designs.tsv) for study designs
 3. other terms: Edit [`src/ontology/obi-edit.owl`](src/ontology/obi-edit.owl) in Protege.
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
