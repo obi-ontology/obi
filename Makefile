@@ -82,9 +82,11 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 # NOTE: GNU Make will compare timestamps to see which updates are required.
 MODULE_NAMES := assays\
  biobank-specimens\
+ devices\
  epitope-assays\
  medical-history\
  obsolete\
+ organizations\
  study-designs\
  sequence-analysis\
  value-specifications
