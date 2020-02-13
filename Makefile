@@ -41,7 +41,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.1/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
@@ -170,8 +170,9 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 ### Test
 #
 # Run main tests
-MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
-EDIT_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-edit.rq)
+MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq) 
+MODULE_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-modules.rq)
+PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
@@ -188,15 +189,30 @@ build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq 
 build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
 	comm -23 $^ > $@
 
+# Directory for phony modules
+build/modules:
+	mkdir -p build/modules
+
+# Remove all annotation properties from modules
+build/modules/%.owl: src/ontology/modules/%.owl | build/robot.jar
+	$(ROBOT) remove --input $< --select annotation-properties --output $@
+
+# Build OBI edit + modules without annotation properties
+build/modules/merged.owl: src/ontology/obi-edit.owl $(PHONY_MODULES) | build/robot.jar
+	$(eval INPUTS := $(foreach x,$(PHONY_MODULES),--input $(x) ))
+	$(ROBOT) remove --input $< --select imports \
+	merge $(INPUTS) \
+	reason --output $@
+
 # Run all validation queries and exit on error.
 .PHONY: verify
-verify: verify-edit verify-merged verify-entities
+verify: verify-modules verify-merged verify-entities
 
-# Run validation queries on obi-edit and exit on error.
-.PHONY: verify-edit
-verify-edit: src/ontology/obi-edit.owl $(EDIT_VIOLATION_QUERIES) | build/robot.jar
+# Run validation queries on merged modules and exit on error.
+.PHONY: verify-modules
+verify-modules: build/modules/merged.owl $(MODULE_VIOLATION_QUERIES) | build/robot.jar
 	$(ROBOT) verify --input $< --output-dir build \
-	--queries $(EDIT_VIOLATION_QUERIES)
+	--queries $(MODULE_VIOLATION_QUERIES)
 
 # Run validation queries on obi_merged and exit on error.
 .PHONY: verify-merged
