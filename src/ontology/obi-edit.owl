@@ -27796,8 +27796,28 @@ Dan Berrios</obo:IAO_0000117>
         <obo:IAO_0000119>http://www.pacb.com/products-and-services/pacbio-systems/sequel/</obo:IAO_0000119>
         <rdfs:label>PacBio Sequel II</rdfs:label>
     </owl:Class>
-    
 
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002648 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002648">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specimen composed of an individual organism to be studied in an investigation.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EFO_0000542 individual</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1092</obo:IAO_0000233>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">individual organism specimen</rdfs:label>
+    </owl:Class>
+
+    
 
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
