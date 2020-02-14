@@ -18,6 +18,7 @@ Our ontology terms come in three groups:
     - [`value-specifications.tsv`](src/ontology/templates/value-specifications.tsv)
     - [`biobank-specimens.tsv`](src/ontology/templates/biobank-specimens.tsv)
     - [`medical-history.tsv`](src/ontology/templates/medical-history.tsv) for medical history classifications and related selection criteria
+    - [`study-designs.tsv`](src/ontology/templates/study-designs.tsv) for study designs
 3. other terms: Edit [`src/ontology/obi-edit.owl`](src/ontology/obi-edit.owl) in Protege.
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
@@ -84,7 +85,9 @@ Before you can start developing with OBI, you will need to do some initial setup
 
 Changes should be made in manageable pieces, e.g. add one term or edit a few related terms. Most changes should correspond to a single issue on the tracker.
 
-Start from a local copy of the `master` branch of the OBI repository. Make sure your local copy is up-to-date. Make your changes on a new branch. When you're ready, push your branch to the OBI repository and make a Pull Request (PR) on the GitHub website. Your PR is a request to merge your branch back into `master`. Your PR will be tested, discussed, adjusted if necessary, then merged. Then the cycle can repeat for the next change that you or another developer will make.
+Start from a local copy of the `master` branch of the OBI repository. Make sure your local copy is up-to-date. Make your changes on a new branch. Please use the [OBI Term ID Reservations](https://docs.google.com/spreadsheets/d/1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI) sheet to manage new IDs.
+
+When you're ready, push your branch to the OBI repository and make a Pull Request (PR) on the GitHub website. Your PR is a request to merge your branch back into `master`. Your PR will be tested, discussed, adjusted if necessary, then merged. Then the cycle can repeat for the next change that you or another developer will make.
 
 These are the steps with their CLI commands. When using a GUI application the steps will be the same.
 
@@ -94,7 +97,7 @@ These are the steps with their CLI commands. When using a GUI application the st
 4. make your changes
 5. `git status` and `git diff` inspect your changes
 6. `git add --update` add all updated files to staging
-7. `git commit --message "Desciption, issue #123"` commit staged changes with a message; it's good to include an issue number
+7. `git commit --message "Description, issue #123"` commit staged changes with a message; it's good to include an issue number
 8. `git push --set-upstream origin your-branch-name` push your commit to GitHub
 9. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
