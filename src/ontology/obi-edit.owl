@@ -3183,7 +3183,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planned process</obo:IAO_0000111>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Injecting mice with a vaccine in order to test its efficacy</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A processual entity that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A process that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Plan&apos; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&apos;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
 objectives is a planned process.</obo:IAO_0000116>
@@ -27796,7 +27796,7 @@ Dan Berrios</obo:IAO_0000117>
         <obo:IAO_0000119>http://www.pacb.com/products-and-services/pacbio-systems/sequel/</obo:IAO_0000119>
         <rdfs:label>PacBio Sequel II</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0002648 -->
@@ -27816,8 +27816,42 @@ Dan Berrios</obo:IAO_0000117>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1092</obo:IAO_0000233>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">individual organism specimen</rdfs:label>
     </owl:Class>
-
     
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002673 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002673">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+        <obo:IAO_0000112>Selenite broth is an enrichment culture medium used to selectively isolate Salmonella species.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A culture medium that is designed to favor the growth of a particular microorganism or cells over others, enriching a sample for the microorganism or cells of interest.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
+        <obo:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <obo:IAO_0000118>isolation medium</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Enrichment_culture"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-08T22:04:07Z</dc:date>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enrichment culture medium</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://github.com/obi-ontology/obi/issues/997"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002674 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002674">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">case series study design</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A study design that samples only subjects who have experienced a particular event (outcome or exposure). Such a design, in contrast to a cohort study, does not permit calculation of absolute risk as non-case subjects are not included.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0002-8844-9165"/>
+        <obo:IAO_0000119 rdf:resource="https://www.ncbi.nlm.nih.gov/pubmed/22213493"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-03-08T22:28:31Z</dc:date>
+        <rdfs:label xml:lang="en">case series design</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://github.com/obi-ontology/obi/issues/821"/>
+    </owl:Class>
+    
+
 
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
