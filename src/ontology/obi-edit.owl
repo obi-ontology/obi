@@ -26162,7 +26162,12 @@ https://sourceforge.net/p/obi/obi-terms/766/</obo:IAO_0000116>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002079"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -27796,7 +27801,7 @@ Dan Berrios</obo:IAO_0000117>
         <obo:IAO_0000119>http://www.pacb.com/products-and-services/pacbio-systems/sequel/</obo:IAO_0000119>
         <rdfs:label>PacBio Sequel II</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0002648 -->
@@ -27816,8 +27821,8 @@ Dan Berrios</obo:IAO_0000117>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1092</obo:IAO_0000233>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">individual organism specimen</rdfs:label>
     </owl:Class>
-
     
+
 
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
