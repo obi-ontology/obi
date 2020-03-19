@@ -41,7 +41,7 @@ build:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.6.0/robot.jar
 
 ROBOT := java -jar build/robot.jar
 
@@ -82,9 +82,11 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 # NOTE: GNU Make will compare timestamps to see which updates are required.
 MODULE_NAMES := assays\
  biobank-specimens\
+ devices\
  epitope-assays\
  medical-history\
  obsolete\
+ organizations\
  study-designs\
  sequence-analysis\
  value-specifications
