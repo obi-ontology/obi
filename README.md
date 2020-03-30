@@ -120,7 +120,7 @@ This will check that all files have Unix endings once files have been staged (so
 
 which looks at staged files only, or
 
-    src/scripts/check_line_endings.sh tsv
+    src/scripts/check-line-endings.sh tsv
 
 which looks at *all* tsv files in the project, including uncommitted, unstaged, ignored files, etc.
 
