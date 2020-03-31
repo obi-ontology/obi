@@ -19,9 +19,6 @@
      -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
-        <rdfs:label xml:lang="en">imported from</rdfs:label>
-    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textual definition</rdfs:label>
@@ -47,6 +44,9 @@
         <obo:IAO_0000115 xml:lang="zh">官方的定义，解释类或属性的含义。应该是亚里士多德式的，形式化和规范化的。 可以通过口语定义进行扩充。</obo:IAO_0000115>
         <obo:IAO_0000111 xml:lang="zh">定义</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="zh">文本定义</obo:IAO_0000111>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
         <rdfs:label>标签</rdfs:label>
@@ -387,6 +387,20 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell of hematopoietic origin, typically resident in particular tissues, specialized in the uptake, processing, and transport of antigens to lymph nodes for the purpose of stimulating an immune response via T cell activation. These cells are lineage negative (CD3-negative, CD19-negative, CD34-negative, and CD56-negative).</obo:IAO_0000115>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dendritic cell</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000540 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000540">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuron</rdfs:label>
+        <rdfs:label xml:lang="en">neuron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system.</obo:IAO_0000115>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuron</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">neuron</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
     </owl:Class>
     
@@ -900,10 +914,10 @@
     <!-- http://purl.obolibrary.org/obo/PR_000025477 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025477">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease V1</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease V1 (cobra)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A protein with ribonuclease activity that is a constituent of cobra venom.</obo:IAO_0000115>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease V1</obo:IAO_0000111>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease V1 (cobra)</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
     </owl:Class>
     
@@ -912,37 +926,11 @@
     <!-- http://purl.obolibrary.org/obo/PR_000025478 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025478">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease CL3</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease CL3 (chicken)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A protein with ribonuclease activity that is purified from chicken liver.</obo:IAO_0000115>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease CL3</obo:IAO_0000111>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribonuclease CL3 (chicken)</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pr.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/REO_0000171 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/REO_0000171">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <obo:IAO_0000111 xml:lang="en">molecular label role</obo:IAO_0000111>
-        <obo:IAO_0000115>a reagent role inhering in a molecular entity intended to associate with some molecular target to serve as a proxy for the presence, abundance, or location of this target in a detection of molecular label assay.</obo:IAO_0000115>
-        <obo:IAO_0000118>molecular tracer role</obo:IAO_0000118>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/reo.owl"/>
-        <rdfs:label xml:lang="en">molecular label role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/REO_0000280 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/REO_0000280">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000111>molecular label</obo:IAO_0000111>
-        <obo:IAO_0000115>a molecular reagent intended to associate with some molecular target to serve as a proxy for the presence, abundance, or location of this target in a detection of molecular label assay</obo:IAO_0000115>
-        <obo:IAO_0000118>molecular tracer</obo:IAO_0000118>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/reo.owl"/>
-        <rdfs:label>molecular label</rdfs:label>
     </owl:Class>
     
 
