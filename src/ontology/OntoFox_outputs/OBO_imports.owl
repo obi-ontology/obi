@@ -19,6 +19,9 @@
      -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textual definition</rdfs:label>
@@ -44,9 +47,6 @@
         <obo:IAO_0000115 xml:lang="zh">官方的定义，解释类或属性的含义。应该是亚里士多德式的，形式化和规范化的。 可以通过口语定义进行扩充。</obo:IAO_0000115>
         <obo:IAO_0000111 xml:lang="zh">定义</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="zh">文本定义</obo:IAO_0000111>
-    </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
-        <rdfs:label xml:lang="en">imported from</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
         <rdfs:label>标签</rdfs:label>
@@ -624,6 +624,18 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115 xml:lang="en">A part of an extended organism that itself has as part a population of one or more infectious agents and that (1) exists as a result of processes initiated by members of the infectious agent population and is (2) clinically abnormal in virtue of the presence of this infectious agent population, or (3) has a disposition to bring clinical abnormality to immunocompetent organisms of the same Species as the host (the organism corresponding to the extended organism) through transmission of a member or offspring of a member of the infectious agent population.</obo:IAO_0000115>
         <obo:IAO_0000111 xml:lang="en">infection</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ido.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IDO_0000666 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IDO_0000666">
+        <rdfs:label xml:lang="en">human pathogenicity disposition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IDO_0000450"/>
+        <obo:IAO_0000115>A disposition to initiate processes that result in a disorder in a human organism.</obo:IAO_0000115>
+        <obo:IAO_0000111 xml:lang="en">human pathogenicity disposition</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ido.owl"/>
     </owl:Class>
     
