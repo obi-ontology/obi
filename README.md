@@ -55,8 +55,7 @@ The [`Makefile`](Makefile) contains scripts for building OBI. On macOS or Linux,
 - `make build/obi_merged.owl` merge `obi-edit.owl` into a single file, don't reason
 - `make clean` remove temporary files
 - `make test` merge and run SPARQL tests
-- `make check` check for bad line-endings (see below)
-- `make fix` fix bad line-endings (see below)
+- `make sort` sort templates, and fix quoting and line endings
 
 
 # Development
