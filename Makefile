@@ -248,12 +248,7 @@ all: test obi.owl obi_core.owl build/terms-report.csv
 clean:
 	rm -rf build
 
-# Check for problems such as bad line-endings
-.PHONY: check
-check:
-	src/scripts/check-line-endings.sh tsv
-
-# Fix simple problems such as bad line-endings
-.PHONY: fix
-fix:
-	src/scripts/fix-eol-all.sh
+# Sort template tables, standardize quoting and line endings
+.PHONY: sort
+sort: src/ontology/templates/
+	src/scripts/sort-templates.py
