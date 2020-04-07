@@ -129,7 +129,7 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-obi.obo: obi.owl | build/robot.jar
+views/obi.obo: obi.owl | build/robot.jar
 	$(ROBOT) query \
 	--input $< \
 	--update src/sparql/obo-format.ru \
@@ -149,7 +149,7 @@ obi.obo: obi.owl | build/robot.jar
 	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
 	rm $(basename $@)-temp.obo
 
-obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
+views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	$(ROBOT) remove \
 	--input $< \
 	--term obo:OBI_0600036 \
@@ -159,7 +159,7 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 	--preserve-structure false \
 	extract \
 	--method STAR \
-	--term-file src/ontology/core.txt \
+	--term-file $(word 2,$^) \
 	--individuals definitions \
 	--copy-ontology-annotations true \
 	annotate \
@@ -241,7 +241,7 @@ test: reason verify
 #
 # Full build
 .PHONY: all
-all: test obi.owl obi_core.owl build/terms-report.csv
+all: test obi.owl views/obi.obo views/obi_core.owl build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean
