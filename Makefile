@@ -33,7 +33,7 @@ TS      := $(shell date +'%d:%m:%Y %H:%M')
 ### Directories
 #
 # This is a temporary place to put things.
-build:
+build build/views:
 	mkdir -p $@
 
 
@@ -168,6 +168,22 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
+build/views/%.tsv: src/ontology/views/%.tsv | build/views
+	tail -n+2 $< | cut -f1 > $@
+
+views/%.owl: obi.owl build/views/%.tsv | build/robot.jar
+	$(ROBOT) extract \
+	--input $< \
+	--method STAR \
+	--term-file $(word 2,$^) \
+	--individuals definitions \
+	--copy-ontology-annotations true \
+	annotate \
+	--ontology-iri "$(OBO)/obi/$*.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/$*.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--output $@
+
 
 ### Test
 #
@@ -241,7 +257,7 @@ test: reason verify
 #
 # Full build
 .PHONY: all
-all: test obi.owl views/obi.obo views/obi_core.owl build/terms-report.csv
+all: test obi.owl views/obi.obo views/obi_core.owl views/NIAID-GSC-BRC.owl build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean
