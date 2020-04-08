@@ -168,16 +168,27 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-build/views/%.tsv: src/ontology/views/%.tsv | build/views
-	tail -n+2 $< | cut -f1 > $@
+build/views/NIAID-GSC-BRC.txt: src/ontology/views/NIAID-GSC-BRC.tsv | build/views
+	tail -n+3 $< | cut -f1 > $@
 
-views/%.owl: obi.owl build/views/%.tsv | build/robot.jar
+views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/views/NIAID-GSC-BRC.tsv | build/robot.jar
 	$(ROBOT) extract \
 	--input $< \
 	--method STAR \
 	--term-file $(word 2,$^) \
 	--individuals definitions \
 	--copy-ontology-annotations true \
+	remove \
+	--term IAO:0000233 \
+	--term IAO:0000234 \
+	--term IAO:0000589 \
+	--term IAO:0010000 \
+	--term OBI:0001847 \
+	--term OBI:0001886 \
+	--term OBI:9991118 \
+	template \
+	--template $(word 3,$^) \
+	--merge-after \
 	annotate \
 	--ontology-iri "$(OBO)/obi/$*.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/$*.owl" \
