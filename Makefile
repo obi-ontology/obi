@@ -188,12 +188,17 @@ views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/view
 	--term OBI:9991118 \
 	template \
 	--template $(word 3,$^) \
-	--merge-after \
-	annotate \
-	--ontology-iri "$(OBO)/obi/$*.owl" \
-	--version-iri "$(OBO)/obi/$(TODAY)/$*.owl" \
-	--annotation owl:versionInfo "$(TODAY)" \
+	--merge-before \
 	--output $@
+	sed '/<obo:IAO_0000589/d' $@ | sed '/<dc:description/d' > $@.tmp.owl
+	$(ROBOT) annotate \
+	--input $@.tmp.owl \
+	--ontology-iri "$(OBO)/obi/NIAID-GSC-BRC.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/NIAID-GSC-BRC.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--language-annotation dc11:description "A subset of OBI containing all terms specified by the NIAID GSCID and BRC Project, Sample and Sequencing Assay Core Metadata Standards. This OBI view includes NIAID GSCID and BRC community preferred labels and field IDs specified in the standards (https://www.niaid.nih.gov/research/human-pathogen-and-vector-sequencing-metadata-standards)." en \
+	--output $@
+	rm $@.tmp.owl
 
 
 ### Test
