@@ -33,7 +33,7 @@ TS      := $(shell date +'%d:%m:%Y %H:%M')
 ### Directories
 #
 # This is a temporary place to put things.
-build:
+build build/views:
 	mkdir -p $@
 
 
@@ -168,6 +168,38 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
+build/views/NIAID-GSC-BRC.txt: src/ontology/views/NIAID-GSC-BRC.tsv | build/views
+	tail -n+3 $< | cut -f1 > $@
+
+views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/views/NIAID-GSC-BRC.tsv | build/robot.jar
+	$(ROBOT) extract \
+	--input $< \
+	--method STAR \
+	--term-file $(word 2,$^) \
+	--individuals definitions \
+	--copy-ontology-annotations true \
+	remove \
+	--term IAO:0000233 \
+	--term IAO:0000234 \
+	--term IAO:0000589 \
+	--term IAO:0010000 \
+	--term OBI:0001847 \
+	--term OBI:0001886 \
+	--term OBI:9991118 \
+	template \
+	--template $(word 3,$^) \
+	--merge-before \
+	--output $@
+	sed '/<obo:IAO_0000589/d' $@ | sed '/<dc:description/d' > $@.tmp.owl
+	$(ROBOT) annotate \
+	--input $@.tmp.owl \
+	--ontology-iri "$(OBO)/obi/NIAID-GSC-BRC.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/NIAID-GSC-BRC.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--language-annotation dc11:description "A subset of OBI containing all terms specified by the NIAID GSCID and BRC Project, Sample and Sequencing Assay Core Metadata Standards. This OBI view includes NIAID GSCID and BRC community preferred labels and field IDs specified in the standards (https://www.niaid.nih.gov/research/human-pathogen-and-vector-sequencing-metadata-standards)." en \
+	--output $@
+	rm $@.tmp.owl
+
 
 ### Test
 #
@@ -241,7 +273,7 @@ test: reason verify
 #
 # Full build
 .PHONY: all
-all: test obi.owl views/obi.obo views/obi_core.owl build/terms-report.csv
+all: test obi.owl views/obi.obo views/obi_core.owl views/NIAID-GSC-BRC.owl build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean

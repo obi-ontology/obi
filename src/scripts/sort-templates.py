@@ -20,7 +20,7 @@ def sort_template(path):
 
 def main():
     base = os.path.dirname(os.path.abspath(__file__))
-    template_dir = os.path.join(base, "../ontology/templates/")
+    template_dir = os.path.join(base, "../ontology/")
     paths = []
     for root, dirs, files in os.walk(template_dir):
         for name in files:
