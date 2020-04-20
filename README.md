@@ -1,6 +1,6 @@
 # Ontology for Biomedical Investigations
 
-[![Build Status](https://travis-ci.org/obi-ontology/obi.svg?branch=master)](https://travis-ci.org/obi-ontology/obi)
+[![Build Status](https://travis-ci.com/obi-ontology/obi.svg?branch=master)](https://travis-ci.com/obi-ontology/obi)
 
 The Ontology for Biomedical Investigations (OBI) helps you communicate clearly about scientific investigations by defining more than 2500 terms for assays, devices, objectives, and more.
 
