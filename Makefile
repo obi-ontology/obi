@@ -265,8 +265,14 @@ verify-entities: build/dropped-entities.tsv
 reason: build/obi_merged.owl | build/robot.jar
 	$(ROBOT) reason --input $< --reasoner ELK
 
+# Find any IRIs using undefined namespaces
+validate-iris: build/invalid-iris.txt
+.PRECIOUS: build/invalid-iris.txt
+build/invalid-iris.txt: src/scripts/validate-iris.py build/obi_merged.owl
+	$^ $@
+
 .PHONY: test
-test: reason verify
+test: reason verify validate-iris
 
 
 ### General
