@@ -11,7 +11,6 @@ from argparse import ArgumentParser, FileType
 def main():
     p = ArgumentParser()
     p.add_argument('obi', type=FileType('r'))
-    p.add_argument('output', type=str)
     args = p.parse_args()
 
     obi = args.obi
@@ -34,6 +33,25 @@ def main():
             has_iri = re.search(r'<!-- (.+) -->', line)
             if has_iri:
                 iri = has_iri.group(1)
+                if iri == 'http://purl.obolibrary.org/obo/OBI_00001975':
+                    # We know this one is invalid but it has already been released
+                    continue
+
+                if iri.startswith('http://purl.obolibrary.org/obo/OBI_'):
+                    # Make sure OBI IDs are exactly 7 digits
+                    local_id = iri.split('_')[1]
+                    if len(local_id) != 7 or not local_id.isdigit():
+                        invalid.append(iri)
+                    else:
+                        # This IRI is OK
+                        continue
+
+                if iri.startswith('http://purl.obolibrary.org/obo/') and '#' in iri:
+                    # Do not allow pound in OBO IRIs
+                    # Sometimes Protege default IRIs will have this
+                    invalid.append(iri)
+
+                # Always make sure this IRI starts with a defined namespace
                 ok = False
                 for ns in namespaces:
                     if iri.startswith(ns):
@@ -42,14 +60,9 @@ def main():
                     invalid.append(iri)
     obi.close()
 
-    output = args.output
-    with open(output, 'w') as f:
-        for i in invalid:
-            f.write(i + '\n')
-
     if invalid:
-        print('ERROR - {0} invalid IRIs found! See {1} for details.'.format(
-            len(invalid), output))
+        print('ERROR - {0} invalid IRIs found:\n{1}'.format(
+            len(invalid), '\n'.join(invalid)))
         sys.exit(1)
 
     sys.exit(0)
