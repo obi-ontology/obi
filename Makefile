@@ -33,7 +33,7 @@ TS      := $(shell date +'%d:%m:%Y %H:%M')
 ### Directories
 #
 # This is a temporary place to put things.
-build:
+build build/views:
 	mkdir -p $@
 
 
@@ -43,7 +43,7 @@ build:
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.6.0/robot.jar
 
-ROBOT := java -jar build/robot.jar
+ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
 
 ### Imports
@@ -129,7 +129,7 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-obi.obo: obi.owl | build/robot.jar
+views/obi.obo: obi.owl | build/robot.jar
 	$(ROBOT) query \
 	--input $< \
 	--update src/sparql/obo-format.ru \
@@ -149,7 +149,7 @@ obi.obo: obi.owl | build/robot.jar
 	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
 	rm $(basename $@)-temp.obo
 
-obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
+views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	$(ROBOT) remove \
 	--input $< \
 	--term obo:OBI_0600036 \
@@ -159,7 +159,7 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 	--preserve-structure false \
 	extract \
 	--method STAR \
-	--term-file src/ontology/core.txt \
+	--term-file $(word 2,$^) \
 	--individuals definitions \
 	--copy-ontology-annotations true \
 	annotate \
@@ -167,6 +167,38 @@ obi_core.owl: obi.owl src/ontology/core.txt | build/robot.jar
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_core.owl" \
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
+
+build/views/NIAID-GSC-BRC.txt: src/ontology/views/NIAID-GSC-BRC.tsv | build/views
+	tail -n+3 $< | cut -f1 > $@
+
+views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/views/NIAID-GSC-BRC.tsv | build/robot.jar
+	$(ROBOT) extract \
+	--input $< \
+	--method STAR \
+	--term-file $(word 2,$^) \
+	--individuals definitions \
+	--copy-ontology-annotations true \
+	remove \
+	--term IAO:0000233 \
+	--term IAO:0000234 \
+	--term IAO:0000589 \
+	--term IAO:0010000 \
+	--term OBI:0001847 \
+	--term OBI:0001886 \
+	--term OBI:9991118 \
+	template \
+	--template $(word 3,$^) \
+	--merge-before \
+	--output $@
+	sed '/<obo:IAO_0000589/d' $@ | sed '/<dc:description/d' > $@.tmp.owl
+	$(ROBOT) annotate \
+	--input $@.tmp.owl \
+	--ontology-iri "$(OBO)/obi/NIAID-GSC-BRC.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/NIAID-GSC-BRC.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--language-annotation dc11:description "A subset of OBI containing all terms specified by the NIAID GSCID and BRC Project, Sample and Sequencing Assay Core Metadata Standards. This OBI view includes NIAID GSCID and BRC community preferred labels and field IDs specified in the standards (https://www.niaid.nih.gov/research/human-pathogen-and-vector-sequencing-metadata-standards)." en \
+	--output $@
+	rm $@.tmp.owl
 
 
 ### Test
@@ -233,27 +265,27 @@ verify-entities: build/dropped-entities.tsv
 reason: build/obi_merged.owl | build/robot.jar
 	$(ROBOT) reason --input $< --reasoner ELK
 
+# Find any IRIs using undefined namespaces
+.PHONY: validate-iris
+validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
+	$^
+
 .PHONY: test
-test: reason verify
+test: reason verify validate-iris
 
 
 ### General
 #
 # Full build
 .PHONY: all
-all: test obi.owl obi_core.owl build/terms-report.csv
+all: test obi.owl views/obi.obo views/obi_core.owl views/NIAID-GSC-BRC.owl build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean
 clean:
 	rm -rf build
 
-# Check for problems such as bad line-endings
-.PHONY: check
-check:
-	src/scripts/check-line-endings.sh tsv
-
-# Fix simple problems such as bad line-endings
-.PHONY: fix
-fix:
-	src/scripts/fix-eol-all.sh
+# Sort template tables, standardize quoting and line endings
+.PHONY: sort
+sort: src/ontology/templates/
+	src/scripts/sort-templates.py

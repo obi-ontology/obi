@@ -1,6 +1,6 @@
 # Ontology for Biomedical Investigations
 
-[![Build Status](https://travis-ci.org/obi-ontology/obi.svg?branch=master)](https://travis-ci.org/obi-ontology/obi)
+[![Build Status](https://travis-ci.com/obi-ontology/obi.svg?branch=master)](https://travis-ci.com/obi-ontology/obi)
 
 The Ontology for Biomedical Investigations (OBI) helps you communicate clearly about scientific investigations by defining more than 2500 terms for assays, devices, objectives, and more.
 
@@ -28,8 +28,10 @@ See below for a full list of files, build instructions, and instructions on usin
 
 - [`README.md`](README.md) this overview document
 - [`obi.owl`](obi.owl) the latest release of OBI
-- [`obi_core.owl`](obi_core.owl) the latest release of OBI Core: ~100 key terms
 - [`Makefile`](Makefile) scripts for building OBI
+- [`views/`](views/) various specialized views of OBI
+    - [`obi.obo`](obi.obo) the latest release of OBI in `.obo` file format
+    - [`obi_core.owl`](obi_core.owl) the latest release of OBI Core: ~100 key terms
 - [`src/`](src/)
     - [`ontology/`](src/ontology/) source files for OBI
         - [`obi-edit.owl`](src/ontology/obi-edit.owl) the main OBI OWL file
@@ -42,6 +44,7 @@ See below for a full list of files, build instructions, and instructions on usin
         - [`OntoFox_outputs/`](src/ontology/OntoFox_outputs) OntoFox result files
     - [`sparql/`](src/sparql/) SPARQL queries for building and validating OBI
     - [`scripts/`](src/scripts/) utility scripts
+    - [`views/`](src/views/) configuration for views
 
 
 # Building
@@ -55,8 +58,7 @@ The [`Makefile`](Makefile) contains scripts for building OBI. On macOS or Linux,
 - `make build/obi_merged.owl` merge `obi-edit.owl` into a single file, don't reason
 - `make clean` remove temporary files
 - `make test` merge and run SPARQL tests
-- `make check` check for bad line-endings (see below)
-- `make fix` fix bad line-endings (see below)
+- `make sort` sort templates, and fix quoting and line endings
 
 
 # Development
