@@ -33,7 +33,7 @@ TS      := $(shell date +'%d:%m:%Y %H:%M')
 ### Directories
 #
 # This is a temporary place to put things.
-build build/views:
+build build/views build/templates:
 	mkdir -p $@
 
 
@@ -68,7 +68,12 @@ imports: $(IMPORT_FILES)
 # used to generate OWL files with ROBOT.
 # The first step is to erase any contents of the module OWL file.
 # See https://github.com/ontodev/robot/blob/master/docs/template.md
-src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
+
+# Replace \n in templates with line breaks
+build/templates/%.tsv: src/ontology/templates/%.tsv | build/templates
+	sed -e 's/\\n/\'$$'\n/g' $< > $@
+
+src/ontology/modules/%.owl: build/templates/%.tsv | build/robot.jar
 	echo '' > $@
 	$(ROBOT) merge \
 	--input src/ontology/obi-edit.owl \
