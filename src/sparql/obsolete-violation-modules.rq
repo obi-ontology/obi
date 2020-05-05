@@ -1,0 +1,12 @@
+# 'Obsolete Class' should have no asserted children in obi-edit.owl
+# Any descendant of 'Obsolete Class' that has a label is asserted in obi-edit.owl
+
+PREFIX obo:  <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s WHERE {
+	?s rdfs:subClassOf* oboInOwl:ObsoleteClass ;
+	   rdfs:label ?label .
+	FILTER (?s != oboInOwl:ObsoleteClass)
+}
