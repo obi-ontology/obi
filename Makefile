@@ -69,11 +69,7 @@ imports: $(IMPORT_FILES)
 # The first step is to erase any contents of the module OWL file.
 # See https://github.com/ontodev/robot/blob/master/docs/template.md
 
-# Replace \n in templates with line breaks
-build/templates/%.tsv: src/scripts/replace-newlines.py src/ontology/templates/%.tsv | build/templates
-	python3 $^ $@
-
-src/ontology/modules/%.owl: build/templates/%.tsv | build/robot.jar
+src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 	echo '' > $@
 	$(ROBOT) merge \
 	--input src/ontology/obi-edit.owl \
