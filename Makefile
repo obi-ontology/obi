@@ -33,7 +33,7 @@ TS      := $(shell date +'%d:%m:%Y %H:%M')
 ### Directories
 #
 # This is a temporary place to put things.
-build build/views build/templates:
+build build/views:
 	mkdir -p $@
 
 
@@ -68,7 +68,6 @@ imports: $(IMPORT_FILES)
 # used to generate OWL files with ROBOT.
 # The first step is to erase any contents of the module OWL file.
 # See https://github.com/ontodev/robot/blob/master/docs/template.md
-
 src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 	echo '' > $@
 	$(ROBOT) merge \
