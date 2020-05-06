@@ -70,8 +70,8 @@ imports: $(IMPORT_FILES)
 # See https://github.com/ontodev/robot/blob/master/docs/template.md
 
 # Replace \n in templates with line breaks
-build/templates/%.tsv: src/ontology/templates/%.tsv | build/templates
-	sed -e 's/\\n/\'$$'\n/g' $< > $@
+build/templates/%.tsv: src/scripts/replace-newlines.py src/ontology/templates/%.tsv | build/templates
+	python3 $^ $@
 
 src/ontology/modules/%.owl: build/templates/%.tsv | build/robot.jar
 	echo '' > $@
