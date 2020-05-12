@@ -8,7 +8,7 @@ This is the developer repository for OBI. You can download the most up-to-date O
 
 # Editing
 
-Our ontology terms come in three groups:
+Our ontology terms come in three groups. Depending on what type of term you want to edit or add, you have to go through different routes:
 
 1. external terms (from other ontologies): We use [OntoFox](http://ontofox.hegroup.org) for imports. Edit the corresponding [`src/ontology/OntoFox_inputs/`](src/ontology/OntoFox_inputs/) file.
 2. template terms: We use [ROBOT templates](http://robot.obolibrary.org/template) to convert spreadsheets to OWL. Edit the relevant [`src/ontology/templates/`](src/ontology/templates/) file:
