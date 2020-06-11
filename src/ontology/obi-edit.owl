@@ -20640,6 +20640,38 @@ JZ (3-30-20): discussed on the OBI call. Since the REO was never actually regist
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002747 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002747">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <obo:IAO_0000115 xml:lang="en">A material processing that consists of first growing an organism in an environmental system and then removing the organism to be grown in another environmental system, a process which may be repeated with the objective of altering the organism or increasing its number.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Serial_passage</obo:IAO_0000119>
+        <obo:IAO_0000119>https://www.merriam-webster.com/dictionary/passage</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">passage process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002748 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002748">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002747"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A data item that is about the sequence of environmental systems in each of which is grown an organism in a passage process.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Serial_passage</obo:IAO_0000119>
+        <obo:IAO_0000119 xml:lang="en">https://www.merriam-webster.com/dictionary/passage</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">passage history record</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
