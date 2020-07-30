@@ -130,7 +130,7 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi.obo: obi.owl | build/robot.jar
+views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	$(ROBOT) query \
 	--input $< \
 	--update src/sparql/obo-format.ru \
@@ -138,7 +138,7 @@ views/obi.obo: obi.owl | build/robot.jar
 	--select "parents equivalents" \
 	--select "anonymous" \
 	remove \
-	--term-file src/scripts/remove-for-obo.txt \
+	--term-file $(word 2,$^) \
 	--trim true \
 	annotate \
 	--ontology-iri "$(OBO)/obi.obo" \
