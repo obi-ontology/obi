@@ -7,8 +7,12 @@ import csv, os
 
 def sort_template(path):
     rows = []
-    with open(path, "r") as tsv:
-        rows = list(csv.reader(tsv, delimiter="\t"))
+    try:
+        with open(path, "r") as tsv:
+            rows = list(csv.reader(tsv, delimiter="\t"))
+    except Exception as e:
+        print(f"Failed to read {path}")
+        raise(e)
     headers = rows[0:2]
     terms = rows[2:]
     terms.sort(key=lambda x: x[0])
