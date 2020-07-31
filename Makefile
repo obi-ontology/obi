@@ -83,11 +83,11 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 MODULE_NAMES := assays\
  biopsy\
  biobank-specimens\
+ organizations\
  devices\
  epitope-assays\
  medical-history\
  obsolete\
- organizations\
  study-designs\
  sequence-analysis\
  value-specifications
