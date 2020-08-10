@@ -2,19 +2,14 @@
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#"
      xml:base="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:obi="http://purl.obolibrary.org/obo/obi/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl">
@@ -106,8 +101,8 @@
         <dc:description xml:lang="en">The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific.</dc:description>
         <dc:format xml:lang="en">OWL-DL</dc:format>
         <dc:subject xml:lang="en">An ontology for the annotation of biomedical and functional genomics experiments.</dc:subject>
-        <dcterms:license>http://creativecommons.org/licenses/by/4.0/</dcterms:license>
-        <dcterms:title>Ontology for Biomedical Investigations</dcterms:title>
+        <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
+        <terms:title>Ontology for Biomedical Investigations</terms:title>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
     </owl:Ontology>
     
@@ -4562,7 +4557,7 @@ ALT DEF (PRS):: a cDNA library is a collection of host cells, typically E.Coli c
         <obo:IAO_0000232 xml:lang="en">PRS: 22022008. class moved under population,
 modification of definition and replacement of biomaterials in previous definition with &apos;material&apos;
 addition of has_role restriction</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">clonal cDNA library</rdfs:label>
+        <rdfs:label xml:lang="en">cDNA library</rdfs:label>
     </owl:Class>
     
 
@@ -4828,6 +4823,20 @@ illiterate subject. PharmPK Discussion, http://www.boomer.org/pkin/PK06/PK200625
         <obo:IAO_0000119 xml:lang="en">Wikipedia, feb 29, 2008</obo:IAO_0000119>
         <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19 Feb 2009; old def: A nutrient role is a role played by a substance used in an organism&apos;s metabolism which is taken in from the environment and provides nourishment.</obo:IAO_0000232>
         <rdfs:label xml:lang="en">nutrient role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000207 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000207">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">health care provider role</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">a worker role of providing medical care either within or outside the study timeline</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Person:Jennifer Fostel</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">health care provider</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">health care provider role</rdfs:label>
     </owl:Class>
     
 
@@ -19949,7 +19958,7 @@ https://www.doi.org/</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/OBI_0002481 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002481">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002754"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000164"/>
         <obo:IAO_0000111 xml:lang="en">single-end library</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A cDNA library that is a collection of short tags from only one end of DNA fragments.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
@@ -20663,26 +20672,13 @@ JZ (3-30-20): discussed on the OBI call. Since the REO was never actually regist
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0002754 -->
+    <!-- http://purl.obolibrary.org/obo/OBI_0003001 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002754">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
-        <obo:IAO_0000111 xml:lang="en"></obo:IAO_0000111>
-        <obo:IAO_0000111 xml:lang="en">cDNA library</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">cDNA library lacks the non-coding and regulatory elements found in genomic DNA</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">A collection of DNA molecules with sequences complementary to a specified set of mRNA molecules and commonly developed by enzymatic reverse transcription.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">modified from Wikipedia</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">cDNA library</rdfs:label>
-    </owl:Class>
-    
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002756 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002756">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
         <obo:IAO_0000115>A categorical value specification in which the available categories were created with an explicit order.</obo:IAO_0000115>
         <obo:IAO_0000116>https://en.wikipedia.org/wiki/Ordinal_data provides references for follow-up, but more than one OBI developer has objected to &quot;...whose levels have natural, ordered categories and the distances between those categories is not known...&quot;
+
 
 Separate from that, an OBI mechanism for asserting the order of ordinal values specification levels with OWL has not been determined yet.</obo:IAO_0000116>
         <obo:IAO_0000117>Mark Andrew Miller, ORCID:0000-0001-9076-6066</obo:IAO_0000117>
@@ -30985,6 +30981,21 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/UO_0000051 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000051"/>
+    
+
+
+    <!-- http://transformunify.org/ontologies/http://purl.obolibrary.org/obo/OBI_0002801 -->
+
+    <owl:Class rdf:about="http://transformunify.org/ontologies/http://purl.obolibrary.org/obo/OBI_0002801">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003001"/>
+        <obo:IAO_0000115>An ordinal value specification that indicates that either 
+a) an analyte or mesaurand is present in an evaluant, or 
+b) that the amount of analyte/measurand detected is over some predetermined threshold.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark Andrew Miller, ORCID:0000-0001-9076-6066</obo:IAO_0000117>
+        <obo:IAO_0000119>LOINC User&apos;s Guide, Version 2.68, PUBLISHED JUNE 2020, page 32</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1202</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">presence or over-threshold value specification</rdfs:label>
+    </owl:Class>
     
 
 
