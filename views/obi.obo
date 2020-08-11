@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: obi/2020-07-13/obi.obo
-date: 13:07:2020 14:38
+data-version: obi/2020-08-11/obi.obo
+date: 11:08:2020 10:12
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi.obo
 property_value: defaultLanguage "en" xsd:string
@@ -67,7 +67,40 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/ xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2020-04-23" xsd:string
+property_value: owl:versionInfo "2020-08-11" xsd:string
+
+[Term]
+id: APOLLO_SV:00000008
+name: software development
+def: "A planned process that has specified output a software product and that involves the creation of source code." []
+is_a: OBI:0000011 ! planned process
+
+[Term]
+id: APOLLO_SV:00000032
+name: count
+def: "A measurement datum that is the output of counting." []
+is_a: IAO:0000109 ! measurement datum
+
+[Term]
+id: APOLLO_SV:00000033
+name: counting
+def: "The planned process of finding the number of elements in a finite set of objects." []
+is_a: OBI:0000011 ! planned process
+
+[Term]
+id: APOLLO_SV:00000522
+name: source code repository
+def: "A document that comprises at least one source code module and provenance data about who contributed the set of files making up the module(s), and optionally comprises also multiple versions of files with detailed change history about who committed files and when, a license for the software, readme files, documentation, executables, etc." []
+comment: Refers to the stuff that lives on GitHub, not to GitHub or the git software on which it is based
+is_a: IAO:0000310 ! document
+
+[Term]
+id: APOLLO_SV:00000796
+name: dataset creating
+def: "A planned process that has a data set as its specified output." []
+synonym: "data set creation" EXACT []
+synonym: "dataset creation" EXACT []
+is_a: OBI:0000011 ! planned process
 
 [Term]
 id: BFO:0000001
@@ -91,7 +124,7 @@ is_a: BFO:0000001 ! entity
 id: BFO:0000004
 name: independent continuant
 is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000020 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! specifically dependent continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
 
@@ -107,7 +140,7 @@ id: BFO:0000006
 name: spatial region
 is_a: BFO:0000141 ! immaterial entity
 disjoint_from: BFO:0000029 ! site
-disjoint_from: BFO:0000029 ! site
+disjoint_from: BFO:0000029 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! site
 disjoint_from: BFO:0000140 ! continuant fiat boundary
 
 [Term]
@@ -115,7 +148,7 @@ id: BFO:0000008
 name: temporal region
 is_a: BFO:0000003 ! occurrent
 disjoint_from: BFO:0000011 ! spatiotemporal region
-disjoint_from: BFO:0000011 ! spatiotemporal region
+disjoint_from: BFO:0000011 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! spatiotemporal region
 disjoint_from: BFO:0000015 ! process
 disjoint_from: BFO:0000035 ! process boundary
 
@@ -123,7 +156,7 @@ disjoint_from: BFO:0000035 ! process boundary
 id: BFO:0000009
 name: two-dimensional spatial region
 is_a: BFO:0000006 ! spatial region
-disjoint_from: BFO:0000018 ! zero-dimensional spatial region
+disjoint_from: BFO:0000018 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! zero-dimensional spatial region
 disjoint_from: BFO:0000028 ! three-dimensional spatial region
 
 [Term]
@@ -246,7 +279,7 @@ id: BFO:0000142
 name: one-dimensional continuant fiat boundary
 is_a: BFO:0000140 ! continuant fiat boundary
 disjoint_from: BFO:0000146 ! two-dimensional continuant fiat boundary
-disjoint_from: BFO:0000146 ! two-dimensional continuant fiat boundary
+disjoint_from: BFO:0000146 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! two-dimensional continuant fiat boundary
 disjoint_from: BFO:0000147 ! zero-dimensional continuant fiat boundary
 
 [Term]
@@ -771,6 +804,12 @@ def: "A lymphocyte is a leukocyte commonly found in the blood and lymph that has
 is_a: CL:0000842 ! mononuclear cell
 
 [Term]
+id: CL:0000558
+name: reticulocyte
+def: "An immature erythrocyte that changes the protein composition of its plasma membrane by exosome formation and extrusion. The types of protein removed differ between species though removal of the transferrin receptor is apparent in mammals and birds." []
+is_a: CL:0000000 ! cell
+
+[Term]
 id: CL:0000578
 name: experimentally modified cell in vitro
 def: "A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure." []
@@ -788,6 +827,12 @@ id: CL:0000625
 name: CD8-positive, alpha-beta T cell
 def: "A T cell expressing an alpha-beta T cell receptor and the CD8 coreceptor." []
 is_a: CL:0000789 ! alpha-beta T cell
+
+[Term]
+id: CL:0000738
+name: leukocyte
+def: "An achromatic cell of the myeloid or lymphoid lineages capable of ameboid movement, found in blood or other tissue." []
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000767
@@ -872,6 +917,7 @@ is_a: ENVO:00001998 ! soil
 [Term]
 id: ENVO:00010483
 name: environmental material
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -1808,7 +1854,7 @@ is_a: BFO:0000016 ! disposition
 [Term]
 id: IAO:0000001
 name: conditional specification
-def: "a directive information entity that specifies what should happen if the trigger condition is fulfilled" []
+def: "A directive information entity that specifies what should happen if the trigger condition is fulfilled." []
 is_a: IAO:0000033 ! directive information entity
 
 [Term]
@@ -1820,7 +1866,7 @@ is_a: IAO:0000009 ! datum label
 [Term]
 id: IAO:0000005
 name: objective specification
-def: "a directive information entity that describes an intended process endpoint. When part of a plan specification the concretization is realized in a planned process in which the bearer tries to effect the world so that the process endpoint is achieved." []
+def: "A directive information entity that describes an intended process endpoint. When part of a plan specification the concretization is realized in a planned process in which the bearer tries to effect the world so that the process endpoint is achieved." []
 synonym: "goal specification" EXACT []
 is_a: IAO:0000033 ! directive information entity
 
@@ -1833,7 +1879,7 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: IAO:0000007
 name: action specification
-def: "a directive information entity that describes an action the bearer will take" []
+def: "A directive information entity that describes an action the bearer will take." []
 is_a: IAO:0000033 ! directive information entity
 
 [Term]
@@ -1864,7 +1910,7 @@ is_obsolete: true
 [Term]
 id: IAO:0000013
 name: journal article
-def: "a report that is published in a journal" []
+def: "A report that is published in a journal." []
 is_a: IAO:0000088 ! report
 
 [Term]
@@ -1908,7 +1954,7 @@ is_a: IAO:0000104 ! plan specification
 [Term]
 id: IAO:0000027
 name: data item
-def: "a data item is an information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
+def: "An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
 synonym: "data" EXACT []
 is_a: IAO:0000030 ! information content entity
 
@@ -1933,13 +1979,13 @@ is_a: BFO:0000031 ! generically dependent continuant
 [Term]
 id: IAO:0000031
 name: integer numeral
-def: "a numeral that denotes an integer" []
+def: "A numeral that denotes an integer" []
 is_a: IAO:0000029 ! numeral
 
 [Term]
 id: IAO:0000032
 name: scalar measurement datum
-def: "a scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label." []
+def: "A scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label." []
 is_a: IAO:0000109 ! measurement datum
 
 [Term]
@@ -1951,7 +1997,6 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: IAO:0000034
 name: time trigger
-def: "revisit?" []
 is_a: IAO:0000001 ! conditional specification
 
 [Term]
@@ -1984,7 +2029,7 @@ is_obsolete: true
 [Term]
 id: IAO:0000055
 name: rule
-def: "a rule is an executable which guides, defines, restricts actions" []
+def: "A rule is an executable which guides, defines, restricts actions." []
 is_a: IAO:0000001 ! conditional specification
 
 [Term]
@@ -2008,7 +2053,7 @@ is_a: IAO:0000104 ! plan specification
 [Term]
 id: IAO:0000065
 name: software interpreter
-def: "A software interpreter is a software application that executes some specified input software. " []
+def: "A software interpreter is a software application that executes some specified input software." []
 is_a: IAO:0000064 ! algorithm
 
 [Term]
@@ -2026,7 +2071,7 @@ is_a: IAO:0000038 ! graph
 [Term]
 id: IAO:0000088
 name: report
-def: "a document assembled by an author for the purpose of providing information for the audience. A report is the output of a documenting process and has the objective to be consumed by a specific audience. Topic of the report is on something that has completed. A report is not a single figure. Examples of reports are journal article, patent application, grant progress report, case report (not patient record)" []
+def: "A document assembled by an author for the purpose of providing information for the audience. A report is the output of a documenting process and has the objective to be consumed by a specific audience. Topic of the report is on something that has completed. A report is not a single figure. Examples of reports are journal article, patent application, grant progress report, case report (not patient record)." []
 is_a: IAO:0000310 ! document
 
 [Term]
@@ -2077,7 +2122,7 @@ is_a: IAO:0000308 ! figure
 [Term]
 id: IAO:0000102
 name: data about an ontology part
-def: "data about an ontology part is a data item about a part of an ontology, for example a term" []
+def: "Data about an ontology part is a data item about a part of an ontology, for example a term" []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -2216,7 +2261,7 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: IAO:0000301
 name: citation
-def: "a textual entity intended to identify a particular publication" []
+def: "A textual entity intended to identify a particular publication." []
 is_a: IAO:0000300 ! textual entity
 
 [Term]
@@ -2295,7 +2340,7 @@ is_a: IAO:0000310 ! document
 [Term]
 id: IAO:0000314
 name: document part
-def: "an information content entity that is part of a document" []
+def: "An information content entity that is part of a document." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -2346,13 +2391,13 @@ is_a: IAO:0000314 ! document part
 [Term]
 id: IAO:0000321
 name: author list
-def: "part of a document that enumerates the authors of the document" []
+def: "A part of a document that enumerates the authors of the document" []
 is_a: IAO:0000314 ! document part
 
 [Term]
 id: IAO:0000322
 name: institution list
-def: "part of a document that has parts that are institution identifications associated with the authors of the document" []
+def: "A part of a document that has parts that are institution identifications associated with the authors of the document" []
 is_a: IAO:0000314 ! document part
 
 [Term]
@@ -2381,7 +2426,7 @@ is_a: IAO:0000314 ! document part
 [Term]
 id: IAO:0000326
 name: supplementary material to a document
-def: "part of a document that is segregated from the rest of the document due to its size" []
+def: "A part of a document that is segregated from the rest of the document due to its size" []
 synonym: "additional information" EXACT []
 synonym: "appendix" EXACT []
 synonym: "supplemental information" EXACT []
@@ -2487,13 +2532,13 @@ is_a: BFO:0000023 ! role
 [Term]
 id: IAO:0000443
 name: data item extraction from journal article
-def: "a planned process in which journal articles are read or processed and data items are extracted, typically for further analysis or indexing" []
+def: "A planned process in which journal articles are read or processed and data items are extracted, typically for further analysis or indexing" []
 is_a: OBI:0000011 ! planned process
 
 [Term]
 id: IAO:0000572
 name: documenting
-def: "a planned process in which a document is created or added to by including the specified input in it." []
+def: "A planned process in which a document is created or added to by including the specified input in it." []
 is_a: OBI:0000011 ! planned process
 
 [Term]
@@ -2506,7 +2551,7 @@ is_a: IAO:0000038 ! graph
 [Term]
 id: IAO:0000574
 name: assigning a centrally registered identifier
-def: "a planned process in which a new CRID is created, associated with an entity, and stored in the CRID registry thereby registering it as being associated with some entity" []
+def: "A planned process in which a new CRID is created, associated with an entity, and stored in the CRID registry thereby registering it as being associated with some entity" []
 synonym: "assigning a CRID" EXACT []
 is_a: OBI:0000011 ! planned process
 
@@ -2579,7 +2624,7 @@ is_a: IAO:0000010 ! software
 [Term]
 id: IAO:0000592
 name: software module
-def: " A software module is software composed of a collection of software methods." []
+def: "A software module is software composed of a collection of software methods." []
 is_a: IAO:0000010 ! software
 
 [Term]
@@ -2597,7 +2642,7 @@ is_a: IAO:0000010 ! software
 [Term]
 id: IAO:0000595
 name: software script
-def: " A software script is software whose instructions can be executed using a software \ninterpreter." []
+def: "A software script is software whose instructions can be executed using a software interpreter." []
 is_a: IAO:0000010 ! software
 
 [Term]
@@ -2676,7 +2721,7 @@ is_a: IAO:0000300 ! textual entity
 [Term]
 id: IAO:0000615
 name: conclusion section
-def: "A part of a document used to summarize the findings discussed in the document. The conclusion section is typically found near the end of a document. " []
+def: "A part of a document used to summarize the findings discussed in the document. The conclusion section is typically found near the end of a document." []
 synonym: "concluding remarks" EXACT []
 synonym: "conclusion" EXACT []
 synonym: "conclusions" EXACT []
@@ -2906,11 +2951,166 @@ synonym: "tables" EXACT []
 is_a: IAO:0000314 ! document part
 
 [Term]
+id: IAO:0000646
+name: postal code
+def: "An identifier that denotes some postal delivery route, some aggregate of postal delivery routes or a geographical region and was created for the purpose of sorting and delivering mail." []
+is_a: IAO:0020000 ! identifier
+
+[Term]
+id: IAO:0000647
+name: Postal delivery route
+def: "A plan specification that if realized, is realized by the delivery of mail to some facility or mailbox within some geographical region." []
+is_a: IAO:0000104 ! plan specification
+
+[Term]
+id: IAO:0000648
+name: zone improvement plan code
+def: "A postal code that is used in the United States for the purpose of sorting and delivering mail, and that denotes some postal delivery route or some aggregate of postal delivery routes." []
+synonym: "ZIP code" EXACT []
+is_a: IAO:0000646 ! postal code
+
+[Term]
 id: IAO:0000650
 name: database extract, transform, and load process
 def: "A planned process which takes as input a database and fills another database by extracting concretizations of information entities from the first, transforming them, and loading the transformed concretizations into the second." []
 synonym: "ETL" EXACT []
 is_a: OBI:0000011 ! planned process
+
+[Term]
+id: IAO:0020000
+name: identifier
+def: "An identifier is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity." []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:8000000
+name: ontology module
+synonym: "ontology file" EXACT []
+is_a: IAO:0000102 ! data about an ontology part
+
+[Term]
+id: IAO:8000001
+name: base ontology module
+def: "An ontology module that comprises only of asserted axioms local to the ontology, excludes import directives, and excludes axioms or declarations from external ontologies." []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000002
+name: editors ontology module
+def: "An ontology module that is intended to be directly edited, typically managed in source control, and typically not intended for direct consumption by end-users." []
+synonym: "source ontology module" EXACT []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000003
+name: main release ontology module
+def: "An ontology module that is intended to be the primary release product and the one consumed by the majority of tools." []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000004
+name: bridge ontology module
+def: "An ontology module that consists entirely of axioms that connect or bridge two distinct ontology modules. For example, the Uberon-to-ZFA bridge module." []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000005
+name: import ontology module
+def: "A subset ontology module that is intended to be imported from another ontology." []
+synonym: "import file" EXACT []
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000006
+name: subset ontology module
+def: "An ontology module that is extracted from a main ontology module and includes only a subset of entities or axioms." []
+synonym: "ontology slim" EXACT []
+synonym: "subset ontology" EXACT []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000007
+name: curation subset ontology module
+def: "A subset ontology that is intended as a whitelist for curators using the ontology. Such a subset will exclude classes that curators should not use for curation." []
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000008
+name: analysis subset ontology module
+def: "An ontology module that is intended for usage in analysis or discovery applications." []
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000009
+name: single layer subset ontology module
+def: "A subset ontology that is largely comprised of a single layer or strata in an ontology class hierarchy. The purpose is typically for rolling up for visualization. The classes in the layer need not be disjoint." []
+synonym: "ribbon subset" EXACT []
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000010
+name: exclusion subset ontology module
+def: "A subset of an ontology that is intended to be excluded for some purpose. For example, a blacklist of classes." []
+synonym: "antislim" EXACT []
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000011
+name: external import ontology module
+def: "An imported ontology module that is derived from an external ontology. Derivation methods include the OWLAPI SLME approach." []
+synonym: "external import" EXACT []
+is_a: IAO:8000005 ! import ontology module
+
+[Term]
+id: IAO:8000012
+name: species subset ontology module
+def: "A subset ontology that is crafted to either include or exclude a taxonomic grouping of species." []
+synonym: "taxon subset" EXACT []
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000013
+name: reasoned ontology module
+def: "An ontology module that contains axioms generated by a reasoner. The generated axioms are typically direct SubClassOf axioms, but other possibilities are available." []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000014
+name: generated ontology module
+def: "An ontology module that is automatically generated, for example via a SPARQL query or via template and a CSV." []
+is_a: IAO:8000000 ! ontology module
+
+[Term]
+id: IAO:8000015
+name: template generated ontology module
+def: "An ontology module that is automatically generated from a template specification and fillers for slots in that template." []
+is_a: IAO:8000014 ! generated ontology module
+
+[Term]
+id: IAO:8000016
+name: taxonomic bridge ontology module
+is_a: IAO:8000004 ! bridge ontology module
+
+[Term]
+id: IAO:8000017
+name: ontology module subsetted by expressivity
+is_a: IAO:8000006 ! subset ontology module
+
+[Term]
+id: IAO:8000018
+name: obo basic subset ontology module
+def: "A subset ontology that is designed for basic applications to continue to make certain simplifying assumptions; many of these simplifying assumptions were based on the initial version of the Gene Ontology, and have become enshrined in many popular and useful tools such as term enrichment tools.\n\nExamples of such assumptions include: traversing the ontology graph ignoring relationship types using a naive algorithm will not lead to cycles (i.e. the ontology is a DAG); every referenced term is declared in the ontology (i.e. there are no dangling clauses).\n\nAn ontology is OBO Basic if and only if it has the following characteristics:\nDAG\nUnidirectional\nNo Dangling Clauses\nFully Asserted\nFully Labeled\nNo equivalence axioms\nSingly labeled edges\nNo qualifier lists\nNo disjointness axioms\nNo owl-axioms header\nNo imports" []
+is_a: IAO:8000017 ! ontology module subsetted by expressivity
+
+[Term]
+id: IAO:8000019
+name: ontology module subsetted by OWL profile
+is_a: IAO:8000017 ! ontology module subsetted by expressivity
+
+[Term]
+id: IAO:8000020
+name: EL++ ontology module
+is_a: IAO:8000019 ! ontology module subsetted by OWL profile
 
 [Term]
 id: IDO:0000450
@@ -3209,7 +3409,7 @@ is_a: IAO:0000109 ! measurement datum
 [Term]
 id: OBI:0000011
 name: planned process
-def: "A processual entity that realizes a plan which is the concretization of a plan specification." []
+def: "A process that realizes a plan which is the concretization of a plan specification." []
 is_a: BFO:0000015 ! process
 
 [Term]
@@ -3692,7 +3892,7 @@ def: "Label role is a role which inheres in a material entity and which is reali
 synonym: "label" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: http://purl.obolibrary.org/obo/OBI_0002743
+replaced_by: OBI:0002743
 
 [Term]
 id: OBI:0000143
@@ -3769,7 +3969,7 @@ is_a: OBI:0002743 ! molecular label role
 
 [Term]
 id: OBI:0000164
-name: cDNA library
+name: clonal cDNA library
 def: "Mixed population of cDNAs (complementaryDNA) made from mRNA from a defined source, usually a specific cell type. This term should be associated only to nucleic acid interactors not to their proteins product. For instance in 2h screening use living cells (MI:0349) as sample process.\n\nALT DEF (PRS):: a cDNA library is a collection of host cells, typically E.Coli cells but not exclusively. modified by transfer of plasmid DNA molecule used as vector containing a fragment or totality of cDNA molecule (the insert) .  cDNA library may have an array of role and applications." []
 is_a: OBI:0000731 ! recombinant vector
 
@@ -3901,10 +4101,12 @@ is_obsolete: true
 
 [Term]
 id: OBI:0000207
-name: health care provider role
+name: obsolete health care provider role
 def: "a worker role of providing medical care either within or outside the study timeline" []
 synonym: "health care provider" EXACT []
-is_a: OBI:0000116 ! worker role
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: OMRSE:00000012
 
 [Term]
 id: OBI:0000208
@@ -3994,7 +4196,7 @@ is_a: IAO:0000572 ! documenting
 [Term]
 id: OBI:0000231
 name: enzymatic cleavage
-def: "enzymatic cleavage is a protocol application to digest the fraction of input material that is susceptible to that enzyme" []
+def: "a material processing that digests the fraction of input material that is susceptible to that enzyme" []
 is_a: OBI:0000094 ! material processing
 
 [Term]
@@ -4228,7 +4430,7 @@ id: OBI:0000340
 name: obsolete_documenting
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: IAO_0000572
+replaced_by: IAO:0000572
 
 [Term]
 id: OBI:0000341
@@ -4279,6 +4481,7 @@ id: OBI:0000366
 name: metabolite profiling assay
 def: "An assay that detects and identifies chemical entities resulting from biochemical and cellular metabolism" []
 synonym: "metabolite assay" EXACT []
+synonym: "metabolomic assay" EXACT []
 is_a: OBI:0000070 ! assay
 
 [Term]
@@ -5907,7 +6110,7 @@ is_a: BFO:0000019 ! quality
 id: OBI:0000655
 name: blood specimen
 def: "a material entity derived from a portion of blood collected from an organism" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0000656
@@ -6100,7 +6303,7 @@ is_a: OBI:0000715 ! animal care protocol
 [Term]
 id: OBI:0000689
 name: 454 Genome Sequence 20
-def: "is a DNA sequencer which is manufactured by 454 Life Science Corporation and enables pyrosequencing to be performed. It comprises both optics and fluidics subsystems, which are controlled by a computer subsystem. The fluidics subsystem ensures accurate reagent dispensing. It consists of a reagents cassette (which holds the reagent containers), a sipper manifold, pumps, valves, and debubblers. The fluidics subsystem flows the sequencing reagents across the wells of the PicoTiterPlate device, and moves the spent reagents from the PicoTiterPlate device to the waste receptacle. The optics subsystem consists of a CCD camera and a camera controller. The camera captures the light emitted in the wells of the PicoTiterPlate device during each step of the sequencing cycle, and sends the digital images to the computer subsystem for processing. The computer controls the other Sequencer subsystems, and processes the digital images sent by the camera to extract the DNA sequence information." []
+def: "is a DNA sequencer first manufactured by 454 Life Science Corporation in 2005, and enables pyrosequencing to be performed. It comprises both optics and fluidics subsystems, which are controlled by a computer subsystem. The fluidics subsystem ensures accurate reagent dispensing. It consists of a reagents cassette (which holds the reagent containers), a sipper manifold, pumps, valves, and debubblers. The fluidics subsystem flows the sequencing reagents across the wells of the PicoTiterPlate device, and moves the spent reagents from the PicoTiterPlate device to the waste receptacle. The optics subsystem consists of a CCD camera and a camera controller. The camera captures the light emitted in the wells of the PicoTiterPlate device during each step of the sequencing cycle, and sends the digital images to the computer subsystem for processing. The computer controls the other Sequencer subsystems, and processes the digital images sent by the camera to extract the DNA sequence information." []
 synonym: "GS 20" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
 
@@ -6184,12 +6387,13 @@ id: OBI:0000701
 name: self-organizing map
 def: "A self-organizing map (SOM) is an artificial neural network with objective class discovery that uses a neighborhood function to preserve the topological properties of a dataset to produce low-dimensional (typically 2) discretized representation of the training data set. A set of artificial neurons learn to map points in an input space to coordinates in an output space. The input space can have different dimensions and topology from the output space, and the SOM will attempt to preserve these." []
 synonym: "SOM" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200175 ! class discovery data transformation
 
 [Term]
 id: OBI:0000702
 name: 454 Genome Sequencer FLX
-def: "is a DNA sequencer which is manufactured by 454 Life Science Corporation and enables pyrosequencing to be performed. It comprises both optics and fluidics subsystems, which are controlled by a computer subsystem. The fluidics subsystem ensures accurate reagent dispensing. It consists of a reagents cassette (which holds the reagent containers), a sipper manifold, pumps, valves, and debubblers. The fluidics subsystem flows the sequencing reagents across the wells of the PicoTiterPlate device, and moves the spent reagents from the PicoTiterPlate device to the waste receptacle. The optics subsystem consists of a CCD camera and a camera controller. The camera captures the light emitted in the wells of the PicoTiterPlate device during each step of the sequencing cycle, and sends the digital images to the computer subsystem for processing. The computer controls the other Sequencer subsystems, and processes the digital images sent by the camera to extract the DNA sequence information." []
+def: "is a DNA sequencer which was first manufactured by 454 Life Science Corporation in 2008 and enables pyrosequencing to be performed. It comprises both optics and fluidics subsystems, which are controlled by a computer subsystem. The fluidics subsystem ensures accurate reagent dispensing. It consists of a reagents cassette (which holds the reagent containers), a sipper manifold, pumps, valves, and debubblers. The fluidics subsystem flows the sequencing reagents across the wells of the PicoTiterPlate device, and moves the spent reagents from the PicoTiterPlate device to the waste receptacle. The optics subsystem consists of a CCD camera and a camera controller. The camera captures the light emitted in the wells of the PicoTiterPlate device during each step of the sequencing cycle, and sends the digital images to the computer subsystem for processing. The computer controls the other Sequencer subsystems, and processes the digital images sent by the camera to extract the DNA sequence information.  It has the ability to sequence 400-600 million base pairs per run with 400-500 base pair read lengths." []
 synonym: "454 GS FLX" EXACT []
 synonym: "GS-FLX" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
@@ -6350,6 +6554,7 @@ id: OBI:0000727
 name: k-nearest neighbors
 def: "A k-nearest neighbors is a data transformation which achieves a class discovery or partitioning objective, in which an input data object with vector y is assigned to a class label based upon the k closest training data set points to y; where k is the largest value that class label is assigned." []
 synonym: "k-NN" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200171 ! partitioning data transformation
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -6574,7 +6779,6 @@ is_a: OBI:0000681 ! separation into different composition objective
 id: OBI:0000797
 name: obsolete_primary structure of protein
 def: "The primary structure of a protein that is completely defined by the set of its amino acid residue parts and the linear order induced by the peptide bonds that hold them together" []
-comment: replaced by SO_0000104 polypeptide
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -6774,7 +6978,6 @@ is_a: OBI:0000245 ! organization
 id: OBI:0000830
 name: obsolete_primary structure of sequence macromolecule
 def: "A quality inhering in a molecule that is completely defined by the linear sequence of a set of residues which are connected by directional, linear bonds" []
-comment: replaced by SO_0000001 region
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -6885,7 +7088,6 @@ is_a: OBI:0666666 ! RNA extraction
 [Term]
 id: OBI:0000851
 name: obsolete_diethyl pyrocarbonate
-comment: Replaced by CHEBI_59051 Diethylpyrocarbonate
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -7492,7 +7694,7 @@ id: OBI:0000956
 name: obsolete_handedness
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: http://purl.obolibrary.org/obo/PATO_0002201
+replaced_by: PATO:0002201
 
 [Term]
 id: OBI:0000957
@@ -7989,7 +8191,6 @@ is_a: BFO:0000034 ! function
 id: OBI:0001037
 name: obsolete_specimen fixation function
 def: "A specimen \nfixation function is a function that holds or fastens an entity in a fixed position." []
-comment: duplicate term
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -16551,7 +16752,7 @@ is_a: IAO:0000032 ! scalar measurement datum
 id: OBI:0002481
 name: single-end library
 def: "A cDNA library that is a collection of short tags from only one end of DNA fragments." []
-is_a: OBI:0000164 ! cDNA library
+is_a: OBI:0002754 ! cDNA library
 
 [Term]
 id: OBI:0002482
@@ -16640,13 +16841,13 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002501
 name: bile specimen
 def: "A specimen that is derived from bile." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002502
 name: cerebrospinal fluid specimen
 def: "A specimen that is derived from cerbrospinal fluid." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002503
@@ -16666,13 +16867,13 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002505
 name: milk specimen
 def: "A specimen that is derived from milk." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002506
 name: pericardial fluid specimen
 def: "A specimen that is derived from pericardial fluid." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002507
@@ -16690,13 +16891,13 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002509
 name: sweat specimen
 def: "A specimen that is derived from sweat." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002510
 name: synovial fluid specimen
 def: "A specimen that is derived from synovial fluid." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002511
@@ -16721,13 +16922,13 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002514
 name: peritoneal fluid specimen
 def: "A specimen that is derived from peritoneal fluid." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002515
 name: pleural fluid specimen
 def: "A specimen that is derived from pleural fluid." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002516
@@ -17052,6 +17253,7 @@ is_a: OBI:0200187 ! sequence analysis data transformation
 id: OBI:0002568
 name: sequence data feature count tabulation
 def: "The counting of features (typically, genes) within aligned sequence data, and organization of these counts into one or more tables." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200187 ! sequence analysis data transformation
 
 [Term]
@@ -17571,6 +17773,93 @@ def: "An organism identification assay that identifies a microorganism in a bloo
 is_a: OBI:0001624 ! organism identification assay
 
 [Term]
+id: OBI:0002650
+name: biopsy
+def: "A specimen collection that obtains a sample of tissue or cell from a living multicellular organism body for diagnostic purposes by means intended to be minimally invasive." []
+is_a: OBI:0600005 ! collecting specimen from organism
+
+[Term]
+id: OBI:0002651
+name: image guided biopsy
+def: "A biopsy which uses an imaging procedure to guide a needle biopsy." []
+synonym: "image guided needle biopsy" EXACT []
+synonym: "image-guided biopsy" EXACT []
+synonym: "imaging guided biopsy" EXACT []
+is_a: OBI:0002654 ! needle biopsy
+
+[Term]
+id: OBI:0002652
+name: computed tomography assisted biopsy
+def: "A needle biopsy guided by real-time computed tomography (CT) scan images." []
+synonym: "Computed Tomography Assisted Biopsy" EXACT []
+synonym: "Computed Tomography-Guided Needle Biopsy" EXACT []
+synonym: "CT Assisted Biopsy" EXACT []
+synonym: "CT Guided Biopsy" EXACT []
+is_a: OBI:0002651 ! image guided biopsy
+
+[Term]
+id: OBI:0002653
+name: ultrasound-guided needle biopsy
+def: "A needle biopsy guided by ultrasound visualization." []
+is_a: OBI:0002651 ! image guided biopsy
+
+[Term]
+id: OBI:0002654
+name: needle biopsy
+def: "A biopsy that uses a hollow needle to extract cells." []
+is_a: OBI:0002650 ! biopsy
+
+[Term]
+id: OBI:0002655
+name: fine needle aspiration biopsy
+def: "A biopsy that uses a thin needle to extract cells." []
+synonym: "FNA" EXACT []
+synonym: "FNAB" EXACT []
+is_a: OBI:0002654 ! needle biopsy
+
+[Term]
+id: OBI:0002656
+name: core needle biopsy
+def: "A biopsy that uses a hollow tube to collect a core of tissue." []
+synonym: "CNB" EXACT []
+is_a: OBI:0002654 ! needle biopsy
+
+[Term]
+id: OBI:0002657
+name: surgical biopsy
+def: "A biopsy involving a surgical incision into an organism to access the biopsy material." []
+synonym: "open biopsy" EXACT []
+is_a: OBI:0002650 ! biopsy
+
+[Term]
+id: OBI:0002660
+name: abdominal wall fat pad biopsy
+def: "A biopsy involving the collection of a small part of the abdominal wall fat pad." []
+synonym: "abdominal wall biopsy" EXACT []
+synonym: "fat biopsy" EXACT []
+is_a: OBI:0002650 ! biopsy
+
+[Term]
+id: OBI:0002661
+name: tail biopsy
+def: "A biopsy involving the collection of the tip of a mamallian tail." []
+synonym: "snip" EXACT []
+is_a: OBI:0002650 ! biopsy
+
+[Term]
+id: OBI:0002662
+name: bone marrow biopsy
+def: "A biopsy where a small amount of bone and a small amount of fluid and bone marrow are collected." []
+is_a: OBI:0002650 ! biopsy
+
+[Term]
+id: OBI:0002663
+name: skinpunch biopsy
+def: "A biopsy that involves the collection of a cylinder of skin (including epidermis, dermis and superficial fat) using a punch tool." []
+synonym: "punch biopsy; skin biopsy" EXACT []
+is_a: OBI:0002650 ! biopsy
+
+[Term]
 id: OBI:0002664
 name: cytometric bead array assay measuring epitope specific interleukin-15 production by T cells
 def: "An assay of epitope specific interleukin-15 production by T cells that uses a cytometric bead array assay." []
@@ -17680,6 +17969,12 @@ def: "An efficacy of T cell epitope intervention experiment that uses a disease 
 synonym: "disease exacerbation after adoptive transfer|in vivo assay" EXACT []
 is_a: OBI:0001467 ! in vivo assay measuring T cell epitope specific disease exacerbation
 is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response after adoptive transfer of epitope specific T cells
+
+[Term]
+id: OBI:0002679
+name: vacuum-assisted biopsy needle
+def: "A core biopsy needle integrated with a vacuum system which facilitates the collection of specimen material." []
+is_a: OBI:0000436 ! needle
 
 [Term]
 id: OBI:0002680
@@ -18157,6 +18452,145 @@ is_a: CHEBI:23367 ! molecular entity
 is_a: OBI:0001879 ! reagent
 
 [Term]
+id: OBI:0002745
+name: vacuum-assisted biopsy
+def: "A biopsy performed with a needle augmented with a vacuum device." []
+synonym: "VAB" EXACT []
+is_a: OBI:0002654 ! needle biopsy
+
+[Term]
+id: OBI:0002746
+name: induced sputum specimen
+def: "A sputum specimen that is collected from an organism following its inhalation of a nebulized salt solution." []
+is_a: OBI:0002508 ! sputum specimen
+
+[Term]
+id: OBI:0002747
+name: passage process
+def: "A material processing that consists of first growing an organism in an environmental system and then removing the organism to be grown in another environmental system, a process which may be repeated with the objective of altering the organism or increasing its number." []
+is_a: OBI:0000094 ! material processing
+
+[Term]
+id: OBI:0002748
+name: passage history record
+def: "A data item that is about the sequence of environmental systems in each of which is grown an organism in a passage process." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0002750
+name: Oxford Nanopore MinION
+def: "A portable DNA sequencer which is manufactured by the Oxford Nanopore Technologies corporation, that uses consumable flow cells producing up to 30 Gb of DNA sequence data per flow cell. The sequencer produces real-time results and utilizes nanopore technology with up to 512 nanopore channels in the sensor array." []
+synonym: "ONT MinION, MinION" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0002751
+name: Oxford Nanopore GridION Mk1
+def: "A DNA sequencer that is manufactured by the Oxford Nanopore Technologies corporation, that can run and analyze up to five individual flow cells producing up to 150 Gb of data per run. The sequencer produces real-time results and utilizes nanopore technology with the option of running the flow cells concurrently or individually." []
+synonym: "Oxford Nanopore GridION X5, GridION Mk1" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0002752
+name: Oxford Nanopore PromethION
+def: " A DNA sequencer that is manufactured by the Oxford Nanopore Technologies corporation, capable of running up to 48 flow cells and producing up to 7.6 Tb of data per run. The sequencer produces real-time results and utilizes Nanopore technology, with each flow cell allowing up to 3,000 nanopores to be sequencing simultaneously." []
+synonym: "PromethION" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0002753
+name: PRO-cap
+def: "Precision nuclear run-on and sequencing to detect Pol II initiation sites" []
+synonym: "PRO-CAP" EXACT []
+is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0002692 ! polymerase chain reaction assay
+
+[Term]
+id: OBI:0002754
+name: cDNA library
+def: "A collection of DNA molecules with sequences complementary to a specified set of mRNA molecules and commonly developed by enzymatic reverse transcription." []
+is_a: OBI:0000047 ! processed material
+
+[Term]
+id: OBI:0002756
+name: ordinal value specification
+def: "A categorical value specification in which the available categories were created with an explicit order." []
+is_a: OBI:0001930 ! categorical value specification
+
+[Term]
+id: OBI:0002759
+name: ribosomal RNA-depleted RNA sequencing assay
+def: "An RNA-seq assay in which highly abundant ribosomal RNAs are removed from total RNA before sequencing, resulting in more efficient transcript/gene detection." []
+synonym: "rRNA-deleted RNA sequencing assay" EXACT []
+is_a: OBI:0001271 ! RNA-seq assay
+
+[Term]
+id: OBI:0002760
+name: metatranscriptome sequencing assay
+def: "An RNA-seq assay that determines the RNA sequence of microbial transcripts from a microbioal community of mixed species from a given microbiome." []
+is_a: OBI:0001271 ! RNA-seq assay
+
+[Term]
+id: OBI:0002761
+name: lipid profiling assay
+def: "An analyte assay assay that detects and identifies lipids resulting from biochemical and cellular metabolism." []
+synonym: "lipidomic assay" EXACT []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0002762
+name: single-nucleus ATAC-seq
+def: "An ATAC-seq assay in which single nuclei are isolated from frozen tissue samples, through a protocol designed to maximally preserve nucleus integrity during sample processing and optimize transposase-mediated fragmentation of chromatin in individual nuclei." []
+synonym: "snATAC-seq" EXACT []
+is_a: OBI:0002039 ! assay for transposase-accessible chromatin using sequencing
+
+[Term]
+id: OBI:0002763
+name: 16s ribosomal gene sequencing assay
+def: "An amplicon sequencing assay in which the amplicon is derived from universal primers used to amplify the 16S ribosomal RNA gene from isolate bacterial genomic DNA or metagenomic DNA from a microbioal community. Resulting sequences are compared to reference 16S sequence databases to identify or classify bacteria present within a given sample." []
+synonym: "16S rRNA sequencing assay" EXACT []
+is_a: OBI:0001960 ! taxonomic diversity assessment by targeted gene survey
+is_a: OBI:0002767 ! amplicon sequencing assay
+
+[Term]
+id: OBI:0002764
+name: single-cell ATAC-seq
+def: "An ATAC assay designed to robustly map the accessible genome of individual cells, using sequencing integrated into a programmable microfluidics platform, in order to provide insights into cell-to-cell variation in accessibility profiles." []
+synonym: "scATAC-seq" EXACT []
+is_a: OBI:0002039 ! assay for transposase-accessible chromatin using sequencing
+
+[Term]
+id: OBI:0002765
+name: microbiome protein expression profiling assay
+def: "A protein expression profiling assay of microbial proteins extracted from a microbioal community of mixed species from a given microbiome." []
+synonym: "metaproteomic assay" EXACT []
+is_a: OBI:0000615 ! protein expression profiling assay
+
+[Term]
+id: OBI:0002766
+name: cytokine assay
+def: "An analyte assay to study presence, concentration, or amount of cytokines." []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0002767
+name: amplicon sequencing assay
+def: "A sequencing assay in which a DNA or RNA input molecule is amplified by PCR and the product sequenced." []
+is_a: OBI:0600047 ! sequencing assay
+
+[Term]
+id: OBI:0002768
+name: whole virome sequencing assay
+def: "A whole metagenome sequencing assay that intends to provide information on multiple genome sequences from different viruses present in the same input sample." []
+is_a: OBI:0002623 ! whole metagenome sequencing assay
+
+[Term]
+id: OBI:0002801
+name: presence or over-threshold value specification
+def: "An ordinal value specification that indicates that either \na) an analyte or mesaurand is present in an evaluant, or \nb) that the amount of analyte/measurand detected is over some predetermined threshold." []
+is_a: OBI:0002756 ! ordinal value specification
+
+[Term]
 id: OBI:0005246
 name: injection function
 def: "The function of a device realized when administering a substance in vivo, applied particularly to the forcible insertion of a liquid or gas by means of a syringe, pump, etc." []
@@ -18206,7 +18640,6 @@ name: obsolete_immortal cell
 def: "a cell derived from a multicellular organism that has the potential to replicate indefinitely" []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: CL:0000002
 
 [Term]
 id: OBI:0100039
@@ -18234,17 +18667,15 @@ name: obsolete_cell line cell
 def: "A material entity that represents generations of a primary culture." []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: CL:0007014
 
 [Term]
 id: OBI:0100056
 name: obsolete_immortal cell line culture
 def: "A cell line that is expected to be capable of indefinite propagation in an vitro culture." []
-synonym: "immortal cell line sample" EXACT []
-synonym: "permanent cell line" EXACT []
+synonym: "immortal cell line sample|permanent cell line" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: http://purl.obolibrary.org/obo/CLO_0009828
+replaced_by: CLO:0009828
 
 [Term]
 id: OBI:0100058
@@ -18273,11 +18704,10 @@ is_a: OBI:0100060 ! cultured cell population
 id: OBI:0100062
 name: obsolete_cell line
 def: "A secondary cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history (ie has been successively passaged together in culture).  " []
-comment: 1. The term 'line' is used when a culture has undergone an intentional experimental process to establish a more uniform and stable population of cells (see 'establishing cell line'). This will require one or more passages, but may involve additional selection processes. Through such passaging and/or selection processes, the resulting 'line' attains some level of genetic stability and compositional homogeneity which is typically absent in primary cultures. Because of their relative homogeneity, 'lines' are capable of being characterized and stably propagated over a period of time. A *new* cell line can be "established" not only through the passaging/selection of a primary culture, but also through experimental modifications of existing lines (e.g. immortalization, stable genetic modifications, drug selection for a resistant subset, etc.).  As defined here,  'cell line' can refer to a population of cells in active culture, applied experimentally, or stored in a quescent state for future use. \n\n2. The definitional criteria provided here for the 'cell line' class demarcates populations that represent what researchers actually use in the practice of science - e.g. as inputs to culturing, experimentation, and sharing. The definition is such that cell lines will exhibit important attributes. For example, they will have a relatively homogenous cell type composition as they have experienced similar selective pressures due to their continuous co-propagation. In addition, these populations can also be characterized by a passage number, again owing to their common passaging history.?\n\n3. Definitinal criteria are intended to be sufficiently clear to specify what are and what are not instances of 'cell lines' in the real world. A 'HeLa cell line' would be a subset of all HeLa cells in the world - specifically any subset that has been derived through a shared continuous lineage wherein the cells have always been passaged together and thereby evolved together through the selective pressures imposed by this common history. Accordingly, 'HeLa cell line' would not be used to refer to the collection of all HeLa cells in a given lab, or all HeLa cells in the ATCC repository, as cells in these collections will likely not all share a common culture history. Rather, 'HeLa cell line' could refer to the collection of cells I am culturing at a given moment, or that I apply in an experiment (as such collections typically meet the criteria of having a shared propagation history).  As noted above, it is such collections that are typically referred to in scientific discourse and publications.\n\n4. Notably, the term 'line' has been alternately used by other terminologies and communities to refer to cultures that have been immortalized - ie has attained the capacity for indefinite propagation in vitro.  In this ontology, we refer to such cell lines as 'immortal cell lines', and use the term 'cell line' to indicate any culture that has been passaged.
 synonym: "cell line sample" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: http://purl.obolibrary.org/obo/CLO_0000031
+replaced_by: CLO:0000031
 
 [Term]
 id: OBI:0100063
@@ -18339,6 +18769,7 @@ disjoint_from: OBI:0600013 ! information acquisition
 id: OBI:0200001
 name: geometric mean calculation
 comment: A geometric mean calculation is a descriptive statistics calculation in which the mean is calculated by taking the nth root of the product of all of the observations in a data (n being the number of all observations).
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -18370,6 +18801,7 @@ is_a: OBI:0200166 ! data transformation objective
 id: OBI:0200006
 name: biexponential transformation
 def: "A biexponential transformation is a data transformation that, for each (one dimensional) real number input x, outputs an approximation (found, e.g. with the Newton's method) to a solution y of the equation B(y)-x=0, where B denotes a b transformation." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200072 ! curve fitting data transformation
 is_a: OBI:0200169 ! normalization data transformation
 
@@ -18498,6 +18930,7 @@ is_a: OBI:0200169 ! normalization data transformation
 id: OBI:0200028
 name: quantile transformation
 def: "A quantile transformation is a data transformation that takes as input a collection of data sets, where each can be thought as an n-dimensional (real) vector, and which transforms each data set so that the resulting output data sets have equal quantiles." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200169 ! normalization data transformation
 is_a: OBI:0200181 ! center calculation data transformation
 
@@ -18568,6 +19001,7 @@ is_a: OBI:0200080 ! network analysis
 id: OBI:0200041
 name: k-means clustering
 def: "A k-means clustering is a data transformation which achieves a class discovery or partitioning objective, which takes as input a collection of objects (represented as points in multidimensional space) and which partitions them into a specified number k of clusters. The algorithm attempts to find the centers of natural clusters in the data. The most common form of the algorithm starts by partitioning the input points into k initial sets, either at random or using some heuristic data. It then calculates the mean point, or centroid, of each set. It constructs a new partition by associating each point with the closest centroid. Then the centroids are recalculated for the new clusters, and the algorithm repeated by alternate applications of these two steps until convergence, which is obtained when the points no longer switch clusters (or alternatively centroids are no longer changed)." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200171 ! partitioning data transformation
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -18575,6 +19009,7 @@ is_a: OBI:0200175 ! class discovery data transformation
 id: OBI:0200042
 name: hierarchical clustering
 def: "A hierarchical clustering is a data transformation which achieves a class discovery objective, which takes as input data item and builds a hierarchy of clusters. The traditional representation of this hierarchy is a tree (visualized by a dendrogram), with the individual input objects at one end (leaves) and a single cluster containing every object at the other (root)." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200175 ! class discovery data transformation
 
 [Term]
@@ -18606,6 +19041,7 @@ id: OBI:0200050
 name: dimensionality reduction
 def: "A dimensionality reduction is data partitioning which transforms each input m-dimensional vector (x_1, x_2, ..., x_m) into an output n-dimensional vector (y_1, y_2, ..., y_n), where n is smaller than m." []
 synonym: "data projection" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200175 ! class discovery data transformation
 
 [Term]
@@ -18724,6 +19160,7 @@ id: OBI:0200073
 name: family wise error rate correction method
 def: "A family wise error rate correction method is a multiple testing procedure that controls the probability of at least one false positive." []
 synonym: "FWER correction" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -18761,6 +19198,7 @@ is_a: OBI:0200166 ! data transformation objective
 id: OBI:0200079
 name: arithmetic mean calculation
 def: "An arithmetic mean calculation is a descriptive statistics calculation in which the mean is calculated by taking the sum of all of the observations in a data set divided by the total number of observations. It gives a measure of the 'center of gravity' for the data set. It is also known as the first moment." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200170 ! averaging data transformation
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
@@ -18867,6 +19305,7 @@ is_a: OBI:0200169 ! normalization data transformation
 id: OBI:0200099
 name: discriminant function analysis
 def: "Discriminant function analysis is a form of discriminant analysis used to determine which variables discriminate between two or more naturally occurring groups. Analysis is used to determine which variable(s) are the best predictors of a particular outcome." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0000663 ! class prediction data transformation
 is_a: OBI:0200106 ! discriminant analysis
 is_a: OBI:0200175 ! class discovery data transformation
@@ -18883,6 +19322,7 @@ is_a: OBI:0200171 ! partitioning data transformation
 id: OBI:0200101
 name: linear discriminant functional analysis
 def: "Linear discriminant functional analysis (LDFA) is a multivariate technique used in special applications where there are several intact groups (random assignment may be impossible) and they have been measured on several independent measures. Thus, you will want to describe how these groups differ on the basis of these measures. In this case, classification and prediction is the main objective." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0000663 ! class prediction data transformation
 is_a: OBI:0200106 ! discriminant analysis
 is_a: OBI:0200175 ! class discovery data transformation
@@ -18903,6 +19343,7 @@ is_a: OBI:0200102 ! regression analysis method
 id: OBI:0200104
 name: principal component regression
 def: "The Principal Component Regression method is a regression analysis method that combines the Principal Component Analysis (PCA)spectral decomposition with an Inverse Least Squares (ILS) regression method to create a quantitative model for complex samples. Unlike quantitation methods based directly on Beer's Law which attempt to calculate the absorbtivity coefficients for the constituents of interest from a direct regression of the constituent concentrations onto the spectroscopic responses, the PCR method regresses the concentrations on the PCA scores." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200102 ! regression analysis method
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -18936,6 +19377,7 @@ is_a: OBI:0200169 ! normalization data transformation
 id: OBI:0200109
 name: b transformation
 def: "A b transformation is a data transformation obtained by applying the function B described in what follows to a (one dimensional) real number input. B(x)= a*exp(b*x)-c*exp(-d*x)+f, where exp denotes an exponential transformation and a, b, c, d, f are real constants with a, b, c, d positive with the objective of normalization." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200169 ! normalization data transformation
 
 [Term]
@@ -18956,6 +19398,7 @@ is_a: OBI:0000011 ! planned process
 id: OBI:0200113
 name: similarity calculation
 def: "A similarity calculation is a data transformation that attaches to each pair of objects in the input a number that is meant to reflect how 'close' or 'similar' those objects are." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0000663 ! class prediction data transformation
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -18981,6 +19424,7 @@ is_a: OBI:0200072 ! curve fitting data transformation
 id: OBI:0200117
 name: mode calculation
 def: "A mode calculation is a descriptive statistics calculation in which the mode is calculated which is the most common value in a data set. It is most often used as a measure of center for discrete data." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -18994,6 +19438,7 @@ is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 id: OBI:0200119
 name: median calculation
 def: "A median calculation is a  descriptive statistics calculation in which the midpoint of the data set (the 0.5 quantile) is calculated.  First, the observations are sorted in increasing order.  For an odd number of observations, the median is the middle value of the sorted data.  For an even number of observations, the median is the average of the two middle values." []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -19022,6 +19467,7 @@ is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 id: OBI:0200123
 name: skewness calculation
 def: "A skewness calculation is a descriptive statistics calculation defined as a parameter that describes how much a distribution (or a data set) varies from a bell-shaped curve.  See http://www.riskglossary.com/link/skewness.htm for details.  It is also known as the third central moment" []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -19236,6 +19682,7 @@ id: OBI:0200161
 name: quantile number of false positives correction method
 def: "A quantile number of false positives correction method is a MTP that controls for the pth quantile of the distribution of the number of false positives out of the total number of tests performed'" []
 synonym: "QNFP" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -19250,6 +19697,7 @@ id: OBI:0200163
 name: false discovery rate correction method
 def: "The false discovery rate is a  data transformation used in multiple hypothesis testing to correct for multiple comparisons. It controls the expected proportion of incorrectly rejected null hypotheses (type I errors) in a list of rejected hypotheses. It is a less conservative comparison procedure with greater power than familywise error rate (FWER) control, at a cost of increasing the likelihood of obtaining type I errors. ." []
 synonym: "FDR correction method" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -19257,6 +19705,7 @@ id: OBI:0200164
 name: proportion of expected false positives correction method
 def: "A proportion of expected false positives correction method is a multiple testing procedure that controls the ratio of the expected value of the numbers of false positives to the expected value of the numbers of rejected hypotheses." []
 synonym: "PEFP correction method" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -19264,6 +19713,7 @@ id: OBI:0200165
 name: quantile proportion of false positives correction method
 def: "A quantile proportion of false positives correction method is a multiple testing procedure that controls the pth quantile of the distribution of the proportion of false positives among the rejected hypothesis (false discovery rate)." []
 synonym: "QPFP correction method" EXACT []
+is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -19509,7 +19959,9 @@ is_a: OBI:0500000 ! study design
 id: OBI:0302714
 name: obsolete_collection (of entities of organismal origin)
 def: "a collection is a bfo:aggregate object, that is a set of material object of the same kind" []
-synonym: "set, group, ensemble" EXACT []
+synonym: " ensemble" EXACT []
+synonym: " group" EXACT []
+synonym: "set" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -20911,8 +21363,9 @@ is_a: OBI:0600014 ! material component separation
 [Term]
 id: OBI:0600023
 name: non specific enzymatic cleavage
-def: "a protocol application to digest the fraction of input material that is susceptible to that enzyme" []
+def: "an enzymatic cleavage that uses an enzyme without a strong affinity for specific cleavage sites in the input material" []
 is_a: OBI:0000231 ! enzymatic cleavage
+disjoint_from: OBI:0600050 ! specific enzymatic cleavage
 
 [Term]
 id: OBI:0600024
@@ -21075,7 +21528,7 @@ is_a: OBI:0600058 ! enzymatic amplification
 [Term]
 id: OBI:0600050
 name: specific enzymatic cleavage
-def: "a protocol application to digest the fraction of input material that is susceptible to that enzyme" []
+def: "an enzymatic cleavage that uses an enzyme with a strong affinity for specific cleavage sites in the input material" []
 is_a: OBI:0000231 ! enzymatic cleavage
 
 [Term]
@@ -21534,7 +21987,7 @@ name: obsolete_disease
 def: "placeholder to be imported from disease ontology" []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
-replaced_by: http://purl.obolibrary.org/obo/OGMS_0000031
+replaced_by: OGMS:0000031
 
 [Term]
 id: OBI:1110056
@@ -22080,6 +22533,120 @@ synonym: "formalin-fixed paraffin-embeded specimen" EXACT []
 is_a: OBI:0000950 ! paraffin specimen
 
 [Term]
+id: OBI:2000000
+name: uterine cervix specimen
+def: "A specimen that is derived from some uterine cervix " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000001
+name: urethra specimen
+def: "A specimen that is derived from some urethra " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000002
+name: cervical mucus specimen
+def: "A specimen that is derived from some cervical mucus " []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:2000003
+name: throat specimen
+def: "A specimen that is derived from some throat " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000004
+name: eye specimen
+def: "A specimen that is derived from some eye " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000005
+name: respiratory system specimen
+def: "A specimen that is derived from some respiratory system " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000006
+name: upper respiratory tract specimen
+def: "A specimen that is derived from some upper respiratory tract " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000007
+name: nasopharynx specimen
+def: "A specimen that is derived from some nasopharynx " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000008
+name: semen specimen
+def: "A specimen that is derived from some semen" []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000009
+name: bodily fluid specimen
+def: "A specimen that is derived from some bodily fluid" []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000010
+name: chorionic villus specimen
+def: "A specimen that is derived from some chorionic villus " []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:2000011
+name: meconium specimen
+def: "A specimen that is derived from some meconium " []
+is_a: OBI:0002503 ! feces specimen
+
+[Term]
+id: OBI:2000012
+name: umbilical cord blood specimen
+def: "A specimen that is derived from some umbilical cord blood" []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:2000013
+name: arterial blood specimen
+def: "A specimen that is derived from some arterial blood" []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:2000014
+name: venous blood specimen
+def: "A specimen that is derived from some venous blood" []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:2000015
+name: capillary blood specimen
+def: "A specimen that is derived from some capillary blood" []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:2000016
+name: erythrocyte specimen
+def: "A specimen that is derived from some erythrocytes" []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:2000017
+name: reticulocyte specimen
+def: "A specimen that is derived from some reticulocytes " []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:2000018
+name: leukocyte specimen
+def: "A specimen that is derived from some leukocytes" []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
 id: OBI:9999994
 name: chromium release assay
 def: "An in vitro cell killing assay in which radioactive chromium is absorbed by cells and released into supernatant when the cells die. The amount of radioactivity measured in the supernatant is a proxy for the number of cells that have died." []
@@ -22134,6 +22701,12 @@ def: "A fixed tissue specimen that is placed in a slide." []
 is_a: OMIABIS:0000050 ! fixed tissue specimen
 
 [Term]
+id: OMRSE:00000012
+name: health care provider role
+def: "A human health care role inhering in an organization or human being that is realized by a process of providing health care services to an organism." []
+is_a: BFO:0000023 ! role
+
+[Term]
 id: ObsoleteClass
 name: Obsolete Class
 
@@ -22183,13 +22756,13 @@ is_a: PATO:0000051 ! morphology
 id: PATO:0000122
 name: length
 def: "A 1-D extent quality which is equal to the distance between two points." []
-is_a: BFO:0000019 ! quality
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0000125
 name: mass
 def: "A physical quality that inheres in a bearer by virtue of the proportion of the bearer's amount of matter." []
-is_a: BFO:0000019 ! quality
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0000140
@@ -22760,6 +23333,12 @@ def: "A region which is the result of some arbitrary experimental procedure. The
 is_a: SO:0000001 ! region
 
 [Term]
+id: UBERON:0000002
+name: uterine cervix
+def: "Lower, narrow portion of the uterus where it joins with the top end of the vagina." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0000007
 name: pituitary gland
 def: "The pituitary gland is an endocrine gland that secretes hormones that regulate many other glands [GO]. An endocrine gland located ventral to the diencephalon and derived from mixed neuroectodermal and non neuroectodermal origin [ZFIN]." []
@@ -22769,6 +23348,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0000029
 name: lymph node
 def: "Any of the rounded masses of lymphoid tissue that are surrounded by a capsule of connective tissue, are distributed along the lymphatic vessels, and contain numerous lymphocytes which filter the flow of lymph." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000057
+name: urethra
+def: "the fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening" []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -22793,12 +23378,24 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0000178
 name: blood
 def: "A fluid that is composed of blood plasma and erythrocytes." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0000310
 name: breast
 def: "The upper ventral region of the torso of an organism." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000316
+name: cervical mucus
+def: "A substance produced by the cervix and endocervical glands[BTO]. Thick acidic mucus that blocks the cervical os after mestruation[WP]. This 'infertile' mucus blocks spermatozoa from entering the uterus." []
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0000341
+name: throat
+def: "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -22880,6 +23477,12 @@ def: "The thin layer of gray matter on the surface of the cerebral hemisphere th
 is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
+id: UBERON:0000970
+name: eye
+def: "An organ that detects light." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0000992
 name: ovary
 def: "the gonad of a female organism which contains germ cells" []
@@ -22895,6 +23498,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0000996
 name: vagina
 def: "A fibromuscular tubular tract leading from the uterus to the exterior of the body in female placental mammals and marsupials, or to the cloaca in female birds, monotremes, and some reptiles[WP]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001004
+name: respiratory system
+def: "Functional system which consists of structures involved in respiration." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -22919,7 +23528,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0001087
 name: pleural fluid
 def: "Transudate contained in the pleural cavity." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001088
@@ -22931,13 +23540,13 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0001089
 name: sweat
 def: "Secretion produced by a sweat gland." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001090
 name: synovial fluid
 def: "Joint fluid is a transudate of plasma that is actively secreted by synovial cells." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001134
@@ -22979,7 +23588,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0001268
 name: peritoneal fluid
 def: "Transudate contained in the peritoneal cavity." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001323
@@ -22991,7 +23600,13 @@ is_a: UBERON:0000477 ! anatomical cluster
 id: UBERON:0001359
 name: cerebrospinal fluid
 def: "A clear, colorless, bodily fluid, that occupies the subarachnoid space and the ventricular system around and inside the brain and spinal cord." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0001557
+name: upper respiratory tract
+def: "The segment of the respiratory tract that starts proximally with the nose and ends distally with the cricoid cartilage, before continuing to the trachea." []
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001567
@@ -23063,13 +23678,19 @@ is_a: UBERON:0000477 ! anatomical cluster
 id: UBERON:0001913
 name: milk
 def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0001968
+name: semen
+def: "Organism substance that is composed of sperm cells suspended in seminal fluid." []
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: UBERON:0001970
 name: bile
 def: "vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001987
@@ -23104,7 +23725,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0002048
 name: lung
-def: "Respiration organ that develops as an oupocketing of the esophagus." []
+def: "Respiration organ that develops as an outpocketing of the esophagus." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -23144,6 +23765,12 @@ def: "the portion of the small intestine that extends from the jejunum to the co
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0002199
+name: integument
+def: "The dermis, epidermis and hypodermis." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0002358
 name: peritoneum
 def: "A serous membrane that lines the peritoneal cavity[VHOG,modified]." []
@@ -23171,7 +23798,13 @@ is_a: UBERON:0000479 ! tissue
 id: UBERON:0002409
 name: pericardial fluid
 def: "Transudate contained in the pericardial cavity.[FMA]" []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0002415
+name: tail
+def: "An external caudal extension of the body. In chordates, the tail is post-anal, in other animals the anus ends in the tail" []
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0002469
@@ -23216,6 +23849,12 @@ def: "A mucosa that is part of a oropharynx [Automatically generated definition]
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0006314
+name: bodily fluid
+def: "Liquid components of living organisms. includes fluids that are excreted or secreted from the body as well as body water that normally is not." []
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
 id: UBERON:0006618
 name: atrium auricular region
 def: "A small conical pouch projections located on the upper anterior portion of each atrium of the heart." []
@@ -23225,6 +23864,18 @@ is_a: UBERON:0000481 ! multi-tissue structure
 id: UBERON:0006911
 name: digestive system secreted substance
 is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0007106
+name: chorionic villus
+def: "One of the minute vascular projections of the fetal chorion that combines with maternal uterine tissue to form the placenta." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0007109
+name: meconium
+def: "A dark greenish mass that accumulates in the bowel during fetal life and is discharged shortly after birth." []
+is_a: UBERON:0001988 ! feces
 
 [Term]
 id: UBERON:0007311
@@ -23243,6 +23894,36 @@ id: UBERON:0007650
 name: esophagogastric junction
 def: "The junction between the esophagus and the stomach epithelium" []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0010414
+name: omental fat pad
+def: "encapsulated adipose tissue associated with the fold of peritoneal tissue that extends from the stomach to the posterior abdominal wall after associating with the transverse colon" []
+is_a: UBERON:0001013 ! adipose tissue
+
+[Term]
+id: UBERON:0012168
+name: umbilical cord blood
+def: "blood that remains in the placenta and in the attached umbilical cord after childbirth[WP]." []
+is_a: UBERON:0000178 ! blood
+
+[Term]
+id: UBERON:0013755
+name: arterial blood
+def: "A blood that is part of a artery." []
+is_a: UBERON:0000178 ! blood
+
+[Term]
+id: UBERON:0013756
+name: venous blood
+def: "A blood that is part of a vein." []
+is_a: UBERON:0000178 ! blood
+
+[Term]
+id: UBERON:0013757
+name: capillary blood
+def: "A blood that is part of a capillary." []
+is_a: UBERON:0000178 ! blood
 
 [Term]
 id: UBERON:0036149
@@ -23415,7 +24096,7 @@ is_obsolete: true
 [Typedef]
 id: IAO:0000136
 name: is about
-def: "is_about is a (currently) primitive relation that relates an information artifact to an entity." []
+def: "A (currently) primitive relation that relates an information artifact to an entity." []
 domain: IAO:0000030 ! information content entity
 
 [Typedef]
@@ -23427,8 +24108,11 @@ is_a: IAO:0000136 ! is about
 [Typedef]
 id: IAO:0000219
 name: denotes
-def: "denotes is a primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to 'pick out' the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically" []
+def: "A primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to 'pick out' the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically" []
+domain: IAO:0000030 ! information content entity
+range: BFO:0000001 ! entity
 is_a: IAO:0000136 ! is about
+inverse_of: IAO:0000235 ! denoted by
 
 [Typedef]
 id: IAO:0000220
@@ -23439,7 +24123,7 @@ is_obsolete: true
 [Typedef]
 id: IAO:0000221
 name: is quality measurement of
-def: "m is a quality measurement of q at t when\nq is a quality \nthere is a measurement process p that has specified output m, a measurement datum, that is about q" []
+def: "m is a quality measurement of q at t. When q is a quality, there is a measurement process p that has specified output m, a measurement datum, that is about q" []
 domain: IAO:0000109 ! measurement datum
 range: BFO:0000019 ! quality
 is_a: IAO:0000136 ! is about
@@ -23456,6 +24140,13 @@ id: IAO:0000223
 name: obsolete_represents
 is_a: ObsoleteProperty
 is_obsolete: true
+
+[Typedef]
+id: IAO:0000235
+name: denoted by
+def: "inverse of the relation 'denotes'" []
+domain: BFO:0000001 ! entity
+range: IAO:0000030 ! information content entity
 
 [Typedef]
 id: IAO:0000407
@@ -23482,7 +24173,7 @@ def: "inverse of the relation of is quality measurement of" []
 [Typedef]
 id: IAO:0000418
 name: is quality specification of
-def: "a relation between a data item and a quality of a material entity where the material entity is the specified output of a material transformation which achieves an objective specification that indicates the intended value of the specified quality." []
+def: "A relation between a data item and a quality of a material entity where the material entity is the specified output of a material transformation which achieves an objective specification that indicates the intended value of the specified quality." []
 is_a: IAO:0000136 ! is about
 inverse_of: IAO:0000419 ! quality is specified as
 
@@ -23707,8 +24398,9 @@ is_a: BFO:0000050 ! part of
 
 [Typedef]
 id: OBI:0000646
-name: supplies
-def: "A relation between an organisation or person and a material entity who owned or has license to the material entity and there was a legal transfer of ownership or licensing of the material entity to the current owner." []
+name: provisions
+def: "A relation between an organisation or person and a material entity, where the organization or person provides or supplies the material entity for others to use" []
+synonym: "supplies" EXACT []
 inverse_of: OBI:0000647 ! has_supplier
 
 [Typedef]
