@@ -201,6 +201,9 @@ views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/view
 	--output $@
 	rm $@.tmp.owl
 
+.PHONY: views
+views: views/obi.obo views/obi_core.owl views/NIAID-GSC-BRC.owl
+
 
 ### Test
 #
@@ -279,7 +282,7 @@ test: reason verify validate-iris
 #
 # Full build
 .PHONY: all
-all: test obi.owl views/obi.obo views/obi_core.owl views/NIAID-GSC-BRC.owl build/terms-report.csv
+all: test obi.owl views build/terms-report.csv
 
 # Remove generated files
 .PHONY: clean
