@@ -20677,6 +20677,7 @@ JZ (3-30-20): discussed on the OBI call. Since the REO was never actually regist
     </owl:Class>
     
 
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002756 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002756">
@@ -20689,6 +20690,56 @@ Separate from that, an OBI mechanism for asserting the order of ordinal values s
         <obo:IAO_0000119>Bjoern Peters in https://github.com/obi-ontology/obi/issues/862</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/862</obo:IAO_0000233>
         <rdfs:label xml:lang="en">ordinal value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002769 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002769">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001404"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A genetic characteristics information that is about the number and appearance of chromosomes in the nucleus of an eukaryotic cell.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">EFO_0004426 karyotype</obo:IAO_0000119>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1097</obo:IAO_0000233>
+        <obo:IAO_0000234 xml:lang="en">VEuPathDB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">karyotype information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002770 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002770">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002769"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A karyotype information that is about the structural variation of partial genome rather than whole genome.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1097</obo:IAO_0000233>
+        <obo:IAO_0000234 xml:lang="en">VEuPathDB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">partial karyotype information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002771 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002771">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002769"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A karyotype information that is about the structural variation of the whole genome.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI group</obo:IAO_0000119>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1097</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">full karyotype information</rdfs:label>
     </owl:Class>
     
 
