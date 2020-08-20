@@ -2,19 +2,14 @@
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl#"
      xml:base="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:obi="http://purl.obolibrary.org/obo/obi/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl">
@@ -106,8 +101,8 @@
         <dc:description xml:lang="en">The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific.</dc:description>
         <dc:format xml:lang="en">OWL-DL</dc:format>
         <dc:subject xml:lang="en">An ontology for the annotation of biomedical and functional genomics experiments.</dc:subject>
-        <dcterms:license>http://creativecommons.org/licenses/by/4.0/</dcterms:license>
-        <dcterms:title>Ontology for Biomedical Investigations</dcterms:title>
+        <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
+        <terms:title>Ontology for Biomedical Investigations</terms:title>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
     </owl:Ontology>
     
@@ -18938,17 +18933,6 @@ Accelerated chromatin biochemistry using DNA-barcoded nucleosome libraries.</obo
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0002774 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002774">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100016"/>
-        <obo:IAO_0000115 xml:lang="en">A blood plasma specimen that is the output of some platelet-poor plasma preparation and is the portion of plasma that contains fewer than 10,000 platelets per microliter.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">platelet-poor plasma specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0002028 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002028">
@@ -20044,17 +20028,6 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0002775 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002775">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600014"/>
-        <obo:IAO_0000115 xml:lang="en">A material component separation process in which (1) whole blood is first centrifuged to separate red blood cells from blood plasma, which forms the supernatant, and (2) the blood plasma is then centrifuged to separate platelets from the plasm.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">platelet-poor plasma preparation process</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0002555 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002555">
@@ -20778,6 +20751,28 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1202</obo:IAO_0000233>
         <rdfs:comment>bump</rdfs:comment>
         <rdfs:label xml:lang="en">presence or over-threshold value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002774 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002774">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100016"/>
+        <obo:IAO_0000115 xml:lang="en">A blood plasma specimen that is the output of some platelet-poor plasma preparation and is the portion of plasma that contains fewer than 10,000 platelets per microliter.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">platelet-poor plasma specimen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002775 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002775">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600014"/>
+        <obo:IAO_0000115 xml:lang="en">A material component separation process in which (1) whole blood is first centrifuged to separate red blood cells from blood plasma, which forms the supernatant, and (2) the blood plasma is then centrifuged to separate platelets from the plasm.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">platelet-poor plasma preparation process</rdfs:label>
     </owl:Class>
     
 
@@ -31955,5 +31950,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
 
