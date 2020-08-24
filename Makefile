@@ -156,6 +156,7 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--term obo:OBI_0600036 \
 	--term obo:OBI_0600037 \
 	--term obo:OBI_0000838 \
+	--term APOLLO_SV:00000796 \
 	--select "self descendants" \
 	--preserve-structure false \
 	extract \
