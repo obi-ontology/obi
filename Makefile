@@ -130,7 +130,7 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi_base.owl: src/ontology/obi-edit.owl | build/robot.jar
+views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
@@ -213,7 +213,7 @@ views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/view
 	rm $@.tmp.owl
 
 .PHONY: views
-views: views/obi.obo views/obi_base.owl views/obi_core.owl views/NIAID-GSC-BRC.owl
+views: views/obi.obo views/obi-base.owl views/obi_core.owl views/NIAID-GSC-BRC.owl
 
 
 ### Test
