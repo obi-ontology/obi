@@ -130,6 +130,16 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
+views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
+	$(ROBOT) remove --input $< \
+	--select imports \
+	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
+	annotate \
+	--ontology-iri "$(OBO)/obi/obi-base.owl" \
+	--version-iri "$(OBO)/obi/$(TODAY)/obi-base.owl" \
+	--annotation owl:versionInfo "$(TODAY)" \
+	--output $@
+
 views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	$(ROBOT) query \
 	--input $< \
@@ -203,7 +213,7 @@ views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/view
 	rm $@.tmp.owl
 
 .PHONY: views
-views: views/obi.obo views/obi_core.owl views/NIAID-GSC-BRC.owl
+views: views/obi.obo views/obi-base.owl views/obi_core.owl views/NIAID-GSC-BRC.owl
 
 
 ### Test
