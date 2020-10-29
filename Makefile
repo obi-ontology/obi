@@ -88,6 +88,7 @@ MODULE_NAMES := assays\
  epitope-assays\
  medical-history\
  obsolete\
+ sample-collection\
  study-designs\
  sequence-analysis\
  value-specifications
