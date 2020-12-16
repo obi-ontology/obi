@@ -227,6 +227,8 @@ PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
+# Always get the most recent version of OBI - in case build directory has not been cleaned
+.PHONY: build/obi-previous-release.owl
 build/obi-previous-release.owl: | build
 	curl -L -o $@ "http://purl.obolibrary.org/obo/obi.owl"
 
@@ -243,7 +245,9 @@ build/terms-report.tsv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	rm $@.tmp
 
 build/new-entities.txt: build/released-entities.tsv build/current-entities.tsv build/terms-report.tsv
-	echo "ID | Label" > $@
+	echo "New terms added:" > $@
+	echo "" >> $@
+	echo "ID | Label" >> $@
 	echo "---|---" >> $@
 	comm -13 $(wordlist 1,2,$^) \
 	| join - $(word 3,$^) \
@@ -323,3 +327,17 @@ clean:
 .PHONY: sort
 sort: src/ontology/templates/
 	src/scripts/sort-templates.py
+
+# Create a release candidate
+# Requires "admin:org", "repo", and "workflow" permissions for gh CLI token
+.PHONY: candidate
+candidate: obi.owl views build/new-entities.txt
+	$(eval REMOTE := $(shell git remote -v | grep "https://github.com/obi-ontology/obi.git" | head -1 | cut -f 1))
+	git checkout -b $(TODAY)
+	git add -u
+	git commit -m "$(TODAY) release candidate"
+	git push -u $(REMOTE) $(TODAY)
+	gh pr create \
+	--title "$(TODAY) release candidate" \
+	--body "$$(cat build/new-entities.txt)" \
+	--repo obi-ontology/obi
