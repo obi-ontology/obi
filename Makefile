@@ -236,6 +236,24 @@ build/released-entities.tsv: build/obi-previous-release.owl src/sparql/get-obi-e
 build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq | build/robot.jar
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
+build/terms-report.tsv: build/obi_merged.owl src/sparql/terms-report.rq | build
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+	mv $@ $@.tmp
+	tail -n+2 $@.tmp | cut -f1,3 | sort -u > $@
+	rm $@.tmp
+
+build/new-entities.txt: build/released-entities.tsv build/current-entities.tsv build/terms-report.tsv
+	echo "ID | Label" > $@
+	echo "---|---" >> $@
+	comm -13 $(wordlist 1,2,$^) \
+	| join - $(word 3,$^) \
+	| sed "s|^<http://purl.obolibrary.org/obo/OBI_|OBI:|" \
+	| sed s/\"//g \
+	| sed "s/>//g" \
+	| sed "s/@en//g" \
+	| sed "s/ /|/" \
+	>> $@
+
 build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
 	comm -23 $^ > $@
 
