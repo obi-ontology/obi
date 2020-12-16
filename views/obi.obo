@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: obi/2020-08-24/obi.obo
-date: 24:08:2020 14:31
+data-version: obi/2020-12-16/obi.obo
+date: 16:12:2020 12:33
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi.obo
 property_value: defaultLanguage "en" xsd:string
@@ -67,7 +67,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/ xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2020-08-24" xsd:string
+property_value: owl:versionInfo "2020-12-16" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -927,9 +927,14 @@ def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0001046
+name: core promoter sequence-specific DNA binding
+def: "Interacting selectively and non-covalently with a sequence of DNA that is part of a core promoter region. The core promoter is composed of the transcription start site and binding sites for the RNA polymerase and the basal transcription machinery. The transcribed region might be described as a gene, cistron, or operon." []
+is_a: GO:0003674 ! molecular_function
+is_a: GO:0043565 ! sequence-specific DNA binding
+
+[Term]
 id: GO:0001047
-name: core promoter binding
-def: "Interacting selectively and non-covalently with the regulatory region composed of the transcription start site and binding sites for the basal transcription machinery. Binding may occur as a sequence specific interaction or as an interaction observed only once a factor has been recruited to the DNA by other factors." []
 is_a: OBI:0001588 ! binding
 
 [Term]
@@ -1032,7 +1037,7 @@ is_a: BFO:0000015 ! process
 id: GO:0003823
 name: antigen binding
 def: "Interacting selectively and non-covalently with an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen." []
-is_a: BFO:0000015 ! process
+is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0003824
@@ -1471,7 +1476,7 @@ is_a: GO:0071706 ! tumor necrosis factor superfamily cytokine production
 [Term]
 id: GO:0032641
 name: lymphotoxin A production
-def: "The appearance of lymphotoxin A due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
+def: "The chemical reactions and pathways resulting in the formation of the cytokine lymphotoxin A." []
 synonym: "TNF beta production" EXACT []
 is_a: GO:0071706 ! tumor necrosis factor superfamily cytokine production
 
@@ -9647,10 +9652,9 @@ is_a: OBI:0001264 ! biological activity assay measuring epitope specific transfo
 [Term]
 id: OBI:0001271
 name: RNA-seq assay
-def: "An transcription profiling assay that determines an RNA sequence by analyzing the transcibed regions of the genome and or to quantitate transcript abundance." []
+def: "An RNA sequencing assay that determines an RNA sequence by analyzing the transcibed regions of the genome and or to quantitate transcript abundance." []
 synonym: "transcription profiling by high throughput sequencing" EXACT []
-is_a: OBI:0000424 ! transcription profiling assay
-is_a: OBI:0600047 ! sequencing assay
+is_a: OBI:0001177 ! RNA sequencing assay
 
 [Term]
 id: OBI:0001272
@@ -14311,7 +14315,7 @@ is_a: OBI:0002162 ! footprinting assay
 [Term]
 id: OBI:0001977
 name: cytometry assay
-def: "An assay that measures properties of cells." []
+def: "An assay that counts and/or measures characteristics of cells." []
 is_a: OBI:0000070 ! assay
 
 [Term]
@@ -15530,7 +15534,7 @@ is_a: OBI:0002145 ! antigen specific antibodies assay
 [Term]
 id: OBI:0002151
 name: HCV antibody assay
-def: "An antigen specific antibodies assay that is meant to detect antibodies that bind to Hepatitis C virus (HCV) antigens." []
+def: "An antigen specific antibodies assay that is meant to detect antibodies that bind to Hepacivirus C (HCV) antigens." []
 synonym: "HCV Ab assay" EXACT []
 is_a: OBI:0002145 ! antigen specific antibodies assay
 
@@ -18618,6 +18622,399 @@ def: "A material component separation process in which (1) whole blood is first 
 is_a: OBI:0600014 ! material component separation
 
 [Term]
+id: OBI:0002778
+name: tracheal aspirate specimen
+def: "A specimen that is collected with a suctioning tube from the trachea." []
+synonym: "tracheal wash specimen" EXACT []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002779
+name: mid-turbinate nasal swab specimen
+def: "A specimen that is collected with a mid-turbinate nasal swab from the turbinate area of the nasal cavity." []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002780
+name: nasal aspirate specimen
+def: "A specimen that is collected with a suctioning tube from the nasal cavity." []
+synonym: "nasal wash specimen|nasopharyngeal aspirate" EXACT []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002781
+name: lower respiratory tract aspirate specimen
+def: "A specimen that is collected with a suctioning tube from the lower respiratory tract." []
+synonym: "lower respiratory tract wash specimen" EXACT []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002782
+name: upper respiratory specimen
+def: "A specimen that is derived from the upper respiratory tract" []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002783
+name: lower respiratory tract specimen
+def: "A specimen that is derived from the lower respiratory tract." []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002784
+name: anterior nasal swab specimen
+def: "A specimen that is derived from the anterior nasal wall" []
+is_a: OBI:0002599 ! swab specimen
+
+[Term]
+id: OBI:0002785
+name: aspiration specimen collection
+def: "Procedure using suction, usually with a thin needle and syringe, to remove bodily fluid or tissue." []
+synonym: "aspiration procedure" EXACT []
+is_a: OBI:0000659 ! specimen collection process
+
+[Term]
+id: OBI:0002897
+name: surveillance process
+def: "An investigation in which some entity is monitored, and data concerning that entity collected, interpreted, and disseminated, for the purpose of managing, directing, or protecting that entity, or some other entity." []
+is_a: OBI:0000066 ! investigation
+
+[Term]
+id: OBI:0002898
+name: cluster study group role
+def: "A study group role that is the result of the allocation of a cluster of study-defined groupings of people in a clinical trial to receive a specific intervention/treatment, or no intervention, according to the trial's protocol." []
+synonym: "cluster study arm" EXACT []
+is_a: OBI:0000174 ! study group role
+
+[Term]
+id: OBI:0002899
+name: compound study group role
+def: "A study group role that is the result of the allocation of a compound of geographically-proximate households with a shared component in a clinical trial to receive a specific intervention/treatment, or no intervention, according to the trial's protocol." []
+synonym: "compound study arm" EXACT []
+is_a: OBI:0000174 ! study group role
+
+[Term]
+id: OBI:0002900
+name: ultraviolet light source
+def: "A light source that provides ultraviolet (UV) light for use in a distant area using a delivery system." []
+synonym: "UV light source" EXACT []
+is_a: OBI:0400065 ! light source
+
+[Term]
+id: OBI:0002901
+name: visible light source
+def: "A light source that provides visible light for use in a distant area using a delivery system." []
+is_a: OBI:0400065 ! light source
+
+[Term]
+id: OBI:0002902
+name: solar light source
+def: "A light source that light is produced from solar energy." []
+is_a: OBI:0400065 ! light source
+
+[Term]
+id: OBI:0002904
+name: adult arthropod specimen collection process
+def: "A live arthropod specimen collection process in which the arthropods are in the adult stage." []
+synonym: "collection of adults" EXACT []
+is_a: OBI:0002919 ! live arthropod specimen collection process
+
+[Term]
+id: OBI:0002905
+name: animal-biting arthropod specimen collection by aspiration
+def: "An arthropod specimen collection by aspiration that occurs while the arthropod is biting an animal." []
+synonym: "animal biting catch" EXACT []
+is_a: OBI:0002912 ! arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002906
+name: animal-biting outdoor arthropod specimen collection by aspiration
+def: "An animal-biting arthropod specimen collection by aspiration that occurs outside a building." []
+synonym: "animal biting catch - outdoors" EXACT []
+is_a: OBI:0002905 ! animal-biting arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002907
+name: aquatic arthropod specimen collection process
+def: "An arthropod specimen collection process that has the objective of collecting mosquitoes from an aquatic environment." []
+synonym: "aquatic environment catch" EXACT []
+is_a: OBI:0002913 ! arthropod specimen collection process
+
+[Term]
+id: OBI:0002908
+name: arthropod resting in animal house specimen collection by aspiration
+def: "An arthropod specimen collection by aspiration that catches specimens resting inside an animal house." []
+synonym: "animal shed resting catch" EXACT []
+is_a: OBI:0002912 ! arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002909
+name: arthropod resting outdoors on artificial support specimen collection by aspiration
+def: "An arthropod resting outdoors specimen collection by aspiration that occurs while the arthropod rests on a processed material such as a wall or furniture." []
+synonym: "outdoors shelter catch - artificial" EXACT []
+is_a: OBI:0002911 ! arthropod resting outdoors specimen collection by aspiration
+
+[Term]
+id: OBI:0002910
+name: arthropod resting outdoors on natural support specimen collection by aspiration
+def: "An arthropod resting outdoors specimen collection by aspiration that occurs while the arthropod rests on an unprocessed material such as a plant." []
+synonym: "outdoors shelter catch - natural" EXACT []
+is_a: OBI:0002911 ! arthropod resting outdoors specimen collection by aspiration
+
+[Term]
+id: OBI:0002911
+name: arthropod resting outdoors specimen collection by aspiration
+def: "An animal-biting arthropod specimen collection by aspiration that occurs while the arthropod is resting outside a building during a period of inactivity." []
+synonym: "outdoors shelter catch" EXACT []
+is_a: OBI:0002905 ! animal-biting arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002912
+name: arthropod specimen collection by aspiration
+def: "A live arthropod specimen collection process that involves the use of an aspirator, a device which draws an arthropod by suction into a container." []
+synonym: "catch by aspiration" EXACT []
+is_a: OBI:0002904 ! adult arthropod specimen collection process
+
+[Term]
+id: OBI:0002913
+name: arthropod specimen collection process
+def: "A specimen collection process that has the objective of collecting arthropods as specimens." []
+synonym: " field population catch" EXACT []
+synonym: "collection of arthropods " EXACT []
+is_a: OBI:0000659 ! specimen collection process
+
+[Term]
+id: OBI:0002914
+name: human-biting arthropod specimen collection by aspiration
+def: "An arthropod specimen collection by aspiration that occurs while the arthropod is biting a human." []
+synonym: "man biting catch" EXACT []
+is_a: OBI:0002912 ! arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002915
+name: human-biting indoor arthropod specimen collection by aspiration
+def: "An arthropod specimen collection by aspiration that occurs while the arthropod is biting a human inside a building." []
+synonym: "man biting catch - indoors" EXACT []
+is_a: OBI:0002914 ! human-biting arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002916
+name: human-biting outdoor arthropod specimen collection by aspiration
+def: "An arthropod specimen collection by aspiration designed to catch specimens that are in the process of biting a human outside a building." []
+synonym: "man biting catch - outdoors" EXACT []
+is_a: OBI:0002914 ! human-biting arthropod specimen collection by aspiration
+
+[Term]
+id: OBI:0002917
+name: knockdown arthropod specimen collection by pyrethrum spray
+def: "A knockdown arthropod specimen collection process in which the pesticide is pyrethrum." []
+synonym: "pyrethrum spray catch" EXACT []
+is_a: OBI:0002918 ! knockdown arthropod specimen collection process
+
+[Term]
+id: OBI:0002918
+name: knockdown arthropod specimen collection process
+def: "An arthropod specimen collection process that involves exposing arthropods to pesticide, then collecting them once they become dead or immobilized." []
+synonym: "knockdown collection" EXACT []
+is_a: OBI:0002919 ! live arthropod specimen collection process
+
+[Term]
+id: OBI:0002919
+name: live arthropod specimen collection process
+def: "An arthropod specimen collection process meant to collect live specimens." []
+synonym: "catch of live specimens" EXACT []
+is_a: OBI:0002913 ! arthropod specimen collection process
+
+[Term]
+id: OBI:0002920
+name: arthropod trap
+def: "A device designed to catch arthropods." []
+synonym: "trap catch" EXACT []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0002921
+name: artificial pit shelter
+def: "An arthropod trap, consisting of a pit dug in the ground to provide a space for arthropods to rest and be collected." []
+is_a: OBI:0002939 ! resting arthropod trap
+
+[Term]
+id: OBI:0002922
+name: baited net trap
+def: "An arthropod trap designed to work with an animal (which could be human) inside a netted structure. This structure is designed so that an arthropod, attracted by the animal, can fly into the netted structure but can neither escape nor reach the animal." []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002923
+name: barrier trap
+def: "An arthropod trap consisting of a static physical barrier designed to funnel arthropods in flight into a container." []
+synonym: "barrier catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002924
+name: BG-Counter
+def: "A device manufactured by BioGents that is designed to count mosquitoes passing through the device, differentiating the mosquitoes from other arthropods." []
+synonym: "BG-Counter trap catch" EXACT []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0002925
+name: BG-Sentinel trap
+def: "An arthropod trap that is manufactured by Biogents and is designed to attract arthropods through the use of a motorized fan to mimic convection currents produced by a human. The current also pulls arthropods into the trap, where a layer of gauze prevents the arthropods from escaping along with the air current." []
+synonym: "BG-Sentinel trap catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002926
+name: Centers for Disease Control and Prevention light trap
+def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the light attractant. This trap is also designed to be lightweight and operate in environments in which electricity may be scarce." []
+synonym: "CDC light trap catch" EXACT []
+is_a: OBI:0002930 ! light trap
+
+[Term]
+id: OBI:0002927
+name: dipper for arthropod immatures
+def: "A device that is designed for the collection of arthropod larvae or pupae from water and has the shape of a ladle or a pan." []
+synonym: "dipper for immatures" EXACT []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0002928
+name: encephalitis virus surveillance trap
+def: "A light trap that uses carbon dioxide as attractant. The trap consists of a container of dry ice with holes in the bottom to allow the carbon dioxide to flow downward into a separate container, in which a motorized fan creates suction to collect arthropods." []
+synonym: "EVS trap catch" EXACT []
+is_a: OBI:0002930 ! light trap
+
+[Term]
+id: OBI:0002929
+name: gravid trap
+def: "An arthropod trap that is designed to collect gravid female arthropods or their eggs." []
+synonym: "gravid trap catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002930
+name: light trap
+def: "An arthropod trap that uses light as an attractant." []
+synonym: "light trap catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002931
+name: light trap for indoor use
+def: "A light trap designed to be placed inside a building." []
+synonym: "indoor light trap catch" EXACT []
+is_a: OBI:0002930 ! light trap
+
+[Term]
+id: OBI:0002932
+name: light trap for outdoor use
+def: "A light trap designed to be placed outside a building." []
+synonym: "outdoor light trap catch" EXACT []
+is_a: OBI:0002930 ! light trap
+
+[Term]
+id: OBI:0002933
+name: Mosquito Magnet trap
+def: "An arthropod trap that is powered by propane and is designed to emit a combination of carbon dioxide, heat, water, and oct-1-en-3-ol attractants while simultaneously using suction to trap arthropods." []
+synonym: "mosquito magnet pro catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002934
+name: MosquiTRAP
+def: "A gravid trap consisting of an arthropod attractant and adhesive surface." []
+is_a: OBI:0002929 ! gravid trap
+
+[Term]
+id: OBI:0002935
+name: New Jersey light trap
+def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the light attractant." []
+synonym: "new jersey trap catch" EXACT []
+is_a: OBI:0002930 ! light trap
+
+[Term]
+id: OBI:0002936
+name: Onderstepoort Veterinary Institute light-suction trap
+def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the attractant. The light is supplied by an 8 watt tube, and the fan providing the suction has an 11-centimeter diameter." []
+synonym: "OVI light-suction trap" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002937
+name: outlet window trap
+def: "An arthropod trap that is positioned adjacent to a window of a building and is designed to collect arthropods flying out of the building." []
+synonym: "outlet window trap catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002938
+name: ovitrap
+def: "An arthropod trap that consists of a container holding a mesh layer above water and is designed to trap arthropods hatched from eggs dropped over the water by gravid females." []
+synonym: "oviposition trap" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002939
+name: resting arthropod trap
+def: "An arthropod trap that is designed to be attractive to an arthropod as a place to rest during a period of inactivity." []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002940
+name: resting box trap
+def: "An arthropod trap that consists of a box that is open on one end. The placement of the box and modifications to it are done in such a way that it becomes attractive to an arthropod as a place to rest during a period of inactivity." []
+synonym: "resting box catch" EXACT []
+is_a: OBI:0002939 ! resting arthropod trap
+
+[Term]
+id: OBI:0002941
+name: resting bucket
+def: "An arthropod trap that consists of a bucket, which is lined with fabric and placed on its side, and a wet cloth inside the bucket. The placement of the box and modifications to it are done in such a way that it becomes attractive to an arthropod as a place to rest during a period of inactivity (not actively seeking a host)." []
+synonym: "resting bucket catch" EXACT []
+is_a: OBI:0002939 ! resting arthropod trap
+
+[Term]
+id: OBI:0002942
+name: Shannon trap
+def: "An arthropod trap that is made of cloth and netting and is designed to be suspended from above (e.g. from a tree). It is also designed so that the arthropod enters the trap from beneath, being attracted to some bait, and is prevented from escaping upward by the suspended cloth, which allows them to be collected from the upper interior of the trap." []
+synonym: "shannon trap catch" EXACT []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0002943
+name: sticky resting bucket
+def: "An arthropod trap that consists of a bucket, which is lined with adhesive and placed on its side, and a wet cloth inside the bucket. The placement of the box and modifications to it are done in such a way that it becomes attractive to an arthropod as a place to rest during a period of inactivity. The trap is designed for arthropods to become caught in the adhesive so that they can be collected." []
+synonym: "sticky resting bucket catch" EXACT []
+is_a: OBI:0002939 ! resting arthropod trap
+
+[Term]
+id: OBI:0002944
+name: sticky trap
+def: "An arthropod trap that is designed to capture arthropods resting on a surface by coating the surface with adhesive." []
+synonym: "sticky trap catch" EXACT []
+is_a: OBI:0002939 ! resting arthropod trap
+
+[Term]
+id: OBI:0002945
+name: population based design
+def: "A study design where the selection of the individuals that are included into the study are intended to be representative of all individuals in the a priori defined specific population and is done at the population level or among the population groups, generally to find the cause, incidence or spread of the disease or to see the response to the treatment, nutrition or environment." []
+is_a: OBI:0500000 ! study design
+
+[Term]
+id: OBI:0002971
+name: endotracheal tube specimen
+def: "A specimen that derives from a biofilm that forms on the inner surface of an endotracheal tube while the tube is in the trachea. The specimen is collected upon removal of the tube from the trachea." []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
+id: OBI:0002972
+name: endotracheal aspirate specimen
+def: "A specimen that derives from a biofilm that forms on the inner surface of an endotracheal tube while the tube is in the trachea. The specimen is collected by suction without removing the tube." []
+is_a: OBI:0001479 ! specimen from organism
+
+[Term]
 id: OBI:0005246
 name: injection function
 def: "The function of a device realized when administering a substance in vivo, applied particularly to the forcible insertion of a liquid or gas by means of a syringe, pump, etc." []
@@ -20964,7 +21361,7 @@ is_a: OBI:0000398 ! image creation device
 [Term]
 id: OBI:0400137
 name: cytometer
-def: "A cytometer is an instrument for counting and measuring cells." []
+def: "A cytometer is an instrument for counting and/or measuring characteristics of cells." []
 is_a: OBI:0000832 ! measurement device
 
 [Term]
@@ -23636,6 +24033,12 @@ def: "The segment of the respiratory tract that starts proximally with the nose 
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0001558
+name: lower respiratory tract
+def: "The segment of the respiratory tract that starts proximally with the trachea and includes all distal structures including the lungs[WP,modified]" []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0001567
 name: cheek
 def: "A fleshy subdivision of one side of the face bounded by an eye, ear and the nose." []
@@ -23652,6 +24055,11 @@ id: UBERON:0001638
 name: vein
 def: "Any of the tubular branching vessels that carry blood from the capillaries toward the heart." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001707
+name: nasal cavity
+def: "An anatomical cavity that is part of the olfactory apparatus. This includes the space bounded anteriorly by the nares and posteriorly by the choanae, when these structures are present." []
 
 [Term]
 id: UBERON:0001723
@@ -23852,6 +24260,12 @@ def: "A cerebral hemisphere that is in the right side of a brain." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0003126
+name: trachea
+def: "The trachea is the portion of the airway that attaches to the bronchi as it branches [GO:dph]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0003688
 name: omentum
 def: "A fold of peritoneum originating at the stomach and supporting the viscera." []
@@ -23876,9 +24290,21 @@ def: "A mucosa that is part of a oropharynx [Automatically generated definition]
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0005921
+name: middle nasal concha
+def: "The medial surface of the labyrinth of ethmoid consists of a thin lamella, which descends from the under surface of the cribriform plate, and ends below in a free, convoluted margin, the middle nasal concha. It is rough, and marked above by numerous grooves, directed nearly vertically downward from the cribriform plate; they lodge branches of the olfactory nerves, which are distributed to the mucous membrane covering the superior nasal concha." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0006314
 name: bodily fluid
 def: "Liquid components of living organisms. includes fluids that are excreted or secreted from the body as well as body water that normally is not." []
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0006538
+name: respiratory system fluid/secretion
+def: "A portion of organism substance that secreted_by a respiratory system." []
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
@@ -23908,7 +24334,7 @@ is_a: UBERON:0001988 ! feces
 id: UBERON:0007311
 name: sputum
 def: "Matter ejected from the lungs, bronchi, and trachea, through the mouth." []
-is_a: UBERON:0000463 ! organism substance
+is_a: UBERON:0006538 ! respiratory system fluid/secretion
 
 [Term]
 id: UBERON:0007610
@@ -23956,6 +24382,12 @@ is_a: UBERON:0000178 ! blood
 id: UBERON:0036149
 name: suprapubic skin
 def: "Area of skin in the hypoastric region of the abdomen." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:3000016
+name: anterior nasal wall
+def: "Paired, vertical, and relatively straight plates that form the anterior limit of the nasal capsule." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
