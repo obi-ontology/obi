@@ -332,7 +332,7 @@ sort: src/ontology/templates/
 # Requires "admin:org", "repo", and "workflow" permissions for gh CLI token
 .PHONY: candidate
 candidate: obi.owl views build/new-entities.txt
-	$(eval REMOTE := $(shell git remote -v | grep "https://github.com/obi-ontology/obi.git" | head -1 | cut -f 1))
+	$(eval REMOTE := $(shell git remote -v | grep "obi-ontology/obi.git" | head -1 | cut -f 1))
 	git checkout -b $(TODAY)
 	git add -u
 	git commit -m "$(TODAY) release candidate"
