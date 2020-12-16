@@ -323,3 +323,18 @@ clean:
 .PHONY: sort
 sort: src/ontology/templates/
 	src/scripts/sort-templates.py
+
+# Create a release candidate
+.PHONY: candidate
+candidate:
+	$(eval REMOTE := $(shell git remote -v | grep "https://github.com/obi-ontology/obi.git" | head -1 | cut -f 1))
+	git checkout -b $(TODAY)-test2
+	make clean all
+	make build/new-entities.txt
+	git add -u
+	git commit -m "$(TODAY) release candidate"
+	git push -u $(REMOTE) $(TODAY)-test2
+	gh pr create \
+	--title "$(TODAY) release candidate" \
+	--body "$$(cat build/new-entities.txt)" \
+	--repo obi-ontology/obi
