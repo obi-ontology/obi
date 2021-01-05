@@ -98,19 +98,18 @@ These are the steps with their CLI commands. When using a GUI application the st
 2. `git checkout master` start on the `master` branch
 3. `git checkout -b your-branch-name` create a new branch named for the change you're making
 4. make your changes
-5. `git status` and `git diff` inspect your changes
-6. `git add --update src/` add all updated files in the `src/` directory to staging
-7. `git commit --message "Description, issue #123"` commit staged changes with a message; it's good to include an issue number
-8. `git push --set-upstream origin your-branch-name` push your commit to GitHub
-9. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
+5. `make sort` sort and normalize tables, for cleaner diffs
+6. `git status` and `git diff` inspect your changes
+7. `git add --update src/` add all updated files in the `src/` directory to staging
+8. `git commit --message "Description, issue #123"` commit staged changes with a message; it's good to include an issue number
+9. `git push --set-upstream origin your-branch-name` push your commit to GitHub
+10. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
 Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR can be merged into `master`. Rinse and repeat!
 
 
 ## Keeping Things Tidy
 
-The easiest way to edit our `src/ontology/template/` files is with Excel. Unfortunately Excel on macOS [uses old line endings](http://developmentality.wordpress.com/2010/12/06/excel-2008-for-macs-csv-bug/), and this messes up our diffs.
+The easiest way to edit our `src/ontology/template/` files is with Excel. Unfortunately Excel has some idiosyncratic rules for quoting cell values, and on macOS [uses old line endings](http://developmentality.wordpress.com/2010/12/06/excel-2008-for-macs-csv-bug/). Both these things make our diffs messy and confusing.
 
-For clean diffs, we also like to keep out templates sorted by ID.
-
-The `make sort` command will fix line endings and sorting by running all the templates through a Python script.
+For clean diffs, we also like to keep out templates sorted by ID. The `make sort` command will fix line endings and sorting by running all the templates through a Python script.
