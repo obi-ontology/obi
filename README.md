@@ -30,8 +30,8 @@ See below for a full list of files, build instructions, and instructions on usin
 - [`obi.owl`](obi.owl) the latest release of OBI
 - [`Makefile`](Makefile) scripts for building OBI
 - [`views/`](views/) various specialized views of OBI
-    - [`obi.obo`](obi.obo) the latest release of OBI in `.obo` file format
-    - [`obi_core.owl`](obi_core.owl) the latest release of OBI Core: ~100 key terms
+    - [`obi.obo`](views/obi.obo) the latest release of OBI in `.obo` file format
+    - [`obi_core.owl`](views/obi_core.owl) the latest release of OBI Core: ~100 key terms
 - [`src/`](src/)
     - [`ontology/`](src/ontology/) source files for OBI
         - [`obi-edit.owl`](src/ontology/obi-edit.owl) the main OBI OWL file
