@@ -20852,15 +20852,15 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     <!-- http://purl.obolibrary.org/obo/OBI_0002988 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002988">
-         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
-         <obo:IAO_0000111>duration of specimen collection</obo:IAO_0000111>
-         <obo:IAO_0000112>Specimen collection duration of 3 nights that a trap is set out for collection of mosquitoes. Urine collected over a 24 hour period of specimen collection duration.</obo:IAO_0000112>
-         <obo:IAO_0000115>A time measurement datum that is the count of collection cycles over which a specimen collection process occurs.</obo:IAO_0000115>
-         <obo:IAO_0000118>specimen collection duration</obo:IAO_0000118>
-         <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
-         <rdfs:label>specimen collection duration</rdfs:label>
-     </owl:Class>
-
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+        <obo:IAO_0000111>duration of specimen collection</obo:IAO_0000111>
+        <obo:IAO_0000112>Specimen collection duration of 3 nights that a trap is set out for collection of mosquitoes. Urine collected over a 24 hour period of specimen collection duration.</obo:IAO_0000112>
+        <obo:IAO_0000115>A time measurement datum that is the count of collection cycles over which a specimen collection process occurs.</obo:IAO_0000115>
+        <obo:IAO_0000118>specimen collection duration</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>specimen collection duration</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0002989 -->
@@ -20888,6 +20888,90 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1289</obo:IAO_0000233>
         <rdfs:label>material supplier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002992 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002992">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>prevalence of pathogen in specimens</obo:IAO_0000111>
+        <obo:IAO_0000112>prevalence of Plasmodium falciparum in Mosquito samples assayed by PCR</obo:IAO_0000112>
+        <obo:IAO_0000115>A data item that is the frequency of detection of a specified pathogenic organism in collected specimens.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>prevalence of pathogen</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>prevalence of pathogen in specimens</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002993 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002993">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>prevalence of blood meal specimens from a host organism</obo:IAO_0000111>
+        <obo:IAO_0000112>prevalence of blood meal host organism in specimens measured as % of blood meal specimens collected from mosquitoes that had human blood as a meal.</obo:IAO_0000112>
+        <obo:IAO_0000115>A data item that is the frequency of blood whose source is from a specified host organism in collected blood meal specimens.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>host blood index</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>prevalence of blood meal specimens from a host organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002994 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002994">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>presence of blood from host organism in blood meal specimen</obo:IAO_0000111>
+        <obo:IAO_0000112>presence of blood meal host organism indicated by boolean values of yes or no.</obo:IAO_0000112>
+        <obo:IAO_0000115>A data item that indicates whether blood in a blood meal specimen came from a specified host organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>presence of blood meal host organism</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>presence of blood from host organism in blood meal specimen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002995 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002995">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002996"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>blood meal source organism</obo:IAO_0000111>
+        <obo:IAO_0000115>An organism that is the source of a blood meal.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>blood meal host organism</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>blood meal source organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002996 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002996">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000111>blood meal source role</obo:IAO_0000111>
+        <obo:IAO_0000112>A mosquito feeds on a human whereby the human acquires the blood meal source role for the mosquito blood meal.</obo:IAO_0000112>
+        <obo:IAO_0000115>A role borne by an organism that is gained during a process in which another organism ingests blood as food from the organism.</obo:IAO_0000115>
+        <obo:IAO_0000116>Will deprecate this term in VEuPathDB ontology once in OBI.</obo:IAO_0000116>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119>http://purl.obolibrary.org/obo/EUPATH_0000791</obo:IAO_0000119>
+        <rdfs:label>blood meal source role</rdfs:label>
     </owl:Class>
     
 
