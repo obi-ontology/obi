@@ -68,9 +68,6 @@ build/rdftab: | build
 # We use Gizmos to create various import modules.
 IMPORTS := $(shell tail -n +2 src/ontology/imports/config.tsv | awk '{print $$1}' | uniq)
 IMPORT_FILES := $(foreach I,$(IMPORTS),src/ontology/imports/$(I)_imports.owl)
-IMPORT_DBS := $(foreach I,$(IMPORTS),build/$(I).db)
-
-dbs: $(IMPORT_DBS)
 
 imports: $(IMPORT_FILES)
 
