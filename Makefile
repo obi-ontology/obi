@@ -46,24 +46,109 @@ build/robot.jar: | build
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
 
+### RDFTab
+#
+# Use RDFTab to create SQLite databases from OWL files.
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-apple-darwin
+	SED = sed -i.bak
+else
+	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-unknown-linux-musl
+	SED = sed -i
+endif
+
+build/rdftab: | build
+	curl -L -o $@ $(RDFTAB_URL)
+	chmod +x $@
+
+
 ### Imports
 #
-# Use Ontofox to import various modules.
-build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
-	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+# We use Gizmos to create various import modules.
+IMPORTS := $(shell tail -n +2 src/ontology/imports/config.tsv | awk '{print $$1}' | uniq)
+IMPORT_FILES := $(foreach I,$(IMPORTS),src/ontology/imports/$(I)_imports.owl)
+IMPORT_DBS := $(foreach I,$(IMPORTS),build/$(I).db)
 
-# Remove annotation properties from CLO to avoid weird labels.
-src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
-	$(ROBOT) remove --input $< --select annotation-properties --trim false --output $@
+dbs: $(IMPORT_DBS)
 
-# Use ROBOT to ensure that serialization is consistent for the rest.
-src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
-	$(ROBOT) convert -i build/$*_imports.owl -o $@
-
-IMPORT_FILES := $(wildcard src/ontology/OntoFox_outputs/*_imports.owl)
-
-.PHONY: imports
 imports: $(IMPORT_FILES)
+
+# Get CLO in correct RDFXML format.
+build/clo.owl: | build/robot.jar
+	$(ROBOT) convert --input-iri "$(OBO)/$(notdir $@)" --output $@
+
+# Download compressed ChEBI to save some time.
+build/chebi.owl.gz: | build
+	curl -Lk "http://purl.obolibrary.org/obo/$(notdir $@)" > $@
+
+build/chebi.owl: build/chebi.owl.gz
+	gunzip $<
+
+# Download compressed NCBITaxon to save some time (we have to get the URL from the latest release).
+build/ncbitaxon.owl.gz: | build
+	$(eval URL = $(shell curl -s https://api.github.com/repos/obophenotype/ncbitaxon/releases/latest | jq --raw-output '.assets[5] | .browser_download_url'))
+	curl -Lk $(URL) > $@
+
+build/ncbitaxon.owl: build/ncbitaxon.owl.gz
+	gunzip $<
+
+# Fix OMIABIS usage of xml:lang.
+build/omiabis.owl: | build
+	curl -Lk "http://purl.obolibrary.org/obo/$(notdir $@)" | sed 's/xml:lang/lang/g' > $@
+
+# Download the rest of the source ontologies.
+build/%.owl: | build
+	curl -Lk "http://purl.obolibrary.org/obo/$*.owl" > $@
+
+# Create UO database, deleting owl:Class declarations on owl:NamedIndividuals.
+build/uo.db: src/scripts/prefixes.sql build/uo.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "DELETE FROM statements WHERE ROWID IN \
+	  (SELECT s1.ROWID FROM statements s1 JOIN statements s2 ON s1.stanza = s2.stanza \
+	  WHERE s1.object = 'owl:Class' AND s2.object = 'owl:NamedIndividual');"
+
+# Create the rest of the databases.
+build/%.db: src/scripts/prefixes.sql build/%.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
+
+# Extract NCBITaxon with oio:hasExactSynonym mapped to IAO:0000118.
+build/ncbitaxon_imports.ttl: build/ncbitaxon.db src/ontology/imports/config.tsv src/ontology/imports/imports.tsv
+	python3 -m gizmos.extract --database $< --config $(word 2,$^) --imports $(word 3,$^) --source ncbitaxon > $@
+	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
+	echo "" >> $@ && grep " oio:hasExactSynonym " $@ | sed "s/oio:hasExactSynonym/IAO:0000118/g" >> $@
+	grep -v " oio:hasExactSynonym " $@ > $@.tmp && mv $@.tmp $@
+
+# Extract the terms and copy rdfs:label to 'editor preferred term' for the rest.
+build/%_imports.ttl: build/%.db src/ontology/imports/config.tsv src/ontology/imports/imports.tsv
+	python3 -m gizmos.extract --database $< --config $(word 2,$^) --imports $(word 3,$^) --source $* > $@
+	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
+
+# Remove extra intermediate classes from NCBITaxon using 'robot collapse'.
+build/ncbitaxon_terms.txt: src/ontology/imports/imports.tsv
+	grep "^ncbitaxon" $< | awk '{print $$2}' > $@
+
+src/ontology/imports/ncbitaxon_imports.owl: build/ncbitaxon_imports.ttl build/ncbitaxon_terms.txt | build/robot.jar
+	$(ROBOT) collapse \
+	--input $< \
+	--precious-terms $(word 2,$^) \
+	--threshold 2 \
+	annotate \
+	--ontology-iri "$(OBO)/obi/dev/import/$(notdir $@)" \
+	--output $@
+
+# Add the IRI and convert to OWL format for the rest.
+src/ontology/imports/%_imports.owl: build/%_imports.ttl | build/robot.jar
+	$(ROBOT) annotate \
+	--input $< \
+	--ontology-iri "$(OBO)/obi/dev/import/$(notdir $@)" \
+	--output $@
 
 
 ### Templates
