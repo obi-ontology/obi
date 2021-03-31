@@ -52,7 +52,11 @@ ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
 	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
 
-# Use ROBOT to ensure that serialization is consistent.
+# Remove annotation properties from CLO to avoid weird labels.
+src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
+	$(ROBOT) remove --input $< --select annotation-properties --trim false --output $@
+
+# Use ROBOT to ensure that serialization is consistent for the rest.
 src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
 	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
