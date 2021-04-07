@@ -72,46 +72,42 @@ IMPORT_FILES := $(foreach I,$(IMPORTS),src/ontology/imports/$(I)_imports.owl)
 imports: $(IMPORT_FILES)
 
 # Get CLO in correct RDFXML format.
-build/clo.owl: | build/robot.jar
-	$(ROBOT) convert --input-iri "$(OBO)/$(notdir $@)" --output $@
+build/clo.owl.gz: | build/robot.jar
+	$(ROBOT) convert --input-iri "$(OBO)/cl.owl" --output build/clo.owl
+	gzip build/clo.owl
 
 # Download compressed ChEBI to save some time.
 build/chebi.owl.gz: | build
 	curl -Lk "http://purl.obolibrary.org/obo/$(notdir $@)" > $@
-
-build/chebi.owl: build/chebi.owl.gz
-	gunzip $<
 
 # Download compressed NCBITaxon to save some time (we have to get the URL from the latest release).
 build/ncbitaxon.owl.gz: | build
 	$(eval URL = $(shell curl -s https://api.github.com/repos/obophenotype/ncbitaxon/releases/latest | jq --raw-output '.assets[5] | .browser_download_url'))
 	curl -Lk $(URL) > $@
 
-build/ncbitaxon.owl: build/ncbitaxon.owl.gz
-	gunzip $<
-
 # Fix OMIABIS usage of xml:lang.
-build/omiabis.owl: | build
-	curl -Lk "http://purl.obolibrary.org/obo/$(notdir $@)" | sed 's/xml:lang/lang/g' > $@
+build/omiabis.owl.gz: | build
+	curl -Lk "http://purl.obolibrary.org/obo/omiabis.owl" | sed 's/xml:lang/lang/g' > build/omiabis.owl
+	gzip build/omiabis.owl
 
 # Download the rest of the source ontologies.
-build/%.owl: | build
-	curl -Lk "http://purl.obolibrary.org/obo/$*.owl" > $@
+build/%.owl.gz: | build
+	curl -Lk "http://purl.obolibrary.org/obo/$*.owl" | gzip > $@
 
 # Create UO database, deleting owl:Class declarations on owl:NamedIndividuals.
-build/uo.db: src/scripts/prefixes.sql build/uo.owl | build/rdftab
+build/uo.db: src/scripts/prefixes.sql build/uo.owl.gz | build/rdftab
 	rm -rf $@
 	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
+	zcat < $(word 2,$^) | ./build/rdftab $@
 	sqlite3 $@ "DELETE FROM statements WHERE ROWID IN \
 	  (SELECT s1.ROWID FROM statements s1 JOIN statements s2 ON s1.stanza = s2.stanza \
 	  WHERE s1.object = 'owl:Class' AND s2.object = 'owl:NamedIndividual');"
 
 # Create the rest of the databases.
-build/%.db: src/scripts/prefixes.sql build/%.owl | build/rdftab
+build/%.db: src/scripts/prefixes.sql build/%.owl.gz | build/rdftab
 	rm -rf $@
 	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
+	zcat < $(word 2,$^) | ./build/rdftab $@
 	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
 	sqlite3 $@ "ANALYZE;"
 
