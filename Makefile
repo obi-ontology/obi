@@ -74,7 +74,7 @@ imports: $(IMPORT_FILES)
 
 # Get CLO in correct RDFXML format.
 build/clo.owl.gz: | build/robot.jar
-	$(ROBOT) convert --input-iri "$(OBO)/cl.owl" --output build/clo.owl
+	$(ROBOT) convert --input-iri "$(OBO)/clo.owl" --output build/clo.owl
 	gzip build/clo.owl
 
 # Download compressed ChEBI to save some time.
