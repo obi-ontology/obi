@@ -7,6 +7,7 @@
 # WARN: This file contains significant whitespace, i.e. tabs!
 # Ensure that your text editor shows you those characters.
 
+
 ### Configuration
 #
 # These are standard options to make Make sane:
@@ -112,19 +113,19 @@ build/%.db: src/scripts/prefixes.sql build/%.owl.gz | build/rdftab
 	sqlite3 $@ "ANALYZE;"
 
 # Extract NCBITaxon with oio:hasExactSynonym mapped to IAO:0000118.
-build/ncbitaxon_imports.ttl: build/ncbitaxon.db src/ontology/imports/config.tsv src/ontology/imports/imports.tsv
+build/ncbitaxon_imports.ttl: build/ncbitaxon.db src/ontology/imports/config.tsv src/ontology/imports/ncbitaxon_terms.tsv
 	python3 -m gizmos.extract --database $< --config $(word 2,$^) --imports $(word 3,$^) --source ncbitaxon > $@
 	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
 	echo "" >> $@ && grep " oio:hasExactSynonym " $@ | sed "s/oio:hasExactSynonym/IAO:0000118/g" >> $@
 	grep -v " oio:hasExactSynonym " $@ > $@.tmp && mv $@.tmp $@
 
 # Extract the terms and copy rdfs:label to 'editor preferred term' for the rest.
-build/%_imports.ttl: build/%.db src/ontology/imports/config.tsv src/ontology/imports/imports.tsv
+build/%_imports.ttl: build/%.db src/ontology/imports/config.tsv src/ontology/imports/%_terms.tsv
 	python3 -m gizmos.extract --database $< --config $(word 2,$^) --imports $(word 3,$^) --source $* > $@
 	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
 
 # Remove extra intermediate classes from NCBITaxon using 'robot collapse'.
-build/ncbitaxon_terms.txt: src/ontology/imports/imports.tsv
+build/ncbitaxon_terms.txt: src/ontology/imports/ncbitaxon_terms.tsv
 	grep "^ncbitaxon" $< | awk '{print $$2}' > $@
 
 src/ontology/imports/ncbitaxon_imports.owl: build/ncbitaxon_imports.ttl build/ncbitaxon_terms.txt | build/robot.jar
