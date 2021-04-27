@@ -17,29 +17,50 @@ IMPORTS_DIR = "src/ontology/OntoFox_inputs"
 
 def locate_term(cur, term_id):
     for f in os.listdir(TEMPLATES_DIR):
+        if not f.endswith(".tsv"):
+            continue
         fname = os.path.join(TEMPLATES_DIR, f)
-        with open(fname, "r") as fr:
-            reader = csv.DictReader(fr, delimiter="\t")
-            i = 1
-            for row in reader:
-                i += 1
-                if term_id == row.get("Ontology ID"):
-                    return fname + ":" + str(i)
+        try:
+            with open(fname, "r") as fr:
+                reader = csv.DictReader(fr, delimiter="\t")
+                i = 1
+                for row in reader:
+                    i += 1
+                    if term_id == row.get("Ontology ID"):
+                        return fname + ":" + str(i)
+        except Exception as e:
+            raise Exception(f"Failed to read {fname}", e)
     for f in os.listdir(IMPORTS_DIR):
+        if not f.endswith(".txt"):
+            continue
         fname = os.path.join(IMPORTS_DIR, f)
         term_iri = "http://purl.obolibrary.org/obo/" + term_id.replace(":", "_")
         i = 0
-        with open(fname, "r") as fr:
-            for line in fr.readlines():
-                i += 1
-                if not line:
-                    continue
-                if line.split(" ")[0].strip() == term_iri:
-                    return fname + ":" + str(i)
+        try:
+            with open(fname, "r") as fr:
+                for line in fr.readlines():
+                    i += 1
+                    if not line:
+                        continue
+                    if line.split(" ")[0].strip() == term_iri:
+                        return fname + ":" + str(i)
+        except Exception as e:
+            raise Exception(f"Failed to read {fname}", e)
     cur.execute("SELECT * FROM statements WHERE stanza = ?", (term_id,))
     res = cur.fetchone()
     if res:
-        return "src/ontology/obi-edit.owl"
+        fname = "src/ontology/obi-edit.owl"
+        term_iri = "http://purl.obolibrary.org/obo/" + term_id.replace(":", "_")
+        try:
+            with open(fname, "r") as fr:
+                for line in fr.readlines():
+                    i += 1
+                    if not line:
+                        continue
+                    if "rdf:about=" in line and term_iri in line:
+                        return fname + ":" + str(i)
+        except Exception as e:
+            raise Exception(f"Failed to read {fname}", e)
     return None
 
 
