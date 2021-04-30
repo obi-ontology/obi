@@ -119,6 +119,26 @@ MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 modules: $(MODULE_FILES)
 
 
+### Databases
+
+.PHONY: obi-dbs
+obi-dbs: build/obi-edit.db build/obi_merged.db
+
+build/obi-edit.db: src/scripts/prefixes.sql src/ontology/obi-edit.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
+
+build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
+
+
 ### Build
 #
 # Here we create a standalone OWL file appropriate for release.
@@ -141,13 +161,6 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	--output build/obi_merged.tmp.owl
 	sed '/<owl:imports/d' build/obi_merged.tmp.owl > $@
 	rm build/obi_merged.tmp.owl
-
-build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
-	rm -rf $@
-	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
-	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
-	sqlite3 $@ "ANALYZE;"
 
 obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \
