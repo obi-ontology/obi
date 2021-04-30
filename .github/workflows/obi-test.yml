@@ -1,0 +1,22 @@
+# Workflow for OBI Testing
+
+name: OBI Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  doid_ci:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run test
+        run: |
+          make test
