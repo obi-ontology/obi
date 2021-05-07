@@ -15,17 +15,26 @@
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/obi-edit.owl">
         <owl:imports rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2014-05-03/classes-only.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/2017-03-24/iao.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/2020-06-10/iao.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/external-byhand.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/CLO_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/CL_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ChEBI_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ENVO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/GO_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/HP_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/IDO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/NCBITaxon_imports.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OBO_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OGMS_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OMIABIS_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OMRSE_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/PATO_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/PR_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/SO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/UO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/UO_instance_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/Uberon_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/VO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/assays.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/biobank-specimens.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/biopsy.owl"/>
@@ -34,6 +43,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/medical-history.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/obsolete.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/organizations.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sample-collection.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sequence-analysis.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/study-designs.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/value-specifications.owl"/>
@@ -3202,7 +3212,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planned process</obo:IAO_0000111>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Injecting mice with a vaccine in order to test its efficacy</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A processual entity that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A process that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Plan&apos; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&apos;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
 objectives is a planned process.</obo:IAO_0000116>
@@ -4557,7 +4567,7 @@ ALT DEF (PRS):: a cDNA library is a collection of host cells, typically E.Coli c
         <obo:IAO_0000232 xml:lang="en">PRS: 22022008. class moved under population,
 modification of definition and replacement of biomaterials in previous definition with &apos;material&apos;
 addition of has_role restriction</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">cDNA library</rdfs:label>
+        <rdfs:label xml:lang="en">clonal cDNA library</rdfs:label>
     </owl:Class>
     
 
@@ -4823,20 +4833,6 @@ illiterate subject. PharmPK Discussion, http://www.boomer.org/pkin/PK06/PK200625
         <obo:IAO_0000119 xml:lang="en">Wikipedia, feb 29, 2008</obo:IAO_0000119>
         <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19 Feb 2009; old def: A nutrient role is a role played by a substance used in an organism&apos;s metabolism which is taken in from the environment and provides nourishment.</obo:IAO_0000232>
         <rdfs:label xml:lang="en">nutrient role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000207 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000207">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000116"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">health care provider role</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a worker role of providing medical care either within or outside the study timeline</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Person:Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">health care provider</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">health care provider role</rdfs:label>
     </owl:Class>
     
 
@@ -19958,7 +19954,7 @@ https://www.doi.org/</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/OBI_0002481 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002481">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000164"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002754"/>
         <obo:IAO_0000111 xml:lang="en">single-end library</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A cDNA library that is a collection of short tags from only one end of DNA fragments.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Stephen A. Fisher, Junhyong Kim, Dan Berrios</obo:IAO_0000117>
@@ -20680,6 +20676,532 @@ JZ (3-30-20): discussed on the OBI call. Since the REO was never actually regist
         <obo:IAO_0000117 xml:lang="en">PERSON: Luke Slater</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">approximate value</obo:IAO_0000118>
         <rdfs:label xml:lang="en">estimated value</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002754 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002754">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <obo:IAO_0000111 xml:lang="en"></obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">cDNA library</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">cDNA library lacks the non-coding and regulatory elements found in genomic DNA</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A collection of DNA molecules with sequences complementary to a specified set of mRNA molecules and commonly developed by enzymatic reverse transcription.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">modified from Wikipedia</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">cDNA library</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002756 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002756">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
+        <obo:IAO_0000115>A categorical value specification in which the available categories were created with an explicit order.</obo:IAO_0000115>
+        <obo:IAO_0000116>https://en.wikipedia.org/wiki/Ordinal_data provides references for follow-up, but more than one OBI developer has objected to &quot;...whose levels have natural, ordered categories and the distances between those categories is not known...&quot;
+
+Separate from that, an OBI mechanism for asserting the order of ordinal values specification levels with OWL has not been determined yet.</obo:IAO_0000116>
+        <obo:IAO_0000117>Mark Andrew Miller, ORCID:0000-0001-9076-6066</obo:IAO_0000117>
+        <obo:IAO_0000119>Bjoern Peters in https://github.com/obi-ontology/obi/issues/862</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/862</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">ordinal value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002769 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002769">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001404"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A genetic characteristics information that is about the number and appearance of chromosomes in the nucleus of an eukaryotic cell.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">EFO_0004426 karyotype</obo:IAO_0000119>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1097</obo:IAO_0000233>
+        <obo:IAO_0000234 xml:lang="en">VEuPathDB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">karyotype information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002770 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002770">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002769"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A karyotype information that is about the structural variation of partial genome rather than whole genome.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1097</obo:IAO_0000233>
+        <obo:IAO_0000234 xml:lang="en">VEuPathDB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">partial karyotype information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002771 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002771">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002769"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A karyotype information that is about the structural variation of the whole genome.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI group</obo:IAO_0000119>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1097</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">full karyotype information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002772 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002772">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002756"/>
+        <obo:IAO_0000115>An ordinal value specification that indicates that either 
+a) an analyte or mesaurand is present in an evaluant, or 
+b) that the amount of analyte/measurand detected is over some predetermined threshold.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark Andrew Miller, ORCID:0000-0001-9076-6066</obo:IAO_0000117>
+        <obo:IAO_0000119>LOINC User&apos;s Guide, Version 2.68, PUBLISHED JUNE 2020, page 32</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1202</obo:IAO_0000233>
+        <rdfs:comment>bump</rdfs:comment>
+        <rdfs:label xml:lang="en">presence or over-threshold value specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002774 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002774">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100016"/>
+        <obo:IAO_0000115 xml:lang="en">A blood plasma specimen that is the output of some platelet-poor plasma preparation and is the portion of plasma that contains fewer than 10,000 platelets per microliter.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">platelet-poor plasma specimen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002775 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002775">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600014"/>
+        <obo:IAO_0000115 xml:lang="en">A material component separation process in which (1) whole blood is first centrifuged to separate red blood cells from blood plasma, which forms the supernatant, and (2) the blood plasma is then centrifuged to separate platelets from the plasm.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">platelet-poor plasma preparation process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002785 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002785">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000659"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure using suction, usually with a thin needle and syringe, to remove bodily fluid or tissue.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asiyah Yu Lin|ORCID:0000-0003-2620-0345</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aspiration procedure</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&amp;ns=ncit&amp;code=C15631</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">aspiration specimen collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002897 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002897">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111>surveillance process</obo:IAO_0000111>
+        <obo:IAO_0000115>An investigation in which some entity is monitored, and data concerning that entity collected, interpreted, and disseminated, for the purpose of managing, directing, or protecting that entity, or some other entity.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119>Shane Babcock, OBI</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1181</obo:IAO_0000233>
+        <obo:IAO_0000234>IDO, VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>surveillance process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002898 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002898">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000174"/>
+        <obo:IAO_0000111>cluster study group role</obo:IAO_0000111>
+        <obo:IAO_0000112>A cluster study group consisting of eight pregnant women who lived close enough to each other so that a community promoter could readily walk to each compound.</obo:IAO_0000112>
+        <obo:IAO_0000115>A study group role that is the result of the allocation of a cluster of study-defined groupings of people in a clinical trial to receive a specific intervention/treatment, or no intervention, according to the trial&apos;s protocol.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Brianna Lindsay</obo:IAO_0000117>
+        <obo:IAO_0000118>cluster study arm</obo:IAO_0000118>
+        <obo:IAO_0000119>ClinEpiDB</obo:IAO_0000119>
+        <rdfs:label>cluster study group role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002899">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000174"/>
+        <obo:IAO_0000111>compound study group role</obo:IAO_0000111>
+        <obo:IAO_0000112>A compound study group consisting of geographically proximate households that share a common water source.</obo:IAO_0000112>
+        <obo:IAO_0000115>A study group role that is the result of the allocation of a compound of geographically-proximate households with a shared component in a clinical trial to receive a specific intervention/treatment, or no intervention, according to the trial&apos;s protocol.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, Brianna Lindsay</obo:IAO_0000117>
+        <obo:IAO_0000118>compound study arm</obo:IAO_0000118>
+        <obo:IAO_0000119>ClinEpiDB</obo:IAO_0000119>
+        <rdfs:label>compound study group role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002983 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002983">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000408"/>
+        <obo:IAO_0000111>altitude measurement datum</obo:IAO_0000111>
+        <obo:IAO_0000115>A length measurement datum between a point at sea or ground level and some point above it.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119>Adapted from https://www.merriam-webster.com/dictionary/altitude</obo:IAO_0000119>
+        <rdfs:label>altitude measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002988 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002988">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+        <obo:IAO_0000111>duration of specimen collection</obo:IAO_0000111>
+        <obo:IAO_0000112>Specimen collection duration of 3 nights that a trap is set out for collection of mosquitoes. Urine collected over a 24 hour period of specimen collection duration.</obo:IAO_0000112>
+        <obo:IAO_0000115>A time measurement datum that is the count of collection cycles over which a specimen collection process occurs.</obo:IAO_0000115>
+        <obo:IAO_0000118>specimen collection duration</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>specimen collection duration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002989 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002989">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000018"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:IAO_0000111>material supplier</obo:IAO_0000111>
+        <obo:IAO_0000115>A person or organization that provides material supplies to other people or organizations.</obo:IAO_0000115>
+        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1289</obo:IAO_0000233>
+        <rdfs:label>material supplier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002992 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002992">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>prevalence of pathogen in specimens</obo:IAO_0000111>
+        <obo:IAO_0000112>prevalence of Plasmodium falciparum in Mosquito samples assayed by PCR</obo:IAO_0000112>
+        <obo:IAO_0000115>A data item that is the frequency of detection of a specified pathogenic organism in collected specimens.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>prevalence of pathogen</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>prevalence of pathogen in specimens</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002993 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002993">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>prevalence of blood meal specimens from a host organism</obo:IAO_0000111>
+        <obo:IAO_0000112>prevalence of blood meal host organism in specimens measured as % of blood meal specimens collected from mosquitoes that had human blood as a meal.</obo:IAO_0000112>
+        <obo:IAO_0000115>A data item that is the frequency of blood whose source is from a specified host organism in collected blood meal specimens.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>host blood index</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>prevalence of blood meal specimens from a host organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002994 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002994">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>presence of blood from host organism in blood meal specimen</obo:IAO_0000111>
+        <obo:IAO_0000112>presence of blood meal host organism indicated by boolean values of yes or no.</obo:IAO_0000112>
+        <obo:IAO_0000115>A data item that indicates whether blood in a blood meal specimen came from a specified host organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>presence of blood meal host organism</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>presence of blood from host organism in blood meal specimen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002995 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002995">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002996"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>blood meal source organism</obo:IAO_0000111>
+        <obo:IAO_0000115>An organism that is the source of a blood meal.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118>blood meal host organism</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>blood meal source organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002996 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002996">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000111>blood meal source role</obo:IAO_0000111>
+        <obo:IAO_0000112>A mosquito feeds on a human whereby the human acquires the blood meal source role for the mosquito blood meal.</obo:IAO_0000112>
+        <obo:IAO_0000115>A role borne by an organism that is gained during a process in which another organism ingests blood as food from the organism.</obo:IAO_0000115>
+        <obo:IAO_0000116>Will deprecate this term in VEuPathDB ontology once in OBI.</obo:IAO_0000116>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119>http://purl.obolibrary.org/obo/EUPATH_0000791</obo:IAO_0000119>
+        <rdfs:label>blood meal source role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002997 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002997">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000115>A role of a material entity realized in drawing an arthropod in the direction of the material.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000118>attractant</obo:IAO_0000118>
+        <obo:IAO_0000119>IRO:0000034</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>arthropod attractor role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002998 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002998">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002913"/>
+        <obo:IAO_0000115>An arthropod specimen collection process that involves a device that produces data specifying the types of arthropod collected.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>arthropod collection process with automated identification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002999 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002999">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002913"/>
+        <obo:IAO_0000115>An arthropod specimen collection process that has the objective of collecting gravid female arthropods.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>gravid female arthropod specimen collection process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002913"/>
+        <obo:IAO_0000115>An arthropod specimen collection process that occurs while an arthropod that is capable of flight is resting outdoors during a period of inactivity.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VSMO:0000514</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>resting flight-capable arthropod specimen collection process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002912"/>
+        <obo:IAO_0000115>An arthropod specimen collection by aspiration that occurs in the daytime.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>daytime arthropod specimen collection by aspiration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002912"/>
+        <obo:IAO_0000115>An arthropod specimen collection by aspiration that catches specimens resting inside a human house.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>arthropod resting in human house specimen collection by aspiration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002904"/>
+        <obo:IAO_0000115>An arthropod specimen collection process that occurs while the arthropods land on a surface.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000118>collection of landing insects</obo:IAO_0000118>
+        <obo:IAO_0000119>VSMO:0001457</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>landing arthropod specimen collection process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002904"/>
+        <obo:IAO_0000115>An adult arthropod specimen collection process that has the objective of collecting arthropods capable of flight, through the use of a barrier trap.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>flying adult arthropod collection process by passive interception</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000115>A device that is designed to provide a solid surface that is attractive to an arthropod as a place to rest during a period of inactivity.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VSMO:0001355</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>device for resting of adult arthropods for collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <obo:IAO_0000115>A device that is designed for the collection of arthropod larvae or pupae from water and consists of a conical net.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>well net for arthropod immatures</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002920"/>
+        <obo:IAO_0000115>An arthropod trap that uses as attractant an animal that is not human and is the size of a chicken or smaller.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000118>trap containing small non-human animal bait</obo:IAO_0000118>
+        <obo:IAO_0000119>VSMO:0001595</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>arthropod trap containing small non-human animal bait</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002920"/>
+        <obo:IAO_0000115>An arthropod trap that is designed to trap an arthropod as it emerges from water at the beginning of its adult stage.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>American Midland Naturalist, Vol. 97, No. 2 (Apr., 1977), pp. 381-389</obo:IAO_0000119>
+        <obo:IAO_0000119>VSMO:0001352</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
+        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
+        <rdfs:label>trap for emerging adult arthropods</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003029 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003029">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001960"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>barcode target locus role</obo:IAO_0000111>
+        <obo:IAO_0000115>An evaluant role that is realized in a taxonomic diversity assessment by targeted gene survey involving sequencing a small defined region of genome amplified by PCR.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert https://orcid.org/0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1325</obo:IAO_0000233>
+        <rdfs:label>barcode target locus role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000405"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>oligonucleotide primer set</obo:IAO_0000111>
+        <obo:IAO_0000115>A processed material that consists of oligonucleotides that bear a primer role.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert https://orcid.org/0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1325</obo:IAO_0000233>
+        <rdfs:label>oligonucleotide primer set</rdfs:label>
     </owl:Class>
     
 

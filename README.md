@@ -23,6 +23,23 @@ Our ontology terms come in three groups. Depending on what type of term you want
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
 
+### Finding Terms
+
+To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). This requires you first to build a database from the merged OBI file:
+```
+make build/obi_merged.db
+```
+
+Then you can run the script to find terms by ID or label by passing them as a space-separated list, for example:
+```
+src/scripts/locate.py OBI:0000070 CHMO:0000087 GO:0000785
+```
+
+Labels should be enclosed in double quotes:
+```
+src/scripts/locate.py "assay" "fluorescence microscopy" "chromatin"
+```
+
 
 # Files
 
@@ -30,8 +47,8 @@ See below for a full list of files, build instructions, and instructions on usin
 - [`obi.owl`](obi.owl) the latest release of OBI
 - [`Makefile`](Makefile) scripts for building OBI
 - [`views/`](views/) various specialized views of OBI
-    - [`obi.obo`](obi.obo) the latest release of OBI in `.obo` file format
-    - [`obi_core.owl`](obi_core.owl) the latest release of OBI Core: ~100 key terms
+    - [`obi.obo`](views/obi.obo) the latest release of OBI in `.obo` file format
+    - [`obi_core.owl`](views/obi_core.owl) the latest release of OBI Core: ~100 key terms
 - [`src/`](src/)
     - [`ontology/`](src/ontology/) source files for OBI
         - [`obi-edit.owl`](src/ontology/obi-edit.owl) the main OBI OWL file
@@ -51,14 +68,15 @@ See below for a full list of files, build instructions, and instructions on usin
 
 The [`Makefile`](Makefile) contains scripts for building OBI. On macOS or Linux, you should just be able to run `make` or one of the specific tasks below. On Windows consider using some sort of Linux virtual machine such as Docker or Vagrant. Most results will be in the `build/` directory. If you have trouble, contact [James](mailto:james@overton.ca).
 
-- `make all` prepare for a release
-- `make obi.owl` build the release file; reasoning can take about 10 minutes
+- `make test` merge and run SPARQL tests (this is run on every push to GitHub)
+- `make sort` sort templates, and fix quoting and line endings
 - `make imports` update OntoFox imports
 - `make modules` update ROBOT templates
+- `make obi.owl` build the release file; reasoning can take about 10 minutes
+- `make views` update ROBOT templates
+- `make all` prepare for a release, runs `imports`, `modules`, `test`, `obi.owl`, and `views`
 - `make build/obi_merged.owl` merge `obi-edit.owl` into a single file, don't reason
 - `make clean` remove temporary files
-- `make test` merge and run SPARQL tests
-- `make sort` sort templates, and fix quoting and line endings
 
 
 # Development
@@ -97,43 +115,18 @@ These are the steps with their CLI commands. When using a GUI application the st
 2. `git checkout master` start on the `master` branch
 3. `git checkout -b your-branch-name` create a new branch named for the change you're making
 4. make your changes
-5. `git status` and `git diff` inspect your changes
-6. `git add --update` add all updated files to staging
-7. `git commit --message "Description, issue #123"` commit staged changes with a message; it's good to include an issue number
-8. `git push --set-upstream origin your-branch-name` push your commit to GitHub
-9. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
+5. `make sort` sort and normalize tables, for cleaner diffs
+6. `git status` and `git diff` inspect your changes
+7. `git add --update src/` add all updated files in the `src/` directory to staging
+8. `git commit --message "Description, issue #123"` commit staged changes with a message; it's good to include an issue number
+9. `git push --set-upstream origin your-branch-name` push your commit to GitHub
+10. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
 Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR can be merged into `master`. Rinse and repeat!
 
 
-## Line endings
+## Keeping Things Tidy
 
-The easiest way to edit our `src/ontology/template/` files is with Excel. Unfortunately Excel on macOS [uses old line endings](http://developmentality.wordpress.com/2010/12/06/excel-2008-for-macs-csv-bug/), and this messes up our diffs. We've adopted [this solution](https://github.com/dfalster/baad/commit/1620ecbdede6feeab59bc1d0db3ff14824af5643).
+The easiest way to edit our `src/ontology/template/` files is with Excel. Unfortunately Excel has some idiosyncratic rules for quoting cell values, and on macOS [uses old line endings](http://developmentality.wordpress.com/2010/12/06/excel-2008-for-macs-csv-bug/). Both these things make our diffs messy and confusing.
 
-If you're not using macOS or Excel, you should ignore these instructions.
-
-Before you start using a new clone of the repository under macOS, please set up a git hook that checks for bad line endings before every commit. From the repository root, run:
-
-    ln -s ../../src/scripts/check-line-endings.sh .git/hooks/pre-commit
-
-This will check that all files have Unix endings once files have been staged (so after git's `crlf` treatment). You can run it manually to check by running
-
-    src/scripts/check-line-endings.sh
-
-which looks at staged files only, or
-
-    src/scripts/check-line-endings.sh tsv
-
-which looks at *all* tsv files in the project, including uncommitted, unstaged, ignored files, etc.
-
-To *fix* line endings, run
-
-    src/scripts/fix-eol.sh path/to/file.tsv
-
-To fix *all* files in the project, run
-
-    src/scripts/fix-eol-all.sh
-
-which looks at all tsv files, regardless of git status, ending correctness, etc.
-
-If you *really* need to override a pre-commit check, use git's `--no-verify` option.
+For clean diffs, we also like to keep out templates sorted by ID. The `make sort` command will fix line endings and sorting by running all the templates through a Python script.
