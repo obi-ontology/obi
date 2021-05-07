@@ -46,13 +46,34 @@ build/robot.jar: | build
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
 
+### RDFTab
+#
+# Use RDFTab to create SQLite databases from OWL files.
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-apple-darwin
+	SED = sed -i.bak
+else
+	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-unknown-linux-musl
+	SED = sed -i
+endif
+
+build/rdftab: | build
+	curl -L -o $@ $(RDFTAB_URL)
+	chmod +x $@
+
+
 ### Imports
 #
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
 	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
 
-# Use ROBOT to ensure that serialization is consistent.
+# Remove annotation properties from CLO to avoid weird labels.
+src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
+	$(ROBOT) remove --input $< --select annotation-properties --trim false --output $@
+
+# Use ROBOT to ensure that serialization is consistent for the rest.
 src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
 	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
@@ -88,6 +109,7 @@ MODULE_NAMES := assays\
  epitope-assays\
  medical-history\
  obsolete\
+ sample-collection\
  study-designs\
  sequence-analysis\
  value-specifications
@@ -119,6 +141,13 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	--output build/obi_merged.tmp.owl
 	sed '/<owl:imports/d' build/obi_merged.tmp.owl > $@
 	rm build/obi_merged.tmp.owl
+
+build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
 
 obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \
@@ -226,6 +255,8 @@ PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
+# Always get the most recent version of OBI - in case build directory has not been cleaned
+.PHONY: build/obi-previous-release.owl
 build/obi-previous-release.owl: | build
 	curl -L -o $@ "http://purl.obolibrary.org/obo/obi.owl"
 
@@ -234,6 +265,26 @@ build/released-entities.tsv: build/obi-previous-release.owl src/sparql/get-obi-e
 
 build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq | build/robot.jar
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
+
+build/terms-report.tsv: build/obi_merged.owl src/sparql/terms-report.rq | build
+	$(ROBOT) query --input $< --select $(word 2,$^) $@
+	mv $@ $@.tmp
+	tail -n+2 $@.tmp | cut -f1,3 | sort -u > $@
+	rm $@.tmp
+
+build/new-entities.txt: build/released-entities.tsv build/current-entities.tsv build/terms-report.tsv
+	echo "New terms added:" > $@
+	echo "" >> $@
+	echo "ID | Label" >> $@
+	echo "---|---" >> $@
+	comm -13 $(wordlist 1,2,$^) \
+	| join - $(word 3,$^) \
+	| sed "s|^<http://purl.obolibrary.org/obo/OBI_|OBI:|" \
+	| sed s/\"//g \
+	| sed "s/>//g" \
+	| sed "s/@en//g" \
+	| sed "s/ /|/" \
+	>> $@
 
 build/dropped-entities.tsv: build/released-entities.tsv build/current-entities.tsv
 	comm -23 $^ > $@
@@ -304,3 +355,17 @@ clean:
 .PHONY: sort
 sort: src/ontology/templates/
 	src/scripts/sort-templates.py
+
+# Create a release candidate
+# Requires "admin:org", "repo", and "workflow" permissions for gh CLI token
+.PHONY: candidate
+candidate: obi.owl views build/new-entities.txt
+	$(eval REMOTE := $(shell git remote -v | grep "obi-ontology/obi.git" | head -1 | cut -f 1))
+	git checkout -b $(TODAY)
+	git add -u
+	git commit -m "$(TODAY) release candidate"
+	git push -u $(REMOTE) $(TODAY)
+	gh pr create \
+	--title "$(TODAY) release candidate" \
+	--body "$$(cat build/new-entities.txt)" \
+	--repo obi-ontology/obi
