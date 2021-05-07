@@ -46,13 +46,34 @@ build/robot.jar: | build
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
 
+### RDFTab
+#
+# Use RDFTab to create SQLite databases from OWL files.
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-apple-darwin
+	SED = sed -i.bak
+else
+	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-unknown-linux-musl
+	SED = sed -i
+endif
+
+build/rdftab: | build
+	curl -L -o $@ $(RDFTAB_URL)
+	chmod +x $@
+
+
 ### Imports
 #
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
 	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
 
-# Use ROBOT to ensure that serialization is consistent.
+# Remove annotation properties from CLO to avoid weird labels.
+src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
+	$(ROBOT) remove --input $< --select annotation-properties --trim false --output $@
+
+# Use ROBOT to ensure that serialization is consistent for the rest.
 src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
 	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
@@ -120,6 +141,13 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	--output build/obi_merged.tmp.owl
 	sed '/<owl:imports/d' build/obi_merged.tmp.owl > $@
 	rm build/obi_merged.tmp.owl
+
+build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
 
 obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \

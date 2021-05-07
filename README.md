@@ -23,6 +23,23 @@ Our ontology terms come in three groups. Depending on what type of term you want
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
 
+### Finding Terms
+
+To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). This requires you first to build a database from the merged OBI file:
+```
+make build/obi_merged.db
+```
+
+Then you can run the script to find terms by ID or label by passing them as a space-separated list, for example:
+```
+src/scripts/locate.py OBI:0000070 CHMO:0000087 GO:0000785
+```
+
+Labels should be enclosed in double quotes:
+```
+src/scripts/locate.py "assay" "fluorescence microscopy" "chromatin"
+```
+
 
 # Files
 
