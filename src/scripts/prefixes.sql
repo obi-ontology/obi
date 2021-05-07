@@ -15,6 +15,7 @@ INSERT OR IGNORE INTO prefix VALUES
 ("obo", "http://purl.obolibrary.org/obo/"),
 
 ("BFO", "http://purl.obolibrary.org/obo/BFO_"),
+("CHMO", "http://purl.obolibrary.org/obo/CHMO_"),
 ("CL", "http://purl.obolibrary.org/obo/CL_"),
 ("CLO", "http://purl.obolibrary.org/obo/CLO_"),
 ("CHEBI", "http://purl.obolibrary.org/obo/CHEBI_"),
