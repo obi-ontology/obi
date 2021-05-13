@@ -23,6 +23,25 @@ Our ontology terms come in three groups. Depending on what type of term you want
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
 
+### Editing Templates in Excel
+
+If you wish to edit a template or templates in Excel, rather than copy & pasting the template, we ask that you follow this workflow to preserve quoting. Going back and forth with Excel can cause some unintentional changes to double quotes within templates.
+
+First, install the python requirements:
+```
+python3 -m pip install -r requirements.txt
+```
+
+Then, make the Excel sheet:
+```
+make obi.xlsx
+```
+
+Edit the sheet, save it, and finally, run the following to update the TSV versions of the templates:
+```
+make update-tsv
+```
+
 ### Finding Terms
 
 To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). This requires you first to build a database from the merged OBI file:
