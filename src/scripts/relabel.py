@@ -63,6 +63,8 @@ def get_ttl(cur):
 
 def replace_usages(old_label, new_label):
     for f in os.listdir(TEMPLATES_DIR):
+        if not f.endswith(".tsv"):
+            continue
         path = os.path.join(TEMPLATES_DIR, f)
         rows = []
         has_change = False
