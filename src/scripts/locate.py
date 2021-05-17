@@ -41,7 +41,7 @@ def locate_term(cur, term_id, include_line=True):
                 i = 1
                 for row in reader:
                     i += 1
-                    if term_id == row.get("Ontology ID"):
+                    if term_id == row.get("ontology ID"):
                         if include_line:
                             fname = fname + ":" + str(i)
                         return fname

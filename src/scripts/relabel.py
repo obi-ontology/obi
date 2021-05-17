@@ -139,7 +139,7 @@ def update_template(loc, term_id, new_label):
         else:
             label_col = "label"
         for row in reader:
-            if row["Ontology ID"] == term_id:
+            if row["ontology ID"] == term_id:
                 old_label = row.get(label_col)
                 row[label_col] = new_label
             rows.append(row)
