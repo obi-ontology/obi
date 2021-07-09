@@ -32,15 +32,17 @@ First, install the python requirements:
 python3 -m pip install -r requirements.txt
 ```
 
-Then, make the Excel sheet:
+Then, make the Excel sheet. In your local OBI git directory, run the following command to create a file called `obi.xlsx`:
 ```
 make obi.xlsx
 ```
 
-Edit the sheet, save it, and finally, run the following to update the TSV versions of the templates:
+Next, open `obi.xlsx` in Excel (or whatever editor you prefer). This spreadsheet contains a tab for each OBI template (e.g., "study-design", "assays", etc.). Find the tab that corresponds to the template you need to edit, make your changes, and save the Excel spreadsheet to the same location (`obi.xlsx`). Finally, run the following to update the TSV versions of the templates:
 ```
 make update-tsv
 ```
+
+This will convert the tabs in `obi.xlsx` back to TSVs and overwrite the existing TSVs in the `src/ontology/templates/` directory with your changes. Review your changes (`git diff`) and make your pull request.
 
 ### Finding Terms
 
