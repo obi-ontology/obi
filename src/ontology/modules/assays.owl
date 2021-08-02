@@ -4807,10 +4807,11 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using a Luminex machine to detect IFN-gamma and IL-10 in the supernatant of a cell culture.</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analyte assay in which a series of beads coated with antibodies specific for different analytes and marked with discrete fluorescent labels are used to simultaneously capture and quantitate soluble analytes.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An analyte assay in which a series of beads are coated with antibodies, antigens, or other small molecules in order to detect an analyte of interest. </obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luminex assay</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.luminexcorp.com/xmap-technology/#applications </obo:IAO_0000119>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytometric bead array assay</rdfs:label>
     </owl:Class>
     
@@ -19138,6 +19139,60 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000920"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_1110034"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cytometric bead array assay in which a series of beads are coated with antibodies specific to the antigen of interest. Antigens of interest attach to antibodies on the beads.  Fluorescent labeled secondary antibodies are used to detect the antigen of interest. </obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CMI-PB</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CMI-PB</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1399</obo:IAO_0000233>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytometric bead array antigen assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003116 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003116">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000920"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/VO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0019814"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cytometric bead array assay that detects antigen-specific antibodies. In the assay a series of beads are coated with antigens which capture antibodies specific to the antigen. Fluorescent labeled secondary antibodies are used to detect the antibody of interest. </obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CMI-PB</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CMI-PB</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1399</obo:IAO_0000233>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytometric bead array antibody assay</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0100016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100016"/>
@@ -19891,6 +19946,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_1110001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1110001"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_1110034 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1110034"/>
     
 
 
@@ -45805,6 +45866,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000955 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000955"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VO_0000150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/VO_0000150"/>
     
 
 
