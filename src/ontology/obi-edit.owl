@@ -12888,12 +12888,13 @@ Has term &apos;cell co-culturing&apos; and  &apos;maintaining cell culture&apos;
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001154">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600043"/>
-        <obo:IAO_0000111 xml:lang="en">induced mutation</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">induced mutagenesis</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a genetic transformation that the modification of the genetic material (either coding or non-coding) of an organism is caused by mutagenic compounds or irradiation.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A genetic transformation that is the modification of the genetic material (either coding or non-coding) of an organism caused by mutagenic processes, compounds, or irradiation.</obo:IAO_0000115>
+        <obo:IAO_0000116>Label and definition were clarified as per https://github.com/obi-ontology/obi/issues/1366</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">MO_564 induced_mutation</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">induced mutation</rdfs:label>
+        <rdfs:label xml:lang="en">induced mutagenesis</rdfs:label>
     </owl:Class>
     
 
@@ -21190,6 +21191,77 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1325</obo:IAO_0000233>
         <rdfs:label>oligonucleotide primer set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003081 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003081">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+        <obo:IAO_0000111>extraction date</obo:IAO_0000111>
+        <obo:IAO_0000115>A time measurement datum that specifies when some material was extracted from an input material.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, ORCID: 0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000119>FLU, VEuPathDB</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1286</obo:IAO_0000233>
+        <rdfs:label>extraction date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003082 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003082">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+        <obo:IAO_0000111>extraction duration time</obo:IAO_0000111>
+        <obo:IAO_0000115>A time measurement datum that is the result of measuring the duration of an extraction process.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, ORCID: 0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000119>Meredith Keybl, Shane Babcock</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1286</obo:IAO_0000233>
+        <rdfs:label>extraction duration time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003083 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003083">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001619"/>
+        <obo:IAO_0000111>specimen collection time post disease onset</obo:IAO_0000111>
+        <obo:IAO_0000115>A specimen collection time measurement datum that is the measure of a time when specimens are collected after the onset of disease in a host.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, ORCID: 0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000119>GROUP:FLU, Shane Babcock</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1286</obo:IAO_0000233>
+        <rdfs:label>specimen collection time post disease onset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003084 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003084">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001619"/>
+        <obo:IAO_0000111>specimen collection time post infection</obo:IAO_0000111>
+        <obo:IAO_0000115>A specimen collection time measurement datum that is the measure of a time when specimens are collected after an infection starts.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, ORCID: 0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB, EUPATH:0000613</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1286</obo:IAO_0000233>
+        <rdfs:label>specimen collection time post infection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003085 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003085">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000422"/>
+        <obo:IAO_0000111>laboratory postal address</obo:IAO_0000111>
+        <obo:IAO_0000115>A postal address used as a directive to deliver something to a laboratory.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert, ORCID: 0000-0002-5714-991X</obo:IAO_0000117>
+        <obo:IAO_0000118>laboratory address</obo:IAO_0000118>
+        <obo:IAO_0000119>GROUP:FLU, Shane Babcock</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1286</obo:IAO_0000233>
+        <rdfs:label>laboratory postal address</rdfs:label>
     </owl:Class>
     
 
