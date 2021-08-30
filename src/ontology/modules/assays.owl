@@ -1920,31 +1920,35 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0000470 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000470">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000034"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000049"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000049"/>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000034"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000049"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000049"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identification of a proteins cut out from a 2D gel by cleaving it into peptides using trypsin digestion using electrospray ionizatino to ensure the peptides are charged, and accelerating them with an electro magnetic field in which the flight path is determined by the mass / charge ratio of the peptides. Comparing the mass/charge ratio of peptides in the proteins with databases of protein sequences allows to identify which protein gave rise to the peptides.</obo:IAO_0000112>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assay that identifies the amount and type of material entities present in a sample by fragmenting the sample and measuring the mass-to-charge ratio of the resulting particles.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000117>
