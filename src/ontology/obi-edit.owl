@@ -19,6 +19,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/external-byhand.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/CLO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/CL_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/COB_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ChEBI_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ENVO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/GO_imports.owl"/>
@@ -21200,6 +21201,22 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003057">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000319"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IDO_0000562"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Administering substance in vivo where an antibiotic substance is administered to a living organism.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Cristian Cocos</obo:IAO_0000117>
@@ -21415,18 +21432,6 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0003078 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003078">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001619"/>
-        <obo:IAO_0000115>A specimen collection time measurement datum that is the measure of a time when specimens are collected after an infection starts.</obo:IAO_0000115>
-        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
-        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
-        <rdfs:label>specimen collection time post infection</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0003079 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003079">
@@ -21521,6 +21526,77 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1370</obo:IAO_0000233>
         <rdfs:label>laboratory-based population</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003119 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003119">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0019814"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_1110034"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A complex of molecular entitites which is the result of an antibody binding to an antigen.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>antigen:antibody complex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003120 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003120">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0042101"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003121"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A complex of molecular entities which is the result of a T cell receptor binding to a MHC-epitope complex.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjorne Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>epitope:MHC:TCR complex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003121 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0042611"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A complex of molecular entities which is the result of a MHC molecule binding with a ligand.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjorne Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>MHC:ligand complex</rdfs:label>
     </owl:Class>
     
 
@@ -32680,5 +32756,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
