@@ -19,6 +19,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/external-byhand.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/CLO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/CL_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/COB_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ChEBI_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/ENVO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/GO_imports.owl"/>
@@ -28,6 +29,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OGMS_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OMIABIS_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OMRSE_imports.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/OPL_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/PATO_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/PR_imports.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/import/SO_imports.owl"/>
@@ -21107,7 +21109,7 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000119>VSMO:0001355</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
         <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
-        <rdfs:label>device for resting of adult arthropods for collection</rdfs:label>
+        <rdfs:label>device for collection of resting adult arthropods</rdfs:label>
     </owl:Class>
     
 
@@ -21195,6 +21197,253 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003057 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003057">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000319"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IDO_0000562"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Administering substance in vivo where an antibiotic substance is administered to a living organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>Cristian Cocos</obo:IAO_0000117>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Penn Group</obo:IAO_0000119>
+        <rdfs:label>antibiotic administration process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003063 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003063">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115>A data item that is about resistance to an insecticide.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>insecticide resistance datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003064">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115>A data item that is the specified output of an organism identification assay.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>organism identification datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003066 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003066">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000401"/>
+        <obo:IAO_0000115>A one dimensional Cartesian spatial coordinate datum that is the eastward component of a distance from a point on a map projection.</obo:IAO_0000115>
+        <obo:IAO_0000116>Easting and northing coordinates are commonly measured in meters from a horizontal datum.</obo:IAO_0000116>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Grid_reference_system</obo:IAO_0000119>
+        <rdfs:label>easting coordinate measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003067 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003067">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000401"/>
+        <obo:IAO_0000115>A one dimensional Cartesian spatial coordinate datum that is the northward component of a distance from a point on a map projection.</obo:IAO_0000115>
+        <obo:IAO_0000116>Easting and northing coordinates are commonly measured in meters from a horizontal datum.</obo:IAO_0000116>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Grid_reference_system</obo:IAO_0000119>
+        <rdfs:label>northing coordinate measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003068 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003068">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000245"/>
+        <obo:IAO_0000115>Organization that undertakes a clinical study at some point in time.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>Cristian Cocos</obo:IAO_0000117>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Penn Group</obo:IAO_0000119>
+        <rdfs:label>clinical study center</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003069 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003069">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <obo:IAO_0000115>A protocol that, when concretized, is realized in an assay that uses chemical or biological means to infer the sequence of a biomaterial.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>sequencing protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003070 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003070">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000684"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protocol that specifies processes to fulfill a specimen collection objective.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>specimen collection protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003071 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003071">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000028"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000097"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000028"/>
+        <obo:IAO_0000115>A symbol that denotes a participant under investigation.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>participant identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003072 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003072">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003079"/>
+        <obo:IAO_0000115>A temperature measurement datum that is about an axilla.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>axillary temperature measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003073 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003073">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003079"/>
+        <obo:IAO_0000115>A temperature measurement datum that is about an organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Penn Group</obo:IAO_0000119>
+        <rdfs:label>organismal body temperature measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003074 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003074">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000300"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A textual entity refers to a taxon or organism that is based on the normal language of everyday life; this kind of name is often contrasted with the scientific name for the same organism, which is Latinized.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Common_name</obo:IAO_0000119>
+        <rdfs:label>common name of organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003075 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003075">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001169"/>
+        <obo:IAO_0000115>An age since birth measurement datum at the time of subject enrollment.</obo:IAO_0000115>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Penn Group</obo:IAO_0000119>
+        <rdfs:label>age since birth at time of enrollment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003076 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003076">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001169"/>
+        <obo:IAO_0000115>An age since birth measurement datum at the time of a clinical visit.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>Grant Dorsey</obo:IAO_0000117>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000117>Shon Cade</obo:IAO_0000117>
+        <obo:IAO_0000119>Penn Group</obo:IAO_0000119>
+        <rdfs:label>age since birth at time of visit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003077 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003077">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115>A data item that is about a collection of insects.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000118>entomological measurement datum</obo:IAO_0000118>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>entomological data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003079 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003079">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
+        <obo:IAO_0000115>A scalar measurement datum that is the result of measuring temperature.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>temperature measurement datum</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0003081 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003081">
@@ -21277,6 +21526,246 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1370</obo:IAO_0000233>
         <rdfs:label>laboratory-based population</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003119 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003119">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0019814"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_1110034"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A complex of molecular entitites which is the result of an antibody binding to an antigen.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>antigen:antibody complex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003120 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003120">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0042101"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003121"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A complex of molecular entities which is the result of a T cell receptor binding to a MHC-epitope complex.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjorne Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>epitope:MHC:TCR complex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003121 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0042611"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A complex of molecular entities which is the result of a MHC molecule binding with a ligand.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjorne Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>MHC:ligand complex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003129 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003129">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002620"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">129/Sv male mice were injected with ENU and mated to C57BL/6 females. Their first-generation (G1) male progeny were again crossed to C57BL/6 females, and then backcrossed to one of their second-generation (G2) daughters to yield a third-generation (G3). PMID:18802465</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A form of random mutagenesis that produces a mutation by introducing the organism to a chemical mutagen.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase &quot;chemical&quot; (FBcv:0000525) in the origin of mutation branch and Dd mutagenesis meth0d term chemical mutagenesis (DDMUMET:0000014).</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/25646611/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003130 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003130">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002620"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groups of (101 x C3H)F1 hybrid male mice 11 weeks old were exposed to two different doses of 137Cs gamma rays. PMID:7035547</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A form of random mutagenesis that produces a random mutation by exposing the organism to radiation.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase &quot;irradiation&quot; (FBcv:0000503) in the origin of mutation branch.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiation induced mutagenesis</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:http://purl.obolibrary.org/obo/FBcv_0000503</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irradiation mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003131 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003131">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001154"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exons 20 and 21 were targeted for deletion because they encode the signature and Walker B motifs of the first ATP-binding domain, elements that are known to be critical for ABCA1 function. PMID:15550377</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An induced mutation in which a specific gene(s) or part of a gene(s) is altered.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://www.ncbi.nlm.nih.gov/books/NBK21878/def-item/A4754/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">directed mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003132 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003132">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003131"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We have generated a WMS mouse model with S236X mutation in ADAMTS10 which is similar to the R237X mutation identifiedin WMS patients using CRISPR-Cas9. PMID:30060141</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A directed mutagenesis in which guide RNAs and an endonuclease (cas9, TALEN) are used to introduce a mutation at a specific location in a gene.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase term &quot;site specific cleavage&quot; (FBcv:0003007) in the origin of mutation branch.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/28177771/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endonuclease mediated mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003133 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003133">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003132"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Briefly, to create Adar1 M249A/M249A mice, guide RNA targeting 5’-ACCTTCTGAGCCTCTTGACA-3’ was synthesized by using Gene Art Precisiong RNA Synthesis Kit (ThermoFisherScientific). Pronuclear-stage mouse embryos (CLEA Japan Inc., Tokyo, Japan) were electroporated to introduce Cas9 mRNA, the guide RNA and a single-stranded donor... PMID:33983932</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An endonuclease mediated mutagenesis in which guide RNAs and cas are used to introduce a mutation at a specific location in the genome.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent (narrow match) to FlyBase term &quot;CRISPR/Cas9&quot; (FBcv:0003008, narrow match as the OBI term covers all forms of cas) in the origin of mutation branch and Dd mutagenesis method term &quot;CRISPR/Cas9&quot; (DDMUMET:0000025).</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRISPR mediated mutagenesis</obo:IAO_0000118>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRISPR/cas mediated mutagenesis</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/28177771/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cas mediated mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003134 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003134">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003132"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We designed transcription activator-like effector nucleases (TALENs) and a single-stranded oligo (ssOligo) donor template to edit the endogenous Actb locus within the mouse genome. PMID:30012594</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An endonuclease mediated mutagenesis in which guide RNAs and transcription activator-like effector nucleases (TALENs) are used to introduce a mutation at a specific location in the genome.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase term &quot;TALEN&quot; (FBcv:0003009) in the origin of mutation branch.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/23664777/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TALEN mediated mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003135 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003135">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003132"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFN constructs targeting the third exon of the mouse Apoc2 gene were designed and synthetized by Sigma Aldrich... PMID:26574515</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An endonuclease mediated mutagenesis in which synthetic zinc-finger proteins designed to target specific DNA sequences are used to introduce a mutation at a specific location in the genome.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase term &quot;ZFN&quot; (FBcv:0003239) in the origin of mutation branch.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFN mediated mutagenesis</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/23664777/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zinc finger mediated mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003136 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003136">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002620"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transgenic mice were then generated by pronuclear injection of either the mixed MoPrP-PS1 and MoPrP-APP  or the bicistronic MoPrP–APP/IRES/PS1 expression cassettes into single cell embryos derived from F2 hybrids of  C57BL/6J and C3H/HeJ mice... PMID:11337275</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A form of random mutagenesis that produces a mutation by introducing a construct into the genome of an organism in a random or semi-random fashion.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/23996268/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transgenic mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003137 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003137">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003136"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Constructs lacking a promoter and including a B3-galactosidase gene, or a reporter gene encoding a protein with both B3-galactosidase and neomycin phosphotransferase activity, were designed so that activation of the reporter gene depends on its insertion within an active transcription unit. PMID:1653172</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transgenic mutagenesis that produces a mutation by introducing a construct designed to capture the expression of an endogenous gene by creating a spliced fusion transcript when inserted into the genome of an organism.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/17877761/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene-trap mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003138 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003138">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003136"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We generated several lines of enhancer trap mice carrying an enhancer detector cassette expressing Cre recombinase under the transcriptional control of the minimal promoter (129 base pairs) of the mouse Thy-1.2 gene. PMID:22492032</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transgenic mutagenesis that produces a mutation by introducing a construct designed to monitor transcriptionally active regions when inserted into the genome of an organism by inserting a reporter gene that requires cis-acting DNA sequences in the genome to activate reporter gene expression.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/17877761/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enhancer-trap mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003139 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003139">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003131"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To disrupt the mdr1a gene a 1.6 kb NheI genomic fragment containing exons 6 and 7 was replaced by a hygromycin phosphotransferase cassette in a targeting vector. PMID:7910522</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A directed mutation in which a construct is used to introduce a mutation into a specific genome location through homologous recombination.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase term &quot;gene targeting by homologous recombination&quot; (FBcv:0000710) in the origin of mutation branch.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene targeting by homologous recombination</obo:IAO_0000118>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/23996268/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">targeted mutagenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003140">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002620"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In order to achieve SB transposon-mediated mutagenesis in mice, we employed the gene trap scheme using a novel transposon vector, and we have generated a large number of mutant mice, approximately 30% of which displayed the phenotype. PMID:16880528</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A random mutagenesis in which expression of a transposase causes the mobilization of an artificial or modified transposable element with the insertion of the element into the genome creating a mutation.</obo:IAO_0000115>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalent to FlyBase &quot;transposable element activity&quot; (FBcv:0000483) in the origin of mutation branch.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Susan Bello ORCID:orcid.org/0000-0003-4606-0597</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">url:https://pubmed.ncbi.nlm.nih.gov/32050713/</obo:IAO_0000119>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transposon-induced mutagenesis</rdfs:label>
     </owl:Class>
     
 
@@ -32436,5 +32925,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
 
