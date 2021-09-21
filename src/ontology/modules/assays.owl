@@ -1197,7 +1197,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600045"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003117"/>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
@@ -1228,11 +1228,11 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Determining the binding of epitope-specific nanobody cAb-HuL5 to wild type human lysozyme by chemical shift perturbations in NMR spectra (Erwin De Genst, J Phys Chem B 2013).</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D structure determination assay that uses magnetic properties of atomic nuclei to determine the 3D structure and dynamics of molecules in the input sample.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D molecular structure determination assay that uses magnetic properties of atomic nuclei to determine the 3D structure and dynamics of molecules in the input sample.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear magnetic resonance 3D structure determination assay</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NMR 3D molecular structure determination assay</rdfs:label>
     </owl:Class>
     
 
@@ -4683,7 +4683,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0000912 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000912">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600045"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003117"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -4709,10 +4709,10 @@
             </owl:Class>
         </rdfs:subClassOf>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crystallizing an antibody:antigen complex, and recording the diffraction pattern of a synchrotron beam, and assembling the 3d complex structure based on homologous complexes.</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D structure determination assay in which the diffraction of pattern of X-ray beams in a crystal of purified material entities is used to resolve the 3-dimensional structure of the material entity of interest.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D molecular structure determination assay in which the diffraction of pattern of X-ray beams in a crystal of purified material entities is used to resolve the 3-dimensional structure of the material entity of interest.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-ray crystallography assay</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-ray crystallography 3D molecular structure determination assay</rdfs:label>
     </owl:Class>
     
 
@@ -6596,13 +6596,17 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600045"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001155"/>
+                    </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000080"/>
                             </owl:Restriction>
                         </owl:someValuesFrom>
                     </owl:Restriction>
@@ -6610,10 +6614,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Determination of a 3D structure of an antibody binding a protein by X-Ray crystallography, which identifies the specific binding site of the antibody.</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D structure determination assay in which a complex of 2 or more material enties is characterized which provides information on their binding configuration.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D molecular structure determination assay in which a complex of 2 or more molecular enties is characterized which provides information on their binding configuration.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3D structure determination of bound complex assay</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3D structure determination of bound molecular complex assay</rdfs:label>
     </owl:Class>
     
 
@@ -12981,13 +12985,13 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002108">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600045"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003117"/>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Targeting a solution of antibody bound to a protein with a neutron beam to determine the binding site of the antibody on the protein</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D structure determination assay in which the scattering pattern of a neutron or x-ray beam targeted at a material entity is recorded at small angles relative to the incident beam to determine the size, shape and structure of the material entity examined.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3D molecular structure determination assay in which the scattering pattern of a neutron or x-ray beam targeted at a material entity is recorded at small angles relative to the incident beam to determine the size, shape and structure of the material entity examined.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SAXS</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small-angle scattering assay</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small-angle scattering 3D molecular structure determination assay</rdfs:label>
     </owl:Class>
     
 
@@ -20550,7 +20554,7 @@
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hector Guzman-Orozco</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1380</obo:IAO_0000233>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron-microscopy molecular structure determination assay</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron-microscopy 3D molecular structure determination assay</rdfs:label>
     </owl:Class>
     
 
