@@ -114,9 +114,21 @@ MODULE_NAMES := assays\
  sequence-analysis\
  value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
+TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
 
 .PHONY: modules
 modules: $(MODULE_FILES)
+
+obi.xlsx: src/scripts/tsv2xlsx.py $(TEMPLATE_FILES)
+	python3 $< $@ $(wordlist 2,100,$^)
+
+.PHONY: update-tsv
+update-tsv: update-tsv-files sort
+
+.PHONY: update-tsv-files
+update-tsv-files:
+	$(foreach x,$(MODULE_NAMES),python3 src/scripts/xlsx2tsv.py obi.xlsx $(x) src/ontology/templates/$(x).tsv;)
+
 
 
 ### Databases
@@ -208,6 +220,7 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--term obo:OBI_0600036 \
 	--term obo:OBI_0600037 \
 	--term obo:OBI_0000838 \
+	--term obo:OBI_0003071 \
 	--term APOLLO_SV:00000796 \
 	--select "self descendants" \
 	--preserve-structure false \

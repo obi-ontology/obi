@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: obi/2021-04-06/obi.obo
-date: 06:04:2021 10:16
+data-version: obi/2021-08-18/obi.obo
+date: 18:08:2021 11:00
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi.obo
 property_value: defaultLanguage "en" xsd:string
@@ -48,8 +48,8 @@ property_value: http://purl.org/dc/elements/1.1/creator "Melissa Haendel" xsd:st
 property_value: http://purl.org/dc/elements/1.1/creator "Mervi Heiskanen" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Monnie McGee" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Norman Morrison" xsd:string
-property_value: http://purl.org/dc/elements/1.1/creator "Philip Lord" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Philippe Rocca-Serra" xsd:string
+property_value: http://purl.org/dc/elements/1.1/creator "Phillip Lord" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Pierre Grenon" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Richard Bruskiewich" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Richard Scheuermann" xsd:string
@@ -67,7 +67,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/ xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2021-04-06" xsd:string
+property_value: owl:versionInfo "2021-08-18" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -3460,6 +3460,12 @@ def: "A material entity with a pathogenic disposition." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
+id: IDO:0000562
+name: antibacterial
+def: "A material entity bearing an antibacterial disposition." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
 id: IDO:0000586
 name: infection
 def: "A part of an extended organism that itself has as part a population of one or more infectious agents and that (1) exists as a result of processes initiated by members of the infectious agent population and is (2) clinically abnormal in virtue of the presence of this infectious agent population, or (3) has a disposition to bring clinical abnormality to immunocompetent organisms of the same Species as the host (the organism corresponding to the extended organism) through transmission of a member or offspring of a member of the infectious agent population." []
@@ -3507,31 +3513,59 @@ id: NCBITaxon:10376
 name: Human gammaherpesvirus 4
 synonym: "Epstein Barr virus" EXACT []
 synonym: "Epstein-Barr virus" EXACT []
+synonym: "Epstein-Barr virus EBV" EXACT []
+synonym: "Human herpesvirus 4" EXACT []
+synonym: "Human herpesvirus type 4" EXACT []
 is_a: NCBITaxon:10292 ! Herpesviridae
 
 [Term]
 id: NCBITaxon:10407
 name: Hepatitis B virus
-is_a: NCBITaxon:10239 ! Viruses
+synonym: "hepatitis B virus (HBV)" EXACT []
+synonym: "hepatitis B virus HBV" EXACT []
+synonym: "hepatitis B virus, HBV" EXACT []
+synonym: "Human hepatitis B virus" EXACT []
+synonym: "human hepatitis B virus HBV" EXACT []
+is_a: NCBITaxon:2732514 ! Revtraviricetes
 
 [Term]
 id: NCBITaxon:11103
 name: Hepacivirus C
-is_a: NCBITaxon:10239 ! Viruses
+synonym: "Hepatitis C virus" EXACT []
+synonym: "hepatitis C virus HCV" EXACT []
+synonym: "human hepatitis C virus" EXACT []
+synonym: "human hepatitis C virus HCV" EXACT []
+synonym: "human hepatitis virus C HCV" EXACT []
+synonym: "post-transfusion hepatitis non A non B virus" EXACT []
+is_a: NCBITaxon:2559587 ! Riboviria
 
 [Term]
 id: NCBITaxon:11646
 name: Lentivirus
-is_a: NCBITaxon:10239 ! Viruses
+synonym: "Lentivirinae" EXACT []
+is_a: NCBITaxon:2732514 ! Revtraviricetes
 
 [Term]
 id: NCBITaxon:11676
 name: Human immunodeficiency virus 1
+synonym: "human immunodeficiency virus 1 HIV-1" EXACT []
+synonym: "human immunodeficiency virus HIV-1" EXACT []
+synonym: "human immunodeficiency virus type 1 HIV 1" EXACT []
+synonym: "human immunodeficiency virus type 1 HIV1" EXACT []
+synonym: "human immunodeficiency virus type 1, HIV-1" EXACT []
+synonym: "human immunodeficiency virus type I HIV-1" EXACT []
+synonym: "human immunodeficiency virus type-1 HIV-1" EXACT []
+synonym: "human immunodeficiency virus-1 HIV-1" EXACT []
 is_a: NCBITaxon:11646 ! Lentivirus
 
 [Term]
 id: NCBITaxon:11709
 name: Human immunodeficiency virus 2
+synonym: "HIV type 2" EXACT []
+synonym: "Human immunodeficiency virus type 2" EXACT []
+synonym: "human immunodeficiency virus type 2 HIV-2" EXACT []
+synonym: "human immunodeficiency virus type 2, HIV-2" EXACT []
+synonym: "Human immunodeficiency virus-2" EXACT []
 is_a: NCBITaxon:11646 ! Lentivirus
 
 [Term]
@@ -3553,7 +3587,7 @@ is_a: NCBITaxon:2 ! Bacteria
 [Term]
 id: NCBITaxon:197562
 name: Pancrustacea
-is_a: NCBITaxon:1206794 ! Ecdysozoa
+is_a: NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: NCBITaxon:2
@@ -3565,6 +3599,18 @@ is_a: OBI:0100026 ! organism
 id: NCBITaxon:2157
 name: Archaea
 is_a: OBI:0100026 ! organism
+
+[Term]
+id: NCBITaxon:2559587
+name: Riboviria
+synonym: "RNA viruses" EXACT []
+synonym: "RNA viruses and viroids" EXACT []
+is_a: NCBITaxon:10239 ! Viruses
+
+[Term]
+id: NCBITaxon:2732514
+name: Revtraviricetes
+is_a: NCBITaxon:2559587 ! Riboviria
 
 [Term]
 id: NCBITaxon:2759
@@ -3656,9 +3702,20 @@ name: Neurospora
 is_a: NCBITaxon:716545 ! saccharomyceta
 
 [Term]
+id: NCBITaxon:5820
+name: Plasmodium
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
 id: NCBITaxon:6239
 name: Caenorhabditis elegans
 synonym: "roundworm" EXACT []
+is_a: NCBITaxon:1206794 ! Ecdysozoa
+
+[Term]
+id: NCBITaxon:6656
+name: Arthropoda
+synonym: "arthropods" EXACT []
 is_a: NCBITaxon:1206794 ! Ecdysozoa
 
 [Term]
@@ -3873,7 +3930,7 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: OBI:0000048
 name: chromatography device
-def: "A device that facilitates the separation of mixtures. The function of a chromatography device involves passing a mixture dissolved in a \"\"mobile phase\"\" through a stationary phase, which separates the analyte to be measured from other molecules in the mixture and allows it to be isolated." []
+def: "A device that facilitates the separation of mixtures. The function of a chromatography device involves passing a mixture dissolved in a \"mobile phase\" through a stationary phase, which separates the analyte to be measured from other molecules in the mixture and allows it to be isolated." []
 synonym: "chromatography instrument" EXACT []
 is_a: OBI:0000832 ! measurement device
 is_a: OBI:0000932 ! material separation device
@@ -5258,7 +5315,7 @@ is_a: OBI:0000038 ! chromatography column
 [Term]
 id: OBI:0000449
 name: obsolete_defined_output
-def: "This is only a placeholder for defined classes, as are its siblings _defined_material and _defined protocol application.\nIts children should be defined classes constructed as output of a process." []
+def: "This is only a placeholder for defined classes, as are its siblings _defined_material and _defined protocol application. Its children should be defined classes constructed as output of a process." []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -6500,8 +6557,8 @@ is_a: OBI:0000891 ! cell proliferation assay
 id: OBI:0000665
 name: obsolete intracellular cytokine staining assay
 def: "The measurement of cytokines within the cytoplasm of a cell by permeabilizing the cell membrane to allow entry of specific antibodies, and counting the stained cells using a flow cytometer." []
-synonym: " ICS" EXACT []
 synonym: "ICCS" EXACT []
+synonym: "ICS" EXACT []
 synonym: "intracellular cytokine staining (ICS)" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
@@ -7430,7 +7487,7 @@ is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: OBI:0000854
-name: western blot analysis
+name: western blot assay
 def: "An analyte assay that detects specific peptides in an input material by separating it using gel electrophoresis, transfering the separated molecules to a membrane, and staining them with_ antibodies specific to the analyte molecules." []
 is_a: OBI:0001978 ! immunoblot assay
 
@@ -8521,7 +8578,7 @@ is_a: BFO:0000034 ! function
 [Term]
 id: OBI:0001037
 name: obsolete_specimen fixation function
-def: "A specimen \nfixation function is a function that holds or fastens an entity in a fixed position." []
+def: "A specimen fixation function is a function that holds or fastens an entity in a fixed position." []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -8577,7 +8634,7 @@ is_a: OBI:0000968 ! device
 [Term]
 id: OBI:0001046
 name: bioreactor
-def: "A device or system that supports a biologically active environment. ALAN SAYS NOT AN INSTRUMENT" []
+def: "A device or system that supports a biologically active environment." []
 is_a: OBI:0001034 ! environmental control device
 
 [Term]
@@ -9231,8 +9288,8 @@ is_a: OBI:0000456 ! material transformation objective
 
 [Term]
 id: OBI:0001154
-name: induced mutation
-def: "a genetic transformation that the modification of the genetic material (either coding or non-coding) of an organism is caused by mutagenic compounds or irradiation." []
+name: induced mutagenesis
+def: "A genetic transformation that is the modification of the genetic material (either coding or non-coding) of an organism caused by mutagenic processes, compounds, or irradiation." []
 is_a: OBI:0600043 ! genetic transformation
 
 [Term]
@@ -12567,7 +12624,7 @@ is_a: OBI:0001146 ! binding assay
 
 [Term]
 id: OBI:0001669
-name: far-Western blot assay
+name: far-western blot assay
 def: "An assay that measures protein-protein interactions by separating target proteins on an SDS-PAGE gel, transfering them to a solid substrate, hybridizing with a protein probe and visualizing bound proteins using a probe-directed antibody. This is a adaptation on the western blot assay." []
 is_a: OBI:0001146 ! binding assay
 
@@ -15545,30 +15602,30 @@ is_a: OBI:0001721 ! 3D structure determining assay of a 3D B cell epitope:antibo
 [Term]
 id: OBI:0002102
 name: bio-layer interferometry assay measuring the on rate [kon] of a B cell epitope:antibody complex
-def: "A B cell epitope assay that measures the on rate using a bio-layer interferometry assay." []
+def: "A bio-layer interferometry assay that measures the on rate of a B cell epitope. " []
 synonym: "on rate|bio-layer interferometry assay|M^-1s^-1" EXACT []
-is_a: OBI:0001718 ! assay measuring the on rate [kon] of a B cell epitope:antibody complex
+is_a: OBI:0002107 ! bio-layer interferometry assay
 
 [Term]
 id: OBI:0002103
 name: bio-layer interferometry assay measuring the off rate [koff] of a B cell epitope:antibody complex
-def: "A B cell epitope assay that measures the off rate using a bio-layer interferometry assay." []
+def: "A bio-layer interferometry assay that measures the off rate of a B cell epitope." []
 synonym: "off rate|bio-layer interferometry assay|1/s" EXACT []
-is_a: OBI:0001723 ! assay measuring the off rate [koff] of a B cell epitope:antibody complex
+is_a: OBI:0002107 ! bio-layer interferometry assay
 
 [Term]
 id: OBI:0002104
 name: bio-layer interferometry assay measuring binding of a B cell epitope:antibody complex
-def: "A B cell epitope qualitative binding to antibody assay that uses a bio-layer interferometry assay." []
+def: "A bio-layer interferometry assay that detects a B cell epitope qualitative binding to antibody." []
 synonym: "qualitative binding|bio-layer interferometry assay" EXACT []
-is_a: OBI:0001703 ! assay measuring qualitiative binding of a B cell epitope:antibody complex
+is_a: OBI:0002107 ! bio-layer interferometry assay
 
 [Term]
 id: OBI:0002105
 name: bio-layer interferometry assay measuring the dissociation constant [KD] of a B cell epitope:antibody complex
-def: "A B cell epitope equilibrium dissociation constant (KD) determination assay that uses a bio-layer interferometry assay." []
+def: "A bio-layer interferometry assay that measures the dissociation constant [KD] of a B cell epitope binding. " []
 synonym: "dissociation constant KD|bio-layer interferometry assay|nM" EXACT []
-is_a: OBI:0001708 ! assay measuring the dissociation constant [KD] of a B cell epitope:antibody complex
+is_a: OBI:0002107 ! bio-layer interferometry assay
 
 [Term]
 id: OBI:0002106
@@ -17889,13 +17946,13 @@ is_a: OBI:0002617 ! national registry
 id: OBI:0002619
 name: site-directed mutagenesis
 def: "An induced mutation in which a specific base change is programmed into the sequence of a synthetic primer." []
-is_a: OBI:0001154 ! induced mutation
+is_a: OBI:0001154 ! induced mutagenesis
 
 [Term]
 id: OBI:0002620
 name: random mutagenesis
 def: "An induced mutation that produces a random mutation, either by introducing the organism to mutagens, or through a process such as error-prone PCR." []
-is_a: OBI:0001154 ! induced mutation
+is_a: OBI:0001154 ! induced mutagenesis
 
 [Term]
 id: OBI:0002621
@@ -17984,7 +18041,7 @@ is_a: OBI:0400103 ! DNA sequencer
 [Term]
 id: OBI:0002633
 name: PacBio Sequel II
-def: "A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation of highly accurate (\"\"HiFi\"\") long reads, and which is manufactured by the Pacific Biosciences corporation." []
+def: "A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation of highly accurate (\"HiFi\") long reads, and which is manufactured by the Pacific Biosciences corporation." []
 synonym: "Pacific BioSciences Sequel II" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
 
@@ -18102,6 +18159,7 @@ id: OBI:0002649
 name: blood microbiology assay
 def: "An organism identification assay that identifies a microorganism in a blood specimen." []
 is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003040 ! blood assay
 
 [Term]
 id: OBI:0002650
@@ -18159,6 +18217,7 @@ is_a: OBI:0002654 ! needle biopsy
 id: OBI:0002657
 name: surgical biopsy
 def: "A biopsy involving a surgical incision into an organism to access the biopsy material." []
+synonym: "excisional biopsy" EXACT []
 synonym: "open biopsy" EXACT []
 is_a: OBI:0002650 ! biopsy
 
@@ -18662,9 +18721,9 @@ is_a: OBI:0002696 ! insecticide resistance by monitoring known mutations assay
 [Term]
 id: OBI:0002728
 name: pathogen detection assay
-def: "An assay that aims to detect pathogens." []
+def: "An organism identification assay that aims to detect pathogens." []
 synonym: "pathogen detection method" EXACT []
-is_a: OBI:0000070 ! assay
+is_a: OBI:0001624 ! organism identification assay
 
 [Term]
 id: OBI:0002729
@@ -19189,7 +19248,6 @@ is_a: OBI:0002800 ! personal protective clothing item
 id: OBI:0002812
 name: protective apron
 def: "A personal protective clothing item which is an apron." []
-is_a: OBI:0002797 ! apron
 is_a: OBI:0002800 ! personal protective clothing item
 
 [Term]
@@ -19414,7 +19472,6 @@ is_a: OBI:0002913 ! arthropod specimen collection process
 id: OBI:0002920
 name: arthropod trap
 def: "A device designed to catch arthropods." []
-synonym: "trap catch" EXACT []
 is_a: OBI:0000968 ! device
 
 [Term]
@@ -19433,28 +19490,25 @@ is_a: OBI:0002920 ! arthropod trap
 id: OBI:0002923
 name: barrier trap
 def: "An arthropod trap consisting of a static physical barrier designed to funnel arthropods in flight into a container." []
-synonym: "barrier catch" EXACT []
 is_a: OBI:0002920 ! arthropod trap
 
 [Term]
 id: OBI:0002924
 name: BG-Counter
 def: "A device manufactured by BioGents that is designed to count mosquitoes passing through the device, differentiating the mosquitoes from other arthropods." []
-synonym: "BG-Counter trap catch" EXACT []
 is_a: OBI:0000968 ! device
 
 [Term]
 id: OBI:0002925
 name: BG-Sentinel trap
 def: "An arthropod trap that is manufactured by Biogents and is designed to attract arthropods through the use of a motorized fan to mimic convection currents produced by a human. The current also pulls arthropods into the trap, where a layer of gauze prevents the arthropods from escaping along with the air current." []
-synonym: "BG-Sentinel trap catch" EXACT []
 is_a: OBI:0002920 ! arthropod trap
 
 [Term]
 id: OBI:0002926
 name: Centers for Disease Control and Prevention light trap
-def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the light attractant. This trap is also designed to be lightweight and operate in environments in which electricity may be scarce." []
-synonym: "CDC light trap catch" EXACT []
+def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the light attractant." []
+synonym: "CDC light trap" EXACT []
 is_a: OBI:0002930 ! light trap
 
 [Term]
@@ -19468,42 +19522,39 @@ is_a: OBI:0000968 ! device
 id: OBI:0002928
 name: encephalitis virus surveillance trap
 def: "A light trap that uses carbon dioxide as attractant. The trap consists of a container of dry ice with holes in the bottom to allow the carbon dioxide to flow downward into a separate container, in which a motorized fan creates suction to collect arthropods." []
-synonym: "EVS trap catch" EXACT []
+synonym: "EVS trap" EXACT []
 is_a: OBI:0002930 ! light trap
 
 [Term]
 id: OBI:0002929
 name: gravid trap
 def: "An arthropod trap that is designed to collect gravid female arthropods or their eggs." []
-synonym: "gravid trap catch" EXACT []
 is_a: OBI:0002920 ! arthropod trap
 
 [Term]
 id: OBI:0002930
 name: light trap
 def: "An arthropod trap that uses light as an attractant." []
-synonym: "light trap catch" EXACT []
 is_a: OBI:0002920 ! arthropod trap
 
 [Term]
 id: OBI:0002931
 name: light trap for indoor use
 def: "A light trap designed to be placed inside a building." []
-synonym: "indoor light trap catch" EXACT []
+synonym: "indoor light trap" EXACT []
 is_a: OBI:0002930 ! light trap
 
 [Term]
 id: OBI:0002932
 name: light trap for outdoor use
 def: "A light trap designed to be placed outside a building." []
-synonym: "outdoor light trap catch" EXACT []
+synonym: "outdoor light trap" EXACT []
 is_a: OBI:0002930 ! light trap
 
 [Term]
 id: OBI:0002933
 name: Mosquito Magnet trap
 def: "An arthropod trap that is powered by propane and is designed to emit a combination of carbon dioxide, heat, water, and oct-1-en-3-ol attractants while simultaneously using suction to trap arthropods." []
-synonym: "mosquito magnet pro catch" EXACT []
 is_a: OBI:0002920 ! arthropod trap
 
 [Term]
@@ -19516,7 +19567,7 @@ is_a: OBI:0002929 ! gravid trap
 id: OBI:0002935
 name: New Jersey light trap
 def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the light attractant." []
-synonym: "new jersey trap catch" EXACT []
+synonym: "New Jersey trap" EXACT []
 is_a: OBI:0002930 ! light trap
 
 [Term]
@@ -19530,7 +19581,7 @@ is_a: OBI:0002920 ! arthropod trap
 id: OBI:0002937
 name: outlet window trap
 def: "An arthropod trap that is positioned adjacent to a window of a building and is designed to collect arthropods flying out of the building." []
-synonym: "outlet window trap catch" EXACT []
+synonym: "outlet window trap" EXACT []
 is_a: OBI:0002920 ! arthropod trap
 
 [Term]
@@ -19586,6 +19637,177 @@ id: OBI:0002945
 name: population based design
 def: "A study design where the selection of the individuals that are included into the study are intended to be representative of all individuals in the a priori defined specific population and is done at the population level or among the population groups, generally to find the cause, incidence or spread of the disease or to see the response to the treatment, nutrition or environment." []
 is_a: OBI:0500000 ! study design
+
+[Term]
+id: OBI:0002946
+name: fluorescence imaging-based apoptosis assay
+def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with molecular processes of apoptosis." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002947
+name: fluorescence imaging-based cell proliferation assay
+def: "A type of cell proliferation assay in which fluorescent dyes are ued to label and detect proteins or structures that can be used to count cells." []
+synonym: "fluroescence imaging-based cell count assay" EXACT []
+is_a: OBI:0000891 ! cell proliferation assay
+is_a: OBI:0001501 ! fluorescence detection assay
+
+[Term]
+id: OBI:0002948
+name: fluroescence imaging-based cell cycle state assay
+def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with particular cell cycle states." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002949
+name: fluorescence imaging-based cell viability assay
+def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with cell viability." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002950
+name: fluorescence imaging-based drug synergy assay
+def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures to determine if drugs applied to cells in combination have a greater effect together than the sum of their separate effects." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002951
+name: fluorescence imaging-based cell morphology assay
+def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures in order to determine cell morphology." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002952
+name: fluorescence imaging multiplex cytological profiling
+def: "A type of cytometry assay in which fluorescent dyes are used to stain seven major cellular components followed by automatic image capture and analysis which extracts shape, texture, and intensity parameters." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002953
+name: protein state assay
+def: "A type of assay that measures the quantity and/or identity of proteins in their modficied and unmodified states where modifications include phosphorylation, methylation, acetylation, etc." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0002954
+name: fluorescence imaging-based protein phosphorylation state assay
+def: "A type of protein state assay that employs high-throughput microscopy to measure levels of proteins in different phosphorylation states." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0002953 ! protein state assay
+
+[Term]
+id: OBI:0002955
+name: mass spectrometry-based protein state assay
+def: "A type of protein state assay that employs mass spectrometry to measure levels of proteins in different phosphorylation states." []
+is_a: OBI:0002953 ! protein state assay
+
+[Term]
+id: OBI:0002956
+name: targeted, drug-modulated, mass spectrometry-based protein phoshporylation-state assay
+def: "A type of mass spectrometry protein state assay that measures levels of a targeted set of proteins in different phosphorylation states in response to drug perturbations." []
+synonym: "P100 phosphoprotein quantification assay" EXACT []
+is_a: OBI:0002955 ! mass spectrometry-based protein state assay
+
+[Term]
+id: OBI:0002957
+name: reverse phase protein array profiling assay
+def: "A type of protein state assay where tissue or cell samples are lysed and then spotted onto a slide which is probed with antibodies specific to proteins with and without post-translational modifications." []
+synonym: "reverse phase lysate array profiling assay" EXACT []
+synonym: "RPLA assay" EXACT []
+synonym: "RPPA assay" EXACT []
+is_a: OBI:0002953 ! protein state assay
+
+[Term]
+id: OBI:0002958
+name: SWATH-MS protein profiling assay
+def: "A type of mass spectrometry assay using a data-independent acquisition method to identify target peptides." []
+synonym: "sequential window acquisition of all theoretical mass spectra protein profiling assay" EXACT []
+is_a: OBI:0000615 ! protein expression profiling assay
+
+[Term]
+id: OBI:0002959
+name: tandem mass tag mass spectrometry
+def: "A type of tandem mass spectrometry where isotopomer labels are employed for accurate quantification and identification of specific proteins." []
+is_a: OBI:0000470 ! mass spectrometry assay
+
+[Term]
+id: OBI:0002960
+name: fluorescence imaging-based reporter gene assay
+def: "A type of reporter gene assay that employs fluorescence imaging to detect a reporter gene's expression." []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0002082 ! reporter gene assay
+
+[Term]
+id: OBI:0002961
+name: global chromatin profiling by mass spectrometry assay
+def: "A type of epigenetic modification assay that employs targeted quantitative mass spectrometry to profile modifications of the core histones of chromatin." []
+synonym: "GCP" EXACT []
+synonym: "global chromatin epigenetic profiling" EXACT []
+synonym: "global chromatin profiling" EXACT []
+is_a: OBI:0002020 ! epigenetic modification assay
+
+[Term]
+id: OBI:0002962
+name: kinase inhibitor assay
+def: "A type of assay that identifies compounds that inhibit the activity of kinases." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0002963
+name: KINOMEscan assay
+def: "A type of proprietary kinase inhibitor assay that and employs a panel of kinases against which one can test compounds for their selectivity and potency in interactions with kinases, without the need to add ATP to the reactions." []
+is_a: OBI:0002962 ! kinase inhibitor assay
+
+[Term]
+id: OBI:0002964
+name: KiNativ assay
+def: "A type of proprietary in situ kinase inhibitor assay that employs biotinylated acyl phosphates of ATP and ADP." []
+is_a: OBI:0002962 ! kinase inhibitor assay
+
+[Term]
+id: OBI:0002965
+name: landmark transcript profiling assay
+def: "A type of transcription profiling assay in which a set of landmark transcripts that have been determined to provide a comprehensive profile of cell activity, plus numerous steady-state controls, are assayed via ligation-mediated amplification followed by capture on fluorescently labeled microspheres followed by detection of fluorescence." []
+synonym: "L1000 mRNA profiling assay" EXACT []
+is_a: OBI:0000424 ! transcription profiling assay
+
+[Term]
+id: OBI:0002966
+name: microenvironment microarray assay
+def: "A type of cytometry assay where cells are incubated for three days with a standardized set of extracellular matrix proteins in combination with various ligands creating varying microenvironment perterbations for the cells. Immunofluorescent imaging of cells is used to measure features such as morphology, metabolism, cell cycle, and nuclear activity." []
+synonym: "MEMA assay" EXACT []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0002967
+name: microwestern meso-scale quantitative western blot assay
+def: "A western blot assay that provides a high-throughput, sensitive, and quantitative measurement of proteins from numerous samples via an array of small western blots on a single sheet of nitrocellulose." []
+is_a: OBI:0000854 ! western blot assay
+
+[Term]
+id: OBI:0002968
+name: positive/negative ion switching metabolite profiling assay
+def: "A type of metabolic profiling assay which employs a hybrid dual quadrupole linear ion trap mass spectrometer for steady-state profiling of endogenous polar metabolites from organic extractions from biological samples." []
+synonym: "positive/negative ion switching metabolomic assay" EXACT []
+is_a: OBI:0000366 ! metabolite profiling assay
+
+[Term]
+id: OBI:0002969
+name: cyclic immunoflouroescence assay
+def: "A type of microscopy assay resulting in highly multiplexed immunofluorescence imaging through sequential rounds of imaging followed by fluorophore inactivation." []
+is_a: OBI:0002119 ! microscopy assay
+
+[Term]
+id: OBI:0002970
+name: multiplex bead-based protein state immunoassay
+def: "A type of protein state assay in which antibodies attached to different colored beads and fluorescent reporter dye labels are used in a multiplexed mixture to assay for proteins in specific states." []
+is_a: OBI:0002953 ! protein state assay
 
 [Term]
 id: OBI:0002971
@@ -19814,7 +20036,7 @@ is_a: OBI:0002904 ! adult arthropod specimen collection process
 
 [Term]
 id: OBI:0003005
-name: device for resting of adult arthropods for collection
+name: device for collection of resting adult arthropods
 def: "A device that is designed to provide a solid surface that is attractive to an arthropod as a place to rest during a period of inactivity." []
 is_a: OBI:0000968 ! device
 
@@ -19952,6 +20174,332 @@ def: "A cytometry assay that measures the abundance and/or characteristics of pl
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
+id: OBI:0003029
+name: barcode target locus role
+def: "An evaluant role that is realized in a taxonomic diversity assessment by targeted gene survey involving sequencing a small defined region of genome amplified by PCR." []
+is_a: OBI:0000067 ! evaluant role
+
+[Term]
+id: OBI:0003030
+name: oligonucleotide primer set
+def: "A processed material that consists of oligonucleotides that bear a primer role." []
+is_a: OBI:0000047 ! processed material
+
+[Term]
+id: OBI:0003031
+name: fluorogenic PCR assay
+def: "A polymerase chain reaction assay that uses target specific probes labeled with fluorogenic chromophores." []
+synonym: "TaqMan" EXACT []
+is_a: OBI:0002692 ! polymerase chain reaction assay
+
+[Term]
+id: OBI:0003032
+name: genotyping by PCR assay
+def: "A genotyping assay that uses polymerase chain reaction." []
+is_a: OBI:0000435 ! genotyping assay
+is_a: OBI:0002692 ! polymerase chain reaction assay
+
+[Term]
+id: OBI:0003033
+name: cleavage under targets and release using nuclease assay
+def: "A type of DNA sequencing assay employing in situ chromatin profiling in which antibody-targeted controlled cleavage by micrococcal nuclease releases specific protein-DNA complexes into the the supernatant for sequencing." []
+synonym: "CUT&RUN assay" EXACT []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
+id: OBI:0003034
+name: cleavage under targets and tagmentation
+def: "A type of DNA sequencing assay employing in situ chromatin profiling in which a chromatin protein is bound in situ by a specific antibody, which then tethers to a protein A-Tn5 hyperactive transposase fusion protein (pA-Tn5) loaded with sequence adapters. Activation of pA-Tn5 results in factor-targeted tagmentation, generating fragments ready for PCR enrichment and DNA sequencing." []
+synonym: "CUT&Tag assay" EXACT []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
+id: OBI:0003035
+name: coma severity assay
+def: "A physical examination of individual that has the objective to determine the severity of coma in a patient." []
+is_a: OBI:0002441 ! physical examination of individual
+
+[Term]
+id: OBI:0003036
+name: Plasmodium gametocyte detection assay
+def: "An assay that detects Plasmodium gametocytes in a specimen." []
+is_a: OBI:0003038 ! parasite detection assay
+
+[Term]
+id: OBI:0003037
+name: malaria rapid diagnosis assay
+def: "An assay that is quick and easy in the diagnosis of malaria by detecting evidence of malaria parasites (antigens) in human blood." []
+synonym: "malaria rapid diagnosis test" EXACT []
+is_a: OBI:0003038 ! parasite detection assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003038
+name: parasite detection assay
+def: "An assay that detects parasite in a specimen." []
+is_a: OBI:0001624 ! organism identification assay
+
+[Term]
+id: OBI:0003039
+name: feces microbiology assay
+def: "An assay that detects microorganisms in a feces specimen." []
+synonym: "stool test for microorganisms" EXACT []
+is_a: OBI:0001624 ! organism identification assay
+
+[Term]
+id: OBI:0003040
+name: blood assay
+def: "An assay that has a blood specimen as evaulant." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003041
+name: falcivax rapid diagnostic test
+def: "A parasite detection assay that can quickly establish the diagnosis of P. falciparum or P. vivax malaria infection by detecting the antigens in a person's blood." []
+is_a: OBI:0003038 ! parasite detection assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003042
+name: optimal-IT rapid diagnostic test
+def: "A parasite detection assay that is rapid, sensitive, and able to differentiate between P. falciparum and other malaria parasites." []
+is_a: OBI:0003038 ! parasite detection assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003043
+name: urine assay
+def: "An assay that has a urine specimen as evaluant." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003044
+name: parasite species identification by PCR assay
+def: "An organism identification assay that identifies the species of parasites by PCR." []
+is_a: OBI:0003045 ! parasite detection by PCR assay
+
+[Term]
+id: OBI:0003045
+name: parasite detection by PCR assay
+def: "An assay that detects parasite in a specimen using PCR." []
+is_a: OBI:0002692 ! polymerase chain reaction assay
+is_a: OBI:0003038 ! parasite detection assay
+
+[Term]
+id: OBI:0003046
+name: free-standing window trap
+def: "An arthropod trap that consists of a transparent window placed in a box that holds a liquid solution deadly to arthropods. This trap is designed to stop an arthropod in flight, causing it to fall into the liquid and die." []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0003048
+name: BG-lure scent dispenser
+def: "A device manufactured by BioGents that is designed for operation with the BG-Sentinel trap and releases an attractant that mimics the scent of human skin." []
+synonym: "BG-lure" EXACT []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0003049
+name: hand-held sweep net
+def: "A device that consists of a network of mesh and is designed to capture adult arthropods." []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0003050
+name: Centers for Disease Control and Prevention gravid trap
+def: "A gravid trap that consists of a pan holding a hay infusion, motorized fan, and collection bag. This trap is designed to attract gravid female arthropods to the infused material, which would serve as an oviposition medium, and then draw them into the bag with the current generated by the fan." []
+synonym: "CDC gravid trap" EXACT []
+is_a: OBI:0002929 ! gravid trap
+
+[Term]
+id: OBI:0003051
+name: egg specimen collection process
+def: "An arthropod specimen collection process in which the arthropods are in the embryo stage." []
+synonym: "collection of eggs" EXACT []
+is_a: OBI:0002907 ! aquatic arthropod specimen collection process
+
+[Term]
+id: OBI:0003052
+name: larval specimen collection process
+def: "An arthropod specimen collection process in which the arthropods are in the larval stage." []
+synonym: "collection of larvae" EXACT []
+is_a: OBI:0002907 ! aquatic arthropod specimen collection process
+
+[Term]
+id: OBI:0003053
+name: pupal specimen collection process
+def: "An arthropod specimen collection process in which the arthropods are in the pupal stage." []
+synonym: "collection of pupae" EXACT []
+is_a: OBI:0002907 ! aquatic arthropod specimen collection process
+
+[Term]
+id: OBI:0003054
+name: blood specimen in vacutainer
+def: "A blood specimen that is located in a vacutainer." []
+synonym: "Vacutainer sample" EXACT []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:0003055
+name: blood specimen on filter paper
+def: "A blood specimen that is located on a filter paper." []
+synonym: "Filter paper sample" EXACT []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:0003056
+name: proportion mapped reads
+def: "A sequence datum that is the specified output of a read mapping and is the ratio of the count of mapped reads to the total count of reads." []
+is_a: OBI:0000973 ! sequence data
+
+[Term]
+id: OBI:0003057
+name: antibiotic administration process
+def: "Administering substance in vivo where an antibiotic substance is administered to a living organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003063
+name: insecticide resistance datum
+def: "A data item that is about resistance to an insecticide." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0003064
+name: organism identification datum
+def: "A data item that is the specified output of an organism identification assay." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0003066
+name: easting coordinate measurement datum
+def: "A one dimensional Cartesian spatial coordinate datum that is the eastward component of a distance from a point on a map projection." []
+is_a: IAO:0000401 ! one dimensional cartesian spatial coordinate datum
+
+[Term]
+id: OBI:0003067
+name: northing coordinate measurement datum
+def: "A one dimensional Cartesian spatial coordinate datum that is the northward component of a distance from a point on a map projection." []
+is_a: IAO:0000401 ! one dimensional cartesian spatial coordinate datum
+
+[Term]
+id: OBI:0003068
+name: clinical study center
+def: "Organization that undertakes a clinical study at some point in time." []
+is_a: OBI:0000245 ! organization
+
+[Term]
+id: OBI:0003069
+name: sequencing protocol
+def: "A protocol that, when concretized, is realized in an assay that uses chemical or biological means to infer the sequence of a biomaterial." []
+is_a: OBI:0000272 ! protocol
+
+[Term]
+id: OBI:0003070
+name: specimen collection protocol
+def: "A protocol that specifies processes to fulfill a specimen collection objective." []
+is_a: OBI:0000272 ! protocol
+
+[Term]
+id: OBI:0003071
+name: participant identifier
+def: "A symbol that denotes a participant under investigation." []
+is_a: IAO:0000028 ! symbol
+
+[Term]
+id: OBI:0003072
+name: axillary temperature measurement datum
+def: "A temperature measurement datum that is about an axilla." []
+is_a: OBI:0003079 ! temperature measurement datum
+
+[Term]
+id: OBI:0003073
+name: organismal body temperature measurement datum
+def: "A temperature measurement datum that is about an organism." []
+is_a: OBI:0003079 ! temperature measurement datum
+
+[Term]
+id: OBI:0003074
+name: common name of organism
+def: "A textual entity refers to a taxon or organism that is based on the normal language of everyday life; this kind of name is often contrasted with the scientific name for the same organism, which is Latinized." []
+is_a: IAO:0000300 ! textual entity
+
+[Term]
+id: OBI:0003075
+name: age since birth at time of enrollment
+def: "An age since birth measurement datum at the time of subject enrollment." []
+is_a: OBI:0001169 ! age since birth measurement datum
+
+[Term]
+id: OBI:0003076
+name: age since birth at time of visit
+def: "An age since birth measurement datum at the time of a clinical visit." []
+is_a: OBI:0001169 ! age since birth measurement datum
+
+[Term]
+id: OBI:0003077
+name: entomological data item
+def: "A data item that is about a collection of insects." []
+synonym: "entomological measurement datum" EXACT []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0003079
+name: temperature measurement datum
+def: "A scalar measurement datum that is the result of measuring temperature." []
+is_a: IAO:0000032 ! scalar measurement datum
+
+[Term]
+id: OBI:0003080
+name: organismal body temperature measurement assay
+def: "An assay that detects body temperature of an organism." []
+is_a: OBI:0002140 ! temperature measurement assay
+
+[Term]
+id: OBI:0003081
+name: extraction date
+def: "A time measurement datum that specifies when some material was extracted from an input material." []
+is_a: IAO:0000416 ! time measurement datum
+
+[Term]
+id: OBI:0003082
+name: extraction duration time
+def: "A time measurement datum that is the result of measuring the duration of an extraction process." []
+is_a: IAO:0000416 ! time measurement datum
+
+[Term]
+id: OBI:0003083
+name: specimen collection time post disease onset
+def: "A specimen collection time measurement datum that is the measure of a time when specimens are collected after the onset of disease in a host." []
+is_a: OBI:0001619 ! specimen collection time measurement datum
+
+[Term]
+id: OBI:0003084
+name: specimen collection time post infection
+def: "A specimen collection time measurement datum that is the measure of a time when specimens are collected after an infection starts." []
+is_a: OBI:0001619 ! specimen collection time measurement datum
+
+[Term]
+id: OBI:0003085
+name: laboratory postal address
+def: "A postal address used as a directive to deliver something to a laboratory." []
+synonym: "laboratory address" EXACT []
+is_a: IAO:0000422 ! postal address
+
+[Term]
+id: OBI:0003086
+name: laboratory-based population
+def: "A population where the collection of individuals is located and maintained in a laboratory, research, or production facility." []
+is_a: OBI:0000181 ! population
+
+[Term]
+id: OBI:0003114
+name: Illumina MiniSeq
+def: "A small benchtop DNA sequencer which is manufactured by the Illumina corporation with integrated cluster generation, sequencing and data analysis. The sequencer accommodates various flow cell configurations and can produce up to 25M single reads or 50M paired-end reads per run." []
+synonym: "MiniSeq" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
 id: OBI:0005246
 name: injection function
 def: "The function of a device realized when administering a substance in vivo, applied particularly to the forcible insertion of a liquid or gas by means of a syringe, pump, etc." []
@@ -20033,7 +20581,8 @@ is_obsolete: true
 id: OBI:0100056
 name: obsolete_immortal cell line culture
 def: "A cell line that is expected to be capable of indefinite propagation in an vitro culture." []
-synonym: "immortal cell line sample|permanent cell line" EXACT []
+synonym: "immortal cell line sample" EXACT []
+synonym: "permanent cell line" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 replaced_by: CLO:0009828
@@ -21320,8 +21869,8 @@ is_a: OBI:0500000 ! study design
 id: OBI:0302714
 name: obsolete_collection (of entities of organismal origin)
 def: "a collection is a bfo:aggregate object, that is a set of material object of the same kind" []
-synonym: " ensemble" EXACT []
-synonym: " group" EXACT []
+synonym: "ensemble" EXACT []
+synonym: "group" EXACT []
 synonym: "set" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
@@ -21364,6 +21913,7 @@ name: comet assay
 def: "An assay that measures DNA damage (DNA breakage) in eucaryotic cells exposed to a challenge by determining the size and shape of DNA migration by detecting fluorescently labeled DNA from a cell placed in an electric field using gel electrophoresis" []
 synonym: "SCGE assay" EXACT []
 synonym: "single cell gel electrophoresis assay" EXACT []
+is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
@@ -21563,7 +22113,7 @@ is_a: OBI:0600015 ! group assignment
 [Term]
 id: OBI:0302901
 name: obsolete_activation
-def: "a process by which a material entity status is modified and conferred a capability of reacting\n(this sounds like a circular definition , hugh!)" []
+def: "a process by which a material entity status is modified and conferred a capability of reacting (this sounds like a circular definition , hugh!)" []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -23756,6 +24306,7 @@ name: MHC tetramer/multimer assay measuring binding of a T cell epitope:MHC:TCR 
 def: "A T cell epitope qualitative binding assay that uses an MHC multimer staining assay." []
 synonym: "qualitative binding|multimer/tetramer" EXACT []
 is_a: OBI:0001317 ! flow cytometry assay measuring cell-cell binding of a T cell epitope:MHC:TCR complex
+is_a: OBI:0001501 ! fluorescence detection assay
 
 [Term]
 id: OBI:1110180
@@ -24734,7 +25285,7 @@ is_a: OBI:2100034 ! prostate-specific antigen assay
 id: OBI:2100121
 name: 24 hour total urine volume assay
 def: "An assay that measures volume in urine as part of a 24 hour total order" []
-is_a: OBI:0000070 ! assay
+is_a: OBI:0003043 ! urine assay
 
 [Term]
 id: OBI:2100122
@@ -24830,24 +25381,28 @@ is_a: OBI:2100002 ! sodium(1+) assay
 id: OBI:2100137
 name: random electrolytes urine sodium assay
 def: "An analyte assay that measures the abundance of sodium in urine as part of a random electrolytes order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100002 ! sodium(1+) assay
 
 [Term]
 id: OBI:2100138
 name: random electrolytes urine potassium assay
 def: "An analyte assay that measures the abundance of potassium in urine as part of a random electrolytes order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100004 ! potassium(1+) assay
 
 [Term]
 id: OBI:2100139
 name: urine creatinine assay
 def: "An analyte assay that measures the abundance of creatinine in urine" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100003 ! creatinine assay
 
 [Term]
 id: OBI:2100140
 name: urine osmolality assay
 def: "An assay that measures osmolality in urine" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100039 ! osmolality assay
 
 [Term]
@@ -24872,12 +25427,14 @@ is_a: OBI:2100040 ! methemoglobin assay
 id: OBI:2100144
 name: electrolytes urine sodium assay
 def: "An analyte assay that measures the abundance of sodium in urine as part of a electrolytes order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100002 ! sodium(1+) assay
 
 [Term]
 id: OBI:2100145
 name: electrolytes urine potassium assay
 def: "An analyte assay that measures the abundance of potassium in urine as part of a electrolytes order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100004 ! potassium(1+) assay
 
 [Term]
@@ -25242,6 +25799,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:2100205
 name: urine protein assay
 def: "An analyte assay that measures the abundance of protein in urine" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100023 ! protein assay
 
 [Term]
@@ -25563,6 +26121,7 @@ is_a: OBI:2100045 ! tobramycin assay
 id: OBI:2100258
 name: 24 hour urine creatinine assay
 def: "An analyte assay that measures the abundance of creatinine in urine as part of a 24 hour order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100003 ! creatinine assay
 
 [Term]
@@ -25587,6 +26146,7 @@ is_a: OBI:2100046 ! 3,3',5'-triiodothyronine assay
 id: OBI:2100262
 name: 24 hour urine protein assay
 def: "An analyte assay that measures the abundance of protein in urine as part of a 24 hour order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100023 ! protein assay
 
 [Term]
@@ -25799,6 +26359,7 @@ is_a: OBI:2100004 ! potassium(1+) assay
 id: OBI:2100297
 name: urine sodium assay
 def: "An analyte assay that measures the abundance of sodium in urine" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100002 ! sodium(1+) assay
 
 [Term]
@@ -26200,6 +26761,7 @@ is_a: OBI:0003022 ! neutrophil assay
 id: OBI:2100363
 name: creatinine clearance urine creatinine assay
 def: "An analyte assay that measures the abundance of creatinine in urine as part of a creatinine clearance order" []
+is_a: OBI:0003043 ! urine assay
 is_a: OBI:2100003 ! creatinine assay
 
 [Term]
@@ -26432,6 +26994,12 @@ def: "An analyte assay that measures the abundance of high density lipoprotein i
 is_a: OBI:2100030 ! high-density lipoprotein cholesterol assay
 
 [Term]
+id: OBI:2100402
+name: pooled clone sequencing assay
+def: "A DNA sequencing assay in which the DNA input is derived from pooled clones (for example BACs and Fosmids) is sequenced." []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
 id: OBI:9999994
 name: chromium release assay
 def: "An in vitro cell killing assay in which radioactive chromium is absorbed by cells and released into supernatant when the cells die. The amount of radioactivity measured in the supernatant is a proxy for the number of cells that have died." []
@@ -26490,6 +27058,18 @@ id: OMRSE:00000012
 name: health care provider role
 def: "A human health care role inhering in an organization or human being that is realized by a process of providing health care services to an organism." []
 is_a: BFO:0000023 ! role
+
+[Term]
+id: OPL:0000232
+name: parasite organism
+def: "An organism living in, with, or on another organism in parasitism. Individual members of parasite species, such as Leishmania, Plasmodium, Trypanosoma, etc. are members of this class." []
+is_a: OBI:0100026 ! organism
+
+[Term]
+id: OPL:0000267
+name: Plasmodium gametocyte
+def: "A Plasmodium that is located either in the bloodstream of the vertebrate host or midgut of mosquito vector during gametocyte stage. Gametocytes are the precursor cells of the macro- or microgametes" []
+is_a: NCBITaxon:5820 ! Plasmodium
 
 [Term]
 id: ObsoleteClass

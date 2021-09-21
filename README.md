@@ -23,14 +23,26 @@ Our ontology terms come in three groups. Depending on what type of term you want
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
 
-## Editing Utility Scripts
+### Editing Templates in Excel
 
-The OBI repo includes some Python scripts to help developers efficiently edit both `obi-edit.owl` and OBI templates. These scripts require Python 3.
+If you wish to edit a template or templates in Excel, rather than copy & pasting the template, we ask that you follow this workflow to preserve quoting. Going back and forth with Excel can cause some unintentional changes to double quotes within templates.
 
-The scripts also require that you first to build two databases (one from OBI edit, and one from a merged version of OBI):
+First, install the python requirements:
 ```
-make obi-dbs
+python3 -m pip install -r requirements.txt
 ```
+
+Then, make the Excel sheet. In your local OBI git directory, run the following command to create a file called `obi.xlsx`:
+```
+make obi.xlsx
+```
+
+Next, open `obi.xlsx` in Excel (or whatever editor you prefer). This spreadsheet contains a tab for each OBI template (e.g., "study-design", "assays", etc.). Find the tab that corresponds to the template you need to edit, make your changes, and save the Excel spreadsheet to the same location (`obi.xlsx`). Finally, run the following to update the TSV versions of the templates:
+```
+make update-tsv
+```
+
+This will convert the tabs in `obi.xlsx` back to TSVs and overwrite the existing TSVs in the `src/ontology/templates/` directory with your changes. Review your changes (`git diff`) and make your pull request.
 
 ### Finding Terms
 
@@ -44,6 +56,15 @@ src/scripts/locate.py OBI:0000070 CHMO:0000087 GO:0000785
 Labels should be enclosed in double quotes:
 ```
 src/scripts/locate.py "assay" "fluorescence microscopy" "chromatin"
+```
+
+## Editing Utility Scripts
+
+The OBI repo includes some Python scripts to help developers efficiently edit both `obi-edit.owl` and OBI templates. These scripts require Python 3.
+
+The scripts also require that you first to build two databases (one from OBI edit, and one from a merged version of OBI):
+```
+make obi-dbs
 ```
 
 ### Relabeling Terms
