@@ -112,6 +112,7 @@ MODULE_NAMES := assays\
  sample-collection\
  study-designs\
  sequence-analysis\
+ specimen-assay-data\
  value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
