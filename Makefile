@@ -367,6 +367,20 @@ validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 test: reason verify validate-iris
 
 
+### Term reservations
+#
+# Get current OBI terms
+build/obi-terms.tsv: build/obi_merged.owl
+	$(ROBOT) export --input $< --header "ID|LABEL" --export $@
+
+# Get the term reservation table
+build/reservations.tsv: | build
+	curl -Lk "https://docs.google.com/spreadsheets/d/1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI/export?format=tsv&id=1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI&gid=224833299" > $@
+
+# Create an updated reservation table
+build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/reservations.tsv build/obi-terms.tsv
+	python3 $^ $@
+
 ### General
 #
 # Full build
