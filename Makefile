@@ -107,6 +107,7 @@ MODULE_NAMES := assays\
  organizations\
  devices\
  epitope-assays\
+ material-processing\
  medical-history\
  obsolete\
  sample-collection\
