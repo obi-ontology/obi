@@ -12680,8 +12680,6 @@ JZ: based on textual definition of edited document, it can be defined as N&amp;S
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001548"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001571"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001581"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001603"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001605"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -15684,7 +15682,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001603 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001603">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001554"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001144"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001554"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binding off rate measurement datum (koff)</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate measurement datum of how quickly bound complexes disassociate</obo:IAO_0000115>
@@ -15698,7 +15711,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001605 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001605">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001554"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001144"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001554"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binding on rate measurement datum (kon)</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate measurement datum of how quickly bound complexes form</obo:IAO_0000115>
