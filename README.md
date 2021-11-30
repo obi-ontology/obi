@@ -46,10 +46,7 @@ This will convert the tabs in `obi.xlsx` back to TSVs and overwrite the existing
 
 ### Finding Terms
 
-To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). This requires you first to build a database from the merged OBI file:
-```
-make build/obi_merged.db
-```
+To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). 
 
 Then you can run the script to find terms by ID or label by passing them as a space-separated list, for example:
 ```
@@ -60,6 +57,31 @@ Labels should be enclosed in double quotes:
 ```
 src/scripts/locate.py "assay" "fluorescence microscopy" "chromatin"
 ```
+
+## Editing Utility Scripts
+
+The OBI repo includes some Python scripts to help developers efficiently edit both `obi-edit.owl` and OBI templates. These scripts require Python 3.
+
+The scripts also require that you first to build two databases (one from OBI edit, and one from a merged version of OBI):
+```
+make obi-dbs
+```
+
+### Relabeling Terms
+
+Since labels are used in templates, manually finding and replacing all usages of a term can be difficult and tedious. Instead, you can use [`src/scripts/relabel.py`](src/scripts/relabel.py) to automatically update a term's label and its usages.
+
+You can run this by passing the term you want to update and the new label:
+```
+src/scripts/relabel.py CHMO:0000087 "microscopy with fluorescence"
+```
+
+You can also pass the old label as the first argument, as long as it is enclosed in double quotes:
+```
+src/scripts/relabel.py "fluorescence microscopy" "microscopy with fluorescence"
+```
+
+Make sure to commit all changed files to ensure that all usages are updated.
 
 
 # Files

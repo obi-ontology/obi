@@ -112,6 +112,7 @@ MODULE_NAMES := assays\
  sample-collection\
  study-designs\
  sequence-analysis\
+ specimen-assay-data\
  value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
@@ -129,6 +130,26 @@ update-tsv: update-tsv-files sort
 update-tsv-files:
 	$(foreach x,$(MODULE_NAMES),python3 src/scripts/xlsx2tsv.py obi.xlsx $(x) src/ontology/templates/$(x).tsv;)
 
+
+
+### Databases
+
+.PHONY: obi-dbs
+obi-dbs: build/obi-edit.db build/obi_merged.db
+
+build/obi-edit.db: src/scripts/prefixes.sql src/ontology/obi-edit.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
+
+build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
 
 
 ### Build
@@ -153,13 +174,6 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	--output build/obi_merged.tmp.owl
 	sed '/<owl:imports/d' build/obi_merged.tmp.owl > $@
 	rm build/obi_merged.tmp.owl
-
-build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
-	rm -rf $@
-	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
-	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
-	sqlite3 $@ "ANALYZE;"
 
 obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \
@@ -207,6 +221,7 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--term obo:OBI_0600036 \
 	--term obo:OBI_0600037 \
 	--term obo:OBI_0000838 \
+	--term obo:OBI_0003071 \
 	--term APOLLO_SV:00000796 \
 	--select "self descendants" \
 	--preserve-structure false \
