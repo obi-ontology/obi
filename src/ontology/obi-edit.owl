@@ -672,7 +672,7 @@ https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_specified_input</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">see is_input_of example_of_usage</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The inverse property of is_specified_input_of</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
@@ -758,7 +758,7 @@ For instances: e has_quality q at t iff q inheres_in e at t and q instance-of Qu
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_specified_output</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The inverse property of is_specified_output_of</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Larry Hunter</obo:IAO_0000117>
@@ -21165,63 +21165,6 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
         <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
         <rdfs:label>flying adult arthropod collection process by passive interception</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003005 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003005">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
-        <obo:IAO_0000115>A device that is designed to provide a solid surface that is attractive to an arthropod as a place to rest during a period of inactivity.</obo:IAO_0000115>
-        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
-        <obo:IAO_0000119>VSMO:0001355</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
-        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
-        <rdfs:label>device for collection of resting adult arthropods</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003006">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
-        <obo:IAO_0000115>A device that is designed for the collection of arthropod larvae or pupae from water and consists of a conical net.</obo:IAO_0000115>
-        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
-        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
-        <rdfs:label>well net for arthropod immatures</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003007 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003007">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002920"/>
-        <obo:IAO_0000115>An arthropod trap that uses as attractant an animal that is not human and is the size of a chicken or smaller.</obo:IAO_0000115>
-        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
-        <obo:IAO_0000118>trap containing small non-human animal bait</obo:IAO_0000118>
-        <obo:IAO_0000119>VSMO:0001595</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
-        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
-        <rdfs:label>arthropod trap containing small non-human animal bait</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003008 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003008">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002920"/>
-        <obo:IAO_0000115>An arthropod trap that is designed to trap an arthropod as it emerges from water at the beginning of its adult stage.</obo:IAO_0000115>
-        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
-        <obo:IAO_0000119>American Midland Naturalist, Vol. 97, No. 2 (Apr., 1977), pp. 381-389</obo:IAO_0000119>
-        <obo:IAO_0000119>VSMO:0001352</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1302</obo:IAO_0000233>
-        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
-        <rdfs:label>trap for emerging adult arthropods</rdfs:label>
     </owl:Class>
     
 
