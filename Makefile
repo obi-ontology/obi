@@ -157,7 +157,7 @@ build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdfta
 # Here we create a standalone OWL file appropriate for release.
 # This involves merging, reasoning, annotating,
 # and removing any remaining import declarations.
-build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq | build/robot.jar build
+build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq src/sparql/fix-iao.rq | build/robot.jar build
 	$(ROBOT) merge \
 	--input $< \
 	query \
@@ -167,6 +167,8 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	merge \
 	--input build/editor-preferred-terms.ttl \
 	--input build/curation-status.ttl \
+	query \
+	--update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi_merged.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_merged.owl" \
