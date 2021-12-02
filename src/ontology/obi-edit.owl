@@ -12673,24 +12673,11 @@ JZ: based on textual definition of edited document, it can be defined as N&amp;S
     <!-- http://purl.obolibrary.org/obo/OBI_0001144 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001144">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001536"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001548"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001571"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001581"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001583"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001603"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001605"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003142"/>
         <obo:IAO_0000111 xml:lang="en">binding constant</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">The predicted or measured binding affinity of a peptide to a MHC molecule can be captured in the binding constants &quot;IC50 = 12 nM&quot; or &quot;t 1/2 = 30 minutes&quot;. </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A binding datum about the disposition of two or more material entities to form complexes which comes in the form of a scalar and unit that are utilized in equations that model the binding process</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A quantitative binding datum that is expressed as a scalar number and a unit, which can be utilized in equations that model the binding process independent of the specific assay performed.</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10/6/11 BP: The distinction between binding datum and binding constant is based on the later being part of an equation. That should be captured in the logical definition here, and used to make it to a defined class. </obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Bjoern Peters, Randi Vita, Jason Greenbaum</obo:IAO_0000117>
         <rdfs:label xml:lang="en">binding constant</rdfs:label>
@@ -13266,7 +13253,7 @@ http://en.wikipedia.org/wiki/Strain_%28biology%29</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003141"/>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative binding datum</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A binding datum that states that there is no significant disposition of two or more entities to form a complex</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A categorical binding datum that states that there is no significant disposition of two or more entities to form a complex.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative binding datum</rdfs:label>
     </owl:Class>
     
@@ -15497,8 +15484,7 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preparing a complex of a purified HLA-A*02:01 bound to a specific peptide ligand, varying the temperature while detecting the fraction of bound complexes with a  complex conformation specific antibody, and interpolating the temperature at which 50% of complexes are dissociated.  
 </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A binding datum that specifies the temperature at which half of the binding partners are forming a complex and the other half are unbound. 
-</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quantitative binding datum that specifies the temperature at which half of the binding partners are forming a complex and the other half are unbound.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters, Randi Vita</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">melting temperature (Tm)</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
@@ -15510,7 +15496,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001571 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001571">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001191"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001536"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001191"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">equilibrium dissociation constant (KD) approximated by IC50</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measurement of an IC50 value under specific assay conditions approximates KD, namely the binding reaction is at an equilibrium, there is a single population of sites on the receptor that competitor and ligand are binding to, and the concentration of the receptor must be much less than the KD for the competitor and the ligand.  In this case, according to Cheng and Prussoff, KD = IC50 / (1 + Lstot / KDs), in which Lstot is the total concentration of the labeled competitor and KDs is the KD value of that competitor. </obo:IAO_0000115>
@@ -15588,7 +15589,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001581 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001581">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001180"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001536"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001180"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">equilibrium dissociation constant (KD) approximated by EC50</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measurement of an EC50 value under specific assay conditions approximates KD, namely the binding reaction is at an equilibrium,  and the concentration of the receptor must be much less than the KD for the ligand.  </obo:IAO_0000115>
@@ -15602,7 +15618,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001583 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001583">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001171"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001144"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001171"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">half life of binding datum</obo:IAO_0000111>
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 45 minute period in which one half of the complexes formed by peptide ligand bound to a  HLA-A*0201molecule disassociate.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
@@ -15670,7 +15701,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001603 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001603">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001554"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001144"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001554"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binding off rate measurement datum (koff)</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate measurement datum of how quickly bound complexes disassociate</obo:IAO_0000115>
@@ -15684,7 +15730,22 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
     <!-- http://purl.obolibrary.org/obo/OBI_0001605 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001605">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001554"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001144"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001554"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001588"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binding on rate measurement datum (kon)</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate measurement datum of how quickly bound complexes form</obo:IAO_0000115>
@@ -21822,6 +21883,19 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
         <obo:IAO_0000119>https://en.wikipedia.org/wiki/Leukapheresis</obo:IAO_0000119>
         <rdfs:label>leukapheresis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003295 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003295">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003141"/>
+        <obo:IAO_0000115>A categorical binding datum that states that there is a significant disposition of two or more entities to form a complex.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>positive binding datum</rdfs:label>
     </owl:Class>
     
 
