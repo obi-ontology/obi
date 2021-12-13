@@ -112,6 +112,7 @@ MODULE_NAMES := assays\
  sample-collection\
  study-designs\
  sequence-analysis\
+ specimen-assay-data\
  value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
@@ -156,7 +157,7 @@ build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdfta
 # Here we create a standalone OWL file appropriate for release.
 # This involves merging, reasoning, annotating,
 # and removing any remaining import declarations.
-build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq | build/robot.jar build
+build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq src/sparql/fix-iao.rq | build/robot.jar build
 	$(ROBOT) merge \
 	--input $< \
 	query \
@@ -166,6 +167,8 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	merge \
 	--input build/editor-preferred-terms.ttl \
 	--input build/curation-status.ttl \
+	query \
+	--update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi_merged.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_merged.owl" \
@@ -365,6 +368,20 @@ validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 .PHONY: test
 test: reason verify validate-iris
 
+
+### Term reservations
+#
+# Get current OBI terms
+build/obi-terms.tsv: build/obi_merged.owl
+	$(ROBOT) export --input $< --header "ID|LABEL" --export $@
+
+# Get the term reservation table
+build/reservations.tsv: | build
+	curl -Lk "https://docs.google.com/spreadsheets/d/1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI/export?format=tsv&id=1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI&gid=224833299" > $@
+
+# Create an updated reservation table
+build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/reservations.tsv build/obi-terms.tsv
+	python3 $^ $@
 
 ### General
 #
