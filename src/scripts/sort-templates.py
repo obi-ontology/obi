@@ -9,7 +9,30 @@ def sort_template(path):
     rows = []
     try:
         with open(path, "r") as tsv:
-            rows = list(csv.reader(tsv, delimiter="\t", quoting=csv.QUOTE_NONE, escapechar='"'))
+            reader = csv.reader(tsv, delimiter="\t", quoting=csv.QUOTE_NONE, escapechar='"')
+            rows.append(next(reader))
+            robot_headers = next(reader)
+            rows.append(robot_headers)
+            for row in reader:
+                i = 0
+                cells = []
+                for cell in row:
+                    try:
+                        header = robot_headers[i]
+                    except:
+                        # This is usually caused by extra trailing whitespace
+                        if cell == "":
+                            continue
+                        else:
+                            cells.append(cell)
+                    if "SPLIT=|" in header and "|" in cell:
+                        # Strip whitespace around pipe
+                        cells.append("|".join([x.strip() for x in cell.split("|")]))
+                    else:
+                        cells.append(cell)
+                    i += 1
+                rows.append(cells)
+
     except Exception as e:
         print(f"Failed to read {path}")
         raise(e)
