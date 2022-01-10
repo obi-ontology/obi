@@ -181,6 +181,7 @@ obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \
 	--input $< \
 	--reasoner HermiT \
+	--equivalent-classes-allowed none \
 	annotate \
 	--ontology-iri "$(OBO)/obi.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi.owl" \
@@ -331,7 +332,8 @@ build/modules/merged.owl: src/ontology/obi-edit.owl $(PHONY_MODULES) | build/rob
 	$(eval INPUTS := $(foreach x,$(PHONY_MODULES),--input $(x) ))
 	$(ROBOT) remove --input $< --select imports \
 	merge $(INPUTS) \
-	reason --output $@
+	reason --equivalent-classes-allowed none \
+	--output $@
 
 # Run all validation queries and exit on error.
 .PHONY: verify
@@ -358,7 +360,7 @@ verify-entities: build/dropped-entities.tsv
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
 reason: build/obi_merged.owl | build/robot.jar
-	$(ROBOT) reason --input $< --reasoner ELK
+	$(ROBOT) reason --input $< --equivalent-classes-allowed none --reasoner ELK
 
 # Find any IRIs using undefined namespaces
 .PHONY: validate-iris
