@@ -365,8 +365,14 @@ reason: build/obi_merged.owl | build/robot.jar
 validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
+.PHONY: validate-dl
+validate-dl: build/dl-validation.txt
+.PRECIOUS: build/dl-validation.txt
+build/dl-validation.txt: build/obi_merged.owl
+	$(ROBOT) validate-profile --input $< --profile dl --output $@
+
 .PHONY: test
-test: reason verify validate-iris
+test: reason verify validate-iris validate-dl
 
 
 ### Term reservations
