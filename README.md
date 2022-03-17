@@ -165,7 +165,7 @@ These are the steps with their CLI commands. When using a GUI application the st
 9. `git push --set-upstream origin your-branch-name` push your commit to GitHub
 10. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
-Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR can be merged into `master`. Rinse and repeat!
+Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR will be reviewed by OBI developers. When that review is complete, a senior OBI developer will merge the PR. Rinse and repeat!
 
 
 ## Keeping Things Tidy
