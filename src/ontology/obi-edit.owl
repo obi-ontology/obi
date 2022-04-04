@@ -21974,6 +21974,41 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003366 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003366">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003367"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A drawing a conclusion based on data that involves the interpretation of data about a given organism (human, animal, or plant) and the assertion to the effect that the organism has a disease, disorder, or syndrome of a certain type, or none of these as output.</obo:IAO_0000115>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1505</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">organism diagnostic process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003367 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003367">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003366"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A conclusion based on data about that an organism has a disease, disorder, or syndrome of a certain type, or none of these.</obo:IAO_0000115>
+        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1505</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">diagnosis of an organism</rdfs:label>
+    </owl:Class>
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
