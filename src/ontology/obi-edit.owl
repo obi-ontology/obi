@@ -21974,6 +21974,272 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003327 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003327">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000100"/>
+        <obo:IAO_0000115>A data set that is comprised of structured measurements about some entity and its associated metadata using pixels (2D), voxels (3D), or an arbitrary number of dimensions. An image data set can be the source from which an image is produced.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-2104-0568 "Lucas M. Serra"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">image data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003328 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003328">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003327"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003329"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>An image data set whose information content originates from some MR imaging assay and is about some MRI participant.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-2104-0568 "Lucas M. Serra"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">magnetic resonance image data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003329 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003329">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003330"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>The subject being scanned in an MRI study, and bearor of data derived from that study.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">MRI participant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003330 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003330">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002985"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+        <obo:IAO_0000115>A role that inheres in a material entity that is realized in a MR imaging assay in which MR imaging data is generated about the bearer of the evaluant role</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-2104-0568 "Lucas M. Serra"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">MRI evaluant role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003331 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003331">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003327"/>
+        <obo:IAO_0000115>An image data set that encodes measurement values produced by some instrument before undergoing a data transformation.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-1604-3078 "Alan Ruttenberg"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">raw image data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003333 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003333">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003327"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003355"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>An image data set that is the output of an image data set analysis.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-1604-3078 "Alan Ruttenberg"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">computed image data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003334 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003334">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003333"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003329"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003356"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>An image data set that is the direct output of a raw MR image data set reconstruction or a transformation of another MR image data set.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-2104-0568 "Lucas M. Serra"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <obo:IAO_0000118>scan</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">reconstructed magnetic resonance image data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003336 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003336">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001879"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33375"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A chemical reagent containing gadolinium injected into an MRI participant to increase the visible contrast of some MR image data set.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">imaging contrast reagent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003340 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003340">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003331"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003329"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002985"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>An image data set that is the direct output of an MR imaging assay and whose values encode spatial frequencies produced by the NMR/MRI instrument.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">raw magnetic resonance image data set</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003354 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003354">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <obo:IAO_0000115>The NMR/MRI machine protocol about the radiofrequency pulse sequence.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-2104-0568 "Lucas M. Serra"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">MR pulse sequence protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003355 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003355">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003327"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The process of deriving a data item from an image data set using computer algorithms. The produced data item can be an image data set, data measurement, or any other data item.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-2104-0568 "Lucas M. Serra"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">image data set analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003356 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003356">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003355"/>
+        <obo:IAO_0000115>A process that transforms raw magnetic resonance image data from an NMR/MRI machine into a reconstructed magnetic resonance image data set.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">raw magnetic resonance image data set reconstruction</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0003366 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003366">
@@ -22007,6 +22273,22 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1505</obo:IAO_0000233>
         <rdfs:label xml:lang="en">diagnosis of an organism</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003370 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003370">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200111"/>
+        <obo:IAO_0000115>A data visualization that produces some image from an image data set.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 "William D. Duncan"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9676-7377 "Alexander D. Bartnik"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9990-8331 "Alexander D. Diehl"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-7245-3450 "Lauren M. Wishnie"</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0002-9821-4132 "Mackenzie T. Smith"</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">image data set visualization</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
