@@ -1,0 +1,36 @@
+datatype	parent	transform	condition	structure	description	SQL type	RDF type	HTML type
+text					any text	TEXT	xsd:string	textarea
+IRI	nonspace		exclude(/\s/)		an Internationalized Resource Identifier		IRI	
+CURIE	nonspace		match(/\S+:\S+/)	concat(prefix, ":", suffix)	a Compact URI		CURIE	
+ontology_id	CURIE				an ontology ID in CURIE format			
+ontology_label	label				a label of an ontology term			
+split_ontology_label	ontology_label				one or more labels of ontology terms separated by a pipe character			
+curation_status	ontology_label		in('example to be eventually removed', 'metadata complete', 'metadata incomplete', 'organizational term', 'pending final vetting', 'ready for release', 'requires discussion', 'to be replaced with external ontology term', 'uncurated')		the IAO curation status for a term		curation status specification	search
+obsolete_class	ontology_label		in('Obsolete Class')		the 'Obsolete Class' parent for all deprecated terms		owl:Class	search
+obsolescence_reason	ontology_label		in('failed exploratory term', 'placeholder removed', 'term imported', 'term split', 'terms merged')		the IAO obsolescence reason for term deprecation			search
+datatype_condition	line		exclude(/\n/)		a datatype condition specification			
+path	line		exclude(/\n/)		a path to a file			
+trimmed_line	line		exclude(/^\s+|\s+$/)		a line of text that does not begin or end with whitespace			
+word	nonspace		exclude(/\W/)		a single word: letters, numbers, underscore			
+nonnegative_integer	nonspace		match(/\d+/)		a non-negative integer	INTEGER		number
+positive_integer	nonspace		match(/\d+/)		a positive integer	INTEGER		number
+source	nonspace		in('IPD', 'GenBank', 'UniProt', 'IMGT/HLA', 'PDB')		a sequence source: IPD, GenBank, or UniProt			search
+empty	text		equals('')		the empty string	NULL	null	
+line	text		exclude(/\n/)		a line of text			text
+trimmed_text	text		exclude(/^\s+|\s+$/)		text that does not begin or end with whitespace			
+column_name	trimmed_line				a column name			
+label	trimmed_line							
+manchester	trimmed_line				a Manchester syntax expression			
+split_manchester	manchester				one or more Manchester syntax expressions separated by a pipe character			
+nonspace	trimmed_line		exclude(/\s/)		text without whitespace			
+description	trimmed_text				a brief description			textarea
+table	word			from(table.table)				search
+datatype_name	word		exclude(/\W/)		a datatype name			
+prefix	word		exclude(/\W/)		a prefix for a CURIE			
+suffix	word		exclude(/\W/)		a suffix for a CURIE			
+table_name	word		exclude(/\W/)		a table name			
+table_type	word	lowercase	in('table', 'column', 'datatype', 'template')		a table type			search
+html_type	word		in('text', 'textarea', 'search', 'radio', 'number', 'select')		an HTML form type			search
+boolean	word	lowercase	in('true', 'false')		a boolean: true or false		xsd:boolean	radio
+owl_type	word		in('owl:AnnotationProperty', 'owl:Class', 'owl:ObjectProperty')		an OWL entity type: owl:AnnotationProperty, owl:Class, or owl:ObjectProperty			search
+class_type	word		in('equivalent', 'subclass')		an OWL class type: equivalent or subclass			search

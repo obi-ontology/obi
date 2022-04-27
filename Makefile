@@ -30,10 +30,15 @@ MODULES := $(DEV)/modules
 TODAY   := $(shell date +%Y-%m-%d)
 TS      := $(shell date +'%d:%m:%Y %H:%M')
 
+define \n
+
+
+endef
+
 ### Directories
 #
 # This is a temporary place to put things.
-build build/views:
+build build/views build/templates:
 	mkdir -p $@
 
 
@@ -61,6 +66,11 @@ endif
 build/rdftab: | build
 	curl -L -o $@ $(RDFTAB_URL)
 	chmod +x $@
+
+LDTAB := java -jar build/ldtab.jar
+
+build/ldtab.jar: | build
+	curl -L -o $@ "https://github.com/ontodev/ldtab.clj/releases/download/v2022-03-17/ldtab.jar"
 
 
 ### Imports
@@ -130,6 +140,11 @@ update-tsv: update-tsv-files sort
 update-tsv-files:
 	$(foreach x,$(MODULE_NAMES),python3 src/scripts/xlsx2tsv.py obi.xlsx $(x) src/ontology/templates/$(x).tsv;)
 
+# Index containing ID, label, and table for all terms
+# TODO: add imports
+build/index.tsv: $(TEMPLATE_FILES) | build
+	echo -e "ID\tlabel\ttable" >> $@
+	$(foreach f,$(TEMPLATE_FILES),tail -n +3 $(f) | cut -f1,2 | sed -e 's/$$/\t$(subst -,_,$(notdir $(basename $(f))))/' >> $@${\n})
 
 
 ### Databases
@@ -137,19 +152,39 @@ update-tsv-files:
 .PHONY: obi-dbs
 obi-dbs: build/obi-edit.db build/obi_merged.db
 
-build/obi-edit.db: src/scripts/prefixes.sql src/ontology/obi-edit.owl | build/rdftab
+build/obi-edit.db: src/prefix.tsv src/ontology/obi-edit.owl | build/rdftab
 	rm -rf $@
-	sqlite3 $@ < $<
+	sqlite3 -cmd ".mode tabs" $@ ".import $< prefix"
 	./build/rdftab $@ < $(word 2,$^)
 	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
 	sqlite3 $@ "ANALYZE;"
 
-build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
+build/obi_merged.db: src/prefix.tsv build/obi_merged.owl | build/rdftab
 	rm -rf $@
-	sqlite3 $@ < $<
+	sqlite3 -cmd ".mode tabs" $@ ".import $< prefix"
 	./build/rdftab $@ < $(word 2,$^)
 	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
 	sqlite3 $@ "ANALYZE;"
+
+# The SQL inputs are the templates without the ROBOT template strings
+SQL_INPUTS = $(foreach t,$(MODULE_NAMES),build/templates/$(t).tsv)
+build/templates/%.tsv: src/ontology/templates/%.tsv | build/templates
+	sed '2d' $< > $@
+
+# Load all tables into SQLite database
+build/obi-tables.sql: src/scripts/load.py src/table.tsv src/column.tsv src/datatype.tsv src/prefix.tsv build/index.tsv $(SQL_INPUTS)
+	python3 src/scripts/load.py src/table.tsv $(basename $@).db > $@
+
+# Creating the SQL file also creates the database
+build/obi-tables.db: build/obi-tables.sql
+
+# Then add OBI using LDTab
+.PHONY: load_obi
+load_obi: build/obi_merged.owl src/scripts/search_view.sql | build/ldtab.jar
+	sqlite3 build/obi-tables.db "DROP TABLE IF EXISTS obi;"
+	sqlite3 build/obi-tables.db "CREATE TABLE obi (assertion INT NOT NULL, retraction INT NOT NULL DEFAULT 0, graph TEXT NOT NULL, subject TEXT NOT NULL, predicate TEXT NOT NULL, object TEXT NOT NULL, datatype TEXT NOT NULL, annotation TEXT);"
+	$(LDTAB) import --table obi build/obi-tables.db $<
+	sqlite3 build/obi-tables.db < src/scripts/search_view.sql
 
 
 ### Build

@@ -1,0 +1,269 @@
+table	column	nulltype	datatype	structure	description	template
+table	table		table_name	primary	name of this table	
+table	path		path		path to the TSV file for this table, relative to the table.tsv file	
+table	type	empty	table_type		type of this table, used for tables with special meanings	
+table	description	empty	description		a description of this table	
+column	table		table_name	from(table.table)	the table that this column belongs to	
+column	column		column_name		the name of this column	
+column	datatype		datatype_name	from(datatype.datatype)	the datatype for this column	
+column	nulltype	empty	datatype_name	from(datatype.datatype)	the datatype for NULL values in this column	
+column	structure	empty	label		schema information for this column	
+column	description	empty	description		a description of this column	
+datatype	datatype		datatype_name	primary	the name of this datatype	
+datatype	parent	empty	datatype_name	tree(datatype)	the parent datatype	
+datatype	condition	empty	datatype_condition			
+prefix	prefix		prefix	primary		
+prefix	base		IRI	unique		
+prefix	ontology IRI	empty	IRI		The ontology IRI for the ontology that is used as a source of external and/or import terms for MRO	
+prefix	version IRI	empty	IRI		The version IRI of the ontology to use for external and/or import terms for MRO	
+index	ID		CURIE			
+index	label		label			
+index	table		table			
+assays	ontology ID		ontology_id	primary		ID
+assays	label		label	unique		A rdfs:label
+assays	editor preferred term	empty	label			A editor preferred term
+assays	has curation status	empty	curation_status			AI has curation status
+assays	alternative term	empty	label			A alternative term SPLIT=|
+assays	definition		description			A definition SPLIT=|
+assays	definition source	empty	trimmed_line			A definition source SPLIT=|
+assays	example of usage	empty	description			A example of usage SPLIT=|
+assays	term editor	empty	trimmed_line			A term editor SPLIT=|
+assays	editor note	empty	description			A editor note SPLIT=|
+assays	curator note	empty	description			A curator note SPLIT=|
+assays	ontology term requester	empty	trimmed_line			A ontology term requester
+assays	term tracker item	empty	IRI			A term tracker item
+assays	logical type	empty	class_type			CLASS_TYPE
+assays	logical note	empty	description			
+assays	parent class		ontology_label			C %
+assays	material processing technique	empty	split_ontology_label			C 'has part' some % SPLIT=|
+assays	detection technique	empty	split_ontology_label			C 'has part' some (% and 'detection technique') SPLIT=|
+assays	evaluant	empty	split_ontology_label			C (has_specified_input some (% and 'has role' some 'evaluant role')) and (realizes some ('evaluant role' and ('role of' some %))) SPLIT=|
+assays	measurand	empty	ontology_label			C (has_specified_input some %) and (realizes some ('measurand role' and ('inheres in' some %)))
+assays	analyte	empty	ontology_label			C (has_specified_input some %) and (realizes some ('analyte role' and ('inheres in' some %)))
+assays	device	empty	split_ontology_label			C (has_specified_input some %) and (realizes some (function and ('inheres in' some %))) SPLIT=|
+assays	reagent	empty	ontology_label			C (has_specified_input some %) and (realizes some ('reagent role' and ('inheres in' some %)))
+assays	molecular label	empty	ontology_label			C (has_specified_input some %) and (realizes some ('molecular label role' and ('inheres in' some %)))
+assays	input	empty	ontology_label			C has_specified_input some %
+assays	output	empty	ontology_label			C has_specified_output some %
+assays	target entity	empty	ontology_label			C has_specified_output some ('is about' some %)
+assays	objective	empty	ontology_label			C achieves_planned_objective some %
+assays	associated axioms	empty	manchester			C %
+biobank_specimens	ontology ID		ontology_id	primary		ID
+biobank_specimens	label		label	unique		A rdfs:label
+biobank_specimens	editor preferred term	empty	label			A editor preferred term
+biobank_specimens	has curation status	empty	curation_status			AI has curation status
+biobank_specimens	alternative term	empty	label			A alternative term
+biobank_specimens	definition		description			A definition
+biobank_specimens	definition source	empty	trimmed_line			A definition source SPLIT=|
+biobank_specimens	example of usage	empty	description			A example of usage SPLIT=|
+biobank_specimens	term editor		trimmed_line			A term editor SPLIT=|
+biobank_specimens	editor note	empty	description			A editor note SPLIT=|
+biobank_specimens	curator note	empty	description			A curator note SPLIT=|
+biobank_specimens	ontology term requester	empty	trimmed_line			A ontology term requester
+biobank_specimens	term tracker item	empty	IRI			A term tracker item
+biobank_specimens	logical type		class_type			CLASS_TYPE
+biobank_specimens	gross anatomical part	empty	ontology_label			C specimen and (is_specified_output_of some 'collecting specimen from organism') and ('derives from' some %)
+biobank_specimens	swabbed surface	empty	ontology_label			C specimen and (is_specified_output_of some ('collecting specimen with swab' and has_specified_input some %))
+biobank_specimens	URI	empty	IRI			
+biopsy	ontology ID		ontology_id	primary		ID
+biopsy	label		label	unique		LABEL
+biopsy	editor preferred term	empty	label			A editor preferred term
+biopsy	has curation status	empty	curation_status			AI has curation status
+biopsy	alternative term	empty	label			A alternative term SPLIT=|
+biopsy	definition		description			A definition
+biopsy	definition source	empty	trimmed_line			A definition source SPLIT=|
+biopsy	example of usage	empty	description			A example of usage SPLIT=|
+biopsy	term editor		trimmed_line			A term editor SPLIT=|
+biopsy	editor note	empty	description			A editor note SPLIT=|
+biopsy	curator note	empty	description			A curator note SPLIT=|
+biopsy	ontology term requester	empty	trimmed_line			A ontology term requester
+biopsy	term tracker item	empty	IRI			A term tracker item
+biopsy	logical type		class_type			CLASS_TYPE
+biopsy	parent class		ontology_label			CI
+biopsy	material anatomical entity	empty	ontology_label			C 'has_specified_input' some %
+biopsy	input device	empty	ontology_label			C 'has_specified_input' some %
+biopsy	output entity	empty	ontology_label			C 'has_specified_output' some %
+devices	ontology ID		ontology_id	primary		ID
+devices	label		label	unique		LABEL
+devices	editor preferred term	empty	label			A editor preferred term
+devices	has curation status	empty	curation_status			AI has curation status
+devices	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+devices	definition		description			A definition
+devices	definition source	empty	trimmed_line			A definition source SPLIT=|
+devices	example of usage	empty	description			A example of usage SPLIT=|
+devices	term editor		trimmed_line			A term editor SPLIT=|
+devices	editor note	empty	description			A editor note SPLIT=|
+devices	curator note	empty	description			A curator note SPLIT=|
+devices	ontology term requester	empty	trimmed_line			A ontology term requester
+devices	term tracker item	empty	IRI			A term tracker item
+devices	logical type		class_type			CLASS_TYPE
+devices	parent class		ontology_label			C %
+devices	function	empty	split_ontology_label			C 'has function' some % SPLIT=|
+devices	has part	empty	split_ontology_label			C 'has part' some % SPLIT=|
+devices	part of	empty	ontology_label			C 'part of' some %
+devices	manufactured by	empty	ontology_label			C is_manufactured_by value %
+devices	associated axioms	empty	manchester			C % SPLIT=|
+epitope_assays	Ontology ID		ontology_id	primary		ID
+epitope_assays	label		label	unique		A rdfs:label
+epitope_assays	editor preferred term	empty	label			A editor preferred term
+epitope_assays	has curation status	empty	curation_status			AI has curation status
+epitope_assays	alternative term	empty	label			A alternative term SPLIT=|
+epitope_assays	IEDB alternative term	empty	label			A IEDB alternative term
+epitope_assays	definition	empty	description			A definition
+epitope_assays	definition source	empty	trimmed_line			A definition source SPLIT=|
+epitope_assays	example of usage	empty	description			A example of usage SPLIT=|
+epitope_assays	term editor		trimmed_line			A term editor SPLIT=|
+epitope_assays	editor note	empty	description			A editor note SPLIT=|
+epitope_assays	curator note	empty	description			A curator note SPLIT=|
+epitope_assays	ontology term requester	empty	trimmed_line			A ontology term requester
+epitope_assays	term tracker item	empty	IRI			A term tracker item
+epitope_assays	logical type		class_type			CLASS_TYPE
+epitope_assays	parent class		ontology_label			C %
+epitope_assays	material processing technique	empty	split_ontology_label			C 'has part' some % SPLIT=|
+epitope_assays	detection technique	empty	split_ontology_label			C 'has part' some ( % and 'detection technique') SPLIT=|
+epitope_assays	reagent	empty	ontology_label			C (has_specified_input some %) and (realizes some ('reagent role' and ('inheres in' some %)))
+epitope_assays	input	empty	ontology_label			C has_specified_input some %
+epitope_assays	output	empty	ontology_label			C has_specified_output some %
+epitope_assays	MHC source	empty	ontology_label			C has_specified_input some (% and ('has part' some 'MHC protein complex'))
+epitope_assays	target entity	empty	ontology_label			C has_specified_output some ('is about' some %)
+epitope_assays	unit	empty	ontology_label			C has_specified_output some ('has measurement unit label' value %)
+medical_history	ontology ID		ontology_id	primary		ID
+medical_history	label		label	unique		A rdfs:label
+medical_history	editor preferred term	empty	label			A editor preferred term
+medical_history	has curation status	empty	curation_status			AI has curation status
+medical_history	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+medical_history	definition		description			A definition SPLIT=|
+medical_history	definition source	empty	trimmed_line			A definition source SPLIT=|
+medical_history	example of usage	empty	description			A example of usage SPLIT=|
+medical_history	term editor		trimmed_line			A term editor SPLIT=|
+medical_history	editor note	empty	description			A editor note SPLIT=|
+medical_history	curator note	empty	description			A curator note SPLIT=|
+medical_history	ontology term requester	empty	trimmed_line			A ontology term requester
+medical_history	term tracker item	empty	IRI			A term tracker item
+medical_history	logical type		class_type			CLASS_TYPE
+medical_history	parent class		ontology_label			C %
+obsolete	ontology ID		ontology_id	primary		ID
+obsolete	label		label	unique		LABEL
+obsolete	editor preferred term	empty	label			A editor preferred term
+obsolete	has curation status	empty	curation_status			AI has curation status
+obsolete	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+obsolete	IEDB Alternative Terms		trimmed_line			A IEDB alternative term
+obsolete	definition		description			A definition
+obsolete	definition source	empty	trimmed_line			A definition source SPLIT=|
+obsolete	example of usage	empty	description			A example of usage SPLIT=|
+obsolete	term editor		trimmed_line			A term editor SPLIT=|
+obsolete	editor note	empty	description			A editor note SPLIT=|
+obsolete	curator note	empty	description			A curator note SPLIT=|
+obsolete	ontology term requester	empty	trimmed_line			A ontology term requester
+obsolete	term tracker item	empty	IRI			A term tracker item
+obsolete	logical type		class_type			CLASS_TYPE
+obsolete	parent class		obsolete_class			C %
+obsolete	obsolete		boolean			AT deprecated^^xsd:boolean
+obsolete	obsolescence reason		obsolescence_reason			AI has obsolescence reason
+obsolete	replacement term	empty	ontology_label			AI term replaced by
+obsolete	Randi's notes on obsolescence	empty	trimmed_line			
+organizations	ontology ID		ontology_id	primary		ID
+organizations	label		label	unique		LABEL
+organizations	editor preferred term	empty	label			A editor preferred term
+organizations	has curation status	empty	curation_status			AI has curation status
+organizations	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+organizations	definition		description			A definition
+organizations	definition source	empty	trimmed_line			A definition source SPLIT=|
+organizations	example of usage	empty	description			A example of usage SPLIT=|
+organizations	term editor		trimmed_line			A term editor SPLIT=|
+organizations	editor note	empty	description			A editor note SPLIT=|
+organizations	curator note	empty	description			A curator note SPLIT=|
+organizations	ontology term requester	empty	trimmed_line			A ontology term requester
+organizations	term tracker item	empty	IRI			A term tracker item
+organizations	logical type	empty	class_type			CLASS_TYPE
+organizations	type		split_ontology_label			TYPE SPLIT=|
+sample_collection	ontology ID		ontology_id	primary		ID
+sample_collection	label		label	unique		LABEL
+sample_collection	editor preferred term	empty	label			A editor preferred term
+sample_collection	has curation status	empty	curation_status			AI has curation status
+sample_collection	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+sample_collection	definition		description			A definition
+sample_collection	definition source	empty	trimmed_line			A definition source SPLIT=|
+sample_collection	example of usage	empty	description			A example of usage SPLIT=|
+sample_collection	term editor		trimmed_line			A term editor SPLIT=|
+sample_collection	editor note	empty	description			A editor note SPLIT=|
+sample_collection	curator note	empty	description			A curator note SPLIT=|
+sample_collection	ontology term requester	empty	trimmed_line			A ontology term requester
+sample_collection	term tracker item	empty	IRI			A term tracker item
+sample_collection	logical type		class_type			CLASS_TYPE
+sample_collection	parent class		ontology_label			C %
+sample_collection	specimen type	empty	ontology_label			C has_specified_output some (% and 'has role' some 'specimen role')
+sequence_analysis	ontology ID		ontology_id	primary		ID
+sequence_analysis	label		label	unique		A rdfs:label
+sequence_analysis	editor preferred term	empty	label			A editor preferred term
+sequence_analysis	has curation status	empty	curation_status			AL has curation status
+sequence_analysis	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+sequence_analysis	definition		description			A definition SPLIT=|
+sequence_analysis	definition source	empty	trimmed_line			A definition source SPLIT=|
+sequence_analysis	example of usage	empty	description			A example of usage SPLIT=|
+sequence_analysis	term editor		trimmed_line			A term editor SPLIT=|
+sequence_analysis	editor note	empty	description			A editor note SPLIT=|
+sequence_analysis	curator note	empty	description			A curator note SPLIT=|
+sequence_analysis	ontology term requester	empty	trimmed_line			A ontology term requester
+sequence_analysis	term tracker item	empty	IRI			A term tracker item
+sequence_analysis	logical type		class_type			CLASS_TYPE
+sequence_analysis	parent class		ontology_label			C %
+sequence_analysis	output	empty	ontology_label			C 'has_specified_output' some %
+sequence_analysis	input	empty	ontology_label			C 'has_specified_input' some %
+sequence_analysis	input of	empty	ontology_label			C is_specified_input_of some %
+sequence_analysis	output of	empty	ontology_label			C is_specified_output_of some %
+sequence_analysis	objective	empty	ontology_label			C achieves_planned_objective some %
+specimen_assay_data	ontology ID		ontology_id	primary		ID
+specimen_assay_data	label		label	unique		LABEL
+specimen_assay_data	editor preferred term	empty	label			A editor preferred term
+specimen_assay_data	has curation status	empty	curation_status			AI has curation status
+specimen_assay_data	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+specimen_assay_data	definition		description			A definition
+specimen_assay_data	definition source	empty	trimmed_line			A definition source SPLIT=|
+specimen_assay_data	example of usage	empty	description			A example of usage SPLIT=|
+specimen_assay_data	term editor		trimmed_line			A term editor SPLIT=|
+specimen_assay_data	editor note	empty	description			A editor note SPLIT=|
+specimen_assay_data	curator note	empty	description			A curator note SPLIT=|
+specimen_assay_data	ontology term requester	empty	trimmed_line			A ontology term requester
+specimen_assay_data	term tracker item	empty	IRI			A term tracker item
+specimen_assay_data	logical type		class_type			CLASS_TYPE
+specimen_assay_data	parent class		ontology_label			CI
+specimen_assay_data	assay	empty	ontology_label			C is_specified_output_of some %
+specimen_assay_data	organism	empty	ontology_label			C 'is about' some %
+study_designs	ontology ID		ontology_id	primary		ID
+study_designs	label		label	unique		LABEL
+study_designs	editor preferred term	empty	label			A editor preferred term
+study_designs	has curation status	empty	curation_status			AI has curation status
+study_designs	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+study_designs	definition		description			A definition
+study_designs	definition source	empty	trimmed_line			A definition source SPLIT=|
+study_designs	example of usage	empty	description			A example of usage SPLIT=|
+study_designs	term editor		trimmed_line			A term editor SPLIT=|
+study_designs	editor note	empty	description			A editor note SPLIT=|
+study_designs	curator note	empty	description			A curator note SPLIT=|
+study_designs	ontology term requester	empty	trimmed_line			A ontology term requester
+study_designs	term tracker item	empty	IRI			A term tracker item
+study_designs	logical type		class_type			CLASS_TYPE
+study_designs	parent class		ontology_label			C %
+study_designs	objective		split_ontology_label			C 'has part' some % SPLIT=|
+study_designs	independent variable		split_ontology_label			C 'has part' some ('study design independent variable' and ('is about' some %)) SPLIT=|
+study_designs	dependent variable		split_ontology_label			C 'has part' some ('study design dependent variable' and ('is about' some %)) SPLIT=|
+study_designs	assay		split_ontology_label			C 'is concretized as' some ('realized in' some ('has part' some %)) SPLIT=|
+study_designs	associated superclasses		split_manchester			SC % SPLIT=|
+study_designs	associated equivalent classes		split_manchester			EC % SPLIT=|
+value_specifications	ontology ID		ontology_id	primary		ID
+value_specifications	label		label	unique		LABEL
+value_specifications	editor preferred term	empty	label			A editor preferred term
+value_specifications	has curation status	empty	curation_status			AI has curation status
+value_specifications	alternative term	empty	trimmed_line			A alternative term SPLIT=|
+value_specifications	definition		description			A definition
+value_specifications	definition source	empty	trimmed_line			A definition source SPLIT=|
+value_specifications	example of usage	empty	description			A example of usage SPLIT=|
+value_specifications	term editor		trimmed_line			A term editor SPLIT=|
+value_specifications	editor note	empty	description			A editor note SPLIT=|
+value_specifications	curator note	empty	description			A curator note SPLIT=|
+value_specifications	ontology term requester	empty	trimmed_line			A ontology term requester
+value_specifications	term tracker item	empty	IRI			A term tracker item
+value_specifications	logical type	empty	class_type			CLASS_TYPE
+value_specifications	type	empty	ontology_label			TYPE
+value_specifications	parent class	empty	ontology_label			C %
