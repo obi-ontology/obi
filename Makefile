@@ -174,11 +174,44 @@ MODULE_NAMES := assays\
  sample-collection\
  study-designs\
  sequence-analysis\
+ specimen-assay-data\
  value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
+TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
 
 .PHONY: modules
 modules: $(MODULE_FILES)
+
+obi.xlsx: src/scripts/tsv2xlsx.py $(TEMPLATE_FILES)
+	python3 $< $@ $(wordlist 2,100,$^)
+
+.PHONY: update-tsv
+update-tsv: update-tsv-files sort
+
+.PHONY: update-tsv-files
+update-tsv-files:
+	$(foreach x,$(MODULE_NAMES),python3 src/scripts/xlsx2tsv.py obi.xlsx $(x) src/ontology/templates/$(x).tsv;)
+
+
+
+### Databases
+
+.PHONY: obi-dbs
+obi-dbs: build/obi-edit.db build/obi_merged.db
+
+build/obi-edit.db: src/scripts/prefixes.sql src/ontology/obi-edit.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
+
+build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
+	rm -rf $@
+	sqlite3 $@ < $<
+	./build/rdftab $@ < $(word 2,$^)
+	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
+	sqlite3 $@ "ANALYZE;"
 
 
 ### Build
@@ -186,7 +219,7 @@ modules: $(MODULE_FILES)
 # Here we create a standalone OWL file appropriate for release.
 # This involves merging, reasoning, annotating,
 # and removing any remaining import declarations.
-build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq | build/robot.jar build
+build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq src/sparql/fix-iao.rq | build/robot.jar build
 	$(ROBOT) merge \
 	--input $< \
 	query \
@@ -196,6 +229,8 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	merge \
 	--input build/editor-preferred-terms.ttl \
 	--input build/curation-status.ttl \
+	query \
+	--update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi_merged.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_merged.owl" \
@@ -203,13 +238,6 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	--output build/obi_merged.tmp.owl
 	sed '/<owl:imports/d' build/obi_merged.tmp.owl > $@
 	rm build/obi_merged.tmp.owl
-
-build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
-	rm -rf $@
-	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
-	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
-	sqlite3 $@ "ANALYZE;"
 
 obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \
@@ -257,6 +285,7 @@ views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
 	--term obo:OBI_0600036 \
 	--term obo:OBI_0600037 \
 	--term obo:OBI_0000838 \
+	--term obo:OBI_0003071 \
 	--term APOLLO_SV:00000796 \
 	--select "self descendants" \
 	--preserve-structure false \
@@ -401,6 +430,20 @@ validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 .PHONY: test
 test: reason verify validate-iris
 
+
+### Term reservations
+#
+# Get current OBI terms
+build/obi-terms.tsv: build/obi_merged.owl
+	$(ROBOT) export --input $< --header "ID|LABEL" --export $@
+
+# Get the term reservation table
+build/reservations.tsv: | build
+	curl -Lk "https://docs.google.com/spreadsheets/d/1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI/export?format=tsv&id=1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI&gid=224833299" > $@
+
+# Create an updated reservation table
+build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/reservations.tsv build/obi-terms.tsv
+	python3 $^ $@
 
 ### General
 #

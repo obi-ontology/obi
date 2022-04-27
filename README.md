@@ -23,12 +23,30 @@ Our ontology terms come in three groups. Depending on what type of term you want
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
 
+### Editing Templates in Excel
+
+If you wish to edit a template or templates in Excel, rather than copy & pasting the template, we ask that you follow this workflow to preserve quoting. Going back and forth with Excel can cause some unintentional changes to double quotes within templates.
+
+First, install the python requirements:
+```
+python3 -m pip install -r requirements.txt
+```
+
+Then, make the Excel sheet. In your local OBI git directory, run the following command to create a file called `obi.xlsx`:
+```
+make obi.xlsx
+```
+
+Next, open `obi.xlsx` in Excel (or whatever editor you prefer). This spreadsheet contains a tab for each OBI template (e.g., "study-design", "assays", etc.). Find the tab that corresponds to the template you need to edit, make your changes, and save the Excel spreadsheet to the same location (`obi.xlsx`). Finally, run the following to update the TSV versions of the templates:
+```
+make update-tsv
+```
+
+This will convert the tabs in `obi.xlsx` back to TSVs and overwrite the existing TSVs in the `src/ontology/templates/` directory with your changes. Review your changes (`git diff`) and make your pull request.
+
 ### Finding Terms
 
-To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). This requires you first to build a database from the merged OBI file:
-```
-make build/obi_merged.db
-```
+To find where a term lives, you can use [`src/scripts/locate.py`](src/scripts/locate.py). 
 
 Then you can run the script to find terms by ID or label by passing them as a space-separated list, for example:
 ```
@@ -39,6 +57,31 @@ Labels should be enclosed in double quotes:
 ```
 src/scripts/locate.py "assay" "fluorescence microscopy" "chromatin"
 ```
+
+## Editing Utility Scripts
+
+The OBI repo includes some Python scripts to help developers efficiently edit both `obi-edit.owl` and OBI templates. These scripts require Python 3.
+
+The scripts also require that you first to build two databases (one from OBI edit, and one from a merged version of OBI):
+```
+make obi-dbs
+```
+
+### Relabeling Terms
+
+Since labels are used in templates, manually finding and replacing all usages of a term can be difficult and tedious. Instead, you can use [`src/scripts/relabel.py`](src/scripts/relabel.py) to automatically update a term's label and its usages.
+
+You can run this by passing the term you want to update and the new label:
+```
+src/scripts/relabel.py CHMO:0000087 "microscopy with fluorescence"
+```
+
+You can also pass the old label as the first argument, as long as it is enclosed in double quotes:
+```
+src/scripts/relabel.py "fluorescence microscopy" "microscopy with fluorescence"
+```
+
+Make sure to commit all changed files to ensure that all usages are updated.
 
 
 # Files
@@ -122,7 +165,7 @@ These are the steps with their CLI commands. When using a GUI application the st
 9. `git push --set-upstream origin your-branch-name` push your commit to GitHub
 10. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
-Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR can be merged into `master`. Rinse and repeat!
+Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR will be reviewed by OBI developers. When that review is complete, a senior OBI developer will merge the PR. Rinse and repeat!
 
 
 ## Keeping Things Tidy
