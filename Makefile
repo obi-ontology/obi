@@ -67,10 +67,8 @@ build/rdftab: | build
 ### Imports
 #
 # We use Gizmos to create various import modules.
-IMPORTS := $(shell tail -n +2 src/ontology/imports/config.tsv | awk '{print $$1}' | uniq)
+IMPORTS := $(shell tail -n +2 src/ontology/imports/import_config.tsv | awk '{print $$1}' | uniq)
 IMPORT_FILES := $(foreach I,$(IMPORTS),src/ontology/imports/$(I)_imports.owl)
-
-imports: $(IMPORT_FILES)
 
 # Get CLO in correct RDFXML format.
 build/clo.owl.gz: | build/robot.jar
@@ -113,19 +111,30 @@ build/%.db: src/scripts/prefixes.sql build/%.owl.gz | build/rdftab
 	sqlite3 $@ "ANALYZE;"
 
 # Extract NCBITaxon with oio:hasExactSynonym mapped to IAO:0000118.
-build/ncbitaxon_imports.ttl: build/ncbitaxon.db src/ontology/imports/config.tsv src/ontology/imports/ncbitaxon_terms.tsv
-	python3 -m gizmos.extract --database $< --config $(word 2,$^) --imports $(word 3,$^) --source ncbitaxon > $@
+.PHONY: build/ncbitaxon_imports.ttl
+build/ncbitaxon_imports.ttl: build/ncbitaxon.db | src/ontology/imports/import_config.tsv src/ontology/imports/import.tsv
+	python3 -m gizmos.extract \
+	--database $< \
+	--config src/ontology/imports/import_config.tsv \
+	--imports src/ontology/imports/import.tsv \
+	--source ncbitaxon > $@
 	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
 	echo "" >> $@ && grep " oio:hasExactSynonym " $@ | sed "s/oio:hasExactSynonym/IAO:0000118/g" >> $@
 	grep -v " oio:hasExactSynonym " $@ > $@.tmp && mv $@.tmp $@
 
 # Extract the terms and copy rdfs:label to 'editor preferred term' for the rest.
-build/%_imports.ttl: build/%.db src/ontology/imports/config.tsv src/ontology/imports/%_terms.tsv
-	python3 -m gizmos.extract --database $< --config $(word 2,$^) --imports $(word 3,$^) --source $* > $@
+.PHONY: import-ttl
+import-ttl:
+build/%_imports.ttl: build/%.db import-ttl | src/ontology/imports/import_config.tsv src/ontology/imports/import.tsv
+	python3 -m gizmos.extract \
+	--database $< \
+	--config src/ontology/imports/import_config.tsv \
+	--imports src/ontology/imports/import.tsv \
+	--source $* > $@
 	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
 
 # Remove extra intermediate classes from NCBITaxon using 'robot collapse'.
-build/ncbitaxon_terms.txt: src/ontology/imports/ncbitaxon_terms.tsv
+build/ncbitaxon_terms.txt: src/ontology/imports/import.tsv
 	grep "^ncbitaxon" $< | awk '{print $$2}' > $@
 
 src/ontology/imports/ncbitaxon_imports.owl: build/ncbitaxon_imports.ttl build/ncbitaxon_terms.txt | build/robot.jar
@@ -143,6 +152,9 @@ src/ontology/imports/%_imports.owl: build/%_imports.ttl | build/robot.jar
 	--input $< \
 	--ontology-iri "$(OBO)/obi/dev/import/$(notdir $@)" \
 	--output $@
+
+.PHONY: imports
+imports: $(IMPORT_FILES)
 
 
 ### Templates
