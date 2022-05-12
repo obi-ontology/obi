@@ -47,27 +47,20 @@ build/robot.jar: | build
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
 
-### RDFTab
+### LDTab
 #
-# Use RDFTab to create SQLite databases from OWL files.
-UNAME := $(shell uname)
-ifeq ($(UNAME), Darwin)
-	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-apple-darwin
-	SED = sed -i.bak
-else
-	RDFTAB_URL := https://github.com/ontodev/rdftab.rs/releases/download/v0.1.1/rdftab-x86_64-unknown-linux-musl
-	SED = sed -i
-endif
+# Use LDTab to create SQLite databases from OWL files.
+build/ldtab.jar: | build
+	curl -L -o $@ "https://github.com/ontodev/ldtab.clj/releases/download/v2022-03-17/ldtab.jar"
 
-build/rdftab: | build
-	curl -L -o $@ $(RDFTAB_URL)
-	chmod +x $@
+LDTAB := java -jar build/ldtab.jar
 
 
 ### Imports
 #
-# We use Gizmos to create various import modules.
-IMPORTS := $(shell tail -n +2 src/ontology/imports/import_config.tsv | awk '{print $$1}' | uniq)
+# We use gadget (https://github.com/ontodev/gadget) to create various import modules.
+# Currently excluding ChEBI, NCBITaxon, and PR due to memory constraints with LDTab
+IMPORTS := $(filter-out chebi ncbitaxon pr,$(shell tail -n +2 src/ontology/imports/import_config.tsv | awk '{print $$1}' | uniq))
 IMPORT_FILES := $(foreach I,$(IMPORTS),src/ontology/imports/$(I)_imports.owl)
 
 # Get CLO in correct RDFXML format.
@@ -84,54 +77,74 @@ build/ncbitaxon.owl.gz: | build
 	$(eval URL = $(shell curl -s https://api.github.com/repos/obophenotype/ncbitaxon/releases/latest | jq --raw-output '.assets[5] | .browser_download_url'))
 	curl -Lk $(URL) > $@
 
-# Fix OMIABIS usage of xml:lang.
-build/omiabis.owl.gz: | build
-	curl -Lk "http://purl.obolibrary.org/obo/omiabis.owl" | sed 's/xml:lang/lang/g' > build/omiabis.owl
-	gzip build/omiabis.owl
-
 # Download the rest of the source ontologies.
 build/%.owl.gz: | build
 	curl -Lk "http://purl.obolibrary.org/obo/$*.owl" | gzip > $@
 
 # Create UO database, deleting owl:Class declarations on owl:NamedIndividuals.
-build/uo.db: src/scripts/prefixes.sql build/uo.owl.gz | build/rdftab
+build/uo.db: build/uo.owl.gz src/prefix.tsv | build/ldtab.jar
 	rm -rf $@
-	sqlite3 $@ < $<
-	zcat < $(word 2,$^) | ./build/rdftab $@
-	sqlite3 $@ "DELETE FROM statements WHERE ROWID IN \
-	  (SELECT s1.ROWID FROM statements s1 JOIN statements s2 ON s1.stanza = s2.stanza \
-	  WHERE s1.object = 'owl:Class' AND s2.object = 'owl:NamedIndividual');"
+	sqlite3 $@ "CREATE TABLE prefix (prefix TEXT NOT NULL, base TEXT NOT NULL);"
+	$(LDTAB) prefix $@ $(word 2,$^)
+	gunzip $<
+	sqlite3 $@ "CREATE TABLE uo (\
+	            assertion INT NOT NULL, \
+	            retraction INT NOT NULL DEFAULT 0, \
+	            graph TEXT NOT NULL, \
+	            subject TEXT NOT NULL, \
+	            predicate TEXT, \
+	            object TEXT NOT NULL, \
+	            datatype TEXT NOT NULL, \
+	            annotation TEXT);" || { gzip $(basename $<); exit 1; }
+	$(LDTAB) import --table uo $@ $(basename $<) || { gzip $(basename $<); exit 1; }
+	sqlite3 $@ "DELETE FROM uo WHERE ROWID IN \
+	  (SELECT s1.ROWID FROM uo s1 JOIN uo s2 ON s1.subject = s2.subject \
+	   WHERE s1.object = 'owl:Class' AND s2.object = 'owl:NamedIndividual');" || { gzip $(basename $<); exit 1; }
+	gzip $(basename $<)
 
 # Create the rest of the databases.
-build/%.db: src/scripts/prefixes.sql build/%.owl.gz | build/rdftab
+build/%.db: build/%.owl.gz src/prefix.tsv | build/ldtab.jar
 	rm -rf $@
-	sqlite3 $@ < $<
-	zcat < $(word 2,$^) | ./build/rdftab $@
-	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
-	sqlite3 $@ "ANALYZE;"
+	sqlite3 $@ "CREATE TABLE prefix (prefix TEXT NOT NULL, base TEXT NOT NULL);"
+	$(LDTAB) prefix $@ $(word 2,$^)
+	gunzip $<
+	sqlite3 $@ "CREATE TABLE $* (\
+	            assertion INT NOT NULL, \
+	            retraction INT NOT NULL DEFAULT 0, \
+	            graph TEXT NOT NULL, \
+	            subject TEXT NOT NULL, \
+	            predicate TEXT, \
+	            object TEXT NOT NULL, \
+	            datatype TEXT, \
+	            annotation TEXT);" || { gzip $(basename $<); exit 1; }
+	$(LDTAB) import --table $* $@ $(basename $<) || { gzip $(basename $<); exit 1; }
+	gzip $(basename $<)
 
 # Extract NCBITaxon with oio:hasExactSynonym mapped to IAO:0000118.
 .PHONY: build/ncbitaxon_imports.ttl
 build/ncbitaxon_imports.ttl: build/ncbitaxon.db | src/ontology/imports/import_config.tsv src/ontology/imports/import.tsv
-	python3 -m gizmos.extract \
+	python3 -m gadget.extract \
 	--database $< \
+	--statement ncbitaxon \
 	--config src/ontology/imports/import_config.tsv \
 	--imports src/ontology/imports/import.tsv \
+	--copy rdfs:label IAO:0000111 \
+	--copy oio:hasExactSynonym IAO:0000118 \
 	--source ncbitaxon > $@
-	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
-	echo "" >> $@ && grep " oio:hasExactSynonym " $@ | sed "s/oio:hasExactSynonym/IAO:0000118/g" >> $@
-	grep -v " oio:hasExactSynonym " $@ > $@.tmp && mv $@.tmp $@
+	rm -f $@ && $(LDTAB) export -t extract $< $@
 
 # Extract the terms and copy rdfs:label to 'editor preferred term' for the rest.
 .PHONY: import-ttl
 import-ttl:
 build/%_imports.ttl: build/%.db import-ttl | src/ontology/imports/import_config.tsv src/ontology/imports/import.tsv
-	python3 -m gizmos.extract \
+	python3 -m gadget.extract \
 	--database $< \
+	--statement $* \
 	--config src/ontology/imports/import_config.tsv \
 	--imports src/ontology/imports/import.tsv \
-	--source $* > $@
-	echo "" >> $@ && grep " rdfs:label " $@ | sed "s/rdfs:label/IAO:0000111/g" >> $@
+	--copy rdfs:label IAO:0000111 \
+	--source $*
+	rm -f $@ && $(LDTAB) export -t extract $< $@
 
 # Remove extra intermediate classes from NCBITaxon using 'robot collapse'.
 build/ncbitaxon_terms.txt: src/ontology/imports/import.tsv
@@ -203,27 +216,6 @@ update-tsv: update-tsv-files sort
 .PHONY: update-tsv-files
 update-tsv-files:
 	$(foreach x,$(MODULE_NAMES),python3 src/scripts/xlsx2tsv.py obi.xlsx $(x) src/ontology/templates/$(x).tsv;)
-
-
-
-### Databases
-
-.PHONY: obi-dbs
-obi-dbs: build/obi-edit.db build/obi_merged.db
-
-build/obi-edit.db: src/scripts/prefixes.sql src/ontology/obi-edit.owl | build/rdftab
-	rm -rf $@
-	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
-	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
-	sqlite3 $@ "ANALYZE;"
-
-build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdftab
-	rm -rf $@
-	sqlite3 $@ < $<
-	./build/rdftab $@ < $(word 2,$^)
-	sqlite3 $@ "CREATE INDEX idx_stanza ON statements (stanza);"
-	sqlite3 $@ "ANALYZE;"
 
 
 ### Build
