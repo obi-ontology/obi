@@ -1,7 +1,7 @@
 datatype	parent	transform	condition	structure	description	SQL type	RDF type	HTML type
 text					any text	TEXT	xsd:string	textarea
 IRI	nonspace		exclude(/\s/)		an Internationalized Resource Identifier		IRI	
-CURIE	nonspace		match(/\S+:\S+/)	concat(prefix, ":", suffix)	a Compact URI		CURIE	
+CURIE	nonspace			concat(prefix, ":", suffix)	a Compact URI		CURIE	
 ontology_id	CURIE				an ontology ID in CURIE format			
 ontology_label	label				a label of an ontology term			
 split_ontology_label	ontology_label				one or more labels of ontology terms separated by a pipe character			
@@ -29,8 +29,10 @@ datatype_name	word		exclude(/\W/)		a datatype name
 prefix	word		exclude(/\W/)		a prefix for a CURIE			
 suffix	word		exclude(/\W/)		a suffix for a CURIE			
 table_name	word		exclude(/\W/)		a table name			
-table_type	word	lowercase	in('table', 'column', 'datatype', 'template')		a table type			search
+table_type	word	lowercase	in('table', 'column', 'datatype', 'index')		a table type			search
 html_type	word		in('text', 'textarea', 'search', 'radio', 'number', 'select')		an HTML form type			search
 boolean	word	lowercase	in('true', 'false')		a boolean: true or false		xsd:boolean	radio
 owl_type	word		in('owl:AnnotationProperty', 'owl:Class', 'owl:ObjectProperty')		an OWL entity type: owl:AnnotationProperty, owl:Class, or owl:ObjectProperty			search
 class_type	word		in('equivalent', 'subclass')		an OWL class type: equivalent or subclass			search
+related_entities	word		in('ancestors', 'children', 'descendants', 'parents')					search
+intermediate_entities	word		in('all', 'none')					radio

@@ -60,17 +60,12 @@ build/ldtab.jar: | build
 
 LDTAB := java -jar build/ldtab.jar
 
-LDTAB := java -jar build/ldtab.jar
-
-build/ldtab.jar: | build
-	curl -L -o $@ "https://github.com/ontodev/ldtab.clj/releases/download/v2022-03-17/ldtab.jar"
-
 
 ### Imports
 #
 # We use gadget (https://github.com/ontodev/gadget) to create various import modules.
 # Currently excluding ChEBI, NCBITaxon, and PR due to memory constraints with LDTab
-IMPORTS := $(filter-out chebi ncbitaxon pr,$(shell tail -n +2 src/ontology/imports/import_config.tsv | awk '{print $$1}' | uniq))
+IMPORTS := $(filter-out chebi ncbitaxon pr imports,$(shell tail -n +2 src/ontology/imports/import_config.tsv | awk '{print $$1}' | uniq))
 IMPORT_FILES := $(foreach I,$(IMPORTS),src/ontology/imports/$(I)_imports.owl)
 
 # Get CLO in correct RDFXML format.
@@ -255,13 +250,19 @@ load_obi: build/obi_merged.owl src/scripts/search_view.sql | build/ldtab.jar
 	$(LDTAB) import --table obi build/obi-tables.db $<
 	sqlite3 build/obi-tables.db < src/scripts/search_view.sql
 
-.PHONY: load_imports
-load_import:
-load_%: build/imports/%.db | build/ldtab.jar
+build/%_search_view.sql: src/scripts/search_view_template.sql
+	sed 's/TABLE_NAME/$*/g' $< > $@
+
+IMPORT_LOADS := $(foreach I,$(IMPORTS),load_$(I)_import)
+
+.PHONY: dump-sql
+dump-sql:
+load_%_import: build/imports/%.db build/%_search_view.sql | build/ldtab.jar
 	sqlite3 build/obi-tables.db "DROP TABLE IF EXISTS $*;"
-	sqlite3 build/obi-tables.db "CREATE TABLE $* (assertion INT NOT NULL, retraction INT NOT NULL DEFAULT 0, graph TEXT NOT NULL, subject TEXT NOT NULL, predicate TEXT NOT NULL, object TEXT NOT NULL, datatype TEXT NOT NULL, annotation TEXT);"
-	$(LDTAB) import --table $* build/obi-tables.db $<
-# sqlite3 build/obi-tables.db < src/scripts/search_view.sql
+	sqlite3 $< '.dump "$*"' | sqlite3 build/obi-tables.db
+	sqlite3 build/obi-tables.db < $(word 2,$^)
+
+load_imports: $(IMPORT_LOADS)
 
 ### Build
 #

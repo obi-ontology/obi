@@ -14,11 +14,19 @@ datatype	parent	empty	datatype_name	tree(datatype)	the parent datatype
 datatype	condition	empty	datatype_condition			
 prefix	prefix		prefix	primary		
 prefix	base		IRI	unique		
-prefix	ontology IRI	empty	IRI		The ontology IRI for the ontology that is used as a source of external and/or import terms for MRO	
-prefix	version IRI	empty	IRI		The version IRI of the ontology to use for external and/or import terms for MRO	
 index	ID		CURIE			
 index	label		label			
 index	table		table			
+import	Source		word	from(import_config.Source)		
+import	ID		ontology_id			
+import	Label		label			
+import	Parent ID	empty	ontology_id			
+import	Parent Label	empty	label			
+import	Related	empty	related_entities			
+import_config	Source		word			
+import_config	IRI		IRI			
+import_config	Intermediates		intermediate_entities			
+import_config	Predicates		trimmed_line			
 assays	ontology ID		ontology_id	primary		ID
 assays	label		label	unique		A rdfs:label
 assays	editor preferred term	empty	label			A editor preferred term
