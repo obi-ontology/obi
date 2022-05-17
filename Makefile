@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.7.0/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.8.3/robot.jar
 
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
@@ -67,7 +67,7 @@ build/rdftab: | build
 #
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
-	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+	curl -s -F file=@$< -o $@ https://ontofox.hegroup.org/service.php
 
 # Remove annotation properties from CLO to avoid weird labels.
 src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
@@ -191,6 +191,7 @@ views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
+	query --update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi-base.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi-base.owl" \
