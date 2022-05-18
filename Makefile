@@ -190,8 +190,9 @@ obi.owl: build/obi_merged.owl
 views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
-	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
-	query --update src/sparql/fix-iao.rq \
+	--output build/obi-edit-bare.owl
+	$(ROBOT) merge --input build/obi-edit-bare.owl \
+	$(foreach M,$(MODULE_FILES), --input $(M)) \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi-base.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi-base.owl" \
