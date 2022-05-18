@@ -282,6 +282,14 @@ MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 MODULE_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-modules.rq)
 PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 
+build/obi-base-report.tsv: views/obi-base.owl
+	$(ROBOT) report \
+	--input $< \
+	--labels true \
+	--base-iri "http://purl.obolibrary.org/obo/OBI_" \
+	--fail-on ERROR \
+	--output $@
+
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
@@ -367,7 +375,7 @@ validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
 .PHONY: test
-test: reason verify validate-iris
+test: reason verify validate-iris build/obi-base-report.tsv
 
 
 ### Term reservations
