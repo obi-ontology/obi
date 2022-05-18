@@ -288,6 +288,7 @@ build/obi-base-report.tsv: views/obi-base.owl
 	--labels true \
 	--base-iri "http://purl.obolibrary.org/obo/OBI_" \
 	--fail-on ERROR \
+	--print 10 \
 	--output $@
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
