@@ -236,19 +236,17 @@ build/templates/%.tsv: src/ontology/templates/%.tsv | build/templates
 	sed '2d' $< > $@
 
 # Load all tables into SQLite database
-build/obi-tables.sql: src/scripts/load.py src/table.tsv src/column.tsv src/datatype.tsv src/prefix.tsv build/index.tsv $(SQL_INPUTS)
-	python3 src/scripts/load.py src/table.tsv $(basename $@).db > $@
-
-# Creating the SQL file also creates the database
-build/obi-tables.db: build/obi-tables.sql
+build/obi-tables.db: src/table.tsv src/column.tsv src/datatype.tsv src/prefix.tsv build/index.tsv $(SQL_INPUTS)
+	python3 -m cmi_pb_script.load $< $@ > $(basename $@).sql
 
 # Then add OBI using LDTab
+# We use a version of OBI created with ELK reasoner to save time
 .PHONY: load_obi
-load_obi: build/obi_merged.owl src/scripts/search_view.sql | build/ldtab.jar
+load_obi: build/obi_reasoned.owl build/obi_search_view.sql | build/ldtab.jar
 	sqlite3 build/obi-tables.db "DROP TABLE IF EXISTS obi;"
 	sqlite3 build/obi-tables.db "CREATE TABLE obi (assertion INT NOT NULL, retraction INT NOT NULL DEFAULT 0, graph TEXT NOT NULL, subject TEXT NOT NULL, predicate TEXT NOT NULL, object TEXT NOT NULL, datatype TEXT NOT NULL, annotation TEXT);"
 	$(LDTAB) import --table obi build/obi-tables.db $<
-	sqlite3 build/obi-tables.db < src/scripts/search_view.sql
+	sqlite3 build/obi-tables.db < $(word 2,$^)
 
 build/%_search_view.sql: src/scripts/search_view_template.sql
 	sed 's/TABLE_NAME/$*/g' $< > $@
@@ -263,6 +261,16 @@ load_%_import: build/imports/%.db build/%_search_view.sql | build/ldtab.jar
 	sqlite3 build/obi-tables.db < $(word 2,$^)
 
 load_imports: $(IMPORT_LOADS)
+
+EXPORT_TEMPLATES := $(foreach M,$(MODULE_NAMES),export_$(M))
+
+.PHONY: export_template
+export_template:
+export_%:
+	python3 -m cmi_pb_script.export data build/obi-tables.db build/templates $(subst -,_,$*)
+	echo -e "$$(head -2 src/ontology/templates/$*.tsv)\n$$(sed '1d' build/templates/$(subst -,_,$*).tsv)" > src/ontology/templates/$*.tsv
+
+update_templates: $(EXPORT_TEMPLATES)
 
 ### Build
 #
@@ -468,10 +476,10 @@ verify-entities: build/dropped-entities.tsv
 	@echo $(shell < $< wc -l) " OBI IRIs have been dropped"
 	@! test -s $<
 
-# Run a basic reasoner to find inconsistencies
-.PHONY: reason
-reason: build/obi_merged.owl | build/robot.jar
-	$(ROBOT) reason --input $< --reasoner ELK
+# Run a basic reasoner to find inconsistencies then remove any assertions of owl:Thing as a parent
+.PHONY: build/obi_reasoned.owl
+build/obi_reasoned.owl: build/obi_merged.owl | build/robot.jar
+	$(ROBOT) reason --input $< --reasoner ELK relax reduce --output $@
 
 # Find any IRIs using undefined namespaces
 .PHONY: validate-iris
@@ -479,7 +487,7 @@ validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
 .PHONY: test
-test: reason verify validate-iris
+test: build/obi_reasoned.owl verify validate-iris
 
 
 ### Term reservations
