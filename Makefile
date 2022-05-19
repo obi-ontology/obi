@@ -191,7 +191,6 @@ views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
-	query --update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi-base.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi-base.owl" \
