@@ -224,9 +224,10 @@ update-tsv-files:
 
 # Index containing ID, label, and table for all terms
 # TODO: add imports
-build/index.tsv: $(TEMPLATE_FILES) | build
+build/index.tsv: $(TEMPLATE_FILES) src/ontology/imports/import.tsv | build
 	echo -e "ID\tlabel\ttable" >> $@
 	$(foreach f,$(TEMPLATE_FILES),tail -n +3 $(f) | cut -f1,2 | sed -e 's/$$/\t$(subst -,_,$(notdir $(basename $(f))))/' >> $@${\n})
+	tail -n +2 src/ontology/imports/import.tsv | cut -f2,3 | sed -e 's/$$/\timport/' >> $@
 
 ### Databases
 
@@ -255,10 +256,14 @@ IMPORT_LOADS := $(foreach I,$(IMPORTS),load_$(I)_import)
 
 .PHONY: dump-sql
 dump-sql:
-load_%_import: build/imports/%.db build/%_search_view.sql | build/ldtab.jar
+load_%_import: build/%_search_view.sql | build/imports/%.db build/ldtab.jar
 	sqlite3 build/obi-tables.db "DROP TABLE IF EXISTS $*;"
-	sqlite3 $< '.dump "$*"' | sqlite3 build/obi-tables.db
-	sqlite3 build/obi-tables.db < $(word 2,$^)
+	sqlite3 build/imports/$*.db '.dump "$*"' | sqlite3 build/obi-tables.db
+	sqlite3 build/obi-tables.db < $<
+	sqlite3 build/obi-tables.db "CREATE INDEX idx_$*_subject ON $* (subject);"
+	sqlite3 build/obi-tables.db "CREATE INDEX idx_$*_predicate ON $* (predicate);"
+	sqlite3 build/obi-tables.db "CREATE INDEX idx_$*_object ON $* (object);"
+	sqlite3 build/obi-tables.db "ANALYZE;"
 
 load_imports: $(IMPORT_LOADS)
 
@@ -477,7 +482,6 @@ verify-entities: build/dropped-entities.tsv
 	@! test -s $<
 
 # Run a basic reasoner to find inconsistencies then remove any assertions of owl:Thing as a parent
-.PHONY: build/obi_reasoned.owl
 build/obi_reasoned.owl: build/obi_merged.owl | build/robot.jar
 	$(ROBOT) reason --input $< --reasoner ELK relax reduce --output $@
 

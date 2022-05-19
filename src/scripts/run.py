@@ -15,6 +15,7 @@ if __name__ == '__main__':
         # cgi_path="/OBI/branches/demo-site/views/src/scripts/run.py",
         # log_file="obi.log",
         hide_index=True,
+        import_table="import",
         max_children=100,
         title="OBI",
     )
