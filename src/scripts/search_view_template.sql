@@ -35,4 +35,11 @@ SELECT
     COALESCE(l.object, "") || COALESCE(" - " || s.object, "") || " [" || t.subject || "]" AS label
 FROM term_ids t
 LEFT JOIN labels l ON t.subject = l.subject
-LEFT JOIN synonyms s ON t.subject = s.subject;
+LEFT JOIN synonyms s ON t.subject = s.subject
+UNION
+SELECT
+    t.subject AS subject,
+    l.object || " [" || t.subject || "]" AS label
+FROM term_ids t
+JOIN labels l ON t.subject = l.subject
+WHERE t.subject IN (SELECT subject FROM synonyms);
