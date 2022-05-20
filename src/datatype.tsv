@@ -1,8 +1,8 @@
 datatype	parent	transform	condition	structure	description	SQL type	RDF type	HTML type
 text					any text	TEXT	xsd:string	textarea
 IRI	nonspace		exclude(/\s/)		an Internationalized Resource Identifier		IRI	
-CURIE	nonspace			concat(prefix, ":", suffix)	a Compact URI		CURIE	
-ontology_id	CURIE				an ontology ID in CURIE format			
+CURIE	nonspace		match(/\w+:\w+/)		a Compact URI		CURIE	
+ontology_id	CURIE		match(/\w+:\w+/)		an ontology ID in CURIE format			
 ontology_label	label				a label of an ontology term			
 split_ontology_label	ontology_label				one or more labels of ontology terms separated by a pipe character			
 curation_status	ontology_label		in('example to be eventually removed', 'metadata complete', 'metadata incomplete', 'organizational term', 'pending final vetting', 'ready for release', 'requires discussion', 'to be replaced with external ontology term', 'uncurated')		the IAO curation status for a term		curation status specification	search
