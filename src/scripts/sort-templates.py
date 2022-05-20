@@ -6,7 +6,6 @@ import csv, os
 
 
 def sort_template(path):
-    print(path)
     rows = []
     with open(path, "r") as tsv:
         reader = csv.reader(tsv, delimiter="\t", quoting=csv.QUOTE_NONE, escapechar='"')

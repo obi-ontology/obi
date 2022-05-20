@@ -249,15 +249,16 @@ TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
 .PHONY: modules
 modules: $(MODULE_FILES)
 
-obi.xlsx: src/scripts/tsv2xlsx.py $(TEMPLATE_FILES)
+obi.xlsx: src/scripts/tsv2xlsx.py $(TEMPLATE_FILES) src/ontology/imports/import.tsv
 	python3 $< $@ $(wordlist 2,100,$^)
 
 .PHONY: update-tsv
 update-tsv: update-tsv-files sort
 
 .PHONY: update-tsv-files
-update-tsv-files:
+update-tsv-files: src/scripts/xlsx2tsv.py
 	$(foreach x,$(MODULE_NAMES),python3 src/scripts/xlsx2tsv.py obi.xlsx $(x) src/ontology/templates/$(x).tsv;)
+	python3 src/scripts/xlsx2tsv.py obi.xlsx import src/ontology/imports/import.tsv
 
 # Index containing ID, label, and table for all terms
 # TODO: add imports
