@@ -5,12 +5,12 @@ from nanobot import run
 
 
 if __name__ == '__main__':
-    os.chdir("../..")
+    # os.chdir("../..")
     run(
         "build/obi-tables.db",
         "src/table.tsv",
         base_ontology="obi",
-        cgi_path="/OBI/branches/demo-site/views/src/scripts/run.py",
+        # cgi_path="/OBI/branches/demo-site/views/src/scripts/run.py",
         default_params={"view": "tree"},
         default_table="obi",
         hide_index=True,
