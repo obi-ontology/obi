@@ -7,6 +7,40 @@
 # WARN: This file contains significant whitespace, i.e. tabs!
 # Ensure that your text editor shows you those characters.
 
+### Workflow
+#
+# **Setup**
+# 1. [Build database](build/obi-tables.db)
+# 2. [Load OBI](load_obi)
+# 3. [Load imports](load_imports)
+#
+# ** Template Workflow** 
+# 1. [View prototype](./src/scripts/run.py)
+# 2. [Update templates](update_templates)
+# 3. [Rebuild OBI](load_obi)
+#
+# **Imports**
+# Select your import module from the list below to rebuild, then [rebuild OBI](load_obi)
+# - [ChEBI](src/ontology/imports/chebi_imports.owl)
+# - [CL](src/ontology/imports/cl_imports.owl)
+# - [CLO](src/ontology/imports/clo_imports.owl)
+# - [COB](src/ontology/imports/chebi_imports.owl)
+# - [EnVO](src/ontology/imports/chebi_imports.owl)
+# - [GO](src/ontology/imports/chebi_imports.owl)
+# - [HP](src/ontology/imports/chebi_imports.owl)
+# - [IDO](src/ontology/imports/chebi_imports.owl)
+# - [NCBITaxon](src/ontology/imports/chebi_imports.owl)
+# - [OGMS](src/ontology/imports/chebi_imports.owl)
+# - [OMIABIS](src/ontology/imports/chebi_imports.owl)
+# - [OMRSE](src/ontology/imports/chebi_imports.owl)
+# - [OPL](src/ontology/imports/chebi_imports.owl)
+# - [PATO](src/ontology/imports/chebi_imports.owl)
+# - [PR](src/ontology/imports/chebi_imports.owl)
+# - [SO](src/ontology/imports/chebi_imports.owl)
+# - [Uberon](src/ontology/imports/chebi_imports.owl)
+# - [UO](src/ontology/imports/chebi_imports.owl)
+# - [VO](src/ontology/imports/chebi_imports.owl)
+#
 
 ### Configuration
 #
