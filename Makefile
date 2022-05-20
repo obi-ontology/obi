@@ -19,8 +19,11 @@
 # 2. [Update templates](update_templates)
 # 3. [Rebuild OBI](load_obi)
 #
-# **Imports**
-# Select your import module from the list below to rebuild, then [rebuild OBI](load_obi)
+# **Import Workflow**
+# 1. [Update import table](update_import)
+# 2. Select your import module from the list below to rebuild, then [rebuild OBI](load_obi)
+#
+# Import modules:
 # - [ChEBI](src/ontology/imports/chebi_imports.owl)
 # - [CL](src/ontology/imports/cl_imports.owl)
 # - [CLO](src/ontology/imports/clo_imports.owl)
@@ -310,6 +313,11 @@ export_%:
 	echo -e "$$(head -2 src/ontology/templates/$*.tsv)\n$$(sed '1d' build/templates/$(subst -,_,$*).tsv)" > src/ontology/templates/$*.tsv
 
 update_templates: $(EXPORT_TEMPLATES)
+
+.PHONY: update_import
+update_import:
+	python3 -m cmi_pb_script.export data build/obi-tables.db src/ontology/imports import
+	python3 -m cmi_pb_script.export data build/obi-tables.db src/ontology/imports import_config
 
 ### Build
 #
