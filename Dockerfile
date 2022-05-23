@@ -16,8 +16,19 @@ WORKDIR /tools/wiring.py
 RUN git clone https://github.com/ontodev/wiring.rs.git
 RUN mv python_module.rs wiring.rs/src/
 WORKDIR /tools/wiring.py/wiring.rs
-RUN echo "mod python_module;" >> src/lib.rs
-COPY Cargo.toml /tools/wiring.py/wiring.rs/Cargo.toml
+RUN echo 'mod python_module;' >> src/lib.rs
+RUN echo '[lib]' >> Cargo.toml
+RUN echo 'name="wiring_rs"' >> Cargo.toml
+RUN echo 'crate-type = ["cdylib", "lib"]' >> Cargo.toml
+RUN echo '' >> Cargo.toml
+RUN echo '[[bin]]' >> Cargo.toml
+RUN echo 'name = "mybin"' >> Cargo.toml
+RUN echo 'path = "src/main.rs"' >> Cargo.toml
+RUN echo '' >> Cargo.toml
+RUN echo '[dependencies.pyo3]' >> Cargo.toml
+RUN echo 'version = "0.14.5"' >> Cargo.toml
+RUN echo 'features = ["extension-module", "abi3-py36"]' >> Cargo.toml
+
 RUN pip install -U pip maturin
 RUN maturin build
 RUN pip install target/wheels/wiring_rs-0.1.0-cp36-abi3-manylinux_2_28_x86_64.whl
