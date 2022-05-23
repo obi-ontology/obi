@@ -48,7 +48,7 @@ assays	detection technique	empty	split_ontology_label			C 'has part' some (% and
 assays	evaluant	empty	split_ontology_label			C (has_specified_input some (% and 'has role' some 'evaluant role')) and (realizes some ('evaluant role' and ('role of' some %))) SPLIT=|
 assays	measurand	empty	ontology_label			C (has_specified_input some %) and (realizes some ('measurand role' and ('inheres in' some %)))
 assays	analyte	empty	ontology_label			C (has_specified_input some %) and (realizes some ('analyte role' and ('inheres in' some %)))
-assays	device	empty	split_ontology_label			C (has_specified_input some %) and (realizes some (function and ('inheres in' some %))) SPLIT=|
+assays	device	empty	split_ontology_label	from(devices.label)		C (has_specified_input some %) and (realizes some (function and ('inheres in' some %))) SPLIT=|
 assays	reagent	empty	ontology_label			C (has_specified_input some %) and (realizes some ('reagent role' and ('inheres in' some %)))
 assays	molecular label	empty	ontology_label			C (has_specified_input some %) and (realizes some ('molecular label role' and ('inheres in' some %)))
 assays	input	empty	ontology_label			C has_specified_input some %

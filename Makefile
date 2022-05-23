@@ -93,7 +93,7 @@ ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo
 #
 # Use LDTab to create SQLite databases from OWL files.
 build/ldtab.jar: | build
-	curl -L -o $@ "https://github.com/ontodev/ldtab.clj/releases/download/v2022-03-17/ldtab.jar"
+	curl -L -o $@ "https://github.com/ontodev/ldtab.clj/releases/download/v2022-05-23/ldtab.jar"
 
 LDTAB := java -jar build/ldtab.jar
 
@@ -281,7 +281,7 @@ build/obi-tables.db: src/table.tsv src/column.tsv src/datatype.tsv src/prefix.ts
 # Then add OBI using LDTab
 # We use a version of OBI created with ELK reasoner to save time
 .PHONY: load_obi
-load_obi: build/obi_reasoned.owl build/obi_search_view.sql | build/ldtab.jar
+load_obi: build/obi_reasoned.owl build/obi_search_view.sql build/obi-tables.db | build/ldtab.jar
 	sqlite3 build/obi-tables.db "DROP TABLE IF EXISTS obi;"
 	sqlite3 build/obi-tables.db "CREATE TABLE obi (assertion INT NOT NULL, retraction INT NOT NULL DEFAULT 0, graph TEXT NOT NULL, subject TEXT NOT NULL, predicate TEXT NOT NULL, object TEXT NOT NULL, datatype TEXT NOT NULL, annotation TEXT);"
 	$(LDTAB) import --table obi build/obi-tables.db $<

@@ -22,6 +22,8 @@ if __name__ == '__main__':
             "IAO:0000111",
             "IAO:0000114",
             "IAO:0000118",
+            "OBI:0001847",
+            "OBI:9991118",
             "IAO:0000115",
             "IAO:0000119",
             "IAO:0000112",
@@ -30,7 +32,11 @@ if __name__ == '__main__':
             "IAO:0000232",
             "IAO:0000234",
             "IAO:0000233",
+            "rdf:type",
+            "owl:equivalentClass",
             "rdfs:subClassOf",
+            "owl:disjointWith",
             "*"
-        ]
+        ],
+        flask_host="0.0.0.0",
     )
