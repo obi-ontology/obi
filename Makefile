@@ -191,7 +191,6 @@ views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
-	query --update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi-base.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi-base.owl" \
@@ -282,6 +281,15 @@ MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 MODULE_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-modules.rq)
 PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 
+build/obi-base-report.tsv: views/obi-base.owl
+	$(ROBOT) report \
+	--input $< \
+	--labels true \
+	--base-iri "http://purl.obolibrary.org/obo/OBI_" \
+	--fail-on ERROR \
+	--print 10 \
+	--output $@
+
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
@@ -367,7 +375,7 @@ validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
 .PHONY: test
-test: reason verify validate-iris
+test: reason verify validate-iris build/obi-base-report.tsv
 
 
 ### Term reservations
