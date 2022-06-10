@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.8.3/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.8.4/robot.jar
 
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
@@ -374,8 +374,14 @@ reason: build/obi_merged.owl | build/robot.jar
 validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
+.PHONY: validate-dl
+validate-dl: build/dl-validation.txt
+.PRECIOUS: build/dl-validation.txt
+build/dl-validation.txt: build/obi_merged.owl
+	$(ROBOT) validate-profile --input $< --profile dl --output $@
+
 .PHONY: test
-test: reason verify validate-iris build/obi-base-report.tsv
+test: reason verify validate-iris validate-dl build/obi-base-report.tsv
 
 
 ### Term reservations
