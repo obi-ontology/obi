@@ -67,7 +67,7 @@ build/rdftab: | build
 #
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
-	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+	curl -s -F file=@$< -o $@ https://ontofox.hegroup.org/service.php
 
 # Remove annotation properties from CLO to avoid weird labels.
 src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
@@ -281,6 +281,15 @@ MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 MODULE_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-modules.rq)
 PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 
+build/obi-base-report.tsv: views/obi-base.owl
+	$(ROBOT) report \
+	--input $< \
+	--labels true \
+	--base-iri "http://purl.obolibrary.org/obo/OBI_" \
+	--fail-on ERROR \
+	--print 10 \
+	--output $@
+
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
@@ -372,7 +381,7 @@ build/dl-validation.txt: build/obi_merged.owl
 	$(ROBOT) validate-profile --input $< --profile dl --output $@
 
 .PHONY: test
-test: reason verify validate-iris validate-dl
+test: reason verify validate-iris validate-dl build/obi-base-report.tsv
 
 
 ### Term reservations

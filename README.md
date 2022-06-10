@@ -1,6 +1,10 @@
 # Ontology for Biomedical Investigations
 
 [![Build Status](https://travis-ci.com/obi-ontology/obi.svg?branch=master)](https://travis-ci.com/obi-ontology/obi)
+[![Powered by the ROBOT](https://img.shields.io/static/v1?label=Powered%20by&message=ROBOT&color=green&style=flat)](http://robot.obolibrary.org/)
+<a href="http://dashboard.obofoundry.org/dashboard/obi/dashboard.html"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FOBOFoundry%2Fobo-dash.github.io%2Fgh-pages%2Fdashboard%2Fobi%2Fdashboard-score-badge.json" /></a>
+<a href="http://dashboard.obofoundry.org/dashboard/obi/dashboard.html"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FOBOFoundry%2Fobo-dash.github.io%2Fgh-pages%2Fdashboard%2Fobi%2Fdashboard-qc-badge.json" /></a>
+
 
 The Ontology for Biomedical Investigations (OBI) helps you communicate clearly about scientific investigations by defining more than 2500 terms for assays, devices, objectives, and more.
 
@@ -165,7 +169,7 @@ These are the steps with their CLI commands. When using a GUI application the st
 9. `git push --set-upstream origin your-branch-name` push your commit to GitHub
 10. open <https://github.com/obi-ontology/obi> in your browser and click the "Make Pull Request" button
 
-Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR can be merged into `master`. Rinse and repeat!
+Your Pull Request will be automatically tested. If there are problems, we will update your branch. When all tests have passed, your PR will be reviewed by OBI developers. When that review is complete, a senior OBI developer will merge the PR. Rinse and repeat!
 
 
 ## Keeping Things Tidy
