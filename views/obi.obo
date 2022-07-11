@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: obi/2022-01-03/obi.obo
-date: 03:01:2022 13:09
+data-version: obi/2022-07-11/obi.obo
+date: 11:07:2022 15:37
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi.obo
 property_value: defaultLanguage "en" xsd:string
@@ -67,7 +67,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/ xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2022-01-03" xsd:string
+property_value: owl:versionInfo "2022-07-11" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -715,7 +715,7 @@ is_a: CHEBI:33839 ! macromolecule
 [Term]
 id: CHEBI:35366
 name: fatty acid
-def: "Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax." []
+def: "Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax. Natural fatty acids commonly have a chain of 4 to 28 carbons (usually unbranched and even-numbered), which may be saturated or unsaturated. By extension, the term is sometimes used to embrace all acyclic aliphatic carboxylic acids." []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -791,6 +791,11 @@ is_a: CHEBI:6495 ! lipoprotein
 [Term]
 id: CHEBI:39123
 name: calcium cation
+is_a: CHEBI:39124 ! calcium ion
+
+[Term]
+id: CHEBI:39124
+name: calcium ion
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -1332,7 +1337,7 @@ is_a: GO:0005575 ! cellular_component
 [Term]
 id: GO:0001046
 name: core promoter sequence-specific DNA binding
-def: "Interacting selectively and non-covalently with a sequence of DNA that is part of a core promoter region. The core promoter is composed of the transcription start site and binding sites for the RNA polymerase and the basal transcription machinery. The transcribed region might be described as a gene, cistron, or operon." []
+def: "Binding to a sequence of DNA that is part of a core promoter region. The core promoter is composed of the transcription start site and binding sites for the RNA polymerase and the basal transcription machinery. The transcribed region might be described as a gene, cistron, or operon." []
 is_a: GO:0003674 ! molecular_function
 is_a: GO:0043565 ! sequence-specific DNA binding
 
@@ -1443,7 +1448,7 @@ is_a: BFO:0000015 ! process
 [Term]
 id: GO:0003823
 name: antigen binding
-def: "Interacting selectively and non-covalently with an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen." []
+def: "Binding to an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen." []
 is_a: GO:0003674 ! molecular_function
 
 [Term]
@@ -1521,7 +1526,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0006338
 name: chromatin remodeling
-def: "Dynamic structural changes to eukaryotic chromatin occurring throughout the cell division cycle. These changes range from the local changes necessary for transcriptional regulation to global changes necessary for chromosome segregation." []
+def: "A dynamic process of chromatin reorganization resulting in changes to chromatin structure. These changes allow DNA metabolic processes such as transcriptional regulation, DNA recombination, DNA repair, and DNA replication." []
 is_a: GO:0009987 ! cellular process
 
 [Term]
@@ -1588,7 +1593,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0010467
 name: gene expression
-def: "The process in which a gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." []
+def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, translation and maturation for protein-coding genes." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -1636,7 +1641,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0019904
 name: protein domain specific binding
-def: "Interacting selectively and non-covalently with a specific domain of a protein." []
+def: "Binding to a specific domain of a protein." []
 is_a: OBI:0001588 ! binding
 
 [Term]
@@ -1743,8 +1748,8 @@ is_a: GO:0001816 ! cytokine production
 
 [Term]
 id: GO:0032617
-name: interleukin-14 production
-def: "The appearance of interleukin-14 due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
+name: obsolete interleukin-14 production
+def: "OBSOLETE. The appearance of interleukin-14 due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
 is_a: GO:0001816 ! cytokine production
 
 [Term]
@@ -1985,18 +1990,6 @@ def: "The appearance of chemokine (C-C motif) ligand 20 (CCL20) due to biosynthe
 is_a: GO:0032602 ! chemokine production
 
 [Term]
-id: GO:0040029
-name: regulation of gene expression, epigenetic
-def: "Any process that modulates the frequency, rate or extent of gene expression; the process is mitotically or meiotically heritable, or is stably self-propagated in the cytoplasm of a resting cell, and does not entail a change in DNA sequence." []
-is_a: GO:0040030 ! regulation of molecular function, epigenetic
-
-[Term]
-id: GO:0040030
-name: regulation of molecular function, epigenetic
-def: "Any heritable epigenetic process that modulates the frequency, rate or extent of protein function by self-perpetuating conformational conversions of normal proteins in healthy cells. This is distinct from, though mechanistically analogous to, disease states associated with prion propagation and amyloidogenesis. A single protein, if it carries a glutamine/asparagine-rich ('prion') domain, can sometimes stably exist in at least two distinct physical states, each associated with a different phenotype; propagation of one of these traits is achieved by a self-perpetuating change in the protein from one form to the other, mediated by conformational changes in the glutamine/asparagine-rich domain. Prion domains are both modular and transferable to other proteins, on which they can confer a heritable epigenetic alteration of function; existing bioinformatics data indicate that they are rare in non-eukarya, but common in eukarya." []
-is_a: GO:0008150 ! biological_process
-
-[Term]
 id: GO:0042098
 name: T cell proliferation
 def: "The expansion of a T cell population by cell division. Follows T cell activation." []
@@ -2032,7 +2025,7 @@ is_a: OBI:0000427 ! enzyme
 [Term]
 id: GO:0042605
 name: peptide antigen binding
-def: "Interacting selectively and non-covalently with an antigen peptide." []
+def: "Binding to an antigen peptide." []
 is_a: GO:0003823 ! antigen binding
 
 [Term]
@@ -2056,14 +2049,14 @@ is_a: GO:0001906 ! cell killing
 [Term]
 id: GO:0043565
 name: sequence-specific DNA binding
-def: "Interacting selectively and non-covalently with DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA e.g. promotor binding or rDNA binding." []
+def: "Binding to DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA e.g. promotor binding or rDNA binding." []
 is_a: OBI:0001588 ! binding
 
 [Term]
 id: GO:0044030
 name: regulation of DNA methylation
 def: "Any process that modulates the frequency, rate or extent of the covalent transfer of a methyl group to either N-6 of adenine or C-5 or N-4 of cytosine." []
-is_a: GO:0040030 ! regulation of molecular function, epigenetic
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0044807
@@ -2286,6 +2279,18 @@ id: GO:0097392
 name: chemokine (C-X-C motif) ligand 16 production
 def: "The appearance of chemokine (C-X-C motif) ligand 16 (CXCL16) due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
 is_a: GO:0032602 ! chemokine production
+
+[Term]
+id: GO:0140730
+name: amphiregulin production
+def: "The appearance of amphiregulin due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels. Amphiregulin (AREG) is a ligand of the epidermal growth factor receptor (EGFR), a widely expressed transmembrane tyrosine kinase. AREG is synthesized as a membrane-anchored precursor protein that can engage in juxtacrine signaling on adjacent cells. Alternatively, after proteolytic processing by cell membrane proteases, mainly TACE/ADAM17, AREG is secreted and behaves as an autocrine or paracrine factor." []
+is_a: GO:0001816 ! cytokine production
+
+[Term]
+id: GO:0140779
+name: XCL1 production
+def: "The appearance of XCL1 due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
+is_a: GO:0001816 ! cytokine production
 
 [Term]
 id: HP:0000855
@@ -4305,7 +4310,7 @@ is_a: OBI:0000094 ! material processing
 
 [Term]
 id: OBI:0000109
-name: biological vector role
+name: obsolete biological vector role
 def: "a biological vector role is a material to be added role that is realized by the process of transmitting material to the organism that is the target of the transmission." []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
@@ -5423,7 +5428,7 @@ is_obsolete: true
 id: OBI:0000447
 name: intra cellular electrophysiology recording assay
 def: "An electrophysiology recording assay where the recording location of the electrode is intracellular" []
-is_a: OBI:0000070 ! assay
+is_a: OBI:0002176 ! electrophysiology assay
 
 [Term]
 id: OBI:0000448
@@ -5460,7 +5465,7 @@ is_a: BFO:0000034 ! function
 id: OBI:0000454
 name: extracellular electrophysiology recording assay
 def: "An electrophysiology recording assay where the recording location of the electrode is extracellular" []
-is_a: OBI:0000070 ! assay
+is_a: OBI:0002176 ! electrophysiology assay
 
 [Term]
 id: OBI:0000455
@@ -7728,7 +7733,7 @@ is_a: OBI:0000443 ! analyte assay
 [Term]
 id: OBI:0000875
 name: viral hemagglutination inhibition assay
-def: "An assay that measures the ability of an evaluant to inhibit hemagglutination by a virus. Hemagglutinin is a viral protein which binds to sialic acid receptors on cells or to erythrocytes, causing the cells to clump. Loss of clumping indicates hemagglutination inhibition by the evaluant." []
+def: "An assay that measures the ability of an evaluant to inhibit hemagglutination by a virus. Hemagglutinin is a viral protein which binds to sialic acid receptors on cells or to erythrocytes, causing the cells to clump. Loss of clumping indicates that the evaluant blocks binding of hemagglutinin to sialic acid receptors." []
 synonym: "biological activity" EXACT []
 synonym: "HAI" EXACT []
 synonym: "hemagglutination inhibition" EXACT []
@@ -8394,9 +8399,10 @@ is_obsolete: true
 
 [Term]
 id: OBI:0000988
-name: performing a diagnosis
+name: obsolete performing a diagnosis
 def: "The interpretation of the information available about bodily features (clinical picture) of a patient resulting in a diagnosis" []
-is_a: OBI:0200000 ! data transformation
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
 
 [Term]
 id: OBI:0000989
@@ -9797,9 +9803,10 @@ is_a: OBI:0500000 ! study design
 [Term]
 id: OBI:0001215
 name: intracellular material detection assay measuring epitope specific perforin release
-def: "A T cell epitope specific perforin release assay that uses an intracellular material detection by flow cytometry assay." []
+def: "A flow cytometry assay that detects epitope specific perforin release by T cells." []
 synonym: "perforin release|intracellular staining" EXACT []
-is_a: OBI:0001497 ! biological activity assay measuring epitope specific perforin release by T cells
+is_a: OBI:0000916 ! flow cytometry assay
+is_a: OBI:0001497 ! assay measuring epitope specific perforin release by T cells
 
 [Term]
 id: OBI:0001216
@@ -10008,9 +10015,10 @@ is_a: OBI:0001363 ! assay measuring epitope specific interleukin-23 production b
 [Term]
 id: OBI:0001245
 name: detection of specific nucleic acids with complementary probes assay measuring epitope specific perforin release
-def: "A T cell epitope specific perforin release assay that uses a detection of specific nucleic acids with complementary probes assay." []
+def: "A detection of specific nucleic acids with complementary probes assay that detects epitope specific perforin release by T cells." []
 synonym: "perforin release|RNA/DNA detection" EXACT []
-is_a: OBI:0001497 ! biological activity assay measuring epitope specific perforin release by T cells
+is_a: OBI:0000874 ! detection of specific nucleic acid polymers with complementary probes
+is_a: OBI:0001497 ! assay measuring epitope specific perforin release by T cells
 
 [Term]
 id: OBI:0001246
@@ -10176,7 +10184,7 @@ is_a: OBI:0001391 ! assay measuring epitope specific interleukin-12 production b
 
 [Term]
 id: OBI:0001269
-name: biological activity assay measuring epitope specific cytotoxic T cell degranulation
+name: assay measuring epitope specific cytotoxic T cell degranulation
 def: "A T cell epitope dependent biological activity assay that detects cytotoxic T cell degranulation." []
 synonym: "degranulation|biological activity" EXACT []
 is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
@@ -10531,9 +10539,10 @@ is_a: OBI:0001414 ! assay measuring epitope specific interferon-gamma production
 [Term]
 id: OBI:0001322
 name: ELISPOT assay measuring epitope specific granzyme B release by T cells
-def: "A T cell epitope specific granzyme B release assay that uses an ELISPOT assay." []
+def: "An enzyme-linked immunospot assay that detects  epitope specific granzyme B release by T cells." []
 synonym: "granzyme B release|ELISPOT" EXACT []
-is_a: OBI:0001436 ! biological activity assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0001436 ! assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0600031 ! enzyme-linked immunospot assay
 
 [Term]
 id: OBI:0001323
@@ -11200,9 +11209,10 @@ is_a: OBI:0500000 ! study design
 [Term]
 id: OBI:0001423
 name: intracellular material detection measuring epitope specific granzyme B release by T cells
-def: "A T cell epitope specific granzyme B release assay that uses an intracellular material detection by flow cytometry assay." []
+def: "A flow cytometry assay that detects epitope specific granzyme B release by T cells" []
 synonym: "granzyme B release|intracellular staining" EXACT []
-is_a: OBI:0001436 ! biological activity assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0000916 ! flow cytometry assay
+is_a: OBI:0001436 ! assay measuring epitope specific granzyme B release by T cells
 
 [Term]
 id: OBI:0001425
@@ -11256,10 +11266,10 @@ is_a: OBI:0500000 ! study design
 
 [Term]
 id: OBI:0001436
-name: biological activity assay measuring epitope specific granzyme B release by T cells
+name: assay measuring epitope specific granzyme B release by T cells
 def: "A T cell epitope specific cytotoxic T cell degranulation assay that detects granzyme B release by T cells." []
 synonym: "granzyme B release|biological activity" EXACT []
-is_a: OBI:0001269 ! biological activity assay measuring epitope specific cytotoxic T cell degranulation
+is_a: OBI:0001269 ! assay measuring epitope specific cytotoxic T cell degranulation
 
 [Term]
 id: OBI:0001437
@@ -11418,9 +11428,10 @@ is_a: OBI:0000115 ! intervention design
 [Term]
 id: OBI:0001461
 name: ELISA measuring epitope specific granzyme B release by T cells
-def: "A T cell epitope specific granzyme B release assay that uses an ELISA." []
+def: "An enzyme-linked immunosorbent assay that detects epitope specific granzyme B release by T cells." []
 synonym: "granzyme B release|ELISA" EXACT []
-is_a: OBI:0001436 ! biological activity assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+is_a: OBI:0001436 ! assay measuring epitope specific granzyme B release by T cells
 
 [Term]
 id: OBI:0001462
@@ -11618,7 +11629,7 @@ is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 
 [Term]
 id: OBI:0001491
-name: radioactivity detection binding assay
+name: binding assay using radioactivity detection
 def: "A binding assay that uses radioactivity detection as an indicator of binding." []
 is_a: OBI:0001146 ! binding assay
 
@@ -11659,10 +11670,10 @@ is_a: OBI:0001217 ! assay measuring epitope specific interleukin-22 production b
 
 [Term]
 id: OBI:0001497
-name: biological activity assay measuring epitope specific perforin release by T cells
+name: assay measuring epitope specific perforin release by T cells
 def: "A T cell epitope specific cytotoxic T cell degranulation assay that detects perforin release by T cells." []
 synonym: "perforin release|biological activity" EXACT []
-is_a: OBI:0001269 ! biological activity assay measuring epitope specific cytotoxic T cell degranulation
+is_a: OBI:0001269 ! assay measuring epitope specific cytotoxic T cell degranulation
 
 [Term]
 id: OBI:0001498
@@ -11672,8 +11683,8 @@ is_a: OBI:0000997 ! growth environment
 
 [Term]
 id: OBI:0001499
-name: fluorescence detection binding assay
-def: "A binding assay that uses fluorescence detection as an indicator of binding" []
+name: binding assay using fluorescence detection
+def: "A binding assay that uses fluorescence detection as an indicator of binding." []
 is_a: OBI:0001146 ! binding assay
 
 [Term]
@@ -11766,7 +11777,7 @@ id: OBI:0001513
 name: radioactivity detection assay measuring competitive binding of a purified-MHC:ligand complex
 def: "A radioactivity detection assay that detects loss of binding of a known reference ligand to purified-MHC due to competition by the ligand under investigation." []
 synonym: "qualitative binding|purified MHC/competitive/radioactivity" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001555 ! assay measuring binding of a purified-MHC:ligand complex
 
 [Term]
@@ -11787,7 +11798,7 @@ id: OBI:0001516
 name: radioactivity detection assay measuring half maximal effective concentration [EC50] to determine direct binding of a cell-lysate-MHC:ligand complex
 def: "A radioactivity detection assay that measures half maximal effective concentration (EC50) to detect the direct binding of a cell-lysate-MHC molecule with a ligand." []
 synonym: "half maximal effective concentration (EC50)|lysate MHC/direct/radioactivity|nM" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001991 ! assay measuring the half maximal effective concentration [EC50] of a MHC:ligand complex
 
 [Term]
@@ -11795,7 +11806,7 @@ id: OBI:0001517
 name: radioactivity detection assay measuring half maximal inhibitory concentration [IC50] to determine competitive binding of a cell-bound-MHC:ligand complex
 def: "A radioactivity detection assay that measures half maximal inhibitory concentration (IC50) to detect the loss of binding of a known reference ligand to cell-bound-MHC due to competition by the ligand under investigation." []
 synonym: "half maximal inhibitory concentration (IC50)|cellular MHC/competitive/radioactivity|nM" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001992 ! assay measuring the half maximal inhibitory concentration [IC50] of a MHC:ligand complex
 
 [Term]
@@ -11810,7 +11821,7 @@ id: OBI:0001519
 name: fluorescence detection assay measuring direct binding of a cell-lysate-MHC:ligand complex
 def: "A fluorescence detection assay that detects direct binding of a cell-lysate-MHC molecule with a ligand." []
 synonym: "qualitative binding|lysate MHC/direct/fluorescence" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001579 ! assay measuring binding of a cell-lysate-MHC:ligand complex
 
 [Term]
@@ -11818,7 +11829,7 @@ id: OBI:0001520
 name: fluorescence detection assay measuring half maximal inhibitory concentration [IC50] to determine competitive binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures half maximal inhibitory concentration (IC50) to detect the loss of binding of a known reference ligand to cell-bound-MHC due to competition by the ligand under investigation." []
 synonym: "half maximal inhibitory concentration (IC50)|cellular MHC/competitive/fluorescence|nM" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001992 ! assay measuring the half maximal inhibitory concentration [IC50] of a MHC:ligand complex
 
 [Term]
@@ -11849,7 +11860,7 @@ id: OBI:0001524
 name: fluorescence detection assay measuring equilibrium association constant [KA] to determine direct binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures equilibrium association constant (KA) to detect the direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "association constant KA|cellular MHC/direct/fluorescence|1/M" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001987 ! assay measuring the association constant [KA] of a MHC:ligand complex
 
 [Term]
@@ -11895,7 +11906,7 @@ id: OBI:0001531
 name: fluorescence detection assay measuring half life to determine direct binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that measures half life to detect the direct binding of a purified-MHC molecule with a ligand." []
 synonym: "half life|purified MHC/direct/fluorescence|min" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001990 ! assay measuring the half life of a MHC:ligand complex
 
 [Term]
@@ -11917,7 +11928,7 @@ id: OBI:0001534
 name: fluorescence detection assay measuring competitive binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that detects loss of binding of a known reference ligand to purified-MHC due to competition by the ligand under investigation." []
 synonym: "qualitative binding|purified MHC/competitive/fluorescence" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001555 ! assay measuring binding of a purified-MHC:ligand complex
 
 [Term]
@@ -11938,7 +11949,7 @@ id: OBI:0001537
 name: fluorescence detection assay measuring equilibrium dissociation constant [KD] to determine competitive binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that measures equilibrium dissociation constant (KD) to detect the loss of binding of a known reference ligand to purified-MHC due to competition by the ligand under investigation." []
 synonym: "dissociation constant KD|purified MHC/competitive/fluorescence|nM" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001988 ! assay measuring the dissociation constant [KD] of a MHC:ligand complex
 
 [Term]
@@ -11952,7 +11963,7 @@ id: OBI:0001539
 name: fluorescence detection assay measuring equilibrium dissociation constant [KD] to determine competitive binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures equilibrium dissociation constant (KD) to detect the loss of binding of a known reference ligand to cell-bound-MHC due to competition by the ligand under investigation." []
 synonym: "dissociation constant KD|cellular MHC/competitive/fluorescence|nM" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001988 ! assay measuring the dissociation constant [KD] of a MHC:ligand complex
 
 [Term]
@@ -11969,7 +11980,7 @@ id: OBI:0001541
 name: fluorescence detection assay measuring binding on rate [kon] to determine direct binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay measuring binding on rate (kon) to detect direct binding of a purified-MHC:ligand complex." []
 synonym: "on rate|purified MHC/direct/fluorescence|nM^-1s^-1" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001994 ! assay measuring the MHC ligand binding on rate [kon] of a MHC:ligand complex
 
 [Term]
@@ -11993,7 +12004,7 @@ id: OBI:0001544
 name: radioactivity detection assay measuring equilibrium dissociation constant [KD] to determine competitive binding of a cell-lysate-MHC:ligand complex
 def: "A radioactivity detection assay that measures equilibrium dissociation constant (KD) to detect the loss of binding of a known reference ligand to cell-lysate-MHC due to competition by the ligand under investigation." []
 synonym: "dissociation constant KD|lysate MHC/competitive/radioactivity|nM" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001988 ! assay measuring the dissociation constant [KD] of a MHC:ligand complex
 
 [Term]
@@ -12028,7 +12039,7 @@ id: OBI:0001549
 name: radioactivity detection assay measuring equilibrium dissociation constant [KD] to determine competitive binding of a cell-bound-MHC:ligand complex
 def: "A radioactivity detection assay that measures equilibrium dissociation constant (KD) to detect the loss of binding of a known reference ligand to cell-bound-MHC due to competition by the ligand under investigation." []
 synonym: "dissociation constant KD|cellular MHC/competitive/radioactivity|nM" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001988 ! assay measuring the dissociation constant [KD] of a MHC:ligand complex
 
 [Term]
@@ -12077,7 +12088,7 @@ id: OBI:0001556
 name: radioactivity detection assay measuring direct binding of a cell-lysate-MHC:ligand complex
 def: "A radioactivity detection assay that detects direct binding of a cell-lysate-MHC molecule with a ligand." []
 synonym: "qualitative binding|lysate MHC/direct/radioactivity" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001579 ! assay measuring binding of a cell-lysate-MHC:ligand complex
 
 [Term]
@@ -12091,7 +12102,7 @@ id: OBI:0001558
 name: radioactivity detection assay measuring half life to determine direct binding of a cell-bound-MHC:ligand complex
 def: "A radioactivity detection assay that measures half life to detect the direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "half life|cellular MHC/direct/radioactivity|min" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001990 ! assay measuring the half life of a MHC:ligand complex
 
 [Term]
@@ -12099,7 +12110,7 @@ id: OBI:0001559
 name: fluorescence detection assay measuring half life to determine direct binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures half life to detect the direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "half life|cellular MHC/direct/fluorescence|min" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001990 ! assay measuring the half life of a MHC:ligand complex
 
 [Term]
@@ -12114,7 +12125,7 @@ id: OBI:0001561
 name: fluorescence detection assay measuring half maximal effective concentration [EC50] to determine direct binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures half maximal effective concentration (EC50) to detect direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "half maximal effective concentration (EC50)|cellular MHC/direct/fluorescence|nM" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001991 ! assay measuring the half maximal effective concentration [EC50] of a MHC:ligand complex
 
 [Term]
@@ -12144,7 +12155,7 @@ id: OBI:0001565
 name: radioactivity detection assay measuring half life to determine direct binding of a cell-lysate-MHC:ligand complex
 def: "A radioactivity detection assay that measures half life to detect the direct binding of a cell-lysate-MHC molecule with a ligand." []
 synonym: "half life|lysate MHC/direct/radioactivity|min" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001990 ! assay measuring the half life of a MHC:ligand complex
 
 [Term]
@@ -12159,7 +12170,7 @@ id: OBI:0001567
 name: radioactivity detection assay measuring binding off rate [koff] to determine direct binding of a cell-lysate-MHC:ligand complex
 def: "A radioactivity detection assay that measures binding off rate [koff] to detect direct binding of a cell-lysate-MHC molecule with a ligand." []
 synonym: "off rate|lysate MHC/direct/radioactivity|1/s" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001993 ! assay measuring the off rate measurement [koff] of a MHC:ligand complex
 
 [Term]
@@ -12167,7 +12178,7 @@ id: OBI:0001568
 name: radioactivity detection assay measuring half maximal inhibitory concentration [IC50] to determine competitive binding of a purified-MHC:ligand complex
 def: "A radioactivity detection assay that measures half maximal inhibitory concentration (IC50) to detect the loss of binding of a known reference ligand to purified-MHC due to competition by the ligand under investigation." []
 synonym: "half maximal inhibitory concentration (IC50)|purified MHC/competitive/radioactivity|nM" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001992 ! assay measuring the half maximal inhibitory concentration [IC50] of a MHC:ligand complex
 
 [Term]
@@ -12175,7 +12186,7 @@ id: OBI:0001569
 name: fluorescence detection assay measuring binding off rate [koff] to determine direct binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that measures binding off rate [koff] to detect direct binding of a purified-MHC molecule with a ligand." []
 synonym: "off rate|purified MHC/direct/fluorescence|1/s" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001993 ! assay measuring the off rate measurement [koff] of a MHC:ligand complex
 
 [Term]
@@ -12299,7 +12310,7 @@ id: OBI:0001586
 name: radioactivity detection assay measuring half life to determine direct binding of a purified-MHC:ligand complex
 def: "A radioactivity detection assay that measures half life to detect the direct binding of a purified-MHC molecule with a ligand." []
 synonym: "half life|purified MHC/direct/radioactivity|min" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001990 ! assay measuring the half life of a MHC:ligand complex
 
 [Term]
@@ -12328,7 +12339,7 @@ id: OBI:0001590
 name: fluorescence detection assay measuring direct binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that detects direct binding of a purified-MHC molecule with a ligand." []
 synonym: "qualitative binding|purified MHC/direct/fluorescence" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001555 ! assay measuring binding of a purified-MHC:ligand complex
 
 [Term]
@@ -12342,7 +12353,7 @@ id: OBI:0001592
 name: fluorescence detection assay measuring half maximal effective concentration [EC50] to determine direct binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that measures half maximal effective concentration (EC50) to detect direct binding of a purified-MHC molecule with a ligand." []
 synonym: "half maximal effective concentration (EC50)|purified MHC/direct/fluorescence|nM" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001991 ! assay measuring the half maximal effective concentration [EC50] of a MHC:ligand complex
 
 [Term]
@@ -12356,7 +12367,7 @@ id: OBI:0001594
 name: fluorescence detection assay measuring competitive binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that detects loss of binding of a known reference ligand to cell-bound-MHC due to competition by the ligand under investigation." []
 synonym: "qualitative binding|cellular MHC/competitive/fluorescence" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001550 ! assay measuring binding of a cell-bound-MHC:ligand complex
 
 [Term]
@@ -12391,7 +12402,7 @@ id: OBI:0001599
 name: radioactivity detection assay measuring competitive binding of a cell-bound-MHC:ligand complex
 def: "A radioactivity detection assay that detects loss of binding of a known reference ligand to cell-bound-MHC due to competition by the ligand under investigation." []
 synonym: "qualitative binding|cellular MHC/competitive/radioactivity" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001550 ! assay measuring binding of a cell-bound-MHC:ligand complex
 
 [Term]
@@ -12414,7 +12425,7 @@ id: OBI:0001602
 name: radioactivity detection assay measuring direct binding of a cell-bound-MHC:ligand complex
 def: "A radioactivity detection assay that detects direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "qualitative binding|cellular MHC/direct/radioactivity" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001550 ! assay measuring binding of a cell-bound-MHC:ligand complex
 
 [Term]
@@ -12429,7 +12440,7 @@ id: OBI:0001604
 name: fluorescence detection assay measuring 50% dissociation of binding temperature [Tm] of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that measures the 50% dissociation of binding temperature of a purified-MHC molecule with a ligand." []
 synonym: "50% dissociation temperature|purified MHC/direct/fluorescence|°C" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0003145 ! assay measuring quantitative binding of a MHC:ligand complex
 
 [Term]
@@ -12444,7 +12455,7 @@ id: OBI:0001606
 name: fluorescence detection assay measuring direct binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that detects direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "qualitative binding|cellular MHC/direct/fluorescence" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001550 ! assay measuring binding of a cell-bound-MHC:ligand complex
 
 [Term]
@@ -12459,7 +12470,7 @@ id: OBI:0001608
 name: radioactivity detection assay measuring direct binding of a purified-MHC:ligand complex
 def: "A radioactivity detection assay that detects direct binding of a purified-MHC molecule with a ligand." []
 synonym: "qualitative binding|purified MHC/direct/radioactivity" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001555 ! assay measuring binding of a purified-MHC:ligand complex
 
 [Term]
@@ -12498,7 +12509,7 @@ id: OBI:0001613
 name: fluorescence detection assay measuring half maximal inhibitory concentration [IC50] to determine competitive binding of a purified-MHC:ligand complex
 def: "A fluorescence detection assay that measures half maximal inhibitory concentration (IC50) to detect the loss of binding of a known reference ligand to purified-MHC due to competition by the ligand under investigation." []
 synonym: "half maximal inhibitory concentration (IC50)|purified MHC/competitive/fluorescence|nM" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001992 ! assay measuring the half maximal inhibitory concentration [IC50] of a MHC:ligand complex
 
 [Term]
@@ -12833,9 +12844,10 @@ is_a: OBI:0001703 ! assay measuring qualitative binding of a B cell epitope:anti
 [Term]
 id: OBI:0001660
 name: intracellular material detection assay measuring epitope specific granzyme A release by T cells
-def: "A T cell epitope specific granzyme A release assay that uses an intracellular material detection by flow cytometry assay." []
+def: "A flow cytometry assay that detects epitope specific granzyme A release by T cells." []
 synonym: "granzyme A release|intracellular staining" EXACT []
-is_a: OBI:0001809 ! biological activity assay measuring epitope specific granzyme A release by T cells
+is_a: OBI:0000916 ! flow cytometry assay
+is_a: OBI:0001809 ! assay measuring epitope specific granzyme A release by T cells
 
 [Term]
 id: OBI:0001661
@@ -12855,23 +12867,25 @@ is_a: OBI:0001703 ! assay measuring qualitative binding of a B cell epitope:anti
 [Term]
 id: OBI:0001663
 name: ELISA measuring epitope specific granulysin release by T cells
-def: "A T cell epitope specific granulysin release assay that uses an ELISA." []
+def: "An enzyme-linked immunosorbent assay that detects epitope specific granulysin release by T cells." []
 synonym: "granulysin release|ELISA" EXACT []
-is_a: OBI:0001810 ! biological activity assay measuring epitope specific granulysin release by T cells
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+is_a: OBI:0001810 ! assay measuring epitope specific granulysin release by T cells
 
 [Term]
 id: OBI:0001664
 name: intracellular material detection assay measuring epitope specific granulysin release by T cells
-def: "A T cell epitope specific granulysin release assay that uses an intracellular material detection by flow cytometry assay." []
+def: "A flow cytometry assay that detects epitope specific granulysin release by T cells." []
 synonym: "granulysin release|intracellular staining" EXACT []
-is_a: OBI:0001810 ! biological activity assay measuring epitope specific granulysin release by T cells
+is_a: OBI:0000916 ! flow cytometry assay
+is_a: OBI:0001810 ! assay measuring epitope specific granulysin release by T cells
 
 [Term]
 id: OBI:0001665
 name: fluorescence detection assay measuring binding off rate [koff] to determine direct binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures binding off rate [koff] to detect direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "off rate|cellular MHC/direct/fluorescence|1/s" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001993 ! assay measuring the off rate measurement [koff] of a MHC:ligand complex
 
 [Term]
@@ -12879,7 +12893,7 @@ id: OBI:0001666
 name: fluorescence detection assay measuring binding on rate [kon] to determine direct binding of a cell-bound-MHC:ligand complex
 def: "A fluorescence detection assay that measures binding on rate (kon) to detect direct binding of a cell-bound-MHC molecule with a ligand." []
 synonym: "on rate|cellular MHC/direct/fluorescence|nM^-1s^-1" EXACT []
-is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 is_a: OBI:0001994 ! assay measuring the MHC ligand binding on rate [kon] of a MHC:ligand complex
 
 [Term]
@@ -13942,17 +13956,17 @@ is_a: OBI:0001406 ! assay measuring epitope specific interleukin-3 production by
 
 [Term]
 id: OBI:0001809
-name: biological activity assay measuring epitope specific granzyme A release by T cells
+name: assay measuring epitope specific granzyme A release by T cells
 def: "A T cell epitope specific cytotoxic T cell degranulation assay that detects granzyme A release by T cells." []
 synonym: "granzyme A release|biological activity" EXACT []
-is_a: OBI:0001269 ! biological activity assay measuring epitope specific cytotoxic T cell degranulation
+is_a: OBI:0001269 ! assay measuring epitope specific cytotoxic T cell degranulation
 
 [Term]
 id: OBI:0001810
-name: biological activity assay measuring epitope specific granulysin release by T cells
+name: assay measuring epitope specific granulysin release by T cells
 def: "A T cell epitope specific cytotoxic T cell degranulation assay that detects granulysin release by T cells." []
 synonym: "granulysin release|biological activity" EXACT []
-is_a: OBI:0001269 ! biological activity assay measuring epitope specific cytotoxic T cell degranulation
+is_a: OBI:0001269 ! assay measuring epitope specific cytotoxic T cell degranulation
 
 [Term]
 id: OBI:0001811
@@ -15093,7 +15107,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:0001979
 name: fluorescence quenching binding assay
 def: "A binding assay in which the proximity of two entities is monitored by measuring a fluorescent signal of one of the entities that gets reduced if the two entities are cliose to each other." []
-is_a: OBI:0001146 ! binding assay
+is_a: OBI:0001499 ! binding assay using fluorescence detection
 
 [Term]
 id: OBI:0001980
@@ -15156,7 +15170,7 @@ id: OBI:0001989
 name: radioactivity detection assay measuring equilibrium dissociation constant [KD] to determine competitive binding of a purified-MHC:ligand complex
 def: "A radioactivity detection assay that measures equilibrium dissociation constant (KD) to detect the loss of binding of a known reference ligand to purified-MHC due to competition by the ligand under investigation." []
 synonym: "dissociation constant KD|purified MHC/direct/radioactivity|nM" EXACT []
-is_a: OBI:0000201 ! radioactivity detection
+is_a: OBI:0001491 ! binding assay using radioactivity detection
 is_a: OBI:0001988 ! assay measuring the dissociation constant [KD] of a MHC:ligand complex
 
 [Term]
@@ -15709,30 +15723,34 @@ is_a: OBI:1110130 ! biological activity assay measuring epitope specific T cell 
 [Term]
 id: OBI:0002063
 name: cytometric bead array assay measuring epitope specific granzyme A release by T cells
-def: "A T cell epitope specific granzyme A release assay that uses a cytometric bead array assay." []
+def: "A cytometric bead array assay that detects epitope specific granzyme A release by T cells." []
 synonym: "granzyme A release|cytometric bead array" EXACT []
-is_a: OBI:0001809 ! biological activity assay measuring epitope specific granzyme A release by T cells
+is_a: OBI:0001809 ! assay measuring epitope specific granzyme A release by T cells
+is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 
 [Term]
 id: OBI:0002064
 name: detection of specific nucleic acids with complementary probes assay measuring epitope specific granzyme A release by T cells
-def: "A T cell epitope specific granzyme A release assay that uses a detection of specific nucleic acids with complementary probes assay." []
+def: "A detection of specific nucleic acids with complementary probes assay that detects epitope specific granzyme A release by T cells." []
 synonym: "granzyme A release|RNA/DNA detection" EXACT []
-is_a: OBI:0001809 ! biological activity assay measuring epitope specific granzyme A release by T cells
+is_a: OBI:0000874 ! detection of specific nucleic acid polymers with complementary probes
+is_a: OBI:0001809 ! assay measuring epitope specific granzyme A release by T cells
 
 [Term]
 id: OBI:0002065
 name: cytometric bead array assay measuring epitope specific granzyme B release by T cells
-def: "A T cell epitope specific granzyme B release assay that uses a cytometric bead array assay." []
+def: "A cytometric bead array assay that detects epitope specific granzyme B release by T cells." []
 synonym: "granzyme B release|cytometric bead array" EXACT []
-is_a: OBI:0001436 ! biological activity assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0001436 ! assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 
 [Term]
 id: OBI:0002066
 name: detection of specific nucleic acids with complementary probes assay measuring epitope specific granzyme B release by T cells
-def: "A T cell epitope specific granzyme B release assay that uses a detection of specific nucleic acids with complementary probes assay." []
+def: "A detection of specific nucleic acids with complementary probes assay that detects epitope specific granzyme B release by T cells" []
 synonym: "granzyme B release|RNA/DNA detection" EXACT []
-is_a: OBI:0001436 ! biological activity assay measuring epitope specific granzyme B release by T cells
+is_a: OBI:0000874 ! detection of specific nucleic acid polymers with complementary probes
+is_a: OBI:0001436 ! assay measuring epitope specific granzyme B release by T cells
 
 [Term]
 id: OBI:0002067
@@ -15753,9 +15771,10 @@ is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 [Term]
 id: OBI:0002069
 name: ELISPOT assay measuring epitope specific perforin release by T cells
-def: "A T cell epitope specific perforin release assay that uses an ELISPOT assay." []
+def: "An enzyme-linked immunospot assay that detects epitope specific perforin release by T cells." []
 synonym: "perforin release|ELISPOT" EXACT []
-is_a: OBI:0001497 ! biological activity assay measuring epitope specific perforin release by T cells
+is_a: OBI:0001497 ! assay measuring epitope specific perforin release by T cells
+is_a: OBI:0600031 ! enzyme-linked immunospot assay
 
 [Term]
 id: OBI:0002070
@@ -18705,9 +18724,10 @@ is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response a
 [Term]
 id: OBI:0002672
 name: ELISA measuring epitope specific perforin release by T cells
-def: "An assay of epitope specific perforin release by T cells that uses an ELISA." []
+def: "An enzyme-linked immunosorbent assay that detects epitope specific perforin release by T cells." []
 synonym: "perforin release|ELISA" EXACT []
-is_a: OBI:0001497 ! biological activity assay measuring epitope specific perforin release by T cells
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+is_a: OBI:0001497 ! assay measuring epitope specific perforin release by T cells
 
 [Term]
 id: OBI:0002673
@@ -19095,7 +19115,7 @@ is_a: OBI:0002696 ! insecticide resistance by monitoring known mutations assay
 
 [Term]
 id: OBI:0002726
-name: insecticide resistance by PCR-RELP assay
+name: insecticide resistance by PCR-RFLP assay
 def: "An insecticide resistance by monitoring known mutations assay based on restriction fragment length polymorphism assay." []
 synonym: "PCR-RFLP" EXACT []
 is_a: OBI:0002692 ! polymerase chain reaction assay
@@ -19726,6 +19746,12 @@ def: "A sample collection device consisting of a thin, less absorbent sheet, use
 is_a: OBI:0002814 ! specimen collection device
 
 [Term]
+id: OBI:0002830
+name: catheter
+def: "A device which is a flexible tube inserted into a body and which enables transfer of fluids into or out of a body." []
+is_a: OBI:0000968 ! device
+
+[Term]
 id: OBI:0002897
 name: surveillance process
 def: "An investigation in which some entity is monitored, and data concerning that entity collected, interpreted, and disseminated, for the purpose of managing, directing, or protecting that entity, or some other entity." []
@@ -19916,7 +19942,7 @@ is_a: OBI:0002920 ! arthropod trap
 [Term]
 id: OBI:0002926
 name: Centers for Disease Control and Prevention light trap
-def: "A light trap that is designed to use motorized suction to trap arthropods in a collection bag once they approach the light attractant." []
+def: "A light trap that is designed similarly to the New Jersey trap—in that it uses motorized suction and light attractant—and is powered by a six-volt battery." []
 synonym: "CDC light trap" EXACT []
 is_a: OBI:0002930 ! light trap
 
@@ -21323,7 +21349,6 @@ is_a: OBI:0003021 ! basophil assay
 id: OBI:0003150
 name: calcium cation concentration assay
 def: "A calcium cation assay that measures the concentration of calcium cations in a specimen." []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -21948,13 +21973,13 @@ is_a: OBI:0003244 ! blood microbiology datum
 [Term]
 id: OBI:0003262
 name: virus in blood datum
-def: "A blood microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A blood microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
 is_a: OBI:0003244 ! blood microbiology datum
 
 [Term]
 id: OBI:0003263
 name: eukaryota in blood datum
-def: "A blood microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003244 ! blood microbiology datum
 
 [Term]
@@ -21966,43 +21991,43 @@ is_a: OBI:0003246 ! feces microbiology datum
 [Term]
 id: OBI:0003265
 name: eukaryota in feces datum
-def: "A feces microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A feces microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003246 ! feces microbiology datum
 
 [Term]
 id: OBI:0003266
 name: virus in feces datum
-def: "A feces microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A feces microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
 is_a: OBI:0003246 ! feces microbiology datum
 
 [Term]
 id: OBI:0003267
 name: eukaryota in urine datum
-def: "A urine microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A urine microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003248 ! urine microbiology datum
 
 [Term]
 id: OBI:0003268
 name: bacteria in induced sputum datum
-def: "A induced sputum microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An induced sputum microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
 is_a: OBI:0003251 ! induced sputum microbiology datum
 
 [Term]
 id: OBI:0003269
 name: eukaryota in induced sputum datum
-def: "A induced sputum microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An induced sputum microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003251 ! induced sputum microbiology datum
 
 [Term]
 id: OBI:0003270
 name: virus in induced sputum datum
-def: "A induced sputum microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An induced sputum microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
 is_a: OBI:0003251 ! induced sputum microbiology datum
 
 [Term]
 id: OBI:0003271
 name: bacteria in endotracheal tube aspirate datum
-def: "A endotracheal tube aspirate microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An endotracheal tube aspirate microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
 is_a: OBI:0003255 ! endotracheal tube aspirate microbiology datum
 
 [Term]
@@ -22014,13 +22039,13 @@ is_a: OBI:0003256 ! lung microbiology datum
 [Term]
 id: OBI:0003273
 name: eukaryota in lung datum
-def: "A lung microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A lung microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003256 ! lung microbiology datum
 
 [Term]
 id: OBI:0003274
 name: virus in lung datum
-def: "A lung microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A lung microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
 is_a: OBI:0003256 ! lung microbiology datum
 
 [Term]
@@ -22032,13 +22057,13 @@ is_a: OBI:0003257 ! nasopharyngeal or oropharyngeal swab microbiology datum
 [Term]
 id: OBI:0003276
 name: eukaryota in nasopharyngeal or oropharyngeal swab datum
-def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003257 ! nasopharyngeal or oropharyngeal swab microbiology datum
 
 [Term]
 id: OBI:0003277
 name: virus in nasopharyngeal or oropharyngeal swab datum
-def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
 is_a: OBI:0003257 ! nasopharyngeal or oropharyngeal swab microbiology datum
 
 [Term]
@@ -22050,19 +22075,19 @@ is_a: OBI:0003258 ! pleural fluid microbiology datum
 [Term]
 id: OBI:0003279
 name: eukaryota in pleural fluid datum
-def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003258 ! pleural fluid microbiology datum
 
 [Term]
 id: OBI:0003280
 name: virus in pleural fluid datum
-def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
 is_a: OBI:0003258 ! pleural fluid microbiology datum
 
 [Term]
 id: OBI:0003281
 name: eukaryota in umbilical cord blood datum
-def: "A umbilical cord blood microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An umbilical cord blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003260 ! umbilical cord blood microbiology datum
 
 [Term]
@@ -22131,16 +22156,18 @@ is_a: OBI:0500000 ! study design
 [Term]
 id: OBI:0003292
 name: cytometric bead array assay measuring epitope specific granulysin release by T cells
-def: "A cytometric bead array assay that detects granulysin release by T cells." []
+def: "A cytometric bead array assay that detects epitope specific granulysin release by T cells." []
 synonym: "granulysin release|cytometric bead array" EXACT []
-is_a: OBI:0001810 ! biological activity assay measuring epitope specific granulysin release by T cells
+is_a: OBI:0001810 ! assay measuring epitope specific granulysin release by T cells
+is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 
 [Term]
 id: OBI:0003293
 name: cytometric bead array assay measuring epitope specific perforin release by T cells
-def: "A cytometric bead array assay that detects perforin release by T cells." []
+def: "A cytometric bead array assay that detects epitope specific perforin release by T cells." []
 synonym: "perforin release|cytometric bead array" EXACT []
-is_a: OBI:0001497 ! biological activity assay measuring epitope specific perforin release by T cells
+is_a: OBI:0001497 ! assay measuring epitope specific perforin release by T cells
+is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 
 [Term]
 id: OBI:0003294
@@ -22161,6 +22188,277 @@ def: "An assay that evaluates a blood specimen for antibodies currently being pr
 synonym: "ALS assay" EXACT []
 synonym: "antibodies from lymphocyte supernatant assay" EXACT []
 is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003297
+name: tyramide signal amplification sequencing assay
+def: "A DNA sequencing assay that uses tyramide signal amplification (TSA) to assess distance of DNA regions to a targeted nuclear compartment or protein, typically on a scale of 100-1000 nm." []
+synonym: "TSA-seq" EXACT []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
+id: OBI:0003298
+name: DNA adenine methyltransferase identification assay
+def: "An assay for identifying DNA binding sites for a protein by fusing it to Dam methylase, and expressing it so that bound DNA gets methylated. The methylated DNA can then be isolated and analyzed." []
+synonym: "DamID assay" EXACT []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003299
+name: DamID-seq
+def: "A DNA adenine methyltransferase identification (DamID) assay in which DamID-generated DNA fragments undergo high-throughput sequencing to determine a protein's DNA-binding site." []
+is_a: OBI:0003298 ! DNA adenine methyltransferase identification assay
+
+[Term]
+id: OBI:0003300
+name: nucleolus-associated domain sequencing assay
+def: "A DNA sequencing assay in which nucleoli are isolated and the DNA associated with them is sequenced to identify nucleoli-associating domains." []
+synonym: "NAD-seq" EXACT []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
+id: OBI:0003301
+name: DNase Hi-C assay
+def: "A Hi-C assay in which DNase I is used for digesting DNA fragments rather than a restriction enzyme, which can result in a higher resolution of mapped chromosome contacts." []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003302
+name: micro-C assay
+def: "A Hi-C assay which uses micrococcal nuclease digestion in place of the restriction enzyme digestion step." []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003303
+name: single cell combinatorial indexing Hi-C assay
+def: "A Hi-C assay performed on massively multiplexed single-cell samples." []
+synonym: "sci-Hi-C" EXACT []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003304
+name: single nucleus Hi-C assay
+def: "A Hi-C assay performed on isolated nuclei." []
+synonym: "sn-Hi-C" EXACT []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003305
+name: single cell Hi-C assay
+def: "A Hi-C assay performed on a single cell." []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003306
+name: bulk Hi-C assay
+def: "A Hi-C assay in which the sample that is sequenced is derived from a collection of cells, such as a tissue sample or entire cell culture, and therefore provides results representative of the aggregate of sample cells." []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003307
+name: multi-contact Hi-C assay
+def: "A Hi-C assay that assesses interactions between multiple DNA fragments rather than only pairwise interactions as in traditional Hi-C. The experimental procedure of cross-linking, digestion, and ligation is performed similarly to traditional Hi-C, but after DNA is purified a long-read library is produced in which many ligated fragments may be contained in a single molecule. The library is then sequenced on a long read sequencer." []
+synonym: "MC-3C" EXACT []
+synonym: "MC-HI-C" EXACT []
+is_a: OBI:0002440 ! Hi-C assay
+
+[Term]
+id: OBI:0003309
+name: transposase-mediated analysis of chromatin looping assay
+def: "A DNA sequencing assay designed to detect interacting genomic regions. Rather than the traditional Hi-C approach of digestion and proximity ligation, the procedure involves transposase-mediated insertion of an oligonucleotide linker between the pair of interacting regions." []
+synonym: "TrAC-Loop" EXACT []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
+id: OBI:0003310
+name: split-pool recognition of interactions and tag extension assay
+def: "A sequencing assay designed to detect multi-way interactions between nucleic acids. The procedure involves crosslinking nuclei, and then splitting the lysate among wells in a 96-well or other multi-well plate. A different barcode is ligated to the fragments in each well, and the lysates are pooled together again. This sequence of splitting, tagging, and re-combining is repeated several times so that fragments with the same sequences of barcodes represent fragments that have co-associated throughout the experiment. Finally, a sequencing library is constructed and high-throughput sequencing is performed." []
+synonym: "SPRITE" EXACT []
+is_a: OBI:0600047 ! sequencing assay
+
+[Term]
+id: OBI:0003311
+name: DNA split-pool recognition of interactions and tag extension assay
+def: "A split-pool recognition of interactions and tag extension (SPRITE) assay that only assays interactions between regions of genomic DNA." []
+synonym: "DNA SPRITE" EXACT []
+is_a: OBI:0003310 ! split-pool recognition of interactions and tag extension assay
+
+[Term]
+id: OBI:0003312
+name: RNA-DNA split-pool recognition of interactions and tag extension assay
+def: "A split-pool recognition of interactions and tag extension (SPRITE) assay in which RNA in the cross-linked complexes is converted to cDNA before the initial splitting step, allowing analysis of RNA-DNA interactions." []
+synonym: "RNA-DNA SPRITE" EXACT []
+is_a: OBI:0003310 ! split-pool recognition of interactions and tag extension assay
+
+[Term]
+id: OBI:0003313
+name: genome architecture mapping assay
+def: "A DNA sequencing assay designed to analyze 3D chromatin structure without relying on digestion and ligation. The procedure involves cryosectioning samples in random orientation, and then single nuclear profiles are isolated by laser microdissection. Each nuclear profile then undergoes high-throughput sequencing, and subsequent analysis can generate a matrix of inferred proximity between genomic regions." []
+synonym: "GAM" EXACT []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
+id: OBI:0003314
+name: mapping RNA-genome interactions assay
+def: "A nuclear ligation assay for probing RNA-DNA interactions in the nucleus. Nuclei are crosslinked, and RNA fragments are ligated to proximal DNA fragments via a special linker molecule. After reverse transcription, high-throughput sequencing is performed." []
+synonym: "MARGI" EXACT []
+is_a: OBI:0002438 ! nuclear ligation assay
+
+[Term]
+id: OBI:0003315
+name: assay measuring epitope specific amphiregulin production by T cells
+def: "A T cell epitope specific cytokine production assay that detects amphiregulin production by T cells." []
+synonym: "amphiregulin release|biological activity" EXACT []
+is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T cells
+
+[Term]
+id: OBI:0003316
+name: ELISA measuring epitope specific amphiregulin production by T cells
+def: "An enzyme-linked immunosorbent assay that detects amphiregulin production by T cells." []
+synonym: "amphiregulin release|ELISA" EXACT []
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+is_a: OBI:0003315 ! assay measuring epitope specific amphiregulin production by T cells
+
+[Term]
+id: OBI:0003317
+name: perforin release during T cell degranulation
+def: "The release of perforin during cytotoxic T cell degranulation." []
+is_a: GO:0035944 ! perforin production
+
+[Term]
+id: OBI:0003318
+name: granzyme A release during T cell degranulation
+def: "The release of granzyme A during cytotoxic T cell degranulation." []
+is_a: GO:0035746 ! granzyme A production
+
+[Term]
+id: OBI:0003319
+name: granzyme B release during T cell degranulation
+def: "The release of granzyme B during cytotoxic T cell degranulation." []
+is_a: GO:0071613 ! granzyme B production
+
+[Term]
+id: OBI:0003320
+name: granulysin release during T cell degranulation
+def: "The release of granulysin during cytotoxic T cell degranulation." []
+is_a: GO:0036262 ! granulysin production
+
+[Term]
+id: OBI:0003321
+name: venous blood microbiology assay
+def: "A blood microbiology assay that identifies a microorganism in a venous blood specimen." []
+is_a: OBI:0002649 ! blood microbiology assay
+
+[Term]
+id: OBI:0003323
+name: high throughput multiplexed assay measuring binding of a B cell epitope:antibody complex
+def: "A B cell epitope assay that measures the binding of an antibody receptor to an epitope using a high throughput multiplexed assay." []
+synonym: "antibody binding|High throughput multiplexed assay" EXACT []
+is_a: OBI:1110127 ! assay measuring binding of a B cell epitope:antibody complex
+
+[Term]
+id: OBI:0003324
+name: high throughput multiplexed assay measuring binding of a T cell epitope:MHC:TCR complex
+def: "A T cell epitope assay that measures the binding of T cell receptor to an epitope using a high throughput multiplexed assay." []
+synonym: "T cell binding|High throughput multiplexed assay" EXACT []
+is_a: OBI:1110037 ! assay measuring binding of a T cell epitope:MHC:TCR complex
+
+[Term]
+id: OBI:0003325
+name: high throughput multiplexed assay measuring binding of a MHC:ligand complex
+def: "A MHC ligand assay that detects the binding of a ligand to an MHC molecule using a high throughput multiplexed assay." []
+synonym: "MHC binding|High throughput multiplexed assay" EXACT []
+is_a: OBI:1110126 ! assay measuring binding of a MHC:ligand complex
+
+[Term]
+id: OBI:0003326
+name: high throughput multiplexed assay measuring MHC ligand processing and presentation
+def: "A MHC ligand assay that determines what ligands are processed and loaded onto MHC molecules by eluting ligands and identifying them using a high throughput multiplexed assay." []
+synonym: "ligand presentation|High throughput multiplexed assay" EXACT []
+is_a: OBI:1110125 ! assay measuring MHC ligand processing and presentation
+
+[Term]
+id: OBI:0003365
+name: milk assay datum
+def: "A data item that is the specified output of a milk assay." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0003366
+name: organism diagnostic process
+def: "A drawing a conclusion based on data that involves the interpretation of data about a given organism (human, animal, or plant) and the assertion to the effect that the organism has a disease, disorder, or syndrome of a certain type, or none of these as output." []
+is_a: OBI:0000338 ! drawing a conclusion based on data
+
+[Term]
+id: OBI:0003367
+name: diagnosis of an organism
+def: "A conclusion based on data about that an organism has a disease, disorder, or syndrome of a certain type, or none of these." []
+is_a: OBI:0001909 ! conclusion based on data
+
+[Term]
+id: OBI:0003368
+name: detection technique
+def: "An assay (A) that is part of another assay (B), where the target entities of A and B are disjoint, and the target entity of A is a proxy for the target of assay B." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003369
+name: assay kit
+def: "A processed material that consists of reagents and devices that enable the performance of a specific type of assay, which could, in addition, require specific instruments not included in the kit." []
+is_a: OBI:0000047 ! processed material
+
+[Term]
+id: OBI:0003371
+name: epitope specific XCL1 release by T cells
+def: "A biological process where T cells produce XCL1 resulting from the recognition of a T cell epitope." []
+is_a: GO:0140779 ! XCL1 production
+is_a: OBI:0001193 ! epitope specific cytokine production by T cells
+
+[Term]
+id: OBI:0003372
+name: assay measuring epitope specific lymphotactin production by T cells
+def: "A T cell epitope specific cytokine production assay that detects lymphotactin production by T cells." []
+synonym: "lymphotactin release|biological activity" EXACT []
+is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T cells
+
+[Term]
+id: OBI:0003373
+name: ELISA measuring epitope specific lymphotactin production by T cells
+def: "An enzyme-linked immunosorbent assay that detects lymphotactin production by T cells." []
+synonym: "lymphotactin release|ELISA" EXACT []
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+is_a: OBI:0003372 ! assay measuring epitope specific lymphotactin production by T cells
+
+[Term]
+id: OBI:0003374
+name: remote patient assessment
+def: "An organism diagnostic process which involves a remote assessment of a patient by a clinician." []
+synonym: "telehealth patient assessment" EXACT []
+is_a: OBI:0003366 ! organism diagnostic process
+
+[Term]
+id: OBI:0003380
+name: placental blood specimen
+def: "A specimen that is derived from placental blood." []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:0003381
+name: placental blood microbiology assay
+def: "A blood microbiology assay that has a placental blood specimen as evaluant." []
+is_a: OBI:0002649 ! blood microbiology assay
+
+[Term]
+id: OBI:0003382
+name: placental blood microbiology datum
+def: "An organism identification assay that is the specified output of a placental blood microbiology assay." []
+is_a: OBI:0003064 ! organism identification datum
+
+[Term]
+id: OBI:0003383
+name: eukaryota in placental blood datum
+def: "A placental blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+is_a: OBI:0003382 ! placental blood microbiology datum
 
 [Term]
 id: OBI:0005246
@@ -24802,10 +25100,11 @@ is_a: OBI:0000070 ! assay
 
 [Term]
 id: OBI:0600003
-name: performing a clinical assessment
+name: obsolete performing a clinical assessment
 def: "A protocol application during which a series of tests are made of a patient leading to determination of disease state, or condition." []
 synonym: "clinical diagnosis" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
 
 [Term]
 id: OBI:0600004
@@ -25990,8 +26289,9 @@ id: OBI:1110179
 name: MHC tetramer/multimer assay measuring binding of a T cell epitope:MHC:TCR complex
 def: "A MHC tetramer/multimer assay that measures the binding of an epitope:MHC complex binding with a T cell receptor." []
 synonym: "qualitative binding|multimer/tetramer" EXACT []
-is_a: OBI:0001317 ! flow cytometry assay measuring cell-cell binding of a T cell epitope:MHC:TCR complex
+is_a: OBI:0000916 ! flow cytometry assay
 is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:1110124 ! assay measuring qualitative binding of a T cell epitope:MHC:TCR complex
 
 [Term]
 id: OBI:1110180
@@ -26205,7 +26505,7 @@ is_a: OBI:0002503 ! feces specimen
 id: OBI:2000012
 name: umbilical cord blood specimen
 def: "A specimen that is derived from some umbilical cord blood" []
-is_a: OBI:2000009 ! bodily fluid specimen
+is_a: OBI:2000013 ! arterial blood specimen
 
 [Term]
 id: OBI:2000013
@@ -26385,7 +26685,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:2100024
 name: calcium cation assay
 def: "An analyte assay that measures the abundance of calcium cation" []
-is_a: OBI:0000443 ! analyte assay
+is_a: OBI:0003012 ! ionized calcium assay
 
 [Term]
 id: OBI:2100025
@@ -26793,7 +27093,6 @@ is_a: OBI:2100020 ! glucose assay
 id: OBI:2100092
 name: basic metabolic panel venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a basic metabolic panel order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -26812,7 +27111,6 @@ is_a: OBI:2100025 ! creatine kinase assay
 id: OBI:2100095
 name: venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -26825,7 +27123,6 @@ is_a: OBI:0003009 ! ferritin assay
 id: OBI:2100097
 name: total venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a total order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27144,7 +27441,6 @@ is_a: OBI:2100001 ! carbon dioxide assay
 id: OBI:2100149
 name: comprehensive metabolic panel venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a comprehensive metabolic panel order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27253,7 +27549,6 @@ is_a: OBI:2100036 ! elemental oxygen assay
 id: OBI:2100167
 name: ionized venous blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in venous blood as part of a ionized order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27344,7 +27639,6 @@ is_a: OBI:2100004 ! potassium(1+) assay
 id: OBI:2100182
 name: ionized arterial blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in arterial blood as part of a ionized order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27393,7 +27687,6 @@ is_a: OBI:0003018 ! hematocrit assay
 id: OBI:2100190
 name: GEM premier blood gas venous blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in venous blood as part of a GEM premier blood gas order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27611,7 +27904,6 @@ is_a: OBI:2100004 ! potassium(1+) assay
 id: OBI:2100226
 name: chem11 venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a chem11 order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27696,7 +27988,6 @@ is_a: OBI:2100020 ! glucose assay
 id: OBI:2100240
 name: chem16 venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a chem16 order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27763,7 +28054,6 @@ is_a: OBI:2100020 ! glucose assay
 id: OBI:2100251
 name: POC chem8 arterial blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in arterial blood as part of a POC chem8 order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27934,7 +28224,6 @@ is_a: OBI:0003018 ! hematocrit assay
 id: OBI:2100279
 name: ABL90 panel arterial blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in arterial blood as part of a ABL90 panel order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -27977,7 +28266,6 @@ is_a: OBI:2100014 ! hemoglobin assay
 id: OBI:2100286
 name: ABL90 panel venous blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in venous blood as part of a ABL90 panel order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -28057,7 +28345,6 @@ is_a: OBI:2100022 ! albumin assay
 id: OBI:2100299
 name: bone profile venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a bone profile order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -28094,7 +28381,6 @@ is_a: OBI:2100036 ! elemental oxygen assay
 id: OBI:2100305
 name: ABG/electrolytes arterial blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in arterial blood as part of a ABG/electrolytes order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -28179,7 +28465,6 @@ is_a: OBI:2100020 ! glucose assay
 id: OBI:2100319
 name: GEM4000 ANLCOOX arterial blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in arterial blood as part of a GEM4000 ANLCOOX order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -28198,7 +28483,6 @@ is_a: OBI:2100002 ! sodium(1+) assay
 id: OBI:2100322
 name: ionized venous blood calcium assay
 def: "An analyte assay that measures the abundance of calcium in venous blood as part of a ionized order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -28397,7 +28681,6 @@ is_a: OBI:2100014 ! hemoglobin assay
 id: OBI:2100355
 name: venous blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in venous blood" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -28549,7 +28832,6 @@ is_a: OBI:0003018 ! hematocrit assay
 id: OBI:2100380
 name: GEM4 arterial blood ionized calcium assay
 def: "An analyte assay that measures the abundance of ionized calcium in arterial blood as part of a GEM4 order" []
-is_a: OBI:0003012 ! ionized calcium assay
 is_a: OBI:2100024 ! calcium cation assay
 
 [Term]
@@ -29534,7 +29816,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0000057
 name: urethra
-def: "the fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening" []
+def: "The fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29582,7 +29864,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0000362
 name: renal medulla
-def: "the inner portion of the kidney consisting of the renal pyramids" []
+def: "The inner portion of the kidney consisting of the renal pyramids." []
 is_a: UBERON:0000481 ! multi-tissue structure
 
 [Term]
@@ -29636,7 +29918,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0000947
 name: aorta
-def: "The main trunk of the systemic arterial system that carries blood from the heart to all the organs and other structures of the body, bringing oxygenated blood to all parts of the body in the systemic circulation" []
+def: "The main trunk of the systemic arterial system that carries blood from the heart to all the organs and other structures of the body, bringing oxygenated blood to all parts of the body in the systemic circulation." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29666,13 +29948,13 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0000992
 name: ovary
-def: "the gonad of a female organism which contains germ cells" []
+def: "The gonad of a female organism which contains germ cells." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0000995
 name: uterus
-def: "the female muscular organ of gestation in which the developing embryo or fetus is nourished until birth" []
+def: "The female muscular organ of gestation in which the developing embryo or fetus is nourished until birth." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29690,7 +29972,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0001013
 name: adipose tissue
-def: "Portion of connective tissue composed of adipocytes enmeshed in areolar tissue" []
+def: "Portion of connective tissue composed of adipocytes enmeshed in areolar tissue." []
 is_a: UBERON:0000479 ! tissue
 
 [Term]
@@ -29702,7 +29984,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0001052
 name: rectum
-def: "the terminal portion of the intestinal tube, terminating with the anus" []
+def: "The terminal portion of the intestinal tube, terminating with the anus." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29714,7 +29996,7 @@ is_a: UBERON:0006314 ! bodily fluid
 [Term]
 id: UBERON:0001088
 name: urine
-def: "Excretion that is the output of a kidney" []
+def: "Excretion that is the output of a kidney." []
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
@@ -29738,7 +30020,7 @@ is_a: UBERON:0000479 ! tissue
 [Term]
 id: UBERON:0001155
 name: colon
-def: "Last portion of the large intestine before it becomes the rectum." []
+def: "A portion of the large intestine before it becomes the rectum. In mammals, the colon is the most part of the large intestine, excluding the vermiform appendix, the rectum and the anal canal." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29756,7 +30038,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0001255
 name: urinary bladder
-def: "distensible musculomembranous organ situated in the anterior part of the pelvic cavity in which urine collects before excretion[MP]." []
+def: "Distensible musculomembranous organ situated in the anterior part of the pelvic cavity in which urine collects before excretion[MP]." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29792,7 +30074,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0001558
 name: lower respiratory tract
-def: "The segment of the respiratory tract that starts proximally with the trachea and includes all distal structures including the lungs[WP,modified]" []
+def: "The segment of the respiratory tract that starts proximally with the trachea and includes all distal structures including the lungs[WP,modified]." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29822,19 +30104,19 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0001728
 name: nasopharynx
-def: "the section of the pharynx that lies above the soft palate" []
+def: "The section of the pharynx that lies above the soft palate." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001729
 name: oropharynx
-def: "the portion of the pharynx that lies between the soft palate and the upper edge of the epiglottis" []
+def: "The portion of the pharynx that lies between the soft palate and the upper edge of the epiglottis." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001797
 name: vitreous humor
-def: "A transparent, semigelatinous substance that fills the cavity behind the crystalline lens of the eye and in front of the retina" []
+def: "A transparent, semigelatinous substance that fills the cavity behind the crystalline lens of the eye and in front of the retina." []
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
@@ -29882,19 +30164,19 @@ is_a: UBERON:0000463 ! organism substance
 [Term]
 id: UBERON:0001970
 name: bile
-def: "vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium." []
+def: "Vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium." []
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001987
 name: placenta
-def: "organ of metabolic interchange between fetus and mother, partly of embryonic origin and partly of maternal origin[GO]. The fetal portion of the placenta is known as the villous chorion. The maternal portion is known as the decidua basalis. The two portions are held together by anchoring villi that are anchored to the decidua basalis by the cytotrophoblastic shell." []
+def: "Organ of metabolic interchange between fetus and mother, partly of embryonic origin and partly of maternal origin[GO]. The fetal portion of the placenta is known as the villous chorion. The maternal portion is known as the decidua basalis. The two portions are held together by anchoring villi that are anchored to the decidua basalis by the cytotrophoblastic shell." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001988
 name: feces
-def: "Portion of semisolid bodily waste discharged through the anus[MW,modified]" []
+def: "Portion of semisolid bodily waste discharged through the anus[MW,modified]." []
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
@@ -29942,7 +30224,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0002106
 name: spleen
-def: "the organ that functions to filter blood and to store red corpuscles and platelets" []
+def: "The organ that functions to filter blood and to store red corpuscles and platelets." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29954,7 +30236,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0002116
 name: ileum
-def: "the portion of the small intestine that extends from the jejunum to the colon" []
+def: "The portion of the small intestine that extends from the jejunum to the colon." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -29984,19 +30266,19 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0002371
 name: bone marrow
-def: "the soft tissue that fills the cavities of bones" []
+def: "The soft tissue that fills the cavities of bones." []
 is_a: UBERON:0000479 ! tissue
 
 [Term]
 id: UBERON:0002409
 name: pericardial fluid
-def: "Transudate contained in the pericardial cavity.[FMA]" []
+def: "Transudate contained in the pericardial cavity.[FMA]." []
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0002415
 name: tail
-def: "An external caudal extension of the body. In chordates, the tail is post-anal, in other animals the anus ends in the tail" []
+def: "An external caudal extension of the body. In chordates, the tail is post-anal, in other animals the anus ends in the tail." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -30103,20 +30385,20 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0007650
 name: esophagogastric junction
-def: "The junction between the esophagus and the stomach epithelium" []
+def: "The junction between the esophagus and the stomach epithelium." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0010414
 name: omental fat pad
-def: "encapsulated adipose tissue associated with the fold of peritoneal tissue that extends from the stomach to the posterior abdominal wall after associating with the transverse colon" []
+def: "Encapsulated adipose tissue associated with the fold of peritoneal tissue that extends from the stomach to the posterior abdominal wall after associating with the transverse colon." []
 is_a: UBERON:0001013 ! adipose tissue
 
 [Term]
 id: UBERON:0012168
 name: umbilical cord blood
-def: "blood that remains in the placenta and in the attached umbilical cord after childbirth[WP]." []
-is_a: UBERON:0000178 ! blood
+def: "Blood that remains in the placenta and in the attached umbilical cord after childbirth[WP]." []
+is_a: UBERON:0013755 ! arterial blood
 
 [Term]
 id: UBERON:0013755
@@ -30147,6 +30429,12 @@ id: UBERON:3000016
 name: anterior nasal wall
 def: "Paired, vertical, and relatively straight plates that form the anterior limit of the nasal capsule." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:8470000
+name: placental blood
+def: "Blood located in the placenta." []
+is_a: UBERON:0000178 ! blood
 
 [Term]
 id: UO:0000001
@@ -30674,6 +30962,12 @@ id: OBI:0001950
 name: has performer
 domain: OBI:0000011 ! planned process
 is_a: RO:0000057 ! has participant
+
+[Typedef]
+id: OBI:0003385
+name: has assay target context
+def: "A relation between  the target entity of an assay and a material entity, where the material entity is the environment in which the target entity of an assay is measured, such as a live mouse, cell culture, test tube, etc." []
+range: BFO:0000040 ! material entity
 
 [Typedef]
 id: OBI:1110060
