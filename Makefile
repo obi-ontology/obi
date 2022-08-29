@@ -187,7 +187,7 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
+views/obi-base.owl: build/obi_merged.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
