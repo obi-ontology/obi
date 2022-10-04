@@ -207,9 +207,6 @@ views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	remove \
 	--term-file $(word 2,$^) \
 	--trim true \
-	annotate \
-	--ontology-iri "$(OBO)/obi.obo" \
-	--version-iri "$(OBO)/obi/$(TODAY)/obi.obo" \
 	convert \
 	--output $(basename $@)-temp.obo && \
 	grep -v ^owl-axioms $(basename $@)-temp.obo | \
