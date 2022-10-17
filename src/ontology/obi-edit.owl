@@ -1279,6 +1279,21 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003384 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003384">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600014"/>
+        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synaptosome preparation process</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A material component separation process where a synaptic terminal is isolated from a neuron by mild homogenization of nervous tissue under isotonic conditions and subsequent fractionation using differential and density gradient centrifugation.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117 xml:lang="en">Suvarna Nadendla</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">url:https://en.wikipedia.org/wiki/Synaptosome</obo:IAO_0000119>
+        <obo:IAO_0000234>CFDE-GlyGen</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">synaptosome preparation process</rdfs:label>
+    </owl:Class>
+    
+    
+    
     <!-- http://purl.obolibrary.org/obo/OBI_0003385 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0003385">
@@ -22068,6 +22083,57 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000119 rdf:resource="https://doi.org/10.1016/j.jpainsymman.2020.03.019"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-02T14:15:39Z</dc:date>
         <rdfs:label xml:lang="en">remote patient assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+   <!-- http://purl.obolibrary.org/obo/OBI_0003413 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003413">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <obo:IAO_0000115>An administration of substance in vivo with the intention to induce disease in the organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>IEDB</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>administering substance in vivo to cause disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003414 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003414">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <obo:IAO_0000115>An administration of substance in vivo with the intention to reduce the symptoms of or prevent development of a disease in the organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>IEDB</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>administering substance in vivo to reduce or prevent disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003416 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003416">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000408"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000221"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000122"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000080"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001460"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A length measurement datum that is the specified output of an assay measuring the length around an upper arm, taken midway along the upper arm.</obo:IAO_0000115>
+        <obo:IAO_0000119>The Mother and Child Health and Education Trust</obo:IAO_0000119>
+        <rdfs:label>mid-upper arm circumference datum</rdfs:label>
     </owl:Class>
     
 
