@@ -153,6 +153,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002215 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002215"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002219 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002219"/>
@@ -7904,6 +7910,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002913 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002913"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002920 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002920">
@@ -8877,6 +8889,25 @@
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VEuPathDB</obo:IAO_0000119>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1523</obo:IAO_0000233>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mosquito Magnet Liberty Plus trap</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003481 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003481">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002913"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A resting arthropod trap that consists of a tent inside which an adult cow is tethered to the ground, in order to attract arthropods and collect those that rest on the interior walls of the tent.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Judkins ORCID:0000-0001-6595-0902</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarah Kelly</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obi-ontology/obi/issues/1602</obo:IAO_0000233>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cow-baited arthropod trap</rdfs:label>
     </owl:Class>
     
 
