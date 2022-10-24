@@ -8415,7 +8415,7 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/OBI_0000712 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000712">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003456"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
@@ -8476,7 +8476,7 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         </rdfs:subClassOf>
         <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pathogen challenge</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathogen challenge is the administration of a live pathogenic organism to a host</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The administration of a live pathogenic organism to a host.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pathogen challenge</rdfs:label>
     </owl:Class>
     
@@ -22084,7 +22084,7 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000119>IEDB</obo:IAO_0000119>
         <rdfs:label>administering substance in vivo to reduce or prevent disease</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0003416 -->
@@ -22110,6 +22110,72 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000115>A length measurement datum that is the specified output of an assay measuring the length around an upper arm, taken midway along the upper arm.</obo:IAO_0000115>
         <obo:IAO_0000119>The Mother and Child Health and Education Trust</obo:IAO_0000119>
         <rdfs:label>mid-upper arm circumference datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003455 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003455">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003456"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000319"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0001064"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000444"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000725"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The administration of a malignant cell to a host.</obo:IAO_0000115>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>tumor challenge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003456 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003456">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <obo:IAO_0000115>The administration of a challenge to a live host.</obo:IAO_0000115>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
+        <rdfs:label>in vivo challenge</rdfs:label>
     </owl:Class>
     
 
