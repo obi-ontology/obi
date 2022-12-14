@@ -124,8 +124,7 @@ obi.xlsx: src/scripts/tsv2xlsx.py $(TEMPLATE_FILES)
 	python3 $< $@ $(wordlist 2,100,$^)
 
 .PHONY: update-tsv
-update-tsv: update-tsv-files 
-#sort
+update-tsv: update-tsv-files sort
 
 .PHONY: update-tsv-files
 update-tsv-files:
