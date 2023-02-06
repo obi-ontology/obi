@@ -1,8 +1,8 @@
 format-version: 1.2
-data-version: obi/2022-07-11/obi.obo
-date: 11:07:2022 15:37
+data-version: 2022-12-14
+date: 14:12:2022 09:26
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
-ontology: obi.obo
+ontology: obi
 property_value: defaultLanguage "en" xsd:string
 property_value: http://purl.org/dc/elements/1.1/contributor "Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Alan Ruttenberg" xsd:string
@@ -67,7 +67,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/ xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2022-07-11" xsd:string
+property_value: owl:versionInfo "2022-12-14" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -1102,6 +1102,7 @@ is_a: CL:0000000 ! cell
 [Term]
 id: CL:0000236
 name: B cell
+def: "A lymphocyte of B lineage that is capable of B cell mediated immunity." []
 is_a: CL:0000542 ! lymphocyte
 
 [Term]
@@ -1243,6 +1244,12 @@ def: "A leukocyte with a single non-segmented nucleus in the mature form." []
 is_a: CL:0000000 ! cell
 
 [Term]
+id: CL:0001064
+name: malignant cell
+def: "A neoplastic cell that is capable of entering a surrounding tissue" []
+is_a: CL:0000000 ! cell
+
+[Term]
 id: CL:0002192
 name: metamyelocyte
 def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare." []
@@ -1265,6 +1272,13 @@ id: CL:0011114
 name: segmented neutrophil of bone marrow
 def: "A segmented neutrophilic cell of the bone marrow reserve pool that expresses CD11b (integrin alpha-M) and high levels of CD16 (low affinity immunoglobulin gamma Fc region receptor III) on its cell surface." []
 is_a: CL:0000775 ! neutrophil
+
+[Term]
+id: CL:2000001
+name: peripheral blood mononuclear cell
+def: "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood." []
+is_a: CL:0000003 ! native cell
+is_a: CL:0000842 ! mononuclear cell
 
 [Term]
 id: CLO:0000001
@@ -1347,8 +1361,8 @@ is_a: OBI:0001588 ! binding
 
 [Term]
 id: GO:0001172
-name: transcription, RNA-templated
-def: "The cellular synthesis of RNA on a template of RNA." []
+name: RNA-templated transcription
+def: "The synthesis of an RNA transcript from an RNA template." []
 is_a: GO:0009987 ! cellular process
 
 [Term]
@@ -1458,6 +1472,12 @@ def: "Catalysis of a biochemical reaction at physiological temperatures. In biol
 is_a: GO:0003674 ! molecular_function
 
 [Term]
+id: GO:0003939
+name: L-iditol 2-dehydrogenase activity
+def: "Catalysis of the reaction: L-iditol + NAD+ = L-sorbose + NADH + H+." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
 id: GO:0003964
 name: RNA-directed DNA polymerase activity
 def: "Catalysis of the reaction: deoxynucleoside triphosphate + DNA(n) = diphosphate + DNA(n+1). Catalyzes RNA-template-directed extension of the 3'- end of a DNA strand by one deoxynucleotide at a time." []
@@ -1470,9 +1490,69 @@ def: "Catalysis of the reaction: acetylcholine + H2O = choline + acetate." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
+id: GO:0003997
+name: acyl-CoA oxidase activity
+def: "Catalysis of the reaction: acyl-CoA + O2 = trans-2,3-dehydroacyl-CoA + hydrogen peroxide." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004021
+name: L-alanine:2-oxoglutarate aminotransferase activity
+def: "Catalysis of the reaction: 2-oxoglutarate + L-alanine = L-glutamate + pyruvate." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004035
+name: alkaline phosphatase activity
+def: "Catalysis of the reaction: an orthophosphoric monoester + H2O = an alcohol + phosphate, with an alkaline pH optimum." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004069
+name: L-aspartate:2-oxoglutarate aminotransferase activity
+def: "Catalysis of the reaction: L-aspartate + 2-oxoglutarate = oxaloacetate + L-glutamate." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004104
+name: cholinesterase activity
+def: "Catalysis of the reaction: an acylcholine + H2O = choline + a carboxylic acid anion." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004111
+name: creatine kinase activity
+def: "Catalysis of the reaction: ATP + creatine = N-phosphocreatine + ADP + 2 H(+)." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004353
+name: glutamate dehydrogenase [NAD(P)+] activity
+def: "Catalysis of the reaction: L-glutamate + H2O + NAD(P)+ = 2-oxoglutarate + NH3 + NAD(P)H + H+." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
 id: GO:0004364
 name: glutathione transferase activity
 def: "Catalysis of the reaction: R-X + glutathione = H-X + R-S-glutathione. R may be an aliphatic, aromatic or heterocyclic group; X may be a sulfate, nitrile or halide group." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004448
+name: isocitrate dehydrogenase [NAD(P)+] activity
+def: "Catalysis of the reaction: isocitrate + NAD(P)+ = 2-oxoglutarate + CO2 + NAD(P)H." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004457
+name: lactate dehydrogenase activity
+def: "Catalysis of the reaction: lactate + NAD+ = H+ + NADH + pyruvate." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0004540
+name: ribonuclease activity
+def: "Catalysis of the hydrolysis of phosphodiester bonds in chains of RNA." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1573,6 +1653,12 @@ def: "The process in which a microorganism (or other particulate material) is re
 is_a: GO:0006909 ! phagocytosis
 
 [Term]
+id: GO:0008253
+name: 5'-nucleotidase activity
+def: "Catalysis of the reaction: a 5'-ribonucleotide + H2O = a ribonucleoside + phosphate." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
 id: GO:0008283
 name: cell population proliferation
 def: "The multiplication or reproduction of cells, resulting in the expansion of a cell population." []
@@ -1603,10 +1689,28 @@ def: "The appearance of vascular endothelial growth factor production due to bio
 is_a: GO:0001816 ! cytokine production
 
 [Term]
+id: GO:0015925
+name: galactosidase activity
+def: "Catalysis of the hydrolysis of galactosyl compounds, substances containing a group derived from a cyclic form of galactose or a galactose derivative." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
 id: GO:0016064
 name: immunoglobulin mediated immune response
 def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0016160
+name: amylase activity
+def: "Catalysis of the hydrolysis of amylose or an amylose derivative." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016231
+name: beta-N-acetylglucosaminidase activity
+def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-glucosamine residues in N-acetyl-beta-D-glucosaminides." []
+is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0016570
@@ -2075,6 +2179,12 @@ id: GO:0044809
 name: chemokine (C-C motif) ligand 17 production
 def: "The appearance of chemokine (C-C motif) ligand 17 (CCL17) due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
 is_a: GO:0032602 ! chemokine production
+
+[Term]
+id: GO:0047823
+name: D-glutamyltransferase activity
+def: "Catalysis of the reaction: L(or D)-glutamine + D-glutamyl-peptide = NH3 + 5-glutamyl-D-glutamyl-peptide." []
+is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0048869
@@ -3754,9 +3864,16 @@ name: Opisthokonta
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: NCBITaxon:33208
+name: Metazoa
+synonym: "metazoans" EXACT []
+synonym: "multicellular animals" EXACT []
+is_a: NCBITaxon:33154 ! Opisthokonta
+
+[Term]
 id: NCBITaxon:33213
 name: Bilateria
-is_a: NCBITaxon:33154 ! Opisthokonta
+is_a: NCBITaxon:33208 ! Metazoa
 
 [Term]
 id: NCBITaxon:3702
@@ -3821,7 +3938,6 @@ is_a: NCBITaxon:2759 ! Eukaryota
 [Term]
 id: NCBITaxon:6239
 name: Caenorhabditis elegans
-synonym: "roundworm" EXACT []
 is_a: NCBITaxon:1206794 ! Ecdysozoa
 
 [Term]
@@ -3895,7 +4011,6 @@ id: NCBITaxon:9606
 name: Homo sapiens
 synonym: "human" EXACT []
 synonym: "human being" EXACT []
-synonym: "man" EXACT []
 is_a: NCBITaxon:314146 ! Euarchontoglires
 
 [Term]
@@ -5426,8 +5541,8 @@ is_obsolete: true
 
 [Term]
 id: OBI:0000447
-name: intra cellular electrophysiology recording assay
-def: "An electrophysiology recording assay where the recording location of the electrode is intracellular" []
+name: intracellular electrophysiology recording assay
+def: "An electrophysiology assay where the recording location of the electrode is intracellular." []
 is_a: OBI:0002176 ! electrophysiology assay
 
 [Term]
@@ -5464,7 +5579,7 @@ is_a: BFO:0000034 ! function
 [Term]
 id: OBI:0000454
 name: extracellular electrophysiology recording assay
-def: "An electrophysiology recording assay where the recording location of the electrode is extracellular" []
+def: "An electrophysiology assay where the recording location of the electrode is extracellular." []
 is_a: OBI:0002176 ! electrophysiology assay
 
 [Term]
@@ -6970,8 +7085,8 @@ is_a: OBI:0000094 ! material processing
 [Term]
 id: OBI:0000712
 name: pathogen challenge
-def: "A pathogen challenge is the administration of a live pathogenic organism to a host" []
-is_a: OBI:0600007 ! administering substance in vivo
+def: "The administration of a live pathogenic organism to a host." []
+is_a: OBI:0003456 ! in vivo challenge
 
 [Term]
 id: OBI:0000713
@@ -7269,9 +7384,10 @@ is_a: OBI:0000822 ! single blind study execution
 
 [Term]
 id: OBI:0000794
-name: transcription factor binding site
-comment: PLace_holder for sequence ontology term
-is_a: OBI:0000905 ! sequence feature annotation
+name: obsolete transcription factor binding site
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: SO:0000235
 
 [Term]
 id: OBI:0000795
@@ -7608,7 +7724,7 @@ is_obsolete: true
 [Term]
 id: OBI:0000852
 name: record of missing knowledge
-def: "a information content entity created to indicate that information about something is not available to the person recording it." []
+def: "An information content entity created to indicate that information about something is not available to the person recording it." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -9563,7 +9679,7 @@ is_a: OBI:0600047 ! sequencing assay
 [Term]
 id: OBI:0001178
 name: efficacy of epitope intervention experiment
-def: "An assay that tests  if inducing an epitope specific immune response in an organism has an effect, such as the ability to prevent, treat or excarbate diseases in the organism. " []
+def: "An assay that tests  if inducing an epitope specific immune response in an organism has an effect, such as the ability to prevent, treat or exacerbate diseases in the organism. " []
 synonym: "efficacy of in vivo intervention" EXACT []
 is_a: OBI:0000070 ! assay
 
@@ -9596,7 +9712,7 @@ is_a: OBI:0003141 ! categorical binding datum
 id: OBI:0001183
 name: epitope protection from tumor challenge experiment
 def: "An epitope protection experiment in which the ability of the epitope to protect the host from developing tumors is assessed. " []
-synonym: "tumor burden after challenge" EXACT []
+synonym: "protection from tumor challenge" EXACT []
 is_a: OBI:0001184 ! epitope protection experiment
 
 [Term]
@@ -9619,7 +9735,7 @@ is_a: OBI:0100026 ! organism
 id: OBI:0001186
 name: epitope protection from infectious challenge experiment based on pathogen burden
 def: "An epitope protection from infectious challenge experiment in which the readout is a reduction in the presence of pathogens in the host compared to controls. " []
-synonym: "pathogen urden after infectious challenge" EXACT []
+synonym: "burden after infectious challenge" EXACT []
 is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
 
 [Term]
@@ -9889,10 +10005,10 @@ is_a: OBI:0600031 ! enzyme-linked immunospot assay
 
 [Term]
 id: OBI:0001228
-name: biological activity assay measuring epitope specific helper T cell enhancement of a B cell mediated immune response
+name: in vivo assay measuring epitope specific helper T cell enhancement of a B cell mediated immune response
 def: "A T cell epitope specific helper activity assay that detects the ability of a T cell epitope to enhance an antibody response." []
-synonym: "antibody help|biological activity" EXACT []
-is_a: OBI:0001495 ! biological activity assay measuring epitope specific T cell helper activity
+synonym: "antibody help|in vivo assay" EXACT []
+is_a: OBI:0001495 ! in vivo assay measuring epitope specific T cell helper activity
 
 [Term]
 id: OBI:0001229
@@ -9990,10 +10106,10 @@ is_a: OBI:0001450 ! assay measuring epitope specific interleukin-4 production by
 
 [Term]
 id: OBI:0001242
-name: detection of specific nucleic acids with complementary probes assay measuring epitope specific tumor necrosis factor production by T cells
-def: "A detection of specific nucleic acid polymers with complementary probes that detects tumor necrosis factor production by T cells." []
+name: detection of specific nucleic acids with complementary probes assay measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "A detection of specific nucleic acid polymers with complementary probes that detects tumor necrosis factor alpha production by T cells." []
 synonym: "TNFa release|RNA/DNA detection" EXACT []
-is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor production by T cells
+is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor alpha production by T cells
 is_a: OBI:0001788 ! detection of specific nucleic acids with complementary probes assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
 
 [Term]
@@ -10143,10 +10259,10 @@ is_a: OBI:0001193 ! epitope specific cytokine production by T cells
 
 [Term]
 id: OBI:0001263
-name: biological activity assay measuring epitope specific helper T cell enhancement of a T cell mediated immune response
+name: in vivo assay measuring epitope specific helper T cell enhancement of a T cell mediated immune response
 def: "A T cell epitope specific helper activity assay that detects the ability of a T cell epitope to enhance a T cell response." []
-synonym: "T cell help|biological activity" EXACT []
-is_a: OBI:0001495 ! biological activity assay measuring epitope specific T cell helper activity
+synonym: "T cell help|in vivo assay" EXACT []
+is_a: OBI:0001495 ! in vivo assay measuring epitope specific T cell helper activity
 
 [Term]
 id: OBI:0001264
@@ -10555,7 +10671,8 @@ id: OBI:0001324
 name: in vivo assay measuring T cell epitope specific tolerance induction
 def: "An efficacy of T cell epitope intervention experiment that uses a tolerance induction intervention experiment." []
 synonym: "tolerance|in vivo assay" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001488 ! epitope tolerance induction experiment
 
 [Term]
 id: OBI:0001325
@@ -10704,7 +10821,8 @@ id: OBI:0001348
 name: in vivo skin test assay measuring T cell epitope specific type IV hypersensitivity
 def: "An efficacy of T cell epitope intervention experiment that detects epitope specific type IV hypersensitivity." []
 synonym: "type IV hypersensitivity (DTH)|in vivo skin test" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001178 ! efficacy of epitope intervention experiment
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001349
@@ -10737,11 +10855,11 @@ is_a: OBI:0001364 ! genetic alteration information
 
 [Term]
 id: OBI:0001353
-name: cytometric bead array assay measuring epitope specific tumor necrosis factor production by T cells
-def: "A cytometric bead array assay that detects tumor necrosis factor production by T cells." []
+name: cytometric bead array assay measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "A cytometric bead array assay that detects tumor necrosis factor alpha production by T cells." []
 synonym: "TNFa release|cytometric bead array" EXACT []
 is_a: OBI:0001368 ! cytometric bead array assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
-is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor production by T cells
+is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor alpha production by T cells
 
 [Term]
 id: OBI:0001354
@@ -10999,9 +11117,11 @@ is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T ce
 [Term]
 id: OBI:0001392
 name: in vivo assay measuring epitope specific T cell killing
-def: "A T cell epitope specific killing assay that uses an in vivo cell mediated cell killing assay." []
+def: "An in vivo cell killing assay that measures the killing of antigen presenting cells (APC) by T cells whose TCR recognizes an epitope presented by the APC." []
 synonym: "cytotoxicity|in vivo assay" EXACT []
-is_a: OBI:1110130 ! biological activity assay measuring epitope specific T cell killing
+is_a: OBI:0000883 ! in vivo cell killing assay
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
+is_a: OBI:1110130 ! assay measuring epitope specific T cell killing
 
 [Term]
 id: OBI:0001393
@@ -11103,7 +11223,7 @@ is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T ce
 
 [Term]
 id: OBI:0001407
-name: biological activity assay measuring epitope specific T cell activation
+name: assay measuring epitope specific T cell activation
 def: "A T cell epitope dependent biological activity assay that detects T cell activation." []
 synonym: "activation|biological activity" EXACT []
 is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
@@ -11164,8 +11284,8 @@ is_a: OBI:0001193 ! epitope specific cytokine production by T cells
 
 [Term]
 id: OBI:0001416
-name: assay measuring epitope specific tumor necrosis factor production by T cells
-def: "An assay of epitope specific tumor necrosis factor superfamily cytokine production by T cells that detects tumor necrosis factor production." []
+name: assay measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "An assay of epitope specific tumor necrosis factor alpha production by T cells that detects tumor necrosis factor production." []
 synonym: "TNFa release|biological activity" EXACT []
 is_a: OBI:0001400 ! assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
 
@@ -11369,11 +11489,11 @@ is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T ce
 
 [Term]
 id: OBI:0001452
-name: cell culture analyte detection bioassay measuring epitope specific tumor necrosis factor production by T cells
-def: "A reporter cell line analyte detection bioassay that detects tumor necrosis factor production by T cells." []
+name: cell culture analyte detection bioassay measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "A reporter cell line analyte detection bioassay that detects tumor necrosis factor alpha production by T cells." []
 synonym: "TNFa release|bioassay" EXACT []
-is_a: OBI:0000904 ! reporter cell line analyte detection bioassay
-is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor production by T cells
+is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor alpha production by T cells
+is_a: OBI:0003488 ! cell culture analyte detection bioassay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
 
 [Term]
 id: OBI:0001453
@@ -11473,7 +11593,8 @@ id: OBI:0001467
 name: in vivo assay measuring T cell epitope specific disease exacerbation
 def: "An efficacy of T cell epitope intervention experiment that uses a disease exacerbation in vivo intervention experiment." []
 synonym: "disease exacerbation|in vivo assay" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001188 ! epitope disease exacerbation experiment
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001468
@@ -11509,10 +11630,11 @@ is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0001473
-name: in vivo assay measuring T cell epitope specific protection from tumor challenge
-def: "A T cell epitope in vivo intervention experiment that uses a epitope protection experiment based on tumor burden." []
+name: in vivo assay measuring T cell epitope specific protection after tumor burden challenge
+def: "An in vivo assay measuring T cell epitope specific protection from tumor challenge using tumor burden." []
 synonym: "tumor burden after challenge|in vivo assay" EXACT []
-is_a: OBI:0002073 ! in vivo assay measuring T cell epitope specific protection from challenge
+is_a: OBI:0003458 ! epitope protection from tumor challenge experiment based on burden
+is_a: OBI:0003461 ! in vivo assay measuring T cell epitope specific protection from tumor challenge
 
 [Term]
 id: OBI:0001474
@@ -11523,9 +11645,10 @@ is_a: OBI:0001477 ! lowess transformation
 [Term]
 id: OBI:0001475
 name: in vivo assay measuring T cell epitope specific protection from infectious challenge based on pathogen burden
-def: "A T cell epitope in vivo intervention experiment that uses a epitope protection experiment based on pathogen burden." []
+def: "An in vivo assay measuring T cell epitope specific protection from pathogen challenge using pathogen burden." []
 synonym: "pathogen burden after challenge|in vivo assay" EXACT []
-is_a: OBI:0002073 ! in vivo assay measuring T cell epitope specific protection from challenge
+is_a: OBI:0001186 ! epitope protection from infectious challenge experiment based on pathogen burden
+is_a: OBI:0003460 ! in vivo assay measuring T cell epitope specific protection from pathogen challenge
 
 [Term]
 id: OBI:0001476
@@ -11581,7 +11704,7 @@ is_a: OBI:0600014 ! material component separation
 
 [Term]
 id: OBI:0001484
-name: biological activity assay measuring T cell epitope specific in vivo activity
+name: assay measuring T cell epitope specific in vivo activity
 def: "A T cell epitope dependent biological activity determination assay that uses an in vivo intervention experiment." []
 synonym: "in vivo activity|biological activity" EXACT []
 is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
@@ -11636,9 +11759,10 @@ is_a: OBI:0001146 ! binding assay
 [Term]
 id: OBI:0001492
 name: in vivo assay measuring T cell epitope specific protection based on survival
-def: "A T cell epitope in vivo intervention experiment that uses a epitope protection experiment based on survival." []
+def: "An in vivo assay measuring T cell epitope specific protection from other challenge using survival." []
 synonym: "survival from challenge|in vivo assay" EXACT []
-is_a: OBI:0002073 ! in vivo assay measuring T cell epitope specific protection from challenge
+is_a: OBI:0001189 ! epitope protection experiment based on survival
+is_a: OBI:0003462 ! in vivo assay measuring T cell epitope specific protection from other challenge
 
 [Term]
 id: OBI:0001493
@@ -11655,10 +11779,10 @@ is_a: OBI:0600058 ! enzymatic amplification
 
 [Term]
 id: OBI:0001495
-name: biological activity assay measuring epitope specific T cell helper activity
+name: in vivo assay measuring epitope specific T cell helper activity
 def: "A T cell epitope dependent biological activity assay that detects the ability of epitope specific helper T cells to enhance either B cell or T cell adaptive immune response function." []
-synonym: "helper response|biological activity" EXACT []
-is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
+synonym: "helper response|in vivo assay" EXACT []
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001496
@@ -11735,7 +11859,8 @@ id: OBI:0001507
 name: in vivo assay measuring T cell epitope specific treatment of disease
 def: "An efficacy of T cell epitope intervention experiment that detects a decrease in disease." []
 synonym: "decreased disease|in vivo assay" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001190 ! epitope treatment experiment
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001508
@@ -12681,45 +12806,45 @@ is_a: OBI:0001708 ! assay measuring the dissociation constant [KD] of a B cell e
 
 [Term]
 id: OBI:0001639
-name: biological activity assay measuring epitope specific Ig-mediated histamine release
-def: "A B cell epitope specific activation of additional immune response in vitro assay that detects histamine release." []
+name: assay measuring epitope specific Ig-mediated histamine release
+def: "A B cell epitope specific activation of additional immune response assay that detects histamine release in vitro." []
 synonym: "histamine release|biological activity" EXACT []
-is_a: OBI:0001704 ! biological activity assay measuring epitope specific activation of additional immune response in vitro
+is_a: OBI:0001704 ! assay measuring epitope specific activation of additional immune response in vitro
 
 [Term]
 id: OBI:0001640
-name: biological activity assay measuring epitope specific immunoglobulin-mediated antigen activation
+name: assay measuring epitope specific immunoglobulin-mediated antigen activation
 def: "A B cell epitope dependent biological activity determination assay that detects antigen activation." []
 synonym: "antigen activation|biological activity" EXACT []
 is_a: OBI:0001706 ! assay measuring biological activity resulting from B cell epitope:antibody binding
 
 [Term]
 id: OBI:0001641
-name: biological activity assay measuring epitope specific complement-dependent cytotoxicity
-def: "A B cell epitope specific activation of additional immune response in vitro assay that detects complement-dependent cytotoxicity." []
+name: assay measuring epitope specific complement-dependent cytotoxicity
+def: "A B cell epitope specific activation of additional immune response assay that detects complement-dependent cytotoxicity in vitro ." []
 synonym: "complement-dependent cytotoxicity|biological activity" EXACT []
-is_a: OBI:0001704 ! biological activity assay measuring epitope specific activation of additional immune response in vitro
+is_a: OBI:0001704 ! assay measuring epitope specific activation of additional immune response in vitro
 
 [Term]
 id: OBI:0001642
-name: biological activity assay measuring epitope specific antibody-dependent cellular cytotoxicity
-def: "A B cell epitope specific activation of additional immune response in vitro assay that detects antibody-dependent cellular cytotoxicity." []
+name: assay measuring epitope specific antibody-dependent cellular cytotoxicity
+def: "A B cell epitope specific activation of additional immune response assay that detects antibody-dependent cellular cytotoxicity in vitro." []
 synonym: "antibody-dependent cellular cytotoxicity|biological activity" EXACT []
-is_a: OBI:0001704 ! biological activity assay measuring epitope specific activation of additional immune response in vitro
+is_a: OBI:0001704 ! assay measuring epitope specific activation of additional immune response in vitro
 
 [Term]
 id: OBI:0001643
-name: biological activity assay measuring epitope specific immunoglobulin-mediated neutralization
+name: assay measuring epitope specific immunoglobulin-mediated neutralization
 def: "A B cell epitope dependent biological activity determination assay that detects neutralization of the antigen." []
 synonym: "neutralization |biological activity" EXACT []
 is_a: OBI:0001706 ! assay measuring biological activity resulting from B cell epitope:antibody binding
 
 [Term]
 id: OBI:0001644
-name: biological activity assay measuring epitope specific opsonization
-def: "A B cell epitope specific activation of additional immune response in vitro assay that detects opsonization." []
+name: assay measuring epitope specific opsonization
+def: "A B cell epitope specific activation of additional immune response assay that detects opsonization in vitro ." []
 synonym: "opsonization|biological activity" EXACT []
-is_a: OBI:0001704 ! biological activity assay measuring epitope specific activation of additional immune response in vitro
+is_a: OBI:0001704 ! assay measuring epitope specific activation of additional immune response in vitro
 
 [Term]
 id: OBI:0001645
@@ -13071,46 +13196,51 @@ id: OBI:0001692
 name: in vivo assay measuring B cell epitope specific protection from fertility
 def: "An efficacy of B cell epitope intervention experiment that uses a epitope protection experiment based on reduction of fertility." []
 synonym: "protection from fertility|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001178 ! efficacy of epitope intervention experiment
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001693
 name: in vivo assay measuring B cell epitope specific tolerance induction
 def: "An efficacy of B cell epitope intervention experiment that uses a tolerance induction intervention experiment." []
 synonym: "tolerance|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001488 ! epitope tolerance induction experiment
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001694
 name: in vivo assay measuring B cell epitope specific induction of hypersensitivity
 def: "An efficacy of B cell epitope intervention experiment that detects a hypersensitivity response by monitoring skin reactions." []
 synonym: "hypersensitivity|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001178 ! efficacy of epitope intervention experiment
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001695
-name: biological activity assay measuring epitope specific immune complex formation
-def: "A B cell epitope specific activation of additional immune response in vitro assay that detects agglutination." []
+name: assay measuring epitope specific immune complex formation
+def: "A B cell epitope specific activation of additional immune response assay that detects agglutination in vitro." []
 synonym: "agglutination|biological activity" EXACT []
-is_a: OBI:0001704 ! biological activity assay measuring epitope specific activation of additional immune response in vitro
+is_a: OBI:0001704 ! assay measuring epitope specific activation of additional immune response in vitro
 
 [Term]
 id: OBI:0001696
 name: in vivo assay measuring B cell epitope specific protection based on survival
-def: "A B cell epitope in vivo intervention experiment that uses a epitope protection experiment based on survival." []
+def: "An in vivo assay measuring B cell epitope specific protection from other challenge using survival." []
 synonym: "survival from challenge|in vivo assay" EXACT []
-is_a: OBI:0001710 ! in vivo assay measuring B cell epitope specific protection from challenge
+is_a: OBI:0001189 ! epitope protection experiment based on survival
+is_a: OBI:0003467 ! in vivo assay measuring B cell epitope specific protection from other challenge
 
 [Term]
 id: OBI:0001697
 name: in vivo assay measuring B cell epitope specific treatment of disease
 def: "An efficacy of B cell epitope intervention experiment that detects a decrease in disease." []
 synonym: "decreased disease|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001190 ! epitope treatment experiment
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001698
-name: biological activity assay measuring B cell epitope specific in vivo activity
+name: assay measuring B cell epitope specific in vivo activity
 def: "A B cell epitope dependent biological activity determination assay that uses an in vivo intervention experiment." []
 synonym: "in vivo activity|biological activity" EXACT []
 is_a: OBI:0001706 ! assay measuring biological activity resulting from B cell epitope:antibody binding
@@ -13151,14 +13281,14 @@ is_a: OBI:1110127 ! assay measuring binding of a B cell epitope:antibody complex
 
 [Term]
 id: OBI:0001704
-name: biological activity assay measuring epitope specific activation of additional immune response in vitro
+name: assay measuring epitope specific activation of additional immune response in vitro
 def: "A B cell epitope dependent biological activity determination assay that detects secondary in vitro activity." []
 synonym: "secondary in vitro activity|biological activity" EXACT []
 is_a: OBI:0001706 ! assay measuring biological activity resulting from B cell epitope:antibody binding
 
 [Term]
 id: OBI:0001705
-name: biological activity assay measuring epitope specific antigen inhibition of antibody activity
+name: assay measuring epitope specific antigen inhibition of antibody activity
 def: "A B cell epitope dependent biological activity determination assay that detects inhibition of the antibody's activity by the antigen." []
 synonym: "antibody activity inhibition|biological activity" EXACT []
 is_a: OBI:0001706 ! assay measuring biological activity resulting from B cell epitope:antibody binding
@@ -13195,14 +13325,16 @@ id: OBI:0001710
 name: in vivo assay measuring B cell epitope specific protection from challenge
 def: "An efficacy of B cell epitope intervention experiment that uses a epitope protection experiment." []
 synonym: "protection from challenge|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001184 ! epitope protection experiment
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001711
 name: in vivo assay measuring B cell epitope specific disease exacerbation
 def: "An efficacy of B cell epitope intervention experiment that uses a disease exacerbation in vivo intervention experiment." []
 synonym: "disease exacerbation|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001188 ! epitope disease exacerbation experiment
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0001712
@@ -14323,7 +14455,7 @@ name: formaldehyde-assisted isolation of regulatory elements assay
 def: "An assay to determine the sequences of those DNA regions in the genome associated with regulatory activity." []
 synonym: "FAIRE-seq" EXACT []
 synonym: "FAIRE-seq assay" EXACT []
-is_a: OBI:0000626 ! DNA sequencing assay
+is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0001861
@@ -15636,16 +15768,18 @@ is_a: OBI:0002075 ! MHC ligand assay
 [Term]
 id: OBI:0002051
 name: in vivo assay measuring B cell epitope specific protection from infectious challenge based on pathogen burden
-def: "A B cell epitope in vivo intervention experiment that uses a epitope protection experiment based on pathogen burden." []
+def: "An in vivo assay measuring B cell epitope specific protection from pathogen challenge using pathogen burden." []
 synonym: "pathogen burden after challenge|in vivo assay" EXACT []
-is_a: OBI:0001710 ! in vivo assay measuring B cell epitope specific protection from challenge
+is_a: OBI:0001186 ! epitope protection from infectious challenge experiment based on pathogen burden
+is_a: OBI:0003465 ! in vivo assay measuring B cell epitope specific protection from pathogen challenge
 
 [Term]
 id: OBI:0002052
-name: in vivo assay measuring B cell epitope specific protection from tumor challenge
-def: "A B cell epitope in vivo intervention experiment that uses a epitope protection experiment based on tumor burden." []
+name: in vivo assay measuring B cell epitope specific protection after tumor burden challenge
+def: "An in vivo assay measuring B cell epitope specific protection from tumor challenge using tumor burden." []
 synonym: "tumor burden after challenge|in vivo assay" EXACT []
-is_a: OBI:0001710 ! in vivo assay measuring B cell epitope specific protection from challenge
+is_a: OBI:0003458 ! epitope protection from tumor challenge experiment based on burden
+is_a: OBI:0003466 ! in vivo assay measuring B cell epitope specific protection from tumor challenge
 
 [Term]
 id: OBI:0002053
@@ -15716,9 +15850,10 @@ is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 [Term]
 id: OBI:0002062
 name: in vitro assay measuring epitope specific T cell killing
-def: "A T cell epitope specific killing assay that uses an in vitro cell killing assay." []
+def: "An in vitro cell killing assay that measures the killing of antigen presenting cells (APC) by T cells whose TCR recognizes an epitope presented by the APC." []
 synonym: "cytotoxicity|in vitro assay" EXACT []
-is_a: OBI:1110130 ! biological activity assay measuring epitope specific T cell killing
+is_a: OBI:0000903 ! in vitro cell killing assay
+is_a: OBI:1110130 ! assay measuring epitope specific T cell killing
 
 [Term]
 id: OBI:0002063
@@ -15781,15 +15916,15 @@ id: OBI:0002070
 name: in vivo assay measuring epitope specific proliferation of T cells
 def: "A T cell epitope specific proliferation assay that is performed in vivo." []
 synonym: "proliferation|in vivo assay" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
-is_a: OBI:1110131 ! biological activity assay measuring epitope specific proliferation of T cells
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
+is_a: OBI:1110131 ! assay measuring epitope specific proliferation of T cells
 
 [Term]
 id: OBI:0002071
 name: in vitro assay measuring epitope specific proliferation of T cells
 def: "A T cell epitope specific proliferation assay that is performed on cells in vitro." []
 synonym: "proliferation|in vitro assay" EXACT []
-is_a: OBI:1110131 ! biological activity assay measuring epitope specific proliferation of T cells
+is_a: OBI:1110131 ! assay measuring epitope specific proliferation of T cells
 
 [Term]
 id: OBI:0002072
@@ -15803,11 +15938,12 @@ id: OBI:0002073
 name: in vivo assay measuring T cell epitope specific protection from challenge
 def: "An efficacy of T cell epitope intervention experiment that uses a epitope protection experiment." []
 synonym: "protection from challenge|in vivo assay" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001184 ! epitope protection experiment
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0002074
-name: in vitro assay measuring T cell epitope specific suppression
+name: assay measuring T cell epitope specific suppression in vitro
 def: "T cell epitope dependent biological activity assay that detects suppression of an in vitro response." []
 synonym: "suppression|in vitro assay" EXACT []
 is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
@@ -15958,9 +16094,10 @@ is_a: OBI:0000094 ! material processing
 [Term]
 id: OBI:0002096
 name: carboxyfluorescein succinimidyl ester staining assay measuring epitope specific proliferation of T cells
-def: "A T cell epitope specific proliferation assay performed on cells in vitro that uses a CFSE assay." []
+def: "A CFSE assay that detects T cell epitope specific proliferation in vitro." []
 synonym: "proliferation|CFSE" EXACT []
 is_a: OBI:0002071 ! in vitro assay measuring epitope specific proliferation of T cells
+is_a: OBI:0002106 ! carboxyfluorescein succinimidyl ester staining assay
 
 [Term]
 id: OBI:0002097
@@ -16511,7 +16648,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0002177
 name: patch clamp assay
 def: "An intracellular electrophysiology assay where a glass micropipette is sealed to the surface of the cell membrane as a recording electrode to study ion channel activity. The key distinction of this technique is the electrical resistance of the seal between the cell membrane and the pipette is of the order 10-100 gigaohms, permitting high-resolution current measurements over the cell membrane in several different standard configurations." []
-is_a: OBI:0000447 ! intra cellular electrophysiology recording assay
+is_a: OBI:0000447 ! intracellular electrophysiology recording assay
 
 [Term]
 id: OBI:0002178
@@ -16541,7 +16678,7 @@ is_a: OBI:0002177 ! patch clamp assay
 id: OBI:0002182
 name: voltage clamp assay
 def: "An cellular electrophysiology assay where the membrane potential of a cell is controlled by the experimentalist. This is accomplished through a feedback mechanism where any change in membrane potential is countered by permitting electrical current to flow into or out of the cell." []
-is_a: OBI:0000447 ! intra cellular electrophysiology recording assay
+is_a: OBI:0000447 ! intracellular electrophysiology recording assay
 
 [Term]
 id: OBI:0002183
@@ -16561,7 +16698,7 @@ is_a: OBI:0002182 ! voltage clamp assay
 id: OBI:0002185
 name: current clamp assay
 def: "The current clamp technique records the membrane potential by injecting current into a cell through the recording electrode. Unlike in the voltage clamp mode, where the membrane potential is held at a level determined by the experimenter, in \"current clamp\" mode the membrane potential is free to vary, and the amplifier records whatever voltage the cell generates on its own or as a result of stimulation. This technique is used to study how a cell responds when electric current enters a cell; this is important for instance for understanding how neurons respond to neurotransmitters that act by opening membrane ion channels." []
-is_a: OBI:0000447 ! intra cellular electrophysiology recording assay
+is_a: OBI:0000447 ! intracellular electrophysiology recording assay
 
 [Term]
 id: OBI:0002186
@@ -17122,7 +17259,7 @@ is_a: OBI:0002410 ! menopausal status
 [Term]
 id: OBI:0002415
 name: exposure to environmental and workplace carcinogens history
-def: "A information content entity that indicates the exposure of an individual to carcinogens in the workplace or environment." []
+def: "An information content entity that indicates the exposure of an individual to carcinogens in the workplace or environment." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -18496,51 +18633,57 @@ is_a: OBI:0002677 ! in vivo assay measuring a B cell epitope specific response a
 [Term]
 id: OBI:0002639
 name: in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells based on pathogen burden
-def: "A T cell epitope in vivo intervention experiment that uses a epitope protection experiment based on pathogen burden after adoptive transfer of epitope specfic T cells." []
+def: "An in vivo assay measuring T cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific antibodies or B cells using pathogen burden." []
 synonym: "pathogen burden after challenge after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0002637 ! in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells
+is_a: OBI:0001475 ! in vivo assay measuring T cell epitope specific protection from infectious challenge based on pathogen burden
+is_a: OBI:0003470 ! in vivo assay measuring T cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific T cells
 
 [Term]
 id: OBI:0002640
 name: in vivo assay measuring B cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific antibodies or B cells based on pathogen burden
-def: "A B cell epitope in vivo intervention experiment that uses a epitope protection experiment based on pathogen burden after adoptive transfer of epitope specific antibodies or B cells." []
+def: "An in vivo assay measuring B cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific antibodies or B cells using pathogen burden." []
 synonym: "pathogen burden after challenge after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection from challenge resulting from adoptive transfer of epitope specific antibodies or B cells
+is_a: OBI:0002051 ! in vivo assay measuring B cell epitope specific protection from infectious challenge based on pathogen burden
+is_a: OBI:0003475 ! in vivo assay measuring B cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
 
 [Term]
 id: OBI:0002641
-name: in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells based on survival
-def: "A T cell epitope in vivo intervention experiment that uses a epitope protection experiment based on survival after adoptive transfer of epitope specfic T cells." []
-synonym: "survival from challenge after adoptive transfer|in vivo assay" EXACT []
+name: in vivo assay measuring T cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific T cells based on survival
+def: "An in vivo assay measuring T cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific T cells using survival." []
+synonym: "survival from other challenge after adoptive transfer|in vivo assay" EXACT []
 is_a: OBI:0001492 ! in vivo assay measuring T cell epitope specific protection based on survival
-is_a: OBI:0002637 ! in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells
+is_a: OBI:0003474 ! in vivo assay measuring T cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific T cells
 
 [Term]
 id: OBI:0002642
-name: in vivo assay measuring B cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific antibodies or B cells based on survival
-def: "A B cell epitope in vivo intervention experiment that uses a epitope protection experiment based on survival after adoptive transfer of epitope specific antibodies or B cells." []
-synonym: "survival from challenge after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection from challenge resulting from adoptive transfer of epitope specific antibodies or B cells
+name: in vivo assay measuring B cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific antibodies or B cells based on survival
+def: "An in vivo assay measuring B cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific antibodies or B cells using survival." []
+synonym: "survival from other challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001696 ! in vivo assay measuring B cell epitope specific protection based on survival
+is_a: OBI:0003479 ! in vivo assay measuring B cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
 
 [Term]
 id: OBI:0002643
-name: in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells
-def: "A T cell epitope in vivo intervention experiment that uses a epitope protection experiment based on tumor burden after adoptive transfer of epitope specfic T cells." []
+name: in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells based on tumor burden
+def: "An in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells using tumor burden." []
 synonym: "tumor burden after challenge after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0002637 ! in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells
+is_a: OBI:0001473 ! in vivo assay measuring T cell epitope specific protection after tumor burden challenge
+is_a: OBI:0003472 ! in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells
 
 [Term]
 id: OBI:0002644
-name: in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
-def: "A B cell epitope in vivo intervention experiment that uses a epitope protection experiment based on tumor burden after adoptive transfer of epitope specific antibodies or B cells." []
+name: in vivo assay measuring B cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific antibodies or B cells based on tumor burden
+def: "An in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells using tumor burden." []
 synonym: "tumor burden after challenge after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection from challenge resulting from adoptive transfer of epitope specific antibodies or B cells
+is_a: OBI:0002052 ! in vivo assay measuring B cell epitope specific protection after tumor burden challenge
+is_a: OBI:0003477 ! in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
 
 [Term]
 id: OBI:0002645
 name: in vivo assay measuring T cell epitope specific tolerance induction resulting from the adoptive transfer of epitope specific T cells
 def: "An efficacy of T cell epitope intervention experiment that uses a tolerance induction intervention experiment after adoptive transfer of epitope specfic T cells." []
 synonym: "tolerance after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001324 ! in vivo assay measuring T cell epitope specific tolerance induction
 is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response after adoptive transfer of epitope specific T cells
 
 [Term]
@@ -18548,6 +18691,7 @@ id: OBI:0002646
 name: in vivo assay measuring B cell epitope specific tolerance induction resulting from the adoptive transfer of epitope specific antibodies or B cells
 def: "An efficacy of B cell epitope intervention experiment that uses a tolerance induction intervention experiment after adoptive transfer of epitope specific antibodies or B cells." []
 synonym: "tolerance after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001693 ! in vivo assay measuring B cell epitope specific tolerance induction
 is_a: OBI:0002677 ! in vivo assay measuring a B cell epitope specific response after adoptive transfer of epitope specific antibodies or B cells
 
 [Term]
@@ -18699,24 +18843,24 @@ is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response a
 
 [Term]
 id: OBI:0002669
-name: biological activity assay measuring epitope specific helper T cell enhancement of a B cell mediated immune response resulting from the adoptive transfer of epitope specific T cells
+name: assay measuring epitope specific helper T cell enhancement of a B cell mediated immune response resulting from the adoptive transfer of epitope specific T cells
 def: "A T cell epitope specific helper activity assay that detects the ability of a T cell epitope to enhance an antibody response after adoptive transfer of epitope specfic T cells." []
-synonym: "antibody help after adoptive transfer|biological activity" EXACT []
-is_a: OBI:0001228 ! biological activity assay measuring epitope specific helper T cell enhancement of a B cell mediated immune response
+synonym: "antibody help after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001228 ! in vivo assay measuring epitope specific helper T cell enhancement of a B cell mediated immune response
 is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response after adoptive transfer of epitope specific T cells
 
 [Term]
 id: OBI:0002670
-name: biological activity assay measuring epitope specific helper T cell enhancement of a T cell mediated immune response resulting from the adoptive transfer of epitope specific T cells
+name: assay measuring epitope specific helper T cell enhancement of a T cell mediated immune response resulting from the adoptive transfer of epitope specific T cells
 def: "A T cell epitope specific helper activity assay that detects the ability of a T cell epitope to enhance a T cell response after adoptive transfer of epitope specfic T cells." []
-synonym: "T cell help after adoptive transfer|biological activity" EXACT []
-is_a: OBI:0001263 ! biological activity assay measuring epitope specific helper T cell enhancement of a T cell mediated immune response
+synonym: "T cell help after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001263 ! in vivo assay measuring epitope specific helper T cell enhancement of a T cell mediated immune response
 is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response after adoptive transfer of epitope specific T cells
 
 [Term]
 id: OBI:0002671
 name: in vivo assay measuring epitope specific T cell killing resulting from the adoptive transfer of epitope specific T cells
-def: "A T cell epitope specific killing assay that uses an in vivo cell mediated cell killing assay after adoptive transfer of epitope specfic T cells." []
+def: "An in vivo cell killing assay that detects the killing of an antigen presenting cell (APC) by a T cell whose TCR recognizes an epitope presented by the APC after adoptive transfer of epitope specific T cells." []
 synonym: "cytotoxicity after adoptive transfer|in vivo assay" EXACT []
 is_a: OBI:0001392 ! in vivo assay measuring epitope specific T cell killing
 is_a: OBI:0002676 ! in vivo assay measuring a T cell epitope specific response after adoptive transfer of epitope specific T cells
@@ -18754,14 +18898,14 @@ id: OBI:0002676
 name: in vivo assay measuring a T cell epitope specific response after adoptive transfer of epitope specific T cells
 def: "An efficacy of T cell epitope intervention experiment that is performed after adoptive transfer of epitope specfic T cells." []
 synonym: "in vivo response after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0001484 ! biological activity assay measuring T cell epitope specific in vivo activity
+is_a: OBI:0001484 ! assay measuring T cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0002677
 name: in vivo assay measuring a B cell epitope specific response after adoptive transfer of epitope specific antibodies or B cells
 def: "An efficacy of B cell epitope intervention experiment that is performed after adoptive transfer of epitope specific antibodies or B cells." []
 synonym: "in vivo response after adoptive transfer|in vivo assay" EXACT []
-is_a: OBI:0001698 ! biological activity assay measuring B cell epitope specific in vivo activity
+is_a: OBI:0001698 ! assay measuring B cell epitope specific in vivo activity
 
 [Term]
 id: OBI:0002678
@@ -19988,7 +20132,7 @@ is_a: OBI:0002930 ! light trap
 
 [Term]
 id: OBI:0002933
-name: Mosquito Magnet trap
+name: Mosquito Magnet Pro trap
 def: "An arthropod trap that is powered by propane and is designed to emit a combination of carbon dioxide, heat, water, and oct-1-en-3-ol attractants while simultaneously using suction to trap arthropods." []
 is_a: OBI:0002920 ! arthropod trap
 
@@ -21871,7 +22015,7 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003244
 name: blood microbiology datum
-def: "An organism identification assay that is the specified output of a blood microbiology assay." []
+def: "An organism identification datum that is the specified output of a blood microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
@@ -21883,7 +22027,7 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003246
 name: feces microbiology datum
-def: "An organism identification assay that is the specified output of a feces microbiology assay." []
+def: "An organism identification datum that is the specified output of a feces microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
@@ -21895,7 +22039,7 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003248
 name: urine microbiology datum
-def: "An organism identification assay that is the specified output of a urine microbiology assay." []
+def: "An organism identification datum that is the specified output of a urine microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
@@ -21907,7 +22051,7 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003251
 name: induced sputum microbiology datum
-def: "An organism identification assay that is the specified output of an induced sputum microbiology assay." []
+def: "An organism identification datum that is the specified output of an induced sputum microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
@@ -21919,49 +22063,49 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003253
 name: cerebrospinal fluid microbiology datum
-def: "An organism identification assay that is the specified output of a cerebrospinal fluid microbiology assay." []
+def: "An organism identification datum that is the specified output of a cerebrospinal fluid microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
 id: OBI:0003254
 name: endotracheal aspirate assay datum
-def: "An organism identification assay that is the specified output of an endotracheal aspirate assay." []
+def: "An organism identification datum that is the specified output of an endotracheal aspirate assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
 id: OBI:0003255
 name: endotracheal tube aspirate microbiology datum
-def: "An organism identification assay that is the specified output of an endotracheal tube aspirate microbiology assay." []
+def: "An organism identification datum that is the specified output of an endotracheal tube aspirate microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
 id: OBI:0003256
 name: lung microbiology datum
-def: "An organism identification assay that is the specified output of a lung microbiology assay." []
+def: "An organism identification datum that is the specified output of a lung microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
 id: OBI:0003257
 name: nasopharyngeal or oropharyngeal swab microbiology datum
-def: "An organism identification assay that is the specified output of a nasopharyngeal or oropharyngeal swab microbiology assay." []
+def: "An organism identification datum that is the specified output of a nasopharyngeal or oropharyngeal swab microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
 id: OBI:0003258
 name: pleural fluid microbiology datum
-def: "An organism identification assay that is the specified output of a pleural fluid microbiology assay." []
+def: "An organism identification datum that is the specified output of a pleural fluid microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
 id: OBI:0003259
 name: umbilical cord blood assay datum
-def: "An organism identification assay that is the specified output of an umbilical cord blood assay." []
+def: "An organism identification datum that is the specified output of an umbilical cord blood assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
 id: OBI:0003260
 name: umbilical cord blood microbiology datum
-def: "An organism identification assay that is the specified output of an umbilical cord blood microbiology assay." []
+def: "An organism identification datum that is the specified output of an umbilical cord blood microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
@@ -22404,8 +22548,8 @@ is_a: OBI:0000070 ! assay
 [Term]
 id: OBI:0003369
 name: assay kit
-def: "A processed material that consists of reagents and devices that enable the performance of a specific type of assay, which could, in addition, require specific instruments not included in the kit." []
-is_a: OBI:0000047 ! processed material
+def: "A device that consists of reagents and devices that enable the performance of a specific type of assay, which could, in addition, require specific instruments not included in the kit." []
+is_a: OBI:0000968 ! device
 
 [Term]
 id: OBI:0003371
@@ -22451,7 +22595,7 @@ is_a: OBI:0002649 ! blood microbiology assay
 [Term]
 id: OBI:0003382
 name: placental blood microbiology datum
-def: "An organism identification assay that is the specified output of a placental blood microbiology assay." []
+def: "An organism identification datum that is the specified output of a placental blood microbiology assay." []
 is_a: OBI:0003064 ! organism identification datum
 
 [Term]
@@ -22459,6 +22603,551 @@ id: OBI:0003383
 name: eukaryota in placental blood datum
 def: "A placental blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
 is_a: OBI:0003382 ! placental blood microbiology datum
+
+[Term]
+id: OBI:0003384
+name: synaptosome preparation process
+def: "A material component separation process where a synaptic terminal is isolated from a neuron by mild homogenization of nervous tissue under isotonic conditions and subsequent fractionation using differential and density gradient centrifugation." []
+is_a: OBI:0600014 ! material component separation
+
+[Term]
+id: OBI:0003386
+name: Illumina HiSeq 1500
+def: "A DNA sequencer which is manufactured by the Illumina corporation, with a single flow cell. Built upon sequencing by synthesis technology, the machine employs dual surface imaging and offers two high-output options and one rapid-run option." []
+synonym: "HiSeq 1500" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003387
+name: NextSeq 550
+def: "A DNA sequencer manufactured by the Illumina corporation, which provides the increased flexibility of microarray scanning in addition to sequencing." []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003388
+name: Agilent-026655 Whole Mouse Genome Microarray 4x44K v2
+def: "A DNA microarray manufactured with Agilent 60-mer SurePrint Technology .The SurePrint G3 Mouse Gene Expression 4x44K v2 Microarray provide full coverage of the mouse transcriptome using the latest annotation databases, including long non-coding RNA(lncRNA). Each glass slide is formatted with four high-definition 44K arrays." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003389
+name: Agilent-030493 SurePrint G3 Mouse Exon 4x180K Microarray
+def: "A DNA microarray manufactured with Agilent 60-mer SurePrint Technology for studying exon-level gene expression changes. The SurePrint G3 Mouse Exon 4x180K Microarray include probes targeting individual exons. Each glass slide formatted with four 180K arrays." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003390
+name: Agilent-074809 SurePrint G3 Mouse GE v2 8x60K Microarray
+def: "A DNA microarray manufactured with Agilent 60-mer SurePrint technology which provides comprehensive coverage of genes and transcripts using the latest annotation databases. The SurePrint G3 Mouse Gene Expression 8x60K v2 Microarray features complete coverage of established RefSeq coding transcripts (NM) from the latest build and updated long non-coding RNA (lncRNA) content to ensure relevant research.Each glass slide formatted with eight high-definition 60K arrays." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003391
+name: Affymetrix Mouse Genome 430 2.0 Array
+def: "A DNA microarray manufactured by Affymetrix, which includes complete coverage of the GeneChip Mouse Expression Set 430, for analysis of over 39,000 transcripts and variants from more than 34,000 well-characterized mouse genes and UniGene clusters, on a single array. The sequences for this array were selected from GenBank™, dbEST, and RefSeq., and sequence clusters cretaed from the UniGene database." []
+synonym: "GeneChip Mouse Genome 430 2.0 Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003392
+name: Affymetrix Mouse Genome 430A 2.0 Array
+def: "A DNA microarray manufactured by Affymetrix for gene expression analysis focusing on approximately 14,000 well-characterized genes in the transcribed mouse genome using single-array cartridge. Sequences used in the design of the array were selected from GenBank™, dbEST, and RefSeq. The sequence clusters were created from the UniGene database." []
+synonym: "GeneChip Mouse Genome 430A 2.0 Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003393
+name: Affymetrix Mouse Gene 1.0 ST Array
+def: "A DNA microarray manufactured by Affymetrix, which is a whole-transcript array that includes probes to measure both messenger (mRNA) and long intergenic non-coding RNA transcripts (lincRNA). This whole-transcript array design provides a complete expression profile of mRNA as well as the intermediary lincRNA transcripts that impact the mRNA expression profile." []
+synonym: "GeneChip Mouse Gene 1.0 ST Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003394
+name: Affymetrix Mouse Gene 2.1 ST Array
+def: "A DNA microarray manufactured by Affymetrix, which is a whole-transcript array that includes probes to measure both messenger (mRNA) and long intergenic non-coding RNA transcripts (lincRNA).To supplement the lincRNA data contained in RefSeq, we used sequence and transcript data from lncRNA db." []
+synonym: "GeneChip Mouse Gene 2.1 ST Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003395
+name: Affymetrix Rhesus Macaque Genome Array
+def: "A DNA microarray manufactured by Affymetrix,which is a single-labeled high-density oligonucleotide array, designed to study gene expression in the rhesus animal model and to interrogate rhesus transcripts orthologous to the 3' end of human transcripts. The array consists of over 52,000 probe sets representing more than 20,000 genes, and several relevant viral organisms for studying host-disease immune response." []
+synonym: "GeneChip Rhesus Macaque Genome Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003396
+name: Affymetrix Human Transcriptome Array 2.0
+def: "A DNA microarray manufactured by Affymetrix, to go beyond gene-level expression profiling to accurately detect all known transcript isoforms produced by a gene. The array design covers >245,000 coding transcripts, >40,000 non-coding transcripts and >339,000 probe sets covering exon-exon junctions, thus ensuring uniform coverage of the transcriptome." []
+synonym: "GeneChip Human Transcriptome Array 2.0" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003397
+name: Affymetrix Human Genome U219 Array
+def: "A DNA microarray manufactured by Affymetrix, which comprises more than 530,000 probes covering more than 36,000 transcripts and variants, which represent more than 20,000 genes mapped through RefSeq or via UniGene annotation. Sequences used in the design of the array were selected from the RefSeq version 36, UniGene database 219, and full-length human mRNAs from GenBank™." []
+synonym: "Applied Biosystems GeneChip PrimeView Human Gene Expression Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003398
+name: Affymetrix Human Gene 2.0 ST Array
+def: "A DNA microarray manufactured by Affymetrix, which provides the most accurate, sensitive, and comprehensive measurement of protein coding (mRNA) and long intergenic non-coding RNA (lincRNA) transcripts. The array design covers >33,500 coding transcripts and >11,000 lincRNA transcripts thus enabling researchers to understand whole-transcriptome gene expression at the gene and exon levels, which allows the study of transcript variants and alternative splicing events." []
+synonym: "GeneChip Human Gene 2.0 ST Array" EXACT []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003399
+name: Affymetrix Clariom S Assay, Human
+def: "A DNA microarray manufactured by Affymetrix, to obtain a gene-level view of the human transcriptome. The assay design covers >20,000 well-annotated genes, providing researchers with the ability to perform gene-level expression profiling studies, to identify expression biomarkers , and to quickly assess changes in key genes and pathways." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003400
+name: Affymetrix Clariom S Assay, Mouse
+def: "A DNA microarray manufactured by Affymetrix, to obtain a gene-level view of the mouse transcriptome. The assay design covers >20,000 well-annotated genes, providing researchers with the ability to perform gene-level expression profiling studies, to identify expression biomarkers, and to quickly assess changes in key genes and pathways." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003401
+name: Illumina HumanHT-12 V4.0 expression beadchip
+def: "An Illumina BeadChip which employs direct-hybridization assay, for whole-genome expression profiling and expression-based quantitative trait loci (eQTL) studies. This BeadChip contains 12 arrays, each featuring more than 48,000 probes, targeting more than 31,000 annotated genes, providing genome-wide coverage of well-characterized genes, gene candidates, and splice variants." []
+is_a: OBI:0001869 ! Illumina BeadChip
+
+[Term]
+id: OBI:0003402
+name: Illumina MouseRef-8 v2.0 beadchip
+def: "An Illumina BeadChip which employs direct-hybridization assay, for whole-genome expression profiling in the mouse.This Beadchip contains 8 microarrays, featuring more than 25,000 probes per array, derived from the NCBI RefSeq database and supplemented with MEEBO and RIKEN FANTOM2 content." []
+is_a: OBI:0001869 ! Illumina BeadChip
+
+[Term]
+id: OBI:0003403
+name: Affymetrix Mouse Exon Junction Array
+def: "A DNA microarray manufactured by Affymetrix, used to identify exon-exon junctions associated with alternate splice variants in the mouse transcriptome." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003404
+name: Affymetrix Human Exon Junction Array
+def: "A DNA microarray manufactured by Affymetrix, used to identify exon-exon junctions associated with alternate splice variants in the human transcriptome." []
+is_a: OBI:0400148 ! DNA microarray
+
+[Term]
+id: OBI:0003413
+name: administering substance in vivo to cause disease
+def: "An administration of substance in vivo with the intention to induce disease in the organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003414
+name: administering substance in vivo to reduce or prevent disease
+def: "An administration of substance in vivo with the intention to reduce the symptoms of or prevent development of a disease in the organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003415
+name: peripheral blood mononuclear cell specimen
+def: "A processed specimen that is extracted from whole blood using gradient centrifugation that separates the blood into a layer of peripheral blood mononuclear cells under the top layer of plasma. It contains lymphocytes, monocytes or macrophages that are critical components in the immune system." []
+synonym: "PBMC specimen" EXACT []
+is_a: OBI:0100051 ! specimen
+
+[Term]
+id: OBI:0003416
+name: mid-upper arm circumference datum
+def: "A length measurement datum that is the specified output of an assay measuring the length around an upper arm, taken midway along the upper arm." []
+is_a: IAO:0000408 ! length measurement datum
+
+[Term]
+id: OBI:0003417
+name: antigen specific antibodies assay datum
+def: "A data item that is the specified output of an antigen specific antibodies assay." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0003418
+name: antigen specific antibodies in blood assay
+def: "An antigen specific antibodies assay that has a blood specimen as evaluant." []
+is_a: OBI:0002145 ! antigen specific antibodies assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003419
+name: antigen specific antibodies in milk assay
+def: "An antigen specific antibodies assay that has a milk specimen as evaluant." []
+is_a: OBI:0002145 ! antigen specific antibodies assay
+
+[Term]
+id: OBI:0003420
+name: antigen specific antibodies in blood assay datum
+def: "An antigen specific antibodies assay datum that is the specified output of an antigen specific antibodies in blood assay." []
+is_a: OBI:0003243 ! blood assay datum
+
+[Term]
+id: OBI:0003421
+name: antigen specific antibodies in milk assay datum
+def: "An antigen specific antibodies assay datum that is the specified output of an antigen specific antibodies in milk assay." []
+is_a: OBI:0003365 ! milk assay datum
+
+[Term]
+id: OBI:0003422
+name: enzymatic activity level assay
+def: "An assay in which the level of catalytic activity of an enzyme is determined." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003423
+name: 5'-nucleotidase activity level assay
+def: "An enzymatic activity level assay that measures the activity of 5'-nucleotidase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003424
+name: alanine aminotransferase activity level assay
+def: "An enzymatic activity level assay that measures the activity of alanine aminotransferase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003425
+name: alkaline phosphatase activity level assay
+def: "An enzymatic activity level assay that measures the activity of alkaline phosphatase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003426
+name: amylase activity level assay
+def: "An enzymatic activity level assay that measures the activity of amylase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003427
+name: aspartate aminotransferase activity level assay
+def: "An enzymatic activity level assay that measures the activity of aspartate aminotransferase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003428
+name: cholinesterase activity level assay
+def: "An enzymatic activity level assay that measures the activity of cholinesterase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003429
+name: creatine kinase activity level assay
+def: "An enzymatic activity level assay that measures the activity of creatine kinase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003430
+name: gamma-glutamyltransferase activity level assay
+def: "An enzymatic activity level assay that measures the activity of gamma-glutamyltransferase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003431
+name: glutamate dehydrogenase activity level assay
+def: "An enzymatic activity level assay that measures the activity of glutamate dehydrogenase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003432
+name: isocitrate dehydrogenase activity level assay
+def: "An enzymatic activity level assay that measures the activity of isocitrate dehydrogenase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003433
+name: lactate dehydrogenase activity level assay
+def: "An enzymatic activity level assay that measures the activity of lactate dehydrogenase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003434
+name: sorbitol dehydrogenase activity level assay
+def: "An enzymatic activity level assay that measures the activity of sorbitol dehydrogenase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003435
+name: acyl-CoA oxidase activity level assay
+def: "An enzymatic activity level assay that measures the activity of Acyl-CoA oxidase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003436
+name: N-acetyl-beta-glucosaminidase activity level assay
+def: "An enzymatic activity level assay that measures the activity of N-acetyl-beta-glucosaminidase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003437
+name: ribonuclease activity level assay
+def: "An enzymatic activity level assay that measures the activity of ribonuclease in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003438
+name: galactosidase activity level assay
+def: "An enzymatic activity level assay that measures the activity of galactosidase in a sample." []
+is_a: OBI:0003422 ! enzymatic activity level assay
+
+[Term]
+id: OBI:0003454
+name: Mosquito Magnet Liberty Plus trap
+def: "An arthropod trap that is designed to emit a combination of carbon dioxide, heat, water, and oct-1-en-3-ol attractants while simultaneously using suction to trap arthropods. This trap has the same design as the Mosquito Magnet Pro trap but is smaller, is more lightweight, and uses a main line electricity supply instead of propane to power itself. Both use propane to produce the arthropod attractor." []
+is_a: OBI:0002920 ! arthropod trap
+
+[Term]
+id: OBI:0003455
+name: tumor challenge
+def: "The administration of a malignant cell to a host." []
+is_a: OBI:0003456 ! in vivo challenge
+
+[Term]
+id: OBI:0003456
+name: in vivo challenge
+def: "The administration of a challenge to a live host." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003457
+name: epitope protection from infectious challenge experiment based on survival
+def: "An epitope protection from infectious challenge experiment that determines the success of the epitope intervention based on increased survival of the host compared to controls." []
+synonym: "survival after infectious challenge" EXACT []
+is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
+
+[Term]
+id: OBI:0003458
+name: epitope protection from tumor challenge experiment based on burden
+def: "An epitope protection from tumor challenge experiment in which the readout is a reduction in the presence of malignant cells in the host compared to controls." []
+synonym: "burden after tumor challenge " EXACT []
+is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
+
+[Term]
+id: OBI:0003459
+name: epitope protection from tumor challenge experiment based on survival
+def: "An epitope protection from tumor challenge experiment that determines the success of the epitope intervention based on increased survival of the host compared to controls." []
+synonym: "survival after tumor challenge" EXACT []
+is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
+
+[Term]
+id: OBI:0003460
+name: in vivo assay measuring T cell epitope specific protection from pathogen challenge
+def: "An in vivo assay measuring T cell epitope specific protection from pathogen challenge." []
+synonym: "protection from pathogen challenge|in vivo assay" EXACT []
+is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
+is_a: OBI:0002073 ! in vivo assay measuring T cell epitope specific protection from challenge
+
+[Term]
+id: OBI:0003461
+name: in vivo assay measuring T cell epitope specific protection from tumor challenge
+def: "An in vivo assay measuring T cell epitope specific protection from tumor challenge." []
+synonym: "protection from tumor challenge|in vivo assay" EXACT []
+is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
+is_a: OBI:0002073 ! in vivo assay measuring T cell epitope specific protection from challenge
+
+[Term]
+id: OBI:0003462
+name: in vivo assay measuring T cell epitope specific protection from other challenge
+def: "An in vivo assay measuring T cell epitope specific protection from a challenge other than pathogen, infection, or tumor." []
+synonym: "protection from other challenge|in vivo assay" EXACT []
+is_a: OBI:0002073 ! in vivo assay measuring T cell epitope specific protection from challenge
+
+[Term]
+id: OBI:0003463
+name: in vivo assay measuring T cell epitope specific survival after tumor challenge
+def: "An in vivo assay measuring T cell epitope specific protection from tumor challenge using survival." []
+synonym: "survival from tumor challenge|in vivo assay" EXACT []
+is_a: OBI:0003459 ! epitope protection from tumor challenge experiment based on survival
+is_a: OBI:0003461 ! in vivo assay measuring T cell epitope specific protection from tumor challenge
+
+[Term]
+id: OBI:0003464
+name: in vivo assay measuring T cell epitope specific survival after pathogen challenge
+def: "An in vivo assay measuring T cell epitope specific protection from pathogen challenge using survival." []
+synonym: "survival from pathogen challenge|in vivo assay" EXACT []
+is_a: OBI:0003457 ! epitope protection from infectious challenge experiment based on survival
+is_a: OBI:0003460 ! in vivo assay measuring T cell epitope specific protection from pathogen challenge
+
+[Term]
+id: OBI:0003465
+name: in vivo assay measuring B cell epitope specific protection from pathogen challenge
+def: "An in vivo assay measuring B cell epitope specific protection from pathogen challenge." []
+synonym: "protection from pathogen challenge|in vivo assay" EXACT []
+is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
+is_a: OBI:0001710 ! in vivo assay measuring B cell epitope specific protection from challenge
+
+[Term]
+id: OBI:0003466
+name: in vivo assay measuring B cell epitope specific protection from tumor challenge
+def: "An in vivo assay measuring B cell epitope specific protection from tumor challenge." []
+synonym: "protection from tumor challenge|in vivo assay" EXACT []
+is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
+is_a: OBI:0001710 ! in vivo assay measuring B cell epitope specific protection from challenge
+
+[Term]
+id: OBI:0003467
+name: in vivo assay measuring B cell epitope specific protection from other challenge
+def: "An in vivo assay measuring B cell epitope specific protection from a challenge other than pathogen, infection, or tumor." []
+synonym: "protection from other challenge|in vivo assay" EXACT []
+is_a: OBI:0001710 ! in vivo assay measuring B cell epitope specific protection from challenge
+
+[Term]
+id: OBI:0003468
+name: in vivo assay measuring B cell epitope specific survival after pathogen challenge
+def: "An in vivo assay measuring B cell epitope specific protection from pathogen challenge using survival." []
+synonym: "survival from pathogen challenge|in vivo assay" EXACT []
+is_a: OBI:0003457 ! epitope protection from infectious challenge experiment based on survival
+is_a: OBI:0003465 ! in vivo assay measuring B cell epitope specific protection from pathogen challenge
+
+[Term]
+id: OBI:0003469
+name: in vivo assay measuring B cell epitope specific survival after tumor challenge
+def: "An in vivo assay measuring B cell epitope specific protection from tumor challenge using survival." []
+synonym: "survival from tumor challenge|in vivo assay" EXACT []
+is_a: OBI:0003459 ! epitope protection from tumor challenge experiment based on survival
+is_a: OBI:0003466 ! in vivo assay measuring B cell epitope specific protection from tumor challenge
+
+[Term]
+id: OBI:0003470
+name: in vivo assay measuring T cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific T cells
+def: "An in vivo assay measuring a T cell epitope specific protection from a pathogen challenge after adoptive transfer of epitope specific antibodies or B cells." []
+synonym: "protection from pathogen challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
+is_a: OBI:0002637 ! in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells
+
+[Term]
+id: OBI:0003471
+name: in vivo assay measuring T cell epitope specific pathogen protection from challenge resulting from the adoptive transfer of epitope specific T cells based on survival
+def: "An in vivo assay measuring T cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific T cells using survival." []
+synonym: "survival after pathogen challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0003464 ! in vivo assay measuring T cell epitope specific survival after pathogen challenge
+is_a: OBI:0003470 ! in vivo assay measuring T cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific T cells
+
+[Term]
+id: OBI:0003472
+name: in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells
+def: "An in vivo assay measuring a T cell epitope specific protection from a tumor challenge after adoptive transfer of epitope specific T cells." []
+synonym: "protection from tumor challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
+is_a: OBI:0002637 ! in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells
+
+[Term]
+id: OBI:0003473
+name: in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells based on survival
+def: "An in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells using survival." []
+synonym: "survival after tumor challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0003463 ! in vivo assay measuring T cell epitope specific survival after tumor challenge
+is_a: OBI:0003472 ! in vivo assay measuring T cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific T cells
+
+[Term]
+id: OBI:0003474
+name: in vivo assay measuring T cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific T cells
+def: "An in vivo assay measuring a T cell epitope specific protection from other challenge after adoptive transfer of epitope specific T cells." []
+synonym: "protection from other challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0002637 ! in vivo assay measuring T cell epitope specific protection from challenge resulting from the adoptive transfer of epitope specific T cells
+
+[Term]
+id: OBI:0003475
+name: in vivo assay measuring B cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
+def: "An in vivo assay measuring a B cell epitope specific protection from a pathogen challenge after adoptive transfer of epitope specific antibodies or B cells." []
+synonym: "protection from pathogen challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
+is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection from challenge resulting from adoptive transfer of epitope specific antibodies or B cells
+
+[Term]
+id: OBI:0003476
+name: in vivo assay measuring B cell epitope specific pathogen protection from challenge resulting from the adoptive transfer of epitope specific antibodies or B cells based on survival
+def: "An in vivo assay measuring B cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific antibodies or B cells using survival." []
+synonym: "survival after pathogen challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0003468 ! in vivo assay measuring B cell epitope specific survival after pathogen challenge
+is_a: OBI:0003475 ! in vivo assay measuring B cell epitope specific protection from pathogen challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
+
+[Term]
+id: OBI:0003477
+name: in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
+def: "An in vivo assay measuring a B cell epitope specific protection from a tumor challenge after adoptive transfer of epitope specific antibodies or B cells." []
+synonym: "protection from tumor challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
+is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection from challenge resulting from adoptive transfer of epitope specific antibodies or B cells
+
+[Term]
+id: OBI:0003478
+name: in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells based on survival
+def: "An in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells using survival." []
+synonym: "survival after tumor challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0003469 ! in vivo assay measuring B cell epitope specific survival after tumor challenge
+is_a: OBI:0003477 ! in vivo assay measuring B cell epitope specific protection from tumor challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
+
+[Term]
+id: OBI:0003479
+name: in vivo assay measuring B cell epitope specific protection from other challenge resulting from the adoptive transfer of epitope specific antibodies or B cells
+def: "An in vivo assay measuring a B cell epitope specific protection from other challenge after adoptive transfer of epitope specific antibodies or B cells." []
+synonym: "protection from other challenge after adoptive transfer|in vivo assay" EXACT []
+is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection from challenge resulting from adoptive transfer of epitope specific antibodies or B cells
+
+[Term]
+id: OBI:0003480
+name: Gram stain assay
+def: "An organism identification assay that identifies bacteria based on the differential retention of a crystal violet-iodine complex within the cell wall." []
+is_a: OBI:0001624 ! organism identification assay
+
+[Term]
+id: OBI:0003481
+name: cow-baited arthropod trap
+def: "A resting arthropod trap that consists of a tent inside which an adult cow is tethered to the ground, in order to attract arthropods and collect those that rest on the interior walls of the tent." []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0003482
+name: lymph specimen
+def: "A specimen that is derived from a portion of lymph collected from an organism." []
+is_a: OBI:2000009 ! bodily fluid specimen
+
+[Term]
+id: OBI:0003483
+name: digestive tract specimen
+def: "A specimen that is derived from part of a digestive tract." []
+is_a: OBI:0100051 ! specimen
+
+[Term]
+id: OBI:0003484
+name: assay measuring epitope specific interleukin-25 production by T cells
+def: "A T cell epitope specific cytokine production assay that detects interleukin-25 production by T cells." []
+synonym: "IL-25 release|biological activity" EXACT []
+is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T cells
+
+[Term]
+id: OBI:0003485
+name: detection of specific nucleic acids with complementary probes assay measuring epitope specific interleukin-25 production by T cells
+def: "A detection of specific nucleic acid polymers with complementary probes that detects interleukin-25 production by T cells." []
+synonym: "IL-25 release|RNA/DNA detection" EXACT []
+is_a: OBI:0000874 ! detection of specific nucleic acid polymers with complementary probes
+is_a: OBI:0003484 ! assay measuring epitope specific interleukin-25 production by T cells
+
+[Term]
+id: OBI:0003486
+name: intracellular cytokine staining assay measuring epitope specific interleukin-25 production by T cells
+def: "A flow cytometry assay that detects interleukin-25 production by T cells." []
+synonym: "IL-25 release|ICS" EXACT []
+is_a: OBI:0000916 ! flow cytometry assay
+is_a: OBI:0003484 ! assay measuring epitope specific interleukin-25 production by T cells
+
+[Term]
+id: OBI:0003487
+name: ELISA measuring epitope specific interleukin-25 production by T cells
+def: "An enzyme-linked immunosorbent assay that detects interleukin-25 production by T cells." []
+synonym: "IL-25 release|ELISA" EXACT []
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+is_a: OBI:0003484 ! assay measuring epitope specific interleukin-25 production by T cells
+
+[Term]
+id: OBI:0003488
+name: cell culture analyte detection bioassay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
+def: "A reporter cell line analyte detection bioassay that detects tumor necrosis factor superfamily cytokine production by T cells." []
+synonym: "TNF release|bioassay" EXACT []
+is_a: OBI:0000904 ! reporter cell line analyte detection bioassay
+is_a: OBI:0001400 ! assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
 
 [Term]
 id: OBI:0005246
@@ -22639,6 +23328,7 @@ disjoint_from: OBI:0600013 ! information acquisition
 [Term]
 id: OBI:0200001
 name: geometric mean calculation
+def: "A data transformation in which the mean is calculated by taking the nth root of the product of all of the observations in a data (n being the number of all observations)." []
 comment: A geometric mean calculation is a descriptive statistics calculation in which the mean is calculated by taking the nth root of the product of all of the observations in a data (n being the number of all observations).
 is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
@@ -23921,7 +24611,7 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: OBI:0302840
 name: curated information
-def: "A information content entity that has undergone a digital curation performed by a curator for accuracy checks and compliance with curation requirements. Information which has been assessed for accuracy by domain experts." []
+def: "An information content entity that has undergone a digital curation performed by a curator for accuracy checks and compliance with curation requirements. Information which has been assessed for accuracy by domain experts." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -26074,14 +26764,15 @@ is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell ep
 
 [Term]
 id: OBI:1110130
-name: biological activity assay measuring epitope specific T cell killing
+name: assay measuring epitope specific T cell killing
 def: "A T cell epitope dependent biological activity assay that detects the killing of an antigen presenting cell (APC) by a T cell whose TCR recognizes an epitope presented by the APC." []
 synonym: "cytotoxicity|biological activity" EXACT []
+is_a: OBI:0000882 ! cell-cell killing assay
 is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
 
 [Term]
 id: OBI:1110131
-name: biological activity assay measuring epitope specific proliferation of T cells
+name: assay measuring epitope specific proliferation of T cells
 def: "A T cell epitope dependent biological activity assay that detects T cell proliferation." []
 synonym: "proliferation|biological activity" EXACT []
 is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell epitope:MHC:TCR binding
@@ -26096,9 +26787,10 @@ is_a: PR:000000001 ! protein
 [Term]
 id: OBI:1110150
 name: 51 chromium assay measuring epitope specific T cell killing
-def: "A T cell epitope specific killing assay performed in vitro that uses a chromium release assay." []
+def: "A chromium release assay that detects the killing of an antigen presenting cell (APC) by a T cell whose TCR recognizes an epitope presented by the APC." []
 synonym: "cytotoxicity|51 chromium" EXACT []
 is_a: OBI:0002062 ! in vitro assay measuring epitope specific T cell killing
+is_a: OBI:9999994 ! chromium release assay
 
 [Term]
 id: OBI:1110151
@@ -26134,11 +26826,11 @@ is_a: OBI:0001230 ! assay measuring epitope specific interleukin-5 production by
 
 [Term]
 id: OBI:1110155
-name: ELISA measuring epitope specific tumor necrosis factor production by T cells
-def: "An enzyme-linked immunosorbent assay that detects tumor necrosis factor production by T cells." []
+name: ELISA measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "An enzyme-linked immunosorbent assay that detects tumor necrosis factor alpha production by T cells." []
 synonym: "TNFa release|ELISA" EXACT []
 is_a: OBI:0001246 ! ELISA measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
-is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor production by T cells
+is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor alpha production by T cells
 
 [Term]
 id: OBI:1110156
@@ -26214,11 +26906,11 @@ is_a: OBI:0600031 ! enzyme-linked immunospot assay
 
 [Term]
 id: OBI:1110168
-name: ELISPOT assay measuring epitope specific tumor necrosis factor production by T cells
-def: "An enzyme-linked immunospot assay that detects tumor necrosis factor production by T cells." []
+name: ELISPOT assay measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "An enzyme-linked immunospot assay that detects tumor necrosis factor alpha production by T cells" []
 synonym: "TNFa release|ELISPOT" EXACT []
 is_a: OBI:0001272 ! ELISPOT assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
-is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor production by T cells
+is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor alpha production by T cells
 
 [Term]
 id: OBI:1110170
@@ -26254,11 +26946,11 @@ is_a: OBI:0001445 ! assay measuring epitope specific interleukin-2 production by
 
 [Term]
 id: OBI:1110174
-name: intracellular cytokine staining assay measuring epitope specific tumor necrosis factor production by T cells
-def: "A flow cytometry assay that detects tumor necrosis factor production by T cells." []
+name: intracellular cytokine staining assay measuring epitope specific tumor necrosis factor alpha production by T cells
+def: "A flow cytometry assay that detects tumor necrosis factor alpha production by T cells." []
 synonym: "TNFa release|ICS" EXACT []
 is_a: OBI:0001385 ! intracellular cytokine staining assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
-is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor production by T cells
+is_a: OBI:0001416 ! assay measuring epitope specific tumor necrosis factor alpha production by T cells
 
 [Term]
 id: OBI:1110175
@@ -26296,15 +26988,17 @@ is_a: OBI:1110124 ! assay measuring qualitative binding of a T cell epitope:MHC:
 [Term]
 id: OBI:1110180
 name: 3H-thymidine assay measuring epitope specific proliferation of T cells
-def: "A T cell epitope specific proliferation assay performed on cells in vitro that uses a tritiated thymidine incorporation assay." []
+def: "A tritiated thymidine incorporation assay that detects T cell epitope specific proliferation in vitro." []
 synonym: "proliferation|3H-thymidine" EXACT []
+is_a: OBI:0000669 ! tritiated thymidine incorporation assay
 is_a: OBI:0002071 ! in vitro assay measuring epitope specific proliferation of T cells
 
 [Term]
 id: OBI:1110181
 name: BrdU assay measuring epitope specific proliferation of T cells
-def: "A T cell epitope specific proliferation assay performed on cells in vitro that uses a BrdU incorporation assay." []
+def: "A BrdU incorporation assay that detects T cell epitope specific proliferation in vitro." []
 synonym: "proliferation|BrdU" EXACT []
+is_a: OBI:0000664 ! BrdU incorporation assay
 is_a: OBI:0002071 ! in vitro assay measuring epitope specific proliferation of T cells
 
 [Term]
@@ -29766,9 +30460,15 @@ def: "A contiguous sequence derived from sequence assembly. Has no gaps, but may
 is_a: SO:0000353 ! sequence_assembly
 
 [Term]
+id: SO:0000235
+name: TF_binding_site
+def: "A DNA site where a transcription factor binds." []
+is_a: SO:0005836 ! regulatory_region
+
+[Term]
 id: SO:0000276
 name: miRNA
-def: "Small, ~22-nt, RNA molecule that is the endogenous transcript of a miRNA gene (or the product of other non coding RNA genes. Micro RNAs are produced from precursor molecules (SO:0000647) that can form local hairpin structures, which ordinarily are processed (usually via the Dicer pathway) such that a single miRNA molecule accumulates from one arm of a hairpin precursor molecule. Micro RNAs may trigger the cleavage of their target molecules or act as translational repressors." []
+def: "Small, ~22-nt, RNA molecule that is the endogenous transcript of a miRNA gene (or the product of other non coding RNA genes. Micro RNAs are produced from precursor molecules (SO:0001244) that can form local hairpin structures, which ordinarily are processed (usually via the Dicer pathway) such that a single miRNA molecule accumulates from one arm of a hairpin precursor molecule. Micro RNAs may trigger the cleavage of their target molecules or act as translational repressors." []
 is_a: SO:0000001 ! region
 
 [Term]
@@ -29793,6 +30493,12 @@ is_a: SO:0001410 ! experimental_feature
 id: SO:0001410
 name: experimental_feature
 def: "A region which is the result of some arbitrary experimental procedure. The procedure may be carried out with biological material or inside a computer." []
+is_a: SO:0000001 ! region
+
+[Term]
+id: SO:0005836
+name: regulatory_region
+def: "A region of sequence that is involved in the control of a biological process." []
 is_a: SO:0000001 ! region
 
 [Term]
@@ -30044,7 +30750,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 [Term]
 id: UBERON:0001264
 name: pancreas
-def: "An endoderm derived structure that produces precursors of digestive enzymes and blood glucose regulating enzymes[GO]." []
+def: "An endoderm derived structure that produces precursors of digestive enzymes and blood glucose regulating hormones[GO]." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -30064,6 +30770,18 @@ id: UBERON:0001359
 name: cerebrospinal fluid
 def: "A clear, colorless, bodily fluid, that occupies the subarachnoid space and the ventricular system around and inside the brain and spinal cord." []
 is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0001460
+name: arm
+def: "The part of the forelimb extending from the shoulder to the autopod[cjm]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001555
+name: digestive tract
+def: "A tube extending from the mouth to the anus." []
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001557
@@ -30268,6 +30986,12 @@ id: UBERON:0002371
 name: bone marrow
 def: "The soft tissue that fills the cavities of bones." []
 is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0002391
+name: lymph
+def: "Lymph is the fluid that is formed when interstitial fluid enters the conduits of the lymphatic system through lymph capillaries[WP]." []
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0002409
@@ -30960,6 +31684,8 @@ is_a: BFO:0000051 ! has part
 [Typedef]
 id: OBI:0001950
 name: has performer
+def: "A relation between a planned process and a continuant where the continuant can be a person, organization or device (such as a robot controlled by software workflow management system) that performs the planned process." []
+comment: The 'has performer' relation covers the need to report on who performed a planned processed. It has to cover processes done by People or Devices (such as a robot controlled by software  WF management system).
 domain: OBI:0000011 ! planned process
 is_a: RO:0000057 ! has participant
 
@@ -31175,6 +31901,14 @@ id: RO:0002180
 name: has component
 def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
 is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002215
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process." []
+synonym: "has function realized in" EXACT []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000015 ! process
 
 [Typedef]
 id: RO:0002219
