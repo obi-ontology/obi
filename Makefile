@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.7.0/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.8.4/robot.jar
 
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
@@ -67,7 +67,7 @@ build/rdftab: | build
 #
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
-	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+	curl -s -F file=@$< -o $@ https://ontofox.hegroup.org/service.php
 
 # Remove annotation properties from CLO to avoid weird labels.
 src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
@@ -112,6 +112,7 @@ MODULE_NAMES := assays\
  sample-collection\
  study-designs\
  sequence-analysis\
+ specimen-assay-data\
  value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
@@ -156,7 +157,7 @@ build/obi_merged.db: src/scripts/prefixes.sql build/obi_merged.owl | build/rdfta
 # Here we create a standalone OWL file appropriate for release.
 # This involves merging, reasoning, annotating,
 # and removing any remaining import declarations.
-build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq | build/robot.jar build
+build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-construct.rq src/sparql/fix-iao.rq | build/robot.jar build
 	$(ROBOT) merge \
 	--input $< \
 	query \
@@ -166,6 +167,8 @@ build/obi_merged.owl: src/ontology/obi-edit.owl $(MODULE_FILES) src/sparql/*-con
 	merge \
 	--input build/editor-preferred-terms.ttl \
 	--input build/curation-status.ttl \
+	query \
+	--update src/sparql/fix-iao.rq \
 	annotate \
 	--ontology-iri "$(OBO)/obi/obi_merged.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi_merged.owl" \
@@ -184,7 +187,7 @@ obi.owl: build/obi_merged.owl
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
+views/obi-base.owl: build/obi_merged.owl | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
@@ -204,9 +207,6 @@ views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	remove \
 	--term-file $(word 2,$^) \
 	--trim true \
-	annotate \
-	--ontology-iri "$(OBO)/obi.obo" \
-	--version-iri "$(OBO)/obi/$(TODAY)/obi.obo" \
 	convert \
 	--output $(basename $@)-temp.obo && \
 	grep -v ^owl-axioms $(basename $@)-temp.obo | \
@@ -277,6 +277,15 @@ views: views/obi.obo views/obi-base.owl views/obi_core.owl views/NIAID-GSC-BRC.o
 MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq) 
 MODULE_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-modules.rq)
 PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
+
+build/obi-base-report.tsv: views/obi-base.owl
+	$(ROBOT) report \
+	--input $< \
+	--labels true \
+	--base-iri "http://purl.obolibrary.org/obo/OBI_" \
+	--fail-on ERROR \
+	--print 10 \
+	--output $@
 
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
@@ -362,9 +371,29 @@ reason: build/obi_merged.owl | build/robot.jar
 validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
-.PHONY: test
-test: reason verify validate-iris
+.PHONY: validate-dl
+validate-dl: build/dl-validation.txt
+.PRECIOUS: build/dl-validation.txt
+build/dl-validation.txt: build/obi_merged.owl
+	$(ROBOT) validate-profile --input $< --profile dl --output $@
 
+.PHONY: test
+test: reason verify validate-iris validate-dl build/obi-base-report.tsv
+
+
+### Term reservations
+#
+# Get current OBI terms
+build/obi-terms.tsv: build/obi_merged.owl
+	$(ROBOT) export --input $< --header "ID|LABEL" --export $@
+
+# Get the term reservation table
+build/reservations.tsv: | build
+	curl -Lk "https://docs.google.com/spreadsheets/d/1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI/export?format=tsv&id=1tpDrSiO1DlEqkvZjrDSJrMm7OvH9GletljaR-SDeMTI&gid=224833299" > $@
+
+# Create an updated reservation table
+build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/reservations.tsv build/obi-terms.tsv
+	python3 $^ $@
 
 ### General
 #

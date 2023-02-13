@@ -1,0 +1,12 @@
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX OBI: <http://purl.obolibrary.org/obo/OBI_>
+
+DELETE { ?s IAO:0000115 ?def }
+WHERE {
+	VALUES ?s {
+		OBI:0000299
+		OBI:0000293
+	}
+	?s IAO:0000115 ?def .
+	FILTER(!STRSTARTS(?def, "The inverse property"))
+}

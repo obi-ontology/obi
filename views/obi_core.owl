@@ -11,7 +11,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/obi_core.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2021-08-18/obi_core.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2022-12-14/obi_core.owl"/>
         <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</protege:defaultLanguage>
         <obo:IAO_0000589 xml:lang="en">Ontology for Biomedical Investigations</obo:IAO_0000589>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
@@ -78,7 +78,7 @@
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title>Ontology for Biomedical Investigations</terms:title>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-08-18</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-12-14</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -166,9 +166,9 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+        <obo:IAO_0000111>definition</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">definition</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textual definition</obo:IAO_0000111>
+        <obo:IAO_0000111>textual definition</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">The official OBI definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
@@ -195,9 +195,9 @@ We also have the outstanding issue of how to aim different definitions to differ
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label>definition</rdfs:label>
         <rdfs:label xml:lang="en">definition</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textual definition</rdfs:label>
+        <rdfs:label>textual definition</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -367,9 +367,9 @@ https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_9991118">
         <obo:IAO_0000111>IEDB alternative term</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An alternative term used by the IEDB.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Randi Vita, Jason Greenbaum, Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:IAO_0000115>An alternative term used by the IEDB.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON:Randi Vita, Jason Greenbaum, Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
         <rdfs:label>IEDB alternative term</rdfs:label>
     </owl:AnnotationProperty>
     
@@ -560,12 +560,12 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <obo:IAO_0000111>is_supported_by_data</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation between the conclusion &quot;Gene tpbA is involved in EPS production&quot; and the data items produced using two sets of organisms, one being a tpbA knockout, the other being tpbA wildtype tested in polysacharide production assays and analyzed using an ANOVA. </obo:IAO_0000112>
+        <obo:IAO_0000112>The relation between the conclusion &quot;Gene tpbA is involved in EPS production&quot; and the data items produced using two sets of organisms, one being a tpbA knockout, the other being tpbA wildtype tested in polysacharide production assays and analyzed using an ANOVA. </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relation between a data item and a conclusion where the conclusion is the output of a data interpreting process and the data item is used as an input to that process</obo:IAO_0000115>
+        <obo:IAO_0000115>The relation between a data item and a conclusion where the conclusion is the output of a data interpreting process and the data item is used as an input to that process</obo:IAO_0000115>
         <obo:IAO_0000117>OBI</obo:IAO_0000117>
         <obo:IAO_0000119>OBI</obo:IAO_0000119>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philly 2011 workshop</obo:IAO_0000119>
+        <obo:IAO_0000119>Philly 2011 workshop</obo:IAO_0000119>
         <rdfs:label>is_supported_by_data</rdfs:label>
     </owl:ObjectProperty>
     
@@ -582,16 +582,16 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000111>has_specified_input</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">has_specified_input</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_specified_input</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">see is_input_of example_of_usage</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">The inverse property of is_specified_input_of</obo:IAO_0000115>
+        <obo:IAO_0000116>8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Larry Hunter</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Coutot</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Larry Hunter</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Melanie Coutot</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <rdfs:label xml:lang="en">has_specified_input</rdfs:label>
     </owl:ObjectProperty>
@@ -603,12 +603,12 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_specified_input_of</obo:IAO_0000111>
+        <obo:IAO_0000111>is_specified_input_of</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) is_input_for instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON:Bjoern Peters</obo:IAO_0000117>
         <rdfs:label xml:lang="en">is_specified_input_of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -625,14 +625,14 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000111>has_specified_output</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">has_specified_output</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_specified_output</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The inverse property of is_specified_output_of</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Larry Hunter</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Larry Hunter</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <rdfs:label xml:lang="en">has_specified_output</rdfs:label>
     </owl:ObjectProperty>
@@ -649,12 +649,12 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         </owl:equivalentProperty>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000111>is_specified_output_of</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">is_specified_output_of</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_specified_output_of</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON:Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
     </owl:ObjectProperty>
@@ -667,14 +667,14 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000833"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">achieves_planned_objective</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell sorting process achieves the objective specification &apos;material separation objective&apos;</obo:IAO_0000112>
+        <obo:IAO_0000111>achieves_planned_objective</obo:IAO_0000111>
+        <obo:IAO_0000112>A cell sorting process achieves the objective specification &apos;material separation objective&apos;</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation obtains between a planned process and a objective specification when the criteria specified in the objective specification are met at the end of the planned process.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BP, AR, PPPB branch</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPPB branch derived</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">modified according to email thread from 1/23/09 in accordince with DT and PPPB branch</obo:IAO_0000232>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">achieves_planned_objective</rdfs:label>
+        <obo:IAO_0000115>This relation obtains between a planned process and a objective specification when the criteria specified in the objective specification are met at the end of the planned process.</obo:IAO_0000115>
+        <obo:IAO_0000117>BP, AR, PPPB branch</obo:IAO_0000117>
+        <obo:IAO_0000119>PPPB branch derived</obo:IAO_0000119>
+        <obo:IAO_0000232>modified according to email thread from 1/23/09 in accordince with DT and PPPB branch</obo:IAO_0000232>
+        <rdfs:label>achieves_planned_objective</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -684,12 +684,12 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000833">
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">objective_achieved_by</obo:IAO_0000111>
+        <obo:IAO_0000111>objective_achieved_by</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relation obtains between an objective specification and a planned process when the criteria specified in the objective specification are met at the end of the planned process.</obo:IAO_0000115>
+        <obo:IAO_0000115>This relation obtains between an objective specification and a planned process when the criteria specified in the objective specification are met at the end of the planned process.</obo:IAO_0000115>
         <obo:IAO_0000117>OBI</obo:IAO_0000117>
         <obo:IAO_0000119>OBI</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">objective_achieved_by</rdfs:label>
+        <rdfs:label>objective_achieved_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -872,7 +872,7 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001001"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives from</obo:IAO_0000111>
+        <obo:IAO_0000111>derives from</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">this cell derives from this parent cell (cell division)</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">this nucleus derives from this parent nucleus (nuclear division)</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
@@ -1577,6 +1577,7 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
         <obo:BFO_0000179>material</obo:BFO_0000179>
         <obo:BFO_0000180>MaterialEntity</obo:BFO_0000180>
+        <obo:IAO_0000111>material entity</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">material entity</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">a flame</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">a forest fire</obo:IAO_0000112>
@@ -1594,7 +1595,9 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here.</obo:IAO_0000116>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ido.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <obo:IAO_0000600 xml:lang="en">A material entity is an independent continuant that has some portion of matter as proper or improper continuant part. (axiom label in BFO2 Reference: [019-002])</obo:IAO_0000600>
         <obo:IAO_0000601 xml:lang="en">Every entity which has a material entity as continuant part is a material entity. (axiom label in BFO2 Reference: [020-002])</obo:IAO_0000601>
         <obo:IAO_0000601 xml:lang="en">every entity of which a material entity is continuant part is also a material entity. (axiom label in BFO2 Reference: [021-002])</obo:IAO_0000601>
@@ -1602,6 +1605,7 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
         <obo:IAO_0000602>(forall (x) (if (and (Entity x) (exists (y t) (and (MaterialEntity y) (continuantPartOfAt x y t)))) (MaterialEntity x))) // axiom label in BFO2 CLIF: [021-002] </obo:IAO_0000602>
         <obo:IAO_0000602>(forall (x) (if (and (Entity x) (exists (y t) (and (MaterialEntity y) (continuantPartOfAt y x t)))) (MaterialEntity x))) // axiom label in BFO2 CLIF: [020-002] </obo:IAO_0000602>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
+        <rdfs:label>material entity</rdfs:label>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1660,11 +1664,11 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular entity</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.</obo:IAO_0000115>
+        <obo:IAO_0000111>molecular entity</obo:IAO_0000111>
+        <obo:IAO_0000115>Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">We are assuming that every molecular entity has to be completely connected by chemical bonds. This excludes protein complexes, which are comprised of minimally two separate molecular entities. We will follow up with Chebi to ensure this is their understanding as well</obo:IAO_0000116>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/chebi.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular entity</rdfs:label>
+        <rdfs:label>molecular entity</rdfs:label>
     </owl:Class>
     
 
@@ -1679,18 +1683,18 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000111>cell line cell</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">cell line cell</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell line cell</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="zh">细胞系细胞</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A cultured cell that is part of a cell line - a stable and homogeneous population of cells with a common biological origin and propagation history in culture</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cultured cell that is part of a cell line - a stable and homogeneous population of cells with a common biological origin and propagation history in culture
+        <obo:IAO_0000115>A cultured cell that is part of a cell line - a stable and homogeneous population of cells with a common biological origin and propagation history in culture
 </obo:IAO_0000115>
         <obo:IAO_0000115>一个培养细胞，它是一个细胞株（一个稳定的，同质的细胞群，具有共同的生物学起源和增殖史）的一部分</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">一个培养细胞，它是一个细胞株（一个稳定的，同质的细胞群，具有共同的生物学起源和增殖史）的一部分
+        <obo:IAO_0000115>一个培养细胞，它是一个细胞株（一个稳定的，同质的细胞群，具有共同的生物学起源和增殖史）的一部分
 </obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
+        <rdfs:label>cell line cell</rdfs:label>
         <rdfs:label xml:lang="en">cell line cell</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell line cell</rdfs:label>
         <rdfs:label xml:lang="zh">细胞系细胞</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1711,13 +1715,11 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000111 xml:lang="en">cell</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</obo:IAO_0000111>
+        <obo:IAO_0000111>cell</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">PMID:18089833.Cancer Res. 2007 Dec 15;67(24):12018-25. &quot;...Epithelial cells were harvested from histologically confirmed adenocarcinomas ..&quot;</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.</obo:IAO_0000115>
+        <obo:IAO_0000115>A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
-        <rdfs:label xml:lang="en">cell</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</rdfs:label>
+        <rdfs:label>cell</rdfs:label>
     </owl:Class>
     
 
@@ -1726,10 +1728,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000010"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary cultured cell</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cultured cell that is freshly isolated from a organismal source, or derives in culture from such a cell prior to the culture being passaged.</obo:IAO_0000115>
+        <obo:IAO_0000111>primary cultured cell</obo:IAO_0000111>
+        <obo:IAO_0000115>A cultured cell that is freshly isolated from a organismal source, or derives in culture from such a cell prior to the culture being passaged.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary cultured cell</rdfs:label>
+        <rdfs:label>primary cultured cell</rdfs:label>
     </owl:Class>
     
 
@@ -1738,10 +1740,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000578"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cultured cell</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell in vitro that is or has been maintained or propagated as part of a cell culture.</obo:IAO_0000115>
+        <obo:IAO_0000111>cultured cell</obo:IAO_0000111>
+        <obo:IAO_0000115>A cell in vitro that is or has been maintained or propagated as part of a cell culture.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cultured cell</rdfs:label>
+        <rdfs:label>cultured cell</rdfs:label>
     </owl:Class>
     
 
@@ -1757,10 +1759,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">experimentally modified cell in vitro</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure.</obo:IAO_0000115>
+        <obo:IAO_0000111>experimentally modified cell in vitro</obo:IAO_0000111>
+        <obo:IAO_0000115>A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">experimentally modified cell in vitro</rdfs:label>
+        <rdfs:label>experimentally modified cell in vitro</rdfs:label>
     </owl:Class>
     
 
@@ -1769,10 +1771,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00010483">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmental material</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system.</obo:IAO_0000115>
+        <obo:IAO_0000111>environmental material</obo:IAO_0000111>
+        <obo:IAO_0000115>A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/envo.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmental material</rdfs:label>
+        <rdfs:label>environmental material</rdfs:label>
     </owl:Class>
     
 
@@ -1789,10 +1791,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular_function</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process.</obo:IAO_0000115>
+        <obo:IAO_0000111>molecular_function</obo:IAO_0000111>
+        <obo:IAO_0000115>A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/go.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular_function</rdfs:label>
+        <rdfs:label>molecular_function</rdfs:label>
     </owl:Class>
     
 
@@ -1801,10 +1803,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular_component</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome).</obo:IAO_0000115>
+        <obo:IAO_0000111>cellular_component</obo:IAO_0000111>
+        <obo:IAO_0000115>A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome).</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/go.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular_component</rdfs:label>
+        <rdfs:label>cellular_component</rdfs:label>
     </owl:Class>
     
 
@@ -1814,10 +1816,10 @@ every c that is a concretization of g specifically denotes r</obo:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</obo:IAO_0000111>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</obo:IAO_0000115>
+        <obo:IAO_0000111>biological_process</obo:IAO_0000111>
+        <obo:IAO_0000115>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/go.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</rdfs:label>
+        <rdfs:label>biological_process</rdfs:label>
     </owl:Class>
     
 
@@ -2367,9 +2369,9 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Viruses</obo:IAO_0000111>
+        <obo:IAO_0000111>Viruses</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Viruses</rdfs:label>
+        <rdfs:label>Viruses</rdfs:label>
     </owl:Class>
     
 
@@ -2378,10 +2380,10 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_117571">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Euteleostomi</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bony vertebrates</obo:IAO_0000118>
+        <obo:IAO_0000111>Euteleostomi</obo:IAO_0000111>
+        <obo:IAO_0000118>bony vertebrates</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Euteleostomi</rdfs:label>
+        <rdfs:label>Euteleostomi</rdfs:label>
     </owl:Class>
     
 
@@ -2390,10 +2392,10 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bacteria</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eubacteria</obo:IAO_0000118>
+        <obo:IAO_0000111>Bacteria</obo:IAO_0000111>
+        <obo:IAO_0000118>eubacteria</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bacteria</rdfs:label>
+        <rdfs:label>Bacteria</rdfs:label>
     </owl:Class>
     
 
@@ -2402,9 +2404,9 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Archaea</obo:IAO_0000111>
+        <obo:IAO_0000111>Archaea</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Archaea</rdfs:label>
+        <rdfs:label>Archaea</rdfs:label>
     </owl:Class>
     
 
@@ -2413,11 +2415,11 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eukaryota</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eucaryotes</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eukaryotes</obo:IAO_0000118>
+        <obo:IAO_0000111>Eukaryota</obo:IAO_0000111>
+        <obo:IAO_0000118>eucaryotes</obo:IAO_0000118>
+        <obo:IAO_0000118>eukaryotes</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eukaryota</rdfs:label>
+        <rdfs:label>Eukaryota</rdfs:label>
     </owl:Class>
     
 
@@ -2426,9 +2428,9 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314146">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Euarchontoglires</obo:IAO_0000111>
+        <obo:IAO_0000111>Euarchontoglires</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Euarchontoglires</rdfs:label>
+        <rdfs:label>Euarchontoglires</rdfs:label>
     </owl:Class>
     
 
@@ -2437,10 +2439,10 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_32523">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117571"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tetrapoda</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrapods</obo:IAO_0000118>
+        <obo:IAO_0000111>Tetrapoda</obo:IAO_0000111>
+        <obo:IAO_0000118>tetrapods</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tetrapoda</rdfs:label>
+        <rdfs:label>Tetrapoda</rdfs:label>
     </owl:Class>
     
 
@@ -2449,10 +2451,10 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_32524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32523"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amniota</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amniotes</obo:IAO_0000118>
+        <obo:IAO_0000111>Amniota</obo:IAO_0000111>
+        <obo:IAO_0000118>amniotes</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amniota</rdfs:label>
+        <rdfs:label>Amniota</rdfs:label>
     </owl:Class>
     
 
@@ -2461,9 +2463,22 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33154">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opisthokonta</obo:IAO_0000111>
+        <obo:IAO_0000111>Opisthokonta</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opisthokonta</rdfs:label>
+        <rdfs:label>Opisthokonta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33208 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <obo:IAO_0000111>Metazoa</obo:IAO_0000111>
+        <obo:IAO_0000118>metazoans</obo:IAO_0000118>
+        <obo:IAO_0000118>multicellular animals</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label>Metazoa</rdfs:label>
     </owl:Class>
     
 
@@ -2471,10 +2486,10 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_33213 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33213">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bilateria</obo:IAO_0000111>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+        <obo:IAO_0000111>Bilateria</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bilateria</rdfs:label>
+        <rdfs:label>Bilateria</rdfs:label>
     </owl:Class>
     
 
@@ -2483,10 +2498,10 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32524"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mammalia</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mammals</obo:IAO_0000118>
+        <obo:IAO_0000111>Mammalia</obo:IAO_0000111>
+        <obo:IAO_0000118>mammals</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mammalia</rdfs:label>
+        <rdfs:label>Mammalia</rdfs:label>
     </owl:Class>
     
 
@@ -2495,11 +2510,11 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7742">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vertebrata &lt;vertebrates&gt;</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vertebrata</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrates</obo:IAO_0000118>
+        <obo:IAO_0000111>Vertebrata &lt;vertebrates&gt;</obo:IAO_0000111>
+        <obo:IAO_0000118>Vertebrata</obo:IAO_0000118>
+        <obo:IAO_0000118>vertebrates</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vertebrata &lt;vertebrates&gt;</rdfs:label>
+        <rdfs:label>Vertebrata &lt;vertebrates&gt;</rdfs:label>
     </owl:Class>
     
 
@@ -2508,12 +2523,11 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314146"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homo sapiens</obo:IAO_0000111>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human being</obo:IAO_0000118>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">man</obo:IAO_0000118>
+        <obo:IAO_0000111>Homo sapiens</obo:IAO_0000111>
+        <obo:IAO_0000118>human</obo:IAO_0000118>
+        <obo:IAO_0000118>human being</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homo sapiens</rdfs:label>
+        <rdfs:label>Homo sapiens</rdfs:label>
     </owl:Class>
     
 
@@ -2533,17 +2547,17 @@ Request that IAO either clarify these or change definitions not to use them</rdf
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000111>planned process</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">planned process</obo:IAO_0000111>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planned process</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Injecting mice with a vaccine in order to test its efficacy</obo:IAO_0000112>
+        <obo:IAO_0000112>Injecting mice with a vaccine in order to test its efficacy</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A process that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Plan&apos; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&apos;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
+        <obo:IAO_0000116>&apos;Plan&apos; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&apos;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</obo:IAO_0000116>
+        <obo:IAO_0000116>We are only considering successfully completed planned processes. A plan may be modified, and details added during execution. For a given planned process, the associated realized plan specification is the one encompassing all changes made during execution. This means that all processes in which an agent acts towards achieving some 
 objectives is a planned process.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branch derived</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/11/9: Edited at workshop. Used to include: is initiated by an agent</obo:IAO_0000232>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119>branch derived</obo:IAO_0000119>
+        <obo:IAO_0000232>6/11/9: Edited at workshop. Used to include: is initiated by an agent</obo:IAO_0000232>
         <obo:IAO_0000232 xml:lang="en">This class merges the previously separated objective driven process and planned process, as they the separation proved hard to maintain. (1/22/09, branch call)</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <rdfs:label xml:lang="en">planned process</rdfs:label>
@@ -2615,16 +2629,16 @@ objectives is a planned process.</obo:IAO_0000116>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">investigation</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lung cancer investigation using expression profiling, a stem cell transplant investigation, biobanking is not an investigation, though it may be part of an investigation</obo:IAO_0000112>
+        <obo:IAO_0000112>Lung cancer investigation using expression profiling, a stem cell transplant investigation, biobanking is not an investigation, though it may be part of an investigation</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">a planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Could add specific objective specification</obo:IAO_0000232>
+        <obo:IAO_0000232>Could add specific objective specification</obo:IAO_0000232>
         <obo:IAO_0000232 xml:lang="en">Following OBI call November 2012,26th: it was decided there was no need for adding &quot;achieves objective of drawing conclusion&quot; as existing relations were providing equivalent ability. this note closes the issue and validates the class definition to be part of the OBI core
 editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <obo:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study</obo:OBI_0001847>
+        <obo:OBI_0001847>study</obo:OBI_0001847>
         <rdfs:label xml:lang="en">investigation</rdfs:label>
     </owl:Class>
     
@@ -2652,9 +2666,9 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">a role that inheres in a material entity that is realized in an assay in which data is generated about the bearer of the evaluant role</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">Role call - 17nov-08: JF and MC think an evaluant role is always specified input of a process. Even in the case where we have an assay taking blood as evaluant and outputting blood, the blood is not the specified output at the end of the assay (the concentration of glucose in the blood is)</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">examples of features that could be described in an evaluant: quality.... e.g. &quot;contains 10 pg/ml IL2&quot;, or &quot;no glucose detected&quot;)</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP:  Role Branch</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.</obo:IAO_0000232>
+        <obo:IAO_0000117>GROUP:  Role Branch</obo:IAO_0000117>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <obo:IAO_0000232>Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.</obo:IAO_0000232>
         <rdfs:label xml:lang="en">evaluant role</rdfs:label>
     </owl:Class>
     
@@ -2722,7 +2736,7 @@ editor = PRS</obo:IAO_0000232>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0600013"/>
         <obo:IAO_0000111 xml:lang="en">assay</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
+        <obo:IAO_0000112>Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
         <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation. </obo:IAO_0000116>
@@ -2730,8 +2744,8 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
-        <obo:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study assay</obo:OBI_0001847>
-        <obo:OBI_9991118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any method</obo:OBI_9991118>
+        <obo:OBI_0001847>study assay</obo:OBI_0001847>
+        <obo:OBI_9991118>any method</obo:OBI_9991118>
         <rdfs:label xml:lang="en">assay</rdfs:label>
     </owl:Class>
     
@@ -2741,14 +2755,14 @@ editor = PRS</obo:IAO_0000232>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000086">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reagent role</obo:IAO_0000111>
+        <obo:IAO_0000111>reagent role</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">Buffer, dye, a catalyst, a solvating agent.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 xml:lang="en">A role inhering in a biological or chemical entity that is intended to be applied in a scientific technique to participate (or have molecular components that participate) in a chemical reaction that facilitates the generation of data about some entity distinct from the bearer, or the generation of some specified material output distinct from the bearer.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON:Matthew Brush</obo:IAO_0000117>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reagent</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Matthew Brush</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.
+        <obo:IAO_0000118>reagent</obo:IAO_0000118>
+        <obo:IAO_0000119>PERSON:Matthew Brush</obo:IAO_0000119>
+        <obo:IAO_0000232>Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.
 
 May 28 2013. Updated definition taken from ReO based on discussions initiated in Philly 2011 workshop.  Former defnition described a narrower view of reagents in chemistry that restricts bearers of the role to be chemical entities (&quot;a role played by a molecular entity used to produce a chemical reaction to detect, measure, or produce other substances&quot;).  Updated definition allows for broader view of reagents in the domain of biomedical research to include larger materials that have parts that participate chemically in a molecular reaction or interaction.
 </obo:IAO_0000232>
@@ -2786,15 +2800,15 @@ In regard to the statement that reagents are &apos;distinct&apos; from the speci
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0600010"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material processing</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell lysis, production of a cloning vector, creating a buffer.</obo:IAO_0000112>
+        <obo:IAO_0000111>material processing</obo:IAO_0000111>
+        <obo:IAO_0000112>A cell lysis, production of a cloning vector, creating a buffer.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process which results in physical changes in a specified input material</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Frank Gibson</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Philippe Rocca Serra</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Frank Gibson</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Philippe Rocca Serra</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">material transformation</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <rdfs:label xml:lang="en">material processing</rdfs:label>
@@ -2813,14 +2827,14 @@ In regard to the statement that reagents are &apos;distinct&apos; from the speci
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">study subject role</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human subjects in a clinical trial, rats in a toxicogenomics study, tissue cutlures subjected to drug tests, fish observed in an ecotoxicology study. 
+        <obo:IAO_0000112>Human subjects in a clinical trial, rats in a toxicogenomics study, tissue cutlures subjected to drug tests, fish observed in an ecotoxicology study. 
 Parasite example: people are infected with a parasite which is then extracted; the particpant under investigation could be the parasite, the people, or a population of which the people are members, depending on the nature of the study.
 Lake example: a lake could realize this role in an investigation that assays pollution levels in samples of water taken from the lake.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A role that is realized through the execution of a study design in which the bearer of the role participates and in which data about that bearer is collected.</obo:IAO_0000115>
+        <obo:IAO_0000115>A role that is realized through the execution of a study design in which the bearer of the role participates and in which data about that bearer is collected.</obo:IAO_0000115>
         <obo:IAO_0000116>A participant can realize both &quot;specimen role&quot; and &quot;participant under investigation role&quot; at the same time. However &quot;participant under investigation role&quot; is distinct from &quot;specimen role&quot;, since a specimen could somehow be involved in an investigation without being the thing that is under investigation.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">GROUP:  Role Branch</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
         <obo:IAO_0000232 xml:lang="en">Following OBI call November 2012,26th:
  
 1. it was decided there was no need for moving the children class and making them siblings of study subject role.
@@ -2854,20 +2868,21 @@ editor = PRS
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specimen role</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">liver section; a portion of a culture of cells; a nemotode or other animal once no longer a subject (generally killed); portion of blood from a patient.</obo:IAO_0000112>
+        <obo:IAO_0000111>specimen role</obo:IAO_0000111>
+        <obo:IAO_0000112>liver section; a portion of a culture of cells; a nemotode or other animal once no longer a subject (generally killed); portion of blood from a patient.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">a role borne by a material entity that is gained during a specimen collection process and that can be realized by use of the specimen in an investigation</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22Jun09.  The definition includes whole organisms, and can include a human.  The link between specimen role and study subject role has been removed.  A specimen taken as part of a case study is not considered to be a population representative, while a specimen taken as representing a population, e.g. person taken from a cohort, blood specimen taken from an animal) would be considered a population representative and would also bear material sample role.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
+        <obo:IAO_0000116>22Jun09.  The definition includes whole organisms, and can include a human.  The link between specimen role and study subject role has been removed.  A specimen taken as part of a case study is not considered to be a population representative, while a specimen taken as representing a population, e.g. person taken from a cohort, blood specimen taken from an animal) would be considered a population representative and would also bear material sample role.</obo:IAO_0000116>
+        <obo:IAO_0000116>Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">blood taken from animal: animal continues in study, whereas blood has role specimen.
 something taken from study subject, leaves the study and becomes the specimen.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">parasite example
 - when parasite in people we study people, people are subjects and parasites are specimen
 - when parasite extracted, they become subject in the following study
 specimen can later be subject.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP:  Role Branch</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
+        <obo:IAO_0000117>GROUP:  Role Branch</obo:IAO_0000117>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:resource="https://github.com/obi-ontology/obi/issues/1013"/>
         <rdfs:label xml:lang="en">specimen role</rdfs:label>
     </owl:Class>
     
@@ -2932,19 +2947,19 @@ http://code.google.com/p/popcomm-ontology/</obo:IAO_0000116>
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">investigation agent role</obo:IAO_0000111>
+        <obo:IAO_0000111>investigation agent role</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">The person perform microarray experiments and submit microarray results (including raw data, processed data) with experiment description to ArrayExpress.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A role borne by an entity and that is realized in a process that is part of an investigation in which an objective is achieved. These processes include, among others: planning, overseeing, funding, reviewing.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Implementing a study means carrying out or performing the study and providing reagents or other materials used in the study and other tasks without which the study would not happen.</obo:IAO_0000116>
+        <obo:IAO_0000116>Implementing a study means carrying out or performing the study and providing reagents or other materials used in the study and other tasks without which the study would not happen.</obo:IAO_0000116>
         <obo:IAO_0000116>Philly2013: Historically, this role would have been borne only by humans or organizations. However, we now also want to enable representing investigations run by robot scientists such as ADAM (King et al, Science, 2009)</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">GROUP:  Role Branch</obo:IAO_0000117>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">investigator</obo:IAO_0000118>
+        <obo:IAO_0000118>investigator</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">OBI</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.</obo:IAO_0000232>
-        <obo:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study person role</obo:OBI_0001847>
+        <obo:IAO_0000232>Feb 10, 2009.  changes after discussion at OBI Consortium Workshop Feb 2-6, 2009.  accepted as core term.</obo:IAO_0000232>
+        <obo:OBI_0001847>study person role</obo:OBI_0001847>
         <rdfs:comment>Philly2013: Historically, this role would have been borne only by humans or organizations. However, we now also want to enable investigations run by robot scientists such as ADAM (King et al, Science, 2009)</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">investigation agent role</rdfs:label>
+        <rdfs:label>investigation agent role</rdfs:label>
     </owl:Class>
     
 
@@ -2984,11 +2999,11 @@ This leads to my proposal: We define organization through the statements 1 -
 current place in the is_a hierarchy (material entity) or move it up to
 &apos;continuant&apos;. We leave further clarifications to BFO, and close this issue
 for now.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Susanna Sansone</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP: OBI</obo:IAO_0000119>
+        <obo:IAO_0000117>PERSON: Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Susanna Sansone</obo:IAO_0000117>
+        <obo:IAO_0000119>GROUP: OBI</obo:IAO_0000119>
         <rdfs:label xml:lang="en">organization</rdfs:label>
     </owl:Class>
     
@@ -3004,7 +3019,7 @@ for now.</obo:IAO_0000116>
         <obo:IAO_0000115 xml:lang="en">A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived + wikipedia (http://en.wikipedia.org/wiki/Protocol_%28natural_sciences%29)</obo:IAO_0000119>
-        <obo:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study protocol</obo:OBI_0001847>
+        <obo:OBI_0001847>study protocol</obo:OBI_0001847>
         <rdfs:label xml:lang="en">protocol</rdfs:label>
     </owl:Class>
     
@@ -3026,13 +3041,13 @@ for now.</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interpreting data</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concluding that a gene is upregulated in a tissue sample based on the band intensity in a western blot.  Concluding that a patient has a infection based on measurement of an elevated body temperature and reported headache. Concluding that there were problems in an investigation because data from PCR and microarray are conflicting. Concluding that &apos;defects in gene XYZ cause cancer due to improper DNA repair&apos; based on data from experiments in that study that gene XYZ is involved in DNA repair, and the conclusion of a previous study that cancer patients have an increased number of mutations in this gene. </obo:IAO_0000112>
+        <obo:IAO_0000111>interpreting data</obo:IAO_0000111>
+        <obo:IAO_0000112>Concluding that a gene is upregulated in a tissue sample based on the band intensity in a western blot.  Concluding that a patient has a infection based on measurement of an elevated body temperature and reported headache. Concluding that there were problems in an investigation because data from PCR and microarray are conflicting. Concluding that &apos;defects in gene XYZ cause cancer due to improper DNA repair&apos; based on data from experiments in that study that gene XYZ is involved in DNA repair, and the conclusion of a previous study that cancer patients have an increased number of mutations in this gene. </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process in which data gathered in an investigation is evaluated in the context of existing knowledge with the objective to generate more general conclusions or to conclude that the data does not allow one to draw general conclusion</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000119>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
+        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
         <rdfs:label xml:lang="en">drawing a conclusion based on data</rdfs:label>
     </owl:Class>
     
@@ -3053,14 +3068,14 @@ for now.</obo:IAO_0000116>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planning</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process of a scientist thinking about and deciding what reagents to use as part of a protocol for an experiment. Note that the scientist could be human or a &quot;robot scientist&quot; executing software.</obo:IAO_0000112>
+        <obo:IAO_0000111>planning</obo:IAO_0000111>
+        <obo:IAO_0000112>The process of a scientist thinking about and deciding what reagents to use as part of a protocol for an experiment. Note that the scientist could be human or a &quot;robot scientist&quot; executing software.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">a process of creating or modifying a plan specification</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7/18/2011 BP: planning used to itself be a planned process. Barry Smith pointed out that this would lead to an infinite regression, as there would have to be a plan to conduct a planning process, which in itself would be the result of planning etc. Therefore, the restrictions on &apos;planning&apos; were loosened to allow for informal processes that result in an &apos;ad hoc plan &apos;. This required changing from &apos;has_specified_output some plan specifiction&apos; to &apos;has_participant some plan specification&apos;. </obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000119>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plans and Planned Processes Branch</obo:IAO_0000119>
+        <obo:IAO_0000116>7/18/2011 BP: planning used to itself be a planned process. Barry Smith pointed out that this would lead to an infinite regression, as there would have to be a plan to conduct a planning process, which in itself would be the result of planning etc. Therefore, the restrictions on &apos;planning&apos; were loosened to allow for informal processes that result in an &apos;ad hoc plan &apos;. This required changing from &apos;has_specified_output some plan specifiction&apos; to &apos;has_participant some plan specification&apos;. </obo:IAO_0000116>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
+        <obo:IAO_0000119>Plans and Planned Processes Branch</obo:IAO_0000119>
         <rdfs:label xml:lang="en">planning</rdfs:label>
     </owl:Class>
     
@@ -3070,12 +3085,12 @@ for now.</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000437">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000441"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">analyte measurement objective</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The objective to measure the concentration of glucose in a blood sample</obo:IAO_0000112>
+        <obo:IAO_0000111>analyte measurement objective</obo:IAO_0000111>
+        <obo:IAO_0000112>The objective to measure the concentration of glucose in a blood sample</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">an assay objective to determine the presence or concentration of an analyte in the evaluant</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPPB branch</obo:IAO_0000119>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119>PPPB branch</obo:IAO_0000119>
         <rdfs:label xml:lang="en">analyte measurement objective</rdfs:label>
     </owl:Class>
     
@@ -3085,12 +3100,12 @@ for now.</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000441">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">assay objective</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the objective to determine the weight of a mouse.</obo:IAO_0000112>
+        <obo:IAO_0000111>assay objective</obo:IAO_0000111>
+        <obo:IAO_0000112>the objective to determine the weight of a mouse.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">an objective specification to determine a specified type of information about an evaluated entity (the material entity bearing evaluant role)</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPPB branch</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPPB branch</obo:IAO_0000119>
+        <obo:IAO_0000117>PPPB branch</obo:IAO_0000117>
+        <obo:IAO_0000119>PPPB branch</obo:IAO_0000119>
         <rdfs:label xml:lang="en">assay objective</rdfs:label>
     </owl:Class>
     
@@ -3113,18 +3128,18 @@ for now.</obo:IAO_0000116>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>analyte assay</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example of usage: In lab test for blood glucose, the test is the assay, the blood bears evaluant_role and glucose bears the analyte role. The evaluant is considered an input to the assay and the information entity that records the measurement of glucose concentration the output</obo:IAO_0000112>
+        <obo:IAO_0000112>example of usage: In lab test for blood glucose, the test is the assay, the blood bears evaluant_role and glucose bears the analyte role. The evaluant is considered an input to the assay and the information entity that records the measurement of glucose concentration the output</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assay with the objective to capture information about the presence, concentration, or amount of an analyte in an evaluant.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen Parkinson</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alan Ruttenberg</obo:IAO_0000119>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000119>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen Parkinson</obo:IAO_0000119>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI Planned process branch</obo:IAO_0000119>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000119>
+        <obo:IAO_0000115>An assay with the objective to capture information about the presence, concentration, or amount of an analyte in an evaluant.</obo:IAO_0000115>
+        <obo:IAO_0000117>Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Helen Parkinson</obo:IAO_0000117>
+        <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000119>Alan Ruttenberg</obo:IAO_0000119>
+        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
+        <obo:IAO_0000119>Helen Parkinson</obo:IAO_0000119>
+        <obo:IAO_0000119>OBI Planned process branch</obo:IAO_0000119>
+        <obo:IAO_0000119>Philippe Rocca-Serra</obo:IAO_0000119>
         <rdfs:label>analyte assay</rdfs:label>
     </owl:Class>
     
@@ -3152,13 +3167,13 @@ for now.</obo:IAO_0000116>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">measure function</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A glucometer measures blood glucose concentration, the glucometer has a measure function.</obo:IAO_0000112>
+        <obo:IAO_0000112>A glucometer measures blood glucose concentration, the glucometer has a measure function.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Measure function is a function that is borne by a processed material  and realized in a process in which information about some entity is expressed relative to some reference.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Daniel Schober</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Helen Parkinson</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Frank Gibson</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Helen Parkinson</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON:Frank Gibson</obo:IAO_0000117>
         <rdfs:label xml:lang="en">measure function</rdfs:label>
     </owl:Class>
     
@@ -3168,17 +3183,17 @@ for now.</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000456">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material transformation objective</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The objective to create a mouse infected with LCM virus. The objective to create a defined solution of PBS.</obo:IAO_0000112>
+        <obo:IAO_0000111>material transformation objective</obo:IAO_0000111>
+        <obo:IAO_0000112>The objective to create a mouse infected with LCM virus. The objective to create a defined solution of PBS.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">an objective specifiction that creates an specific output object from input materials.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Frank Gibson</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Frank Gibson</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">artifact  creation objective</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP: OBI PlanAndPlannedProcess Branch</obo:IAO_0000119>
+        <obo:IAO_0000119>GROUP: OBI PlanAndPlannedProcess Branch</obo:IAO_0000119>
         <rdfs:label xml:lang="en">material transformation objective</rdfs:label>
     </owl:Class>
     
@@ -3204,15 +3219,15 @@ for now.</obo:IAO_0000116>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study design execution</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">injecting a mouse with PBS solution, weighing it, and recording the weight according to a study design.</obo:IAO_0000112>
+        <obo:IAO_0000111>study design execution</obo:IAO_0000111>
+        <obo:IAO_0000112>injecting a mouse with PBS solution, weighing it, and recording the weight according to a study design.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a planned process that carries out a study design</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">removed axiom has_part some (assay or &apos;data transformation&apos;) per discussion on protocol application mailing list to improve reasoner performance. The axiom is still desired.</obo:IAO_0000116>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branch derived</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/11/9: edited at workshop. Used to be: study design execution is a process with the objective to generate data according to a concretized study design. The execution of a study design is part of an investigation, and minimally consists of an assay or data transformation.</obo:IAO_0000232>
+        <obo:IAO_0000115>a planned process that carries out a study design</obo:IAO_0000115>
+        <obo:IAO_0000116>removed axiom has_part some (assay or &apos;data transformation&apos;) per discussion on protocol application mailing list to improve reasoner performance. The axiom is still desired.</obo:IAO_0000116>
+        <obo:IAO_0000119>branch derived</obo:IAO_0000119>
+        <obo:IAO_0000232>6/11/9: edited at workshop. Used to be: study design execution is a process with the objective to generate data according to a concretized study design. The execution of a study design is part of an investigation, and minimally consists of an assay or data transformation.</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study design execution</rdfs:label>
+        <rdfs:label>study design execution</rdfs:label>
     </owl:Class>
     
 
@@ -3247,16 +3262,16 @@ for now.</obo:IAO_0000116>
         <obo:IAO_0000111>specimen collection process</obo:IAO_0000111>
         <obo:IAO_0000112>drawing blood from a patient for analysis, collecting a piece of a plant for depositing in a herbarium, buying meat from a butcher in order to measure its protein content in an investigation</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A planned process with the objective of collecting a specimen.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
+        <obo:IAO_0000115>A planned process with the objective of collecting a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000116>Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
         <obo:IAO_0000116>Philly2013: A specimen collection can have as part a material entity acquisition, such as ordering from a bank. The distinction is that specimen collection necessarily involves the creation of a specimen role. However ordering cell lines cells from ATCC for use in an investigation is NOT a specimen collection, because the cell lines already have a specimen role.</obo:IAO_0000116>
         <obo:IAO_0000116>Philly2013: The specimen_role for the specimen is created during the specimen collection process.</obo:IAO_0000116>
         <obo:IAO_0000116>label  changed to &apos;specimen collection process&apos; on 10/27/2014, details see tracker:
 http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000118>specimen collection</obo:IAO_0000118>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5/31/2012: This process is not necessarily an acquisition, as specimens may be collected from materials already in posession</obo:IAO_0000232>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/9/09: used at workshop</obo:IAO_0000232>
+        <obo:IAO_0000232>5/31/2012: This process is not necessarily an acquisition, as specimens may be collected from materials already in posession</obo:IAO_0000232>
+        <obo:IAO_0000232>6/9/09: used at workshop</obo:IAO_0000232>
         <rdfs:label>specimen collection process</rdfs:label>
     </owl:Class>
     
@@ -3267,11 +3282,11 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000684">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
         <obo:IAO_0000111>specimen collection objective</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The objective to collect bits of excrement in the rainforest. The objective to obtain a blood sample from a patient.</obo:IAO_0000112>
+        <obo:IAO_0000112>The objective to collect bits of excrement in the rainforest. The objective to obtain a blood sample from a patient.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A objective specification to obtain a material entity for potential use as an input during an investigation.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000119>
+        <obo:IAO_0000115>A objective specification to obtain a material entity for potential use as an input during an investigation.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
         <rdfs:label>specimen collection objective</rdfs:label>
     </owl:Class>
     
@@ -3287,20 +3302,20 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">independent variable specification</obo:IAO_0000111>
+        <obo:IAO_0000111>independent variable specification</obo:IAO_0000111>
         <obo:IAO_0000112>In a study in which gene expression is measured in patients between 8 month to 4 years old that have mild or severe malaria and in which the hypothesis is that gene expression in that age group is a function of disease status, disease status is the independent variable.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">a directive information entity that is part of a study design. Independent variables are entities whose values are selected to determine its relationship to an observed phenomenon (the dependent variable). In such an experiment, an attempt is made to find evidence that the values of the independent variable determine the values of the dependent variable (that which is being measured). The independent variable can be changed as required, and its values do not represent a problem requiring explanation in an analysis, but are taken simply as given. The dependent variable on the other hand, usually cannot be directly controlled</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">2/2/2009 Original definition - In the design of experiments, independent variables are those whose values are controlled or selected by the person experimenting (experimenter) to determine its relationship to an observed phenomenon (the dependent variable). In such an experiment, an attempt is made to find evidence that the values of the independent variable determine the values of the dependent variable (that which is being measured). The independent variable can be changed as required, and its values do not represent a problem requiring explanation in an analysis, but are taken simply as given. The dependent variable on the other hand, usually cannot be directly controlled.</obo:IAO_0000116>
         <obo:IAO_0000116>In the Philly 2013 workshop the label was chosen to distinguish it from &quot;dependent variable&quot; as used in statistical modelling. See: http://en.wikipedia.org/wiki/Statistical_modeling</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000118>experimental factor</obo:IAO_0000118>
         <obo:IAO_0000118>independent variable</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Web: http://en.wikipedia.org/wiki/Dependent_and_independent_variables</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-03-16: work has been done on this term during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify thisdefinition please notify OBI.</obo:IAO_0000232>
-        <obo:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study factor</obo:OBI_0001847>
+        <obo:IAO_0000119>Web: http://en.wikipedia.org/wiki/Dependent_and_independent_variables</obo:IAO_0000119>
+        <obo:IAO_0000232>2009-03-16: work has been done on this term during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify thisdefinition please notify OBI.</obo:IAO_0000232>
+        <obo:OBI_0001847>study factor</obo:OBI_0001847>
         <rdfs:label xml:lang="en">study design independent variable</rdfs:label>
     </owl:Class>
     
@@ -3316,18 +3331,18 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dependent variable specification</obo:IAO_0000111>
+        <obo:IAO_0000111>dependent variable specification</obo:IAO_0000111>
         <obo:IAO_0000112>In a study in which gene expression is measured in patients between 8 month to 4 years old that have mild or severe malaria and in which the hypothesis is that gene expression in that age group is a function of disease status, the gene expression is the dependent variable. </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">dependent variable specification is part of a study design. The dependent variable is the event studied and expected to change when the independent variable varies.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">2/2/2009 In the design of experiments, independent variables are those whose values are controlled or selected by the person experimenting (experimenter) to determine its relationship to an observed phenomenon (the dependent variable). In such an experiment, an attempt is made to find evidence that the values of the independent variable determine the values of the dependent variable (that which is being measured). The independent variable can be changed as required, and its values do not represent a problem requiring explanation in an analysis, but are taken simply as given. The dependent variable on the other hand, usually cannot be directly controlled.</obo:IAO_0000116>
         <obo:IAO_0000116>In the Philly 2013 workshop the label was chosen to distinguish it from &quot;dependent variable&quot; as used in statistical modelling. See: http://en.wikipedia.org/wiki/Statistical_modeling</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000118>dependent variable</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WEB: http://en.wikipedia.org/wiki/Dependent_and_independent_variables</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-03-16: work has been done on this term during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify thisdefinition please notify OBI.</obo:IAO_0000232>
+        <obo:IAO_0000119>WEB: http://en.wikipedia.org/wiki/Dependent_and_independent_variables</obo:IAO_0000119>
+        <obo:IAO_0000232>2009-03-16: work has been done on this term during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify thisdefinition please notify OBI.</obo:IAO_0000232>
         <rdfs:label xml:lang="en">study design dependent variable</rdfs:label>
     </owl:Class>
     
@@ -3343,18 +3358,18 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">controlled variable specification</obo:IAO_0000111>
+        <obo:IAO_0000111>controlled variable specification</obo:IAO_0000111>
         <obo:IAO_0000112>In a study in which gene expression is measured in patients between 8 month to 4 years old that have mild or severe malaria and in which the hypothesis is that gene expression in that age group is a function of disease status, age is a controlled variable.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Controlled variable specification  is a part of a study design. They are the entities that could vary, but are kept constant to prevent their influence on the effect of the independent variable on the dependent.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">2/2/2009 Original definition: Controlled variables are also important to identify in experiments. They are the variables that are kept constant to prevent their influence on the effect of the independent variable on the dependent. Every experiment has a controlling variable, and it is necessary to not change it, or the results of the experiment won&apos;t be valid</obo:IAO_0000116>
         <obo:IAO_0000116>In the Philly 2013 workshop the label was chosen to distinguish it from &quot;controlled variable&quot; as used in statistical modelling</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000118>controlled variable</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WEB: http://en.wikipedia.org/wiki/Control_variable</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009-03-16: work has been done on this term during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify thisdefinition please notify OBI.</obo:IAO_0000232>
+        <obo:IAO_0000119>WEB: http://en.wikipedia.org/wiki/Control_variable</obo:IAO_0000119>
+        <obo:IAO_0000232>2009-03-16: work has been done on this term during during the OBI workshop winter 2009 and the current definition was considered acceptable for use in OBI. If there is a need to modify thisdefinition please notify OBI.</obo:IAO_0000232>
         <rdfs:label xml:lang="en">study design controlled variable</rdfs:label>
     </owl:Class>
     
@@ -3381,14 +3396,14 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informed consent process</obo:IAO_0000111>
+        <obo:IAO_0000111>informed consent process</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A planned process in which a person or their legal representative is informed about key facts about potential risks and benefits of a process and makes a documented decision as to whether the person in question will participate.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09/28/2009 Alan Ruttenberg: This is made a subclass of the higher level processual entity in BFO because I don&apos;t want to take a stand on whether it is a process aggregate. Analogous to the situation with Material entity.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://clinicaltrials.gov/ct2/info/glossary#informed</obo:IAO_0000119>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009/09/28 Alan Ruttenberg. Fucoidan-use-case</obo:IAO_0000232>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informed consent process</rdfs:label>
+        <obo:IAO_0000115>A planned process in which a person or their legal representative is informed about key facts about potential risks and benefits of a process and makes a documented decision as to whether the person in question will participate.</obo:IAO_0000115>
+        <obo:IAO_0000116>09/28/2009 Alan Ruttenberg: This is made a subclass of the higher level processual entity in BFO because I don&apos;t want to take a stand on whether it is a process aggregate. Analogous to the situation with Material entity.</obo:IAO_0000116>
+        <obo:IAO_0000117>Person:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000119>http://clinicaltrials.gov/ct2/info/glossary#informed</obo:IAO_0000119>
+        <obo:IAO_0000232>2009/09/28 Alan Ruttenberg. Fucoidan-use-case</obo:IAO_0000232>
+        <rdfs:label>informed consent process</rdfs:label>
     </owl:Class>
     
 
@@ -3408,13 +3423,13 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measurement device</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ruler, a microarray scanner, a Geiger counter.</obo:IAO_0000112>
+        <obo:IAO_0000111>measurement device</obo:IAO_0000111>
+        <obo:IAO_0000112>A ruler, a microarray scanner, a Geiger counter.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device in which a measure function inheres.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP:OBI Philly workshop</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measurement device</rdfs:label>
+        <obo:IAO_0000115>A device in which a measure function inheres.</obo:IAO_0000115>
+        <obo:IAO_0000117>GROUP:OBI Philly workshop</obo:IAO_0000117>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <rdfs:label>measurement device</rdfs:label>
     </owl:Class>
     
 
@@ -3432,15 +3447,15 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processed specimen</obo:IAO_0000111>
+        <obo:IAO_0000111>processed specimen</obo:IAO_0000111>
         <obo:IAO_0000112>A tissue sample that has been sliced and stained for a histology study.
 A blood specimen that has been centrifuged to obtain the white blood cells.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specimen that has been intentionally physically modified.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</obo:IAO_0000119>
+        <obo:IAO_0000115>A specimen that has been intentionally physically modified.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
         <rdfs:comment>A tissue sample that has been sliced and stained for a histology study.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processed specimen</rdfs:label>
+        <rdfs:label>processed specimen</rdfs:label>
     </owl:Class>
     
 
@@ -3472,12 +3487,12 @@ A blood specimen that has been centrifuged to obtain the white blood cells.</obo
                 </owl:intersectionOf>
             </owl:Class>
         </owl:disjointWith>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A voltmeter is a measurement device which is intended to perform some measure function.</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An autoclave is a device that sterlizes instruments or contaminated waste by applying high temperature and pressure.</obo:IAO_0000112>
+        <obo:IAO_0000111>device</obo:IAO_0000111>
+        <obo:IAO_0000112>A voltmeter is a measurement device which is intended to perform some measure function.</obo:IAO_0000112>
+        <obo:IAO_0000112>An autoclave is a device that sterlizes instruments or contaminated waste by applying high temperature and pressure.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material entity that is designed to perform a function in a scientific investigation, but is not a reagent.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of &quot;device&quot;, and are enumerating the types of roles that a reagent can perform.
+        <obo:IAO_0000115>A material entity that is designed to perform a function in a scientific investigation, but is not a reagent.</obo:IAO_0000115>
+        <obo:IAO_0000116>2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of &quot;device&quot;, and are enumerating the types of roles that a reagent can perform.
 
 2013-6-5 MHB: The following clarifications are outcomes of the May 2013 Philly Workshop. Reagents are distinguished from devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in some chemical interaction or reaction during the realization of their experimental role. By contrast, devices do not participate in such chemical reactions/interactions.  Note that there are cases where devices use reagent components during their operation, where the reagent-device distinction is less clear.  For example:
 
@@ -3488,10 +3503,10 @@ A blood specimen that has been centrifuged to obtain the white blood cells.</obo
 (3) A gel running  box  is a device that has a metallic lead as a component that participates in a chemical reaction with the running buffer when a charge is passed through it.  This metallic lead is considered to have a reagent role as a component of this device realized in the running of a gel.
 
 In the examples above, a reagent is an operational component of a device, but the device itself does not realize a reagent role (as bearing a reagent role is not transitive across the part_of relation).  In this way, the asserted disjointness between a reagent and device holds, as both roles are never realized in the same bearer during execution of an assay.  </obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Helen Parkinson</obo:IAO_0000117>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">instrument</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI development call 2012-12-17.</obo:IAO_0000119>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device</rdfs:label>
+        <obo:IAO_0000117>PERSON: Helen Parkinson</obo:IAO_0000117>
+        <obo:IAO_0000118>instrument</obo:IAO_0000118>
+        <obo:IAO_0000119>OBI development call 2012-12-17.</obo:IAO_0000119>
+        <rdfs:label>device</rdfs:label>
     </owl:Class>
     
 
@@ -3522,14 +3537,14 @@ In the examples above, a reagent is an operational component of a device, but th
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary cultured cell</obo:IAO_0000111>
+        <obo:IAO_0000111>secondary cultured cell</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cultured cell that has been passaged or derives from a cell that has been passaged in culture. </obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The term &apos;secondary cell culture&apos; is generally used in biological texts/protocols to refer to any culture following an initial passage.  We include it here because there are often a number of passages between a primary culture and the establishment of a stable, homogenous cell line.  Such cultures are considered to be &apos;secondary cultures&apos; but not &apos;cell lines&apos; during this intermediate passaging/selection period between their derivation from a &apos;primary cell culture&apos; and derivation into a &apos;cell line&apos;, which is a more specific type of secondary culture.</obo:IAO_0000116>
+        <obo:IAO_0000115>A cultured cell that has been passaged or derives from a cell that has been passaged in culture. </obo:IAO_0000115>
+        <obo:IAO_0000116>The term &apos;secondary cell culture&apos; is generally used in biological texts/protocols to refer to any culture following an initial passage.  We include it here because there are often a number of passages between a primary culture and the establishment of a stable, homogenous cell line.  Such cultures are considered to be &apos;secondary cultures&apos; but not &apos;cell lines&apos; during this intermediate passaging/selection period between their derivation from a &apos;primary cell culture&apos; and derivation into a &apos;cell line&apos;, which is a more specific type of secondary culture.</obo:IAO_0000116>
         <obo:IAO_0000117>Person: Matthew Brush</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Matthew Brush</obo:IAO_0000119>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A secondary cultured cell has been passaged in culture or is a descendant of such a cell that is derived through propagation in culture.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary cultured cell</rdfs:label>
+        <obo:IAO_0000119>PERSON: Matthew Brush</obo:IAO_0000119>
+        <rdfs:comment>A secondary cultured cell has been passaged in culture or is a descendant of such a cell that is derived through propagation in culture.</rdfs:comment>
+        <rdfs:label>secondary cultured cell</rdfs:label>
     </owl:Class>
     
 
@@ -3706,11 +3721,11 @@ The following are NOT conclusions based on data: data themselves; results from p
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <obo:IAO_0000111>cytometry assay</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An intracellular material detection by flow cytometry assay measuring peforin inside a culture of T cells.</obo:IAO_0000112>
+        <obo:IAO_0000112>An intracellular material detection by flow cytometry assay measuring peforin inside a culture of T cells.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An assay that counts and/or measures characteristics of cells.</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEDB</obo:IAO_0000119>
+        <obo:IAO_0000115>An assay that counts and/or measures characteristics of cells.</obo:IAO_0000115>
+        <obo:IAO_0000117>IEDB</obo:IAO_0000117>
+        <obo:IAO_0000119>IEDB</obo:IAO_0000119>
         <rdfs:label>cytometry assay</rdfs:label>
     </owl:Class>
     
@@ -3765,11 +3780,11 @@ The following are NOT conclusions based on data: data themselves; results from p
         <obo:IAO_0000112 xml:lang="en">virus</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10/21/09: This is a placeholder term, that should ideally be imported from the NCBI taxonomy, but the high level hierarchy there does not suit our needs (includes plasmids and &apos;other organisms&apos;)</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13-02-2009:
+        <obo:IAO_0000116>10/21/09: This is a placeholder term, that should ideally be imported from the NCBI taxonomy, but the high level hierarchy there does not suit our needs (includes plasmids and &apos;other organisms&apos;)</obo:IAO_0000116>
+        <obo:IAO_0000116>13-02-2009:
 OBI doesn&apos;t take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.
 This issue is outside the scope of OBI.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GROUP: OBI Biomaterial Branch</obo:IAO_0000117>
+        <obo:IAO_0000117>GROUP: OBI Biomaterial Branch</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">WEB: http://en.wikipedia.org/wiki/Organism</obo:IAO_0000119>
         <rdfs:label xml:lang="en">organism</rdfs:label>
     </owl:Class>
@@ -3792,13 +3807,14 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000111 xml:lang="en">specimen</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biobanking of blood taken and stored in a freezer for potential future investigations stores specimen.</obo:IAO_0000112>
+        <obo:IAO_0000112>Biobanking of blood taken and stored in a freezer for potential future investigations stores specimen.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A material entity that has the specimen role.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: James Malone</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000116>Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
+        <obo:IAO_0000117>PERSON: James Malone</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP: OBI Biomaterial Branch</obo:IAO_0000119>
+        <obo:IAO_0000233 rdf:resource="https://github.com/obi-ontology/obi/issues/1013"/>
         <rdfs:label xml:lang="en">specimen</rdfs:label>
     </owl:Class>
     
@@ -3843,14 +3859,14 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0600013"/>
         <obo:IAO_0000111 xml:lang="en">data transformation</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The application of a clustering protocol to microarray data or the application of a statistical testing method on a primary data set to determine a p-value.</obo:IAO_0000112>
+        <obo:IAO_0000112>The application of a clustering protocol to microarray data or the application of a statistical testing method on a primary data set to determine a p-value.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process that produces output data from input data.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Elisabetta Manduchi</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Helen Parkinson</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">James Malone</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Richard Scheuermann</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Ryan Brinkman</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Tina Hernandez-Boussard</obo:IAO_0000117>
@@ -3892,9 +3908,9 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <obo:IAO_0000111 xml:lang="en">study design</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">a matched pairs study design describes criteria by which subjects are identified as pairs which then undergo the same protocols, and the data generated is analyzed by comparing the differences between the paired subjects, which constitute the results of the executed study design.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Editor note: there is at least an implicit restriction on the kind of data transformations that can be done based on the measured data available.</obo:IAO_0000116>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000115>A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution.</obo:IAO_0000115>
+        <obo:IAO_0000116>Editor note: there is at least an implicit restriction on the kind of data transformations that can be done based on the measured data available.</obo:IAO_0000116>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">experimental design</obo:IAO_0000118>
         <obo:IAO_0000232 xml:lang="en">rediscussed at length (MC/JF/BP). 12/9/08). The definition was clarified to differentiate it from protocol.</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
@@ -3986,7 +4002,7 @@ defines and states the requirements (positive or negative) for an entity to be c
         <obo:IAO_0000112 xml:lang="en">enlisting familiy members of HIV patients into a study</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process with the objective to obtain a population of human subjects to participate in an investigation by determining eligibility of subjects and obtaining informed consent.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As with group assignment, should the specified output here be an organism which bears a role</obo:IAO_0000116>
+        <obo:IAO_0000116>As with group assignment, should the specified output here be an organism which bears a role</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <obo:IAO_0000232 xml:lang="en">criteria come from plan / clinical trial branch</obo:IAO_0000232>
@@ -4024,10 +4040,10 @@ defines and states the requirements (positive or negative) for an entity to be c
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">acquisition</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Downloading a 3D structure from the PDB. Purchasing antibodies from sigma. </obo:IAO_0000112>
+        <obo:IAO_0000112>Downloading a 3D structure from the PDB. Purchasing antibodies from sigma. </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">the planned process of gaining possession of a continuant </obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5/31/2012 - OBI workshop: This process is not implying ownership of the material / information. </obo:IAO_0000116>
+        <obo:IAO_0000116>5/31/2012 - OBI workshop: This process is not implying ownership of the material / information. </obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Following OBI call November 2012,5th:
 addition of a restriction to acquisition class to capture the need of having selection criteria
 Relates to the creation of a class &apos;selection rule&apos;</obo:IAO_0000116>
@@ -4053,10 +4069,10 @@ Relates to the creation of a class &apos;selection rule&apos;</obo:IAO_0000116>
         <obo:IAO_0000112 xml:lang="en">Acquiring 50 C57BL/6 mice bred in the animal facility of the institute as a service to investigators. Purchasing 1 mg of peptides synthesized by Mimotopes at 80% purity. Getting a gift of purified CD4+ specific antibodies presented by Stephen Schoenberger at LIAI.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">An acquisition in which possession of a material entity is gained.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The assumption is that the object already exists in its current state, e.g, an available mouse strain purchased from the Jackson Lab, this is the differentia from specimen creation</obo:IAO_0000116>
+        <obo:IAO_0000116>The assumption is that the object already exists in its current state, e.g, an available mouse strain purchased from the Jackson Lab, this is the differentia from specimen creation</obo:IAO_0000116>
         <obo:IAO_0000116>This excludes processes that create or change materials, such as material transformations.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Bjoern Peters, Alan Ruttenberg, Helen Parkinson</obo:IAO_0000117>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material procurement</obo:IAO_0000118>
+        <obo:IAO_0000118>material procurement</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <rdfs:label xml:lang="en">material acquisition</rdfs:label>
     </owl:Class>
@@ -4079,7 +4095,7 @@ Relates to the creation of a class &apos;selection rule&apos;</obo:IAO_0000116>
         <obo:IAO_0000115 xml:lang="en">An acquisition in which possession of information is gained.</obo:IAO_0000115>
         <obo:IAO_0000116>This excludes processes that create or change information, such as assays and data transformations.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data collection</obo:IAO_0000118>
+        <obo:IAO_0000118>data collection</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <rdfs:label xml:lang="en">information acquisition</rdfs:label>
     </owl:Class>
@@ -4110,7 +4126,7 @@ Relates to the creation of a class &apos;selection rule&apos;</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
         <obo:IAO_0000111>disease course</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">The totality of all processes through which a given disease instance is realized.</obo:IAO_0000115>
-        <obo:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">replace &apos;OBI:occurrence of disease&apos;, need to add logical definition
+        <obo:IAO_0000232>replace &apos;OBI:occurrence of disease&apos;, need to add logical definition
 The axioms of OBI occurence of disease:
 Equivalent classes:
 realizes some disease
@@ -4186,7 +4202,7 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/IAO_0000078"/>
         <obo:IAO_0000111 xml:lang="en">organizational term</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">Term created to ease viewing/sort terms for development purpose, and will not be included in a release</obo:IAO_0000115>
-        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON:Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON:Alan Ruttenberg</obo:IAO_0000117>
         <rdfs:label xml:lang="en">organizational term</rdfs:label>
     </owl:Thing>
     
@@ -4358,8 +4374,8 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
      -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GAZ_00000448">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reference to a place on the Earth, by its name or by its geographical location.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">geographic location</rdfs:label>
+        <obo:IAO_0000115>A reference to a place on the Earth, by its name or by its geographical location.</obo:IAO_0000115>
+        <rdfs:label>geographic location</rdfs:label>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/gaz.owl"/>
     </rdf:Description>
     
