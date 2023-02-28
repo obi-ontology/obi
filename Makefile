@@ -109,6 +109,7 @@ MODULE_NAMES := assays\
  epitope-assays\
  medical-history\
  obsolete\
+ physical-examination\
  sample-collection\
  study-designs\
  sequence-analysis\
