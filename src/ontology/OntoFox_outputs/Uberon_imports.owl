@@ -67,11 +67,9 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
-        <obo:IAO_0000111>material entity</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">material entity</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <rdfs:label>material entity</rdfs:label>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
     </owl:Class>
     
@@ -103,6 +101,18 @@
         <obo:IAO_0000115>The pituitary gland is an endocrine gland that secretes hormones that regulate many other glands [GO]. An endocrine gland located ventral to the diencephalon and derived from mixed neuroectodermal and non neuroectodermal origin [ZFIN].</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>pituitary gland</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>peripheral nervous system</obo:IAO_0000111>
+        <obo:IAO_0000115>A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>peripheral nervous system</rdfs:label>
     </owl:Class>
     
 
@@ -363,8 +373,7 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000956 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000956">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <obo:IAO_0000111>cerebral cortex</obo:IAO_0000111>
         <obo:IAO_0000115>The thin layer of gray matter on the surface of the cerebral hemisphere that develops from the telencephalon. It consists of the neocortex (6 layered cortex or isocortex), the hippocampal formation and the olfactory cortex.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
@@ -381,6 +390,18 @@
         <obo:IAO_0000115>An organ that detects light.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>eye</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000978 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000978">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>leg</obo:IAO_0000111>
+        <obo:IAO_0000115>The portion of the hindlimb that contains both the stylopod and zeugopod.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>leg</rdfs:label>
     </owl:Class>
     
 
@@ -448,6 +469,7 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001037 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001037">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <obo:IAO_0000111>strand of hair</obo:IAO_0000111>
         <obo:IAO_0000115>A filament, mostly protein, that grows from follicles found in the dermis[WP].</obo:IAO_0000115>
@@ -515,6 +537,19 @@
         <obo:IAO_0000115>Joint fluid is a transudate of plasma that is actively secreted by synovial cells.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>synovial fluid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001103 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001103">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>diaphragm</obo:IAO_0000111>
+        <obo:IAO_0000115>A thin musculomebranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>diaphragm</rdfs:label>
     </owl:Class>
     
 
@@ -608,8 +643,7 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001323 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001323">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <obo:IAO_0000111>tibial nerve</obo:IAO_0000111>
         <obo:IAO_0000115>The tibial nerve is a branch of the sciatic nerve. The tibial nerve passes through the popliteal fossa to pass below the arch of soleus. In the popliteal fossa the nerve gives off branches to gastrocnemius, popliteus, soleus and plantaris muscles, an articular branch to the knee joint, and a cutaneous branch that will become the sural nerve. The sural nerve is joined by fibres from the common peroneal nerve and runs down the calf to supply the lateral side of the foot. Below the soleus muscle the nerve lies close to the tibia and supplies the tibialis posterior, the flexor digitorum longus and the flexor hallucis longus. The nerve passes into the foot running posterior to the medial malleolus. Here it is bound down by the flexor retinaculum in company with the posterior tibial artery. [WP,unvetted].</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
@@ -638,6 +672,30 @@
         <obo:IAO_0000115>The part of the forelimb extending from the shoulder to the autopod[cjm].</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>arm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001485 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001485">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>knee joint</obo:IAO_0000111>
+        <obo:IAO_0000115>The knee joint joins the thigh with the leg and consists of two articulations: one between the femur and tibia, and one between the femur and patella. It is the largest and most complicated joint in the human body. The knee is a mobile trocho-ginglymus (i.e. a pivotal hinge joint), which permits flexion and extension as well as a slight medial and lateral rotation[WP,unvetted].</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>knee joint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001488 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001488">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>ankle joint</obo:IAO_0000111>
+        <obo:IAO_0000115>A joint that connects the hindlimb autopod and zeugopod skeletons.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>ankle joint</rdfs:label>
     </owl:Class>
     
 
@@ -686,6 +744,19 @@
         <obo:IAO_0000115>A fleshy subdivision of one side of the face bounded by an eye, ear and the nose.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>cheek</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001577">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>facial muscle</obo:IAO_0000111>
+        <obo:IAO_0000115>A muscle innervated by a facial nerve.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>facial muscle</rdfs:label>
     </owl:Class>
     
 
@@ -801,8 +872,7 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001873">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <obo:IAO_0000111>caudate nucleus</obo:IAO_0000111>
         <obo:IAO_0000115>Subcortical nucleus of telecephalic origin consisting of an elongated gray mass lying lateral to and bordering the lateral ventricle. It is divided into a head, body and tail in some species.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
@@ -814,8 +884,7 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001874 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001874">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <obo:IAO_0000111>putamen</obo:IAO_0000111>
         <obo:IAO_0000115>Subcortical nucleus of telencephalic , which together with the caudate nucleus, forms the striatum. The putamen lies lateral to the internal capsule and medial to the external medullary lamina, and is separated from the caudate nucleus by the fibers of the internal capsule for most of its length, except at its anterior portion.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
@@ -1065,6 +1134,31 @@
         <obo:IAO_0000115>The soft tissue that fills the cavities of bones.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>bone marrow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002386 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002386">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>forelimb zeugopod</obo:IAO_0000111>
+        <obo:IAO_0000115>The middle limb segment of the pectoral free limb, between the autopod and stylopod segments. Includes as parts the forelimb zeugopodial skeleton, which includes as parts the radius and ulna, or their cartilage precursors, or evolutionary variants.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>forelimb zeugopod</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002389 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002389">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>manual digit</obo:IAO_0000111>
+        <obo:IAO_0000115>A digit that is part of a manus (hand).</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>manual digit</rdfs:label>
     </owl:Class>
     
 
@@ -1323,6 +1417,19 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0008188 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008188">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
+        <obo:IAO_0000111>tendon of biceps brachii</obo:IAO_0000111>
+        <obo:IAO_0000115>A tendon that attaches_to a biceps brachii.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>tendon of biceps brachii</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010414 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010414">
@@ -1333,6 +1440,19 @@
         <obo:IAO_0000115>Encapsulated adipose tissue associated with the fold of peritoneal tissue that extends from the stomach to the posterior abdominal wall after associating with the transverse colon.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>omental fat pad</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000111>brachioradialis</obo:IAO_0000111>
+        <obo:IAO_0000115>Brachioradialis is a muscle of the forearm that acts to flex the forearm at the elbow. It is also capable of both pronation and supination, depending on the position of the forearm. It is attached to the distal styloid process of the radius by way of the brachioradialis tendon, and to the lateral supracondylar ridge of the humerus.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <rdfs:label>brachioradialis</rdfs:label>
     </owl:Class>
     
 
