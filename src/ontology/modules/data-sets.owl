@@ -22,6 +22,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -96,7 +102,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A data set that is comprised of structured measurements about some entity and its associated metadata using pixels (2D), voxels (3D), or an arbitrary number of dimensions. An image data set can be the source from which an image is produced.</obo:IAO_0000115>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The output produced by a digital imaging technique, such as microscopy, MRI, or CT.</obo:IAO_0000112>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A data set that is comprised of multidimensional structured measurements and metadata required for a morphological representation of an entity. An image data set can be the source from which an image (such as a 2D image using pixels or a 3D image using voxels) is produced.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9625-1899 &quot;William D. Duncan&quot;</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9676-7377 &quot;Alexander D. Bartnik&quot;</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9990-8331 &quot;Alexander D. Diehl&quot;</obo:IAO_0000117>
@@ -123,6 +130,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The DICOM file produced by an MRI machine when a multiple sclerosis patient undergoes a brain scan.</obo:IAO_0000112>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An imaging data set whose information content originates from some MR imaging assay and is about some MRI participant.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9625-1899 &quot;William D. Duncan&quot;</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9676-7377 &quot;Alexander D. Bartnik&quot;</obo:IAO_0000117>
@@ -147,6 +155,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003331">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003327"/>
+        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The untransformed (&quot;k-space&quot;) data produced by an MRI machine, prior to mathematical transformation into a form that corresponds to the anatomical structure of the brain.</obo:IAO_0000112>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An imaging data set that encodes measurement values produced by some instrument before undergoing a data transformation.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9625-1899 &quot;William D. Duncan&quot;</obo:IAO_0000117>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9676-7377 &quot;Alexander D. Bartnik&quot;</obo:IAO_0000117>
