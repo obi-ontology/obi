@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2022-12-14
-date: 14:12:2022 09:26
+data-version: 2023-03-10
+date: 10:03:2023 12:40
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi
 property_value: defaultLanguage "en" xsd:string
@@ -61,13 +61,13 @@ property_value: http://purl.org/dc/elements/1.1/creator "Tanya Gray" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Tina Hernandez-Boussard" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Trish Whetzel" xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator "Yongqun He" xsd:string
-property_value: http://purl.org/dc/elements/1.1/description "The Ontology for Biomedical Investigations (OBI) is build in a collaborative, international effort and will serve as a resource for annotating biomedical investigations, including the study design, protocols and instrumentation used, the data generated and the types of analysis performed on the data. This ontology arose from the Functional Genomics Investigation Ontology (FuGO) and will contain both terms that are common to all biomedical investigations, including functional genomics investigations and those that are more domain specific." xsd:string
+property_value: http://purl.org/dc/elements/1.1/description "An ontology for representing biomedical investigations, including study designs, the collection and preparation of the targets of investigation, assays, instrumentation and reagents used, as well as the data generated and the types of analysis performed on the data to reach conclusions, and their documentation." xsd:string
 property_value: http://purl.org/dc/elements/1.1/format "OWL-DL" xsd:string
 property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the annotation of biomedical and functional genomics experiments." xsd:string
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/ xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2022-12-14" xsd:string
+property_value: owl:versionInfo "2023-03-10" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -1018,7 +1018,7 @@ synonym: "LCMSMS" EXACT []
 synonym: "liquid chromatography tandem mass spectrometry" EXACT []
 synonym: "liquid chromatography tandem mass spectroscopy" EXACT []
 synonym: "liquid chromatography-tandem mass spectroscopy" EXACT []
-is_a: OBI:0200198 ! tandem mass spectrometry
+is_a: OBI:0003540 ! tandem mass spectrometry assay
 
 [Term]
 id: CL:0000000
@@ -3751,6 +3751,12 @@ synonym: "human hepatitis B virus HBV" EXACT []
 is_a: NCBITaxon:2732514 ! Revtraviricetes
 
 [Term]
+id: NCBITaxon:11050
+name: Flaviviridae
+synonym: "Flavivirus (arbovirus group B)" EXACT []
+is_a: NCBITaxon:2732406 ! Kitrinoviricota
+
+[Term]
 id: NCBITaxon:11103
 name: Hepacivirus C
 synonym: "Hepatitis C virus" EXACT []
@@ -3759,7 +3765,7 @@ synonym: "human hepatitis C virus" EXACT []
 synonym: "human hepatitis C virus HCV" EXACT []
 synonym: "human hepatitis virus C HCV" EXACT []
 synonym: "post-transfusion hepatitis non A non B virus" EXACT []
-is_a: NCBITaxon:2559587 ! Riboviria
+is_a: NCBITaxon:11050 ! Flaviviridae
 
 [Term]
 id: NCBITaxon:11646
@@ -3802,6 +3808,11 @@ name: Ecdysozoa
 is_a: NCBITaxon:33213 ! Bilateria
 
 [Term]
+id: NCBITaxon:12637
+name: Dengue virus
+is_a: NCBITaxon:11050 ! Flaviviridae
+
+[Term]
 id: NCBITaxon:160
 name: Treponema pallidum
 is_a: NCBITaxon:2 ! Bacteria
@@ -3828,6 +3839,11 @@ name: Riboviria
 synonym: "RNA viruses" EXACT []
 synonym: "RNA viruses and viroids" EXACT []
 is_a: NCBITaxon:10239 ! Viruses
+
+[Term]
+id: NCBITaxon:2732406
+name: Kitrinoviricota
+is_a: NCBITaxon:2559587 ! Riboviria
 
 [Term]
 id: NCBITaxon:2732514
@@ -3882,6 +3898,11 @@ synonym: "mouse-ear cress" EXACT []
 synonym: "thale cress" EXACT []
 synonym: "thale-cress" EXACT []
 is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: NCBITaxon:37124
+name: Chikungunya virus
+is_a: NCBITaxon:2732406 ! Kitrinoviricota
 
 [Term]
 id: NCBITaxon:388799
@@ -3983,6 +4004,11 @@ synonym: "vertebrates" EXACT []
 is_a: NCBITaxon:33213 ! Bilateria
 
 [Term]
+id: NCBITaxon:784
+name: Orientia tsutsugamushi
+is_a: NCBITaxon:2 ! Bacteria
+
+[Term]
 id: NCBITaxon:7955
 name: Danio rerio
 synonym: "leopard danio" EXACT []
@@ -4018,6 +4044,71 @@ id: NCBITaxon:9989
 name: Rodentia
 synonym: "rodent" EXACT []
 is_a: NCBITaxon:314146 ! Euarchontoglires
+
+[Term]
+id: OBA:0000001
+name: biological attribute
+is_a: BFO:0000019 ! quality
+
+[Term]
+id: OBA:2060180
+name: limb coordination efficacy
+def: "The process efficacy of a limb coordination." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060181
+name: upper limb coordination efficacy
+def: "The process efficacy of a upper limb coordination." []
+is_a: OBA:2060180 ! limb coordination efficacy
+
+[Term]
+id: OBA:2060182
+name: lower limb coordination efficacy
+def: "The process efficacy of a lower limb coordination." []
+is_a: OBA:2060180 ! limb coordination efficacy
+
+[Term]
+id: OBA:2060184
+name: whole organism stability
+def: "The stability of a multicellular organism." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060185
+name: facial muscle performance
+def: "The functionality of a facial muscle." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060186
+name: peripheral nervous system function
+def: "The functionality of a peripheral nervous system." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060187
+name: knee joint functionality
+def: "The functionality of a knee joint." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060188
+name: ankle joint functionality
+def: "The functionality of a ankle joint." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060189
+name: tendon of biceps brachii functionality
+def: "The functionality of a tendon of biceps brachii." []
+is_a: OBA:0000001 ! biological attribute
+
+[Term]
+id: OBA:2060190
+name: brachioradialis functionality
+def: "The functionality of a brachioradialis." []
+is_a: OBA:0000001 ! biological attribute
 
 [Term]
 id: OBI:0000006
@@ -4892,7 +4983,7 @@ is_a: OBI:0000220 ! reference subject role
 [Term]
 id: OBI:0000250
 name: dye role
-def: "A molecular label role which inheres in a material entity and which is realized in the process of detecting a molecular dye that imparts color to some material of interest. " []
+def: "A molecular label role which inheres in a material entity and which is realized in the process of detecting a molecular dye that imparts color to some material of interest." []
 synonym: "dye" EXACT []
 is_a: OBI:0002743 ! molecular label role
 
@@ -5028,7 +5119,7 @@ is_a: OBI:0000047 ! processed material
 [Term]
 id: OBI:0000319
 name: material to be added role
-def: "material to be added role is a protocol participant role realized by a material which is added into a material bearing the target of material addition role in a material addition process" []
+def: "A role of a material entity that is realized in an \"adding a material entity into a target\" process where the bearer of the role is added into another material entity (the target)." []
 is_a: BFO:0000023 ! role
 
 [Term]
@@ -5448,7 +5539,7 @@ is_a: CHEBI:4705 ! double-stranded DNA
 [Term]
 id: OBI:0000431
 name: injection into organ section
-def: "A process in which an input substance is injected into a organ section. " []
+def: "A process in which an input substance is injected into a organ section." []
 is_a: OBI:0000426 ! injection
 
 [Term]
@@ -5523,7 +5614,7 @@ is_a: OBI:0000070 ! assay
 [Term]
 id: OBI:0000444
 name: target of material addition role
-def: "target of material addition role is a role realized by an entity into which a material is added in a material addition process" []
+def: "A role of a material entity that is realized in an \"adding a material entity into a target\" process where the bearer of the role (the target) receives the addition of another material entity." []
 is_a: BFO:0000023 ! role
 
 [Term]
@@ -6854,7 +6945,7 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0000675
 name: statistical hypothesis test objective
-def: "is a data transformation objective where the aim is to estimate statistical significance with the aim of proving or disproving a hypothesis by means of some data transformation " []
+def: "is a data transformation objective where the aim is to estimate statistical significance with the aim of proving or disproving a hypothesis by means of some data transformation." []
 synonym: "hypothesis test objective" EXACT []
 is_a: OBI:0200166 ! data transformation objective
 
@@ -8206,7 +8297,7 @@ is_obsolete: true
 [Term]
 id: OBI:0000938
 name: categorical measurement datum
-def: "A measurement datum that is reported on a categorical scale" []
+def: "A measurement datum that is reported on a categorical scale." []
 synonym: "nominal mesurement datum" EXACT []
 is_a: IAO:0000109 ! measurement datum
 
@@ -8406,7 +8497,7 @@ is_a: IAO:0000033 ! directive information entity
 [Term]
 id: OBI:0000970
 name: scalar score from composite inputs
-def: "A measurement datum which is the result of combining multiple datum. For example, a mean or summary score. " []
+def: "A measurement datum which is the result of combining multiple datum. For example, a mean or summary score." []
 synonym: "questionaire score" EXACT []
 is_a: IAO:0000032 ! scalar measurement datum
 
@@ -8427,7 +8518,7 @@ is_obsolete: true
 [Term]
 id: OBI:0000973
 name: sequence data
-def: "A measurement datum that representing the primary structure of a macromolecule(it's sequence) sometimes associated with an indicator of confidence of that measurement.\n" []
+def: "A measurement datum that representing the primary structure of a macromolecule(it's sequence) sometimes associated with an indicator of confidence of that measurement." []
 is_a: IAO:0000109 ! measurement datum
 
 [Term]
@@ -8632,7 +8723,7 @@ is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping 
 [Term]
 id: OBI:0001009
 name: obsolete_qualitative binding detection assay
-def: "A binding assay where the specified output determines if two or more material entities do or do not have the disposition to form a complex above a threshold level of significance. The threshold can be defined through detection limits of the instrument, the use of experimental controls that establish what is considered significant binding, or a predefined cutoff based on what binding is considered significant in a certain context. " []
+def: "A binding assay where the specified output determines if two or more material entities do or do not have the disposition to form a complex above a threshold level of significance. The threshold can be defined through detection limits of the instrument, the use of experimental controls that establish what is considered significant binding, or a predefined cutoff based on what binding is considered significant in a certain context." []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -9508,13 +9599,13 @@ is_a: OBI:0600043 ! genetic transformation
 [Term]
 id: OBI:0001150
 name: chromosomal substitution
-def: "A genetic transformation in which all, or part, of a chromosome from a donor replaces that of the recipient. It does not include chromosome recombination. For single gene insertion, use the term 'gene knock in'. " []
+def: "A genetic transformation in which all, or part, of a chromosome from a donor replaces that of the recipient. It does not include chromosome recombination. For single gene insertion, use the term 'gene knock in'." []
 is_a: OBI:0600043 ! genetic transformation
 
 [Term]
 id: OBI:0001151
 name: genetically modified material
-def: "a material entity, organism or cell,  that is the output of a genetic transformation process. " []
+def: "a material entity, organism or cell,  that is the output of a genetic transformation process." []
 is_a: OBI:0000047 ! processed material
 
 [Term]
@@ -9538,7 +9629,7 @@ is_a: OBI:0600043 ! genetic transformation
 [Term]
 id: OBI:0001155
 name: 3D structural organization datum
-def: "A measurement datum that describes the structural orientation of a material entity in 3D space. " []
+def: "A measurement datum that describes the structural orientation of a material entity in 3D space." []
 is_a: IAO:0000109 ! measurement datum
 
 [Term]
@@ -9635,14 +9726,14 @@ is_a: OBI:0002692 ! polymerase chain reaction assay
 [Term]
 id: OBI:0001171
 name: half life datum (t 1/2)
-def: "The time it takes for 50% of a class of stochastic processes to occur. " []
+def: "The time it takes for 50% of a class of stochastic processes to occur." []
 synonym: "t 1/2" EXACT []
 is_a: IAO:0000416 ! time measurement datum
 
 [Term]
 id: OBI:0001172
 name: dose response curve
-def: "A data item of paired values, one indicating the dose of a material, the other quantitating a measured effect at that dose. The dosing intervals are chosen so that effect values be interpolated by a plotting a curve. " []
+def: "A data item of paired values, one indicating the dose of a material, the other quantitating a measured effect at that dose. The dosing intervals are chosen so that effect values be interpolated by a plotting a curve." []
 is_a: IAO:0000573 ! line graph
 
 [Term]
@@ -9667,7 +9758,7 @@ is_a: IAO:0000005 ! objective specification
 [Term]
 id: OBI:0001176
 name: Individual epitope immunization in vivo
-def: "An immunization in which an individual epitope is administered into a host organism. " []
+def: "An immunization in which an individual epitope is administered into a host organism." []
 is_a: OBI:1110015 ! Immunization in vivo
 
 [Term]
@@ -9679,27 +9770,27 @@ is_a: OBI:0600047 ! sequencing assay
 [Term]
 id: OBI:0001178
 name: efficacy of epitope intervention experiment
-def: "An assay that tests  if inducing an epitope specific immune response in an organism has an effect, such as the ability to prevent, treat or exacerbate diseases in the organism. " []
+def: "An assay that tests  if inducing an epitope specific immune response in an organism has an effect, such as the ability to prevent, treat or exacerbate diseases in the organism." []
 synonym: "efficacy of in vivo intervention" EXACT []
 is_a: OBI:0000070 ! assay
 
 [Term]
 id: OBI:0001179
 name: epitope protection from infectious challenge experiment
-def: "An epitope protection experiment in which the ability of the epitope to protect the host from an infection is assessed. " []
+def: "An epitope protection experiment in which the ability of the epitope to protect the host from an infection is assessed." []
 synonym: "protection from infectious challenge" EXACT []
 is_a: OBI:0001184 ! epitope protection experiment
 
 [Term]
 id: OBI:0001180
 name: half maximal effective concentration (EC50)
-def: "half maximal effective concentration (EC50) is a scalar measurement datum corresponding to the concentration of a compound which induces a response halfway between the baseline and maximum after some specified exposure time. \n" []
+def: "half maximal effective concentration (EC50) is a scalar measurement datum corresponding to the concentration of a compound which induces a response halfway between the baseline and maximum after some specified exposure time." []
 is_a: IAO:0000032 ! scalar measurement datum
 
 [Term]
 id: OBI:0001181
 name: binding datum
-def: "A data item that states if two or more material entities have the disposition to form a complex, and if so, how strong that disposition is. " []
+def: "A data item that states if two or more material entities have the disposition to form a complex, and if so, how strong that disposition is." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -9711,14 +9802,14 @@ is_a: OBI:0003141 ! categorical binding datum
 [Term]
 id: OBI:0001183
 name: epitope protection from tumor challenge experiment
-def: "An epitope protection experiment in which the ability of the epitope to protect the host from developing tumors is assessed. " []
+def: "An epitope protection experiment in which the ability of the epitope to protect the host from developing tumors is assessed." []
 synonym: "protection from tumor challenge" EXACT []
 is_a: OBI:0001184 ! epitope protection experiment
 
 [Term]
 id: OBI:0001184
 name: epitope protection experiment
-def: "An efficacy of epitope intervention experiment that tests the efficacy of inducing an immune epitope response to prevent disease in a host. " []
+def: "An efficacy of epitope intervention experiment that tests the efficacy of inducing an immune epitope response to prevent disease in a host." []
 synonym: "protection from challenge" EXACT []
 is_a: OBI:0001178 ! efficacy of epitope intervention experiment
 
@@ -9734,7 +9825,7 @@ is_a: OBI:0100026 ! organism
 [Term]
 id: OBI:0001186
 name: epitope protection from infectious challenge experiment based on pathogen burden
-def: "An epitope protection from infectious challenge experiment in which the readout is a reduction in the presence of pathogens in the host compared to controls. " []
+def: "An epitope protection from infectious challenge experiment in which the readout is a reduction in the presence of pathogens in the host compared to controls." []
 synonym: "burden after infectious challenge" EXACT []
 is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
 
@@ -9754,7 +9845,7 @@ is_a: OBI:0001178 ! efficacy of epitope intervention experiment
 [Term]
 id: OBI:0001189
 name: epitope protection experiment based on survival
-def: "An epitope protection experiment that determines the success of the epitope intervention based on increased survival of the host. " []
+def: "An epitope protection experiment that determines the success of the epitope intervention based on increased survival of the host." []
 synonym: "host survival after challenge" EXACT []
 is_a: OBI:0001184 ! epitope protection experiment
 
@@ -11606,7 +11697,7 @@ is_a: OBI:0100051 ! specimen
 id: OBI:0001469
 name: monospecific T cell recognition assay measuring MHC ligand processing and presentation
 def: "A MHC ligand processing and presentation assay in which the presence of a specific ligand in an eluate is detected using the response of T cells that are known to be monospecific for that ligand as a readout." []
-synonym: "ligand presentation|T cell recognition " EXACT []
+synonym: "ligand presentation|T cell recognition" EXACT []
 is_a: OBI:1110125 ! assay measuring MHC ligand processing and presentation
 
 [Term]
@@ -11639,7 +11730,7 @@ is_a: OBI:0003461 ! in vivo assay measuring T cell epitope specific protection f
 [Term]
 id: OBI:0001474
 name: lowess group transformation
-def: "A lowess transformation where a potentially different normalization curve is generated and used for two or more groups (delineated by some criteria); criteria could include blocks (e.g. print-tip groups) on an array, or the day on which mass spectrometry was performed. " []
+def: "A lowess transformation where a potentially different normalization curve is generated and used for two or more groups (delineated by some criteria); criteria could include blocks (e.g. print-tip groups) on an array, or the day on which mass spectrometry was performed." []
 is_a: OBI:0001477 ! lowess transformation
 
 [Term]
@@ -11659,7 +11750,7 @@ is_a: OBI:0001146 ! binding assay
 [Term]
 id: OBI:0001477
 name: lowess transformation
-def: "A data transformation of normalizing ratio data by using a locally weighted polynomial regression (typically after a log transformation). The regression can be performed on log ratios resulting from the relation of two data sets versus the average log intensity data from the same two data sets or it can be performed on raw or log transformed values from one data set versus values from another. The goal could be to remove intensity-dependent dye-specific effects from the set of pair wise ratios. This method can be applied globally, or limited by one or more specified criteria. " []
+def: "A data transformation of normalizing ratio data by using a locally weighted polynomial regression (typically after a log transformation). The regression can be performed on log ratios resulting from the relation of two data sets versus the average log intensity data from the same two data sets or it can be performed on raw or log transformed values from one data set versus values from another. The goal could be to remove intensity-dependent dye-specific effects from the set of pair wise ratios. This method can be applied globally, or limited by one or more specified criteria." []
 is_a: OBI:0200169 ! normalization data transformation
 
 [Term]
@@ -11679,13 +11770,13 @@ is_a: OBI:0100051 ! specimen
 [Term]
 id: OBI:0001480
 name: phage display library panning
-def: "Phage display library panning is a process in which a diverse collection of phages encoding peptides or proteins are screened and the ones encoding active peptides/proteins are selected in an iterative process similar to natural selection.\n" []
+def: "Phage display library panning is a process in which a diverse collection of phages encoding peptides or proteins are screened and the ones encoding active peptides/proteins are selected in an iterative process similar to natural selection." []
 is_a: OBI:0000094 ! material processing
 
 [Term]
 id: OBI:0001481
 name: lowess global transformation
-def: "A lowess transformation where the same normalization curve is used for all members of the data set; e.g. Features on an array, picked spots on a gel, or measured metabolites in a sample. " []
+def: "A lowess transformation where the same normalization curve is used for all members of the data set; e.g. Features on an array, picked spots on a gel, or measured metabolites in a sample." []
 is_a: OBI:0001477 ! lowess transformation
 
 [Term]
@@ -11712,7 +11803,7 @@ is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell ep
 [Term]
 id: OBI:0001485
 name: purified MHC molecule preparation
-def: "A mixture containing MHC molecules that was purified to remove non-MHC molecular entities. " []
+def: "A mixture containing MHC molecules that was purified to remove non-MHC molecular entities." []
 is_a: OBI:0001633 ! purified material
 
 [Term]
@@ -11731,7 +11822,7 @@ is_a: OBI:0001192 ! epitope specific immune intervention
 [Term]
 id: OBI:0001488
 name: epitope tolerance induction experiment
-def: "An efficacy of epitope intervention experiment that tests the ability of the intervention to decrease an existing immune response " []
+def: "An efficacy of epitope intervention experiment that tests the ability of the intervention to decrease an existing immune response" []
 synonym: "tolerance induction" EXACT []
 is_a: OBI:0001178 ! efficacy of epitope intervention experiment
 
@@ -11814,7 +11905,7 @@ is_a: OBI:0001146 ! binding assay
 [Term]
 id: OBI:0001500
 name: coelution assay measuring MHC ligand processing and presentation using T cell recognition of HPLC fractionated eluate compared to synthetic ligand
-def: "A MHC ligand processing and presentation assay in which an HPL chromatography is run to separate an input mixture of ligands eluted from MHC into fractions. These fractions are tested for recognition by T cells and compared to the recognition of a synthetic ligand that is presumed to be the recognized epitope. Identical HPLC fractionation and T cell recognition patterns confirm that the specific ligand was presented by MHC molecules. " []
+def: "A MHC ligand processing and presentation assay in which an HPL chromatography is run to separate an input mixture of ligands eluted from MHC into fractions. These fractions are tested for recognition by T cells and compared to the recognition of a synthetic ligand that is presumed to be the recognized epitope. Identical HPLC fractionation and T cell recognition patterns confirm that the specific ligand was presented by MHC molecules." []
 synonym: "ligand presentation|coelution" EXACT []
 is_a: OBI:1110125 ! assay measuring MHC ligand processing and presentation
 
@@ -11833,7 +11924,7 @@ is_a: GO:0035944 ! perforin production
 [Term]
 id: OBI:0001503
 name: MHC protein complex binding to ligand
-def: "The process in which a ligand binds to an MHC molecule to form a stable complex " []
+def: "The process in which a ligand binds to an MHC molecule to form a stable complex." []
 is_a: OBI:0001588 ! binding
 
 [Term]
@@ -11880,13 +11971,13 @@ is_a: OBI:1110125 ! assay measuring MHC ligand processing and presentation
 id: OBI:0001510
 name: mass spectrometry assay measuring MHC ligand processing and presentation of MHC ligands eluted from secreted MHC
 def: "A mass spectrometry of MHC ligands that identifies eluted ligands from secreted MHC." []
-synonym: "ligand presentation|secreted MHC/mass spectrometry " EXACT []
+synonym: "ligand presentation|secreted MHC/mass spectrometry" EXACT []
 is_a: OBI:0001478 ! mass spectrometry assay measuring MHC ligand processing and presentation
 
 [Term]
 id: OBI:0001511
 name: disposition to be a product of antigen processing and presentation
-def: "A disposition of a material entity to be presented by MHC molecules on the cell surface as a result of antigen processing by an antigen presenting cell. " []
+def: "A disposition of a material entity to be presented by MHC molecules on the cell surface as a result of antigen processing by an antigen presenting cell." []
 is_a: BFO:0000016 ! disposition
 
 [Term]
@@ -11915,7 +12006,7 @@ is_a: IAO:0000032 ! scalar measurement datum
 id: OBI:0001515
 name: material maintenance service
 def: "A material processing service in which a service provider makes physical modifications to a specified input material, such that at least one of the specified outputs of this process is a modified version of a specified input material." []
-comment: Here we need to go back to the defintoin of storage process. It has object specification which is material maintenance. Not necessareley a material maintenance is needed in a storage process. 
+comment: Here we need to go back to the defintoin of storage process. It has object specification which is material maintenance. Not necessareley a material maintenance is needed in a storage process.
 is_a: OBI:0001528 ! material service
 
 [Term]
@@ -11991,7 +12082,7 @@ is_a: OBI:0001987 ! assay measuring the association constant [KA] of a MHC:ligan
 [Term]
 id: OBI:0001525
 name: PDB file
-def: "A 3d structural organization datum capturing the results of X-ray crystallography or NMR experiment that is formatted as specified by the Protein Databank (http://www.wwpdb.org/docs.html). A PDB file can describe the structure of multiple molecules, each of which has a different chain identifier assigned. " []
+def: "A 3d structural organization datum capturing the results of X-ray crystallography or NMR experiment that is formatted as specified by the Protein Databank (http://www.wwpdb.org/docs.html). A PDB file can describe the structure of multiple molecules, each of which has a different chain identifier assigned." []
 is_a: OBI:0001155 ! 3D structural organization datum
 
 [Term]
@@ -12324,7 +12415,7 @@ is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T ce
 [Term]
 id: OBI:0001571
 name: equilibrium dissociation constant (KD) approximated by IC50
-def: "A measurement of an IC50 value under specific assay conditions approximates KD, namely the binding reaction is at an equilibrium, there is a single population of sites on the receptor that competitor and ligand are binding to, and the concentration of the receptor must be much less than the KD for the competitor and the ligand.  In this case, according to Cheng and Prussoff, KD = IC50 / (1 + Lstot / KDs), in which Lstot is the total concentration of the labeled competitor and KDs is the KD value of that competitor. " []
+def: "A measurement of an IC50 value under specific assay conditions approximates KD, namely the binding reaction is at an equilibrium, there is a single population of sites on the receptor that competitor and ligand are binding to, and the concentration of the receptor must be much less than the KD for the competitor and the ligand.  In this case, according to Cheng and Prussoff, KD = IC50 / (1 + Lstot / KDs), in which Lstot is the total concentration of the labeled competitor and KDs is the KD value of that competitor." []
 is_a: OBI:0001536 ! equilibrium dissociation constant (KD)
 is_a: OBI:0003144 ! IC50 binding datum
 
@@ -12395,7 +12486,7 @@ is_a: OBI:0001528 ! material service
 [Term]
 id: OBI:0001581
 name: equilibrium dissociation constant (KD) approximated by EC50
-def: "A measurement of an EC50 value under specific assay conditions approximates KD, namely the binding reaction is at an equilibrium,  and the concentration of the receptor must be much less than the KD for the ligand.  " []
+def: "A measurement of an EC50 value under specific assay conditions approximates KD, namely the binding reaction is at an equilibrium,  and the concentration of the receptor must be much less than the KD for the ligand." []
 is_a: OBI:0001536 ! equilibrium dissociation constant (KD)
 is_a: OBI:0003143 ! EC50 binding datum
 
@@ -12403,14 +12494,14 @@ is_a: OBI:0003143 ! EC50 binding datum
 id: OBI:0001582
 name: obsolete cell bound MHC direct binding assay
 def: "direct binding assay measuring MHC ligand binding using MHC derived from a cell" []
-synonym: "cell bound MHC direct binding " EXACT []
+synonym: "cell bound MHC direct binding" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
 [Term]
 id: OBI:0001583
 name: half life of binding datum
-def: "A half life datum of the time it takes for 50% of bound complexes in an ensemble to disassociate in absence of re-association. " []
+def: "A half life datum of the time it takes for 50% of bound complexes in an ensemble to disassociate in absence of re-association." []
 is_a: OBI:0001144 ! binding constant
 is_a: OBI:0001171 ! half life datum (t 1/2)
 
@@ -12448,7 +12539,7 @@ is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T ce
 [Term]
 id: OBI:0001588
 name: binding
-def: "The process of material entities forming complexes. " []
+def: "The process of material entities forming complexes." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -12506,7 +12597,7 @@ is_a: OBI:0002050 ! 3D molecular structure determination assay of a MHC:ligand c
 [Term]
 id: OBI:0001596
 name: PDB file chain
-def: "A 3D structural organization datum that is part of a PDB file and has a specific chain identifier that identifies the entire information on a subset of the material entities " []
+def: "A 3D structural organization datum that is part of a PDB file and has a specific chain identifier that identifies the entire information on a subset of the material entities." []
 is_a: OBI:0001155 ! 3D structural organization datum
 
 [Term]
@@ -12519,7 +12610,7 @@ is_a: OBI:0001992 ! assay measuring the half maximal inhibitory concentration [I
 [Term]
 id: OBI:0001598
 name: data maintenance service
-def: "A maintenance service in which a service provider actively manages or maintains data or a database for the service consumer.  Maintenance of the data is performed to maintain its integrity or enhance its quality or utility for the consumer, but new data is not generated as a result of the maintenance. " []
+def: "A maintenance service in which a service provider actively manages or maintains data or a database for the service consumer.  Maintenance of the data is performed to maintain its integrity or enhance its quality or utility for the consumer, but new data is not generated as a result of the maintenance." []
 is_a: OBI:0001530 ! data service
 
 [Term]
@@ -12618,7 +12709,7 @@ is_a: OBI:0003115 ! antigen detection by cytometric bead array assay
 id: OBI:0001611
 name: obsolete purified MHC direct binding assay
 def: "direct binding assay measuring MHC ligand binding using MHC derived from a purified MHC molecule preparation" []
-synonym: "purified MHC direct binding " EXACT []
+synonym: "purified MHC direct binding" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
 
@@ -12710,15 +12801,16 @@ is_a: OBI:0001898 ! comment on investigation
 
 [Term]
 id: OBI:0001623
-name: organism identification objective
+name: organism species detection objective
 def: "A biological feature identification objective to identify the organism species in a specimen." []
 is_a: OBI:0000015 ! biological feature identification objective
 
 [Term]
 id: OBI:0001624
-name: organism identification assay
-def: "An assay that identifies the organism species in a specimen." []
-is_a: OBI:0000070 ! assay
+name: organism species detection assay
+def: "An organism detection assay that identifies the organism species in a specimen." []
+synonym: "organism identification assay" EXACT []
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0001625
@@ -13268,7 +13360,7 @@ is_a: OBI:0001703 ! assay measuring qualitative binding of a B cell epitope:anti
 [Term]
 id: OBI:0001702
 name: immunoglobulin binding to epitope
-def: "a process of an immunoglobulin complex binding to a material entity at the immunoglobulin complementarity determining region (CDR). " []
+def: "a process of an immunoglobulin complex binding to a material entity at the immunoglobulin complementarity determining region (CDR)." []
 is_a: OBI:0001588 ! binding
 is_a: OBI:1110014 ! epitope binding by adaptive immune receptor
 
@@ -13303,7 +13395,7 @@ is_a: OBI:0003127 ! B cell epitope assay
 [Term]
 id: OBI:0001707
 name: immunoglobulin mediated histamine release
-def: "The release of histamine by cells stimulated through their Fc receptors which are loaded with immunoglobulins. " []
+def: "The release of histamine by cells stimulated through their Fc receptors which are loaded with immunoglobulins." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -13316,7 +13408,7 @@ is_a: OBI:0001709 ! assay measuring a binding constant of a B cell epitope:antib
 [Term]
 id: OBI:0001709
 name: assay measuring a binding constant of a B cell epitope:antibody complex
-def: "A B cell epitope recognition assay that quantitavely characterizes the binding of an antibody / BCR with a ligand by determining a binding constant. " []
+def: "A B cell epitope recognition assay that quantitavely characterizes the binding of an antibody / BCR with a ligand by determining a binding constant." []
 synonym: "binding constant|binding assay" EXACT []
 is_a: OBI:0003146 ! assay measuring quantitative binding of an antigen:antibody complex
 
@@ -14415,7 +14507,7 @@ is_a: OBI:0001331 ! transcription profiling identification objective
 [Term]
 id: OBI:0001852
 name: paired-end library preparation
-def: "A library preparation that results in the creation of a library of the 5' and 3' ends of DNA or cDNA fragments using adaptors and endonucleases. The preparation may or may not include cloning process. " []
+def: "A library preparation that results in the creation of a library of the 5' and 3' ends of DNA or cDNA fragments using adaptors and endonucleases. The preparation may or may not include cloning process." []
 is_a: OBI:0000711 ! library preparation
 
 [Term]
@@ -14503,7 +14595,7 @@ is_a: OBI:0000968 ! device
 [Term]
 id: OBI:0001866
 name: secondary cultured cell
-def: "A cultured cell that has been passaged or derives from a cell that has been passaged in culture. " []
+def: "A cultured cell that has been passaged or derives from a cell that has been passaged in culture." []
 comment: A secondary cultured cell has been passaged in culture or is a descendant of such a cell that is derived through propagation in culture.
 is_a: CL:0000010 ! cultured cell
 
@@ -14517,7 +14609,7 @@ is_a: OBI:0600036 ! establishing cell culture
 id: OBI:0001868
 name: genetic material
 def: "A nucleic acid macromolecule that is part of a cell or virion and is inherited from an immediate ancestor, or incorporated in a manner that it has the disposition to be replicated and inherited by descendants." []
-comment: Naturally occurring or experimentally incorporated nucleic acids that meet these criteria can qualify as genetic/genomic material.\n\nQualifying examples include: (1) inherited chromosomal DNA in germ cells, stem cells, fully differentiated cells, or cell line cells, or the DNA/RNA content of a virion; (2) natural replicons exchanged through horizontal gene transfer mechanisms such as bacterial conjugation, which are capable of replication and inheritance by progeny; (3) a chromosomally integrated  gene targeting DNA construct transfected into a cell; or (4) a stable extra-chromosomal replicon delivered into cells, such as a plasmid in bacterial host with ori allowing indefinite propagation.  \n\nNon-qualifying examples include a transiently transfected plasmid or siRNA oligo (as these are not able to be replicated and inherited by progeny cells).\n
+comment: Naturally occurring or experimentally incorporated nucleic acids that meet these criteria can qualify as genetic/genomic material.\n\nQualifying examples include: (1) inherited chromosomal DNA in germ cells, stem cells, fully differentiated cells, or cell line cells, or the DNA/RNA content of a virion; (2) natural replicons exchanged through horizontal gene transfer mechanisms such as bacterial conjugation, which are capable of replication and inheritance by progeny; (3) a chromosomally integrated  gene targeting DNA construct transfected into a cell; or (4) a stable extra-chromosomal replicon delivered into cells, such as a plasmid in bacterial host with ori allowing indefinite propagation.  \n\nNon-qualifying examples include a transiently transfected plasmid or siRNA oligo (as these are not able to be replicated and inherited by progeny cells).
 synonym: "genomic material" EXACT []
 synonym: "hereditary genetic material" EXACT []
 is_a: CHEBI:33696 ! nucleic acid
@@ -14537,7 +14629,7 @@ is_a: OBI:0001869 ! Illumina BeadChip
 [Term]
 id: OBI:0001871
 name: LSRFortessa X-20
-def: "A flow cytometer analyzer manifactured by Becton ans Dickinson. Can be configured with up to 5 lasers, 488nm, 532 or 561 nm, 640 nm, 405 nm, 355 nm for measuring up to 20 parameters simultaneously. " []
+def: "A flow cytometer analyzer manifactured by Becton ans Dickinson. Can be configured with up to 5 lasers, 488nm, 532 or 561 nm, 640 nm, 405 nm, 355 nm for measuring up to 20 parameters simultaneously." []
 is_a: OBI:0400008 ! flow cytometer analyzer
 
 [Term]
@@ -14810,13 +14902,13 @@ is_a: OBI:0001876 ! cell culture
 [Term]
 id: OBI:0001912
 name: cell freezing medium
-def: "A processed material that serves as a liquid vehicle for freezing cells for long term quiescent stroage, which contains chemicls needed to sustain cell viability across freeze-thaw cycles. " []
+def: "A processed material that serves as a liquid vehicle for freezing cells for long term quiescent stroage, which contains chemicls needed to sustain cell viability across freeze-thaw cycles." []
 is_a: OBI:0000047 ! processed material
 
 [Term]
 id: OBI:0001913
 name: computation run time
-def: "computation run time is a time measurement datum which corresponds the time expressed in second, minute, hour necessary for a computer program to complete a process execution, for example genome assembly. It is an important metrics as it indicates the resource occupancy and computer program efficiency.\n" []
+def: "computation run time is a time measurement datum which corresponds the time expressed in second, minute, hour necessary for a computer program to complete a process execution, for example genome assembly. It is an important metrics as it indicates the resource occupancy and computer program efficiency." []
 synonym: "computation run time datum" EXACT []
 is_a: IAO:0000416 ! time measurement datum
 
@@ -14966,7 +15058,7 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: OBI:0001935
 name: predicted mass value
-def: " A predicted value where the prediction specifies the mass of some thing." []
+def: "A predicted value where the prediction specifies the mass of some thing." []
 is_a: OBI:0001934 ! predicted value
 
 [Term]
@@ -15039,7 +15131,7 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: OBI:0001948
 name: sequence assembly name
-def: "A textual entity that is used to denote a sequence assembly. " []
+def: "A textual entity that is used to denote a sequence assembly." []
 synonym: "assembly name" EXACT []
 is_a: IAO:0000300 ! textual entity
 
@@ -15062,7 +15154,7 @@ is_a: OBI:0001879 ! reagent
 [Term]
 id: OBI:0001952
 name: flash freezing
-def: "A freezing process by which material entities are quickly frozen by subjecting them to cryogenic temperatures, or in direct contact with Liquid nitrogen at -320.8F or -196°C. " []
+def: "A freezing process by which material entities are quickly frozen by subjecting them to cryogenic temperatures, or in direct contact with Liquid nitrogen at -320.8F or -196°C." []
 is_a: OBI:0001953 ! freezing
 
 [Term]
@@ -15165,7 +15257,7 @@ is_a: CHEBI:16991 ! deoxyribonucleic acid
 [Term]
 id: OBI:0001968
 name: operational taxonomic unit matrix
-def: "Operational Taxonomic Unit matrix  is a data item, organized as a table, where organismal taxonomic units, computed by sequence analysis and genetic distance calculation, are counted in a set of biological or environmental samples. The table is  used to appraise biodiversity of a population or community of living organism.\n" []
+def: "Operational Taxonomic Unit matrix  is a data item, organized as a table, where organismal taxonomic units, computed by sequence analysis and genetic distance calculation, are counted in a set of biological or environmental samples. The table is  used to appraise biodiversity of a population or community of living organism." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -15591,7 +15683,7 @@ is_a: OBI:0000703 ! Illumina Genome Analyzer II
 [Term]
 id: OBI:0002028
 name: SAGE ditag library preparation
-def: "A library preparation in which tags identifiying transcripts are created, ligated to form ditags, amplified, concatemerized and ligated into a vector to create a library.\n" []
+def: "A library preparation in which tags identifiying transcripts are created, ligated to form ditags, amplified, concatemerized and ligated into a vector to create a library." []
 is_a: OBI:0000711 ! library preparation
 
 [Term]
@@ -15827,7 +15919,7 @@ is_a: OBI:1110129 ! assay measuring epitope specific cytokine production by T ce
 [Term]
 id: OBI:0002059
 name: assay measuring a binding constant of a T cell epitope:MHC:TCR complex
-def: "A T cell epitope recognition assay that quantitavely characterizes the binding of a TCR with a ligand by determining a binding constant. " []
+def: "A T cell epitope recognition assay that quantitavely characterizes the binding of a TCR with a ligand by determining a binding constant." []
 synonym: "binding constant|binding assay" EXACT []
 is_a: OBI:0003147 ! assay measuring quantitative binding of an epitope:MHC:TCR complex
 
@@ -16138,7 +16230,7 @@ is_a: OBI:0002108 ! small-angle scattering 3D molecular structure determination 
 [Term]
 id: OBI:0002102
 name: bio-layer interferometry assay measuring the on rate [kon] of a B cell epitope:antibody complex
-def: "A bio-layer interferometry assay that measures the on rate of an antigen with an antibody. " []
+def: "A bio-layer interferometry assay that measures the on rate of an antigen with an antibody." []
 synonym: "on rate|bio-layer interferometry assay|M^-1s^-1" EXACT []
 is_a: OBI:0001718 ! assay measuring the on rate [kon] of a B cell epitope:antibody complex
 is_a: OBI:0002107 ! bio-layer interferometry assay
@@ -16162,7 +16254,7 @@ is_a: OBI:0002107 ! bio-layer interferometry assay
 [Term]
 id: OBI:0002105
 name: bio-layer interferometry assay measuring the dissociation constant [KD] of a B cell epitope:antibody complex
-def: "A bio-layer interferometry assay that measures the dissociation constant [KD] of an antigen with an antibody. " []
+def: "A bio-layer interferometry assay that measures the dissociation constant [KD] of an antigen with an antibody." []
 synonym: "dissociation constant KD|bio-layer interferometry assay|nM" EXACT []
 is_a: OBI:0001708 ! assay measuring the dissociation constant [KD] of a B cell epitope:antibody complex
 is_a: OBI:0002107 ! bio-layer interferometry assay
@@ -16835,7 +16927,7 @@ is_a: OBI:0001930 ! categorical value specification
 [Term]
 id: OBI:0002216
 name: histologic grade for ovarian tumor according to a two-tier grading system
-def: "A histologic grade for ovarian tumor that is from a two-tier histological classification of tumors. " []
+def: "A histologic grade for ovarian tumor that is from a two-tier histological classification of tumors." []
 is_a: OBI:0002215 ! histologic grade for ovarian tumor
 
 [Term]
@@ -17108,7 +17200,7 @@ is_a: OGMS:0000015 ! clinical history
 [Term]
 id: OBI:0002390
 name: exposure to second hand smoke
-def: "A clinical history in which there has been second hand exposure to tobacco smoking. " []
+def: "A clinical history in which there has been second hand exposure to tobacco smoking." []
 is_a: OGMS:0000015 ! clinical history
 
 [Term]
@@ -17375,7 +17467,7 @@ is_a: OBI:0500028 ! exclusion criterion
 [Term]
 id: OBI:0002434
 name: HIV exclusion criterion
-def: "An exclusion criterion defined  as whether an individual has a history of repeatedly reactive screening assays for HIV-1 or HIV-2 antibody regardless of the results of supplemental assays, which if met, makes the individual unsuitable for a given task or participation in a given process. " []
+def: "An exclusion criterion defined  as whether an individual has a history of repeatedly reactive screening assays for HIV-1 or HIV-2 antibody regardless of the results of supplemental assays, which if met, makes the individual unsuitable for a given task or participation in a given process." []
 is_a: OBI:0500028 ! exclusion criterion
 
 [Term]
@@ -17734,9 +17826,8 @@ is_a: OBI:0000968 ! device
 [Term]
 id: OBI:0002489
 name: differential medium assay
-def: "an organism identification assay that uses a differential medium to achieve its objective" []
-synonym: "bacteriological assay" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that uses a differential medium to achieve its objective." []
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002490
@@ -17909,7 +18000,7 @@ is_a: OBI:0001479 ! specimen from organism
 [Term]
 id: OBI:0002523
 name: breast specimen
-def: "A specimen that is derived from breast. " []
+def: "A specimen that is derived from breast." []
 synonym: "mammary tissue specimen" EXACT []
 is_a: OBI:0001479 ! specimen from organism
 
@@ -18709,9 +18800,9 @@ is_a: OBI:0100051 ! specimen
 [Term]
 id: OBI:0002649
 name: blood microbiology assay
-def: "An organism identification assay that identifies a microorganism in a blood specimen." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in a blood specimen." []
 is_a: OBI:0003040 ! blood assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002650
@@ -18954,8 +19045,8 @@ is_a: OBI:0000415 ! polymerase chain reaction
 id: OBI:0002684
 name: nested polymerase chain reaction
 def: "A polymerase chain reaction with modification intended to reduce non-specific binding in products due to the amplification of unexpected primer binding sites. The nested polymerase chain reaction (PCR) involves the use of two primer sets and two successive PCR reactions. The first set of primers are designed to anneal to sequences upstream from the second set of primers and are used in an initial PCR reaction." []
-synonym: " nested-PCR" EXACT []
-synonym: "nested PCR " EXACT []
+synonym: "nested PCR" EXACT []
+synonym: "nested-PCR" EXACT []
 is_a: OBI:0000415 ! polymerase chain reaction
 
 [Term]
@@ -19276,9 +19367,9 @@ is_a: OBI:0002696 ! insecticide resistance by monitoring known mutations assay
 [Term]
 id: OBI:0002728
 name: pathogen detection assay
-def: "An organism identification assay that aims to detect pathogens." []
+def: "An organism detection assay that detects pathogens." []
 synonym: "pathogen detection method" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002729
@@ -19326,60 +19417,60 @@ is_a: OBI:0002732 ! blood meal assay
 
 [Term]
 id: OBI:0002735
-name: organism identification by size assay
-def: "An organism identification assay that is based on the size of organism." []
+name: organism detection by size assay
+def: "An organism detection assay that is based on the size of organism." []
 synonym: "by size" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002736
-name: organism identification by cross mating assay
-def: "An organism identification assay that is based on genetic crossings between specimens collected in the field to determine whether fertile progeny is produced." []
+name: organism detection by cross mating assay
+def: "An organism detection assay that is based on genetic crossings between specimens collected in the field to determine whether fertile progeny is produced." []
 synonym: "cross mating experiment" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002737
-name: organism identification by cytological chromosome examination assay
-def: "An organism identification assay that is based on analysis of polytene chromosomes through cytological examination of the banding pattern of the species." []
+name: organism detection by cytological chromosome examination assay
+def: "An organism detection assay that is based on analysis of polytene chromosomes through cytological examination of the banding pattern of the species." []
 synonym: "cytological chromosome examination" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002738
-name: organism identification by isoenzyme electrophoresis assay
-def: "An organism identification assay that is based on electrophoresis to determine the isozymes that are present in a specific population to determine the species." []
+name: organism detection by isoenzyme electrophoresis assay
+def: "An organism detection assay that is based on electrophoresis to determine the isozymes that are present in a specific population to determine the species." []
 synonym: "isoenzyme electrophoresis" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002739
-name: organism identification by morphological examination assay
-def: "An organism identification assay that is based on examination of morphology and the use of specific \"taxonomic keys\" to determine the species of the specimen." []
+name: organism detection by morphological examination assay
+def: "An organism detection assay that is based on examination of morphology and the use of specific taxonomic keys to determine the species of the specimen." []
 synonym: "morphological examination" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002740
-name: organism identification by PCR assay
-def: "An organism identification assay that is based on PCR." []
+name: organism detection by PCR assay
+def: "An organism detection assay that is based on PCR." []
 synonym: "PCR-based species identification" EXACT []
-is_a: OBI:0001624 ! organism identification assay
 is_a: OBI:0002692 ! polymerase chain reaction assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002741
-name: organism identification by specific DNA hybridization assay
-def: "An organism identification assay that is based on DNA hybrdization." []
+name: organism detection by specific DNA hybridization assay
+def: "An organism detection assay that is based on DNA hybrdization." []
 synonym: "species specific DNA hybridization" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002742
-name: organism identification by salinity tolerance assay
-def: "An organism identification assay of mosquito species that is on the basis of mosquito survival depending on the salt concentration in the water used to lay their eggs to differentiate between morphologically very similar species." []
+name: organism detection by salinity tolerance assay
+def: "An organism detection assay of mosquito species that is on the basis of mosquito survival depending on the salt concentration in the water used to lay their eggs to differentiate between morphologically very similar species." []
 synonym: "salinity tolerance tests" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0002743
@@ -19438,7 +19529,7 @@ is_a: OBI:0400103 ! DNA sequencer
 [Term]
 id: OBI:0002752
 name: Oxford Nanopore PromethION
-def: " A DNA sequencer that is manufactured by the Oxford Nanopore Technologies corporation, capable of running up to 48 flow cells and producing up to 7.6 Tb of data per run. The sequencer produces real-time results and utilizes Nanopore technology, with each flow cell allowing up to 3,000 nanopores to be sequencing simultaneously." []
+def: "A DNA sequencer that is manufactured by the Oxford Nanopore Technologies corporation, capable of running up to 48 flow cells and producing up to 7.6 Tb of data per run. The sequencer produces real-time results and utilizes Nanopore technology, with each flow cell allowing up to 3,000 nanopores to be sequencing simultaneously." []
 synonym: "PromethION" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
 
@@ -19591,7 +19682,7 @@ id: OBI:0002778
 name: tracheal aspirate specimen
 def: "A specimen that is collected with a suctioning tube from the trachea." []
 synonym: "tracheal wash specimen" EXACT []
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0002779
@@ -19604,14 +19695,14 @@ id: OBI:0002780
 name: nasal aspirate specimen
 def: "A specimen that is collected with a suctioning tube from the nasal cavity." []
 synonym: "nasal wash specimen|nasopharyngeal aspirate" EXACT []
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0002781
 name: lower respiratory tract aspirate specimen
 def: "A specimen that is collected with a suctioning tube from the lower respiratory tract." []
 synonym: "lower respiratory tract wash specimen" EXACT []
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0002783 ! lower respiratory tract specimen
 
 [Term]
 id: OBI:0002782
@@ -19623,7 +19714,7 @@ is_a: OBI:0002599 ! swab specimen
 id: OBI:0002783
 name: lower respiratory tract specimen
 def: "A specimen that is derived from the lower respiratory tract." []
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0002784
@@ -20221,7 +20312,6 @@ is_a: OBI:0500000 ! study design
 id: OBI:0002946
 name: fluorescence imaging-based apoptosis assay
 def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with molecular processes of apoptosis." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
@@ -20230,41 +20320,35 @@ name: fluorescence imaging-based cell proliferation assay
 def: "A type of cell proliferation assay in which fluorescent dyes are ued to label and detect proteins or structures that can be used to count cells." []
 synonym: "fluroescence imaging-based cell count assay" EXACT []
 is_a: OBI:0000891 ! cell proliferation assay
-is_a: OBI:0001501 ! fluorescence detection assay
 
 [Term]
 id: OBI:0002948
 name: fluroescence imaging-based cell cycle state assay
 def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with particular cell cycle states." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
 id: OBI:0002949
 name: fluorescence imaging-based cell viability assay
 def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with cell viability." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
 id: OBI:0002950
 name: fluorescence imaging-based drug synergy assay
 def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures to determine if drugs applied to cells in combination have a greater effect together than the sum of their separate effects." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
 id: OBI:0002951
 name: fluorescence imaging-based cell morphology assay
 def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures in order to determine cell morphology." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
 id: OBI:0002952
 name: fluorescence imaging multiplex cytological profiling
 def: "A type of cytometry assay in which fluorescent dyes are used to stain seven major cellular components followed by automatic image capture and analysis which extracts shape, texture, and intensity parameters." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0001977 ! cytometry assay
 
 [Term]
@@ -20277,7 +20361,6 @@ is_a: OBI:0000070 ! assay
 id: OBI:0002954
 name: fluorescence imaging-based protein phosphorylation state assay
 def: "A type of protein state assay that employs high-throughput microscopy to measure levels of proteins in different phosphorylation states." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0002953 ! protein state assay
 
 [Term]
@@ -20313,13 +20396,12 @@ is_a: OBI:0000615 ! protein expression profiling assay
 id: OBI:0002959
 name: tandem mass tag mass spectrometry assay
 def: "A type of tandem mass spectrometry where isotopomer labels are employed for accurate quantification and identification of specific proteins." []
-is_a: OBI:0000470 ! mass spectrometry assay
+is_a: OBI:0003540 ! tandem mass spectrometry assay
 
 [Term]
 id: OBI:0002960
 name: fluorescence imaging-based reporter gene assay
 def: "A type of reporter gene assay that employs fluorescence imaging to detect a reporter gene's expression." []
-is_a: OBI:0001501 ! fluorescence detection assay
 is_a: OBI:0002082 ! reporter gene assay
 
 [Term]
@@ -20816,14 +20898,15 @@ is_a: OBI:0003040 ! blood assay
 id: OBI:0003038
 name: parasite detection assay
 def: "An assay that detects parasite in a specimen." []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003039
 name: feces microbiology assay
-def: "An assay that detects microorganisms in a feces specimen." []
+def: "An organism detection assay that detects microorganisms in a feces specimen." []
 synonym: "stool test for microorganisms" EXACT []
-is_a: OBI:0001624 ! organism identification assay
+is_a: OBI:0003237 ! feces assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003040
@@ -20854,13 +20937,13 @@ is_a: OBI:0000070 ! assay
 [Term]
 id: OBI:0003044
 name: parasite species identification by PCR assay
-def: "An organism identification assay that identifies the species of parasites by PCR." []
+def: "A parasite detection by PCR assay that identifies the species of parasite." []
 is_a: OBI:0003045 ! parasite detection by PCR assay
 
 [Term]
 id: OBI:0003045
 name: parasite detection by PCR assay
-def: "An assay that detects parasite in a specimen using PCR." []
+def: "A parasite detection assay that uses PCR." []
 is_a: OBI:0002692 ! polymerase chain reaction assay
 is_a: OBI:0003038 ! parasite detection assay
 
@@ -20945,8 +21028,8 @@ is_a: IAO:0000027 ! data item
 
 [Term]
 id: OBI:0003064
-name: organism identification datum
-def: "A data item that is the specified output of an organism identification assay." []
+name: organism detection datum
+def: "A data item that is the specified output of an organism detection assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -21241,7 +21324,7 @@ is_a: OBI:0000470 ! mass spectrometry assay
 [Term]
 id: OBI:0003111
 name: SOMAscan assay
-def: "An analyte assay that uses aptamers to detect protein analytes in serum. " []
+def: "An analyte assay that uses aptamers to detect protein analytes in serum." []
 is_a: OBI:0000443 ! analyte assay
 
 [Term]
@@ -21273,7 +21356,7 @@ is_a: OBI:0000920 ! cytometric bead array assay
 [Term]
 id: OBI:0003116
 name: antibody detection by cytometric bead array assay
-def: "A cytometric bead array assay that detects antigen-specific antibodies. In the assay a series of beads are coated with antigens which capture antibodies specific to the antigens. Fluorescent labeled secondary antibodies are used to detect the antibodies of interest. " []
+def: "A cytometric bead array assay that detects antigen-specific antibodies. In the assay a series of beads are coated with antigens which capture antibodies specific to the antigens. Fluorescent labeled secondary antibodies are used to detect the antibodies of interest." []
 is_a: OBI:0000920 ! cytometric bead array assay
 
 [Term]
@@ -21991,20 +22074,23 @@ is_a: OBI:0000070 ! assay
 [Term]
 id: OBI:0003240
 name: cerebrospinal fluid microbiology assay
-def: "An organism identification assay that has a cerebrospinal fluid specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in a cerebrospinal fluid specimen." []
+is_a: OBI:0003232 ! cerebrospinal fluid assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003241
 name: endotracheal tube aspirate microbiology assay
-def: "An organism identification assay that has an endotracheal aspirate specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in an endotracheal aspirate specimen." []
+is_a: OBI:0003233 ! endotracheal aspirate assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003242
 name: induced sputum microbiology assay
-def: "An organism identification assay that has an induced sputum specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in an induced sputum specimen." []
+is_a: OBI:0003234 ! induced sputum assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003243
@@ -22015,8 +22101,9 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003244
 name: blood microbiology datum
-def: "An organism identification datum that is the specified output of a blood microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a blood microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+is_a: OBI:0003243 ! blood assay datum
 
 [Term]
 id: OBI:0003245
@@ -22027,8 +22114,9 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003246
 name: feces microbiology datum
-def: "An organism identification datum that is the specified output of a feces microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a feces microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+is_a: OBI:0003245 ! feces assay datum
 
 [Term]
 id: OBI:0003247
@@ -22039,8 +22127,9 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003248
 name: urine microbiology datum
-def: "An organism identification datum that is the specified output of a urine microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a urine microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+is_a: OBI:0003247 ! urine assay datum
 
 [Term]
 id: OBI:0003249
@@ -22049,10 +22138,18 @@ def: "A data item that is the specified output of a induced sputum assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
+id: OBI:0003250
+name: biomedical laboratory organization
+def: "An organization that performs assays, processes specimens, analyses data and conducts planned processes relevant to the life sciences." []
+synonym: "laboratory" EXACT []
+is_a: OBI:0000245 ! organization
+
+[Term]
 id: OBI:0003251
 name: induced sputum microbiology datum
-def: "An organism identification datum that is the specified output of an induced sputum microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of an induced sputum microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+is_a: OBI:0003249 ! induced sputum assay datum
 
 [Term]
 id: OBI:0003252
@@ -22063,207 +22160,213 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003253
 name: cerebrospinal fluid microbiology datum
-def: "An organism identification datum that is the specified output of a cerebrospinal fluid microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a cerebrospinal fluid microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+is_a: OBI:0003252 ! cerebrospinal fluid assay datum
 
 [Term]
 id: OBI:0003254
 name: endotracheal aspirate assay datum
-def: "An organism identification datum that is the specified output of an endotracheal aspirate assay." []
+def: "An organism detection datum that is the specified output of an endotracheal aspirate assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
 id: OBI:0003255
 name: endotracheal tube aspirate microbiology datum
-def: "An organism identification datum that is the specified output of an endotracheal tube aspirate microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of an endotracheal tube aspirate microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+is_a: OBI:0003254 ! endotracheal aspirate assay datum
 
 [Term]
 id: OBI:0003256
 name: lung microbiology datum
-def: "An organism identification datum that is the specified output of a lung microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a lung microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
 
 [Term]
 id: OBI:0003257
 name: nasopharyngeal or oropharyngeal swab microbiology datum
-def: "An organism identification datum that is the specified output of a nasopharyngeal or oropharyngeal swab microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a nasopharyngeal or oropharyngeal swab microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
 
 [Term]
 id: OBI:0003258
 name: pleural fluid microbiology datum
-def: "An organism identification datum that is the specified output of a pleural fluid microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a pleural fluid microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
 
 [Term]
 id: OBI:0003259
 name: umbilical cord blood assay datum
-def: "An organism identification datum that is the specified output of an umbilical cord blood assay." []
+def: "A data item that is the specified output of an umbilical cord blood assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
 id: OBI:0003260
 name: umbilical cord blood microbiology datum
-def: "An organism identification datum that is the specified output of an umbilical cord blood microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of an umbilical cord blood microbiology assay." []
+is_a: OBI:0003244 ! blood microbiology datum
+is_a: OBI:0003259 ! umbilical cord blood assay datum
 
 [Term]
 id: OBI:0003261
 name: bacteria in blood datum
-def: "A blood microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A blood microbiology datum that is about bacteria." []
 is_a: OBI:0003244 ! blood microbiology datum
 
 [Term]
 id: OBI:0003262
 name: virus in blood datum
-def: "A blood microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
+def: "A blood microbiology datum that is about a virus." []
 is_a: OBI:0003244 ! blood microbiology datum
 
 [Term]
 id: OBI:0003263
 name: eukaryota in blood datum
-def: "A blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A blood microbiology datum that is about eukaryota." []
 is_a: OBI:0003244 ! blood microbiology datum
 
 [Term]
 id: OBI:0003264
 name: bacteria in feces datum
-def: "A feces microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A feces microbiology datum that is about bacteria." []
 is_a: OBI:0003246 ! feces microbiology datum
 
 [Term]
 id: OBI:0003265
 name: eukaryota in feces datum
-def: "A feces microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A feces microbiology datum that is about eukaryota." []
 is_a: OBI:0003246 ! feces microbiology datum
 
 [Term]
 id: OBI:0003266
 name: virus in feces datum
-def: "A feces microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
+def: "A feces microbiology datum that is about a virus." []
 is_a: OBI:0003246 ! feces microbiology datum
 
 [Term]
 id: OBI:0003267
 name: eukaryota in urine datum
-def: "A urine microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A urine microbiology datum that is about eukaryota." []
 is_a: OBI:0003248 ! urine microbiology datum
 
 [Term]
 id: OBI:0003268
 name: bacteria in induced sputum datum
-def: "An induced sputum microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An induced sputum microbiology datum that is about bacteria." []
 is_a: OBI:0003251 ! induced sputum microbiology datum
 
 [Term]
 id: OBI:0003269
 name: eukaryota in induced sputum datum
-def: "An induced sputum microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "An induced sputum microbiology datum that is about eukaryota." []
 is_a: OBI:0003251 ! induced sputum microbiology datum
 
 [Term]
 id: OBI:0003270
 name: virus in induced sputum datum
-def: "An induced sputum microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
+def: "An induced sputum microbiology datum that is about a virus." []
 is_a: OBI:0003251 ! induced sputum microbiology datum
 
 [Term]
 id: OBI:0003271
 name: bacteria in endotracheal tube aspirate datum
-def: "An endotracheal tube aspirate microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "An endotracheal tube aspirate microbiology datum that is about bacteria." []
 is_a: OBI:0003255 ! endotracheal tube aspirate microbiology datum
 
 [Term]
 id: OBI:0003272
 name: bacteria in lung datum
-def: "A lung microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A lung microbiology datum that is about bacteria." []
 is_a: OBI:0003256 ! lung microbiology datum
 
 [Term]
 id: OBI:0003273
 name: eukaryota in lung datum
-def: "A lung microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A lung microbiology datum that is about eukaryota." []
 is_a: OBI:0003256 ! lung microbiology datum
 
 [Term]
 id: OBI:0003274
 name: virus in lung datum
-def: "A lung microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
+def: "A lung microbiology datum that is about a virus." []
 is_a: OBI:0003256 ! lung microbiology datum
 
 [Term]
 id: OBI:0003275
 name: bacteria in nasopharyngeal or oropharyngeal swab datum
-def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is about bacteria." []
 is_a: OBI:0003257 ! nasopharyngeal or oropharyngeal swab microbiology datum
 
 [Term]
 id: OBI:0003276
 name: eukaryota in nasopharyngeal or oropharyngeal swab datum
-def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is about eukaryota." []
 is_a: OBI:0003257 ! nasopharyngeal or oropharyngeal swab microbiology datum
 
 [Term]
 id: OBI:0003277
 name: virus in nasopharyngeal or oropharyngeal swab datum
-def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
+def: "A nasopharyngeal or oropharyngeal swab microbiology datum that is about a virus." []
 is_a: OBI:0003257 ! nasopharyngeal or oropharyngeal swab microbiology datum
 
 [Term]
 id: OBI:0003278
 name: bacteria in pleural fluid datum
-def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of bacteria in the specimen." []
+def: "A pleural fluid microbiology datum that is about bacteria." []
 is_a: OBI:0003258 ! pleural fluid microbiology datum
 
 [Term]
 id: OBI:0003279
 name: eukaryota in pleural fluid datum
-def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A pleural fluid microbiology datum that is about eukaryota." []
 is_a: OBI:0003258 ! pleural fluid microbiology datum
 
 [Term]
 id: OBI:0003280
 name: virus in pleural fluid datum
-def: "A pleural fluid microbiology datum that is interpreted as an indication of the presence of viruses in the specimen." []
+def: "A pleural fluid microbiology datum that is about a virus." []
 is_a: OBI:0003258 ! pleural fluid microbiology datum
 
 [Term]
 id: OBI:0003281
 name: eukaryota in umbilical cord blood datum
-def: "An umbilical cord blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "An umbilical cord blood microbiology datum that is about eukaryota." []
 is_a: OBI:0003260 ! umbilical cord blood microbiology datum
+is_a: OBI:0003263 ! eukaryota in blood datum
 
 [Term]
 id: OBI:0003282
 name: lung microbiology assay
-def: "An organism identification assay that has a lung specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in a lung specimen." []
+is_a: OBI:0003235 ! lung assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003283
 name: pleural fluid microbiology assay
-def: "An organism identification assay that has a pleural fluid specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in a pleural fluid specimen." []
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003284
 name: umbilical cord blood microbiology assay
-def: "An organism identification assay that has an umbilical cord blood specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in an umbilical cord blood specimen." []
+is_a: OBI:0002649 ! blood microbiology assay
+is_a: OBI:0003238 ! umbilical cord blood assay
 
 [Term]
 id: OBI:0003285
 name: nasopharyngeal or oropharyngeal swab microbiology assay
-def: "An organism identification assay that has a nasopharyngeal or oropharyngeal swab specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in a nasopharyngeal or oropharyngeal swab specimen." []
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003286
 name: urine microbiology assay
-def: "An organism identification assay that has a urine specimen as evaluant." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that detects microorganisms in a urine specimen." []
 is_a: OBI:0003043 ! urine assay
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003287
@@ -22490,7 +22593,7 @@ is_a: GO:0036262 ! granulysin production
 [Term]
 id: OBI:0003321
 name: venous blood microbiology assay
-def: "A blood microbiology assay that identifies a microorganism in a venous blood specimen." []
+def: "A blood microbiology assay that detects a microorganism in a venous blood specimen." []
 is_a: OBI:0002649 ! blood microbiology assay
 
 [Term]
@@ -22520,6 +22623,48 @@ name: high throughput multiplexed assay measuring MHC ligand processing and pres
 def: "A MHC ligand assay that determines what ligands are processed and loaded onto MHC molecules by eluting ligands and identifying them using a high throughput multiplexed assay." []
 synonym: "ligand presentation|High throughput multiplexed assay" EXACT []
 is_a: OBI:1110125 ! assay measuring MHC ligand processing and presentation
+
+[Term]
+id: OBI:0003327
+name: image data set
+def: "A data set that is comprised of multidimensional structured measurements and metadata required for a morphological representation of an entity. An image data set can be the source from which an image (such as a 2D image using pixels or a 3D image using voxels) is produced." []
+is_a: IAO:0000100 ! data set
+
+[Term]
+id: OBI:0003328
+name: magnetic resonance image data set
+def: "An image data set whose information content originates from some MR imaging assay and is about some MRI participant." []
+is_a: OBI:0003327 ! image data set
+
+[Term]
+id: OBI:0003329
+name: magnetic resonance imaging participant
+def: "The subject being scanned in an MRI study, and bearor of data derived from that study." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: OBI:0003330
+name: magnetic resonance imaging evaluant role
+def: "An evaluant role that inheres in a material entity that is realized in a MR imaging assay in which MR imaging data is generated about the bearer of the evaluant role." []
+is_a: OBI:0000067 ! evaluant role
+
+[Term]
+id: OBI:0003331
+name: raw image data set
+def: "An image data set that encodes measurement values produced by some instrument before undergoing a data transformation." []
+is_a: OBI:0003327 ! image data set
+
+[Term]
+id: OBI:0003332
+name: magnetic resonance pulse sequence protocol
+def: "The NMR/MRI machine protocol about the radiofrequency pulse sequence." []
+is_a: OBI:0000272 ! protocol
+
+[Term]
+id: OBI:0003355
+name: image data set analysis
+def: "The process of deriving a data item from an image data set using computer algorithms. The produced data item can be an image data set, data measurement, or any other data item." []
+is_a: OBI:0200000 ! data transformation
 
 [Term]
 id: OBI:0003365
@@ -22589,19 +22734,20 @@ is_a: OBI:2000009 ! bodily fluid specimen
 [Term]
 id: OBI:0003381
 name: placental blood microbiology assay
-def: "A blood microbiology assay that has a placental blood specimen as evaluant." []
+def: "A blood microbiology assay that detects microorganisms in a placental blood specimen." []
 is_a: OBI:0002649 ! blood microbiology assay
 
 [Term]
 id: OBI:0003382
 name: placental blood microbiology datum
-def: "An organism identification datum that is the specified output of a placental blood microbiology assay." []
-is_a: OBI:0003064 ! organism identification datum
+def: "An organism detection datum that is the specified output of a placental blood microbiology assay." []
+is_a: OBI:0003244 ! blood microbiology datum
 
 [Term]
 id: OBI:0003383
 name: eukaryota in placental blood datum
-def: "A placental blood microbiology datum that is interpreted as an indication of the presence of eukaryota in the specimen." []
+def: "A placental blood microbiology datum that is about eukaryota." []
+is_a: OBI:0003263 ! eukaryota in blood datum
 is_a: OBI:0003382 ! placental blood microbiology datum
 
 [Term]
@@ -22776,18 +22922,21 @@ id: OBI:0003419
 name: antigen specific antibodies in milk assay
 def: "An antigen specific antibodies assay that has a milk specimen as evaluant." []
 is_a: OBI:0002145 ! antigen specific antibodies assay
+is_a: OBI:0003236 ! milk assay
 
 [Term]
 id: OBI:0003420
 name: antigen specific antibodies in blood assay datum
 def: "An antigen specific antibodies assay datum that is the specified output of an antigen specific antibodies in blood assay." []
 is_a: OBI:0003243 ! blood assay datum
+is_a: OBI:0003417 ! antigen specific antibodies assay datum
 
 [Term]
 id: OBI:0003421
 name: antigen specific antibodies in milk assay datum
 def: "An antigen specific antibodies assay datum that is the specified output of an antigen specific antibodies in milk assay." []
 is_a: OBI:0003365 ! milk assay datum
+is_a: OBI:0003417 ! antigen specific antibodies assay datum
 
 [Term]
 id: OBI:0003422
@@ -22920,7 +23069,7 @@ is_a: OBI:0001179 ! epitope protection from infectious challenge experiment
 id: OBI:0003458
 name: epitope protection from tumor challenge experiment based on burden
 def: "An epitope protection from tumor challenge experiment in which the readout is a reduction in the presence of malignant cells in the host compared to controls." []
-synonym: "burden after tumor challenge " EXACT []
+synonym: "burden after tumor challenge" EXACT []
 is_a: OBI:0001183 ! epitope protection from tumor challenge experiment
 
 [Term]
@@ -23089,8 +23238,8 @@ is_a: OBI:0002638 ! in vivo assay measuring B cell epitope specific protection f
 [Term]
 id: OBI:0003480
 name: Gram stain assay
-def: "An organism identification assay that identifies bacteria based on the differential retention of a crystal violet-iodine complex within the cell wall." []
-is_a: OBI:0001624 ! organism identification assay
+def: "An organism detection assay that identifies bacteria based on the differential retention of a crystal violet-iodine complex within the cell wall." []
+is_a: OBI:0003498 ! organism detection assay
 
 [Term]
 id: OBI:0003481
@@ -23102,13 +23251,13 @@ is_a: OBI:0000968 ! device
 id: OBI:0003482
 name: lymph specimen
 def: "A specimen that is derived from a portion of lymph collected from an organism." []
-is_a: OBI:2000009 ! bodily fluid specimen
+is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:0003483
 name: digestive tract specimen
 def: "A specimen that is derived from part of a digestive tract." []
-is_a: OBI:0100051 ! specimen
+is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:0003484
@@ -23148,6 +23297,325 @@ def: "A reporter cell line analyte detection bioassay that detects tumor necrosi
 synonym: "TNF release|bioassay" EXACT []
 is_a: OBI:0000904 ! reporter cell line analyte detection bioassay
 is_a: OBI:0001400 ! assay measuring epitope specific tumor necrosis factor superfamily cytokine production by T cells
+
+[Term]
+id: OBI:0003489
+name: Scrub Typhus Detect IgM ELISA kit
+def: "An assay kit that is manufactured by InBios International to use ELISA to test for IgM antibodies for Orientia tsutsugamushi strains Karp, Kato, Gilliam, and TA 716, with a protein microarray that has a 96-well plate and the 56-kDa type-specific antigen." []
+is_a: OBI:0003369 ! assay kit
+
+[Term]
+id: OBI:0003490
+name: Panbio Dengue IgM capture ELISA kit
+def: "An assay kit that is manufactured by Abbott to test for IgM antibodies for Dengue with a two-plate protein microarray. One plate contains stabilized Dengue viruses 1 through 4, and the other plate contains anti-human IgM antibody." []
+is_a: OBI:0003369 ! assay kit
+
+[Term]
+id: OBI:0003491
+name: Panbio Dengue Early ELISA kit
+def: "An assay kit that is manufactured by Abbott to detect the NS1 Dengue viral protein with a protein microarray and an anti-NS1 monoclonal antibody." []
+is_a: OBI:0003369 ! assay kit
+
+[Term]
+id: OBI:0003492
+name: SD Bioline Chikungunya IgM RDT kit
+def: "A device manufactured by Abbott for rapid detection of human IgM antibodies for Chikungunya virus in blood, using analytical chromatography." []
+is_a: OBI:0003369 ! assay kit
+
+[Term]
+id: OBI:0003493
+name: SD Bioline Chikungunya IgM capture ELISA kit
+def: "An assay kit that is manufactured by Abbott to detect human IgM antibodies for Chikungunya with a protein microarray and ELISA." []
+is_a: OBI:0003369 ! assay kit
+
+[Term]
+id: OBI:0003494
+name: Advantage Chikungunya IgM Card kit
+def: "An assay kit that is manufactured by J. Mitra to detect human IgM antibodies for Chikungunya virus with a protein microarray and double-antigen sandwich ELISA." []
+is_a: OBI:0003369 ! assay kit
+
+[Term]
+id: OBI:0003498
+name: organism detection assay
+def: "An assay that detects a type of organism and/or the quantity of individuals of a type of organism." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003501
+name: functional assessment of individual
+def: "A physical examination of an individual's ability to perform functional activities." []
+is_a: OBI:0002441 ! physical examination of individual
+
+[Term]
+id: OBI:0003502
+name: facial atrophy assessment
+def: "An observational assessment of the loss of facial muscle tissue due to inactivity or disease." []
+is_a: OBI:0003536 ! observational assessment of individual
+
+[Term]
+id: OBI:0003503
+name: tongue atrophy assessment
+def: "An observational assessment of the loss of muscle tissue related to tongue movement due to inactivity or disease." []
+is_a: OBI:0003536 ! observational assessment of individual
+
+[Term]
+id: OBI:0003504
+name: forced cough assessment
+def: "A functional assessment of an individual's ability to cough forcefully." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003505
+name: speech test assessment
+def: "A functional assessment of an individual's ability to understandably repeat spoken sentences." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003506
+name: finger to finger assessment
+def: "A functional assessment of an individual's ability to touch index fingers together in front of the sternum without oscillation for a specified duration of time" []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003507
+name: nose to finger assessment
+def: "A functional assessment of an individual's ability to touch their own nose and then touch an examiners finger in front of them and then touch their own nose once more." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003508
+name: dysmetria assessment
+def: "A functional assessment of an individual's ability to accurately touch a moving target with their finger and then touch their own chin a number of times in a row." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003509
+name: rapid alternating hands assessment
+def: "A functional assessment of an individual's ability to alternate the forearm between pronation and suppination as quickly as possible during a specified duration of time" []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003510
+name: finger taps assessment
+def: "A functional assessment of an individual's ability to touch their finger-tip to thumb as many times as possible during a specified duration of time." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003511
+name: heel along shin assessment
+def: "A functional assessment of an individual's ability to slide their heel back and forth along their contralateral tibia from the patella to the ankle with the contralateral leg extended." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003512
+name: heel to shin assessment
+def: "A functional assessment of an individual's ability to tap their heel to the midpoint of the contralateral shin a number of times." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003513
+name: muscle atrophy assessment
+def: "An observational assesment of an individual's muscle tissue loss due to inactivity or disease." []
+is_a: OBI:0003536 ! observational assessment of individual
+
+[Term]
+id: OBI:0003514
+name: muscle weakness assessment
+def: "A functional assessment of an individual's ability to perform muscle movement to overcome gravity or physical resistence." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003515
+name: vibratory sense assessment
+def: "A functional assessment of an individual's ability to sense vibration." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003516
+name: position sense assessment
+def: "A functional assessment of an individual's ability to sense the position of a finger or toe that has been manipulated by minimal random movements." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003517
+name: deep tendon reflex assessment
+def: "A functional assessment of an individual's muscle contraction when a muscle is triggered by a signal from a muscle spindle in response to a stimulus applied to a specific trigger point on the body." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003518
+name: limits of stability assessment
+def: "The functional assessment of an individual's ability to maintain balance, posture or upright stability." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003519
+name: sitting posture assessment
+def: "A limits of stability assessment designed to assess an individual's ability to maintain unsupported posture while sitting over a given time period." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003520
+name: stance feet apart assessment
+def: "A limits of stability assessment designed to assess an individual's ability to maintain a stable stance with feet 20 cm apart." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003521
+name: stance feet apart assessment, with eyes closed
+def: "A limits of stability assessment designed to assess an individual's ability to maintain a stable stance with their eyes closed." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003522
+name: stance feet together assessment
+def: "A limits of stability assessment designed to assess an individual's ability to maintain a stable stance with feet together." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003523
+name: stance feet together assessment, with eyes closed
+def: "A limits of stability assessment designed to assess an individual's ability to maintain a stable stance with feet together and eyes closed." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003524
+name: tandem stance assessment
+def: "A limits of stability assessment designed to assess an individual's ability to maintain a stable stance with feet in tandem placement." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003525
+name: stance on one foot assessment
+def: "A limits of stability assessment designed to assess an individual's ability to maintain a stable stance on one foot." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003526
+name: tandem walk assessment
+def: "A limits of stability assessment designed to assess an individual's ability to maintain balance while walking in a straight line placing steps in tandem." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003527
+name: gait assessment
+def: "A limits of stability assessment designed to assess an individual's manner or pattern of walking." []
+is_a: OBI:0003518 ! limits of stability assessment
+
+[Term]
+id: OBI:0003528
+name: bulbar assessment
+def: "A functional assessment of an individual's lower cranial nerve function via proxy of facial muscle performance." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003529
+name: spontaneous speech assessment
+def: "A functional assessment of an individual's ability to articulate spoken words." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003530
+name: limb coordination assessment
+def: "A functional assessment of an individual's ability to coordinate limb movement." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003531
+name: upper limb coordination assessment
+def: "A limb coordination assessment designed to assess an individual's ability to coordinate upper limb movement." []
+is_a: OBI:0003530 ! limb coordination assessment
+
+[Term]
+id: OBI:0003532
+name: lower limb coordination assessment
+def: "A limb coordination assessment designed to assess an individual's ability to coordinate lower limb movement." []
+is_a: OBI:0003530 ! limb coordination assessment
+
+[Term]
+id: OBI:0003533
+name: nervous system functionality assessment
+def: "A functional assesment of an individual's nerve performance. Specifically the nerves connecting the sensory and motor structures with the central nervous system." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003534
+name: upright stability assessment
+def: "A functional assessment of an individual's ability to maintain upright body posture." []
+is_a: OBI:0003501 ! functional assessment of individual
+
+[Term]
+id: OBI:0003535
+name: deep tendon reflex assessment of the knee joint
+def: "A deep tendon reflex assessment of an individual's reaction to stimulus applied to a knee joint." []
+is_a: OBI:0003517 ! deep tendon reflex assessment
+
+[Term]
+id: OBI:0003536
+name: observational assessment of individual
+def: "A physical examination of an individual through visual assesment." []
+is_a: OBI:0002441 ! physical examination of individual
+
+[Term]
+id: OBI:0003537
+name: deep tendon reflex assessment of the ankle joint
+def: "A deep tendon reflex assessment of an individual's reaction to stimulus applied to an ankle joint." []
+is_a: OBI:0003517 ! deep tendon reflex assessment
+
+[Term]
+id: OBI:0003538
+name: deep tendon reflex assessment of the tendon of biceps brachii
+def: "A deep tendon reflex assessment of an individual's reaction to stimulus applied to a tendon of biceps brachii." []
+is_a: OBI:0003517 ! deep tendon reflex assessment
+
+[Term]
+id: OBI:0003539
+name: deep tendon reflex assessment of the brachioradialis
+def: "A deep tendon reflex assessment of an individual's reaction to stimulus applied to a brachioradialis." []
+is_a: OBI:0003517 ! deep tendon reflex assessment
+
+[Term]
+id: OBI:0003540
+name: tandem mass spectrometry assay
+def: "A mass spectrometry assay that uses two or more analyzers separated by a region in which ions can be induced to fragment by transfer of energy (frequently by collision with other molecules)." []
+is_a: OBI:0000470 ! mass spectrometry assay
+
+[Term]
+id: OBI:0003541
+name: ELISA measuring Orientia tsutsugamushi IgM antibody
+def: "An enzyme-linked immunosorbent assay that detects the IgM antibody that binds Orientia tsutsugamushi." []
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+
+[Term]
+id: OBI:0003542
+name: microarray assay measuring Dengue IgM antibody
+def: "A microarray assay that detects the IgM antibody that binds Dengue." []
+is_a: OBI:0001985 ! microarray assay
+
+[Term]
+id: OBI:0003543
+name: microarray assay measuring NS1
+def: "A microarray assay that detects NS1." []
+is_a: OBI:0001985 ! microarray assay
+is_a: OBI:2100023 ! protein assay
+
+[Term]
+id: OBI:0003544
+name: analytical chromatography measuring Chikungunya IgM antibody
+def: "Analytical chromatography that detects the IgM antibody that binds Chikungunya." []
+is_a: OBI:0001630 ! analytical chromatography
+
+[Term]
+id: OBI:0003545
+name: ELISA measuring Chikungunya IgM antibody
+def: "An enzyme-linked immunosorbent assay that detects the IgM antibody that binds Chikungunya." []
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+
+[Term]
+id: OBI:0003546
+name: microarray ELISA measuring Chikungunya IgM antibody
+def: "An enzyme-linked immunosorbent assay that uses a microarray as the solid support and detects the IgM antibody that binds Chikungunya." []
+is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
 
 [Term]
 id: OBI:0005246
@@ -23255,7 +23723,7 @@ is_a: OBI:0000047 ! processed material
 [Term]
 id: OBI:0100061
 name: primary cultured cell population
-def: "A cultured cell population comprised of cells expanded directly from living tissue prior to being passaged.\n\n" []
+def: "A cultured cell population comprised of cells expanded directly from living tissue prior to being passaged." []
 synonym: "primary cell culture" EXACT []
 synonym: "primary cell culture sample" EXACT []
 is_a: OBI:0100060 ! cultured cell population
@@ -23263,7 +23731,7 @@ is_a: OBI:0100060 ! cultured cell population
 [Term]
 id: OBI:0100062
 name: obsolete_cell line
-def: "A secondary cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history (ie has been successively passaged together in culture).  " []
+def: "A secondary cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history (ie has been successively passaged together in culture)." []
 synonym: "cell line sample" EXACT []
 is_a: ObsoleteClass ! Obsolete Class
 is_obsolete: true
@@ -23674,7 +24142,7 @@ is_a: OBI:0200000 ! data transformation
 
 [Term]
 id: OBI:0200062
-name: continuum mass spectrum
+name: continuum mass spectrum analysis
 def: "A continuum mass spectrum is a data transformation that contains the full profile of the detected signals for a given ion." []
 is_a: OBI:0200085 ! mass spectrometry analysis
 
@@ -23686,7 +24154,7 @@ is_a: OBI:0200085 ! mass spectrometry analysis
 
 [Term]
 id: OBI:0200064
-name: centroid mass spectrum
+name: centroid mass spectrum analysis
 def: "A centroid mass spectrum is a data transformation in which many points are used to delineate a mass spectral peak, is converted into mass-centroided data by a data compression algorithm. The centroided mass peak is located at the weighted center of mass of the profile peak. The normalized area of the peak provides the mass intensity data." []
 synonym: "centroid mass spectrum calculation" EXACT []
 synonym: "centroiding" EXACT []
@@ -24371,7 +24839,7 @@ is_a: OBI:0200166 ! data transformation objective
 [Term]
 id: OBI:0200180
 name: spread calculation objective
-def: "is a data transformation objective whereby the aim is to the calculate the spread of a dataset, spread is a descriptive statistic which describes the variability of values in a data set " []
+def: "is a data transformation objective whereby the aim is to the calculate the spread of a dataset, spread is a descriptive statistic which describes the variability of values in a data set." []
 is_a: OBI:0200166 ! data transformation objective
 
 [Term]
@@ -24477,14 +24945,16 @@ is_a: OBI:0200166 ! data transformation objective
 [Term]
 id: OBI:0200197
 name: spectrum analysis objective
-def: "is a data transformation objective where the aim is to analyse some aspect of spectral data by some data transformation process. " []
+def: "is a data transformation objective where the aim is to analyse some aspect of spectral data by some data transformation process." []
 is_a: OBI:0200166 ! data transformation objective
 
 [Term]
 id: OBI:0200198
-name: tandem mass spectrometry
-def: "Tandem mass spectrometry is a data transformation that uses two or more analyzers separated by a region in which ions can be induced to fragment by transfer of energy (frequently by collision with other molecules)." []
-is_a: OBI:0200085 ! mass spectrometry analysis
+name: obsolete tandem mass spectrometry
+def: "Tandem mass spectrometry is a data transformation that uses two or more analyzers separated by a region in which ions can be induced to fragment by transfer of energy (frequently by collision with other molecules." []
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: OBI:0003540
 
 [Term]
 id: OBI:0200199
@@ -24501,8 +24971,8 @@ is_a: OBI:0000673 ! statistical hypothesis test
 [Term]
 id: OBI:0200201
 name: ANOVA
-def: "ANOVA or analysis of variance is a data transformation in which a statistical test of whether the means of several groups are all equal." []
-is_a: OBI:0200000 ! data transformation
+def: "A statistical hypothesis test in which the means of several groups are all equal." []
+is_a: OBI:0000673 ! statistical hypothesis test
 
 [Term]
 id: OBI:0300310
@@ -25757,7 +26227,7 @@ is_a: OBI:0500024 ! standard compliance rule
 [Term]
 id: OBI:0500026
 name: eligibility criterion
-def: "an eligibility criterion (rule) is_a selection criterion which \ndefines and states the requirements (positive or negative) for an entity to be considered as suitable for a given task or participation in a process.\n" []
+def: "an eligibility criterion (rule) is_a selection criterion which \ndefines and states the requirements (positive or negative) for an entity to be considered as suitable for a given task or participation in a process." []
 synonym: "eligibility rule" EXACT []
 is_a: OBI:0001755 ! selection criterion
 
@@ -25827,7 +26297,7 @@ is_a: OBI:0000274 ! adding a material entity into a target
 [Term]
 id: OBI:0600008
 name: acquisition
-def: "the planned process of gaining possession of a continuant " []
+def: "the planned process of gaining possession of a continuant." []
 is_a: OBI:0001928 ! selection
 
 [Term]
@@ -26674,13 +27144,13 @@ is_a: OBI:0001875 ! cultured immune cell population
 [Term]
 id: OBI:1110108
 name: material to be added
-def: "a material that is added to another one in a material combination process" []
+def: "A material entity that is added to another material entity in an “adding a material entity into a target” process." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:1110109
 name: target of material addition
-def: "A material entity into which another is being added in a material combinatino process" []
+def: "A material entity that receives the addition of another material entity in an “adding a material entity into a target” process." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -27126,49 +27596,49 @@ is_a: OBI:0000950 ! paraffin specimen
 [Term]
 id: OBI:2000000
 name: uterine cervix specimen
-def: "A specimen that is derived from some uterine cervix " []
+def: "A specimen that is derived from some uterine cervix" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000001
 name: urethra specimen
-def: "A specimen that is derived from some urethra " []
+def: "A specimen that is derived from some urethra" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000002
 name: cervical mucus specimen
-def: "A specimen that is derived from some cervical mucus " []
+def: "A specimen that is derived from some cervical mucus" []
 is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:2000003
 name: throat specimen
-def: "A specimen that is derived from some throat " []
+def: "A specimen that is derived from some throat" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000004
 name: eye specimen
-def: "A specimen that is derived from some eye " []
+def: "A specimen that is derived from some eye" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000005
 name: respiratory system specimen
-def: "A specimen that is derived from some respiratory system " []
+def: "A specimen that is derived from some respiratory system" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000006
 name: upper respiratory tract specimen
-def: "A specimen that is derived from some upper respiratory tract " []
+def: "A specimen that is derived from some upper respiratory tract" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000007
 name: nasopharynx specimen
-def: "A specimen that is derived from some nasopharynx " []
+def: "A specimen that is derived from some nasopharynx" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
@@ -27186,13 +27656,13 @@ is_a: OBI:0001479 ! specimen from organism
 [Term]
 id: OBI:2000010
 name: chorionic villus specimen
-def: "A specimen that is derived from some chorionic villus " []
+def: "A specimen that is derived from some chorionic villus" []
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
 id: OBI:2000011
 name: meconium specimen
-def: "A specimen that is derived from some meconium " []
+def: "A specimen that is derived from some meconium" []
 is_a: OBI:0002503 ! feces specimen
 
 [Term]
@@ -27228,7 +27698,7 @@ is_a: OBI:0002599 ! swab specimen
 [Term]
 id: OBI:2000017
 name: reticulocyte specimen
-def: "A specimen that is derived from some reticulocytes " []
+def: "A specimen that is derived from some reticulocytes" []
 is_a: OBI:0002599 ! swab specimen
 
 [Term]
@@ -28835,17 +29305,20 @@ id: OBI:2100265
 name: tube 4 count cerebrospinal fluid cell count assay
 def: "A cytometry assay that measures the count of cells in cerebrospinal fluid as part of a tube 4 count order" []
 is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100266
 name: cerebrospinal fluid protein assay
 def: "An analyte assay that measures the abundance of protein in cerebrospinal fluid" []
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 is_a: OBI:2100023 ! protein assay
 
 [Term]
 id: OBI:2100267
 name: cerebrospinal fluid glucose assay
 def: "An analyte assay that measures the abundance of glucose in cerebrospinal fluid" []
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 is_a: OBI:2100020 ! glucose assay
 
 [Term]
@@ -28853,6 +29326,7 @@ id: OBI:2100268
 name: tube 1 count cerebrospinal fluid cell count assay
 def: "A cytometry assay that measures the count of cells in cerebrospinal fluid as part of a tube 1 count order" []
 is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100269
@@ -29587,42 +30061,49 @@ id: OBI:2100390
 name: cerebrospinal fluid lymphocyte count assay
 def: "A cytometry assay that measures the count of lymphocytes in cerebrospinal fluid" []
 is_a: OBI:0003024 ! lymphocyte assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100391
 name: cerebrospinal fluid segmented neutrophil count assay
 def: "A cytometry assay that measures the count of segmented neutrophils in cerebrospinal fluid" []
 is_a: OBI:0003022 ! neutrophil assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100392
 name: cerebrospinal fluid mesothelial cell count assay
 def: "A cytometry assay that measures the count of mesothelial cells in cerebrospinal fluid" []
 is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100393
 name: cerebrospinal fluid macrophage count assay
 def: "A cytometry assay that measures the count of macrophages in cerebrospinal fluid" []
 is_a: OBI:0003027 ! macrophage assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100394
 name: cerebrospinal fluid basophil count assay
 def: "A cytometry assay that measures the count of basophils in cerebrospinal fluid" []
 is_a: OBI:0003021 ! basophil assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100395
 name: cerebrospinal fluid monocyte count assay
 def: "A cytometry assay that measures the count of monocytes in cerebrospinal fluid" []
 is_a: OBI:0003025 ! monocyte assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100396
 name: cerebrospinal fluid eosinophil count assay
 def: "A cytometry assay that measures the count of eosinophils in cerebrospinal fluid" []
 is_a: OBI:0003023 ! eosinophil assay
+is_a: OBI:0003232 ! cerebrospinal fluid assay
 
 [Term]
 id: OBI:2100397
@@ -30220,7 +30701,7 @@ is_a: PR:000000001 ! protein
 [Term]
 id: PR:000003015
 name: prostate-specific antigen
-def: "A protein that is a translation product of the human KLK3 gene or a 1:1 ortholog thereof." []
+def: "A trypsin that is a translation product of the human KLK3 gene or a 1:1 ortholog thereof." []
 is_a: PR:000000001 ! protein
 
 [Term]
@@ -30387,6 +30868,12 @@ name: protein-glutamine gamma-glutamyltransferase
 is_a: PR:000000001 ! protein
 
 [Term]
+id: PR:000036824
+name: NS1
+def: "A dengue virus genome polyprotein proteolytic cleavage product that is the N-terminal most non-structural protein within the dengue virus genome polyprotein. Example: UniProtKB:P29990, 776-1127, Asn-905/Asn-982, MOD:00160." []
+is_a: PR:000000001 ! protein
+
+[Term]
 id: PR:000050219
 name: alanine aminotransferase
 def: "A protein that is a translation product of the human GPT or GPT2 genes, 1:1 orthologs thereof, or a semi-ortholog thereof." []
@@ -30511,6 +30998,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0000007
 name: pituitary gland
 def: "The pituitary gland is an endocrine gland that secretes hormones that regulate many other glands [GO]. An endocrine gland located ventral to the diencephalon and derived from mixed neuroectodermal and non neuroectodermal origin [ZFIN]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000010
+name: peripheral nervous system
+def: "A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -30643,12 +31136,18 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0000956
 name: cerebral cortex
 def: "The thin layer of gray matter on the surface of the cerebral hemisphere that develops from the telencephalon. It consists of the neocortex (6 layered cortex or isocortex), the hippocampal formation and the olfactory cortex." []
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0000970
 name: eye
 def: "An organ that detects light." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000978
+name: leg
+def: "The portion of the hindlimb that contains both the stylopod and zeugopod." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -30718,6 +31217,12 @@ def: "Joint fluid is a transudate of plasma that is actively secreted by synovia
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
+id: UBERON:0001103
+name: diaphragm
+def: "A thin musculomebranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0001134
 name: skeletal muscle tissue
 def: "Muscle tissue that consists primarily of skeletal muscle fibers." []
@@ -30763,7 +31268,7 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0001323
 name: tibial nerve
 def: "The tibial nerve is a branch of the sciatic nerve. The tibial nerve passes through the popliteal fossa to pass below the arch of soleus. In the popliteal fossa the nerve gives off branches to gastrocnemius, popliteus, soleus and plantaris muscles, an articular branch to the knee joint, and a cutaneous branch that will become the sural nerve. The sural nerve is joined by fibres from the common peroneal nerve and runs down the calf to supply the lateral side of the foot. Below the soleus muscle the nerve lies close to the tibia and supplies the tibialis posterior, the flexor digitorum longus and the flexor hallucis longus. The nerve passes into the foot running posterior to the medial malleolus. Here it is bound down by the flexor retinaculum in company with the posterior tibial artery. [WP,unvetted]." []
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001359
@@ -30775,6 +31280,18 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0001460
 name: arm
 def: "The part of the forelimb extending from the shoulder to the autopod[cjm]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001485
+name: knee joint
+def: "The knee joint joins the thigh with the leg and consists of two articulations: one between the femur and tibia, and one between the femur and patella. It is the largest and most complicated joint in the human body. The knee is a mobile trocho-ginglymus (i.e. a pivotal hinge joint), which permits flexion and extension as well as a slight medial and lateral rotation[WP,unvetted]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001488
+name: ankle joint
+def: "A joint that connects the hindlimb autopod and zeugopod skeletons." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -30799,6 +31316,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0001567
 name: cheek
 def: "A fleshy subdivision of one side of the face bounded by an eye, ear and the nose." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001577
+name: facial muscle
+def: "A muscle innervated by a facial nerve." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -30859,13 +31382,13 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0001873
 name: caudate nucleus
 def: "Subcortical nucleus of telecephalic origin consisting of an elongated gray mass lying lateral to and bordering the lateral ventricle. It is divided into a head, body and tail in some species." []
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001874
 name: putamen
 def: "Subcortical nucleus of telencephalic , which together with the caudate nucleus, forms the striatum. The putamen lies lateral to the internal capsule and medial to the external medullary lamina, and is separated from the caudate nucleus by the fibers of the internal capsule for most of its length, except at its anterior portion." []
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0001913
@@ -30986,6 +31509,18 @@ id: UBERON:0002371
 name: bone marrow
 def: "The soft tissue that fills the cavities of bones." []
 is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0002386
+name: forelimb zeugopod
+def: "The middle limb segment of the pectoral free limb, between the autopod and stylopod segments. Includes as parts the forelimb zeugopodial skeleton, which includes as parts the radius and ulna, or their cartilage precursors, or evolutionary variants." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0002389
+name: manual digit
+def: "A digit that is part of a manus (hand)." []
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0002391
@@ -31113,10 +31648,22 @@ def: "The junction between the esophagus and the stomach epithelium." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0008188
+name: tendon of biceps brachii
+def: "A tendon that attaches_to a biceps brachii." []
+is_a: UBERON:0000479 ! tissue
+
+[Term]
 id: UBERON:0010414
 name: omental fat pad
 def: "Encapsulated adipose tissue associated with the fold of peritoneal tissue that extends from the stomach to the posterior abdominal wall after associating with the transverse colon." []
 is_a: UBERON:0001013 ! adipose tissue
+
+[Term]
+id: UBERON:0011011
+name: brachioradialis
+def: "Brachioradialis is a muscle of the forearm that acts to flex the forearm at the elbow. It is also capable of both pronation and supination, depending on the position of the forearm. It is attached to the distal styloid process of the radius by way of the brachioradialis tendon, and to the lateral supracondylar ridge of the humerus." []
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0012168
@@ -31655,7 +32202,7 @@ is_a: BFO:0000051 ! has part
 [Typedef]
 id: OBI:0001637
 name: has disposition to bind
-def: "A relationship between two material entitites that each have disposition to form a complex with the other. " []
+def: "A relationship between two material entitites that each have disposition to form a complex with the other." []
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 is_symmetric: true
