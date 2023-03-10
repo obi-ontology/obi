@@ -105,6 +105,8 @@ MODULE_NAMES := assays\
  biopsy\
  biobank-specimens\
  organizations\
+ data-sets\
+ data-transformations\
  devices\
  epitope-assays\
  medical-history\
