@@ -105,6 +105,8 @@ MODULE_NAMES := assays\
  biopsy\
  biobank-specimens\
  organizations\
+ data-sets\
+ data-transformations\
  devices\
  epitope-assays\
  medical-history\
@@ -114,8 +116,7 @@ MODULE_NAMES := assays\
  study-designs\
  sequence-analysis\
  specimen-assay-data\
- value-specifications\
- data-sets
+ value-specifications
 MODULE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/modules/$(x).owl)
 TEMPLATE_FILES := $(foreach x,$(MODULE_NAMES),src/ontology/templates/$(x).tsv)
 
