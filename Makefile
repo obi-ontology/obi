@@ -417,16 +417,16 @@ clean:
 sort: src/ontology/templates/
 	src/scripts/sort-templates.py
 
+### GitHub Tasks
+#
+# Require "admin:org", "repo", and "workflow" permissions for gh CLI token
+
 # Create a release candidate
-# Requires "admin:org", "repo", and "workflow" permissions for gh CLI token
 .PHONY: candidate
 candidate: obi.owl views build/new-entities.txt
-	$(eval REMOTE := $(shell git remote -v | grep "obi-ontology/obi.git" | head -1 | cut -f 1))
-	git checkout -b $(TODAY)
-	git add -u
-	git commit -m "$(TODAY) release candidate"
-	git push -u $(REMOTE) $(TODAY)
-	gh pr create \
-	--title "$(TODAY) release candidate" \
-	--body "$$(cat build/new-entities.txt)" \
-	--repo obi-ontology/obi
+	src/scripts/release-candidate.sh
+
+# Create a release
+.PHONY: release
+release: build/new-entities.txt
+	src/scripts/release.sh
