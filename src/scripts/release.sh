@@ -51,7 +51,7 @@ gh release create "v${DATE}" --title "${DATE} Release" --notes-file build/new-en
 EMAIL="build/release-email.txt"
 
 cat << EOF > "${EMAIL}"
-To: <obi-devel@sourceforge.net>, <obi-users@googlegroups.com>
+To: <obi-devel@lists.sourceforge.net>, <obi-users@googlegroups.com>
 Subject: OBI Release ${DATE}
 
 Hi everyone,
