@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.7.0/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar
 
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
@@ -67,7 +67,7 @@ build/rdftab: | build
 #
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
-	curl -s -F file=@$< -o $@ http://ontofox.hegroup.org/service.php
+	curl -s -F file=@$< -o $@ https://ontofox.hegroup.org/service.php
 
 # Remove annotation properties from CLO to avoid weird labels.
 src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
@@ -105,10 +105,13 @@ MODULE_NAMES := assays\
  biopsy\
  biobank-specimens\
  organizations\
+ data-sets\
+ data-transformations\
  devices\
  epitope-assays\
  medical-history\
  obsolete\
+ physical-examination\
  sample-collection\
  study-designs\
  sequence-analysis\
@@ -181,13 +184,15 @@ obi.owl: build/obi_merged.owl
 	$(ROBOT) reason \
 	--input $< \
 	--reasoner HermiT \
+	--equivalent-classes-allowed none \
 	annotate \
 	--ontology-iri "$(OBO)/obi.owl" \
 	--version-iri "$(OBO)/obi/$(TODAY)/obi.owl" \
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi-base.owl: src/ontology/obi-edit.owl | build/robot.jar
+# Build a base file from obi-edit.owl and modules.
+views/obi-base.owl: src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot.jar
 	$(ROBOT) remove --input $< \
 	--select imports \
 	merge $(foreach M,$(MODULE_FILES), --input $(M)) \
@@ -207,9 +212,6 @@ views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	remove \
 	--term-file $(word 2,$^) \
 	--trim true \
-	annotate \
-	--ontology-iri "$(OBO)/obi.obo" \
-	--version-iri "$(OBO)/obi/$(TODAY)/obi.obo" \
 	convert \
 	--output $(basename $@)-temp.obo && \
 	grep -v ^owl-axioms $(basename $@)-temp.obo | \
@@ -281,6 +283,15 @@ MERGED_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation.rq)
 MODULE_VIOLATION_QUERIES := $(wildcard src/sparql/*-violation-modules.rq)
 PHONY_MODULES := $(foreach x,$(MODULE_NAMES),build/modules/$(x).owl)
 
+build/obi-base-report.tsv: views/obi-base.owl
+	$(ROBOT) report \
+	--input $< \
+	--labels true \
+	--base-iri "http://purl.obolibrary.org/obo/OBI_" \
+	--fail-on ERROR \
+	--print 10 \
+	--output $@
+
 build/terms-report.csv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
 
@@ -331,7 +342,8 @@ build/modules/merged.owl: src/ontology/obi-edit.owl $(PHONY_MODULES) | build/rob
 	$(eval INPUTS := $(foreach x,$(PHONY_MODULES),--input $(x) ))
 	$(ROBOT) remove --input $< --select imports \
 	merge $(INPUTS) \
-	reason --output $@
+	reason --equivalent-classes-allowed none \
+	--output $@
 
 # Run all validation queries and exit on error.
 .PHONY: verify
@@ -358,15 +370,21 @@ verify-entities: build/dropped-entities.tsv
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
 reason: build/obi_merged.owl | build/robot.jar
-	$(ROBOT) reason --input $< --reasoner ELK
+	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed none
 
 # Find any IRIs using undefined namespaces
 .PHONY: validate-iris
 validate-iris: src/scripts/validate-iris.py build/obi_merged.owl
 	$^
 
+.PHONY: validate-dl
+validate-dl: build/dl-validation.txt
+.PRECIOUS: build/dl-validation.txt
+build/dl-validation.txt: build/obi_merged.owl
+	$(ROBOT) validate-profile --input $< --profile dl --output $@
+
 .PHONY: test
-test: reason verify validate-iris
+test: reason verify validate-iris validate-dl build/obi-base-report.tsv
 
 
 ### Term reservations
@@ -399,16 +417,16 @@ clean:
 sort: src/ontology/templates/
 	src/scripts/sort-templates.py
 
+### GitHub Tasks
+#
+# Require "admin:org", "repo", and "workflow" permissions for gh CLI token
+
 # Create a release candidate
-# Requires "admin:org", "repo", and "workflow" permissions for gh CLI token
 .PHONY: candidate
 candidate: obi.owl views build/new-entities.txt
-	$(eval REMOTE := $(shell git remote -v | grep "obi-ontology/obi.git" | head -1 | cut -f 1))
-	git checkout -b $(TODAY)
-	git add -u
-	git commit -m "$(TODAY) release candidate"
-	git push -u $(REMOTE) $(TODAY)
-	gh pr create \
-	--title "$(TODAY) release candidate" \
-	--body "$$(cat build/new-entities.txt)" \
-	--repo obi-ontology/obi
+	src/scripts/release-candidate.sh
+
+# Create a release
+.PHONY: release
+release: build/new-entities.txt
+	src/scripts/release.sh

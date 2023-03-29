@@ -11,8 +11,8 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/NIAID-GSC-BRC.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2022-01-03/NIAID-GSC-BRC.owl"/>
-        <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</protege:defaultLanguage>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2023-03-29/NIAID-GSC-BRC.owl"/>
+        <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
         <dc:creator xml:lang="en">Alan Ruttenberg</dc:creator>
         <dc:creator xml:lang="en">Allyson Lister</dc:creator>
@@ -76,8 +76,8 @@
         <dc:subject xml:lang="en">An ontology for the annotation of biomedical and functional genomics experiments.</dc:subject>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title>Ontology for Biomedical Investigations</terms:title>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-01-03</owl:versionInfo>
+        <rdfs:comment>Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
+        <owl:versionInfo>2023-03-29</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -90,6 +90,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/protege#defaultLanguage -->
+
+    <owl:AnnotationProperty rdf:about="http://protege.stanford.edu/plugins/owl/protege#defaultLanguage"/>
     
 
 
@@ -287,6 +293,12 @@ We also have the outstanding issue of how to aim different definitions to differ
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000589 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600">
@@ -342,9 +354,57 @@ We also have the outstanding issue of how to aim different definitions to differ
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/format -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/format"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -362,6 +422,12 @@ We also have the outstanding issue of how to aim different definitions to differ
     <!-- http://www.w3.org/2000/01/rdf-schema#Literal -->
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -617,7 +683,7 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <obo:IAO_0000111>is_supported_by_data</obo:IAO_0000111>
-        <obo:IAO_0000112>The relation between the conclusion &quot;Gene tpbA is involved in EPS production&quot; and the data items produced using two sets of organisms, one being a tpbA knockout, the other being tpbA wildtype tested in polysacharide production assays and analyzed using an ANOVA. </obo:IAO_0000112>
+        <obo:IAO_0000112>The relation between the conclusion &quot;Gene tpbA is involved in EPS production&quot; and the data items produced using two sets of organisms, one being a tpbA knockout, the other being tpbA wildtype tested in polysacharide production assays and analyzed using an ANOVA.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115>The relation between a data item and a conclusion where the conclusion is the output of a data interpreting process and the data item is used as an input to that process</obo:IAO_0000115>
         <obo:IAO_0000117>OBI</obo:IAO_0000117>
@@ -699,11 +765,6 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
     <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312">
-        <owl:equivalentProperty>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-            </rdf:Description>
-        </owl:equivalentProperty>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <obo:IAO_0000111>is_specified_output_of</obo:IAO_0000111>
@@ -1544,7 +1605,9 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here.</obo:IAO_0000116>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ido.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
     </owl:Class>
@@ -1631,12 +1694,10 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000111>cell</obo:IAO_0000111>
-        <obo:IAO_0000111 xml:lang="en">cell</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">PMID:18089833.Cancer Res. 2007 Dec 15;67(24):12018-25. &quot;...Epithelial cells were harvested from histologically confirmed adenocarcinomas ..&quot;</obo:IAO_0000112>
         <obo:IAO_0000115>A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>cell</rdfs:label>
-        <rdfs:label xml:lang="en">cell</rdfs:label>
     </owl:Class>
     
 
@@ -1678,7 +1739,6 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <obo:IAO_0000111>B cell</obo:IAO_0000111>
         <obo:IAO_0000115>A lymphocyte of B lineage that is capable of B cell mediated immunity.</obo:IAO_0000115>
-        <obo:IAO_0000115>A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>B cell</rdfs:label>
     </owl:Class>
@@ -1735,7 +1795,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <obo:IAO_0000111>environmental material</obo:IAO_0000111>
         <obo:IAO_0000115>A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/envo.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS20</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS20</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label>environmental material</rdfs:label>
     </owl:Class>
     
@@ -2526,7 +2586,7 @@ Request that IAO either clarify these or change definitions not to use them</rdf
         <obo:IAO_0000111 xml:lang="en">human pathogenicity disposition</obo:IAO_0000111>
         <obo:IAO_0000115>A disposition to initiate processes that result in a disorder in a human organism.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ido.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS19</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS19</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">human pathogenicity disposition</rdfs:label>
     </owl:Class>
     
@@ -2637,10 +2697,23 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33208 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <obo:IAO_0000111>Metazoa</obo:IAO_0000111>
+        <obo:IAO_0000118>metazoans</obo:IAO_0000118>
+        <obo:IAO_0000118>multicellular animals</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label>Metazoa</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_33213 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33213">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
         <obo:IAO_0000111>Bilateria</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Bilateria</rdfs:label>
@@ -2680,7 +2753,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
         <obo:IAO_0000111>Homo sapiens</obo:IAO_0000111>
         <obo:IAO_0000118>human</obo:IAO_0000118>
         <obo:IAO_0000118>human being</obo:IAO_0000118>
-        <obo:IAO_0000118>man</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Homo sapiens</rdfs:label>
     </owl:Class>
@@ -2924,7 +2996,7 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000112>Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
-        <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation. </obo:IAO_0000116>
+        <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
@@ -3214,7 +3286,7 @@ for now.</obo:IAO_0000116>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>interpreting data</obo:IAO_0000111>
-        <obo:IAO_0000112>Concluding that a gene is upregulated in a tissue sample based on the band intensity in a western blot.  Concluding that a patient has a infection based on measurement of an elevated body temperature and reported headache. Concluding that there were problems in an investigation because data from PCR and microarray are conflicting. Concluding that &apos;defects in gene XYZ cause cancer due to improper DNA repair&apos; based on data from experiments in that study that gene XYZ is involved in DNA repair, and the conclusion of a previous study that cancer patients have an increased number of mutations in this gene. </obo:IAO_0000112>
+        <obo:IAO_0000112>Concluding that a gene is upregulated in a tissue sample based on the band intensity in a western blot.  Concluding that a patient has a infection based on measurement of an elevated body temperature and reported headache. Concluding that there were problems in an investigation because data from PCR and microarray are conflicting. Concluding that &apos;defects in gene XYZ cause cancer due to improper DNA repair&apos; based on data from experiments in that study that gene XYZ is involved in DNA repair, and the conclusion of a previous study that cancer patients have an increased number of mutations in this gene.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process in which data gathered in an investigation is evaluated in the context of existing knowledge with the objective to generate more general conclusions or to conclude that the data does not allow one to draw general conclusion</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
@@ -3244,7 +3316,7 @@ for now.</obo:IAO_0000116>
         <obo:IAO_0000112>The process of a scientist thinking about and deciding what reagents to use as part of a protocol for an experiment. Note that the scientist could be human or a &quot;robot scientist&quot; executing software.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">a process of creating or modifying a plan specification</obo:IAO_0000115>
-        <obo:IAO_0000116>7/18/2011 BP: planning used to itself be a planned process. Barry Smith pointed out that this would lead to an infinite regression, as there would have to be a plan to conduct a planning process, which in itself would be the result of planning etc. Therefore, the restrictions on &apos;planning&apos; were loosened to allow for informal processes that result in an &apos;ad hoc plan &apos;. This required changing from &apos;has_specified_output some plan specifiction&apos; to &apos;has_participant some plan specification&apos;. </obo:IAO_0000116>
+        <obo:IAO_0000116>7/18/2011 BP: planning used to itself be a planned process. Barry Smith pointed out that this would lead to an infinite regression, as there would have to be a plan to conduct a planning process, which in itself would be the result of planning etc. Therefore, the restrictions on &apos;planning&apos; were loosened to allow for informal processes that result in an &apos;ad hoc plan &apos;. This required changing from &apos;has_specified_output some plan specifiction&apos; to &apos;has_participant some plan specification&apos;.</obo:IAO_0000116>
         <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
         <obo:IAO_0000119>Plans and Planned Processes Branch</obo:IAO_0000119>
@@ -3824,7 +3896,7 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         <obo:IAO_0000115 xml:lang="en">is a material entity bearing the disposition to infect an organism</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS17, CS18</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS17, CS18</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">infectious agent</rdfs:label>
     </owl:Class>
     
@@ -3948,7 +4020,7 @@ A blood specimen that has been centrifuged to obtain the white blood cells.</obo
 
 (3) A gel running  box  is a device that has a metallic lead as a component that participates in a chemical reaction with the running buffer when a charge is passed through it.  This metallic lead is considered to have a reagent role as a component of this device realized in the running of a gel.
 
-In the examples above, a reagent is an operational component of a device, but the device itself does not realize a reagent role (as bearing a reagent role is not transitive across the part_of relation).  In this way, the asserted disjointness between a reagent and device holds, as both roles are never realized in the same bearer during execution of an assay.  </obo:IAO_0000116>
+In the examples above, a reagent is an operational component of a device, but the device itself does not realize a reagent role (as bearing a reagent role is not transitive across the part_of relation).  In this way, the asserted disjointness between a reagent and device holds, as both roles are never realized in the same bearer during execution of an assay.</obo:IAO_0000116>
         <obo:IAO_0000117>PERSON: Helen Parkinson</obo:IAO_0000117>
         <obo:IAO_0000118>instrument</obo:IAO_0000118>
         <obo:IAO_0000119>OBI development call 2012-12-17.</obo:IAO_0000119>
@@ -3991,8 +4063,7 @@ In the examples above, a reagent is an operational component of a device, but th
         <obo:IAO_0000111>sequence data</obo:IAO_0000111>
         <obo:IAO_0000112>example of usage: the representation of a nucleotide sequence in FASTA format used for a sequence similarity search.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115>A measurement datum that representing the primary structure of a macromolecule(it&apos;s sequence) sometimes associated with an indicator of confidence of that measurement.
-</obo:IAO_0000115>
+        <obo:IAO_0000115>A measurement datum that representing the primary structure of a macromolecule(it&apos;s sequence) sometimes associated with an indicator of confidence of that measurement.</obo:IAO_0000115>
         <obo:IAO_0000117>Person:Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119>GROUP: OBI</obo:IAO_0000119>
         <rdfs:label xml:lang="en">sequence data</rdfs:label>
@@ -4090,7 +4161,7 @@ In the examples above, a reagent is an operational component of a device, but th
         <obo:IAO_0000115 xml:lang="en">a CRID symbol used to distinguish one individual organism from another.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">MO_169 Individual</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS1</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS1</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">individual organism identifier</rdfs:label>
     </owl:Class>
     
@@ -4113,7 +4184,7 @@ In the examples above, a reagent is an operational component of a device, but th
 life of bearer doesn&apos;t imply organism
 this assay measures time not developmental stage. we recognize that development can take different time periods under different conditions such as media / temperature
 age as a quality is dubious; we plan to revisit
-stages in development are currently handled with controlled vocabulary, such as 2-somite stage </obo:IAO_0000116>
+stages in development are currently handled with controlled vocabulary, such as 2-somite stage.</obo:IAO_0000116>
         <obo:IAO_0000117>PERSON: Alan Ruttenberg, Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>MO_178 Age</obo:IAO_0000119>
         <obo:IAO_0000232>In MageTab file, we use
@@ -4121,7 +4192,7 @@ initialTimePoint (a process) + age (a number expected) + TimeUnit (definied in U
 Now we use the term label indicating the start time point of measuring the age, (number + TimeUnit) are expected instances of the class</obo:IAO_0000232>
         <obo:IAO_0000232>discussed on Nov 15, dev call
 All subtype will be defined by textual definition now.</obo:IAO_0000232>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS6</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS6</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">age measurement datum</rdfs:label>
     </owl:Class>
     
@@ -4157,7 +4228,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>service</obo:IAO_0000111>
-        <obo:IAO_0000112>providing a training course for UCSD employees how to run a DNA sequencer; sequencing a DNA sample provided by a service consumer restricted to non-human samples; giving access to tissue samples in a biobank within OHSU; JAX shipping mice from their colony </obo:IAO_0000112>
+        <obo:IAO_0000112>providing a training course for UCSD employees how to run a DNA sequencer; sequencing a DNA sample provided by a service consumer restricted to non-human samples; giving access to tissue samples in a biobank within OHSU; JAX shipping mice from their colony.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115>A planned process in which a service provider performs a task (i.e. a planned process) for a service consumer.</obo:IAO_0000115>
         <obo:IAO_0000117>Carlo; Matt</obo:IAO_0000117>
@@ -4228,7 +4299,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">tissue specimen</obo:IAO_0000118>
         <obo:IAO_0000119>MO_954 organism_part</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS16</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS16</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">specimen from organism</rdfs:label>
     </owl:Class>
     
@@ -4256,7 +4327,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117>PERSON: Carlo Torniai</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Matthew Brush</obo:IAO_0000117>
         <obo:IAO_0000119>PERSON: Matthew Brush</obo:IAO_0000119>
-        <rdfs:comment>Here we need to go back to the defintoin of storage process. It has object specification which is material maintenance. Not necessareley a material maintenance is needed in a storage process. </rdfs:comment>
+        <rdfs:comment>Here we need to go back to the defintoin of storage process. It has object specification which is material maintenance. Not necessareley a material maintenance is needed in a storage process.</rdfs:comment>
         <rdfs:label>material maintenance service</rdfs:label>
     </owl:Class>
     
@@ -4271,7 +4342,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">An algorithm used to assemble individual sequence reads into larger contiguous sequences (contigs).  Assembly details include but are not limited to assembler type (overlap-layout-consensus, deBruijn), assembler version, and any relevant quality control information such as per cent known genes/ESTs captured.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA6</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA6</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sequence assembly algorithm</rdfs:label>
     </owl:Class>
@@ -4387,7 +4458,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">A CRID symbol uniquely indentifies the submitted GeneBank sequence record.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA10</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA10</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">GenBank ID</rdfs:label>
     </owl:Class>
@@ -4409,7 +4480,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">A textual entity that describes an investigation.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP3</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP3</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">investigation description</rdfs:label>
     </owl:Class>
@@ -4432,7 +4503,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">specimen ID</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS15</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS15</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen identifier</rdfs:label>
     </owl:Class>
@@ -4458,7 +4529,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000118 xml:lang="en">PMID</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">PubMed Identifier</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">Website: http://en.wikipedia.org/wiki/Wikipedia:PMID</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP12</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP12</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">PubMed ID</rdfs:label>
     </owl:Class>
@@ -4474,7 +4545,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">An average value of the depth of sequence coverage based both on external (e.g. Cot-based size estimates) and internal (average coverage in the assembly) measures of genome size.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA7</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA7</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">average depth of sequence coverage</rdfs:label>
     </owl:Class>
@@ -4507,7 +4578,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">collection date</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS10</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS10</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen collection time measurement datum</rdfs:label>
     </owl:Class>
@@ -4524,7 +4595,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">latitude</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS11</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS11</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">latitude coordinate measurement datum</rdfs:label>
     </owl:Class>
@@ -4541,7 +4612,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">longitude</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS12</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS12</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">longitude coordinate measurement datum</rdfs:label>
     </owl:Class>
@@ -4563,7 +4634,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">A textual entity that denotes an investigation.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person:Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP1</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP1</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">investigation title</rdfs:label>
     </owl:Class>
@@ -4579,7 +4650,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">A biological feature identification objective to identify the organism species in a specimen.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">Penn Group</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">organism identification objective</rdfs:label>
+        <rdfs:label xml:lang="en">organism species detection objective</rdfs:label>
     </owl:Class>
     
 
@@ -4587,48 +4658,27 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/OBI_0001624 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001624">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003498"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001623"/>
                     </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001623"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>organism identification assay</obo:IAO_0000111>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003498"/>
+        <obo:IAO_0000111>organism species detection assay</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115>An assay that identifies the organism species in a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000115>An organism detection assay that identifies the organism species in a specimen.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000118>organism identification assay</obo:IAO_0000118>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS21</obo:OBI_GSCID_BRC_Field_ID>
-        <rdfs:label>organism identification assay</rdfs:label>
+        <obo:OBI_GSCID_BRC_Field_ID>CS21</obo:OBI_GSCID_BRC_Field_ID>
+        <rdfs:label>organism species detection assay</rdfs:label>
     </owl:Class>
     
 
@@ -4658,7 +4708,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">BRC</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">Website: http://en.wikipedia.org/wiki/Bioinformatics_Resource_Centers</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP20</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP20</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">Bioinformatics Resource Center</rdfs:label>
     </owl:Class>
@@ -4681,7 +4731,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
         <obo:IAO_0000119 xml:lang="en">Website: http://en.wikipedia.org/wiki/Country</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS14</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS14</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">country name</rdfs:label>
     </owl:Class>
@@ -4703,7 +4753,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">A CRID symbol used to identify an investigation.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zhneg</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP2</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP2</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">investigation identifier</rdfs:label>
     </owl:Class>
@@ -4725,7 +4775,7 @@ All subtype will be defined by textual definition now.</obo:IAO_0000232>
         <obo:IAO_0000115 xml:lang="en">A CRID symbol used to identify a grant.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Person: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP11</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP11</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">grant identifier</rdfs:label>
     </owl:Class>
@@ -4862,7 +4912,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An organization that is the affiliation of the principal investigator providing the specimens for the investigation</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP14</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP14</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">organization of specimen provider principal investigator</rdfs:label>
     </owl:Class>
@@ -4889,7 +4939,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An organization that is the affiliation of the person who is contact representative of a Bioinformatics Resource Center</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP22</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP22</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">organization of Bioinformatics Resource Center contact person</rdfs:label>
     </owl:Class>
@@ -4938,7 +4988,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A plan specification which specifies the type of material that will be assayed in an investigation.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP6</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP6</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">target material in specimen specification</rdfs:label>
     </owl:Class>
@@ -4969,7 +5019,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A person who is the contact representative of a Bioinformatics Resource Center</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP21</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP21</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">Bioinformatics Resource Center contact person</rdfs:label>
     </owl:Class>
@@ -5003,7 +5053,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A plan specification which specifies the scope of an investigation based on the heterogeneity of organisms or type of material that are the specified input of specimen collection.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP5</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP5</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen-based scope of investigation specification</rdfs:label>
     </owl:Class>
@@ -5050,7 +5100,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An organization that provides a service to store and distribute specimens</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS22</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS22</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen repository organization</rdfs:label>
     </owl:Class>
@@ -5077,7 +5127,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An email address of the person who is contact representative of a Bioinformatics Resource Center</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP23</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP23</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">email address of Bioinformatics Resource Center contact person</rdfs:label>
     </owl:Class>
@@ -5108,7 +5158,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A person who is the contact representative at the sequencing facility</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP17</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP17</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sequencing facility contact person</rdfs:label>
     </owl:Class>
@@ -5139,7 +5189,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A person who is a principal investigator and provides the specimen</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP13</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP13</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen provider principal investigator</rdfs:label>
     </owl:Class>
@@ -5166,7 +5216,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An email address of the person collecting the specimen</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS27</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS27</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">email address of specimen collector</rdfs:label>
     </owl:Class>
@@ -5203,7 +5253,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An organization that provides sequence determination service</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP16</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP16</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sequencing facility organization</rdfs:label>
     </owl:Class>
@@ -5249,7 +5299,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An objective specification which indicates the type of data that will be generated and submitted to a database.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP9</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP9</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specification of data to be generated in an investigation</rdfs:label>
     </owl:Class>
@@ -5276,7 +5326,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An organization that is the affiliation of the person collecting the specimen</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS26</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS26</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">organization of specimen collector</rdfs:label>
     </owl:Class>
@@ -5303,7 +5353,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An email address of the contact representative at the sequencing facility</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP19</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP19</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">email address of sequencing facility contact person</rdfs:label>
     </owl:Class>
@@ -5330,7 +5380,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A person who collects the specimen</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS25</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS25</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen collector</rdfs:label>
     </owl:Class>
@@ -5359,7 +5409,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A plan specification which indicates the assay type used to obtain data.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP8</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP8</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">investigation assay specification</rdfs:label>
     </owl:Class>
@@ -5386,7 +5436,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An organization that is the affiliation of the contact representative at the sequencing facility</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP18</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP18</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">organization of sequencing facility contact person</rdfs:label>
     </owl:Class>
@@ -5427,7 +5477,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A textual entity that is about any of the aspects of an investigation worth noting</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS24</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS24</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">comment on investigation</rdfs:label>
     </owl:Class>
@@ -5480,7 +5530,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A plan specification which specifies how the material enrichment procedure will influence the scale, or type of material that will be assayed in the specimen.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP7</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP7</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">target capture specification</rdfs:label>
     </owl:Class>
@@ -5517,7 +5567,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A specimen identifier which is assigned by a specimen repository</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS23</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS23</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen identifier assigned by specimen repository</rdfs:label>
     </owl:Class>
@@ -5554,7 +5604,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A specimen identifier which is assigned by a sequencing facility</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA1</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA1</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">specimen identifier assigned by sequencing facility</rdfs:label>
     </owl:Class>
@@ -5605,7 +5655,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>A sample preparation for assay that preparation of nucleic acids for a sequencing assay</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA3</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA3</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sample preparation for sequencing assay</rdfs:label>
     </owl:Class>
@@ -5632,7 +5682,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
         <obo:IAO_0000115>An email address of the principal investigator providing the specimens for the investigation</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP15</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP15</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">email address of specimen provider principal investigator</rdfs:label>
     </owl:Class>
@@ -5686,7 +5736,7 @@ is realized in a specimen collection process.</obo:IAO_0000115>
 The following are NOT conclusions based on data: data themselves; results from pure mathematics, e.g. &quot;13 is prime&quot;.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115>An information content entity that is inferred from data.</obo:IAO_0000115>
-        <obo:IAO_0000116>In the Philly 2013 workshop, we recognized the limitations of &quot;conclusion textual entity&quot;, and we introduced this as more general. The need for the &apos;textual entity&apos; term going forward is up for future debate. </obo:IAO_0000116>
+        <obo:IAO_0000116>In the Philly 2013 workshop, we recognized the limitations of &quot;conclusion textual entity&quot;, and we introduced this as more general. The need for the &apos;textual entity&apos; term going forward is up for future debate.</obo:IAO_0000116>
         <obo:IAO_0000117>Group:2013 Philly Workshop group</obo:IAO_0000117>
         <obo:IAO_0000119>Group:2013 Philly Workshop group</obo:IAO_0000119>
         <rdfs:label>conclusion based on data</rdfs:label>
@@ -5700,7 +5750,7 @@ The following are NOT conclusions based on data: data themselves; results from p
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
         <obo:IAO_0000111>cell freezing medium</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115>A processed material that serves as a liquid vehicle for freezing cells for long term quiescent stroage, which contains chemicls needed to sustain cell viability across freeze-thaw cycles. </obo:IAO_0000115>
+        <obo:IAO_0000115>A processed material that serves as a liquid vehicle for freezing cells for long term quiescent stroage, which contains chemicls needed to sustain cell viability across freeze-thaw cycles.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Matthew Brush</obo:IAO_0000117>
         <rdfs:label xml:lang="en">cell freezing medium</rdfs:label>
     </owl:Class>
@@ -5757,7 +5807,7 @@ The following are NOT conclusions based on data: data themselves; results from p
         <obo:IAO_0000117>PERSON: Jie Zheng, Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000118>funding organization</obo:IAO_0000118>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP10</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP10</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">grant agency</rdfs:label>
         <rdfs:seeAlso>&apos;funding organization&apos;
@@ -5798,7 +5848,7 @@ http://vivoweb.org/ontology/core#FundingOrganization</rdfs:seeAlso>
         <obo:IAO_0000115>A planned process that identifies and reports sequence features (e.g. protein coding regions) in sequence data.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Jie Zheng, Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA9</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA9</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sequence annotation</rdfs:label>
     </owl:Class>
@@ -5830,7 +5880,7 @@ http://vivoweb.org/ontology/core#FundingOrganization</rdfs:seeAlso>
         <obo:IAO_0000115>A person or organization reporting the feature annotation results from the analysis of a macromolecular sequence.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Jie Zheng, Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA8</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA8</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sequence annotation provider</rdfs:label>
     </owl:Class>
@@ -5854,10 +5904,10 @@ http://vivoweb.org/ontology/core#FundingOrganization</rdfs:seeAlso>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000300"/>
         <obo:IAO_0000111 xml:lang="en">sequence assembly name</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115>A textual entity that is used to denote a sequence assembly. </obo:IAO_0000115>
+        <obo:IAO_0000115>A textual entity that is used to denote a sequence assembly.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Jie Zheng, Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119>NIAID GSCID-BRC metadata working group</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA5</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA5</obo:OBI_GSCID_BRC_Field_ID>
         <dc:source>NIAID GSCID-BRC</dc:source>
         <rdfs:label xml:lang="en">sequence assembly name</rdfs:label>
     </owl:Class>
@@ -6028,6 +6078,63 @@ http://vivoweb.org/ontology/core#FundingOrganization</rdfs:seeAlso>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003064">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003498"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>organism detection datum</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115>A data item that is the specified output of an organism detection assay.</obo:IAO_0000115>
+        <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>organism detection datum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003498 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003498">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>organism detection assay</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115>An assay that detects a type of organism and/or the quantity of individuals of a type of organism.</obo:IAO_0000115>
+        <obo:IAO_0000116>This term is a generalized version of the term previously known as &apos;organism identification assay&apos;, to include classification other than species and to include quantities as outputs.</obo:IAO_0000116>
+        <obo:IAO_0000117>John Judkins ORCID:0000-0001-6595-0902</obo:IAO_0000117>
+        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
+        <rdfs:label>organism detection assay</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0100010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100010">
@@ -6094,8 +6201,8 @@ OBI doesn&apos;t take position as to  when an organism starts or ends being an o
 This issue is outside the scope of OBI.</obo:IAO_0000116>
         <obo:IAO_0000117>GROUP: OBI Biomaterial Branch</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">WEB: http://en.wikipedia.org/wiki/Organism</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS3</obo:OBI_GSCID_BRC_Field_ID>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS4</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS3</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS4</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">organism</rdfs:label>
     </owl:Class>
     
@@ -6124,7 +6231,7 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <obo:IAO_0000117>PERSON: James Malone</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP: OBI Biomaterial Branch</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS2</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS2</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">specimen</rdfs:label>
     </owl:Class>
     
@@ -6360,7 +6467,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000118 xml:lang="en">experimental design</obo:IAO_0000118>
         <obo:IAO_0000232 xml:lang="en">rediscussed at length (MC/JF/BP). 12/9/08). The definition was clarified to differentiate it from protocol.</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CP4</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CP4</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">study design</rdfs:label>
     </owl:Class>
     
@@ -6635,7 +6742,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000115>An assay the uses chemical or biochemical means to infer the sequence of a biomaterial</obo:IAO_0000115>
         <obo:IAO_0000117>PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000119>OBI branch derived</obo:IAO_0000119>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA4</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA4</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label>sequencing assay</rdfs:label>
     </owl:Class>
     
@@ -6672,7 +6779,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <obo:IAO_0000232 xml:lang="en">requested by Helen Parkinson for MO. Could be defined class</obo:IAO_0000232>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA2</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>SA2</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label xml:lang="en">nucleic acid extraction</rdfs:label>
     </owl:Class>
     
@@ -6745,7 +6852,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000111>disease</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS9</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS9</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label>disease</rdfs:label>
     </owl:Class>
     
@@ -6799,7 +6906,7 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         <obo:IAO_0000111>biological sex</obo:IAO_0000111>
         <obo:IAO_0000115>An organismal quality inhering in a bearer by virtue of the bearer&apos;s ability to undergo sexual reproduction in order to differentiate the individuals or types involved.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pato.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS5</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS5</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label>biological sex</rdfs:label>
     </owl:Class>
     
@@ -6848,7 +6955,7 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         <obo:IAO_0000111>organismal quality</obo:IAO_0000111>
         <obo:IAO_0000115>A quality that inheres in an entire organism or part of an organism.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pato.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS8</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS8</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label>organismal quality</rdfs:label>
     </owl:Class>
     
@@ -6948,7 +7055,7 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         <obo:IAO_0000111>time unit</obo:IAO_0000111>
         <obo:IAO_0000115>A unit which is a standard measure of the dimension in which events occur in sequence.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS7</obo:OBI_GSCID_BRC_Field_ID>
+        <obo:OBI_GSCID_BRC_Field_ID>CS7</obo:OBI_GSCID_BRC_Field_ID>
         <rdfs:label>time unit</rdfs:label>
     </owl:Class>
     
@@ -7191,10 +7298,10 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
      -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GAZ_00000448">
-        <obo:OBI_GSCID_BRC_Field_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS13</obo:OBI_GSCID_BRC_Field_ID>
         <obo:IAO_0000115>A reference to a place on the Earth, by its name or by its geographical location.</obo:IAO_0000115>
-        <rdfs:label>geographic location</rdfs:label>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/gaz.owl"/>
+        <obo:OBI_GSCID_BRC_Field_ID>CS13</obo:OBI_GSCID_BRC_Field_ID>
+        <rdfs:label>geographic location</rdfs:label>
     </rdf:Description>
     
 
@@ -7250,5 +7357,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
 
