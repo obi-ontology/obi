@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.8.4/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar
 
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
