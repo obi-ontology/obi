@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.8.4/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar
 
 ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
@@ -417,16 +417,16 @@ clean:
 sort: src/ontology/templates/
 	src/scripts/sort-templates.py
 
+### GitHub Tasks
+#
+# Require "admin:org", "repo", and "workflow" permissions for gh CLI token
+
 # Create a release candidate
-# Requires "admin:org", "repo", and "workflow" permissions for gh CLI token
 .PHONY: candidate
 candidate: obi.owl views build/new-entities.txt
-	$(eval REMOTE := $(shell git remote -v | grep "obi-ontology/obi.git" | head -1 | cut -f 1))
-	git checkout -b $(TODAY)
-	git add -u
-	git commit -m "$(TODAY) release candidate"
-	git push -u $(REMOTE) $(TODAY)
-	gh pr create \
-	--title "$(TODAY) release candidate" \
-	--body "$$(cat build/new-entities.txt)" \
-	--repo obi-ontology/obi
+	src/scripts/release-candidate.sh
+
+# Create a release
+.PHONY: release
+release: build/new-entities.txt
+	src/scripts/release.sh
