@@ -706,6 +706,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0000701">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003540"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003547"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A method where a sample mixture is first separated by liquid chromatography before being ionised and characterised by mass-to-charge ratio and relative abundance using two mass spectrometers in series.</obo:IAO_0000115>
         <obo:IAO_0000118>LC-MS-MS</obo:IAO_0000118>
         <obo:IAO_0000118>LC-MS/MS</obo:IAO_0000118>
