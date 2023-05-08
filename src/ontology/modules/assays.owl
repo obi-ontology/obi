@@ -706,6 +706,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHMO_0000701">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003540"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003547"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A method where a sample mixture is first separated by liquid chromatography before being ionised and characterised by mass-to-charge ratio and relative abundance using two mass spectrometers in series.</obo:IAO_0000115>
         <obo:IAO_0000118>LC-MS-MS</obo:IAO_0000118>
         <obo:IAO_0000118>LC-MS/MS</obo:IAO_0000118>
@@ -1385,12 +1391,6 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0000049 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000049"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000051 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000051"/>
     
 
 
@@ -21290,31 +21290,17 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0003097 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003097">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000470"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000470"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000034"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000051"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003547"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
         <obo:IAO_0000115>A mass spectrometry assay where a sample mixture is first separated by liquid chromatography before being converted into ions which are characterized by using mass spectrometry based on their mass-to-charge ratio and relative abundance.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
@@ -25893,6 +25879,12 @@
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1456</obo:IAO_0000233>
         <rdfs:label>microarray ELISA measuring Chikungunya IgM antibody</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003547 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003547"/>
     
 
 
