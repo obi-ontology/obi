@@ -818,14 +818,7 @@ For instances: e has_quality q at t iff q inheres_in e at t and q instance-of Qu
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000304">
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000835"/>
         <obo:IAO_0000111 xml:lang="en">is_manufactured_by</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">http://www.affymetrix.com/products/arrays/specific/hgu133.affx is_manufactered_by http://www.affymetrix.com/ (if we decide to use these URIs for the actual entities)</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">c is_manufactured_by o means that there was a process p in which c was built in which a person, or set of people or machines did the work(bore the &quot;Manufacturer Role&quot;, and those people/and or machines were members or of directed by the organization to do this.</obo:IAO_0000115>
@@ -1972,16 +1965,16 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid37"/>
+        <rdfs:subClassOf rdf:nodeID="genid34"/>
     </rdf:Description>
-    <owl:Restriction rdf:nodeID="genid37">
+    <owl:Restriction rdf:nodeID="genid34">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CLO_0000001"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid37"/>
+        <owl:annotatedTarget rdf:nodeID="genid34"/>
         <obo:IAO_0000116>&apos;derives from&apos; is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -3825,8 +3818,9 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000111 xml:lang="en">assay</obo:IAO_0000111>
         <obo:IAO_0000112>Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process that has the objective to produce information about a material entity (the evaluant) by examining it.</obo:IAO_0000115>
         <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation.</obo:IAO_0000116>
+        <obo:IAO_0000116>Discussion on OBI call 2023-05-01 resulted in an agreement to revise the textual definition of &apos;assay&apos;.  https://github.com/obi-ontology/obi/issues/1683.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
@@ -9901,7 +9895,7 @@ http://en.wikipedia.org/wiki/Survival_rate</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000111>manufacturer</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115>A person or organization that has a manufacturer role</obo:IAO_0000115>
+        <obo:IAO_0000115>A person or organization that has a manufacturer role.</obo:IAO_0000115>
         <rdfs:label>manufacturer</rdfs:label>
     </owl:Class>
     
@@ -22638,7 +22632,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid1985"/>
+        <rdfs:subClassOf rdf:nodeID="genid1982"/>
         <obo:IAO_0000111>primary cultured cell population</obo:IAO_0000111>
         <obo:IAO_0000112>Spleen cells put directly into culture;  Cold storage of biopsies from wild endangered native Chilean species in field conditions and subsequent isolation of primary culture cell lines. In Vitro Cell Dev Biol Anim. 2008 Jul 2. PMID: 18594934</obo:IAO_0000112>
         <obo:IAO_0000112>cells that have been isolated from some organismal source, expanded in culture, but not undergone a complete passaging (ie are still in culture, or have been lifted from culture and frozen in aliquots for future use)</obo:IAO_0000112>
@@ -22651,7 +22645,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000119>PERSON:Matthew Brush</obo:IAO_0000119>
         <rdfs:label xml:lang="en">primary cultured cell population</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid1985">
+    <owl:Restriction rdf:nodeID="genid1982">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
         <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
@@ -22659,7 +22653,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/OBI_0100061"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid1985"/>
+        <owl:annotatedTarget rdf:nodeID="genid1982"/>
         <obo:IAO_0000116>consider if we really want to be so strict here . . . ie maybe we we say that they have not been output from an &apos;establishing cell line&apos; process, but in some cases a passage or two may be allowed for a primary culture.  the establishing of a line requires some  procedss that attains a degree of homogeneity in the culture.</obo:IAO_0000116>
     </owl:Axiom>
     
