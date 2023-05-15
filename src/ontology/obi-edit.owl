@@ -818,14 +818,7 @@ For instances: e has_quality q at t iff q inheres_in e at t and q instance-of Qu
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000304">
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000835"/>
         <obo:IAO_0000111 xml:lang="en">is_manufactured_by</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">http://www.affymetrix.com/products/arrays/specific/hgu133.affx is_manufactered_by http://www.affymetrix.com/ (if we decide to use these URIs for the actual entities)</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">c is_manufactured_by o means that there was a process p in which c was built in which a person, or set of people or machines did the work(bore the &quot;Manufacturer Role&quot;, and those people/and or machines were members or of directed by the organization to do this.</obo:IAO_0000115>
@@ -1972,16 +1965,16 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid37"/>
+        <rdfs:subClassOf rdf:nodeID="genid34"/>
     </rdf:Description>
-    <owl:Restriction rdf:nodeID="genid37">
+    <owl:Restriction rdf:nodeID="genid34">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CLO_0000001"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid37"/>
+        <owl:annotatedTarget rdf:nodeID="genid34"/>
         <obo:IAO_0000116>&apos;derives from&apos; is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -3825,8 +3818,9 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000111 xml:lang="en">assay</obo:IAO_0000111>
         <obo:IAO_0000112>Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process that has the objective to produce information about a material entity (the evaluant) by examining it.</obo:IAO_0000115>
         <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation.</obo:IAO_0000116>
+        <obo:IAO_0000116>Discussion on OBI call 2023-05-01 resulted in an agreement to revise the textual definition of &apos;assay&apos;.  https://github.com/obi-ontology/obi/issues/1683.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
@@ -5152,7 +5146,7 @@ An individual or juridicial or other body authorized under applicable law to con
         </rdfs:subClassOf>
         <obo:IAO_0000111>antigen role</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">Antigen is a role played by material which when introduced into an immune-competent organism causes an immune response</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A role of a material entity that is being recognized in whole or in part by receptors of the immune system such as antibodies or T cell receptors.</obo:IAO_0000115>
         <obo:IAO_0000116>An antigen is a substance that prompts the generation of antibodies and can cause an immune response.  Wikipedia  http://en.wikipedia.org/wiki/Antigen. In the strict sense, immunogens are those substances that elicit a response from the immune system, whereas antigens are defined as substances that bind to specific antibodies. Not all antigens produce an immunogenic response, but all immunogens are antigens</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Role Branch</obo:IAO_0000117>
         <obo:IAO_0000119>OBI</obo:IAO_0000119>
@@ -9901,7 +9895,7 @@ http://en.wikipedia.org/wiki/Survival_rate</obo:IAO_0000119>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000111>manufacturer</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115>A person or organization that has a manufacturer role</obo:IAO_0000115>
+        <obo:IAO_0000115>A person or organization that has a manufacturer role.</obo:IAO_0000115>
         <rdfs:label>manufacturer</rdfs:label>
     </owl:Class>
     
@@ -22239,6 +22233,19 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003547 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003547">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600046"/>
+        <obo:IAO_0000115>A preparative chromatography in which material components are separated in a liquid solution.</obo:IAO_0000115>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1685</obo:IAO_0000233>
+        <rdfs:label>liquid chromatography</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0003548 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003548">
@@ -22625,7 +22632,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid1985"/>
+        <rdfs:subClassOf rdf:nodeID="genid1982"/>
         <obo:IAO_0000111>primary cultured cell population</obo:IAO_0000111>
         <obo:IAO_0000112>Spleen cells put directly into culture;  Cold storage of biopsies from wild endangered native Chilean species in field conditions and subsequent isolation of primary culture cell lines. In Vitro Cell Dev Biol Anim. 2008 Jul 2. PMID: 18594934</obo:IAO_0000112>
         <obo:IAO_0000112>cells that have been isolated from some organismal source, expanded in culture, but not undergone a complete passaging (ie are still in culture, or have been lifted from culture and frozen in aliquots for future use)</obo:IAO_0000112>
@@ -22638,7 +22645,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000119>PERSON:Matthew Brush</obo:IAO_0000119>
         <rdfs:label xml:lang="en">primary cultured cell population</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid1985">
+    <owl:Restriction rdf:nodeID="genid1982">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
         <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
@@ -22646,7 +22653,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/OBI_0100061"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid1985"/>
+        <owl:annotatedTarget rdf:nodeID="genid1982"/>
         <obo:IAO_0000116>consider if we really want to be so strict here . . . ie maybe we we say that they have not been output from an &apos;establishing cell line&apos; process, but in some cases a passage or two may be allowed for a primary culture.  the establishing of a line requires some  procedss that attains a degree of homogeneity in the culture.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -30631,13 +30638,13 @@ Possible ecological risks of transgenic organism release when transgenes affect 
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_1110120"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000237"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000111>antigen</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">is a material entity that has the antigen role</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A material entity that has the antigen role.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <rdfs:label xml:lang="en">antigen</rdfs:label>
@@ -31180,7 +31187,7 @@ MHB 3-5-13: Need to review axiom on this class in light of clarification that it
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
         <obo:IAO_0000111>immunogen role</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">any entity capable of eliciting an immune response when introduced to components of the immune system</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A role of a material entity that is realized when the material elicits an immune response targeting itself in whole or in part.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <rdfs:label xml:lang="en">immunogen role</rdfs:label>
@@ -31310,7 +31317,7 @@ MHB 3-5-13: Need to review axiom on this class in light of clarification that it
         <obo:IAO_0000118>donor role</obo:IAO_0000118>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <obo:IAO_0000232>Definition modified by HP to deal with the case where an organ may be removed for donation but is not transplanted as intended.</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">donor</rdfs:label>
+        <rdfs:label xml:lang="en">donor role</rdfs:label>
     </owl:Class>
     
 
@@ -31682,7 +31689,7 @@ MHB 3-5-13: Need to review axiom on this class in light of clarification that it
     <!-- http://purl.obolibrary.org/obo/OBI_1110120 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1110120">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000237"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
@@ -31691,7 +31698,7 @@ MHB 3-5-13: Need to review axiom on this class in light of clarification that it
         </rdfs:subClassOf>
         <obo:IAO_0000111>assay antigen role</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">Any molecule recognized by the adaptive immune receptors? Recognized means bound with a certain affinity? From GO ag binding:Interacting selectively with an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen. see OBI_1110120 below</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An antigen role that is realized as part of an assay, where immune recognition of the material with the assay antigen role is being detected as part of the assay.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <rdfs:label xml:lang="en">assay antigen role</rdfs:label>
