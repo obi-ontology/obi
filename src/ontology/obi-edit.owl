@@ -55,7 +55,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/study-designs.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/value-specifications.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2015-10-07/core.owl"/>
-        <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</protege:defaultLanguage>
+        <protege:defaultLanguage>en</protege:defaultLanguage>
         <obo:IAO_0000589 xml:lang="en">Ontology for Biomedical Investigations</obo:IAO_0000589>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
         <dc:creator xml:lang="en">Alan Ruttenberg</dc:creator>
@@ -1965,22 +1965,16 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid34"/>
     </rdf:Description>
+    <owl:Restriction rdf:nodeID="genid34">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
+    </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CLO_0000001"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid34"/>
         <obo:IAO_0000116>&apos;derives from&apos; is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -22637,13 +22631,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid1982"/>
         <obo:IAO_0000111>primary cultured cell population</obo:IAO_0000111>
         <obo:IAO_0000112>Spleen cells put directly into culture;  Cold storage of biopsies from wild endangered native Chilean species in field conditions and subsequent isolation of primary culture cell lines. In Vitro Cell Dev Biol Anim. 2008 Jul 2. PMID: 18594934</obo:IAO_0000112>
         <obo:IAO_0000112>cells that have been isolated from some organismal source, expanded in culture, but not undergone a complete passaging (ie are still in culture, or have been lifted from culture and frozen in aliquots for future use)</obo:IAO_0000112>
@@ -22656,16 +22644,15 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000119>PERSON:Matthew Brush</obo:IAO_0000119>
         <rdfs:label xml:lang="en">primary cultured cell population</rdfs:label>
     </owl:Class>
+    <owl:Restriction rdf:nodeID="genid1982">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
+    </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/OBI_0100061"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
+        <owl:annotatedTarget rdf:nodeID="genid1982"/>
         <obo:IAO_0000116>consider if we really want to be so strict here . . . ie maybe we we say that they have not been output from an &apos;establishing cell line&apos; process, but in some cases a passage or two may be allowed for a primary culture.  the establishing of a line requires some  procedss that attains a degree of homogeneity in the culture.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -33273,8 +33260,8 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         <obo:IAO_0000118>pg</obo:IAO_0000118>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000027">
-        <obo:IAO_0000118>degree C</obo:IAO_0000118>
         <obo:IAO_0000118>C</obo:IAO_0000118>
+        <obo:IAO_0000118>degree C</obo:IAO_0000118>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000031">
         <obo:IAO_0000118>min</obo:IAO_0000118>
@@ -33346,19 +33333,19 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         <obo:IAO_0000118>mg/ml</obo:IAO_0000118>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000207">
-        <obo:IAO_0000118>ml/l</obo:IAO_0000118>
         <obo:IAO_0000118>ml per L</obo:IAO_0000118>
+        <obo:IAO_0000118>ml/l</obo:IAO_0000118>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000208">
         <obo:IAO_0000118>g/dl</obo:IAO_0000118>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000301">
-        <obo:IAO_0000118>ug/L</obo:IAO_0000118>
         <obo:IAO_0000118>ng/ml</obo:IAO_0000118>
+        <obo:IAO_0000118>ug/L</obo:IAO_0000118>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
 
