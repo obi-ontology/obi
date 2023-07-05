@@ -92,6 +92,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HP_0002664 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002664"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000444 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000444"/>
@@ -732,6 +738,33 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0003575 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003575"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003603 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003603">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000444"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HP_0002664"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An administration of a substance into a tumor of an organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label>intratumoral administration</rdfs:label>
+    </owl:Class>
     
 
 
