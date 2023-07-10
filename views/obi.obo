@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2023-03-29
-date: 29:03:2023 10:26
+data-version: 2023-07-10
+date: 10:07:2023 16:13
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi
 property_value: defaultLanguage "en" xsd:string
@@ -67,7 +67,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2023-03-29" xsd:string
+property_value: owl:versionInfo "2023-07-10" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -1018,6 +1018,7 @@ synonym: "LCMSMS" EXACT []
 synonym: "liquid chromatography tandem mass spectrometry" EXACT []
 synonym: "liquid chromatography tandem mass spectroscopy" EXACT []
 synonym: "liquid chromatography-tandem mass spectroscopy" EXACT []
+is_a: OBI:0003097 ! liquid chromatography mass spectrometry assay
 is_a: OBI:0003540 ! tandem mass spectrometry assay
 
 [Term]
@@ -4248,7 +4249,7 @@ is_a: OBI:0000047 ! processed material
 [Term]
 id: OBI:0000045
 name: waiting
-def: "not actively doing anything to a material for a duration of time." []
+def: "A planned process where an agent does not take any new actions towards a particular objective for a period of time until a set of conditions is met." []
 is_a: OBI:0600009 ! exposure of material to environment
 
 [Term]
@@ -4367,7 +4368,7 @@ is_a: OBI:0000202 ! investigation agent role
 [Term]
 id: OBI:0000070
 name: assay
-def: "A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies." []
+def: "A planned process that has the objective to produce information about a material entity (the evaluant) by examining it." []
 synonym: "any method" EXACT []
 synonym: "measuring" EXACT []
 synonym: "scientific observation" EXACT []
@@ -4944,7 +4945,7 @@ is_a: OBI:0000071 ! quantitative confidence value
 [Term]
 id: OBI:0000237
 name: antigen role
-def: "Antigen is a role played by material which when introduced into an immune-competent organism causes an immune response" []
+def: "A role of a material entity that is being recognized in whole or in part by receptors of the immune system such as antibodies or T cell receptors." []
 is_a: BFO:0000023 ! role
 
 [Term]
@@ -7721,7 +7722,7 @@ is_a: OBI:0001051 ! DNA extract
 [Term]
 id: OBI:0000835
 name: manufacturer
-def: "A person or organization that has a manufacturer role" []
+def: "A person or organization that has a manufacturer role." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -16262,9 +16263,9 @@ is_a: OBI:0002107 ! bio-layer interferometry assay
 [Term]
 id: OBI:0002106
 name: carboxyfluorescein succinimidyl ester staining assay
-def: "a assay detecting a molecular label assay where the amount of carboxyfluorescein succinimidyl ester is measured using fluorescence detection." []
+def: "An assay using carboxyfluorescein succinimidyl ester staining." []
 synonym: "CFSE assay" EXACT []
-is_a: OBI:0600017 ! assay detecting a molecular label
+is_a: OBI:0000070 ! assay
 
 [Term]
 id: OBI:0002107
@@ -17510,8 +17511,8 @@ is_a: OBI:0002439 ! chromosome conformation capture assay
 
 [Term]
 id: OBI:0002441
-name: physical examination of individual
-def: "An assay that produces a description of the qualities of an entity that has not been transformed, through observation and physical, non-invasive techniques." []
+name: physical examination of an organism
+def: "An assay that produces a description of the qualities of an organism that has not been transformed, through observation and physical, non-invasive techniques." []
 is_a: OBI:0000070 ! assay
 
 [Term]
@@ -19922,7 +19923,7 @@ is_a: OBI:0002800 ! personal protective clothing item
 [Term]
 id: OBI:0002814
 name: specimen collection device
-def: "A container used to collect a specimen." []
+def: "A device used to collect a specimen." []
 is_a: OBI:0000968 ! device
 
 [Term]
@@ -20877,8 +20878,8 @@ is_a: OBI:0000626 ! DNA sequencing assay
 [Term]
 id: OBI:0003035
 name: coma severity assay
-def: "A physical examination of individual that has the objective to determine the severity of coma in a patient." []
-is_a: OBI:0002441 ! physical examination of individual
+def: "A physical examination of an organism that has the objective to determine the severity of coma in a patient." []
+is_a: OBI:0002441 ! physical examination of an organism
 
 [Term]
 id: OBI:0003036
@@ -22661,10 +22662,37 @@ def: "The NMR/MRI machine protocol about the radiofrequency pulse sequence." []
 is_a: OBI:0000272 ! protocol
 
 [Term]
+id: OBI:0003333
+name: computed image data set
+def: "An image data set that is the output of an image data set analysis." []
+is_a: OBI:0003327 ! image data set
+
+[Term]
+id: OBI:0003334
+name: reconstructed magnetic resonance image data set
+def: "An image data set that is the direct output of a raw magnetic resonance image data set reconstruction or a transformation of another MR image data set." []
+is_a: OBI:0003328 ! magnetic resonance image data set
+is_a: OBI:0003333 ! computed image data set
+
+[Term]
+id: OBI:0003354
+name: raw magnetic resonance image data set
+def: "An image data set that is the direct output of an magnetic resonance imaging assay and whose values encode spatial frequencies produced by the NMR or MRI instrument." []
+is_a: OBI:0003328 ! magnetic resonance image data set
+is_a: OBI:0003331 ! raw image data set
+
+[Term]
 id: OBI:0003355
 name: image data set analysis
 def: "The process of deriving a data item from an image data set using computer algorithms. The produced data item can be an image data set, data measurement, or any other data item." []
 is_a: OBI:0200000 ! data transformation
+
+[Term]
+id: OBI:0003356
+name: raw magnetic resonance image data set reconstruction
+def: "A process that transforms raw magnetic resonance image data from an NMR/MRI machine into a reconstructed magnetic resonance image data set." []
+is_a: APOLLO_SV:00000796 ! dataset creating
+is_a: OBI:0003355 ! image data set analysis
 
 [Term]
 id: OBI:0003365
@@ -22675,7 +22703,7 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: OBI:0003366
 name: organism diagnostic process
-def: "A drawing a conclusion based on data that involves the interpretation of data about a given organism (human, animal, or plant) and the assertion to the effect that the organism has a disease, disorder, or syndrome of a certain type, or none of these as output." []
+def: "A drawing a conclusion based on data that involves the interpretation of data about a given organism (human, animal, or plant) and the assertion to the effect that the organism has or had a disease, disorder, or syndrome of a certain type, or none of these as output." []
 is_a: OBI:0000338 ! drawing a conclusion based on data
 
 [Term]
@@ -23344,7 +23372,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0003501
 name: functional assessment of individual
 def: "A physical examination of an individual's ability to perform functional activities." []
-is_a: OBI:0002441 ! physical examination of individual
+is_a: OBI:0002441 ! physical examination of an organism
 
 [Term]
 id: OBI:0003502
@@ -23554,7 +23582,7 @@ is_a: OBI:0003517 ! deep tendon reflex assessment
 id: OBI:0003536
 name: observational assessment of individual
 def: "A physical examination of an individual through visual assesment." []
-is_a: OBI:0002441 ! physical examination of individual
+is_a: OBI:0002441 ! physical examination of an organism
 
 [Term]
 id: OBI:0003537
@@ -23616,6 +23644,112 @@ id: OBI:0003546
 name: microarray ELISA measuring Chikungunya IgM antibody
 def: "An enzyme-linked immunosorbent assay that uses a microarray as the solid support and detects the IgM antibody that binds Chikungunya." []
 is_a: OBI:0000661 ! enzyme-linked immunosorbent assay
+
+[Term]
+id: OBI:0003547
+name: liquid chromatography
+def: "A preparative chromatography in which material components are separated in a liquid solution." []
+is_a: OBI:0600046 ! preparative chromatography
+
+[Term]
+id: OBI:0003548
+name: upper limit of detection
+def: "A value specification that specifies the largest concentration/amount of a substance that can be quantified in an analyte assay." []
+is_a: OBI:0001933 ! value specification
+
+[Term]
+id: OBI:0003549
+name: lower limit of detection
+def: "A value specification that specifies the smallest concentration/amount of a substance that can be detected in an analyte assay." []
+is_a: OBI:0001933 ! value specification
+
+[Term]
+id: OBI:0003550
+name: odor baited CDC light trap
+def: "A CDC light trap that uses odorous gas from a human being as an attractant, by pumping it from the room where the human being sleeps into the trap." []
+synonym: "human odour baited light trap" EXACT []
+is_a: OBI:0002926 ! Centers for Disease Control and Prevention light trap
+
+[Term]
+id: OBI:0003551
+name: resting clay pot trap
+def: "A resting arthropod trap that consists of a container composed primarily of clay." []
+synonym: "resting clay pot catch" EXACT []
+is_a: OBI:0002939 ! resting arthropod trap
+
+[Term]
+id: OBI:0003552
+name: proximity ligation-assisted ChIP-seq
+def: "A chromosome conformation capture assay in which proximity ligation is conducted in nuclei prior to chromatin shearing and immunoprecipitation. Immunopreciptation with an antibody that targets a transcription factor or histone modification allows for selection and enrichment of specific genomic regions for investigation of long-range chromosomal interactions." []
+synonym: "PLAC-seq" EXACT []
+is_a: OBI:0002439 ! chromosome conformation capture assay
+
+[Term]
+id: OBI:0003576
+name: skin of body microbiology assay
+def: "An organism detection assay that detects microorganisms in a skin of body specimen." []
+is_a: OBI:0003498 ! organism detection assay
+
+[Term]
+id: OBI:0003577
+name: skin of body microbiology datum
+def: "An organism detection datum that is the specified output of a skin of body microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+
+[Term]
+id: OBI:0003578
+name: bone marrow microbiology assay
+def: "An organism detection assay that detects microorganisms in a bone marrow specimen." []
+is_a: OBI:0003498 ! organism detection assay
+
+[Term]
+id: OBI:0003579
+name: bone marrow microbiology datum
+def: "An organism detection datum that is the specified output of a bone marrow microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+
+[Term]
+id: OBI:0003580
+name: nasal aspirate microbiology assay
+def: "An organism detection assay that detects microorganisms in a nasal swab specimen." []
+is_a: OBI:0003498 ! organism detection assay
+
+[Term]
+id: OBI:0003581
+name: nasal aspirate microbiology datum
+def: "An organism detection datum that is the specified output of a nasal aspirate microbiology assay." []
+is_a: OBI:0003064 ! organism detection datum
+
+[Term]
+id: OBI:0003582
+name: cell proliferation assay using carboxyfluorescein succinimidyl ester staining
+def: "A cell proliferation assay that uses carboxyfluorescein succinimidyl ester staining to detect cell division." []
+is_a: OBI:0000891 ! cell proliferation assay
+is_a: OBI:0002106 ! carboxyfluorescein succinimidyl ester staining assay
+
+[Term]
+id: OBI:0003583
+name: cell viability assay
+def: "A cytometry assay which measures the number of living cells in a population." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003584
+name: cell viability assay using Annexin V staining
+def: "A cell viability assay that uses Annexin V staining to detect apoptotic cells." []
+is_a: OBI:0003583 ! cell viability assay
+
+[Term]
+id: OBI:0003585
+name: carboxyfluorescein succinimidyl ester staining
+def: "Staining using carboxyfluorescein succinimidyl ester." []
+is_a: OBI:0302887 ! staining
+
+[Term]
+id: OBI:0003586
+name: Annexin V staining
+def: "Staining using Annexin V to detect apoptotic cells." []
+is_a: OBI:0302887 ! staining
 
 [Term]
 id: OBI:0005246
@@ -25160,8 +25294,8 @@ is_a: OBI:0000094 ! material processing
 
 [Term]
 id: OBI:0302889
-name: irradiation
-def: "irradiation is a process by which a material entity is exposed to radiative energy, which could be ionizing radiation (such as gamma rays or X-rays)  or not such as UV light or microwaves" []
+name: planned irradiation
+def: "A planned process by which a material entity is exposed to radiative energy, which could be ionizing radiation (such as gamma rays, X-rays, charged particles or neutrons) or non-ionizing radiation (such as UV light or microwaves)" []
 is_a: OBI:0000094 ! material processing
 
 [Term]
@@ -26721,7 +26855,7 @@ is_a: OBI:0000047 ! processed material
 [Term]
 id: OBI:1110001
 name: epitope
-def: "a material entity bearing the epitope role" []
+def: "A material entity with the disposition to be bound by an adaptive immune receptor." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -26887,7 +27021,7 @@ is_a: CLO:0009828 ! immortal cell line
 [Term]
 id: OBI:1110034
 name: antigen
-def: "is a material entity that has the antigen role" []
+def: "A material entity that has the antigen role." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -27054,7 +27188,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: OBI:1110082
 name: immunogen role
-def: "any entity capable of eliciting an immune response when introduced to components of the immune system" []
+def: "A role of a material entity that is realized when the material elicits an immune response targeting itself in whole or in part." []
 is_a: BFO:0000023 ! role
 
 [Term]
@@ -27084,7 +27218,7 @@ is_a: BFO:0000023 ! role
 
 [Term]
 id: OBI:1110087
-name: donor
+name: donor role
 def: "A role which inheres in an organism or part thereof from which any part including cell, organ or tissue is removed with the intention that the donated part will be placed into another organism and/or cultured in vitro." []
 synonym: "donor role" EXACT []
 is_a: BFO:0000023 ! role
@@ -27181,8 +27315,8 @@ is_a: CLO:0009828 ! immortal cell line
 [Term]
 id: OBI:1110120
 name: assay antigen role
-def: "Any molecule recognized by the adaptive immune receptors? Recognized means bound with a certain affinity? From GO ag binding:Interacting selectively with an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen. see OBI_1110120 below" []
-is_a: BFO:0000023 ! role
+def: "An antigen role that is realized as part of an assay, where immune recognition of the material with the assay antigen role is being detected as part of the assay." []
+is_a: OBI:0000237 ! antigen role
 
 [Term]
 id: OBI:1110122
@@ -32048,6 +32182,7 @@ def: "c is_manufactured_by o means that there was a process p in which c was bui
 synonym: "has_make" EXACT []
 synonym: "has_manufacturer" EXACT []
 domain: BFO:0000040 ! material entity
+range: OBI:0000835 ! manufacturer
 
 [Typedef]
 id: OBI:0000306
