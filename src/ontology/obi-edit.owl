@@ -502,12 +502,6 @@ https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#minQualifiedCardinality -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minQualifiedCardinality"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -3943,7 +3937,7 @@ Modification made by JZ.</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/OBI_0000086 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000086">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003610"/>
         <obo:IAO_0000111>reagent role</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">Buffer, dye, a catalyst, a solvating agent.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
@@ -7132,9 +7126,9 @@ that has_part some material entity is a material entity. If we add as equivalent
         <obo:IAO_0000111>manufacturing</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce a processed material which will have a function for future use.</obo:IAO_0000115>
+        <obo:IAO_0000116>A person or organization (having manufacturer role) is a participant in this process</obo:IAO_0000116>
         <obo:IAO_0000116>Manufacturing implies reproducibility and responsibility AR</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">This includes a single scientist making a processed material for personal use.</obo:IAO_0000116>
-        <obo:IAO_0000116>A person or organization (having manufacturer role) is a participant in this process</obo:IAO_0000116>
         <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Frank Gibson</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
@@ -22361,6 +22355,73 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003607 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003607">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
+        <obo:IAO_0000115 xml:lang="en">An objective specification that is fulfilled by causing a disease in a particular organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">disease causation objective</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003608 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003608">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
+        <obo:IAO_0000115>An objective specification that is fulfilled by reducing the severity of a disease in a particular organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">disease severity reduction objective</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003609 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003609">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
+        <obo:IAO_0000115>An objective specification that is fulfilled by preventing the development of a disease in a particular organism.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">disease prevention objective</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003610 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003610">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000115 xml:lang="en">A role borne by a biological or chemical entity that participates or has molecular components that participate in a chemical reaction.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">reactant role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003611 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003611">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003610"/>
+        <obo:IAO_0000115 xml:lang="en">A role borne by a biological or chemical entity which serves as the core component of a chemical reaction process, upon which other reactants, like reagents or solvents, act.</obo:IAO_0000115>
+        <obo:IAO_0000117>Cameron More</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">precursor role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003614 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003614">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
+        <obo:IAO_0000115>An objective specification that is fulfilled by reducing the prevalence of a disease in a population of organisms.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">disease prevalence reduction objective</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
@@ -26941,7 +27002,7 @@ determinations of compounds.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/OBI_0302732 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0302732">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003610"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
@@ -33435,5 +33496,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 
