@@ -22,6 +22,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -4556,38 +4562,6 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001977"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
                         <owl:someValuesFrom>
@@ -13452,22 +13426,19 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002106 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002106">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600017"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001501"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003585"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000112>Measuring T cell proliferation based on the progressive halving of CFSE fluorescence within daughter cells following each cell division.</obo:IAO_0000112>
-        <obo:IAO_0000115>a assay detecting a molecular label assay where the amount of carboxyfluorescein succinimidyl ester is measured using fluorescence detection.</obo:IAO_0000115>
+        <obo:IAO_0000115>An assay using carboxyfluorescein succinimidyl ester staining.</obo:IAO_0000115>
         <obo:IAO_0000117>IEDB</obo:IAO_0000117>
         <obo:IAO_0000118>CFSE assay</obo:IAO_0000118>
         <obo:IAO_0000119>IEDB</obo:IAO_0000119>
@@ -19709,6 +19680,7 @@
         <obo:IAO_0000115>A sequencing assay that determines the sequences of DNA or RNA molecules that encode the repertoire of T cell receptors within an input sample.</obo:IAO_0000115>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
         <obo:IAO_0000118>TCR repertoire sequencing assay</obo:IAO_0000118>
+        <obo:IAO_0000118>bulk TCR assay</obo:IAO_0000118>
         <obo:IAO_0000119>doi:10.1186/s12896-017-0379-9</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1307</obo:IAO_0000233>
         <rdfs:label>T cell receptor repertoire sequencing assay</rdfs:label>
@@ -19724,6 +19696,7 @@
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
         <obo:IAO_0000118>Antibody repertoire sequencing assay</obo:IAO_0000118>
         <obo:IAO_0000118>BCR repertoire sequencing assay</obo:IAO_0000118>
+        <obo:IAO_0000118>bulk BCR assay</obo:IAO_0000118>
         <obo:IAO_0000119>doi:10.1186/s12896-017-0379-9</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1307</obo:IAO_0000233>
         <rdfs:label>B cell receptor repertoire sequencing assay</rdfs:label>
@@ -25906,6 +25879,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003552 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003552">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002439"/>
+        <obo:IAO_0000115>A chromosome conformation capture assay in which proximity ligation is conducted in nuclei prior to chromatin shearing and immunoprecipitation. Immunopreciptation with an antibody that targets a transcription factor or histone modification allows for selection and enrichment of specific genomic regions for investigation of long-range chromosomal interactions.</obo:IAO_0000115>
+        <obo:IAO_0000117>Hector Guzman-Orozco</obo:IAO_0000117>
+        <obo:IAO_0000118>PLAC-seq</obo:IAO_0000118>
+        <obo:IAO_0000119>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5143423/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1145</obo:IAO_0000233>
+        <rdfs:label>proximity ligation-assisted ChIP-seq</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0003576 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003576">
@@ -26179,11 +26166,403 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An organism detection assay that detects microorganisms in a nasal swab specimen.</obo:IAO_0000115>
+        <obo:IAO_0000115>An organism detection assay that detects microorganisms in a nasal aspirate specimen.</obo:IAO_0000115>
         <obo:IAO_0000117>John Judkins ORCID:0000-0001-6595-0902</obo:IAO_0000117>
         <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1680</obo:IAO_0000233>
         <rdfs:label>nasal aspirate microbiology assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003582 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003582">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000891"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003585"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A cell proliferation assay that uses carboxyfluorescein succinimidyl ester staining to detect cell division.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1007</obo:IAO_0000233>
+        <rdfs:label>cell proliferation assay using carboxyfluorescein succinimidyl ester staining</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003583 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003583">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001977"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000169"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A cytometry assay which measures the number of living cells in a population.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1007</obo:IAO_0000233>
+        <rdfs:label>cell viability assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003584 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003584">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003583"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003586"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A cell viability assay that uses Annexin V staining to detect apoptotic cells.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1007</obo:IAO_0000233>
+        <rdfs:label>cell viability assay using Annexin V staining</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003585 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003585"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003586 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003586"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003587 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003587">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100060"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>An assay that has cell culture as an input.</obo:IAO_0000115>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label>cell culture assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003589 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003589">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002145"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0019814"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001637"/>
+                                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10376"/>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0019814"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001637"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10376"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>An antigen specific antibodies assay that is meant to detect antibodies that bind to Epstein-Barr virus (EBV) antigens in a serum sample.</obo:IAO_0000115>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>EBV</obo:IAO_0000118>
+        <rdfs:label>serum anti-Epstein-Barr virus antibody level assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003590 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003590">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0002154"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A CMV antibody assay that has serum as an input.</obo:IAO_0000115>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>CMV</obo:IAO_0000118>
+        <rdfs:label>serum anti-cytomegalovirus antibody level assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003598 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003598">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002991"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001010"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>single cell B cell receptor repertoire sequencing assay</obo:IAO_0000111>
+        <obo:IAO_0000115>A B cell receptor repertoire sequencing assay that determines the sequence of DNA or RNA molecules that encode the repertoire of B cell receptors that can be traced to a single cell of origin.</obo:IAO_0000115>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>single-cell BCR assay</obo:IAO_0000118>
+        <rdfs:label>single cell B cell receptor repertoire sequencing assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003599 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003599">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002990"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001010"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>single cell T cell receptor repertoire sequencing assay</obo:IAO_0000111>
+        <obo:IAO_0000115>A T cell receptor repertoire sequencing assay that determines the sequence of DNA or RNA molecules that encode the repertoire of T cell receptors that can be traced to a single cell of origin.</obo:IAO_0000115>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>single-cell TCR assay</obo:IAO_0000118>
+        <rdfs:label>single cell T cell receptor repertoire sequencing assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003601 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003601">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000111>quartz crystal microbalance assay</obo:IAO_0000111>
+        <obo:IAO_0000115>An assay that measures the change in frequency of a quartz crystal resonator resulting from the addition or removal of a small mass of a ligand specifically binding at the surface of the resonator.</obo:IAO_0000115>
+        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>QCM</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.ncbi.nlm.nih.gov/pubmed/23504432</obo:IAO_0000119>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Quartz_crystal_microbalance</obo:IAO_0000119>
+        <rdfs:label>quartz crystal microbalance assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003604 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003604">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003094"/>
+        <obo:IAO_0000115>A fluorescence in-situ hybridization assay that uses combinatorial FISH labeling with error resistant encoding schemes for highly multiplexed single-molecule imaging.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>MERFISH</obo:IAO_0000118>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Fluorescence_in_situ_hybridization#MERFISH</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1724</obo:IAO_0000233>
+        <obo:IAO_0000234>Brain Image Library</obo:IAO_0000234>
+        <rdfs:label>multiplexed error-robust fluorescence in situ hybridization assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003605 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003605">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003094"/>
+        <obo:IAO_0000115>A fluorescence in-situ hybridization assay that detects single RNA molecules in fixed cells, allowing for both the quantification and localization at the single-cell level and single-molecule resolution.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>smFISH</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.21769/BioProtoc.3070</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1725</obo:IAO_0000233>
+        <obo:IAO_0000234>Brain Image Library</obo:IAO_0000234>
+        <rdfs:label>single molecule fluorescence in situ hybridization</rdfs:label>
     </owl:Class>
     
 
@@ -52660,6 +53039,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000146 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000146"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000169 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000169"/>
     
 
 

@@ -11,7 +11,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/obi_core.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2023-03-29/obi_core.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2023-09-20/obi_core.owl"/>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <obo:IAO_0000589 xml:lang="en">Ontology for Biomedical Investigations</obo:IAO_0000589>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
@@ -78,7 +78,7 @@
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title>Ontology for Biomedical Investigations</terms:title>
         <rdfs:comment>Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
-        <owl:versionInfo>2023-03-29</owl:versionInfo>
+        <owl:versionInfo>2023-09-20</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -2002,6 +2002,7 @@ JAR: A data item is an approximately justified approximately true approximate be
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">PERSON: Jonathan Rees</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">data</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
         <rdfs:label xml:lang="en">data item</rdfs:label>
     </owl:Class>
     
@@ -2047,6 +2048,7 @@ JAR: A data item is an approximately justified approximately true approximate be
 Previous. An information content entity is a non-realizable information entity that &apos;is encoded in&apos; some digital or physical entity.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI_0000142</obo:IAO_0000119>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
         <rdfs:label xml:lang="en">information content entity</rdfs:label>
     </owl:Class>
     
@@ -2791,8 +2793,9 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000111 xml:lang="en">assay</obo:IAO_0000111>
         <obo:IAO_0000112>Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process that has the objective to produce information about a material entity (the evaluant) by examining it.</obo:IAO_0000115>
         <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation.</obo:IAO_0000116>
+        <obo:IAO_0000116>Discussion on OBI call 2023-05-01 resulted in an agreement to revise the textual definition of &apos;assay&apos;.  https://github.com/obi-ontology/obi/issues/1683.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
@@ -3449,7 +3452,7 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         </rdfs:subClassOf>
         <obo:IAO_0000111>informed consent process</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115>A planned process in which a person or their legal representative is informed about key facts about potential risks and benefits of a process and makes a documented decision as to whether the person in question will participate.</obo:IAO_0000115>
+        <obo:IAO_0000115>A planned process with the objective to inform a person or their legal representative of legally and ethically relevant facts about a process that the person in question is asked to participate in, and which results in a documented decision as to whether the person in question will participate.</obo:IAO_0000115>
         <obo:IAO_0000116>09/28/2009 Alan Ruttenberg: This is made a subclass of the higher level processual entity in BFO because I don&apos;t want to take a stand on whether it is a process aggregate. Analogous to the situation with Material entity.</obo:IAO_0000116>
         <obo:IAO_0000117>Person:Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000119>http://clinicaltrials.gov/ct2/info/glossary#informed</obo:IAO_0000119>
@@ -3702,7 +3705,7 @@ The following are NOT conclusions based on data: data themselves; results from p
         <obo:IAO_0000111 xml:lang="en">selection</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">PMID: 24023800.  In this study, a set of eleven genes (VATP16, 60 S, UQCC, SMD3, EF1α, UBQ, SAND, GAPDH, ACT, PsaB, PTB2) was evaluated to identify reference genes during the first hours of interaction (6, 12, 18 and 24 hpi) between two V. vinifera genotypes and P. viticola. Two analyses were used for the selection of reference genes: direct comparison of susceptible, Trincadeira, and resistant, Regent, V. vinifera cultivars at 0 h, 6, 12, 18 and 24 hours post inoculation with P. viticola (genotype effect); and comparison of each genotype with mock inoculated samples during inoculation time-course (biotic stress effect). Three statistical methods were used, GeNorm, NormFinder, and BestKeeper, allowing to identify UBQ, EF1α and GAPDH as the most stable genes for the genotype effect.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process which results in the creation of group of entity from a larger group by the application of predefined criteria.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to create a group of entities by applying a predefined criteria to a larger group of entities.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">this term refers to  a planned process and therefore is distinct from the notion of &apos;natural selection&apos;, a process covering the operation of natural causes by which those individuals of a species that are best adapted to the environment tend to be preserved and to transmit their characters, while those less adapted die out, so that in the course of generations the degree of adaptation to the environment tends progressively to increase. (as defined by Oxford English Dictionary)</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Person: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">selection process</obo:IAO_0000118>
@@ -4091,7 +4094,7 @@ defines and states the requirements (positive or negative) for an entity to be c
         <obo:IAO_0000111 xml:lang="en">acquisition</obo:IAO_0000111>
         <obo:IAO_0000112>Downloading a 3D structure from the PDB. Purchasing antibodies from sigma.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">the planned process of gaining possession of a continuant.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process with the objective of gaining possession of an entity.</obo:IAO_0000115>
         <obo:IAO_0000116>5/31/2012 - OBI workshop: This process is not implying ownership of the material / information.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">Following OBI call November 2012,5th:
 addition of a restriction to acquisition class to capture the need of having selection criteria

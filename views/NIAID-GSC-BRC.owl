@@ -11,7 +11,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/NIAID-GSC-BRC.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2023-03-29/NIAID-GSC-BRC.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2023-09-20/NIAID-GSC-BRC.owl"/>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
         <dc:creator xml:lang="en">Alan Ruttenberg</dc:creator>
@@ -77,7 +77,7 @@
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title>Ontology for Biomedical Investigations</terms:title>
         <rdfs:comment>Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
-        <owl:versionInfo>2023-03-29</owl:versionInfo>
+        <owl:versionInfo>2023-09-20</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -2003,6 +2003,7 @@ JAR: A data item is an approximately justified approximately true approximate be
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">PERSON: Jonathan Rees</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">data</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
         <rdfs:label xml:lang="en">data item</rdfs:label>
     </owl:Class>
     
@@ -2048,6 +2049,7 @@ JAR: A data item is an approximately justified approximately true approximate be
 Previous. An information content entity is a non-realizable information entity that &apos;is encoded in&apos; some digital or physical entity.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI_0000142</obo:IAO_0000119>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
         <rdfs:label xml:lang="en">information content entity</rdfs:label>
     </owl:Class>
     
@@ -2995,8 +2997,9 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000111 xml:lang="en">assay</obo:IAO_0000111>
         <obo:IAO_0000112>Assay the wavelength of light emitted by excited Neon atoms. Count of geese flying over a house.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process that has the objective to produce information about a material entity (the evaluant) by examining it.</obo:IAO_0000115>
         <obo:IAO_0000116>12/3/12: BP: the reference to the &apos;physical examination&apos; is included to point out that a prediction is not an assay, as that does not require physical examiniation.</obo:IAO_0000116>
+        <obo:IAO_0000116>Discussion on OBI call 2023-05-01 resulted in an agreement to revise the textual definition of &apos;assay&apos;.  https://github.com/obi-ontology/obi/issues/1683.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">measuring</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">scientific observation</obo:IAO_0000118>
@@ -3836,7 +3839,7 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <obo:IAO_0000111>material maintenance</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115>a process with that achieves the objective to maintain some or all of the characteristics of an input material over time</obo:IAO_0000115>
+        <obo:IAO_0000115>A planned process with the objective to maintain some or all of the characteristics of an input material over time.</obo:IAO_0000115>
         <rdfs:label>material maintenance</rdfs:label>
     </owl:Class>
     
@@ -6135,6 +6138,31 @@ http://vivoweb.org/ontology/core#FundingOrganization</rdfs:seeAlso>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003587 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003587">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100060"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000111>cell culture assay</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <obo:IAO_0000115>An assay that has cell culture as an input.</obo:IAO_0000115>
+        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <rdfs:label>cell culture assay</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0100010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100010">
@@ -6419,7 +6447,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000111>storage</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">PMID: 18550121.Total Prostate Specific Antigen Stability Confirmed After Long-Term Storage of Serum at -80C. J Urol. 2008 Jun 10.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A maintenance process by which material entities that are not actively metabolizing are placed in well identified location and possibly under controlled environment in ad-hoc devices/structures in order to preserve and protect them from decay/alteration and maintain availability</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to preserve and protect material entities by placing them in an identified location which may have a controlled environment.</obo:IAO_0000115>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119>OBI-Branch</obo:IAO_0000119>
         <rdfs:label xml:lang="en">storage</rdfs:label>
@@ -6577,7 +6605,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000111 xml:lang="en">maintaining cell culture</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">When harvesting blood from a human, isolating T cells, and then limited dilution cloning of the cells, the maintaining_cell_culture step comprises all steps after the initial dilution and plating of the cells into culture, e.g. placing the culture into an incubator, changing or adding media, and splitting a cell culture</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">a protocol application in which cells are kept alive in a defined environment outside of an organism.  part of cell_culturing</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to keep cells alive in a defined environment outside of an organism.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
         <rdfs:label xml:lang="en">maintaining cell culture</rdfs:label>
@@ -6769,7 +6797,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33696"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">nucleic acid extraction</obo:IAO_0000111>
@@ -7041,7 +7069,7 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000111>anatomical cluster</obo:IAO_0000111>
-        <obo:IAO_0000115>Anatomical group that has its parts adjacent to one another.</obo:IAO_0000115>
+        <obo:IAO_0000115>Anatomical group whose component anatomical structures lie in close proximity to each other.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>anatomical cluster</rdfs:label>
     </owl:Class>

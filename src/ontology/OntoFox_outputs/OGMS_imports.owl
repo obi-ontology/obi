@@ -24,15 +24,20 @@
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111">
+        <obo:IAO_0000111 xml:lang="en">editor preferred term</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
-        <obo:IAO_0000111>definition</obo:IAO_0000111>
-        <rdfs:label>definition</rdfs:label>
+        <obo:IAO_0000111 xml:lang="en">definition</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -76,13 +81,24 @@
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000111 xml:lang="en">data item</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
+        <rdfs:label xml:lang="en">data item</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
+        <obo:IAO_0000111 xml:lang="en">information content entity</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A generically dependent continuant that is about some thing.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
+        <rdfs:label xml:lang="en">information content entity</rdfs:label>
+    </owl:Class>
     
 
 
@@ -160,6 +176,18 @@
         <obo:IAO_0000115 xml:lang="en">A planned process whose completion is hypothesized by a health care provider to eliminate, prevent, or alleviate a disorder, the signs and symptoms of a disorder, or a pathological process</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
         <rdfs:label>treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000123 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000123">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111 xml:lang="en">clinical data item</obo:IAO_0000111>
+        <obo:IAO_0000115>A data item that is about a patient and is the specified output of a health care process assay or diagnostic process</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ogms.owl"/>
+        <rdfs:label xml:lang="en">clinical data item</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
