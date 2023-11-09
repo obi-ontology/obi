@@ -105,6 +105,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000417 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000417"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
@@ -590,6 +596,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003413">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003607"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>An administration of substance in vivo with the intention to induce disease in the organism.</obo:IAO_0000115>
         <obo:IAO_0000117>IEDB</obo:IAO_0000117>
         <obo:IAO_0000119>IEDB</obo:IAO_0000119>
@@ -602,6 +614,20 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003414">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003608"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003609"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003614"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>An administration of substance in vivo with the intention to reduce the symptoms of or prevent development of a disease in the organism.</obo:IAO_0000115>
         <obo:IAO_0000117>IEDB</obo:IAO_0000117>
         <obo:IAO_0000119>IEDB</obo:IAO_0000119>
@@ -1284,6 +1310,30 @@
         <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <rdfs:label>intratumoral administration</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003607 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003607"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003608 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003608"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003609 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003609"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003614 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003614"/>
     
 
 
