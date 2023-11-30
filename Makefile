@@ -101,7 +101,8 @@ src/ontology/modules/%.owl: src/ontology/templates/%.tsv | build/robot.jar
 
 # Update all modules.
 # NOTE: GNU Make will compare timestamps to see which updates are required.
-MODULE_NAMES := assays\
+MODULE_NAMES := administration\
+ assays\
  biopsy\
  biobank-specimens\
  organizations\
