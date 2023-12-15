@@ -45,27 +45,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000055"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
     
 
 
@@ -77,18 +59,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0042571 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0042571"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0042611 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0042611"/>
     
 
 
@@ -290,59 +260,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000086 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000086"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0001505 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001505"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0003615 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003615">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001505"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000086"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0042571"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0042571"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0042611"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000115>A purification to separate a material entity into different compositions of which one fraction contains a higher concentration of MHC protein complex, while others contain impurities and are not of interest.</obo:IAO_0000115>
-        <obo:IAO_0000117>Randi Vita</obo:IAO_0000117>
-        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
-        <rdfs:label>antibody purification of MHC protein complex</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003615"/>
     
 
 
