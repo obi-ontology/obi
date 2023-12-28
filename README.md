@@ -29,6 +29,22 @@ Our ontology terms come in three groups. Depending on what type of term you want
 
 See below for a full list of files, build instructions, and instructions on using Git and GitHub for OBI.
 
+### Importing from a New Ontology
+
+If you wish to import terms from an ontology for which OBI does not currently have an OntoFox import file ([`src/ontology/OntoFox_inputs/`](src/ontology/OntoFox_inputs/)), follow these steps:
+1. Write the import file for the new ontology (see existing import files for reference)
+2. Update [`catalog-v001.xml`](src/ontology/catalog-v001.xml) to list the new import file like it lists the existing import files.
+3. Add an import statement to [`obi-edit.owl`](src/ontology/obi-edit.owl).
+4. Create a blank file for the output module in [`src/ontology/OntoFox_outputs/`](src/ontology/OntoFox_outputs), e.g., to make phony output for foo.owl imports:
+```
+touch src/ontology/OntoFox_outputs/foo_imports.owl
+```
+5. Build the module & obi.owl
+```
+make imports
+make obi.owl
+```
+
 ### Editing Templates in Excel
 
 If you wish to edit a template or templates in Excel, rather than copy & pasting the template, we ask that you follow this workflow to preserve quoting. Going back and forth with Excel can cause some unintentional changes to double quotes within templates.
