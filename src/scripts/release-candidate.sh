@@ -43,7 +43,7 @@ echo "Check obi.owl and views/obi_core.owl"
 confirm "Ready to create release candidate?"
 
 # Make a new release-candidate
-DATE="$(date --iso-8601)"
+DATE="$(date '+%Y-%m-%d')"
 BRANCH="rc-${DATE}"
 TITLE="Release Candidate ${DATE}"
 git checkout -b "${BRANCH}" || fail "Problem creating branch ${BRANCH}"
