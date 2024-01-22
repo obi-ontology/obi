@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2023-09-20
-date: 20:09:2023 10:45
+data-version: 2024-01-09
+date: 09:01:2024 14:43
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi
 property_value: defaultLanguage "en" xsd:string
@@ -67,7 +67,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2023-09-20" xsd:string
+property_value: owl:versionInfo "2024-01-09" xsd:string
 
 [Term]
 id: APOLLO_SV:00000008
@@ -2410,6 +2410,12 @@ def: "Increased resistance towards insulin, that is, diminished effectiveness of
 is_a: BFO:0000016 ! disposition
 
 [Term]
+id: HP:0002664
+name: Neoplasm
+def: "An organ or organ-system abnormality that consists of uncontrolled autonomous cell-proliferation which can occur in any part of the body as a benign or malignant neoplasm (tumor)." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: IAO:0000001
 name: conditional specification
 def: "A directive information entity that specifies what should happen if the trigger condition is fulfilled." []
@@ -3701,6 +3707,171 @@ def: "A disposition to initiate processes that result in a disorder in a human o
 is_a: IDO:0000450 ! pathogenic disposition
 
 [Term]
+id: MRO:0000013
+name: HLA-DR protein complex
+is_a: MRO:0001455 ! human MHC class II protein complex
+
+[Term]
+id: MRO:0000966
+name: H2-Db protein complex
+is_a: MRO:0001759 ! mouse MHC class I protein complex with H2-b haplotype
+
+[Term]
+id: MRO:0000967
+name: H2-Dd protein complex
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
+id: MRO:0000971
+name: H2-IA protein complex
+is_a: MRO:0001461 ! mouse MHC class II protein complex
+
+[Term]
+id: MRO:0000973
+name: H2-IAd protein complex
+is_a: MRO:0000971 ! H2-IA protein complex
+
+[Term]
+id: MRO:0000975
+name: H2-IAg7 protein complex
+is_a: MRO:0000971 ! H2-IA protein complex
+
+[Term]
+id: MRO:0000991
+name: H2-Kb protein complex
+is_a: MRO:0001759 ! mouse MHC class I protein complex with H2-b haplotype
+
+[Term]
+id: MRO:0000992
+name: H2-Kd protein complex
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
+id: MRO:0000994
+name: H2-Ks protein complex
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
+id: MRO:0000997
+name: H2-Ld protein complex
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
+id: MRO:0001149
+name: HLA-C protein complex
+is_a: MRO:0001454 ! human MHC class I protein complex
+
+[Term]
+id: MRO:0001167
+name: HLA-DP protein complex
+is_a: MRO:0001455 ! human MHC class II protein complex
+
+[Term]
+id: MRO:0001355
+name: MHC class I protein complex
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001356
+name: MHC class II protein complex
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001434
+name: cattle MHC class I protein complex
+is_a: MRO:0001355 ! MHC class I protein complex
+
+[Term]
+id: MRO:0001435
+name: cattle MHC class II protein complex
+is_a: MRO:0001356 ! MHC class II protein complex
+
+[Term]
+id: MRO:0001454
+name: human MHC class I protein complex
+is_a: MRO:0001355 ! MHC class I protein complex
+
+[Term]
+id: MRO:0001455
+name: human MHC class II protein complex
+is_a: MRO:0001356 ! MHC class II protein complex
+
+[Term]
+id: MRO:0001460
+name: mouse MHC class I protein complex
+is_a: MRO:0001355 ! MHC class I protein complex
+
+[Term]
+id: MRO:0001461
+name: mouse MHC class II protein complex
+is_a: MRO:0001356 ! MHC class II protein complex
+
+[Term]
+id: MRO:0001465
+name: pig MHC class I protein complex
+is_a: MRO:0001355 ! MHC class I protein complex
+
+[Term]
+id: MRO:0001498
+name: mouse MHC protein complex with H2-p haplotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001530
+name: HLA protein complex with A2 serotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001533
+name: HLA protein complex with A24 serotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001537
+name: HLA protein complex with A28 serotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001538
+name: HLA protein complex with A29 serotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001557
+name: HLA protein complex with B27 serotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001622
+name: HLA protein complex with DQ3 serotype
+is_a: GO:0042611 ! MHC protein complex
+
+[Term]
+id: MRO:0001759
+name: mouse MHC class I protein complex with H2-b haplotype
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
+id: MRO:0001790
+name: rat MHC class I protein complex
+is_a: MRO:0001355 ! MHC class I protein complex
+
+[Term]
+id: MRO:0001793
+name: rat MHC class II protein complex with RT1-A haplotype
+is_a: MRO:0001356 ! MHC class II protein complex
+
+[Term]
+id: MRO:0002026
+name: H2-Dq protein complex
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
+id: MRO:0002027
+name: H2-Kq protein complex
+is_a: MRO:0001460 ! mouse MHC class I protein complex
+
+[Term]
 id: NCBITaxon:10090
 name: Mus musculus
 synonym: "house mouse" EXACT []
@@ -4433,7 +4604,7 @@ name: reagent role
 def: "A role inhering in a biological or chemical entity that is intended to be applied in a scientific technique to participate (or have molecular components that participate) in a chemical reaction that facilitates the generation of data about some entity distinct from the bearer, or the generation of some specified material output distinct from the bearer." []
 comment: (copied from ReO)\nReagents are distinguished from instruments or devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in or have parts that participate in some chemical interaction or reaction during their intended participation in some technique.  By contrast, instruments do not participate in a chemical reaction/interaction during the technique.\n\nReagents are distinguished from study subjects/evaluants in that study subjects and evaluants are that about which conclusions are drawn and knowledge is sought in an investigation - while reagents, by definition, are not.  It should be noted, however, that reagent and study subject/evaluant roles can be borne by instances of the same type of material entity - but a given instance will realize only one of these roles in the execution of a given assay or technique. For example, taq polymerase can bear a reagent role or an evaluant role.  In a DNA sequencing assay aimed at generating sequence data about some plasmid, the reagent role of the taq polymerase is realized. In an assay to evaluate the quality of the taq polymerase itself, the evaluant/study subject role of the taq is realized, but not the reagent role since the taq is the subject about which data is generated.\n\nIn regard to the statement that reagents are 'distinct' from the specified outputs of a technique, note that a reagent may be incorporated into a material output of a technique, as long as the IDENTITY of this output is distinct from that of the bearer of the reagent role.  For example, dNTPs input into a PCR are reagents that become part of the material output of this technique, but this output has a new identity (ie that of a 'nucleic acid molecule') that is distinct from the identity of the dNTPs that comprise it.  Similarly, a biotin molecule input into a cell labeling technique are reagents that become part of the specified output, but the identity of the output is that of some modified cell specimen which shares identity with the input unmodified cell specimen, and not with the biotin label. Thus, we see that an important criteria of 'reagent-ness' is that it is a facilitator, and not the primary focus of an investigation or material processing technique (ie not the specified subject/evaluant about which knowledge is sought, or the specified output material of the technique).
 synonym: "reagent" EXACT []
-is_a: BFO:0000023 ! role
+is_a: OBI:0003610 ! reactant role
 
 [Term]
 id: OBI:0000089
@@ -16435,7 +16606,7 @@ is_a: OBI:0001869 ! Illumina BeadChip
 
 [Term]
 id: OBI:0002131
-name: Illumina Infinium MethylationEPIC BeadChip
+name: Illumina Infinium MethylationEPIC v1.0 BeadChip
 def: "An Illumina methylation BeadChip which is an array that interrogates ~ 850,000 methylation sites per sample at single-nucleotide resolution." []
 is_a: OBI:0001870 ! Illumina methylation BeadChip
 
@@ -22679,6 +22850,121 @@ is_a: OBI:0003328 ! magnetic resonance image data set
 is_a: OBI:0003333 ! computed image data set
 
 [Term]
+id: OBI:0003335
+name: diffusion weighted magnetic resonance image data set
+def: "A type of magnetic resonance image data set collected using at least three diffusion gradients of some factor \"b,\" which is a function of the amplitude, duration, and interval of the gradiants." []
+is_a: OBI:0003334 ! reconstructed magnetic resonance image data set
+
+[Term]
+id: OBI:0003336
+name: functional magnetic resonance image data set
+def: "An magnetic resonance image data set collected as a 4D time series representing changes in brain metabolism (i.e. BOLD), typically used as a proxy for brain activity." []
+is_a: OBI:0003334 ! reconstructed magnetic resonance image data set
+
+[Term]
+id: OBI:0003337
+name: resting state functional magnetic resonance image data set
+def: "A type of functional MRI in which the participant is not given a task, but just rests during acquisision" []
+is_a: OBI:0003336 ! functional magnetic resonance image data set
+
+[Term]
+id: OBI:0003338
+name: task-based functional magnetic resonance image data set
+def: "A type of functional MRI in which the participant is given a task or tasks, which are timed with the acquisition" []
+is_a: OBI:0003336 ! functional magnetic resonance image data set
+
+[Term]
+id: OBI:0003339
+name: perfusion weighted magnetic resonance image data set
+def: "An magnetic resonance image data set that captures volume and flow of blood in the brain." []
+is_a: OBI:0003334 ! reconstructed magnetic resonance image data set
+
+[Term]
+id: OBI:0003340
+name: proton density magnetic resonance image data set
+def: "An magnetic resonance image data set in which the contrast emphasizes density of protons, supressing T1 and T2 effects" []
+is_a: OBI:0003334 ! reconstructed magnetic resonance image data set
+
+[Term]
+id: OBI:0003341
+name: T1 weighted magnetic resonance image data set
+def: "An magnetic resonance image acquired using a T1 weighted magnetic resonance image acquisition sequence." []
+is_a: OBI:0003334 ! reconstructed magnetic resonance image data set
+
+[Term]
+id: OBI:0003342
+name: post-Gd T1 weighted magnetic resonance image data set
+def: "A T1 weighted image data set where gadolidium contrast agent has been administered to the participant before image acquistion." []
+is_a: OBI:0003341 ! T1 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003343
+name: T1 weighted GRE magnetic resonance image data set
+def: "T1 weighted image data set collected using a gradient recall echo sequence." []
+is_a: OBI:0003341 ! T1 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003344
+name: high resolution T1 weighted magnetic resonance image data set
+def: "A T1-weighted image data set acquired from an NMR/MRI machine with at least a 3 Tesla magnet and in which the voxel size is isotropic." []
+is_a: OBI:0003343 ! T1 weighted GRE magnetic resonance image data set
+
+[Term]
+id: OBI:0003345
+name: baseline high resolution T1 weighted magnetic resonance image data set
+def: "A T1w image data set collected at an evaluant's first visit in a study." []
+is_a: OBI:0003343 ! T1 weighted GRE magnetic resonance image data set
+
+[Term]
+id: OBI:0003346
+name: follow-up high resolution T1 weighted magnetic resonance image data set
+def: "A T1w image data set collected at a later time than the evaluant's first scan." []
+is_a: OBI:0003343 ! T1 weighted GRE magnetic resonance image data set
+
+[Term]
+id: OBI:0003347
+name: T1 weighted SE magnetic resonance image data set
+def: "A T1 weighted image data set acquired using a spin echo sequence." []
+is_a: OBI:0003341 ! T1 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003348
+name: T2 weighted magnetic resonance image data set
+def: "A magnetic resonance image produced by a T2 weighted magnetic resonance image acquisition sequence." []
+is_a: OBI:0003334 ! reconstructed magnetic resonance image data set
+
+[Term]
+id: OBI:0003349
+name: T2 weighted FLAIR magnetic resonance image data set
+def: "A T2 weighted image data set collected using a FLAIR sequence." []
+is_a: OBI:0003348 ! T2 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003350
+name: T2 weighted FSE  magnetic resonance image data set
+def: "T2 weighted image collected using a fast/turbo spin echo sequence." []
+synonym: "T2 weighted TSE magnetic resonance image data set" EXACT []
+is_a: OBI:0003348 ! T2 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003351
+name: T2 weighted SE magnetic resonance image data set
+def: "A type of T2-weighted image in which the acquisition is performed using a 2D spin-echo technique" []
+is_a: OBI:0003348 ! T2 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003352
+name: T2 weighted STIR magnetic resonance image data set
+def: "A T2 weighted magnetic resonance image data set collected using a STIR sequence to suppress the signal coming from fat." []
+is_a: OBI:0003348 ! T2 weighted magnetic resonance image data set
+
+[Term]
+id: OBI:0003353
+name: T2* weighted GRE magnetic resonance image data set
+def: "T2* weighted image data set collected using a gradient echo sequence." []
+is_a: OBI:0003348 ! T2 weighted magnetic resonance image data set
+
+[Term]
 id: OBI:0003354
 name: raw magnetic resonance image data set
 def: "An image data set that is the direct output of an magnetic resonance imaging assay and whose values encode spatial frequencies produced by the NMR or MRI instrument." []
@@ -22697,6 +22983,48 @@ name: raw magnetic resonance image data set reconstruction
 def: "A process that transforms raw magnetic resonance image data from an NMR/MRI machine into a reconstructed magnetic resonance image data set." []
 is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0003355 ! image data set analysis
+
+[Term]
+id: OBI:0003357
+name: brain region atlas image data set
+def: "An image data set consisting of values computed from multiple image data sets encoded to represent the spatial location of individual functional or structural regions of a canonical brain." []
+is_a: OBI:0003333 ! computed image data set
+
+[Term]
+id: OBI:0003358
+name: probabilistic brain region atlas image dataset
+def: "A brain atlas consisting of weighted values that respresent the probability that a voxel X is part of some brain component Y, typically derived from multiple image data sets." []
+is_a: OBI:0003357 ! brain region atlas image data set
+
+[Term]
+id: OBI:0003359
+name: deterministic brain region atlas image data set
+def: "A brain atlas consisting of discrete integer values where a value X denotes a voxel is part of some brain component Y." []
+is_a: OBI:0003357 ! brain region atlas image data set
+
+[Term]
+id: OBI:0003360
+name: image segmentation map
+def: "An image data set of integer values in which each value corresponds to some shared characteristic or computed property. The values often belong to a group of pixels or voxels that share the same characteristic, such as a tissue type or anatomical region." []
+is_a: OBI:0003333 ! computed image data set
+
+[Term]
+id: OBI:0003361
+name: lesion mask
+def: "An image data set where voxel intensity values greater than zero encode the location of some brain lesion and voxels outside the lesion have an intensity value of zero." []
+is_a: OBI:0003360 ! image segmentation map
+
+[Term]
+id: OBI:0003362
+name: T1 lesion mask
+def: "A lesion mask where the lesions are derived from a T1 weighted image data set." []
+is_a: OBI:0003361 ! lesion mask
+
+[Term]
+id: OBI:0003363
+name: T2 FLAIR lesion mask
+def: "A lesion mask where the lesions are derived from a T2 FLAIR image data set." []
+is_a: OBI:0003361 ! lesion mask
 
 [Term]
 id: OBI:0003365
@@ -23689,6 +24017,149 @@ synonym: "PLAC-seq" EXACT []
 is_a: OBI:0002439 ! chromosome conformation capture assay
 
 [Term]
+id: OBI:0003553
+name: intragastric administration
+def: "An administration of a substance into the stomach of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003554
+name: intracolonic administration
+def: "An administration of a substance into the colon of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003555
+name: vaginal administration
+def: "An administration of a substance into the vagina of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003556
+name: topical administration
+def: "An administration of a substance onto the surface of the skin of an organism." []
+synonym: "percutaneous administration" EXACT []
+synonym: "transcutaneous administration" EXACT []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003557
+name: cervical administration
+def: "An administration of a substance to the cervix of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003558
+name: conjunctival administration
+def: "An administration of a substance to the conjunctiva of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003559
+name: intratracheal administration
+def: "An administration of a substance into the trachea of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003560
+name: intra-amniotic administration
+def: "An administration of a substance into the amnion of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003561
+name: intra-arterial administration
+def: "An administration of a substance into the artery of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003562
+name: intracerebral administration
+def: "An administration of a substance into the cerebrum of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003563
+name: intracranial administration
+def: "An administration of a substance into the cranium of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003564
+name: intraepidermal administration
+def: "An administration of a substance into the epidermis of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003565
+name: intralymphatic administration
+def: "An administration of a substance into the lymphatic system of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003566
+name: lymph node administration
+def: "An intralymphatic administration in which the substance is administered into a lymph node." []
+is_a: OBI:0003565 ! intralymphatic administration
+
+[Term]
+id: OBI:0003567
+name: urethral administration
+def: "An administration of a substance into the urethra of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003568
+name: skin scarification administration
+def: "An intraepidermal administration in which the skin is scratched before the substance is administered to the skin." []
+is_a: OBI:0003564 ! intraepidermal administration
+
+[Term]
+id: OBI:0003569
+name: intrauteral administration
+def: "An adminstration of a substance into the uterus of an organism. " []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003570
+name: intracarotid administration
+def: "An intra-arterial administration in which the substance is administered into the carotid artery." []
+synonym: "i.c." EXACT []
+synonym: "i.c. administration" EXACT []
+is_a: OBI:0003561 ! intra-arterial administration
+
+[Term]
+id: OBI:0003571
+name: intraocular administration
+def: "An administration of a substance to the eye of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003572
+name: intraplacental administration
+def: "An administration of a substance into the placenta of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003573
+name: intrarectal administration
+def: "An administration of a substance into the rectum of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003574
+name: intrasplenic administration
+def: "An administration of a substance into the spleen of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
+id: OBI:0003575
+name: scratching
+def: "A process in which the target material entity is scraped by another material entity." []
+synonym: "abrading" EXACT []
+is_a: BFO:0000015 ! process
+
+[Term]
 id: OBI:0003576
 name: skin of body microbiology assay
 def: "An organism detection assay that detects microorganisms in a skin of body specimen." []
@@ -23846,6 +24317,12 @@ is_a: OBI:0001708 ! assay measuring the dissociation constant [KD] of a B cell e
 is_a: OBI:0003601 ! quartz crystal microbalance assay
 
 [Term]
+id: OBI:0003603
+name: intratumoral administration
+def: "An administration of a substance into a tumor of an organism." []
+is_a: OBI:0600007 ! administering substance in vivo
+
+[Term]
 id: OBI:0003604
 name: multiplexed error-robust fluorescence in situ hybridization assay
 def: "A fluorescence in-situ hybridization assay that uses combinatorial FISH labeling with error resistant encoding schemes for highly multiplexed single-molecule imaging." []
@@ -23865,6 +24342,279 @@ name: Illumina NextSeq 1000
 def: "A DNA sequencer which is manufactured by the Illumina corporation using sequence-by-synthesis chemistry that fits on a benchtop and uses P1 and P2 flow cells." []
 synonym: "NextSeq 1000" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003607
+name: disease causation objective
+def: "An objective specification that is fulfilled by causing a disease in a particular organism." []
+is_a: IAO:0000005 ! objective specification
+
+[Term]
+id: OBI:0003608
+name: disease severity reduction objective
+def: "An objective specification that is fulfilled by reducing the severity of a disease in a particular organism." []
+is_a: IAO:0000005 ! objective specification
+
+[Term]
+id: OBI:0003609
+name: disease prevention objective
+def: "An objective specification that is fulfilled by preventing the development of a disease in a particular organism." []
+is_a: IAO:0000005 ! objective specification
+
+[Term]
+id: OBI:0003610
+name: reactant role
+def: "A role borne by a biological or chemical entity that participates or has molecular components that participate in a chemical reaction." []
+is_a: BFO:0000023 ! role
+
+[Term]
+id: OBI:0003611
+name: precursor role
+def: "A role borne by a biological or chemical entity which serves as the core component of a chemical reaction process, upon which other reactants, like reagents or solvents, act." []
+is_a: OBI:0003610 ! reactant role
+
+[Term]
+id: OBI:0003612
+name: electron microscopy assay determining the 3D structure of a T cell epitope:MHC:TCR complex
+def: "An electron-microscopy 3D molecular structure determination assay that characterizes the 3-dimensional molecular structrue of a T cell epitope:MHC:TCR complex." []
+synonym: "3D structure|electron microscopy" EXACT []
+is_a: OBI:0001999 ! 3D molecular structure determination assay of a T cell epitope:MHC:TCR complex
+is_a: OBI:0003118 ! electron-microscopy 3D molecular structure determination assay
+
+[Term]
+id: OBI:0003613
+name: electron microscopy assay determining the 3D structure of a MHC:ligand complex
+def: "An electron-microscopy 3D molecular structure determination assay that characterizes the 3-dimensional molecular structrue of a MHC:ligand complex." []
+synonym: "3D structure|electron microscopy" EXACT []
+is_a: OBI:0002050 ! 3D molecular structure determination assay of a MHC:ligand complex
+is_a: OBI:0003118 ! electron-microscopy 3D molecular structure determination assay
+
+[Term]
+id: OBI:0003614
+name: disease prevalence reduction objective
+def: "An objective specification that is fulfilled by reducing the prevalence of a disease in a population of organisms." []
+is_a: IAO:0000005 ! objective specification
+
+[Term]
+id: OBI:0003615
+name: antibody purification of MHC protein complex
+def: "A purification to separate a material entity into different compositions of which one fraction contains a higher concentration of MHC protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0001505 ! purification
+
+[Term]
+id: OBI:0003616
+name: antibody purification of MHC class I protein complex
+def: "An antibody purification of MHC protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003615 ! antibody purification of MHC protein complex
+
+[Term]
+id: OBI:0003617
+name: antibody purification of human MHC class I protein complex
+def: "An antibody purification of MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of human MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003635 ! antibody purification of pig MHC class I protein complex, cattle MHC class I protein complex, and/or human MHC class I protein complex
+
+[Term]
+id: OBI:0003618
+name: antibody purification of HLA protein complex with A2 serotype
+def: "An antibody purification of human MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA protein complex with A2 serotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003620 ! antibody purification of HLA protein complex with A2 serotype and/or HLA protein complex with A28 serotype
+
+[Term]
+id: OBI:0003619
+name: antibody purification of HLA protein complex with A24 serotype
+def: "An antibody purification of human MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA protein complex with A24 serotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003617 ! antibody purification of human MHC class I protein complex
+
+[Term]
+id: OBI:0003620
+name: antibody purification of HLA protein complex with A2 serotype and/or HLA protein complex with A28 serotype
+def: "An antibody purification of human MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA protein complex with A2 serotype and/or HLA protein complex with A28 serotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003617 ! antibody purification of human MHC class I protein complex
+
+[Term]
+id: OBI:0003621
+name: antibody purification of HLA protein complex with A29 serotype
+def: "An antibody purification of human MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA protein complex with A29 serotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003617 ! antibody purification of human MHC class I protein complex
+
+[Term]
+id: OBI:0003622
+name: antibody purification of HLA protein complex with B27 serotype
+def: "An antibody purification of human MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA protein complex with B27 serotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003617 ! antibody purification of human MHC class I protein complex
+
+[Term]
+id: OBI:0003623
+name: antibody purification of HLA-C protein complex
+def: "An antibody purification of human MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA-C protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003617 ! antibody purification of human MHC class I protein complex
+
+[Term]
+id: OBI:0003624
+name: antibody purification of pig MHC class I protein complex
+def: "An antibody purification of MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of pig MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003635 ! antibody purification of pig MHC class I protein complex, cattle MHC class I protein complex, and/or human MHC class I protein complex
+
+[Term]
+id: OBI:0003625
+name: antibody purification of cattle MHC class I protein complex
+def: "An antibody purification of MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of cattle MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003635 ! antibody purification of pig MHC class I protein complex, cattle MHC class I protein complex, and/or human MHC class I protein complex
+
+[Term]
+id: OBI:0003626
+name: antibody purification of rat MHC class I protein complex
+def: "An antibody purification of MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of rat MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003616 ! antibody purification of MHC class I protein complex
+
+[Term]
+id: OBI:0003627
+name: antibody purification of mouse MHC class I protein complex
+def: "An antibody purification of MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of mouse MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003616 ! antibody purification of MHC class I protein complex
+
+[Term]
+id: OBI:0003628
+name: antibody purification of H2-Dd protein complex
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-Dd protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003632 ! antibody purification of H2-Dd protein complex and/or H2-Kd protein complex
+
+[Term]
+id: OBI:0003629
+name: antibody purification of H2-Db protein complex
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-Db protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003631 ! antibody purification of H2-Ld protein complex, H2-Db protein complex, and/or H2-Dq protein complex
+is_a: OBI:0003633 ! antibody purification of mouse MHC class I protein complex with H2-b haplotype and/or mouse MHC protein complex with H2-p haplotype
+
+[Term]
+id: OBI:0003630
+name: antibody purification of H2-Kd protein complex
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-Kd protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003632 ! antibody purification of H2-Dd protein complex and/or H2-Kd protein complex
+
+[Term]
+id: OBI:0003631
+name: antibody purification of H2-Ld protein complex, H2-Db protein complex, and/or H2-Dq protein complex
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-Ld protein complex, H2-Db protein complex, and/or H2-Dq protein complex while others contain impurities and are not of interest." []
+is_a: OBI:0003627 ! antibody purification of mouse MHC class I protein complex
+
+[Term]
+id: OBI:0003632
+name: antibody purification of H2-Dd protein complex and/or H2-Kd protein complex
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-Dd protein complex and/or H2-Kd protein complex while others contain impurities and are not of interest." []
+is_a: OBI:0003627 ! antibody purification of mouse MHC class I protein complex
+
+[Term]
+id: OBI:0003633
+name: antibody purification of mouse MHC class I protein complex with H2-b haplotype and/or mouse MHC protein complex with H2-p haplotype
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of mouse MHC class I protein complex with H2-b haplotype and/or mouse MHC protein complex with H2-p haplotype while others contain impurities and are not of interest." []
+is_a: OBI:0003627 ! antibody purification of mouse MHC class I protein complex
+
+[Term]
+id: OBI:0003634
+name: antibody purification of H2-Kb protein complex, H2-Ks protein complex, and/or H2-Kq protein complex
+def: "An antibody purification of mouse MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of mouse H2-Kb protein complex, H2-Ks protein complex, and/or H2-Kq protein complex while others contain impurities and are not of interest." []
+is_a: OBI:0003627 ! antibody purification of mouse MHC class I protein complex
+
+[Term]
+id: OBI:0003635
+name: antibody purification of pig MHC class I protein complex, cattle MHC class I protein complex, and/or human MHC class I protein complex
+def: "An antibody purification of MHC class I protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of pig MHC class I protein complex, cattle MHC class I protein complex, and/or human MHC class I protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003616 ! antibody purification of MHC class I protein complex
+
+[Term]
+id: OBI:0003636
+name: antibody purification of MHC class II protein complex
+def: "An antibody purification of MHC protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of MHC class II protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003615 ! antibody purification of MHC protein complex
+
+[Term]
+id: OBI:0003637
+name: antibody purification of cattle MHC class II protein complex
+def: "An antibody purification of MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of cattle MHC class II protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003636 ! antibody purification of MHC class II protein complex
+
+[Term]
+id: OBI:0003638
+name: antibody purification of human MHC class II protein complex
+def: "An antibody purification of MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of human MHC class II protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003636 ! antibody purification of MHC class II protein complex
+
+[Term]
+id: OBI:0003639
+name: antibody purification of HLA-DP protein complex
+def: "An antibody purification of human MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA-DP protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003638 ! antibody purification of human MHC class II protein complex
+
+[Term]
+id: OBI:0003640
+name: antibody purification of HLA-DR protein complex
+def: "An antibody purification of human MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA-DR protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003638 ! antibody purification of human MHC class II protein complex
+
+[Term]
+id: OBI:0003641
+name: antibody purification of HLA protein complex with DQ3 serotype
+def: "An antibody purification of human MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of HLA protein complex with DQ3 serotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003638 ! antibody purification of human MHC class II protein complex
+
+[Term]
+id: OBI:0003642
+name: antibody purification of mouse MHC class II protein complex
+def: "An antibody purification of MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of mouse MHC class II protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003646 ! antibody purification of mouse MHC class II protein complex and/or rat MHC class II protein complex with RT1-A haplotype
+
+[Term]
+id: OBI:0003643
+name: antibody purification of H2-IA protein complex
+def: "An antibody purification of mouse MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-IA protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003642 ! antibody purification of mouse MHC class II protein complex
+
+[Term]
+id: OBI:0003644
+name: antibody purification of H2-IAg7 protein complex
+def: "An antibody purification of mouse MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-IAg7 protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003643 ! antibody purification of H2-IA protein complex
+
+[Term]
+id: OBI:0003645
+name: antibody purification of H2-IAd protein complex
+def: "An antibody purification of mouse MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of H2-IAd protein complex, while others contain impurities and are not of interest." []
+is_a: OBI:0003643 ! antibody purification of H2-IA protein complex
+
+[Term]
+id: OBI:0003646
+name: antibody purification of mouse MHC class II protein complex and/or rat MHC class II protein complex with RT1-A haplotype
+def: "An antibody purification of MHC class II protein complex to separate a material entity into different compositions of which one fraction contains a higher concentration of mouse MHC class II protein complex and/or rat MHC class II protein complex with RT1-A haplotype, while others contain impurities and are not of interest." []
+is_a: OBI:0003636 ! antibody purification of MHC class II protein complex
+
+[Term]
+id: OBI:0003647
+name: tandem mass spectrometry analysis
+is_a: OBI:0200085 ! mass spectrometry analysis
+
+[Term]
+id: OBI:0003648
+name: liquid chromatrography mass spectrometry analysis
+is_a: OBI:0200085 ! mass spectrometry analysis
+
+[Term]
+id: OBI:0003649
+name: liquid chromatography-tandem mass spectrometry analysis
+is_a: OBI:0003647 ! tandem mass spectrometry analysis
+is_a: OBI:0003648 ! liquid chromatrography mass spectrometry analysis
+
+[Term]
+id: OBI:0003650
+name: Illumina Infinium MethylationEPIC v2.0 BeadChip
+def: "An Illumina methylation BeadChip that targets  935,000 methylation sites per sample at single-nucleotide resolution." []
+is_a: OBI:0001870 ! Illumina methylation BeadChip
+
+[Term]
+id: OBI:0003651
+name: multidimensional fatigue inventory score
+def: "A clinical data item that quantifies the severity of a person's fatigue as measured by a 20-item self-report instrument." []
+is_a: OGMS:0000123 ! clinical data item
 
 [Term]
 id: OBI:0005246
@@ -25269,7 +26019,7 @@ is_a: BFO:0000023 ! role
 id: OBI:0302732
 name: solvent role
 def: "solvent role is a role which inheres in a molecular entity capable of ensuring the dissolution of another chemical entity and realized by the process of solvation" []
-is_a: BFO:0000023 ! role
+is_a: OBI:0003610 ! reactant role
 
 [Term]
 id: OBI:0302733
@@ -27186,7 +27936,7 @@ is_a: OBI:0001468 ! cell specimen
 
 [Term]
 id: OBI:1110043
-name: cultured adherent cell populaiton
+name: cultured adherent cell population
 def: "A mixed cell population that is characterized by its ability to bind to tissue culture flasks or plates. This population typically contains macrophages and other cells capable of playing the antigen presenting cell role." []
 synonym: "adherent cell culture sample" EXACT []
 is_a: OBI:0100060 ! cultured cell population
@@ -27499,10 +28249,12 @@ is_a: OBI:0002055 ! assay measuring biological activity resulting from T cell ep
 
 [Term]
 id: OBI:1110132
-name: CD8 receptor
+name: obsolete CD8 receptor
 def: "A transmembrane glycoprotein that serves as a co-receptor for the T cell receptor." []
 synonym: "CD8" EXACT []
-is_a: PR:000000001 ! protein
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: PR:000025402
 
 [Term]
 id: OBI:1110150
@@ -31299,6 +32051,12 @@ def: "A fluid that is composed of blood plasma and erythrocytes." []
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
+id: UBERON:0000305
+name: amnion
+def: "The thin innermost layer of the extraembryonic membranes that contains the amniotic fluid; the membrane forms a closed sac in which the embryo and later, the fetus, is suspended and protected." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0000310
 name: breast
 def: "The upper ventral region of the torso of an organism." []
@@ -31423,6 +32181,12 @@ id: UBERON:0000996
 name: vagina
 def: "A fibromuscular tubular tract leading from the uterus to the exterior of the body in female placental mammals and marsupials, or to the cloaca in female birds, monotremes, and some reptiles[WP]." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001003
+name: skin epidermis
+def: "The outer epithelial layer of the skin that is superficial to the dermis." []
+is_a: UBERON:0000483 ! epithelium
 
 [Term]
 id: UBERON:0001004
@@ -31551,6 +32315,12 @@ def: "A joint that connects the hindlimb autopod and zeugopod skeletons." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0001530
+name: common carotid artery plus branches
+def: "A bilaterally paired branched artery that originates from the aortic arches and divides into and includes as parts the internal and external carotid arteries[cjm]." []
+is_a: UBERON:0001637 ! artery
+
+[Term]
 id: UBERON:0001555
 name: digestive tract
 def: "A tube extending from the mouth to the anus." []
@@ -31584,6 +32354,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0001621
 name: coronary artery
 def: "An artery that supplies the myocardium." []
+is_a: UBERON:0001637 ! artery
+
+[Term]
+id: UBERON:0001637
+name: artery
+def: "An epithelial tube or tree of tibes that transports blood away from the heart[modified from AEO definition]." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -31617,6 +32393,12 @@ def: "A transparent, semigelatinous substance that fills the cavity behind the c
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
+id: UBERON:0001811
+name: conjunctiva
+def: "The mucous membrane that lines the inner surface of the eyelids and the front of the eyeball." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0001826
 name: nasal cavity mucosa
 def: "The mucous membrane that lines the nasal cavity[MP]." []
@@ -31645,6 +32427,12 @@ id: UBERON:0001874
 name: putamen
 def: "Subcortical nucleus of telencephalic , which together with the caudate nucleus, forms the striatum. The putamen lies lateral to the internal capsule and medial to the external medullary lamina, and is separated from the caudate nucleus by the fibers of the internal capsule for most of its length, except at its anterior portion." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001893
+name: telencephalon
+def: "Part of the forebrain consisting of paired olfactory bulbs and cerebral hemispheres." []
+is_a: UBERON:0000481 ! multi-tissue structure
 
 [Term]
 id: UBERON:0001913
@@ -31797,6 +32585,12 @@ def: "An external caudal extension of the body. In chordates, the tail is post-a
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0002465
+name: lymphoid system
+def: "The lymphatic system in vertebrates is a network of conduits that carry a clear fluid called lymph. It also includes the lymphoid tissue through which the lymph travels. Lymphoid tissue is found in many organs, particularly the lymph nodes, and in the lymphoid follicles associated with the digestive system such as the tonsils. The system also includes all the structures dedicated to the circulation and production of lymphocytes, which includes the spleen, thymus, bone marrow and the lymphoid tissue associated with the digestive system[WP]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0002469
 name: esophagus mucosa
 def: "A mucosa that is part of a esophagus [Automatically generated definition]." []
@@ -31818,6 +32612,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0003126
 name: trachea
 def: "The trachea is the portion of the airway that attaches to the bronchi as it branches [GO:dph]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0003128
+name: cranium
+def: "Upper portion of the skull that excludes the mandible (when present in the organism)." []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -31895,7 +32695,7 @@ is_a: UBERON:0006538 ! respiratory system fluid/secretion
 id: UBERON:0007610
 name: tibial artery
 def: "The anterior and posterior arteries created at the bifurcation of the popliteal artery. The anterior tibial artery begins at the lower border of the popliteus muscle and lies along the tibia at the distal part of the leg to surface superficially anterior to the ankle joint. Its branches are distributed throughout the leg, ankle, and pes. The posterior tibial artery begins at the lower border of the popliteus muscle, lies behind the tibia in the lower part of its course, and is found situated between the medial malleolus and the medial process of the calcaneal tuberosity. Its branches are distributed throughout the leg and foot." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0001637 ! artery
 
 [Term]
 id: UBERON:0007650
