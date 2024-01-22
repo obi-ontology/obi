@@ -39,7 +39,7 @@ git diff --exit-code . || fail "Changes to src/ must be committed"
 
 # Get the date from the obi.owl file.
 DATE="$(grep owl:versionInfo obi.owl | head -n1 | grep -Po '\d\d\d\d-\d\d-\d\d')"
-DATE=$(date --date="${DATE}" --iso-8601)
+DATE=$(date --date="${DATE}" '+%Y-%m-%d')
 DATE="${DATE:?Invalid date}"
 confirm "Is this the release date: '${DATE}'?"
 
