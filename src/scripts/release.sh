@@ -38,8 +38,7 @@ test "$(git rev-list HEAD...origin/master --count)" -eq 0 || fail "Must be up-to
 git diff --exit-code . || fail "Changes to src/ must be committed"
 
 # Get the date from the obi.owl file.
-DATE="$(grep owl:versionInfo obi.owl | head -n1 | grep -Po '\d\d\d\d-\d\d-\d\d')"
-DATE=$(date --date="${DATE}" '+%Y-%m-%d')
+DATE="$(grep owl:versionInfo obi.owl | head -n1 | grep -o '[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}')"
 DATE="${DATE:?Invalid date}"
 confirm "Is this the release date: '${DATE}'?"
 
