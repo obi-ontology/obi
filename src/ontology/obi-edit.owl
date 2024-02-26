@@ -21961,7 +21961,7 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         </rdfs:subClassOf>
         <obo:IAO_0000111>fasting</obo:IAO_0000111>
         <obo:IAO_0000112>Pre-test fasting is required or recommended for several blood tests, including glucose and C-peptide tests. 8–12 hours is typical for fasting duration.</obo:IAO_0000112>
-        <obo:IAO_0000115>A planned process in which an organism drinks only water and does not eat for a specified period of time, as directed by a medical professional.</obo:IAO_0000115>
+        <obo:IAO_0000115>A planned process in which an organism drinks only water and does not eat for a specified period of time.</obo:IAO_0000115>
         <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000119>A.M. Simundic et al., Standardization of collection requirements for fasting samples: For the Working Group on Preanalytical Phase (WG-PA) of the European Federation of Clinical Chemistry and Laboratory Medicine (EFLM), Clinica Chimica Acta, Volume 432, 2014, Pages 33-37, ISSN 0009-8981, https://doi.org/10.1016/j.cca.2013.11.008.</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
@@ -21975,24 +21975,8 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003654">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003653"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003656"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000112>Overnight fasting commonly occurs prior to a blood draw scheduled in the morning.</obo:IAO_0000112>
-        <obo:IAO_0000115>A fasting that occurs overnight.</obo:IAO_0000115>
+        <obo:IAO_0000115>A fasting with a duration of 8–12 hours, typically occurring overnight.</obo:IAO_0000115>
         <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000119>A.M. Simundic et al., Standardization of collection requirements for fasting samples: For the Working Group on Preanalytical Phase (WG-PA) of the European Federation of Clinical Chemistry and Laboratory Medicine (EFLM), Clinica Chimica Acta, Volume 432, 2014, Pages 33-37, ISSN 0009-8981, https://doi.org/10.1016/j.cca.2013.11.008.</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
@@ -22016,20 +22000,7 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
         <obo:IAO_0000234>Philippe Rocca-Serra</obo:IAO_0000234>
-        <rdfs:label xml:lang="en">fastedness</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003656 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003656">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003655"/>
-        <obo:IAO_0000115>A fastedness that inheres in an organism that has completed an overnight fasting process.</obo:IAO_0000115>
-        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
-        <obo:IAO_0000234>Philippe Rocca-Serra</obo:IAO_0000234>
-        <rdfs:label xml:lang="en">overnight fastedness</rdfs:label>
+        <rdfs:label xml:lang="en">fasted</rdfs:label>
     </owl:Class>
     
 
@@ -22392,7 +22363,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid1876"/>
+        <rdfs:subClassOf rdf:nodeID="genid1871"/>
         <obo:IAO_0000111>primary cultured cell population</obo:IAO_0000111>
         <obo:IAO_0000112>Spleen cells put directly into culture;  Cold storage of biopsies from wild endangered native Chilean species in field conditions and subsequent isolation of primary culture cell lines. In Vitro Cell Dev Biol Anim. 2008 Jul 2. PMID: 18594934</obo:IAO_0000112>
         <obo:IAO_0000112>cells that have been isolated from some organismal source, expanded in culture, but not undergone a complete passaging (ie are still in culture, or have been lifted from culture and frozen in aliquots for future use)</obo:IAO_0000112>
@@ -22405,7 +22376,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000119>PERSON:Matthew Brush</obo:IAO_0000119>
         <rdfs:label xml:lang="en">primary cultured cell population</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid1876">
+    <owl:Restriction rdf:nodeID="genid1871">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
         <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
@@ -22413,7 +22384,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/OBI_0100061"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid1876"/>
+        <owl:annotatedTarget rdf:nodeID="genid1871"/>
         <obo:IAO_0000116>consider if we really want to be so strict here . . . ie maybe we we say that they have not been output from an &apos;establishing cell line&apos; process, but in some cases a passage or two may be allowed for a primary culture.  the establishing of a line requires some  procedss that attains a degree of homogeneity in the culture.</obo:IAO_0000116>
     </owl:Axiom>
     
