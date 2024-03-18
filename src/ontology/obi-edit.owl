@@ -21961,6 +21961,78 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003653 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003653">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003655"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>fasting</obo:IAO_0000111>
+        <obo:IAO_0000112>Pre-test fasting is required or recommended for several blood tests, including glucose and C-peptide tests. 8–12 hours is typical for fasting duration.</obo:IAO_0000112>
+        <obo:IAO_0000115>A planned process in which an organism drinks only water and does not eat for a specified period of time.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119>A.M. Simundic et al., Standardization of collection requirements for fasting samples: For the Working Group on Preanalytical Phase (WG-PA) of the European Federation of Clinical Chemistry and Laboratory Medicine (EFLM), Clinica Chimica Acta, Volume 432, 2014, Pages 33-37, ISSN 0009-8981, https://doi.org/10.1016/j.cca.2013.11.008.</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
+        <obo:IAO_0000234>Philippe Rocca-Serra</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">fasting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003654 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003654">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003653"/>
+        <obo:IAO_0000112>Overnight fasting commonly occurs prior to a blood draw scheduled in the morning.</obo:IAO_0000112>
+        <obo:IAO_0000115>A fasting with a duration of 8–12 hours, typically occurring overnight.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119>A.M. Simundic et al., Standardization of collection requirements for fasting samples: For the Working Group on Preanalytical Phase (WG-PA) of the European Federation of Clinical Chemistry and Laboratory Medicine (EFLM), Clinica Chimica Acta, Volume 432, 2014, Pages 33-37, ISSN 0009-8981, https://doi.org/10.1016/j.cca.2013.11.008.</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
+        <obo:IAO_0000234>Philippe Rocca-Serra</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">overnight fasting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003655 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003655">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An organismal quality that inheres in an organism that has completed a fasting process, and which ceases to inhere in that organism once that organism drinks a liquid other than water or eats.</obo:IAO_0000115>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/494</obo:IAO_0000233>
+        <obo:IAO_0000234>Philippe Rocca-Serra</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">fasted</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
