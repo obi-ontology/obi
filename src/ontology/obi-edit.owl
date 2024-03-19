@@ -1528,6 +1528,26 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     
 
 
+    <!-- http://example.com/swa -->
+
+    <owl:Class rdf:about="http://example.com/swa">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100017"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000003918"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
+        <rdfs:label xml:lang="en">serum with albumin</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
@@ -1962,16 +1982,16 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid34"/>
+        <rdfs:subClassOf rdf:nodeID="genid38"/>
     </rdf:Description>
-    <owl:Restriction rdf:nodeID="genid34">
+    <owl:Restriction rdf:nodeID="genid38">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CLO_0000001"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid34"/>
+        <owl:annotatedTarget rdf:nodeID="genid38"/>
         <obo:IAO_0000116>&apos;derives from&apos; is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -22315,7 +22335,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid1866"/>
+        <rdfs:subClassOf rdf:nodeID="genid1870"/>
         <obo:IAO_0000111>primary cultured cell population</obo:IAO_0000111>
         <obo:IAO_0000112>Spleen cells put directly into culture;  Cold storage of biopsies from wild endangered native Chilean species in field conditions and subsequent isolation of primary culture cell lines. In Vitro Cell Dev Biol Anim. 2008 Jul 2. PMID: 18594934</obo:IAO_0000112>
         <obo:IAO_0000112>cells that have been isolated from some organismal source, expanded in culture, but not undergone a complete passaging (ie are still in culture, or have been lifted from culture and frozen in aliquots for future use)</obo:IAO_0000112>
@@ -22328,7 +22348,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
         <obo:IAO_0000119>PERSON:Matthew Brush</obo:IAO_0000119>
         <rdfs:label xml:lang="en">primary cultured cell population</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid1866">
+    <owl:Restriction rdf:nodeID="genid1870">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
         <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0600037"/>
@@ -22336,7 +22356,7 @@ A cultured cell population maintained in vitro: &quot;Rat cortical neurons from 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/OBI_0100061"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid1866"/>
+        <owl:annotatedTarget rdf:nodeID="genid1870"/>
         <obo:IAO_0000116>consider if we really want to be so strict here . . . ie maybe we we say that they have not been output from an &apos;establishing cell line&apos; process, but in some cases a passage or two may be allowed for a primary culture.  the establishing of a line requires some  procedss that attains a degree of homogeneity in the culture.</obo:IAO_0000116>
     </owl:Axiom>
     
@@ -32160,6 +32180,67 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     
 
 
+    <!-- http://example.com/a1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/a1">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PR_000003918"/>
+        <rdfs:label xml:lang="en">Albumin 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/afs1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/afs1">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0003652"/>
+        <rdfs:label xml:lang="en">Asserted ablumin free serum</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/bss1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/bss1">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
+        <rdfs:label xml:lang="en">Asserted Blood serum specimen</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/bss2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/bss2">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
+        <rdfs:label xml:lang="en">Asserted Blood serum specimen 2</rdfs:label>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://example.com/bss2"/>
+        <owl:assertionProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <owl:targetIndividual rdf:resource="http://example.com/a1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/bsswa1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/bsswa1">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
+        <obo:BFO_0000051 rdf:resource="http://example.com/a1"/>
+        <rdfs:label xml:lang="en">Blood serum specimen with albumin 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/l1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/l1">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PR_000009758"/>
+        <rdfs:label xml:lang="en">Leptin 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000002 -->
 
     <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000002">
@@ -32986,5 +33067,5 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
