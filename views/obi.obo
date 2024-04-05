@@ -1,6 +1,19 @@
 format-version: 1.2
-data-version: 2024-01-09
-date: 09:01:2024 14:43
+data-version: 2024-04-05
+date: 05:04:2024 15:17
+synonymtypedef: OMO:0003000 "abbreviation"
+synonymtypedef: OMO:0003001 "ambiguous synonym"
+synonymtypedef: OMO:0003002 "dubious synonym"
+synonymtypedef: OMO:0003003 "layperson synonym"
+synonymtypedef: OMO:0003004 "plural form"
+synonymtypedef: OMO:0003005 "UK spelling synonym"
+synonymtypedef: OMO:0003006 "misspelling"
+synonymtypedef: OMO:0003007 "misnomer"
+synonymtypedef: OMO:0003008 "previous name"
+synonymtypedef: OMO:0003009 "legal name"
+synonymtypedef: OMO:0003010 "International Nonproprietary Name"
+synonymtypedef: OMO:0003011 "latin term"
+synonymtypedef: OMO:0003012 "acronym"
 remark: Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.
 ontology: obi
 property_value: defaultLanguage "en" xsd:string
@@ -67,40 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2024-01-09" xsd:string
-
-[Term]
-id: APOLLO_SV:00000008
-name: software development
-def: "A planned process that has specified output a software product and that involves the creation of source code." []
-is_a: OBI:0000011 ! planned process
-
-[Term]
-id: APOLLO_SV:00000032
-name: count
-def: "A measurement datum that is the output of counting." []
-is_a: IAO:0000109 ! measurement datum
-
-[Term]
-id: APOLLO_SV:00000033
-name: counting
-def: "The planned process of finding the number of elements in a finite set of objects." []
-is_a: OBI:0000011 ! planned process
-
-[Term]
-id: APOLLO_SV:00000522
-name: source code repository
-def: "A document that comprises at least one source code module and provenance data about who contributed the set of files making up the module(s), and optionally comprises also multiple versions of files with detailed change history about who committed files and when, a license for the software, readme files, documentation, executables, etc." []
-comment: Refers to the stuff that lives on GitHub, not to GitHub or the git software on which it is based
-is_a: IAO:0000310 ! document
-
-[Term]
-id: APOLLO_SV:00000796
-name: dataset creating
-def: "A planned process that has a data set as its specified output." []
-synonym: "data set creation" EXACT []
-synonym: "dataset creation" EXACT []
-is_a: OBI:0000011 ! planned process
+property_value: owl:versionInfo "2024-04-05" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -125,39 +105,24 @@ id: BFO:0000004
 name: independent continuant
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
-
-[Term]
-id: BFO:0000005
-name: obsolete dependent continuant
-def: "A continuant  that is either dependent on one or other independent continuant  bearers or inheres in or is borne by other entities." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
 
 [Term]
 id: BFO:0000006
 name: spatial region
 is_a: BFO:0000141 ! immaterial entity
 disjoint_from: BFO:0000029 ! site
-disjoint_from: BFO:0000029 ! site
-disjoint_from: BFO:0000140 ! continuant fiat boundary
 
 [Term]
 id: BFO:0000008
 name: temporal region
 is_a: BFO:0000003 ! occurrent
 disjoint_from: BFO:0000011 ! spatiotemporal region
-disjoint_from: BFO:0000011 ! spatiotemporal region
-disjoint_from: BFO:0000015 ! process
-disjoint_from: BFO:0000035 ! process boundary
 
 [Term]
 id: BFO:0000009
 name: two-dimensional spatial region
 is_a: BFO:0000006 ! spatial region
 disjoint_from: BFO:0000018 ! zero-dimensional spatial region
-disjoint_from: BFO:0000028 ! three-dimensional spatial region
 
 [Term]
 id: BFO:0000011
@@ -186,7 +151,6 @@ disjoint_from: BFO:0000019 ! quality
 id: BFO:0000018
 name: zero-dimensional spatial region
 is_a: BFO:0000006 ! spatial region
-disjoint_from: BFO:0000028 ! three-dimensional spatial region
 
 [Term]
 id: BFO:0000019
@@ -197,7 +161,6 @@ is_a: BFO:0000020 ! specifically dependent continuant
 id: BFO:0000020
 name: specifically dependent continuant
 is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000023
@@ -207,14 +170,13 @@ is_a: BFO:0000017 ! realizable entity
 
 [Term]
 id: BFO:0000024
-name: fiat object part
+name: fiat object
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: BFO:0000026
 name: one-dimensional spatial region
 is_a: BFO:0000006 ! spatial region
-disjoint_from: BFO:0000028 ! three-dimensional spatial region
 
 [Term]
 id: BFO:0000027
@@ -279,8 +241,6 @@ id: BFO:0000142
 name: one-dimensional continuant fiat boundary
 is_a: BFO:0000140 ! continuant fiat boundary
 disjoint_from: BFO:0000146 ! two-dimensional continuant fiat boundary
-disjoint_from: BFO:0000146 ! two-dimensional continuant fiat boundary
-disjoint_from: BFO:0000147 ! zero-dimensional continuant fiat boundary
 
 [Term]
 id: BFO:0000144
@@ -2431,7 +2391,6 @@ is_a: IAO:0000009 ! datum label
 id: IAO:0000005
 name: objective specification
 def: "A directive information entity that describes an intended process endpoint. When part of a plan specification the concretization is realized in a planned process in which the bearer tries to effect the world so that the process endpoint is achieved." []
-synonym: "goal specification" EXACT []
 is_a: IAO:0000033 ! directive information entity
 
 [Term]
@@ -2439,18 +2398,6 @@ id: IAO:0000006
 name: narrative object
 def: "A narrative object is an information content entity that is a set of propositions." []
 is_a: IAO:0000030 ! information content entity
-
-[Term]
-id: IAO:0000007
-name: action specification
-def: "A directive information entity that describes an action the bearer will take." []
-is_a: IAO:0000033 ! directive information entity
-
-[Term]
-id: IAO:0000008
-name: obsolete_artifact
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
 
 [Term]
 id: IAO:0000009
@@ -2465,61 +2412,9 @@ def: "Software is a plan specification composed of a series of instructions that
 is_a: IAO:0000104 ! plan specification
 
 [Term]
-id: IAO:0000012
-name: obsolete2_digital entity
-def: "A digital entity is an information entity which is a collection of bits that can be interpreted by a computer. Two digital entities are the same if they are bitwise identical." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000013
-name: journal article
-def: "A report that is published in a journal." []
-is_a: IAO:0000088 ! report
-
-[Term]
-id: IAO:0000015
-name: information carrier
-def: "A quality of an information bearer that imparts the information content" []
-is_a: BFO:0000019 ! quality
-
-[Term]
-id: IAO:0000017
-name: model number
-def: "A model number is an information content entity specifically borne by catalogs, design specifications, advertising materials, inventory systems and similar  that is about manufactured objects of the same class. The model number is an alternative term for the class. The manufactered objects may or may not also bear the model number. Model numbers can be encoded in a variety of other information objects, such as bar codes, numerals, or patterns of dots." []
-is_a: IAO:0000028 ! symbol
-
-[Term]
-id: IAO:0000018
-name: obsolete_material_entity
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000019
-name: obsolete2_binary digital entity
-def: "A binary digital entity is a digital entity that is encoded in a way that is not easily human readable and that contains other than text characters." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000024
-name: obsolete_unit of measure
-def: "a unit of measure is the quality of some material entity compared to which another quality is some multiple of." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000025
-name: programming language
-def: "A language in which source code is written that is intended to be executed/run by a software interpreter. Programming languages are ways to write instructions that specify what to do, and sometimes, how to do it." []
-is_a: IAO:0000104 ! plan specification
-
-[Term]
 id: IAO:0000027
 name: data item
 def: "An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
-synonym: "data" EXACT []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -2529,22 +2424,10 @@ def: "An information content entity that is a mark(s) or character(s) used as a 
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: IAO:0000029
-name: numeral
-def: "A symbol that denotes a number." []
-is_a: IAO:0000028 ! symbol
-
-[Term]
 id: IAO:0000030
 name: information content entity
 def: "A generically dependent continuant that is about some thing." []
 is_a: BFO:0000031 ! generically dependent continuant
-
-[Term]
-id: IAO:0000031
-name: integer numeral
-def: "A numeral that denotes an integer" []
-is_a: IAO:0000029 ! numeral
 
 [Term]
 id: IAO:0000032
@@ -2559,19 +2442,6 @@ def: "An information content entity whose concretizations indicate to their bear
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: IAO:0000034
-name: time trigger
-is_a: IAO:0000001 ! conditional specification
-
-[Term]
-id: IAO:0000035
-name: obsolete_study interpretation
-def: "A study interpretation is a textual entity about the implications of a study result. Examples include discussion of whether a hypothesis is false, whether the study failed to address the hypothesis, and whether the study results have led to new hypotheses" []
-synonym: "conclusion" EXACT []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
 id: IAO:0000037
 name: dot plot
 def: "A dot plot is a report graph which is a graphical representation of data where each data point is represented by a single dot placed on coordinates corresponding to data point values in particular dimensions." []
@@ -2584,41 +2454,16 @@ def: "A diagram that presents one or more tuples of information by mapping those
 is_a: IAO:0000309 ! diagram
 
 [Term]
-id: IAO:0000047
-name: obsolete2_text based digital entity
-def: "A text based digital entity is a digital entity that is encoded so that it only contains text characters." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
 id: IAO:0000055
 name: rule
 def: "A rule is an executable which guides, defines, restricts actions." []
 is_a: IAO:0000001 ! conditional specification
 
 [Term]
-id: IAO:0000057
-name: contour plot
-is_a: IAO:0000038 ! graph
-
-[Term]
-id: IAO:0000059
-name: obsolete2_report figure
-def: "A report figure is a report display element that has some aspect of illustration, but may be a composite of figures, images, and other elements" []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
 id: IAO:0000064
 name: algorithm
 def: "A plan specification which describes the inputs and output of mathematical functions as well as workflow of execution for achieving an predefined objective. Algorithms are realized usually by means of implementation as computer programs for execution by automata." []
 is_a: IAO:0000104 ! plan specification
-
-[Term]
-id: IAO:0000065
-name: software interpreter
-def: "A software interpreter is a software application that executes some specified input software." []
-is_a: IAO:0000064 ! algorithm
 
 [Term]
 id: IAO:0000078
@@ -2637,33 +2482,6 @@ id: IAO:0000088
 name: report
 def: "A document assembled by an author for the purpose of providing information for the audience. A report is the output of a documenting process and has the objective to be consumed by a specific audience. Topic of the report is on something that has completed. A report is not a single figure. Examples of reports are journal article, patent application, grant progress report, case report (not patient record)." []
 is_a: IAO:0000310 ! document
-
-[Term]
-id: IAO:0000091
-name: obsolete_report element
-def: "A report element is a narrative object in which information is presented and consumed by a human being, and is part of a report. Examples of report elements are figure (dot plot), table, text portion (may include a movie or audio clip on a web page)." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000093
-name: obsolete2_binary executable
-def: "Binary executable is a digital entity consisting of the binary representation of machine instructions of a specific processor or they may be binary pseudocode for a virtual machine. A non-source executable file is also called an object program. It is assumed that the binary executable file contains properly-formatted computer instructions.  (derived from Wikipedia, Nov 1, 2007)" []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000096
-name: source code module
-def: "A source code module is a directive information entity that specifies, using a programming language, some algorithm." []
-is_a: IAO:0000033 ! directive information entity
-
-[Term]
-id: IAO:0000097
-name: obsolete_report table
-def: "A report table is a report display element consisting of a matrix of cells layed out in a grid, some set of which are filled with some information content" []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
 
 [Term]
 id: IAO:0000098
@@ -2692,59 +2510,14 @@ is_a: IAO:0000027 ! data item
 [Term]
 id: IAO:0000104
 name: plan specification
-def: "A directive information entity with action specifications and objective specifications as parts that, when concretized, is realized in a process in which the bearer tries to achieve the objectives by taking the actions specified." []
-comment: 2/3/2009 Comment from OBI review.\n\nAction specification not well enough specified.\nConditional specification not well enough specified.\nQuestion whether all plan specifications have objective specifications.\n\nRequest that IAO either clarify these or change definitions not to use them
+def: "A directive information entity with action specifications and objective specifications as parts, and that may be concretized as a realizable entity that, if realized, is realized in a process in which the bearer tries to achieve the objectives by taking the actions specified." []
 is_a: IAO:0000033 ! directive information entity
-
-[Term]
-id: IAO:0000105
-name: obsolete2_digital document
-def: "A digital document is a digital entity consisting of an electronic file which can be rendered into human-readable form by one or more computational applications.  The digital document does not refer to the information content of the document but to an instance of the file." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
 
 [Term]
 id: IAO:0000109
 name: measurement datum
 def: "A measurement datum is an information content entity that is a recording of the output of a measurement such as produced by a device." []
 is_a: IAO:0000027 ! data item
-
-[Term]
-id: IAO:0000128
-name: obsolete_identifier
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
-id: IAO:0000129
-name: version number
-def: "A version number is an information content entity which is a sequence of characters borne by part of each of a class of manufactured products or its packaging and indicates its order within a set of other products having the same name." []
-is_a: IAO:0000028 ! symbol
-
-[Term]
-id: IAO:0000131
-name: serial number
-def: "A serial number is an information content entity which is a unique sequence of characters borne by part of manufactured product or its packaging that is assigned to each individual in some class of products, and so can serve as a way to identify an individual product within the class. Serial numbers can be encoded in a variety of other information objects, such as bar codes, numerals, or patterns of dots." []
-is_a: IAO:0000028 ! symbol
-
-[Term]
-id: IAO:0000132
-name: lot number
-def: "A lot number is an information content entity which is an identical sequence of character borne by part of manufactured product or its packaging for each instances of a product class in a discrete batch of an item. Lot numbers are usually assigned to each separate production run of an item. Manufacturing as a lot might be due to a variety of reasons, for example,  a single process during which many individuals are made from the same portion of source material. Lot numbers can be encoded in a pattern  of other information objects, such as bar codes, numerals, or patterns of dots." []
-synonym: "batch number" EXACT []
-is_a: IAO:0000028 ! symbol
-
-[Term]
-id: IAO:0000140
-name: setting datum
-def: "A settings datum is a datum that denotes some configuration of an instrument." []
-is_a: IAO:0000027 ! data item
-
-[Term]
-id: IAO:0000141
-name: obsolete_digital quality
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
 
 [Term]
 id: IAO:0000144
@@ -2772,19 +2545,6 @@ def: "A heatmap is a report graph which is a graphical representation of data\nw
 is_a: IAO:0000038 ! graph
 
 [Term]
-id: IAO:0000181
-name: Venn diagram
-def: "A Venn diagram is a report graph showing all hypothetically possible\nlogical relations between a finite collection of sets." []
-is_a: IAO:0000038 ! graph
-
-[Term]
-id: IAO:0000182
-name: obsolete_survival curve
-def: "A survival curve is a report graph which is a graphical representation of data where the percentage of survival is plotted as a function of time." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
-
-[Term]
 id: IAO:0000183
 name: dendrogram
 def: "A dendrogram is a report graph which is a tree diagram\nfrequently used to illustrate the arrangement of the clusters produced by a\nclustering algorithm." []
@@ -2794,20 +2554,7 @@ is_a: IAO:0000038 ! graph
 id: IAO:0000184
 name: scatter plot
 def: "A scatterplot is a graph which uses Cartesian coordinates to display values for two variables for a set of data. The data is displayed as a collection of points, each having the value of one variable determining the position on the horizontal axis and the value of the other variable determining the position on the vertical axis." []
-synonym: "scattergraph" EXACT []
 is_a: IAO:0000038 ! graph
-
-[Term]
-id: IAO:0000185
-name: photograph
-def: "A photograph is created by projecting an image onto a photosensitive surface such as a chemically treated plate or film, CCD receptor, etc." []
-is_a: IAO:0000101 ! image
-
-[Term]
-id: IAO:0000186
-name: photographic print
-def: "A photographic print is a material entity upon which a photograph generically depends." []
-is_a: IAO:0000178 ! material information bearer
 
 [Term]
 id: IAO:0000225
@@ -2819,50 +2566,13 @@ is_a: IAO:0000102 ! data about an ontology part
 id: IAO:0000300
 name: textual entity
 def: "A textual entity is a part of a manifestation (FRBR sense), a generically dependent continuant whose concretizations are patterns of glyphs intended to be interpreted as words, formulas, etc." []
-synonym: "text" EXACT []
 is_a: IAO:0000030 ! information content entity
-
-[Term]
-id: IAO:0000301
-name: citation
-def: "A textual entity intended to identify a particular publication." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000302
-name: author identification
-def: "A textual entity intended to identify a particular author" []
-is_a: IAO:0000590 ! written name
-
-[Term]
-id: IAO:0000303
-name: institutional identification
-def: "A textual entity intended to identify a particular institution" []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000304
-name: caption
-def: "A textual entity that describes a figure" []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000305
-name: document title
-def: "A textual entity that names a document" []
-is_a: IAO:0000300 ! textual entity
 
 [Term]
 id: IAO:0000306
 name: table
 def: "A textual entity that contains a two-dimensional arrangement of texts repeated at regular intervals across a spatial range, such that the spatial relationships among the constituent texts expresses propositions" []
 is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000307
-name: table of abbreviations
-def: "A table where the constituent texts are abbreviations and their expansions" []
-is_a: IAO:0000306 ! table
 
 [Term]
 id: IAO:0000308
@@ -2885,142 +2595,14 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: IAO:0000311
 name: publication
-def: "A document that has been accepted by a publisher" []
+def: "A document that is the output of a publishing process." []
 is_a: IAO:0000310 ! document
 
 [Term]
 id: IAO:0000312
 name: publication about an investigation
 def: "A publication that is about an investigation" []
-synonym: "scientific publication" EXACT []
 is_a: IAO:0000311 ! publication
-
-[Term]
-id: IAO:0000313
-name: patent
-def: "A document that has been accepted by a patent authority" []
-is_a: IAO:0000310 ! document
-
-[Term]
-id: IAO:0000314
-name: document part
-def: "An information content entity that is part of a document." []
-is_a: IAO:0000030 ! information content entity
-
-[Term]
-id: IAO:0000315
-name: abstract
-def: "A summary of the entire document that is substantially smaller than the document it summarizes.  It is about the document it summarizes." []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000316
-name: introduction to a publication about an investigation
-def: "A part of a publication about an investigation that is about the objective specification (why the investigation is being done)" []
-synonym: "background" EXACT []
-synonym: "introduction" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000317
-name: methods section
-def: "A part of a publication about an investigation that is about the study design of the investigation" []
-synonym: "experimental" EXACT []
-synonym: "experimental procedures" EXACT []
-synonym: "experimental section" EXACT []
-synonym: "methods" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000318
-name: results section
-def: "A part of a publication about an investigation that is about a study design execution" []
-synonym: "results" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000319
-name: discussion section of a publication about an investigation
-def: "A part of a publication about an investigation that is about the study interpretation of the investigation" []
-synonym: "discussion" EXACT []
-synonym: "discussion section" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000320
-name: references section
-def: "A part of a document that has citations as parts" []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000321
-name: author list
-def: "A part of a document that enumerates the authors of the document" []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000322
-name: institution list
-def: "A part of a document that has parts that are institution identifications associated with the authors of the document" []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000323
-name: author contributions section
-def: "A part of a publication that is about the specific contributions of each author" []
-synonym: "author contributions" EXACT []
-synonym: "contributions by the authors" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000324
-name: acknowledgements section
-def: "Part of a publication that is about the contributions of people or institutions other than the authors." []
-synonym: "acknowledgements" EXACT []
-synonym: "acknowledgments" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000325
-name: footnote
-def: "A part of a document that is about a specific other part of the document.  Usually footnotes are spatially segregated from the rest of the document." []
-synonym: "endnote" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000326
-name: supplementary material to a document
-def: "A part of a document that is segregated from the rest of the document due to its size" []
-synonym: "additional information" EXACT []
-synonym: "appendix" EXACT []
-synonym: "supplemental information" EXACT []
-synonym: "supplementary material" EXACT []
-synonym: "supporting information" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000327
-name: table of contents
-def: "A table that relates document parts to specific locations in a document (usually page numbers).  This is also a document part (subsumption there should be inferred)." []
-is_a: IAO:0000306 ! table
-
-[Term]
-id: IAO:0000328
-name: table of figures
-def: "A table that relates figures in a document to specific locations in that document (usually page numbers).  This is also a document part (subsumption there should be inferred)." []
-is_a: IAO:0000306 ! table
-
-[Term]
-id: IAO:0000329
-name: running title
-def: "A shorter version of a document title" []
-is_a: IAO:0000305 ! document title
-
-[Term]
-id: IAO:0000330
-name: copyright section
-def: "A document part that describes  legal restrictions on making or distributing copies of the document" []
-is_a: IAO:0000314 ! document part
 
 [Term]
 id: IAO:0000400
@@ -3032,18 +2614,6 @@ is_a: IAO:0000027 ! data item
 id: IAO:0000401
 name: one dimensional cartesian spatial coordinate datum
 def: "A cartesion spatial coordinate datum that  uses one value to specify a position along a one dimensional spatial region" []
-is_a: IAO:0000400 ! cartesian spatial coordinate datum
-
-[Term]
-id: IAO:0000402
-name: two dimensional cartesian spatial coordinate datum
-def: "A cartesion spatial coordinate datum that  uses two values to specify a position within a two dimensional spatial region" []
-is_a: IAO:0000400 ! cartesian spatial coordinate datum
-
-[Term]
-id: IAO:0000403
-name: three dimensional cartesian spatial coordinate datum
-def: "A cartesion spatial coordinate datum that  uses three values to specify a position within a three dimensional spatial region" []
 is_a: IAO:0000400 ! cartesian spatial coordinate datum
 
 [Term]
@@ -3065,12 +2635,6 @@ def: "A scalar measurement datum that is the result of measurement of mass quali
 is_a: IAO:0000032 ! scalar measurement datum
 
 [Term]
-id: IAO:0000415
-name: hypothesis textual entity
-def: "A textual entity that expresses an assertion that is intended to be tested." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
 id: IAO:0000416
 name: time measurement datum
 def: "A scalar measurement datum that is the result of measuring a temporal interval" []
@@ -3088,18 +2652,6 @@ name: email address
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: IAO:0000442
-name: author role
-def: "A role inhering in a person or organization that is realized when the bearer participates in the work which is the basis of the document, in the writing of the document, and signs it with their name." []
-is_a: BFO:0000023 ! role
-
-[Term]
-id: IAO:0000443
-name: data item extraction from journal article
-def: "A planned process in which journal articles are read or processed and data items are extracted, typically for further analysis or indexing" []
-is_a: OBI:0000011 ! planned process
-
-[Term]
 id: IAO:0000572
 name: documenting
 def: "A planned process in which a document is created or added to by including the specified input in it." []
@@ -3109,442 +2661,25 @@ is_a: OBI:0000011 ! planned process
 id: IAO:0000573
 name: line graph
 def: "A line graph is a type of graph created by connecting a series of data\npoints together with a line." []
-synonym: "line chart" EXACT []
 is_a: IAO:0000038 ! graph
 
 [Term]
 id: IAO:0000574
 name: assigning a centrally registered identifier
 def: "A planned process in which a new CRID is created, associated with an entity, and stored in the CRID registry thereby registering it as being associated with some entity" []
-synonym: "assigning a CRID" EXACT []
 is_a: OBI:0000011 ! planned process
-
-[Term]
-id: IAO:0000575
-name: associating information with a centrally registered identifier in its registry
-def: "A planned process in which a CRID registry associates an information content entity with a CRID symbol" []
-synonym: "associating information with a CRID in the CRID registry" EXACT []
-is_a: OBI:0000011 ! planned process
-
-[Term]
-id: IAO:0000576
-name: obsolete_establishing a CRID registry
-def: "a planned process with the objective to establish a system that allows to refer to specific entities of a certain kind and store information about them, by establishing a CRID registry and plan specifications for the process of 1) assigning a CRID and 2) looking up a CRID." []
-is_a: ObsoleteClass ! Obsolete Class
-is_obsolete: true
 
 [Term]
 id: IAO:0000577
 name: centrally registered identifier symbol
 def: "A symbol that is part of a CRID and that is sufficient to look up a record from the CRID's registry." []
-synonym: "CRID symbol" EXACT []
 is_a: IAO:0000028 ! symbol
-
-[Term]
-id: IAO:0000578
-name: centrally registered identifier
-def: "An information content entity that consists of a CRID symbol and additional information about the CRID registry to which it belongs." []
-synonym: "CRID" EXACT []
-is_a: IAO:0000030 ! information content entity
-
-[Term]
-id: IAO:0000579
-name: centrally registered identifier registry
-def: "A CRID registry is a dataset of CRID records, each consisting of a CRID symbol and additional information which was recorded in the dataset through a assigning a centrally registered identifier process." []
-synonym: "CRID registry" EXACT []
-is_a: IAO:0000100 ! data set
-
-[Term]
-id: IAO:0000580
-name: looking up a centrally registered identifier
-def: "A planned process in which a request to a CRID registry is made to return the information associated with a CRID symbol" []
-synonym: "looking up a CRID" EXACT []
-is_a: OBI:0000011 ! planned process
-
-[Term]
-id: IAO:0000582
-name: time stamped measurement datum
-is_a: IAO:0000109 ! measurement datum
-
-[Term]
-id: IAO:0000584
-name: time sampled measurement data set
-def: "A data set that is an aggregate of data recording some measurement at a number of time points. The time series data set is an ordered list of pairs of time measurement data and the corresponding measurement data acquired at that time." []
-synonym: "experimental time series" EXACT []
-is_a: IAO:0000100 ! data set
-
-[Term]
-id: IAO:0000590
-name: written name
-def: "A textual entity that denotes a particular in reality." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000591
-name: software method
-def: "A software method (also called subroutine, subprogram, procedure, method, function, or routine) is software designed to execute a specific task." []
-is_a: IAO:0000010 ! software
-
-[Term]
-id: IAO:0000592
-name: software module
-def: "A software module is software composed of a collection of software methods." []
-is_a: IAO:0000010 ! software
-
-[Term]
-id: IAO:0000593
-name: software library
-def: "A software library is software composed of a collection of software modules and/or software methods in a form that can be statically or dynamically linked to some software application." []
-is_a: IAO:0000010 ! software
 
 [Term]
 id: IAO:0000594
 name: software application
 def: "A software application is software that can be directly executed by some processing unit." []
 is_a: IAO:0000010 ! software
-
-[Term]
-id: IAO:0000595
-name: software script
-def: "A software script is software whose instructions can be executed using a software interpreter." []
-is_a: IAO:0000010 ! software
-
-[Term]
-id: IAO:0000605
-name: abbreviation textual entity
-def: "A textual entity listing abbreviations and their expansions that are used in a document." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000606
-name: abbreviations section
-def: "A part of a document where abbreviations and their long-forms used within the document are listed." []
-synonym: "abbreviations" EXACT []
-synonym: "abbreviations list" EXACT []
-synonym: "abbreviations used" EXACT []
-synonym: "list of abbreviations" EXACT []
-synonym: "list of abbreviations used" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000607
-name: author information section
-def: "A part of a document about the authors that provides biographical information and may discuss how the authors' professional experiences are relevant to the work described in the document." []
-synonym: "author information" EXACT []
-synonym: "authors’ information" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000608
-name: author information textual entity
-def: "A textual entity expression information about an author of a document. This information may include biographical information and may discuss how the authors' professional experiences are relevant to the work described in the document." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000609
-name: author summary section
-def: "A part of a document, distinct from the abstract, that describes the significance and broader context of the document content. The author summary is often written in a non-technical manner and is aimed at both scientists and non-scientist readers." []
-synonym: "author summary" EXACT []
-synonym: "summary" EXACT []
-synonym: "synopsis" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000610
-name: author summary textual entity
-def: "A textual entity, distinct from the abstract, that describes the significance and broader context of the document content. The author summary is often written in a non-technical manner and is aimed at both scientists and non-scientist readers, e.g as described in the article submission guidelines for PLoS Genetics (http://journals.plos.org/plosgenetics/s/submission-guidelines)." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000611
-name: availability section
-def: "A part of a document about a resource described in the document, e.g. software, that describes where and/or how that resource can be obtained." []
-synonym: "availability" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000612
-name: availability textual entity
-def: "A textual entity expressing the location of a resource, e.g. software, or the manner in which a resource can be obtained." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000613
-name: case report section
-def: "A part of a document about the medical history of a specific patient as it relates to the topic of the document." []
-synonym: "case presentation" EXACT []
-synonym: "case report" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000614
-name: case report textual entity
-def: "A textual entity that expresses a detailed account of a portion of the medical history for a specific patient." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000615
-name: conclusion section
-def: "A part of a document used to summarize the findings discussed in the document. The conclusion section is typically found near the end of a document." []
-synonym: "concluding remarks" EXACT []
-synonym: "conclusion" EXACT []
-synonym: "conclusions" EXACT []
-synonym: "findings" EXACT []
-synonym: "summary" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000616
-name: conflict of interest section
-def: "A part of a document used to declare any competing interests regarding the authors and/or funding organization for the work described in the document." []
-synonym: "competing interests" EXACT []
-synonym: "conflict of interest" EXACT []
-synonym: "conflict of interest statement" EXACT []
-synonym: "declaration of competing interests" EXACT []
-synonym: "disclosure of potential conflicts of interest" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000617
-name: conflict of interest textual entity
-def: "A textual entity that expresses a situation involving one or more of the authors, or the funding source of a document whereby the authors or funding source stand to potentially gain (typically financially) from the results reported in the document." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000618
-name: consent section
-def: "A part of a document about the consent process that was used to enroll patients in a study." []
-synonym: "consent" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000619
-name: consent textual entity
-def: "A textual entity that documents the consenting process used to enroll patients in a study." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000620
-name: ethical approval section
-def: "A part of a document about the governance body responsible for approving the work discussed in a document on an ethical basis." []
-synonym: "ethical approval" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000621
-name: ethical approval textual entity
-def: "A textual entity that documents the ethical approval of some study design." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000622
-name: figures section
-def: "A part of a document that contains one or more figures." []
-synonym: "figures" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000623
-name: funding source declaration section
-def: "A part of a document used to detail information regarding the source of funding used in support of the generation of the document content." []
-synonym: "funding" EXACT []
-synonym: "funding information" EXACT []
-synonym: "funding sources" EXACT []
-synonym: "funding statement" EXACT []
-synonym: "funding/support" EXACT []
-synonym: "source of funding" EXACT []
-synonym: "sources of funding" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000624
-name: funding source declaration textual entity
-def: "A textual entity documenting the source of funding that supported some study." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000625
-name: future directions section
-def: "A part of a document detailing extensions of the described work that may be implemented at some future point in time." []
-synonym: "future challenges" EXACT []
-synonym: "future considerations" EXACT []
-synonym: "future developments" EXACT []
-synonym: "future directions" EXACT []
-synonym: "future outlook" EXACT []
-synonym: "future perspectives" EXACT []
-synonym: "future plans" EXACT []
-synonym: "future prospects" EXACT []
-synonym: "future research" EXACT []
-synonym: "future research directions" EXACT []
-synonym: "future studies" EXACT []
-synonym: "future work" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000626
-name: future directions textual entity
-def: "A textual entity expressing ideas regarding future work relevant to work described in a document that could be done." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000627
-name: genome announcement section
-def: "A document part announcing the publication of a novel draft genome sequence." []
-synonym: "genome announcement" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000628
-name: genome announcement textual entity
-def: "A textual entity that describes the generation and public release of a novel, draft genome sequence." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000629
-name: keyword textual entity
-def: "A textual entity listing keywords indicating the major theme(s) of a document." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000630
-name: keywords section
-def: "A part of a document where keywords selected by the author to categorize the major theme(s) of a document are listed." []
-synonym: "keywords" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000631
-name: study limitations section
-def: "A part of a document about biases or short comings related to the study design and execution." []
-synonym: "limitations" EXACT []
-synonym: "study limitations" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000632
-name: study limitations textual entity
-def: "A textual entity addressing a shortcoming or bias of a study design or execution." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000633
-name: materials section
-def: "A part of a document about the materials required to reproduce the content of the document." []
-synonym: "materials" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000634
-name: notes section
-def: "A part of a document containing typically short notes about the document itself and/or the authors. Often the notes section contains subsections related to funding, competing interests, ethical approval, etc." []
-synonym: "footnotes" EXACT []
-synonym: "notes" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000635
-name: patients section
-def: "A part of a document about the patients that participated in a study." []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000636
-name: patients textual entity
-def: "A textual entity expressing information regarding the patients used in a study." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000637
-name: pre-publication history section
-def: "A part of the document about the publication history of a document. This section typically details dates of document submission to a journal and dates of any re-submissions as well as reviewer comments and responses to reviewers by the authors." []
-synonym: "notice of republication" EXACT []
-synonym: "pre-publication history" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000638
-name: pre-publication history textual entity
-def: "A textual entity that expresses the pre-publication history (submission dates, reviewer comments, etc) for a document, often including a hyperlink to a web page detailing the information." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000639
-name: related work section
-def: "A part of a document about work in other publications that is relevant to the content of the document." []
-synonym: "related literature" EXACT []
-synonym: "related work" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000640
-name: related work textual entity
-def: "A textual entity that discusses work from other publications and expresses their relevancy to the content of a document." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000641
-name: requirements section
-def: "A part of a document about a resource described in the document, e.g. software, that describes the requirements necessary to use the resource, e.g. operating systems, hardware, etc. in the case of a software resource." []
-synonym: "requirements" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000642
-name: requirements textual entity
-def: "A textual entity that expresses the requirements necessary to use a resource, e.g. software." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000643
-name: statistical analysis textual entity
-def: "A textual entity documenting statistical analysis tools and techniques employed." []
-is_a: IAO:0000300 ! textual entity
-
-[Term]
-id: IAO:0000644
-name: statistical analysis section
-def: "A part of the document used to describe the statistical methodologies employed in the work presented in the document." []
-synonym: "statistical analysis" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000645
-name: tables section
-def: "A part of a document that contains one or more tables." []
-synonym: "tables" EXACT []
-is_a: IAO:0000314 ! document part
-
-[Term]
-id: IAO:0000646
-name: postal code
-def: "An identifier that denotes some postal delivery route, some aggregate of postal delivery routes or a geographical region and was created for the purpose of sorting and delivering mail." []
-is_a: IAO:0020000 ! identifier
-
-[Term]
-id: IAO:0000647
-name: Postal delivery route
-def: "A plan specification that if realized, is realized by the delivery of mail to some facility or mailbox within some geographical region." []
-is_a: IAO:0000104 ! plan specification
-
-[Term]
-id: IAO:0000648
-name: zone improvement plan code
-def: "A postal code that is used in the United States for the purpose of sorting and delivering mail, and that denotes some postal delivery route or some aggregate of postal delivery routes." []
-synonym: "ZIP code" EXACT []
-is_a: IAO:0000646 ! postal code
-
-[Term]
-id: IAO:0000650
-name: database extract, transform, and load process
-def: "A planned process which takes as input a database and fills another database by extracting concretizations of information entities from the first, transforming them, and loading the transformed concretizations into the second." []
-synonym: "ETL" EXACT []
-is_a: OBI:0000011 ! planned process
-
-[Term]
-id: IAO:0020000
-name: identifier
-def: "An identifier is an information content entity that is the outcome of a dubbing process and is used to refer to one instance of entity shared by a group of people to refer to that individual entity." []
-is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: IAO:8000000
@@ -7277,7 +6412,6 @@ id: OBI:0000701
 name: self-organizing map
 def: "A self-organizing map (SOM) is an artificial neural network with objective class discovery that uses a neighborhood function to preserve the topological properties of a dataset to produce low-dimensional (typically 2) discretized representation of the training data set. A set of artificial neurons learn to map points in an input space to coordinates in an output space. The input space can have different dimensions and topology from the output space, and the SOM will attempt to preserve these." []
 synonym: "SOM" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200175 ! class discovery data transformation
 
 [Term]
@@ -7444,7 +6578,6 @@ id: OBI:0000727
 name: k-nearest neighbors
 def: "A k-nearest neighbors is a data transformation which achieves a class discovery or partitioning objective, in which an input data object with vector y is assigned to a class label based upon the k closest training data set points to y; where k is the largest value that class label is assigned." []
 synonym: "k-NN" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200171 ! partitioning data transformation
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -8673,7 +7806,7 @@ id: OBI:0000970
 name: scalar score from composite inputs
 def: "A measurement datum which is the result of combining multiple datum. For example, a mean or summary score." []
 synonym: "questionaire score" EXACT []
-is_a: IAO:0000032 ! scalar measurement datum
+is_a: IAO:0000109 ! measurement datum
 
 [Term]
 id: OBI:0000971
@@ -18451,7 +17584,6 @@ is_a: OBI:0200187 ! sequence analysis data transformation
 id: OBI:0002568
 name: sequence data feature count tabulation
 def: "The counting of features (typically, genes) within aligned sequence data, and organization of these counts into one or more tables." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200187 ! sequence analysis data transformation
 
 [Term]
@@ -19868,7 +19000,8 @@ is_a: OBI:0002599 ! swab specimen
 id: OBI:0002780
 name: nasal aspirate specimen
 def: "A specimen that is collected with a suctioning tube from the nasal cavity." []
-synonym: "nasal wash specimen|nasopharyngeal aspirate" EXACT []
+synonym: "nasal wash specimen" EXACT []
+synonym: "nasopharyngeal aspirate" EXACT []
 is_a: OBI:0100051 ! specimen
 
 [Term]
@@ -22981,7 +22114,6 @@ is_a: OBI:0200000 ! data transformation
 id: OBI:0003356
 name: raw magnetic resonance image data set reconstruction
 def: "A process that transforms raw magnetic resonance image data from an NMR/MRI machine into a reconstructed magnetic resonance image data set." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0003355 ! image data set analysis
 
 [Term]
@@ -24617,6 +23749,37 @@ def: "A clinical data item that quantifies the severity of a person's fatigue as
 is_a: OGMS:0000123 ! clinical data item
 
 [Term]
+id: OBI:0003652
+name: albumin-free serum
+def: "A blood serum specimen that contains no albumin." []
+is_a: OBI:0100017 ! blood serum specimen
+
+[Term]
+id: OBI:0003653
+name: fasting
+def: "A planned process in which an organism drinks only water and does not eat for a specified period of time." []
+is_a: OBI:0000011 ! planned process
+
+[Term]
+id: OBI:0003654
+name: overnight fasting
+def: "A fasting with a duration of 8–12 hours, typically occurring overnight." []
+is_a: OBI:0003653 ! fasting
+
+[Term]
+id: OBI:0003655
+name: fasted
+def: "An organismal quality that inheres in an organism that has completed a fasting process, and which ceases to inhere in that organism once that organism drinks a liquid other than water or eats." []
+is_a: PATO:0001995 ! organismal quality
+
+[Term]
+id: OBI:0003657
+name: minimum resolved unit of measurement
+def: "An information content entity that indicates the smallest increment that can be resolved on the scale of a measurement instrument." []
+synonym: "least count" EXACT []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
 id: OBI:0005246
 name: injection function
 def: "The function of a device realized when administering a substance in vivo, applied particularly to the forcible insertion of a liquid or gas by means of a syringe, pump, etc." []
@@ -24797,7 +23960,6 @@ id: OBI:0200001
 name: geometric mean calculation
 def: "A data transformation in which the mean is calculated by taking the nth root of the product of all of the observations in a data (n being the number of all observations)." []
 comment: A geometric mean calculation is a descriptive statistics calculation in which the mean is calculated by taking the nth root of the product of all of the observations in a data (n being the number of all observations).
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -24829,7 +23991,6 @@ is_a: OBI:0200166 ! data transformation objective
 id: OBI:0200006
 name: biexponential transformation
 def: "A biexponential transformation is a data transformation that, for each (one dimensional) real number input x, outputs an approximation (found, e.g. with the Newton's method) to a solution y of the equation B(y)-x=0, where B denotes a b transformation." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200072 ! curve fitting data transformation
 is_a: OBI:0200169 ! normalization data transformation
 
@@ -24958,7 +24119,6 @@ is_a: OBI:0200169 ! normalization data transformation
 id: OBI:0200028
 name: quantile transformation
 def: "A quantile transformation is a data transformation that takes as input a collection of data sets, where each can be thought as an n-dimensional (real) vector, and which transforms each data set so that the resulting output data sets have equal quantiles." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200169 ! normalization data transformation
 is_a: OBI:0200181 ! center calculation data transformation
 
@@ -25029,7 +24189,6 @@ is_a: OBI:0200080 ! network analysis
 id: OBI:0200041
 name: k-means clustering
 def: "A k-means clustering is a data transformation which achieves a class discovery or partitioning objective, which takes as input a collection of objects (represented as points in multidimensional space) and which partitions them into a specified number k of clusters. The algorithm attempts to find the centers of natural clusters in the data. The most common form of the algorithm starts by partitioning the input points into k initial sets, either at random or using some heuristic data. It then calculates the mean point, or centroid, of each set. It constructs a new partition by associating each point with the closest centroid. Then the centroids are recalculated for the new clusters, and the algorithm repeated by alternate applications of these two steps until convergence, which is obtained when the points no longer switch clusters (or alternatively centroids are no longer changed)." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200171 ! partitioning data transformation
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -25037,7 +24196,6 @@ is_a: OBI:0200175 ! class discovery data transformation
 id: OBI:0200042
 name: hierarchical clustering
 def: "A hierarchical clustering is a data transformation which achieves a class discovery objective, which takes as input data item and builds a hierarchy of clusters. The traditional representation of this hierarchy is a tree (visualized by a dendrogram), with the individual input objects at one end (leaves) and a single cluster containing every object at the other (root)." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200175 ! class discovery data transformation
 
 [Term]
@@ -25069,7 +24227,6 @@ id: OBI:0200050
 name: dimensionality reduction
 def: "A dimensionality reduction is data partitioning which transforms each input m-dimensional vector (x_1, x_2, ..., x_m) into an output n-dimensional vector (y_1, y_2, ..., y_n), where n is smaller than m." []
 synonym: "data projection" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200175 ! class discovery data transformation
 
 [Term]
@@ -25188,7 +24345,6 @@ id: OBI:0200073
 name: family wise error rate correction method
 def: "A family wise error rate correction method is a multiple testing procedure that controls the probability of at least one false positive." []
 synonym: "FWER correction" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -25226,7 +24382,6 @@ is_a: OBI:0200166 ! data transformation objective
 id: OBI:0200079
 name: arithmetic mean calculation
 def: "An arithmetic mean calculation is a descriptive statistics calculation in which the mean is calculated by taking the sum of all of the observations in a data set divided by the total number of observations. It gives a measure of the 'center of gravity' for the data set. It is also known as the first moment." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200170 ! averaging data transformation
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
@@ -25333,7 +24488,6 @@ is_a: OBI:0200169 ! normalization data transformation
 id: OBI:0200099
 name: discriminant function analysis
 def: "Discriminant function analysis is a form of discriminant analysis used to determine which variables discriminate between two or more naturally occurring groups. Analysis is used to determine which variable(s) are the best predictors of a particular outcome." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0000663 ! class prediction data transformation
 is_a: OBI:0200106 ! discriminant analysis
 is_a: OBI:0200175 ! class discovery data transformation
@@ -25350,7 +24504,6 @@ is_a: OBI:0200171 ! partitioning data transformation
 id: OBI:0200101
 name: linear discriminant functional analysis
 def: "Linear discriminant functional analysis (LDFA) is a multivariate technique used in special applications where there are several intact groups (random assignment may be impossible) and they have been measured on several independent measures. Thus, you will want to describe how these groups differ on the basis of these measures. In this case, classification and prediction is the main objective." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0000663 ! class prediction data transformation
 is_a: OBI:0200106 ! discriminant analysis
 is_a: OBI:0200175 ! class discovery data transformation
@@ -25371,7 +24524,6 @@ is_a: OBI:0200102 ! regression analysis method
 id: OBI:0200104
 name: principal component regression
 def: "The Principal Component Regression method is a regression analysis method that combines the Principal Component Analysis (PCA)spectral decomposition with an Inverse Least Squares (ILS) regression method to create a quantitative model for complex samples. Unlike quantitation methods based directly on Beer's Law which attempt to calculate the absorbtivity coefficients for the constituents of interest from a direct regression of the constituent concentrations onto the spectroscopic responses, the PCR method regresses the concentrations on the PCA scores." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200102 ! regression analysis method
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -25405,7 +24557,6 @@ is_a: OBI:0200169 ! normalization data transformation
 id: OBI:0200109
 name: b transformation
 def: "A b transformation is a data transformation obtained by applying the function B described in what follows to a (one dimensional) real number input. B(x)= a*exp(b*x)-c*exp(-d*x)+f, where exp denotes an exponential transformation and a, b, c, d, f are real constants with a, b, c, d positive with the objective of normalization." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200169 ! normalization data transformation
 
 [Term]
@@ -25426,7 +24577,6 @@ is_a: OBI:0000011 ! planned process
 id: OBI:0200113
 name: similarity calculation
 def: "A similarity calculation is a data transformation that attaches to each pair of objects in the input a number that is meant to reflect how 'close' or 'similar' those objects are." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0000663 ! class prediction data transformation
 is_a: OBI:0200175 ! class discovery data transformation
 
@@ -25452,7 +24602,6 @@ is_a: OBI:0200072 ! curve fitting data transformation
 id: OBI:0200117
 name: mode calculation
 def: "A mode calculation is a descriptive statistics calculation in which the mode is calculated which is the most common value in a data set. It is most often used as a measure of center for discrete data." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -25466,7 +24615,6 @@ is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 id: OBI:0200119
 name: median calculation
 def: "A median calculation is a  descriptive statistics calculation in which the midpoint of the data set (the 0.5 quantile) is calculated.  First, the observations are sorted in increasing order.  For an odd number of observations, the median is the middle value of the sorted data.  For an even number of observations, the median is the average of the two middle values." []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -25495,7 +24643,6 @@ is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 id: OBI:0200123
 name: skewness calculation
 def: "A skewness calculation is a descriptive statistics calculation defined as a parameter that describes how much a distribution (or a data set) varies from a bell-shaped curve.  See http://www.riskglossary.com/link/skewness.htm for details.  It is also known as the third central moment" []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200181 ! center calculation data transformation
 is_a: OBI:0200184 ! descriptive statistical calculation data transformation
 
@@ -25710,7 +24857,6 @@ id: OBI:0200161
 name: quantile number of false positives correction method
 def: "A quantile number of false positives correction method is a MTP that controls for the pth quantile of the distribution of the number of false positives out of the total number of tests performed'" []
 synonym: "QNFP" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -25725,7 +24871,6 @@ id: OBI:0200163
 name: false discovery rate correction method
 def: "The false discovery rate is a  data transformation used in multiple hypothesis testing to correct for multiple comparisons. It controls the expected proportion of incorrectly rejected null hypotheses (type I errors) in a list of rejected hypotheses. It is a less conservative comparison procedure with greater power than familywise error rate (FWER) control, at a cost of increasing the likelihood of obtaining type I errors. ." []
 synonym: "FDR correction method" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -25733,7 +24878,6 @@ id: OBI:0200164
 name: proportion of expected false positives correction method
 def: "A proportion of expected false positives correction method is a multiple testing procedure that controls the ratio of the expected value of the numbers of false positives to the expected value of the numbers of rejected hypotheses." []
 synonym: "PEFP correction method" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -25741,7 +24885,6 @@ id: OBI:0200165
 name: quantile proportion of false positives correction method
 def: "A quantile proportion of false positives correction method is a multiple testing procedure that controls the pth quantile of the distribution of the proportion of false positives among the rejected hypothesis (false discovery rate)." []
 synonym: "QPFP correction method" EXACT []
-is_a: APOLLO_SV:00000796 ! dataset creating
 is_a: OBI:0200089 ! multiple testing correction method
 
 [Term]
@@ -31271,7 +30414,7 @@ is_a: PATO:0000051 ! morphology
 id: PATO:0000122
 name: length
 def: "A 1-D extent quality which is equal to the distance between two points." []
-is_a: PATO:0000051 ! morphology
+is_a: PATO:0001708 ! 1-D extent
 
 [Term]
 id: PATO:0000125
@@ -31388,12 +30531,6 @@ def: "A quality which inheres in a continuant." []
 is_a: BFO:0000019 ! quality
 
 [Term]
-id: PATO:0001291
-name: electromagnetic (EM) radiation quality
-def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
-is_a: PATO:0001739 ! radiation quality
-
-[Term]
 id: PATO:0001296
 name: luminous flux
 def: "A scalar optical quality which obtains by the magnitude of the light emitted by the bearer." []
@@ -31403,7 +30540,7 @@ is_a: PATO:0001300 ! optical quality
 id: PATO:0001300
 name: optical quality
 def: "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light." []
-is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
 
 [Term]
 id: PATO:0001335
@@ -31523,7 +30660,7 @@ is_a: PATO:0001393 ! euploid
 id: PATO:0001396
 name: cellular quality
 def: "A monadic quality of continuant that exists at the cellular level of organisation." []
-is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0070044 ! anatomical structure quality
 
 [Term]
 id: PATO:0001421
@@ -31569,22 +30706,22 @@ synonym: "frontal" EXACT []
 is_a: PATO:0000140 ! position
 
 [Term]
+id: PATO:0001708
+name: 1-D extent
+def: "A size quality inhering in an bearer by virtue of the bearer's extension in one dimension." []
+is_a: PATO:0000117 ! size
+
+[Term]
 id: PATO:0001710
 name: 3-D extent
 def: "A size quality inhering in an bearer by virtue of the bearer's extension in three dimensions." []
 is_a: PATO:0000117 ! size
 
 [Term]
-id: PATO:0001739
-name: radiation quality
-def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
-is_a: PATO:0001018 ! physical quality
-
-[Term]
 id: PATO:0001740
 name: activity (of a radionuclide)
 def: "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate." []
-is_a: PATO:0001739 ! radiation quality
+is_a: PATO:0002198 ! quality of a substance
 
 [Term]
 id: PATO:0001741
@@ -31687,6 +30824,18 @@ id: PATO:0002243
 name: fluid flow rate
 def: "A physical quality inhering in a fluid (liquid or gas) by virtue of the amount of fluid which passes through a given surface per unit time." []
 is_a: PATO:0001574 ! flow rate
+
+[Term]
+id: PATO:0070044
+name: anatomical structure quality
+def: "A quality of continuant that exist at the anatomical level of organisation and anything under it. This includes, but is not limited to, cells , tissues, and components." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0070060
+name: quality of interaction of a substance with electromagnetic radiation
+def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
+is_a: PATO:0002198 ! quality of a substance
 
 [Term]
 id: PR:000000001
@@ -32766,19 +31915,16 @@ is_a: UBERON:0000178 ! blood
 [Term]
 id: UO:0000001
 name: length unit
-def: "A unit which is a standard measure of the distance between two points." []
 is_a: IAO:0000003 ! measurement unit label
 
 [Term]
 id: UO:0000002
 name: mass unit
-def: "A unit which is a standard measure of the amount of matter/energy of a physical object." []
 is_a: IAO:0000003 ! measurement unit label
 
 [Term]
 id: UO:0000003
 name: time unit
-def: "A unit which is a standard measure of the dimension in which events occur in sequence." []
 is_a: IAO:0000003 ! measurement unit label
 
 [Term]
@@ -32906,78 +32052,29 @@ comment: Paraphrase of definition: a relation between an independent continuant 
 [Typedef]
 id: IAO:0000039
 name: has measurement unit label
-range: IAO:0000003 ! measurement unit label
 is_functional: true
 is_a: BFO:0000051 ! has part
-
-[Typedef]
-id: IAO:0000135
-name: obsolete_specifically denotes
-def: "c specifically denotes r =def \nr is a portion of reality\n& c is a particular quality\n& c depends specifically on some independent continuant b \n& b acquired c as the result of the achievement of an objective to enable pointing to r repeatedly. \n\nMarked means there is a changed or additional quality of the bearer - the  quality is the information carrier.\n\nCase 1\nMemory trace as mark created when reading some description of some friend. The trace can denote.\n\nCase 2\nPattern of ink arrayed on paper as mark when writing down a friend's name\n\nCase 3\nPattern of magnetic domains on scattered pieces of a hard disk platter as mark when saving a file." []
-is_a: ObsoleteProperty
-is_obsolete: true
 
 [Typedef]
 id: IAO:0000136
 name: is about
 def: "A (currently) primitive relation that relates an information artifact to an entity." []
-domain: IAO:0000030 ! information content entity
-
-[Typedef]
-id: IAO:0000142
-name: mentions
-def: "An information artifact IA mentions an entity E exactly when it has a component/part that denotes E" []
-is_a: IAO:0000136 ! is about
 
 [Typedef]
 id: IAO:0000219
 name: denotes
 def: "A primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to 'pick out' the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically" []
-domain: IAO:0000030 ! information content entity
-range: BFO:0000001 ! entity
 is_a: IAO:0000136 ! is about
-inverse_of: IAO:0000235 ! denoted by
-
-[Typedef]
-id: IAO:0000220
-name: obsolete_materially denotes
-is_a: ObsoleteProperty
-is_obsolete: true
 
 [Typedef]
 id: IAO:0000221
 name: is quality measurement of
 def: "m is a quality measurement of q at t. When q is a quality, there is a measurement process p that has specified output m, a measurement datum, that is about q" []
-domain: IAO:0000109 ! measurement datum
-range: BFO:0000019 ! quality
 is_a: IAO:0000136 ! is about
-inverse_of: IAO:0000417 ! is quality measured as
-
-[Typedef]
-id: IAO:0000222
-name: obsolete_describes
-is_a: ObsoleteProperty
-is_obsolete: true
-
-[Typedef]
-id: IAO:0000223
-name: obsolete_represents
-is_a: ObsoleteProperty
-is_obsolete: true
-
-[Typedef]
-id: IAO:0000235
-name: denoted by
-def: "inverse of the relation 'denotes'" []
-domain: BFO:0000001 ! entity
-range: IAO:0000030 ! information content entity
 
 [Typedef]
 id: IAO:0000407
 name: has coordinate unit label
-comment: relating a cartesian spatial coordinate datum to a unit label that together with the values represent a point
-domain: IAO:0000400 ! cartesian spatial coordinate datum
-range: UO:0000001 ! length unit
 is_functional: true
 is_a: BFO:0000051 ! has part
 
@@ -32985,42 +32082,7 @@ is_a: BFO:0000051 ! has part
 id: IAO:0000413
 name: is duration of
 def: "relates a process to a time-measurement-datum that represents the duration of the process" []
-domain: IAO:0000416 ! time measurement datum
-range: BFO:0000015 ! process
 is_a: IAO:0000136 ! is about
-
-[Typedef]
-id: IAO:0000417
-name: is quality measured as
-def: "inverse of the relation of is quality measurement of" []
-
-[Typedef]
-id: IAO:0000418
-name: is quality specification of
-def: "A relation between a data item and a quality of a material entity where the material entity is the specified output of a material transformation which achieves an objective specification that indicates the intended value of the specified quality." []
-is_a: IAO:0000136 ! is about
-inverse_of: IAO:0000419 ! quality is specified as
-
-[Typedef]
-id: IAO:0000419
-name: quality is specified as
-def: "inverse of the relation of is quality specification of" []
-
-[Typedef]
-id: IAO:0000581
-name: has time stamp
-def: "relates a time stamped measurement datum to the time measurement datum that denotes the time when the measurement was taken" []
-domain: IAO:0000582 ! time stamped measurement datum
-range: IAO:0000416 ! time measurement datum
-is_functional: true
-is_a: BFO:0000051 ! has part
-
-[Typedef]
-id: IAO:0000583
-name: has measurement datum
-def: "relates a time stamped measurement datum to the measurement datum that was measured" []
-domain: IAO:0000582 ! time stamped measurement datum
-is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: OBI:0000107
@@ -33400,7 +32462,6 @@ id: RO:0000085
 name: has function
 def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
 synonym: "has_function" EXACT []
-domain: BFO:0000004 ! independent continuant
 range: BFO:0000034 ! function
 is_a: RO:0000053 ! bearer of
 
@@ -33420,20 +32481,6 @@ synonym: "has_role" EXACT []
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000023 ! role
 is_a: RO:0000053 ! bearer of
-
-[Typedef]
-id: RO:0000091
-name: has disposition
-def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000016 ! disposition
-is_a: RO:0000053 ! bearer of
-inverse_of: RO:0000092 ! disposition of
-
-[Typedef]
-id: RO:0000092
-name: disposition of
-is_a: RO:0000052 ! inheres in
 
 [Typedef]
 id: RO:0001000
