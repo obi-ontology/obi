@@ -126,6 +126,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000235 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000235">
+        <obo:IAO_0000111 xml:lang="en">denoted by</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">inverse of the relation &apos;denotes&apos;</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">denoted by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000407 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000407">
@@ -180,6 +191,52 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <obo:IAO_0000111 xml:lang="en">entity</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <obo:IAO_0000111 xml:lang="en">continuant</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <obo:IAO_0000111 xml:lang="en">quality</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <obo:IAO_0000111 xml:lang="en">specifically dependent continuant</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">b is a specifically dependent continuant = Def. b is a continuant &amp; there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
+    </owl:Class>
     
 
 
@@ -243,6 +300,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000033"/>
+        <obo:IAO_0000111 xml:lang="en">action specification</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A directive information entity that describes an action the bearer will take.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">action specification</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000009 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000009">
@@ -264,6 +333,18 @@
 interpreted by or directly executed by a processing unit.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
         <rdfs:label xml:lang="en">software</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <obo:IAO_0000111 xml:lang="en">information carrier</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A quality of an information bearer that imparts the information content</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">information carrier</rdfs:label>
     </owl:Class>
     
 
@@ -778,6 +859,18 @@ points together with a line.</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000579">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0020020"/>
+        <obo:IAO_0000111 xml:lang="en">centrally registered identifier registry</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A code set of CRID records, each consisting of a CRID symbol and additional information which was recorded in the code set through an assigning a centrally registered identifier process.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">centrally registered identifier registry</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000594 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000594">
@@ -786,6 +879,18 @@ points together with a line.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">A software application is software that can be directly executed by some processing unit.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
         <rdfs:label xml:lang="en">software application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0020020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0020020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000111 xml:lang="en">code set</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that is a collection of other information content entities that has been created to identify or annotate things in a specified domain, and where the intention of its creators is that the collection has a one-to-one correspondence with those things.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">code set</rdfs:label>
     </owl:Class>
     
 
