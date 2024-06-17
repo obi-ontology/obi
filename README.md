@@ -151,7 +151,6 @@ We use git and GitHub to develop OBI. There's a lot of good documentation on bot
 
 - git [website](https://git-scm.com) with files and documentation
 - GitHub [Help](https://help.github.com) and [Flow](https://guides.github.com/introduction/flow/)
-- [git command-line overview](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html)
 
 
 ## Initial Set Up
