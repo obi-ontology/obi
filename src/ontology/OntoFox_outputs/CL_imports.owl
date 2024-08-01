@@ -32,7 +32,10 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
         <obo:IAO_0000111>definition</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">definition</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
         <rdfs:label>definition</rdfs:label>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -64,12 +67,7 @@
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
-        <obo:IAO_0000111 xml:lang="en">material entity</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
-        <rdfs:label xml:lang="en">material entity</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
     
 
 
@@ -101,10 +99,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000003">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
-        <obo:IAO_0000111>native cell</obo:IAO_0000111>
-        <obo:IAO_0000115>A cell that is found in a natural setting, which includes multicellular organism cells &apos;in vivo&apos; (i.e. part of an organism), and unicellular organisms &apos;in environment&apos; (i.e. part of a natural environment).</obo:IAO_0000115>
+        <obo:IAO_0000111>obsolete native cell</obo:IAO_0000111>
+        <obo:IAO_0000115>OBSOLETE. A cell that is found in a natural setting, which includes multicellular organism cells &apos;in vivo&apos; (i.e. part of an organism), and unicellular organisms &apos;in environment&apos; (i.e. part of a natural environment).</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
-        <rdfs:label>native cell</rdfs:label>
+        <rdfs:label>obsolete native cell</rdfs:label>
     </owl:Class>
     
 
@@ -148,7 +146,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000077 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000077">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000066"/>
         <obo:IAO_0000111>mesothelial cell</obo:IAO_0000111>
         <obo:IAO_0000115>A flattened epithelial cell of mesenchymal origin that lines the serous cavity.</obo:IAO_0000115>
@@ -209,8 +207,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000233 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000233">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000111>platelet</obo:IAO_0000111>
         <obo:IAO_0000115>A non-nucleated disk-shaped cell formed by extrusion from megakaryocytes, found in the blood of all mammals, and mainly involved in blood coagulation.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
@@ -282,9 +279,9 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000556 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000556">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000111>megakaryocyte</obo:IAO_0000111>
-        <obo:IAO_0000115>A giant cell 50 to 100 micron in diameter, with a greatly lobulated nucleus, found in the bone marrow; mature blood platelets are released from its cytoplasm.</obo:IAO_0000115>
+        <obo:IAO_0000115>A large hematopoietic cell (50 to 100 micron) with a lobated nucleus. Once mature, this cell undergoes multiple rounds of endomitosis and cytoplasmic restructuring to allow platelet formation and release.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>megakaryocyte</rdfs:label>
     </owl:Class>
@@ -306,8 +303,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000560 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000560">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000775"/>
         <obo:IAO_0000111>band form neutrophil</obo:IAO_0000111>
         <obo:IAO_0000115>A late neutrophilic metamyelocyte in which the nucleus is indented to more than half the distance to the farthest nuclear margin but in no area being condensed to a single filament. The nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature neutrophil. These cells are fMLP receptor-positive, CD11b-positive, CD35-negative, and CD49d-negative.</obo:IAO_0000115>
@@ -320,7 +316,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000562 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000562">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
         <obo:IAO_0000111>nucleate erythrocyte</obo:IAO_0000111>
         <obo:IAO_0000115>An erythrocyte having a nucleus.</obo:IAO_0000115>
@@ -333,8 +329,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000576 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000576">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000738"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000842"/>
         <obo:IAO_0000111>monocyte</obo:IAO_0000111>
@@ -408,8 +403,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000771 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000771">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000738"/>
         <obo:IAO_0000111>eosinophil</obo:IAO_0000111>
         <obo:IAO_0000115>Any of the immature or mature forms of a granular leukocyte with a nucleus that usually has two lobes connected by one or more slender threads of chromatin, and cytoplasm containing coarse, round granules that are uniform in size and which can be stained by the dye eosin. Eosinophils are CD9-positive, CD191-positive, and CD193-positive.</obo:IAO_0000115>
@@ -422,8 +416,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000775 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000775">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000738"/>
         <obo:IAO_0000111>neutrophil</obo:IAO_0000111>
         <obo:IAO_0000115>Any of the immature or mature forms of a granular leukocyte that in its mature form has a nucleus with three to five lobes connected by slender threads of chromatin, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes.</obo:IAO_0000115>
@@ -496,8 +489,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000836 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000836">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000111>promyelocyte</obo:IAO_0000111>
         <obo:IAO_0000115>A precursor in the granulocytic series, being a cell intermediate in development between a myeloblast and myelocyte, that has distinct nucleoli, a nuclear-to-cytoplasmic ratio of 5:1 to 3:1, and containing a few primary cytoplasmic granules. Markers for this cell are fucosyltransferase FUT4-positive, CD33-positive, integrin alpha-M-negative, low affinity immunoglobulin gamma Fc region receptor III-negative, and CD24-negative.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
@@ -533,8 +525,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0002192 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002192">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000111>metamyelocyte</obo:IAO_0000111>
         <obo:IAO_0000115>A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
@@ -546,8 +537,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0002193 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002193">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000111>myelocyte</obo:IAO_0000111>
         <obo:IAO_0000115>A cell type that is the first of the maturation stages of the granulocytic leukocytes normally found in the bone marrow. Granules are seen in the cytoplasm. The nuclear material of the myelocyte is denser than that of the myeloblast but lacks a definable membrane. The cell is flat and contains increasing numbers of granules as maturation progresses.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
@@ -571,8 +561,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0011114 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011114">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000775"/>
         <obo:IAO_0000111>segmented neutrophil of bone marrow</obo:IAO_0000111>
         <obo:IAO_0000115>A segmented neutrophilic cell of the bone marrow reserve pool that expresses CD11b (integrin alpha-M) and high levels of CD16 (low affinity immunoglobulin gamma Fc region receptor III) on its cell surface.</obo:IAO_0000115>
@@ -585,7 +574,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_2000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_2000001">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000842"/>
         <obo:IAO_0000111>peripheral blood mononuclear cell</obo:IAO_0000111>
         <obo:IAO_0000115>A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.</obo:IAO_0000115>
