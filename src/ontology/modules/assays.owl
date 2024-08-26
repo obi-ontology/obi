@@ -26801,7 +26801,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>in vitro CRISPR screen assay</obo:IAO_0000111>
-        <obo:IAO_0000115>An assay in which cells expressing a Cas system are infected with a library of guide RNAs with the intent of causing a perturbation at the target of the guide RNAs.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An assay in which cells expressing a Cas system are infected with a library of guide RNAs with the intent of causing a perturbation at the target of the guide RNAs.</obo:IAO_0000115>
         <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1784</obo:IAO_0000233>
@@ -26833,7 +26833,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000111>in vitro CRISPR screen using single-cell RNA-seq</obo:IAO_0000111>
-        <obo:IAO_0000115>An in vitro CRISPR screen assay that uses single-cell RNA-Seq to detect induced changes in gene expression.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An in vitro CRISPR screen assay that uses single-cell RNA-Seq to detect induced changes in gene expression.</obo:IAO_0000115>
         <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1784</obo:IAO_0000233>
@@ -26865,12 +26865,111 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000111>in vitro CRISPR perturbation screen using flow cytometry</obo:IAO_0000111>
-        <obo:IAO_0000115>An in vitro CRISPR screen assay that uses flow cytometry to detect induced changes in gene expression of the targeted genes.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An in vitro CRISPR screen assay that uses flow cytometry to detect induced changes in gene expression of the targeted genes.</obo:IAO_0000115>
         <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1784</obo:IAO_0000233>
         <obo:IAO_0000234>Jennifer Jou</obo:IAO_0000234>
         <rdfs:label>in vitro CRISPR screen using flow cytometry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003662 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003662">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001266"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000034"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000081"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000880"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600028"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000845"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000111>single-nucleus methylcytosine and transcriptome sequencing assay</obo:IAO_0000111>
+        <obo:IAO_0000112>https://www.biorxiv.org/content/10.1101/434845v1</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A DNA methylation profiling by high throughput sequencing assay that measures the cytosine DNA methylation and gene expression signature of single nuclei.</obo:IAO_0000115>
+        <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>snmCT-seq</obo:IAO_0000118>
+        <obo:IAO_0000119>Jennifer Jou</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1785</obo:IAO_0000233>
+        <obo:IAO_0000234>Jennifer Jou</obo:IAO_0000234>
+        <rdfs:label>single-nucleus methylcytosine and transcriptome sequencing assay</rdfs:label>
     </owl:Class>
     
 
