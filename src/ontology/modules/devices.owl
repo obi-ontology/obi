@@ -188,9 +188,15 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0006306 -->
+    <!-- http://purl.obolibrary.org/obo/CHEBI_32875 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0006306"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_32875"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_4431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_4431"/>
     
 
 
@@ -6230,7 +6236,17 @@
                                                                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000109"/>
                                                                     <owl:Restriction>
                                                                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-                                                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0006306"/>
+                                                                        <owl:someValuesFrom>
+                                                                            <owl:Class>
+                                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_4431"/>
+                                                                                    <owl:Restriction>
+                                                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                                                                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32875"/>
+                                                                                    </owl:Restriction>
+                                                                                </owl:intersectionOf>
+                                                                            </owl:Class>
+                                                                        </owl:someValuesFrom>
                                                                     </owl:Restriction>
                                                                 </owl:intersectionOf>
                                                             </owl:Class>
@@ -9142,6 +9158,52 @@
         <obo:IAO_0000119>https://www.illumina.com/products/by-type/microarray-kits/infinium-methylation-epic.html</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1665</obo:IAO_0000233>
         <rdfs:label>Illumina Infinium MethylationEPIC v2.0 BeadChip</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003663 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003663">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0000759"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>Illumina NovaSeq X</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A DNA sequencer with three flow cell types manufactured by Illumina. The NovaSeq X provides an output of up to 8 Tb (26-52 billion reads per run). The sequencer utilizes XLEAP-SBS chemistry, an advanced version of Illumina&apos;s sequencing by synthesis (SBS) technology, which enables faster and more accurate sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000117>Morgana Barroso Oquendo</obo:IAO_0000117>
+        <obo:IAO_0000118>NovaSeq X Series</obo:IAO_0000118>
+        <obo:IAO_0000118>NovaSeq X System</obo:IAO_0000118>
+        <obo:IAO_0000119>https://emea.illumina.com/systems/sequencing-platforms/novaseq-x-plus.html</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1802</obo:IAO_0000233>
+        <obo:IAO_0000234>Morgana Barroso Oquendo</obo:IAO_0000234>
+        <rdfs:label>Illumina NovaSeq X</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003664 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003664">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0000759"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>Illumina NovaSeq X Plus</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A DNA sequencer with three flow cell types manufactured by Illumina. It features a dual-flow cell configuration, allowing to reach an output of up to 16 Tb (52-104 billion reads per run). The sequencer utilizes XLEAP-SBS chemistry, an advanced version of Illumina&apos;s sequencing by synthesis (SBS) technology, which enables faster and more accurate sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000117>Morgana Barroso Oquendo</obo:IAO_0000117>
+        <obo:IAO_0000118>NovaSeq X Series</obo:IAO_0000118>
+        <obo:IAO_0000118>NovaSeq X System</obo:IAO_0000118>
+        <obo:IAO_0000119>https://emea.illumina.com/systems/sequencing-platforms/novaseq-x-plus.html</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1802</obo:IAO_0000233>
+        <obo:IAO_0000234>Morgana Barroso Oquendo</obo:IAO_0000234>
+        <rdfs:label>Illumina NovaSeq X Plus</rdfs:label>
     </owl:Class>
     
 
