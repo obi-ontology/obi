@@ -2135,7 +2135,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2151,6 +2151,12 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     <!-- http://purl.obolibrary.org/obo/COB_0000035 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000035"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/COB_0000110 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000110"/>
     
 
 
@@ -3481,7 +3487,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -3986,45 +3992,6 @@ In regard to the statement that reagents are &apos;distinct&apos; from the speci
         <obo:IAO_0000119 xml:lang="en">OBI, CDISC</obo:IAO_0000119>
         <obo:IAO_0000232 xml:lang="en">CDISC definition:  patient. Person under a physician&apos;s care for a particular disease or condition. NOTE: A subject in a clinical trial is not necessarily a patient, but a patient in a clinical trial is a subject. See also subject, trial subject, healthy volunteer. Often used interchangeably</obo:IAO_0000232>
         <rdfs:label xml:lang="en">patient role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000094 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000094">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000456"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000035"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0600010"/>
-        <obo:IAO_0000111>material processing</obo:IAO_0000111>
-        <obo:IAO_0000112>A cell lysis, production of a cloning vector, creating a buffer.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process which results in physical changes in a specified input material</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Frank Gibson</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Philippe Rocca Serra</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">material transformation</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">material processing</rdfs:label>
     </owl:Class>
     
 
@@ -4986,7 +4953,7 @@ An individual or juridicial or other body authorized under applicable law to con
     <!-- http://purl.obolibrary.org/obo/OBI_0000231 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000231">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
@@ -7382,7 +7349,7 @@ Eur J Cancer. 2009 Jan;45(1):74-81. PMID: 19008094</obo:IAO_0000112>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000686"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -8709,7 +8676,7 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>cloning vector</obo:IAO_0000111>
@@ -10481,7 +10448,7 @@ J Nutr. 2010 Feb;140(2):382-91. Epub 2009 Dec 23.</obo:IAO_0000112>
     <!-- http://purl.obolibrary.org/obo/OBI_0000906 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000906">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -13945,7 +13912,7 @@ http://svitsrv25.epfl.ch/R-doc/library/qvalue.html</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/OBI_0001480 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001480">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -14823,7 +14790,7 @@ http://www.pdb.org/pdb/download/downloadFile.do?fileFormat=pdb&amp;compression=N
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000107"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>material processing service</obo:IAO_0000111>
@@ -16476,7 +16443,7 @@ When harvesting blood from a human, isolating T cells, and then limited dilution
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
@@ -18140,7 +18107,7 @@ PMID: 23587118.
     <!-- http://purl.obolibrary.org/obo/OBI_0001959 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001959">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -18614,7 +18581,7 @@ Accelerated chromatin biochemistry using DNA-barcoded nucleosome libraries.</obo
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000094"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000110"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
@@ -20045,7 +20012,7 @@ JZ (3-30-20): discussed on the OBI call. Since the REO was never actually regist
     <!-- http://purl.obolibrary.org/obo/OBI_0002747 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002747">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <obo:IAO_0000115 xml:lang="en">A material processing that consists of first growing an organism in an environmental system and then removing the organism to be grown in another environmental system, a process which may be repeated with the objective of altering the organism or increasing its number.</obo:IAO_0000115>
         <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
         <obo:IAO_0000119>https://en.wikipedia.org/wiki/Serial_passage</obo:IAO_0000119>
@@ -27050,7 +27017,7 @@ Nat Protoc. 2008;3(10):1550-8. PMID: 18802436</obo:IAO_0000112>
     <!-- http://purl.obolibrary.org/obo/OBI_0302892 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0302892">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
@@ -27269,7 +27236,7 @@ J Neurooncol. 1994;22(3):209-20. PMID: 7760097</obo:IAO_0000112>
     <!-- http://purl.obolibrary.org/obo/OBI_0302903 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0302903">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
@@ -28162,7 +28129,7 @@ discussed on obi-dev call 9/28/2015, details see: https://sourceforge.net/p/obi/
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000639"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -28269,7 +28236,7 @@ discussed on obi-dev call 9/28/2015, details see: https://sourceforge.net/p/obi/
     <!-- http://purl.obolibrary.org/obo/OBI_0600018 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600018">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
@@ -28628,7 +28595,7 @@ discussed on obi-dev call 9/28/2015, details see: https://sourceforge.net/p/obi/
     <!-- http://purl.obolibrary.org/obo/OBI_0600036 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600036">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
