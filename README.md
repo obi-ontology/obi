@@ -20,7 +20,7 @@ Our ontology terms come in three groups. Depending on what type of term you want
     - [`assays.tsv`](src/ontology/templates/assays.tsv) for general assays
     - [`epitope-assays.tsv`](src/ontology/templates/epitope-assays.tsv) specifically for immune epitope assays
     - [`value-specifications.tsv`](src/ontology/templates/value-specifications.tsv)
-    - [`biobank-specimens.tsv`](src/ontology/templates/biobank-specimens.tsv)
+    - [`specimens.tsv`](src/ontology/templates/specimens.tsv) for specimens
     - [`medical-history.tsv`](src/ontology/templates/medical-history.tsv) for medical history classifications and related selection criteria
     - [`study-designs.tsv`](src/ontology/templates/study-designs.tsv) for study designs
     - [`data-sets.tsv`](src/ontology/templates/data-sets.tsv) for data sets

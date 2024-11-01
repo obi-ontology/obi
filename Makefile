@@ -105,7 +105,7 @@ MODULE_NAMES := administration\
  antibody-purification\
  assays\
  biopsy\
- biobank-specimens\
+ specimens\
  organizations\
  data-sets\
  data-transformations\
