@@ -44,7 +44,6 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/administration.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/antibody-purification.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/assays.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/biobank-specimens.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/biopsy.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/data-sets.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/data-transformations.owl"/>
@@ -57,6 +56,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sample-collection.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/sequence-analysis.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/specimen-assay-data.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/specimens.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/study-designs.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/dev/modules/value-specifications.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2015-10-07/core.owl"/>
@@ -4207,7 +4207,7 @@ editor = PRS</obo:IAO_0000232>
         <obo:IAO_0000111>specimen role</obo:IAO_0000111>
         <obo:IAO_0000112>liver section; a portion of a culture of cells; a nemotode or other animal once no longer a subject (generally killed); portion of blood from a patient.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">a role borne by a material entity that is gained during a specimen collection process and that can be realized by use of the specimen in an investigation</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A role borne by a material entity that is obtained during a specimen collection process and that can be realized by performing measurements or observations on the specimen.</obo:IAO_0000115>
         <obo:IAO_0000116>22Jun09.  The definition includes whole organisms, and can include a human.  The link between specimen role and study subject role has been removed.  A specimen taken as part of a case study is not considered to be a population representative, while a specimen taken as representing a population, e.g. person taken from a cohort, blood specimen taken from an animal) would be considered a population representative and would also bear material sample role.</obo:IAO_0000116>
         <obo:IAO_0000116>Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">blood taken from animal: animal continues in study, whereas blood has role specimen.
@@ -7368,39 +7368,6 @@ Eur J Cancer. 2009 Jan;45(1):74-81. PMID: 19008094</obo:IAO_0000112>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000651 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000651">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600005"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001088"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>urine specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a portion of urine collected from an organism</obo:IAO_0000115>
-        <obo:IAO_0000116>4/10/2011BP: It seems to me that the editor notes refer to a previous version, and are no longer relevant.</obo:IAO_0000116>
-        <obo:IAO_0000116>This could be instead a kind of collection of secreted stuff. Among secreted stuff there is passive, and active. urine is secreted, passiv.  lavage is secreted, active</obo:IAO_0000116>
-        <obo:IAO_0000116>are we happy calling collection of urine a material separation?</obo:IAO_0000116>
-        <rdfs:label>urine specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000652 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000652">
@@ -7467,39 +7434,6 @@ Eur J Cancer. 2009 Jan;45(1):74-81. PMID: 19008094</obo:IAO_0000112>
         <obo:IAO_0000116>There is some question of whether &apos;device setting&apos; is really best modelled as a quality.  To be revisited after assay terms have been worked through. See https://github.com/obi-ontology/obi/issues/133</obo:IAO_0000116>
         <obo:IAO_0000117>PERSON: Frank Gibson</obo:IAO_0000117>
         <rdfs:label>device setting</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000655 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000655">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600005"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>blood specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>blood drawn from a human for glucose assay</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">a material entity derived from a portion of blood collected from an organism</obo:IAO_0000115>
-        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
-        <rdfs:label>blood specimen</rdfs:label>
     </owl:Class>
     
 
@@ -7571,9 +7505,10 @@ Eur J Cancer. 2009 Jan;45(1):74-81. PMID: 19008094</obo:IAO_0000112>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000112>drawing blood from a patient for analysis, collecting a piece of a plant for depositing in a herbarium, buying meat from a butcher in order to measure its protein content in an investigation</obo:IAO_0000112>
+        <obo:IAO_0000112>drawing blood from a patient for analysis, collecting a piece of a plant for depositing in a herbarium, buying meat from a butcher in order to measure its protein content in an investigation, collecting a stone from a site</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process with the objective of collecting a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process with the objective to obtain a material entity for potential use as an input upon which measurements or observations are performed.</obo:IAO_0000115>
+        <obo:IAO_0000116>Definition updated following discussion on 2024-10-07 OBI dev call.</obo:IAO_0000116>
         <obo:IAO_0000116>Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
         <obo:IAO_0000116>Philly2013: A specimen collection can have as part a material entity acquisition, such as ordering from a bank. The distinction is that specimen collection necessarily involves the creation of a specimen role. However ordering cell lines cells from ATCC for use in an investigation is NOT a specimen collection, because the cell lines already have a specimen role.</obo:IAO_0000116>
         <obo:IAO_0000116>Philly2013: The specimen_role for the specimen is created during the specimen collection process.</obo:IAO_0000116>
@@ -7706,40 +7641,6 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000671 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000671">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600005"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000740"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>sample from organism</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000002"/>
-        <obo:IAO_0000115 xml:lang="en">a material obtained from an organism in order to be a representative of the whole</obo:IAO_0000115>
-        <obo:IAO_0000116>5/29: This is a helper class for now</obo:IAO_0000116>
-        <obo:IAO_0000116>we need to work on this: Is taking a urine sample a material separation process? If not, we will need to specify what &apos;taking a sample from organism&apos; entails. We can argue that the objective to obtain a urine sample from a patient is enough to call it a material separation process, but it could dilute what material separation was supposed to be about.</obo:IAO_0000116>
-        <rdfs:label>sample from organism</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000673 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000673">
@@ -7852,43 +7753,6 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000680 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000680">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000659"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>whole organism preparation</obo:IAO_0000111>
-        <obo:IAO_0000112>putting a mouse in the blender. Not: putting a mouse on a scale</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A material entity which is the output of a process in which one or more whole organisms are prepared in a way to make it easier to study them, and in which the great majority of organismal parts are maintained</obo:IAO_0000115>
-        <obo:IAO_0000116>does this include injecting a dye to a patient to be able to visualize parts of his brain? If not, we should state that the components of the organism are substantially re-arranged.</obo:IAO_0000116>
-        <rdfs:label>whole organism preparation</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000681 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000681">
@@ -7909,7 +7773,8 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000005"/>
         <obo:IAO_0000112>The objective to collect bits of excrement in the rainforest. The objective to obtain a blood sample from a patient.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A objective specification to obtain a material entity for potential use as an input during an investigation.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A objective specification that is fulfilled by obtaining a material entity for potential use as an input upon which measurements or observations are performed.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">OBI recommends against subclassing this term in order to avoid further parallel hierarchies between this term and specimen collection process.</obo:IAO_0000116>
         <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
         <rdfs:label>specimen collection objective</rdfs:label>
@@ -8921,33 +8786,6 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000747 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000747">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000740"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000111>material sample</obo:IAO_0000111>
-        <obo:IAO_0000112>blood drawn from patient to measure his systemic glucose level. A population of humans with HIV enrolled in a study taken to represent patients with HIV in general.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A material entity that has the material sample role</obo:IAO_0000115>
-        <obo:IAO_0000117>OBI: workshop</obo:IAO_0000117>
-        <obo:IAO_0000118>sample population</obo:IAO_0000118>
-        <obo:IAO_0000233 rdf:resource="https://github.com/obi-ontology/obi/issues/1013"/>
-        <obo:OBI_0001847>sample</obo:OBI_0001847>
-        <rdfs:label>material sample</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000749 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000749">
@@ -9748,21 +9586,6 @@ http://en.wikipedia.org/wiki/Survival_rate</obo:IAO_0000119>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000834 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000834">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001051"/>
-        <obo:IAO_0000111>high molecular weight DNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Extraction of chromosomal DNA from mammalian cells by first isolating nucei</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">The output of an extraction process in which DNA molecules above a molecular weight cutoff are purified in order to exclude DNA from organellas.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON:Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000119>OBI</obo:IAO_0000119>
-        <rdfs:label>high molecular weight DNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000835 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000835">
@@ -10091,28 +9914,6 @@ placeholder</obo:IAO_0000116>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000862 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000862">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000888"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>nuclear RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Isolation and purification of nuclear RNA from animal cells using Norgen Bioteck corp. cytoplasmic and nuclear RNA purification kit (http://www.norgenbiotek.com/display-product.php?ID=30)</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules found in the nucleus, including mRNA precursors (pre-mRNA), are extracted.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <rdfs:label>nuclear RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000867 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000867">
@@ -10144,92 +9945,6 @@ placeholder</obo:IAO_0000116>
         <obo:IAO_0000117>Tina Boussard</obo:IAO_0000117>
         <obo:IAO_0000119>http://en.wikipedia.org/wiki/Pattern_matching</obo:IAO_0000119>
         <rdfs:label>pattern matching objective</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000869 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000869">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000848"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>polyA RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Preparation of polyA RNA by cellulose-bound oligo-dT (Aviv, H., Leder, P. 1972. Purification of biologically active globin messenger RNA by chromatography on oligothymidylic acid-cellulose. Proc. Nat. Acad. Sci. USA 69, 1408-1412.)</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules with poly A tail at its 3&apos; end are purified.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <rdfs:label>polyA RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000873 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000873">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000659"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001421"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001506"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000902"/>
-        <obo:IAO_0000111>pre-mortem specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>material obtained through a liver biopsy from a human patient</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a specimen that was taken from a live organism</obo:IAO_0000115>
-        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">MO_705 premortem</obo:IAO_0000119>
-        <rdfs:label>pre-mortem specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000876 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000876">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000859"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>cytoplasmic RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Cytoplasmic RNA extraction from mammalian tissues to create cDNA library (Carninci P, Nakamura M, Sato K, Hayashizaki Y, Brownstein MJ. Cytoplasmic RNA extraction from fresh and frozen mammalian tissues. Biotechniques. 2002;33:306–309.)</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of a RNA extraction process in which RNA molecules found in the cytoplasm are extracted.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <rdfs:label>cytoplasmic RNA extract</rdfs:label>
     </owl:Class>
     
 
@@ -10279,33 +9994,6 @@ Person: Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Person: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119>PMID: 6312838. A technique for radiolabeling DNA restriction endonuclease fragments to high specific activity. Feinberg AP, Vogelstein B. Anal Biochem. 1983 Jul 1;132(1):6-13.</obo:IAO_0000119>
         <rdfs:label>random primed DNA labeling</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000880 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000880">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0666666"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33697"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">an extract which is the output of an extraction process in which RNA molecules are isolated from a specimen.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>Group: UPenn Group</obo:IAO_0000119>
-        <rdfs:label>RNA extract</rdfs:label>
     </owl:Class>
     
 
@@ -10391,28 +10079,6 @@ J Nutr. 2010 Feb;140(2):382-91. Epub 2009 Dec 23.</obo:IAO_0000112>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000895 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000895">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000855"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>total RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Extraction of total RNA from cells with Qiagen mini RNeasy kit.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which total celluar and organelle RNA molecules are isolated from a specimen.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <rdfs:label>total RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000896 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000896">
@@ -10424,69 +10090,6 @@ J Nutr. 2010 Feb;140(2):382-91. Epub 2009 Dec 23.</obo:IAO_0000112>
         <obo:IAO_0000116>2010-01-31: Philippe Rocca-Serra: This is a placeholder to allow work on &apos;nucleic acid mapping assay&apos; in collaboration with RNAOntology group. Need to liaise with SO</obo:IAO_0000116>
         <obo:IAO_0000117>Person: Philippe Rocca-Serra</obo:IAO_0000117>
         <rdfs:label>secondary structure of RNA molecule</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000899 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000899">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000849"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>organellar RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Extraction of organellar RNA from plant cells using organellar RNA binding protein.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules found in an organelle, e.g., mitochondrion, ER, or chloroplast, excluding the nucleus, are extracted.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <rdfs:label>organellar RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000902 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000902">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000659"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001422"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001506"/>
-        <obo:IAO_0000111>post mortem specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>the spleen taken from a dead mouse</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a specimen that was taken from a dead organism</obo:IAO_0000115>
-        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">MO_416 postmortem</obo:IAO_0000119>
-        <rdfs:label>post mortem specimen</rdfs:label>
     </owl:Class>
     
 
@@ -10552,97 +10155,6 @@ Dev call Nov 22, 2010: To reflect this, the term&apos;s label has been updated t
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000908 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000908">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001143"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600038"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001051"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16991"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>labeled DNA extract</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a labeled specimen that is the output of a labeling process and has grain labeled DNA to be able to detect DNA in future experiments.</obo:IAO_0000115>
-        <obo:IAO_0000116>Need to find out if we consider labeled nucleotides still nucleotides. It is after consulting with ChEBI group.
-Added duirng Mar 1, 2010 dev call</obo:IAO_0000116>
-        <obo:IAO_0000117>Group: OBI group</obo:IAO_0000117>
-        <obo:IAO_0000119>Group: OBI group</obo:IAO_0000119>
-        <rdfs:label>labeled DNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000909 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000909">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>cloacal specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>type of sample used in the PCIRN influenza network</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen obtained by inserting a swab deeply into the vent of the cloaca of
-an organism and vigorously swabbing the wall. The swab should be deeply
-stained with fecal material and is then placed in transport medium.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000119>WEB: http://www.wpro.who.int/NR/rdonlyres/EFD2B9A7-2265-4AD0-BC98-97937B4FA83C/0/manualonanimalaidiagnosisandsurveillance.pdf</obo:IAO_0000119>
-        <rdfs:label>cloacal specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000914 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000914">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>nasopharyngeal aspirate specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>type of sample used in the PCIRN influenza network</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A speciemn which derives from nasopharyngeal mucosa after
-aspiration.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000119>WEB: http://www.wpro.who.int/NR/rdonlyres/EFD2B9A7-2265-4AD0-BC98-97937B4FA83C/0/manualonanimalaidiagnosisandsurveillance.pdf</obo:IAO_0000119>
-        <rdfs:label>nasopharyngeal aspirate specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000915 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000915">
@@ -10702,34 +10214,6 @@ Updated both textual and logical definition. Both input and output material of f
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000917 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000917">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002600"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>nasal swab specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>type of sample used in the PCIRN influenza network</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen obtained using a cotton swab on a stick, passed up the nostril to obtain a sample of
-exudate and epithelial debris for microbiological or cellular examination.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000119>WEB: http://www.wpro.who.int/NR/rdonlyres/EFD2B9A7-2265-4AD0-BC98-97937B4FA83C/0/manualonanimalaidiagnosisandsurveillance.pdf</obo:IAO_0000119>
-        <rdfs:label>nasal swab specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000918 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000918">
@@ -10779,128 +10263,6 @@ exudate and epithelial debris for microbiological or cellular examination.</obo:
         <obo:IAO_0000119>Melissa Haendel</obo:IAO_0000119>
         <rdfs:comment>may later be refined with more specific list of organisms</rdfs:comment>
         <rdfs:label>animal euthanization</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000921 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000921">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001143"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600038"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33697"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>labeled RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a labeled specimen that is the output of a labeling process and has grain labeled RNA to be able to detect RNA in future experiments.</obo:IAO_0000115>
-        <obo:IAO_0000116>Need to find out if we consider labeled nucleotides still nucleotides. It is after consulting with ChEBI group.
-Added duirng Mar 1, 2010 dev call</obo:IAO_0000116>
-        <obo:IAO_0000117>Group: OBI group</obo:IAO_0000117>
-        <obo:IAO_0000119>Group: OBI group</obo:IAO_0000119>
-        <rdfs:label>labeled RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000922 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000922">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000915"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                                            </owl:Restriction>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000950"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000965"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000971"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000981"/>
-        <obo:IAO_0000111>frozen specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>Frozen blood plasma</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen that has been frozen in order to store it.</obo:IAO_0000115>
-        <obo:IAO_0000117>Person:Alan Ruttenberg</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_610 frozen_sample</obo:IAO_0000119>
-        <rdfs:label>frozen specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000924 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000924">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002744"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600038"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000111>labeled specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen  that has been modified in order to be able to detect it in future experiments</obo:IAO_0000115>
-        <obo:IAO_0000116>added during call 3/1/2010</obo:IAO_0000116>
-        <obo:IAO_0000117>OBI group</obo:IAO_0000117>
-        <rdfs:label>labeled specimen</rdfs:label>
     </owl:Class>
     
 
@@ -11189,78 +10551,6 @@ Biochimie. 2010 Feb 18.</obo:IAO_0000112>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000950 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000950">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000977"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                                            </owl:Restriction>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000965"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000971"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000981"/>
-        <obo:IAO_0000111>paraffin specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>liver tissue embedded in paraffin</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">a specimen that is output of a paraffin storage process in which specimen is embedded in paraffin</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_990 paraffin_sample</obo:IAO_0000119>
-        <rdfs:label>paraffin specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000953 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000953">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000111>processed specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>A tissue sample that has been sliced and stained for a histology study.
-A blood specimen that has been centrifuged to obtain the white blood cells.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen that has been intentionally physically modified.</obo:IAO_0000115>
-        <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
-        <rdfs:comment>A tissue sample that has been sliced and stained for a histology study.</rdfs:comment>
-        <rdfs:label>processed specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000960 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000960">
@@ -11318,53 +10608,6 @@ A blood specimen that has been centrifuged to obtain the white blood cells.</obo
         <obo:IAO_0000117>Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
         <rdfs:label>categorical label</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000965 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000965">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000927"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                                            </owl:Restriction>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000971"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000981"/>
-        <obo:IAO_0000111>lyophilized specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>freezing dried DNA</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">a specimen that is output of a lyophilization storage process in which specimen is lyophilized for storage.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_589 freeze_dried_sample</obo:IAO_0000119>
-        <rdfs:label>lyophilized specimen</rdfs:label>
     </owl:Class>
     
 
@@ -11462,23 +10705,6 @@ In the examples above, a reagent is an operational component of a device, but th
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000971 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000971">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001472"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0000981"/>
-        <obo:IAO_0000111>fresh specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>a liver freshly removed from a rat</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">a specimen that is output of a specimen creation process used for an investigation without storage.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_730 fresh_sample</obo:IAO_0000119>
-        <rdfs:label>fresh specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0000973 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000973">
@@ -11570,42 +10796,6 @@ In the examples above, a reagent is an operational component of a device, but th
         <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
         <rdfs:comment>need to specify paraffin or wax is one of specified input of the process</rdfs:comment>
         <rdfs:label>paraffin storage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000981 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000981">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001003"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                                    </owl:Restriction>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000111>agar stab specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">a specimen that is output of a process that cell culture inoculated into agar for long term storage.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_971 agar_stab</obo:IAO_0000119>
-        <rdfs:label>agar stab specimen</rdfs:label>
     </owl:Class>
     
 
@@ -11833,40 +11023,6 @@ JZ: based on textual definition of edited document, it can be defined as N&amp;S
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0001010 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001010">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000423"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0666667"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33696"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>nucleic acid extract</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">An extract that is the output of an extraction process in which nucleic acid molecules are isolated from a specimen.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <rdfs:label>nucleic acid extract</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0001028 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001028">
@@ -11996,32 +11152,6 @@ JZ: based on textual definition of edited document, it can be defined as N&amp;S
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0001051 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001051">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000257"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16991"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>DNA extract</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">The output of an extraction process in which DNA molecules are purified in order to exclude DNA from organellas.</obo:IAO_0000115>
-        <obo:IAO_0000117>Person: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>Group: UPenn group</obo:IAO_0000119>
-        <rdfs:label>DNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0001069 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001069">
@@ -12102,52 +11232,6 @@ JZ: based on textual definition of edited document, it can be defined as N&amp;S
         <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">MO_524 dye_swap_quality_control</obo:IAO_0000119>
         <rdfs:label xml:lang="en">dye swap quality control role</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0001143 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001143">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000924"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600038"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33696"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>labeled nucleic acid extract</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a labeled specimen that is the output of a labeling process and has grain labeled nucleic acid for detection of the nucleic acid in future experiments.</obo:IAO_0000115>
-        <obo:IAO_0000117>Person: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000118>labeled extract</obo:IAO_0000118>
-        <obo:IAO_0000119>MO_221 labeledExtract</obo:IAO_0000119>
-        <obo:OBI_0001847>labeled extract</obo:OBI_0001847>
-        <rdfs:label>labeled nucleic acid extract</rdfs:label>
     </owl:Class>
     
 
@@ -13855,33 +12939,6 @@ http://svitsrv25.epfl.ch/R-doc/library/qvalue.html</obo:IAO_0000119>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0001468 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001468">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">cell specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen primarily composed of a cell or cells collected from a multicellular organism or a cell culture.</obo:IAO_0000115>
-        <obo:IAO_0000116>Discussed on obi call Jan 23, 2017. To improve cell specimen that include single cell specimen. Details see tracker: https://sourceforge.net/p/obi/obi-terms/828/</obo:IAO_0000116>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng, Alexander Diehl</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_612 cell</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">cell specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0001470 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001470">
@@ -13922,36 +12979,6 @@ http://svitsrv25.epfl.ch/R-doc/library/qvalue.html</obo:IAO_0000119>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0001472 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001472">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000971"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0302893"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000111 xml:lang="en">specimen with known storage state</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen for which it is known whether it has been subjected to storage of a specified type.</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_95 BiosourceType</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">specimen with known storage state</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0001474 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001474">
@@ -13982,41 +13009,6 @@ http://svitsrv25.epfl.ch/R-doc/library/qvalue.html</obo:IAO_0000119>
         <obo:IAO_0000117>Person: Elisabetta Manduchi</obo:IAO_0000117>
         <obo:IAO_0000119>MO_720 lowess_normalization</obo:IAO_0000119>
         <rdfs:label xml:lang="en">lowess transformation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0001479 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001479">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen that derives from an anatomical part or substance arising from an organism. Examples of tissue specimen include tissue, organ, physiological system, blood, or body location (arm).</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">tissue specimen</obo:IAO_0000118>
-        <obo:IAO_0000119>MO_954 organism_part</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">specimen from organism</rdfs:label>
     </owl:Class>
     
 
@@ -14300,54 +13292,6 @@ http://svitsrv25.epfl.ch/R-doc/library/qvalue.html</obo:IAO_0000119>
         <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000119>MO_406 purify</obo:IAO_0000119>
         <rdfs:label xml:lang="en">purification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0001506 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001506">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000659"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                                                <owl:someValuesFrom>
-                                                    <owl:Class>
-                                                        <owl:unionOf rdf:parseType="Collection">
-                                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001421"/>
-                                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001422"/>
-                                                        </owl:unionOf>
-                                                    </owl:Class>
-                                                </owl:someValuesFrom>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:someValuesFrom>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000111 xml:lang="en">specimen with pre- or post-mortem status</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen that has been established to be taken from a live (pre-mortem) or dead (post-mortem) organism.</obo:IAO_0000115>
-        <obo:IAO_0000116>organizational term, used in description of specimen that is created from known pre- or post-mortem status</obo:IAO_0000116>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert, Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>MO_84 OrganismStatus</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">specimen with pre- or post-mortem status</rdfs:label>
     </owl:Class>
     
 
@@ -18784,69 +17728,6 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0002125 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002125">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OMIABIS_0000052"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002124"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">H&amp;E-stained fixed tissue slide specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">A fixed tissue slide specimen that is the output of H&amp;E slide staining.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Chris Stoeckert, Ned Haubein</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">OBIB, OBI</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">H&amp;E-stained fixed tissue slide specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002126 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002126">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OMIABIS_0000052"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002123"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">IHC-stained fixed tissue slide specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">A fixed tissue slide specimen that is the output of immunohistochemistry slide staining.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">Chris Stoeckert, Ned Haubein</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">immunohistochemistry slide specimen</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">OBIB, OBI</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">IHC-stained fixed tissue slide specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002127 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002127">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001468"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A cell specimen that contains only one cell.</obo:IAO_0000115>
-        <obo:IAO_0000116>Requested by Sirarat Sarntivijai (EBI). Details see tracker: https://sourceforge.net/p/obi/obi-terms/828/</obo:IAO_0000116>
-        <obo:IAO_0000117>PERSON: Jie Zheng, Alexander Diehl</obo:IAO_0000117>
-        <obo:IAO_0000119>PERSON: Jie Zheng, Alexander Diehl</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">single cell specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0002136 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002136">
@@ -19645,28 +18526,6 @@ https://www.doi.org/</obo:IAO_0000119>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0002573 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002573">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002574"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>polyA depleted RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules lacking poly A tails at thier 3&apos; ends are purified.</obo:IAO_0000115>
-        <obo:IAO_0000117>Mark A. Miller, based on http://purl.obolibrary.org/obo/OBI_0000869</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
-        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-05-11T16:35:11Z</dc:date>
-        <rdfs:label>polyA depleted RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0002574 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002574">
@@ -19732,28 +18591,6 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000118>inverse PCR</obo:IAO_0000118>
         <obo:IAO_0000119>url:https://en.wikipedia.org/wiki/Chromosome_conformation_capture</obo:IAO_0000119>
         <rdfs:label>inverse polymerase chain reaction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002599 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002599">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002600"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000111>swab specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen that is stored on a swab as the output of a collecting specimen with swab process.</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000119>OBIB/OBI</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/910</obo:IAO_0000233>
-        <obo:IAO_0000234>OBIB</obo:IAO_0000234>
-        <rdfs:label>swab specimen</rdfs:label>
     </owl:Class>
     
 
@@ -19875,41 +18712,6 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000118>RNA interference gene knockdown</obo:IAO_0000118>
         <obo:IAO_0000119>url:https://en.wikipedia.org/wiki/Gene_knockdown</obo:IAO_0000119>
         <rdfs:label>RNAi gene knockdown</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002627 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002627">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
-        <obo:IAO_0000111>ribosomal RNA-depleted RNA extract</obo:IAO_0000111>
-        <obo:IAO_0000112>Looking at the reads for each ribosomal RNA-depleted RNA extract, the vast majority align to protein coding genes based on the ENSEMBL annotation.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">An extract of RNA which is produced through rRNA (ribosomal RNA) depletion (the removal of highly abundant rRNA species).</obo:IAO_0000115>
-        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
-        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4585-1</obo:IAO_0000119>
-        <rdfs:label>ribosomal RNA-depleted RNA extract</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002648 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002648">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">A specimen composed of an individual organism to be studied in an investigation.</obo:IAO_0000115>
-        <obo:IAO_0000117>Person: Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000119>EFO_0000542 individual</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1092</obo:IAO_0000233>
-        <rdfs:label>individual organism specimen</rdfs:label>
     </owl:Class>
     
 
@@ -20054,25 +18856,6 @@ https://www.doi.org/</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1117</obo:IAO_0000233>
         <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
         <rdfs:label>insecticide resistance detection objective</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002691 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002691">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000112>A specimen used in a blood meal assay to determine what is the source of blood ingested by a mosquito.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A specimen of the blood ingested by an arthropod.</obo:IAO_0000115>
-        <obo:IAO_0000116>The mosquito feeds on a human for example, ingests the blood of the human, this blood is then taken from the tummy of a mosquito and a PCR may be run on this specimen to identify that the mosquito definitely fed on a human.</obo:IAO_0000116>
-        <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
-        <obo:IAO_0000118>blood meal</obo:IAO_0000118>
-        <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1117</obo:IAO_0000233>
-        <obo:IAO_0000234>VEuPathDB</obo:IAO_0000234>
-        <rdfs:label>arthropod meal of blood specimen</rdfs:label>
     </owl:Class>
     
 
@@ -20246,17 +19029,6 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1202</obo:IAO_0000233>
         <rdfs:comment>bump</rdfs:comment>
         <rdfs:label xml:lang="en">presence or over-threshold value specification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0002774 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002774">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100016"/>
-        <obo:IAO_0000115 xml:lang="en">A blood plasma specimen that is the output of some platelet-poor plasma preparation and is the portion of plasma that contains fewer than 10,000 platelets per microliter.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Matthew Diller</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">platelet-poor plasma specimen</rdfs:label>
     </owl:Class>
     
 
@@ -21926,30 +20698,6 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0003652 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003652">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100017"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/PR_000003918"/>
-                    </owl:Class>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>albumin-free serum</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">A blood serum specimen that contains no albumin.</obo:IAO_0000115>
-        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/493</obo:IAO_0000233>
-        <obo:IAO_0000234>Philippe Rocca-Serra</obo:IAO_0000234>
-        <rdfs:label xml:lang="en">albumin-free serum</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0003653 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003653">
@@ -22124,97 +20872,6 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0100016 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600014"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000655"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">blood plasma specimen</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">PMID: 18217225.Sex Transm Dis. 2008 Jan;35(1):55-60. Review.Human immunodeficiency virus viral load in blood plasma and semen: review and implications of empirical findings.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">a material entity which corresponds to the liquid component of blood, in which the blood cells are suspended.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">03/21/2010: BP, blood plasma is defined as the output of certain separation processes, so this is in the domain of OBI, not FMA.</obo:IAO_0000116>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Maura Gasparetto</obo:IAO_0000117>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">plasma</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">WEB: http://en.wikipedia.org/wiki/Blood_plasma</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">blood plasma specimen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0100017 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100017">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0302885"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0302886"/>
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600052"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000655"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">blood serum specimen</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">PMID: 18229666.Adv Med Sci. 2007;52 Suppl 1:204-6.Antioxidant activity of blood serum and saliva in patients with periodontal disease treated due to epilepsy.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A material entity which derives from blood and corresponds to blood plasma without fibrinogen or the other clotting factors.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Maura Gasparetto</obo:IAO_0000117>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Melanie Courtot</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">WEB: http://en.wikipedia.org/wiki/Blood_plasma</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">blood serum specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
@@ -22318,10 +20975,9 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000111 xml:lang="en">specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>Biobanking of blood taken and stored in a freezer for potential future investigations stores specimen.</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">Biobanking of blood taken and stored in a freezer for potential future investigations stores specimen; collecting a stone from a site.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A material entity that has the specimen role.</obo:IAO_0000115>
-        <obo:IAO_0000116>Note: definition is in specimen creation objective which is defined as an objective to obtain and store a material entity for potential use as an input during an investigation.</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">A material entity that is collected for potential use as an input upon which measurements or observations are performed.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: James Malone</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP: OBI Biomaterial Branch</obo:IAO_0000119>
@@ -22535,34 +21191,6 @@ Thyroidectomy during laryngectomy for advanced laryngeal carcinoma--whole organ 
         <obo:IAO_0000119 xml:lang="en">GROUP: CEBS</obo:IAO_0000119>
         <obo:IAO_0000119>GROUP: OBI Biomaterial Branch</obo:IAO_0000119>
         <rdfs:label xml:lang="en">organ section</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0100067 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100067">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000112"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600044"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">bronchial alveolar lavage</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">solution containing lung derived T cells, eosinophils, and TNFa.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">Group of biomaterials present in the bronchial aveolar space of an organism which are collected through lavage including the reagents used to for the lavage process, organisms, cells, and cellular secretions present in the bronchial aveolar space.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">BAL</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">GROUP: IEDB</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">bronchial alveolar lavage</rdfs:label>
     </owl:Class>
     
 
@@ -26526,42 +25154,6 @@ determinations of compounds.</obo:IAO_0000115>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0302716 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0302716">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000652"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
-        <obo:IAO_0000111 xml:lang="en">pool of specimens</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A pool of specimens is a mixture of a population of samples which have been gathered from one or more sample populations, obtained by the physical process of mixing individual specimens, e.g.  mixing the DNA collected from the individual fish.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">check with advisors as to how to represent multiple instances of any class? a set of specimens which have been gathered from one or more sample_populations, obtained by the physical process of mixing individual specimens, e.g.  mixing the DNA collected from the individual fish</obo:IAO_0000116>
-        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000119>GROUP: CEBS</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">pool of specimens</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0302729 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0302729">
@@ -29737,36 +28329,6 @@ Possible ecological risks of transgenic organism release when transgenes affect 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_1000049 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1000049">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000680"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000341"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">whole mount tissue</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A whole organism preparation resulting from a histological preparation known as whole mount preparation where the whole specimen is mounted or spread on the microscope (glass) slide</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Helen Parkinson</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">whole mount sample</obo:IAO_0000118>
-        <obo:IAO_0000119 xml:lang="en">GROUP: OBI</obo:IAO_0000119>
-        <obo:IAO_0000232 xml:lang="en">PRS:22-02-2008: indicates the need to create a protocol application and distinguish it from this entity</obo:IAO_0000232>
-        <obo:IAO_0000232 xml:lang="en">PRS:22-02-2008: is a material which has output_role during whole mount preparation protocol-application</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">whole mount tissue</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_1000207 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1000207">
@@ -30471,36 +29033,6 @@ Possible ecological risks of transgenic organism release when transgenes affect 
         <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
         <rdfs:label xml:lang="en">infectious disease</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_1110041 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1110041">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001468"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_1110046"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>lymph node cell specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
-        <obo:IAO_0000115 xml:lang="en">A cell specimen comprised of a mixed population of cells obtained by processing whole lymph node into individual cells, typically performed using a sieve. This population includes T cells, B cells, macrophages, and other cell types.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">lymph node cell specimen</rdfs:label>
     </owl:Class>
     
 
@@ -31392,36 +29924,6 @@ MHB 3-5-13: Need to review axiom on this class in light of clarification that it
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_1110116 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1110116">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001468"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_1110046"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002106"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>splenocyte specimen</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A cell specimen comprised of a mixed cell population obtained by processing whole spleen into individual cells, typically performed using a sieve or blender. This population includes T cells, B cells, macrophages, and other cell types.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">IEDB</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">IEDB</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">splenocyte specimen</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_1110118 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1110118">
@@ -31846,24 +30348,6 @@ The content of that report on the IEDB website is here: http://iedb.org/refId/10
         <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000119>IEDB</obo:IAO_0000119>
         <rdfs:label>direct submission to IEDB</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_1200000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1200000">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000950"/>
-        <obo:IAO_0000111>FFPE specimen</obo:IAO_0000111>
-        <obo:IAO_0000112>Many of today’s researchers prefer to use Formalin-Fixed Paraffin-Embedded samples of tissues for their IHC, histological or in-situ genomic analyses. Professionally fixed and embedded FFPE samples and the biomolecules they contain are reasonably stable at ambient temperatures.
-
--based on https://lab-ally.com/histopathology-resources/ffpe-samples/</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">A specimen that has been fixed in formalin and embedded in paraffin.</obo:IAO_0000115>
-        <obo:IAO_0000117>MIABIS</obo:IAO_0000117>
-        <obo:IAO_0000118>formalin-fixed paraffin-embeded specimen</obo:IAO_0000118>
-        <obo:IAO_0000119 rdf:resource="https://www.biochain.com/general/what-is-ffpe-tissue/"/>
-        <obo:IAO_0000233 rdf:resource="https://github.com/obi-ontology/obi/issues/1019"/>
-        <rdfs:label>FFPE specimen</rdfs:label>
     </owl:Class>
     
 
