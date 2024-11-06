@@ -70,6 +70,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000233 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000233"/>
@@ -224,6 +230,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000257 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000257"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000341 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000341"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000651 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000651">
@@ -310,6 +328,166 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000671 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000671">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001479"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000740"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000111>sample from organism</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000002"/>
+        <obo:IAO_0000115 xml:lang="en">a material obtained from an organism in order to be a representative of the whole</obo:IAO_0000115>
+        <obo:IAO_0000116>5/29: This is a helper class for now</obo:IAO_0000116>
+        <obo:IAO_0000116>we need to work on this: Is taking a urine sample a material separation process? If not, we will need to specify what &apos;taking a sample from organism&apos; entails. We can argue that the objective to obtain a urine sample from a patient is enough to call it a material separation process, but it could dilute what material separation was supposed to be about.</obo:IAO_0000116>
+        <rdfs:label>sample from organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000680 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000680">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>whole organism preparation</obo:IAO_0000111>
+        <obo:IAO_0000112>putting a mouse in the blender. Not: putting a mouse on a scale</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <obo:IAO_0000115 xml:lang="en">A material entity which is the output of a process in which one or more whole organisms are prepared in a way to make it easier to study them, and in which the great majority of organismal parts are maintained</obo:IAO_0000115>
+        <obo:IAO_0000116>does this include injecting a dye to a patient to be able to visualize parts of his brain? If not, we should state that the components of the organism are substantially re-arranged.</obo:IAO_0000116>
+        <rdfs:label>whole organism preparation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000740 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000740"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000747 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000747">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100051"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000740"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000111>material sample</obo:IAO_0000111>
+        <obo:IAO_0000112>blood drawn from patient to measure his systemic glucose level. A population of humans with HIV enrolled in a study taken to represent patients with HIV in general.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <obo:IAO_0000115 xml:lang="en">A material entity that has the material sample role</obo:IAO_0000115>
+        <obo:IAO_0000117>OBI: workshop</obo:IAO_0000117>
+        <obo:IAO_0000118>sample</obo:IAO_0000118>
+        <obo:IAO_0000118>sample population</obo:IAO_0000118>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1013</obo:IAO_0000233>
+        <rdfs:label>material sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000834 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000834">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001051"/>
+        <obo:IAO_0000111>high molecular weight DNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Extraction of chromosomal DNA from mammalian cells by first isolating nucei</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">The output of an extraction process in which DNA molecules above a molecular weight cutoff are purified in order to exclude DNA from organellas.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON:Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <rdfs:label>high molecular weight DNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000848 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000848"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000849 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000849"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000855 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000855"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000859 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000859"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000862 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000862">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000888"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>nuclear RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Isolation and purification of nuclear RNA from animal cells using Norgen Bioteck corp. cytoplasmic and nuclear RNA purification kit (http://www.norgenbiotek.com/display-product.php?ID=30)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules found in the nucleus, including mRNA precursors (pre-mRNA), are extracted.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>nuclear RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000869 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000869">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000848"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>polyA RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Preparation of polyA RNA by cellulose-bound oligo-dT (Aviv, H., Leder, P. 1972. Purification of biologically active globin messenger RNA by chromatography on oligothymidylic acid-cellulose. Proc. Nat. Acad. Sci. USA 69, 1408-1412.)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules with poly A tail at its 3&apos; end are purified.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>polyA RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000873">
@@ -355,9 +533,101 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000876 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000876">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000859"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>cytoplasmic RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Cytoplasmic RNA extraction from mammalian tissues to create cDNA library (Carninci P, Nakamura M, Sato K, Hayashizaki Y, Brownstein MJ. Cytoplasmic RNA extraction from fresh and frozen mammalian tissues. Biotechniques. 2002;33:306–309.)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of a RNA extraction process in which RNA molecules found in the cytoplasm are extracted.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON:Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>cytoplasmic RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000880 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000880"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000880">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0666666"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33697"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">an extract which is the output of an extraction process in which RNA molecules are isolated from a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Group: UPenn Group</obo:IAO_0000119>
+        <rdfs:label>RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000888 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000888"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000895 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000895">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000855"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>total RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Extraction of total RNA from cells with Qiagen mini RNeasy kit</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which total celluar and organelle RNA molecules are isolated from a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>total RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000899">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000849"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>organellar RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Extraction of organellar RNA from plant cells using organellar RNA binding protein.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules found in an organelle, e.g., mitochondrion, ER, or chloroplast, excluding the nucleus, are extracted.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>organellar RNA extract</rdfs:label>
+    </owl:Class>
     
 
 
@@ -854,13 +1124,47 @@
 
     <!-- http://purl.obolibrary.org/obo/OBI_0001010 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001010"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100051"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0666667"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>nucleic acid extract</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">An extract that is the output of an extraction process in which nucleic acid molecules are isolated from a specimen.</obo:IAO_0000115>
+        <obo:IAO_0000117>Person: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>nucleic acid extract</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0001051 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001051"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001051">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001010"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000257"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000643"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16991"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>DNA extract</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">The output of an extraction process in which DNA molecules are purified in order to exclude DNA from organellas.</obo:IAO_0000115>
+        <obo:IAO_0000117>Person: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>Group: UPenn group</obo:IAO_0000119>
+        <rdfs:label>DNA extract</rdfs:label>
+    </owl:Class>
     
 
 
@@ -3445,6 +3749,32 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0002573 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002573">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002574"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A RNA extract that is the output of an extraction process in which RNA molecules lacking poly A tails at thier 3&apos; ends are purified.</obo:IAO_0000115>
+        <obo:IAO_0000117>Mark A. Miller, based on http://purl.obolibrary.org/obo/OBI_0000869</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000119>UPenn Group</obo:IAO_0000119>
+        <rdfs:label>polyA depleted RNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002574 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002574"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0002599 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002599">
@@ -3881,6 +4211,21 @@
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000119>Chris Stoeckert, OBIB</obo:IAO_0000119>
         <rdfs:label>environmental swab specimen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002627 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002627">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
+        <obo:IAO_0000111>ribosomal RNA-depleted RNA extract</obo:IAO_0000111>
+        <obo:IAO_0000112>Looking at the reads for each ribosomal RNA-depleted RNA extract, the vast majority align to protein coding genes based on the ENSEMBL annotation.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">An extract of RNA which is produced through rRNA (ribosomal RNA) depletion (the removal of highly abundant rRNA species).</obo:IAO_0000115>
+        <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000119>https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-018-4585-1</obo:IAO_0000119>
+        <rdfs:label>ribosomal RNA-depleted RNA extract</rdfs:label>
     </owl:Class>
     
 
@@ -4859,6 +5204,48 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0600052 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600052"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0666666 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0666666"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0666667 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0666667"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_1000049 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1000049">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000680"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000341"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>whole mount tissue</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A whole organism preparation resulting from a histological preparation known as whole mount preparation where the whole specimen is mounted or spread on the microscope (glass) slide</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Helen Parkinson</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000118>whole mount sample</obo:IAO_0000118>
+        <obo:IAO_0000119>GROUP: OBI</obo:IAO_0000119>
+        <obo:IAO_0000232>PRS:22-02-2008: indicates the need to create a protocol application and distinguish it from this entity</obo:IAO_0000232>
+        <obo:IAO_0000232>PRS:22-02-2008: is a material which has output_role during whole mount preparation protocol-application</obo:IAO_0000232>
+        <rdfs:label>whole mount tissue</rdfs:label>
+    </owl:Class>
     
 
 
