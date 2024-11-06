@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2024-06-10
-date: 10:06:2024 15:25
+data-version: 2024-10-25
+date: 25:10:2024 12:39
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2024-06-10" xsd:string
+property_value: owl:versionInfo "2024-10-25" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -283,7 +283,7 @@ is_a: CHEBI:16670 ! peptide
 [Term]
 id: CHEBI:15377
 name: water
-def: "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms." []
+def: "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms" []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -414,7 +414,7 @@ is_a: CHEBI:23367 ! molecular entity
 [Term]
 id: CHEBI:17650
 name: cortisol
-def: "A 17alpha-hydroxy-C21-steroid that is pregn-4-ene substituted by oxo groups at positions 3 and 20 and hydroxy groups at positions 11, 17 and 21. Cortisol is a corticosteroid hormone or glucocorticoid produced by zona fasciculata of the adrenal cortex, which is a part of the adrenal gland. It is usually referred to as the \"stress hormone\" as it is involved in response to stress and anxiety, controlled by corticotropin-releasing hormone (CRH). It increases blood pressure and blood sugar, and reduces immune responses" []
+def: "A 17alpha-hydroxy-C21-steroid that is pregn-4-ene substituted by oxo groups at positions 3 and 20 and hydroxy groups at positions 11, 17 and 21. Cortisol is a corticosteroid hormone or glucocorticoid produced by zona fasciculata of the adrenal cortex, which is a part of the adrenal gland. It is usually referred to as the \"stress hormone\" as it is involved in response to stress and anxiety, controlled by corticotropin-releasing hormone (CRH). It increases blood pressure and blood sugar, and reduces immune responses." []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -611,6 +611,12 @@ def: "The dihydrate of trisodium citrate." []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
+id: CHEBI:32875
+name: methyl group
+def: "An alkyl group that is the univalent group derived from methane by removal of a hydrogen atom." []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
 id: CHEBI:33250
 name: atom
 def: "A chemical entity constituting the smallest component of an element having the chemical properties of the element." []
@@ -778,7 +784,14 @@ is_a: OBI:0002744 ! molecular label
 
 [Term]
 id: CHEBI:42191
-name: ethylenediaminetetraacetic acid
+name: EDTA(4-)
+def: "A tetracarboxylic acid anion formed by deprotonation of all four carboxy groups in ethylenediaminetetraacetic acid (EDTA)." []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:4431
+name: deoxyribonucleotide
+def: "A nucleotide in which the ribose moiety has one or more of its hydroxy groups substituted by hydrogen." []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -995,8 +1008,8 @@ is_a: CL:0000010 ! cultured cell
 
 [Term]
 id: CL:0000003
-name: native cell
-def: "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." []
+name: obsolete native cell
+def: "OBSOLETE. A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." []
 is_a: CL:0000000 ! cell
 
 [Term]
@@ -1021,7 +1034,6 @@ is_a: CL:0000000 ! cell
 id: CL:0000077
 name: mesothelial cell
 def: "A flattened epithelial cell of mesenchymal origin that lines the serous cavity." []
-is_a: CL:0000003 ! native cell
 is_a: CL:0000066 ! epithelial cell
 
 [Term]
@@ -1052,7 +1064,7 @@ is_a: CL:0000000 ! cell
 id: CL:0000233
 name: platelet
 def: "A non-nucleated disk-shaped cell formed by extrusion from megakaryocytes, found in the blood of all mammals, and mainly involved in blood coagulation." []
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000235
@@ -1087,8 +1099,8 @@ is_a: CL:0000842 ! mononuclear cell
 [Term]
 id: CL:0000556
 name: megakaryocyte
-def: "A giant cell 50 to 100 micron in diameter, with a greatly lobulated nucleus, found in the bone marrow; mature blood platelets are released from its cytoplasm." []
-is_a: CL:0000003 ! native cell
+def: "A large hematopoietic cell (50 to 100 micron) with a lobated nucleus. Once mature, this cell undergoes multiple rounds of endomitosis and cytoplasmic restructuring to allow platelet formation and release." []
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000558
@@ -1106,14 +1118,12 @@ is_a: CL:0000775 ! neutrophil
 id: CL:0000562
 name: nucleate erythrocyte
 def: "An erythrocyte having a nucleus." []
-is_a: CL:0000003 ! native cell
 is_a: CL:0000232 ! erythrocyte
 
 [Term]
 id: CL:0000576
 name: monocyte
 def: "Myeloid mononuclear recirculating leukocyte that can act as a precursor of tissue macrophages, osteoclasts and some populations of tissue dendritic cells." []
-is_a: CL:0000003 ! native cell
 is_a: CL:0000738 ! leukocyte
 is_a: CL:0000842 ! mononuclear cell
 
@@ -1152,14 +1162,12 @@ is_a: CL:0000000 ! cell
 id: CL:0000771
 name: eosinophil
 def: "Any of the immature or mature forms of a granular leukocyte with a nucleus that usually has two lobes connected by one or more slender threads of chromatin, and cytoplasm containing coarse, round granules that are uniform in size and which can be stained by the dye eosin. Eosinophils are CD9-positive, CD191-positive, and CD193-positive." []
-is_a: CL:0000003 ! native cell
 is_a: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0000775
 name: neutrophil
 def: "Any of the immature or mature forms of a granular leukocyte that in its mature form has a nucleus with three to five lobes connected by slender threads of chromatin, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes." []
-is_a: CL:0000003 ! native cell
 is_a: CL:0000738 ! leukocyte
 
 [Term]
@@ -1196,7 +1204,7 @@ is_a: CL:0000789 ! alpha-beta T cell
 id: CL:0000836
 name: promyelocyte
 def: "A precursor in the granulocytic series, being a cell intermediate in development between a myeloblast and myelocyte, that has distinct nucleoli, a nuclear-to-cytoplasmic ratio of 5:1 to 3:1, and containing a few primary cytoplasmic granules. Markers for this cell are fucosyltransferase FUT4-positive, CD33-positive, integrin alpha-M-negative, low affinity immunoglobulin gamma Fc region receptor III-negative, and CD24-negative." []
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000842
@@ -1214,13 +1222,13 @@ is_a: CL:0000000 ! cell
 id: CL:0002192
 name: metamyelocyte
 def: "A eosinophil precursor in the granulocytic series, being a cell intermediate in development between a myelocyte and a band form cell. The nucleus becomes indented where the indentation is smaller than half the distance to the farthest nuclear margin; chromatin becomes coarse and clumped; specific granules predominate while primary granules are rare." []
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0002193
 name: myelocyte
 def: "A cell type that is the first of the maturation stages of the granulocytic leukocytes normally found in the bone marrow. Granules are seen in the cytoplasm. The nuclear material of the myelocyte is denser than that of the myeloblast but lacks a definable membrane. The cell is flat and contains increasing numbers of granules as maturation progresses." []
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0002319
@@ -1238,7 +1246,6 @@ is_a: CL:0000775 ! neutrophil
 id: CL:2000001
 name: peripheral blood mononuclear cell
 def: "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood." []
-is_a: CL:0000003 ! native cell
 is_a: CL:0000842 ! mononuclear cell
 
 [Term]
@@ -1248,30 +1255,32 @@ is_a: OBI:0001866 ! secondary cultured cell
 
 [Term]
 id: CLO:0000018
-name: 非永生细胞系细胞
+name: mortal cell line cell
+def: "A cell line cell that is capable of replicating a limited number of times in culture before undergoing senescence." []
 is_a: CLO:0000001 ! cell line cell
 
 [Term]
 id: CLO:0000019
-name: 永生细胞系细胞
+name: immortal cell line cell
+def: "A cell line cell that is expected to be capable of an unlimited number of divisions, and is thus able to support indefinite propagation in vitro as part of an immortal cell line." []
 is_a: CLO:0000001 ! cell line cell
 
 [Term]
 id: CLO:0000031
-name: 细胞系
+name: cell line
 is_a: OBI:0001905 ! secondary cultured cell population
 
 [Term]
 id: CLO:0009828
 name: immortal cell line
 def: "A cell line that is expected to be capable of indefinite propagation in an vitro culture." []
-is_a: CLO:0000031 ! 细胞系
+is_a: CLO:0000031 ! cell line
 
 [Term]
 id: CLO:0009829
 name: mortal cell line
 def: "A cell line is able to support only a limited number of passages in vitro." []
-is_a: CLO:0000031 ! 细胞系
+is_a: CLO:0000031 ! cell line
 
 [Term]
 id: COB:0000080
@@ -1282,7 +1291,7 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: ENVO:00001998
 name: soil
-def: "Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms." []
+def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -1294,7 +1303,7 @@ is_a: ENVO:00001998 ! soil
 [Term]
 id: ENVO:00010483
 name: environmental material
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -1307,7 +1316,7 @@ is_a: BFO:0000029 ! site
 id: GO:0000785
 name: chromatin
 def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome." []
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0032991 ! protein-containing complex
 
 [Term]
 id: GO:0001046
@@ -1365,7 +1374,7 @@ is_a: GO:0001906 ! cell killing
 [Term]
 id: GO:0002250
 name: adaptive immune response
-def: "An immune response mediated by cells expressing specific receptors for antigen produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." []
+def: "An immune response mediated by cells expressing specific receptors for antigens produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." []
 is_a: GO:0006955 ! immune response
 
 [Term]
@@ -1417,13 +1426,13 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0003674
 name: molecular_function
-def: "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process." []
+def: "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs." []
 is_a: BFO:0000015 ! process
 
 [Term]
 id: GO:0003823
 name: antigen binding
-def: "Binding to an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen." []
+def: "Binding to an antigen, any substance which is capable of inducing a specific immune response and of reacting with the products of that response, the specific antibody or specifically sensitized T-lymphocytes, or both. Binding may counteract the biological activity of the antigen. Antigen binding by an MHC protein complex allows the antigen to be displayed to a T cell or NK cell." []
 is_a: GO:0003674 ! molecular_function
 
 [Term]
@@ -1434,8 +1443,8 @@ is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0003939
-name: L-iditol 2-dehydrogenase activity
-def: "Catalysis of the reaction: L-iditol + NAD+ = L-sorbose + NADH + H+." []
+name: L-iditol 2-dehydrogenase (NAD+) activity
+def: "Catalysis of the reaction: L-iditol + NAD+ = L-sorbose + NADH + H+. Acts on a number of sugar alcohols, including (but not limited to) L-iditol, D-glucitol, D-xylitol, and D-galactitol." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1465,7 +1474,7 @@ is_a: GO:0003824 ! catalytic activity
 [Term]
 id: GO:0004035
 name: alkaline phosphatase activity
-def: "Catalysis of the reaction: an orthophosphoric monoester + H2O = an alcohol + phosphate, with an alkaline pH optimum." []
+def: "Catalysis of the reaction: a phosphate monoester + H2O = an alcohol + phosphate, with an alkaline pH optimum." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1483,7 +1492,7 @@ is_a: GO:0003824 ! catalytic activity
 [Term]
 id: GO:0004111
 name: creatine kinase activity
-def: "Catalysis of the reaction: ATP + creatine = N-phosphocreatine + ADP + 2 H(+)." []
+def: "Catalysis of the reaction: ATP + creatine = N-phosphocreatine + ADP + 2 H+." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1512,20 +1521,20 @@ is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0004540
-name: ribonuclease activity
+name: RNA nuclease activity
 def: "Catalysis of the hydrolysis of phosphodiester bonds in chains of RNA." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0005216
-name: ion channel activity
-def: "Enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size)." []
+name: monoatomic ion channel activity
+def: "Enables the facilitated diffusion of a monoatomic ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size)." []
 is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0005575
 name: cellular_component
-def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." []
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -1555,13 +1564,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0006260
 name: DNA replication
-def: "The cellular metabolic process in which a cell duplicates one or more molecules of DNA. DNA replication begins when specific sequences, known as origins of replication, are recognized and bound by initiation proteins, and ends when the original DNA molecule has been completely duplicated and the copies topologically separated. The unit of replication usually corresponds to the genome of the cell, an organelle, or a virus. The template for replication can either be an existing DNA molecule or RNA." []
-is_a: GO:0008150 ! biological_process
-
-[Term]
-id: GO:0006306
-name: DNA methylation
-def: "The covalent transfer of a methyl group to either N-6 of adenine or C-5 or N-4 of cytosine." []
+def: "The cellular metabolic process in which a cell duplicates one or more molecules of DNA. DNA replication begins when specific sequences, known as origins of replication, are recognized and bound by the origin recognition complex, and ends when the original DNA molecule has been completely duplicated and the copies topologically separated. The unit of replication usually corresponds to the genome of the cell, an organelle, or a virus. The template for replication can either be an existing DNA molecule or RNA." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -1584,7 +1587,7 @@ is_a: GO:0050896 ! response to stimulus
 
 [Term]
 id: GO:0006974
-name: cellular response to DNA damage stimulus
+name: DNA damage response
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus indicating damage to its DNA from environmental insults or errors during metabolism." []
 is_a: GO:0050896 ! response to stimulus
 
@@ -1603,7 +1606,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0008150
 name: biological_process
-def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
+def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 is_a: BFO:0000015 ! process
 disjoint_from: OBI:0000011 ! planned process
 
@@ -1640,7 +1643,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0010467
 name: gene expression
-def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, translation and maturation for protein-coding genes." []
+def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, as well as translation and maturation for protein-coding genes." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -1672,12 +1675,6 @@ id: GO:0016231
 name: beta-N-acetylglucosaminidase activity
 def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-glucosamine residues in N-acetyl-beta-D-glucosaminides." []
 is_a: GO:0003824 ! catalytic activity
-
-[Term]
-id: GO:0016570
-name: histone modification
-def: "The covalent alteration of one or more amino acid residues within a histone protein." []
-is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0016788
@@ -1765,7 +1762,7 @@ is_a: GO:0001816 ! cytokine production
 
 [Term]
 id: GO:0032609
-name: interferon-gamma production
+name: type II interferon production
 def: "The appearance of interferon-gamma due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels. Interferon-gamma is also known as type II interferon." []
 is_a: GO:0001816 ! cytokine production
 
@@ -2118,12 +2115,6 @@ def: "Binding to DNA of a specific nucleotide composition, e.g. GC-rich DNA bind
 is_a: OBI:0001588 ! binding
 
 [Term]
-id: GO:0044030
-name: regulation of DNA methylation
-def: "Any process that modulates the frequency, rate or extent of the covalent transfer of a methyl group to either N-6 of adenine or C-5 or N-4 of cytosine." []
-is_a: GO:0008150 ! biological_process
-
-[Term]
 id: GO:0044807
 name: macrophage migration inhibitory factor production
 def: "The appearance of macrophage migration inhibitory factor due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
@@ -2144,7 +2135,7 @@ is_a: GO:0032602 ! chemokine production
 [Term]
 id: GO:0047823
 name: D-glutamyltransferase activity
-def: "Catalysis of the reaction: L(or D)-glutamine + D-glutamyl-peptide = NH3 + 5-glutamyl-D-glutamyl-peptide." []
+def: "Catalysis of the reaction: D-glutamate + D-glutamine = gamma-D-glutamyl-D-glutamate + NH4+. Can also transfer additional glutamyl residues to a peptide, extending the polypeptide chain." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -2174,7 +2165,7 @@ is_a: GO:0003824 ! catalytic activity
 [Term]
 id: GO:0070288
 name: ferritin complex
-def: "A protein complex that binds iron and acts as a major iron storage system. Intracellular and extracellular ferritin complexes have different ratios of two types of ferritin monomer, the L (light) chain and H (heavy) chain." []
+def: "A protein complex that binds iron and acts as a major iron storage system. There are three major subclasses of ferritins: the classical ferritins (Ftn), the heme-containing bacterioferritins (Bfr) and the DNA-binding proteins from starved cells (Dps). Ftn and Bfr are made of 24 subunits, whereas Dps are smaller with 12 subunits. Ftn is found in most kindoms, while Bfr and Dps are restricted to prokaryotes." []
 is_a: GO:0032991 ! protein-containing complex
 
 [Term]
@@ -3052,24 +3043,19 @@ name: Viruses
 is_a: OBI:0100026 ! organism
 
 [Term]
-id: NCBITaxon:10292
-name: Herpesviridae
-is_a: NCBITaxon:10239 ! Viruses
-
-[Term]
 id: NCBITaxon:10358
 name: Cytomegalovirus
-is_a: NCBITaxon:10292 ! Herpesviridae
+is_a: NCBITaxon:3044472 ! Orthoherpesviridae
 
 [Term]
 id: NCBITaxon:10376
-name: Human gammaherpesvirus 4
+name: human gammaherpesvirus 4
 synonym: "Epstein Barr virus" EXACT []
 synonym: "Epstein-Barr virus" EXACT []
 synonym: "Epstein-Barr virus EBV" EXACT []
 synonym: "Human herpesvirus 4" EXACT []
 synonym: "Human herpesvirus type 4" EXACT []
-is_a: NCBITaxon:10292 ! Herpesviridae
+is_a: NCBITaxon:3044472 ! Orthoherpesviridae
 
 [Term]
 id: NCBITaxon:10407
@@ -3086,17 +3072,6 @@ id: NCBITaxon:11050
 name: Flaviviridae
 synonym: "Flavivirus (arbovirus group B)" EXACT []
 is_a: NCBITaxon:2732406 ! Kitrinoviricota
-
-[Term]
-id: NCBITaxon:11103
-name: Hepacivirus C
-synonym: "Hepatitis C virus" EXACT []
-synonym: "hepatitis C virus HCV" EXACT []
-synonym: "human hepatitis C virus" EXACT []
-synonym: "human hepatitis C virus HCV" EXACT []
-synonym: "human hepatitis virus C HCV" EXACT []
-synonym: "post-transfusion hepatitis non A non B virus" EXACT []
-is_a: NCBITaxon:11050 ! Flaviviridae
 
 [Term]
 id: NCBITaxon:11646
@@ -3189,6 +3164,23 @@ synonym: "eukaryotes" EXACT []
 is_a: OBI:0100026 ! organism
 
 [Term]
+id: NCBITaxon:3044472
+name: Orthoherpesviridae
+is_a: NCBITaxon:10239 ! Viruses
+
+[Term]
+id: NCBITaxon:3052230
+name: Hepacivirus hominis
+synonym: "Hepacivirus C" EXACT []
+synonym: "Hepatitis C virus" EXACT []
+synonym: "hepatitis C virus HCV" EXACT []
+synonym: "human hepatitis C virus" EXACT []
+synonym: "human hepatitis C virus HCV" EXACT []
+synonym: "human hepatitis virus C HCV" EXACT []
+synonym: "post-transfusion hepatitis non A non B virus" EXACT []
+is_a: NCBITaxon:11050 ! Flaviviridae
+
+[Term]
 id: NCBITaxon:314146
 name: Euarchontoglires
 is_a: NCBITaxon:40674 ! Mammalia
@@ -3274,7 +3266,7 @@ id: NCBITaxon:4932
 name: Saccharomyces cerevisiae
 synonym: "baker's yeast" EXACT []
 synonym: "brewer's yeast" EXACT []
-synonym: "S. cerevisiae" EXACT []
+synonym: "Saccharomyces cerevisiae 'var. diastaticus'" EXACT []
 is_a: NCBITaxon:716545 ! saccharomyceta
 
 [Term]
@@ -6170,7 +6162,7 @@ is_a: IAO:0000100 ! data set
 [Term]
 id: OBI:0000658
 name: data representational model
-def: "Data representational model is an information content entity of the  relationships between data items. A data representational model is encoded in a data format specification such as for cytoscape or biopax." []
+def: "An information content entity representing the relationships between data items." []
 synonym: "data structure" EXACT []
 synonym: "data structure specification" EXACT []
 is_a: IAO:0000033 ! directive information entity
@@ -14334,6 +14326,7 @@ name: chromatin immunoprecipitation with exonuclease sequencing assay
 def: "A ChIP-seq assay which uses immunoprecipitation to isolate protein bound DNA followed by an exonuclease step to degrade DNA that is not protein bound to provide greater resolution of the DNA binding site" []
 synonym: "ChIP-exo assay" EXACT []
 is_a: OBI:0000716 ! ChIP-seq assay
+is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0001926
@@ -14805,10 +14798,10 @@ is_a: OBI:0003128 ! T cell epitope assay
 
 [Term]
 id: OBI:0002000
-name: Genome Analyzer IIx
+name: Illumina Genome Analyzer IIx
 def: "An Illumina Genome Analyzer II which is manufactured by the Illumina corporation. It supports sequencing of single, long or short insert paired end clone libraries relying on sequencing by synthesis technology. The Genome Analyzer IIx is the most widely adopted next-generation sequencing platform and proven and published across the broadest range of research applications." []
+synonym: "Genome Analyzer IIx" EXACT []
 synonym: "Illumina GA IIx" EXACT []
-synonym: "Illumina Genome Analyzer IIx" EXACT []
 is_a: OBI:0000703 ! Illumina Genome Analyzer II
 
 [Term]
@@ -14816,20 +14809,20 @@ id: OBI:0002001
 name: Illumina HiSeq 2000
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and a throughput of up to 55 Gb per day. Built upon sequencing by synthesis technology, the machine is optimized for generation of data for multiple samples in a single run." []
 synonym: "HiSeq 2000" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0002002
 name: Illumina HiSeq 2500
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and a throughput of up to 160 Gb per day. Built upon sequencing by synthesis technology, the machine is optimized for generation of data for batching multiple samples or rapid results on a few samples." []
 synonym: "HiSeq 2500" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0002003
-name: MiSeq
+name: Illumina MiSeq
 def: "A DNA sequencer which is manufactured by the Illumina corporation. Built upon sequencing by synthesis technology, the machine provides an end-to-end solution (cluster generation, amplification, sequencing, and data analysis) in a single machine." []
-synonym: "Illumina MiSeq" EXACT []
+synonym: "MiSeq" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
 
 [Term]
@@ -14931,6 +14924,7 @@ def: "An epigenetic modification assay that identifies regions containing specif
 synonym: "histone modification ChIP-Seq" EXACT []
 is_a: OBI:0000716 ! ChIP-seq assay
 is_a: OBI:0002020 ! epigenetic modification assay
+is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0002018
@@ -14947,6 +14941,7 @@ def: "A transcription factor binding site assay that utilizes ChIP-seq technolog
 synonym: "TF Binding ChIP-Seq" EXACT []
 is_a: OBI:0000291 ! transcription factor binding site assay
 is_a: OBI:0000716 ! ChIP-seq assay
+is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0002020
@@ -14956,17 +14951,17 @@ is_a: OBI:0000070 ! assay
 
 [Term]
 id: OBI:0002021
-name: NextSeq 500
+name: Illumina NextSeq 500
 def: "A DNA sequencer which is a desktop sequencer ideal for smaller-scale studies manufactured by the Illumina corporation. It supports sequencing of single, long or short insert paired end clone libraries relying on sequencing by synthesis technology." []
-synonym: "Illumina NextSeq 500" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+synonym: "NextSeq 500" EXACT []
+is_a: OBI:0003684 ! Illumina NextSeq Series Instrument
 
 [Term]
 id: OBI:0002022
 name: Illumina HiSeq 1000
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with a single flow cell and a throughput of up to 35 Gb per day. It supports sequencing of single, long or short insert paired end clone libraries relying on sequencing by synthesis technology." []
 synonym: "HiSeq 1000" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0002023
@@ -15005,10 +15000,10 @@ is_a: OBI:0001307 ! tiling microarray
 
 [Term]
 id: OBI:0002027
-name: Genome Analyzer IIe
+name: Illumina Genome Analyzer IIe
 def: "An Illumina Genome Analyzer II which is manufactured by the Illumina corporation. It supports sequencing of single, long or short insert paired end clone libraries relying on sequencing by synthesis technology. The Genome Analyzer IIe makes industry-leading next-generation sequencing technology accessible to more laboratories." []
+synonym: "Genome Analyzer IIe" EXACT []
 synonym: "Illumina GA IIe" EXACT []
-synonym: "Illumina Genome Analyzer IIe" EXACT []
 is_a: OBI:0000703 ! Illumina Genome Analyzer II
 
 [Term]
@@ -15171,14 +15166,14 @@ id: OBI:0002048
 name: Illumina HiSeq 3000
 def: "A DNA sequencer manufactured by Illumina corporation, with a single flow cell and a throughput of more than 200 Gb per day." []
 synonym: "HiSeq 3000" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0002049
 name: Illumina HiSeq 4000
 def: "A DNA sequencer manufactured by Illumina corporation, with two flow cell and a throughput of more than 400 Gb per day." []
 synonym: "HiSeq 4000" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0002050
@@ -15753,7 +15748,7 @@ id: OBI:0002129
 name: Illumina HiSeq X Ten
 def: "A DNA sequencer that consists of a set of 10 HiSeq X Sequencing Systems." []
 synonym: "HiSeq X Ten" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0002130
@@ -17988,7 +17983,7 @@ id: OBI:0002630
 name: Illumina NovaSeq 6000
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and an output of up to 6000 Gb (32-40 B reads per run). The sequencer utilizes synthesis technology and patterned flow cells to optimize throughput and even spacing of sequencing clusters." []
 synonym: "NovaSeq 6000" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003685 ! Illumina NovaSeq Series Instrument
 
 [Term]
 id: OBI:0002631
@@ -19791,7 +19786,7 @@ is_a: OBI:0000366 ! metabolite profiling assay
 
 [Term]
 id: OBI:0002969
-name: cyclic immunoflouroescence assay
+name: cyclic immunofluoroescence assay
 def: "A type of microscopy assay resulting in highly multiplexed immunofluorescence imaging through sequential rounds of imaging followed by fluorophore inactivation." []
 is_a: OBI:0002119 ! microscopy assay
 
@@ -22277,13 +22272,13 @@ id: OBI:0003386
 name: Illumina HiSeq 1500
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with a single flow cell. Built upon sequencing by synthesis technology, the machine employs dual surface imaging and offers two high-output options and one rapid-run option." []
 synonym: "HiSeq 1500" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
 
 [Term]
 id: OBI:0003387
-name: NextSeq 550
+name: Illumina NextSeq 550
 def: "A DNA sequencer manufactured by the Illumina corporation, which provides the increased flexibility of microarray scanning in addition to sequencing." []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003684 ! Illumina NextSeq Series Instrument
 
 [Term]
 id: OBI:0003388
@@ -23273,7 +23268,7 @@ is_a: OBI:0003564 ! intraepidermal administration
 [Term]
 id: OBI:0003569
 name: intrauteral administration
-def: "An adminstration of a substance into the uterus of an organism. " []
+def: "An adminstration of a substance into the uterus of an organism." []
 is_a: OBI:0600007 ! administering substance in vivo
 
 [Term]
@@ -23434,7 +23429,7 @@ is_a: OBI:0001404 ! genetic characteristics information
 id: OBI:0003595
 name: nasal lavage fluid
 def: "A specimen collected through nasal cavity lavage that contains the reagents used to for the lavage process, organisms, cells, cellular secretions, and other biomaterials present in the nasal cavity space." []
-is_a: OBI:0100051 ! specimen
+is_a: OBI:0003666 ! lavage fluid specimen
 
 [Term]
 id: OBI:0003598
@@ -23497,7 +23492,7 @@ id: OBI:0003606
 name: Illumina NextSeq 1000
 def: "A DNA sequencer which is manufactured by the Illumina corporation using sequence-by-synthesis chemistry that fits on a benchtop and uses P1 and P2 flow cells." []
 synonym: "NextSeq 1000" EXACT []
-is_a: OBI:0400103 ! DNA sequencer
+is_a: OBI:0003684 ! Illumina NextSeq Series Instrument
 
 [Term]
 id: OBI:0003607
@@ -23797,11 +23792,99 @@ def: "An organismal quality that inheres in an organism that has completed a fas
 is_a: PATO:0001995 ! organismal quality
 
 [Term]
+id: OBI:0003656
+name: water filtration
+def: "A filtration process of water intended to remove or reduce the concentration of particulate matter, such as suspended particles, parasites, bacteria, algae, viruses, and fungi, as well as other undesirable chemical and biological contaminants." []
+is_a: OBI:0302885 ! filtration
+
+[Term]
 id: OBI:0003657
 name: minimum resolved unit of measurement
 def: "An information content entity that indicates the smallest increment that can be resolved on the scale of a measurement instrument." []
 synonym: "least count" EXACT []
 is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OBI:0003658
+name: ring trial design
+def: "A study design with the objective of establishing the reproducibility of an experimental approach by performing experiments in different laboratories under the same conditions and comparing the experimental outcomes." []
+is_a: OBI:0500000 ! study design
+
+[Term]
+id: OBI:0003659
+name: in vitro CRISPR screen assay
+def: "An assay in which cells expressing a Cas system are infected with a library of guide RNAs with the intent of causing a perturbation at the target of the guide RNAs." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003660
+name: in vitro CRISPR screen using single-cell RNA-seq
+def: "An in vitro CRISPR screen assay that uses single-cell RNA-Seq to detect induced changes in gene expression." []
+is_a: OBI:0003659 ! in vitro CRISPR screen assay
+
+[Term]
+id: OBI:0003661
+name: in vitro CRISPR screen using flow cytometry
+def: "An in vitro CRISPR screen assay that uses flow cytometry to detect induced changes in gene expression of the targeted genes." []
+is_a: OBI:0003659 ! in vitro CRISPR screen assay
+
+[Term]
+id: OBI:0003662
+name: single-nucleus methylcytosine and transcriptome sequencing assay
+def: "A DNA methylation profiling by high throughput sequencing assay that measures the cytosine DNA methylation and gene expression signature of single nuclei." []
+synonym: "snmCT-seq" EXACT []
+is_a: OBI:0001177 ! RNA sequencing assay
+is_a: OBI:0001266 ! DNA methylation profiling by high throughput sequencing assay
+
+[Term]
+id: OBI:0003663
+name: Illumina NovaSeq X
+def: "A DNA sequencer with three flow cell types manufactured by Illumina. The NovaSeq X provides an output of up to 8 Tb (26-52 billion reads per run). The sequencer utilizes XLEAP-SBS chemistry, an advanced version of Illumina's sequencing by synthesis (SBS) technology, which enables faster and more accurate sequencing." []
+synonym: "NovaSeq X Series" EXACT []
+synonym: "NovaSeq X System" EXACT []
+is_a: OBI:0003685 ! Illumina NovaSeq Series Instrument
+
+[Term]
+id: OBI:0003664
+name: Illumina NovaSeq X Plus
+def: "A DNA sequencer with three flow cell types manufactured by Illumina. It features a dual-flow cell configuration, allowing to reach an output of up to 16 Tb (52-104 billion reads per run). The sequencer utilizes XLEAP-SBS chemistry, an advanced version of Illumina's sequencing by synthesis (SBS) technology, which enables faster and more accurate sequencing." []
+synonym: "NovaSeq X Series" EXACT []
+synonym: "NovaSeq X System" EXACT []
+is_a: OBI:0003685 ! Illumina NovaSeq Series Instrument
+
+[Term]
+id: OBI:0003666
+name: lavage fluid specimen
+def: "A specimen obtained through a lavage process which includes fluid in addition to cells and/or cellular secretions." []
+is_a: OBI:0000953 ! processed specimen
+
+[Term]
+id: OBI:0003667
+name: oral lavage fluid
+def: "A specimen collected through oral cavity lavage that contains the reagents used to for the lavage process, organisms, cells, cellular secretions, and other biomaterials present in the oral cavity space." []
+synonym: "mouth rinse specimen" EXACT []
+is_a: OBI:0003666 ! lavage fluid specimen
+
+[Term]
+id: OBI:0003683
+name: Illumina HiSeq Series Instrument
+def: "A DNA Sequencer manufactured and/or marketed by Illumina and branded with the word HiSeq." []
+synonym: "HiSeq series" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003684
+name: Illumina NextSeq Series Instrument
+def: "A DNA Sequencer manufactured and/or marketed by Illumina and branded with the word NextSeq." []
+synonym: "NextSeq series" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003685
+name: Illumina NovaSeq Series Instrument
+def: "A DNA Sequencer manufactured and/or marketed by Illumina and branded with the word NovaSeq." []
+synonym: "NovaSeq series" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
 
 [Term]
 id: OBI:0005246
@@ -27657,7 +27740,7 @@ is_a: OBI:0001193 ! epitope specific cytokine production by T cells
 id: OBI:1110185
 name: epitope specific IFN-g release by T cells
 def: "A biological process where T cells produce IFNg resulting from the recognition of a T cell epitope." []
-is_a: GO:0032609 ! interferon-gamma production
+is_a: GO:0032609 ! type II interferon production
 is_a: OBI:0001193 ! epitope specific cytokine production by T cells
 
 [Term]
@@ -30377,6 +30460,18 @@ def: "A human health care role inhering in an organization or human being that i
 is_a: BFO:0000023 ! role
 
 [Term]
+id: OMRSE:00000054
+name: hospital role
+def: "A healthcare provider role that inheres in an organization and is realized by providing inpatient care." []
+is_a: BFO:0000023 ! role
+
+[Term]
+id: OMRSE:00000056
+name: hospital organization
+def: "An organization that is the bearer of a hospital role." []
+is_a: OBI:0000245 ! organization
+
+[Term]
 id: OPL:0000232
 name: parasite organism
 def: "An organism living in, with, or on another organism in parasitism. Individual members of parasite species, such as Leishmania, Plasmodium, Trypanosoma, etc. are members of this class." []
@@ -30876,7 +30971,7 @@ is_a: PR:000000001 ! protein
 [Term]
 id: PR:000001018
 name: CD3 subunit with immunoglobulin domain
-def: "A protein with a core domain composition consisting of an extracellular N-terminal domain that adopts an immunoglobulin fold, a transmembrane domain, and an intracellular C-terminal domain with a single copy of the Immunoreceptor tyrosine-based activation motif (Pfam:PF02189) (ITAM). It constitutes the invariant subunit of the T cell antigen receptor (TCR). TCR is a surface receptor on T cells responsible for recognizing MHC-restricted antigens and initiating the cellular immune response." []
+def: "A protein that has a core domain composition consisting of an extracellular N-terminal domain that adopts an immunoglobulin fold, a transmembrane domain, and an intracellular C-terminal domain with a single copy of the Immunoreceptor tyrosine-based activation motif (Pfam:PF02189) (ITAM). It constitutes the invariant subunit of the T cell antigen receptor (TCR). TCR is a surface receptor on T cells responsible for recognizing MHC-restricted antigens and initiating the cellular immune response." []
 is_a: PR:000000001 ! protein
 
 [Term]
@@ -31136,7 +31231,7 @@ is_a: SO:0005836 ! regulatory_region
 [Term]
 id: SO:0000276
 name: miRNA
-def: "Small, ~22-nt, RNA molecule that is the endogenous transcript of a miRNA gene (or the product of other non coding RNA genes. Micro RNAs are produced from precursor molecules (SO:0001244) that can form local hairpin structures, which ordinarily are processed (usually via the Dicer pathway) such that a single miRNA molecule accumulates from one arm of a hairpin precursor molecule. Micro RNAs may trigger the cleavage of their target molecules or act as translational repressors." []
+def: "Small, ~22-nt, RNA molecule that is the endogenous transcript of a miRNA gene (or the product of other non coding RNA genes). Micro RNAs are produced from precursor molecules (SO:0001244) that can form local hairpin structures, which ordinarily are processed (usually via the Dicer pathway) such that a single miRNA molecule accumulates from one arm of a hairpin precursor molecule. Micro RNAs may trigger the cleavage of their target molecules or act as translational repressors." []
 is_a: SO:0000001 ! region
 
 [Term]
@@ -31994,13 +32089,13 @@ is_a: IAO:0000003 ! measurement unit label
 [Term]
 id: VO:0000001
 name: vaccine
-def: "A vaccine is a processed material with the function that when administered, it prevents or ameliorates a disorder in a target organism by inducing or modifying adaptive immune responses specific to the antigens in the vaccine." []
+def: "Material entity that is manufactured to realize the vaccine function." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: VO:0000002
 name: vaccination
-def: "a process of administering substance in vivo that involves in adding a vaccine into a host (e.g., human) in vivo with the intent to invoke a protective or therapeutic adaptive immune response." []
+def: "A process of administering a vaccine in vivo to a recipient (e.g., human) with the intent to invoke a protective or therapeutic adaptive immune response." []
 is_a: OBI:0600007 ! administering substance in vivo
 
 [Typedef]
