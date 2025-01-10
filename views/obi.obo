@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2024-12-05
-date: 05:12:2024 12:48
+data-version: 2025-01-09
+date: 09:01:2025 18:12
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,12 +80,11 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2024-12-05" xsd:string
+property_value: owl:versionInfo "2025-01-09" xsd:string
 
 [Term]
 id: BFO:0000001
 name: entity
-disjoint_from: ObsoleteClass ! Obsolete Class
 
 [Term]
 id: BFO:0000002
@@ -103,8 +102,11 @@ is_a: BFO:0000001 ! entity
 [Term]
 id: BFO:0000004
 name: independent continuant
+comment: A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000006
@@ -132,6 +134,7 @@ is_a: BFO:0000003 ! occurrent
 [Term]
 id: BFO:0000015
 name: process
+comment: An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t.
 is_a: BFO:0000003 ! occurrent
 
 [Term]
@@ -160,7 +163,9 @@ is_a: BFO:0000020 ! specifically dependent continuant
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
+comment: A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.
 is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000023
@@ -201,6 +206,7 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: BFO:0000031
 name: generically dependent continuant
+comment: A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time.
 is_a: BFO:0000002 ! continuant
 
 [Term]
@@ -2391,12 +2397,6 @@ def: "A narrative object is an information content entity that is a set of propo
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: IAO:0000007
-name: action specification
-def: "A directive information entity that describes an action the bearer will take." []
-is_a: IAO:0000033 ! directive information entity
-
-[Term]
 id: IAO:0000009
 name: datum label
 def: "A label is a symbol that is part of some other datum and is used to either partially define  the denotation of that datum or to provide a means for identifying the datum as a member of the set of data with the same label" []
@@ -2407,12 +2407,6 @@ id: IAO:0000010
 name: software
 def: "Software is a plan specification composed of a series of instructions that can be \ninterpreted by or directly executed by a processing unit." []
 is_a: IAO:0000104 ! plan specification
-
-[Term]
-id: IAO:0000015
-name: information carrier
-def: "A quality of an information bearer that imparts the information content" []
-is_a: BFO:0000019 ! quality
 
 [Term]
 id: IAO:0000027
@@ -2454,7 +2448,7 @@ is_a: IAO:0000038 ! graph
 id: IAO:0000038
 name: graph
 def: "A diagram that presents one or more tuples of information by mapping those tuples in to a two dimensional space in a non arbitrary way." []
-is_a: IAO:0000309 ! diagram
+is_a: IAO:0000308 ! figure
 
 [Term]
 id: IAO:0000055
@@ -2584,12 +2578,6 @@ def: "An information content entity consisting of a two dimensional arrangement 
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: IAO:0000309
-name: diagram
-def: "A figure that expresses one or more propositions" []
-is_a: IAO:0000308 ! figure
-
-[Term]
 id: IAO:0000310
 name: document
 def: "A collection of information content entities intended to be understood together as a whole" []
@@ -2608,16 +2596,10 @@ def: "A publication that is about an investigation" []
 is_a: IAO:0000311 ! publication
 
 [Term]
-id: IAO:0000400
-name: cartesian spatial coordinate datum
-def: "A cartesian spatial coordinate datum is a representation of a point in a spatial region, in which equal changes in the magnitude of a coordinate value denote length qualities with the same magnitude" []
-is_a: IAO:0000027 ! data item
-
-[Term]
 id: IAO:0000401
 name: one dimensional cartesian spatial coordinate datum
 def: "A cartesion spatial coordinate datum that  uses one value to specify a position along a one dimensional spatial region" []
-is_a: IAO:0000400 ! cartesian spatial coordinate datum
+is_a: IAO:0000027 ! data item
 
 [Term]
 id: IAO:0000408
@@ -2682,19 +2664,13 @@ is_a: IAO:0000028 ! symbol
 id: IAO:0000579
 name: centrally registered identifier registry
 def: "A code set of CRID records, each consisting of a CRID symbol and additional information which was recorded in the code set through an assigning a centrally registered identifier process." []
-is_a: IAO:0020020 ! code set
+is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: IAO:0000594
 name: software application
 def: "A software application is software that can be directly executed by some processing unit." []
 is_a: IAO:0000010 ! software
-
-[Term]
-id: IAO:0020020
-name: code set
-def: "An information content entity that is a collection of other information content entities that has been created to identify or annotate things in a specified domain, and where the intention of its creators is that the collection has a one-to-one correspondence with those things." []
-is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: IAO:8000000
@@ -6128,7 +6104,7 @@ is_a: OBI:0200000 ! data transformation
 id: OBI:0000651
 name: urine specimen
 def: "a portion of urine collected from an organism" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0000652
@@ -6652,6 +6628,7 @@ is_a: OBI:0000047 ! processed material
 id: OBI:0000737
 name: cloning vector
 def: "A cloning vector is an engineered material that is used as an input material for a recombinant vector cloning process to carry inserted nucleic acids. It contains an origin of replication for a specific destination host organism, encodes for a selectable gene product and contains a cloning site." []
+is_a: CHEBI:33696 ! nucleic acid
 is_a: OBI:0000047 ! processed material
 is_a: OBI:1110108 ! material to be added
 
@@ -7461,7 +7438,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0000914
 name: nasopharyngeal aspirate specimen
 def: "A specimen which derives from nasopharyngeal mucosa after aspiration." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000007 ! nasopharynx specimen
 
 [Term]
 id: OBI:0000915
@@ -7480,8 +7457,8 @@ is_a: OBI:0001977 ! cytometry assay
 id: OBI:0000917
 name: nasal swab specimen
 def: "A specimen obtained using a cotton swab on a stick, passed up the nostril to obtain a sample of exudate and epithelial debris for microbiological or cellular examination." []
-is_a: OBI:0001479 ! specimen from organism
 is_a: OBI:0002599 ! swab specimen
+is_a: OBI:2000006 ! upper respiratory tract specimen
 
 [Term]
 id: OBI:0000918
@@ -14799,14 +14776,14 @@ id: OBI:0002001
 name: Illumina HiSeq 2000
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and a throughput of up to 55 Gb per day. Built upon sequencing by synthesis technology, the machine is optimized for generation of data for multiple samples in a single run." []
 synonym: "HiSeq 2000" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0002002
 name: Illumina HiSeq 2500
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and a throughput of up to 160 Gb per day. Built upon sequencing by synthesis technology, the machine is optimized for generation of data for batching multiple samples or rapid results on a few samples." []
 synonym: "HiSeq 2500" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0002003
@@ -14944,14 +14921,14 @@ id: OBI:0002021
 name: Illumina NextSeq 500
 def: "A DNA sequencer which is a desktop sequencer ideal for smaller-scale studies manufactured by the Illumina corporation. It supports sequencing of single, long or short insert paired end clone libraries relying on sequencing by synthesis technology." []
 synonym: "NextSeq 500" EXACT []
-is_a: OBI:0003684 ! Illumina NextSeq Series Instrument
+is_a: OBI:0003684 ! Illumina NextSeq series instrument
 
 [Term]
 id: OBI:0002022
 name: Illumina HiSeq 1000
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with a single flow cell and a throughput of up to 35 Gb per day. It supports sequencing of single, long or short insert paired end clone libraries relying on sequencing by synthesis technology." []
 synonym: "HiSeq 1000" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0002023
@@ -15156,14 +15133,14 @@ id: OBI:0002048
 name: Illumina HiSeq 3000
 def: "A DNA sequencer manufactured by Illumina corporation, with a single flow cell and a throughput of more than 200 Gb per day." []
 synonym: "HiSeq 3000" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0002049
 name: Illumina HiSeq 4000
 def: "A DNA sequencer manufactured by Illumina corporation, with two flow cell and a throughput of more than 400 Gb per day." []
 synonym: "HiSeq 4000" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0002050
@@ -15737,7 +15714,7 @@ id: OBI:0002129
 name: Illumina HiSeq X Ten
 def: "A DNA sequencer that consists of a set of 10 HiSeq X Sequencing Systems." []
 synonym: "HiSeq X Ten" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0002130
@@ -17174,13 +17151,13 @@ is_a: OBI:0000097 ! participant under investigation role
 id: OBI:0002500
 name: amniotic fluid specimen
 def: "A specimen that is derived from amniotic fluid." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002501
 name: bile specimen
 def: "A specimen that is derived from bile." []
-is_a: OBI:2000009 ! bodily fluid specimen
+is_a: OBI:0002504 ! digestive system fluid or secretion specimen
 
 [Term]
 id: OBI:0002502
@@ -17200,7 +17177,7 @@ id: OBI:0002504
 name: digestive system fluid or secretion specimen
 def: "A specimen that is derived from digestive system fluid or secretion." []
 synonym: "gastric fluid specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002505
@@ -17218,13 +17195,13 @@ is_a: OBI:2000009 ! bodily fluid specimen
 id: OBI:0002507
 name: saliva specimen
 def: "A specimen that is derived from saliva." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002508
 name: sputum specimen
 def: "A specimen that is derived from sputum." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0002509
@@ -17243,7 +17220,7 @@ id: OBI:0002511
 name: vitreous humor specimen
 def: "A specimen that is derived from vireous humor." []
 synonym: "vitreous fluid specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000004 ! eye specimen
 
 [Term]
 id: OBI:0002512
@@ -17348,7 +17325,7 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002528
 name: stomach specimen
 def: "A specimen that is derived from stomach." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002529
@@ -17373,33 +17350,33 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002532
 name: esophagus mucosa specimen
 def: "A specimen that is derived from esophagus mucosa." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002533
 name: colon specimen
 def: "A specimen that is derived from colon." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002534
 name: lung specimen
 def: "A specimen that is derived from lung." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002783 ! lower respiratory tract specimen
 
 [Term]
 id: OBI:0002535
 name: esophagus muscularis mucosa specimen
 def: "A specimen that is derived from esophagus muscularis mucosa." []
 synonym: "esophagus muscularis specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002536
 name: cerebral cortex specimen
 def: "A specimen that is derived from cerebral cortex." []
 synonym: "brain cortex specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002516 ! brain specimen
 
 [Term]
 id: OBI:0002537
@@ -17412,7 +17389,7 @@ id: OBI:0002538
 name: cerebellum specimen
 def: "A specimen that is derived from cerebellum." []
 synonym: "brain cerebellum specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002516 ! brain specimen
 
 [Term]
 id: OBI:0002539
@@ -17448,13 +17425,13 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002544
 name: esophagogastric junction specimen
 def: "A specimen that is derived from the esophagogastric junction." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002545
 name: ileum specimen
 def: "A specimen that is derived from ileum." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002546
@@ -17484,13 +17461,13 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002550
 name: sigmoid colon specimen
 def: "A specimen that is derived from sigmoid colon." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002551
 name: suprapubic skin specimen
 def: "A specimen that is derived from suprapubic skin." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002526 ! skin of body specimen
 
 [Term]
 id: OBI:0002552
@@ -17799,29 +17776,27 @@ is_a: OBI:0000973 ! sequence data
 id: OBI:0002603
 name: areolar swab specimen
 def: "A specimen that is collected with a swab from the surface of an areola of a breast." []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0002604 ! breast swab specimen
 
 [Term]
 id: OBI:0002604
 name: breast swab specimen
 def: "A specimen that is collected with a swab from the surface of a breast." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002523 ! breast specimen
 is_a: OBI:0002599 ! swab specimen
 
 [Term]
 id: OBI:0002605
 name: cheek swab specimen
 def: "A specimen that is collected with a swab from the cheek portion of the inside surface of a mouth." []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0002607 ! oral swab specimen
 
 [Term]
 id: OBI:0002606
 name: nasopharyngeal swab specimen
 def: "A specimen that is collected with a swab from the surface of a nasopharynx." []
-is_a: OBI:0001479 ! specimen from organism
 is_a: OBI:0002599 ! swab specimen
+is_a: OBI:2000007 ! nasopharynx specimen
 
 [Term]
 id: OBI:0002607
@@ -17834,28 +17809,27 @@ is_a: OBI:0002599 ! swab specimen
 id: OBI:0002608
 name: oropharyngeal swab specimen
 def: "A specimen that is collected with a swab from the surface of a oropharynx." []
-is_a: OBI:0001479 ! specimen from organism
 is_a: OBI:0002599 ! swab specimen
+is_a: OBI:2000006 ! upper respiratory tract specimen
 
 [Term]
 id: OBI:0002609
 name: rectal swab specimen
 def: "A specimen that is collected with a swab from the surface of a rectum." []
-is_a: OBI:0001479 ! specimen from organism
 is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002610
 name: tongue swab specimen
 def: "A specimen that is collected with a swab from the surface of a tongue." []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0002607 ! oral swab specimen
 
 [Term]
 id: OBI:0002611
 name: vagina swab specimen
 def: "A specimen that is collected with a swab from the surface of a vagina." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002554 ! vagina specimen
 is_a: OBI:0002599 ! swab specimen
 
 [Term]
@@ -17863,7 +17837,7 @@ id: OBI:0002612
 name: fecal swab specimen
 def: "A specimen that is collected with a swab from the surface of a feces." []
 synonym: "stool swab specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002503 ! feces specimen
 is_a: OBI:0002599 ! swab specimen
 
 [Term]
@@ -17982,7 +17956,7 @@ id: OBI:0002630
 name: Illumina NovaSeq 6000
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with two flow cells and an output of up to 6000 Gb (32-40 B reads per run). The sequencer utilizes synthesis technology and patterned flow cells to optimize throughput and even spacing of sequencing clusters." []
 synonym: "NovaSeq 6000" EXACT []
-is_a: OBI:0003685 ! Illumina NovaSeq Series Instrument
+is_a: OBI:0003685 ! Illumina NovaSeq series instrument
 
 [Term]
 id: OBI:0002631
@@ -18417,7 +18391,7 @@ id: OBI:0002691
 name: arthropod meal of blood specimen
 def: "A specimen of the blood ingested by an arthropod." []
 synonym: "blood meal" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0000655 ! blood specimen
 
 [Term]
 id: OBI:0002692
@@ -19006,14 +18980,13 @@ id: OBI:0002778
 name: tracheal aspirate specimen
 def: "A specimen that is collected with a suctioning tube from the trachea." []
 synonym: "tracheal wash specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002781 ! lower respiratory tract aspirate specimen
 
 [Term]
 id: OBI:0002779
 name: mid-turbinate nasal swab specimen
 def: "A specimen that is collected with a mid-turbinate nasal swab from the turbinate area of the nasal cavity." []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0000917 ! nasal swab specimen
 
 [Term]
 id: OBI:0002780
@@ -19021,7 +18994,7 @@ name: nasal aspirate specimen
 def: "A specimen that is collected with a suctioning tube from the nasal cavity." []
 synonym: "nasal wash specimen" EXACT []
 synonym: "nasopharyngeal aspirate" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000006 ! upper respiratory tract specimen
 
 [Term]
 id: OBI:0002781
@@ -19032,23 +19005,23 @@ is_a: OBI:0002783 ! lower respiratory tract specimen
 
 [Term]
 id: OBI:0002782
-name: upper respiratory specimen
+name: obsolete_upper respiratory specimen
 def: "A specimen that is derived from the upper respiratory tract" []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: OBI:2000006
 
 [Term]
 id: OBI:0002783
 name: lower respiratory tract specimen
 def: "A specimen that is derived from the lower respiratory tract." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000005 ! respiratory system specimen
 
 [Term]
 id: OBI:0002784
 name: anterior nasal swab specimen
 def: "A specimen that is derived from the anterior nasal wall" []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0000917 ! nasal swab specimen
 
 [Term]
 id: OBI:0002785
@@ -19802,13 +19775,13 @@ is_a: OBI:0002953 ! protein state assay
 id: OBI:0002971
 name: endotracheal tube specimen
 def: "A specimen that derives from a biofilm that forms on the inner surface of an endotracheal tube while the tube is in the trachea. The specimen is collected upon removal of the tube from the trachea." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002783 ! lower respiratory tract specimen
 
 [Term]
 id: OBI:0002972
 name: endotracheal aspirate specimen
 def: "A specimen that derives from a biofilm that forms on the inner surface of an endotracheal tube while the tube is in the trachea. The specimen is collected by suction without removing the tube." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002781 ! lower respiratory tract aspirate specimen
 
 [Term]
 id: OBI:0002975
@@ -20174,6 +20147,7 @@ is_a: OBI:0000067 ! evaluant role
 id: OBI:0003030
 name: oligonucleotide primer set
 def: "A processed material that consists of oligonucleotides that bear a primer role." []
+is_a: CHEBI:33696 ! nucleic acid
 is_a: OBI:0000047 ! processed material
 
 [Term]
@@ -22274,13 +22248,13 @@ id: OBI:0003386
 name: Illumina HiSeq 1500
 def: "A DNA sequencer which is manufactured by the Illumina corporation, with a single flow cell. Built upon sequencing by synthesis technology, the machine employs dual surface imaging and offers two high-output options and one rapid-run option." []
 synonym: "HiSeq 1500" EXACT []
-is_a: OBI:0003683 ! Illumina HiSeq Series Instrument
+is_a: OBI:0003683 ! Illumina HiSeq series instrument
 
 [Term]
 id: OBI:0003387
 name: Illumina NextSeq 550
 def: "A DNA sequencer manufactured by the Illumina corporation, which provides the increased flexibility of microarray scanning in addition to sequencing." []
-is_a: OBI:0003684 ! Illumina NextSeq Series Instrument
+is_a: OBI:0003684 ! Illumina NextSeq series instrument
 
 [Term]
 id: OBI:0003388
@@ -22393,6 +22367,12 @@ def: "A DNA microarray manufactured by Affymetrix, used to identify exon-exon ju
 is_a: OBI:0400148 ! DNA microarray
 
 [Term]
+id: OBI:0003412
+name: linked-read sequencing assay
+def: "A DNA sequencing assay that uses microfluidics to partition and barcode high molecular weight DNA such that short reads derived from fragments of the large piece of DNA can be assembled within the context of the high molecular weight piece of DNA they are derived from, facilitating the use of short read data to sequence and assemble large genomes." []
+is_a: OBI:0000626 ! DNA sequencing assay
+
+[Term]
 id: OBI:0003413
 name: administering substance in vivo to cause disease
 def: "An administration of substance in vivo with the intention to induce disease in the organism." []
@@ -22409,7 +22389,7 @@ id: OBI:0003415
 name: peripheral blood mononuclear cell specimen
 def: "A processed specimen that is extracted from whole blood using gradient centrifugation that separates the blood into a layer of peripheral blood mononuclear cells under the top layer of plasma. It contains lymphocytes, monocytes or macrophages that are critical components in the immune system." []
 synonym: "PBMC specimen" EXACT []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0000655 ! blood specimen
 
 [Term]
 id: OBI:0003416
@@ -22764,7 +22744,7 @@ is_a: OBI:0000968 ! device
 id: OBI:0003482
 name: lymph specimen
 def: "A specimen that is derived from a portion of lymph collected from an organism." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:0003483
@@ -23496,7 +23476,7 @@ id: OBI:0003606
 name: Illumina NextSeq 1000
 def: "A DNA sequencer which is manufactured by the Illumina corporation using sequence-by-synthesis chemistry that fits on a benchtop and uses P1 and P2 flow cells." []
 synonym: "NextSeq 1000" EXACT []
-is_a: OBI:0003684 ! Illumina NextSeq Series Instrument
+is_a: OBI:0003684 ! Illumina NextSeq series instrument
 
 [Term]
 id: OBI:0003607
@@ -23846,7 +23826,7 @@ name: Illumina NovaSeq X
 def: "A DNA sequencer with three flow cell types manufactured by Illumina. The NovaSeq X provides an output of up to 8 Tb (26-52 billion reads per run). The sequencer utilizes XLEAP-SBS chemistry, an advanced version of Illumina's sequencing by synthesis (SBS) technology, which enables faster and more accurate sequencing." []
 synonym: "NovaSeq X Series" EXACT []
 synonym: "NovaSeq X System" EXACT []
-is_a: OBI:0003685 ! Illumina NovaSeq Series Instrument
+is_a: OBI:0003685 ! Illumina NovaSeq series instrument
 
 [Term]
 id: OBI:0003664
@@ -23854,7 +23834,7 @@ name: Illumina NovaSeq X Plus
 def: "A DNA sequencer with three flow cell types manufactured by Illumina. It features a dual-flow cell configuration, allowing to reach an output of up to 16 Tb (52-104 billion reads per run). The sequencer utilizes XLEAP-SBS chemistry, an advanced version of Illumina's sequencing by synthesis (SBS) technology, which enables faster and more accurate sequencing." []
 synonym: "NovaSeq X Series" EXACT []
 synonym: "NovaSeq X System" EXACT []
-is_a: OBI:0003685 ! Illumina NovaSeq Series Instrument
+is_a: OBI:0003685 ! Illumina NovaSeq series instrument
 
 [Term]
 id: OBI:0003666
@@ -23872,21 +23852,21 @@ is_a: OBI:0003666 ! lavage fluid specimen
 
 [Term]
 id: OBI:0003683
-name: Illumina HiSeq Series Instrument
+name: Illumina HiSeq series instrument
 def: "A DNA Sequencer manufactured and/or marketed by Illumina and branded with the word HiSeq." []
 synonym: "HiSeq series" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
 
 [Term]
 id: OBI:0003684
-name: Illumina NextSeq Series Instrument
+name: Illumina NextSeq series instrument
 def: "A DNA Sequencer manufactured and/or marketed by Illumina and branded with the word NextSeq." []
 synonym: "NextSeq series" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
 
 [Term]
 id: OBI:0003685
-name: Illumina NovaSeq Series Instrument
+name: Illumina NovaSeq series instrument
 def: "A DNA Sequencer manufactured and/or marketed by Illumina and branded with the word NovaSeq." []
 synonym: "NovaSeq series" EXACT []
 is_a: OBI:0400103 ! DNA sequencer
@@ -23903,6 +23883,30 @@ name: m6A-MTase sequencing assay
 def: "A DNA methylation profiling assay in which chromatin stencils are created by treating nuclei with m6A methyltransferase (MTase) and then sequenced using single-molecule circular consensus sequencing to identify regions of accessible DNA at nucleotide resolution." []
 synonym: "Fiber-seq" EXACT []
 is_a: OBI:0003686 ! chromatin accessibility assay
+
+[Term]
+id: OBI:0003688
+name: sand bath
+def: "A temperature control bath in which sand acts as contact medium for the temperature transfer (from heating or cooling elements to the sample)." []
+is_a: OBI:0400120 ! temperature control bath
+
+[Term]
+id: OBI:0003689
+name: ice bath
+def: "A temperature control bath in which a water ice mixture acts as contact medium at constant temperature of 0 degrees Celsius or below if salt solutions are used." []
+is_a: OBI:0400120 ! temperature control bath
+
+[Term]
+id: OBI:0003690
+name: dry ice bath
+def: "A temperature control bath in which a dry ice solvent mixture acts as contact medium at a constant temperatures significantly below 0 degrees Celsius." []
+is_a: OBI:0400120 ! temperature control bath
+
+[Term]
+id: OBI:0003691
+name: liquid nitrogen bath
+def: "A temperature control bath in which liquid nitrogen acts as contact medium providing a constant temperature of −195.8 °C at 1 atm." []
+is_a: OBI:0400120 ! temperature control bath
 
 [Term]
 id: OBI:0005246
@@ -27867,7 +27871,7 @@ is_a: OBI:0000950 ! paraffin specimen
 id: OBI:2000000
 name: uterine cervix specimen
 def: "A specimen that is derived from some uterine cervix" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002553 ! uterus specimen
 
 [Term]
 id: OBI:2000001
@@ -27903,19 +27907,19 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:2000006
 name: upper respiratory tract specimen
 def: "A specimen that is derived from some upper respiratory tract" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000005 ! respiratory system specimen
 
 [Term]
 id: OBI:2000007
 name: nasopharynx specimen
 def: "A specimen that is derived from some nasopharynx" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000006 ! upper respiratory tract specimen
 
 [Term]
 id: OBI:2000008
 name: semen specimen
 def: "A specimen that is derived from some semen" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:2000009 ! bodily fluid specimen
 
 [Term]
 id: OBI:2000009
@@ -27927,7 +27931,7 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:2000010
 name: chorionic villus specimen
 def: "A specimen that is derived from some chorionic villus" []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002513 ! placenta specimen
 
 [Term]
 id: OBI:2000011
@@ -27963,22 +27967,19 @@ is_a: OBI:0000655 ! blood specimen
 id: OBI:2000016
 name: erythrocyte specimen
 def: "A specimen that is derived from some erythrocytes" []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0001468 ! cell specimen
 
 [Term]
 id: OBI:2000017
 name: reticulocyte specimen
 def: "A specimen that is derived from some reticulocytes" []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0001468 ! cell specimen
 
 [Term]
 id: OBI:2000018
 name: leukocyte specimen
 def: "A specimen that is derived from some leukocytes" []
-is_a: OBI:0001479 ! specimen from organism
-is_a: OBI:0002599 ! swab specimen
+is_a: OBI:0001468 ! cell specimen
 
 [Term]
 id: OBI:2100001
@@ -32554,11 +32555,11 @@ range: IAO:0000027 ! data item
 
 [Typedef]
 id: OBI:0000293
-name: has_specified_input
-def: "The inverse property of is_specified_input_of" []
+name: has specified input
+def: "The inverse property of is specified input of" []
 domain: OBI:0000011 ! planned process
 is_a: RO:0000057 ! has participant
-inverse_of: OBI:0000295 ! is_specified_input_of
+inverse_of: OBI:0000295 ! is specified input of
 
 [Typedef]
 id: OBI:0000294
@@ -32569,7 +32570,7 @@ is_obsolete: true
 
 [Typedef]
 id: OBI:0000295
-name: is_specified_input_of
+name: is specified input of
 def: "A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of." []
 range: OBI:0000011 ! planned process
 is_a: RO:0000056 ! participates in
@@ -32590,11 +32591,11 @@ is_obsolete: true
 
 [Typedef]
 id: OBI:0000299
-name: has_specified_output
-def: "The inverse property of is_specified_output_of" []
+name: has specified output
+def: "The inverse property of is specified output of" []
 domain: OBI:0000011 ! planned process
 is_a: RO:0000057 ! has participant
-inverse_of: OBI:0000312 ! is_specified_output_of
+inverse_of: OBI:0000312 ! is specified output of
 
 [Typedef]
 id: OBI:0000300
@@ -32663,7 +32664,7 @@ is_obsolete: true
 
 [Typedef]
 id: OBI:0000312
-name: is_specified_output_of
+name: is specified output of
 def: "A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of." []
 range: OBI:0000011 ! planned process
 is_a: RO:0000056 ! participates in
@@ -32679,8 +32680,6 @@ is_obsolete: true
 id: OBI:0000314
 name: is_proxy_for
 def: "A relation between continuant instances c1 and c2 where within an experiment/ protocol application,  measurement of c1 is used to determine what a measurement of c2 would be." []
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
 
 [Typedef]
 id: OBI:0000315
@@ -32819,8 +32818,6 @@ range: BFO:0000040 ! material entity
 id: OBI:1110060
 name: process is result of
 def: "is a relationship between a process and a preceding occurrent that directly caused the later one to occur" []
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
 is_a: RO:0002087 ! immediately preceded by
 
 [Typedef]
@@ -32838,18 +32835,21 @@ range: BFO:0000040 ! material entity
 
 [Typedef]
 id: RO:0000052
-name: inheres in
-def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
+name: characteristic of
+def: "a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence." []
+comment: Note that this relation was previously called "inheres in", but was changed to be called "characteristic of" because BFO2 uses "inheres in" in a more restricted fashion. This relation differs from BFO2:inheres_in in two respects: (1) it does not impose a range constraint, and thus it allows qualities of processes, as well as of information entities, whereas BFO2 restricts inheres_in to only apply to independent continuants (2) it is declared functional, i.e. something can only be a characteristic of one thing.
 synonym: "inheres_in" EXACT []
-inverse_of: RO:0000053 ! bearer of
+is_functional: true
+inverse_of: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000053
-name: bearer of
-def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+name: has characteristic
+def: "Inverse of characteristic_of" []
 synonym: "bearer_of" EXACT []
 synonym: "is bearer of" EXACT []
 range: BFO:0000020 ! specifically dependent continuant
+is_inverse_functional: true
 
 [Typedef]
 id: RO:0000056
@@ -32865,6 +32865,7 @@ id: RO:0000057
 name: has participant
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
 synonym: "has_participant" EXACT []
+property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:has_participant" xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000002 ! continuant
 
@@ -32887,28 +32888,31 @@ range: BFO:0000031 ! generically dependent continuant
 id: RO:0000079
 name: function of
 def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
+comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
 synonym: "function_of" EXACT []
 synonym: "is function of" EXACT []
 domain: BFO:0000034 ! function
-is_a: RO:0000052 ! inheres in
+is_a: RO:0000052 ! characteristic of
 inverse_of: RO:0000085 ! has function
 
 [Typedef]
 id: RO:0000080
 name: quality of
 def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
 synonym: "is quality of" EXACT []
 synonym: "quality_of" EXACT []
-is_a: RO:0000052 ! inheres in
+is_a: RO:0000052 ! characteristic of
 inverse_of: RO:0000086 ! has quality
 
 [Typedef]
 id: RO:0000081
 name: role of
 def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
 synonym: "is role of" EXACT []
 synonym: "role_of" EXACT []
-is_a: RO:0000052 ! inheres in
+is_a: RO:0000052 ! characteristic of
 inverse_of: RO:0000087 ! has role
 
 [Typedef]
@@ -32916,8 +32920,9 @@ id: RO:0000085
 name: has function
 def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
 synonym: "has_function" EXACT []
+domain: BFO:0000004 ! independent continuant
 range: BFO:0000034 ! function
-is_a: RO:0000053 ! bearer of
+is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000086
@@ -32925,7 +32930,7 @@ name: has quality
 def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
 synonym: "has_quality" EXACT []
 range: BFO:0000019 ! quality
-is_a: RO:0000053 ! bearer of
+is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000087
@@ -32934,15 +32939,28 @@ def: "a relation between an independent continuant (the bearer) and a role, in w
 synonym: "has_role" EXACT []
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000023 ! role
-is_a: RO:0000053 ! bearer of
+is_a: RO:0000053 ! has characteristic
+
+[Typedef]
+id: RO:0000091
+name: has disposition
+def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000016 ! disposition
+is_a: RO:0000053 ! has characteristic
+inverse_of: RO:0000092 ! disposition of
+
+[Typedef]
+id: RO:0000092
+name: disposition of
+comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
+is_a: RO:0000052 ! characteristic of
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
 synonym: "derives_from" EXACT []
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000004 ! independent continuant
 inverse_of: RO:0001001 ! derives into
 
 [Typedef]
@@ -32964,6 +32982,7 @@ id: RO:0001025
 name: located in
 def: "a relation between two independent continuants, the target and the location, in which the target is entirely within the location" []
 synonym: "located_in" EXACT []
+property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:located_in" xsd:string
 is_transitive: true
 
 [Typedef]
@@ -33052,4 +33071,15 @@ id: RO:0002351
 name: has member
 def: "has member is a mereological relation between a collection and an item." []
 is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0004096
+name: DEPRECATED inheres in
+comment: DEPRECATED This relation is similar to but different in important respects to the characteristic-of relation. See comments on that relation for more information.
+is_obsolete: true
+
+[Typedef]
+id: RO:0004097
+name: DEPRECATED bearer of
+is_obsolete: true
 
