@@ -44,6 +44,7 @@ confirm "Is this the release date: '${DATE}'?"
 
 # Make a new GitHub release.
 echo "Creating GitHub release:"
+make build/new-entities.txt
 gh release create "v${DATE}" --title "${DATE} Release" --notes-file build/new-entities.txt || fail "Failed to create GitHub release"
 
 # Draft an announcement email.
