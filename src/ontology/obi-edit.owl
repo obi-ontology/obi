@@ -2087,6 +2087,12 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     
 
 
+    <!-- http://purl.obolibrary.org/obo/COB_0000026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000026"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/COB_0000110 -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000110">
@@ -3383,7 +3389,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     <!-- http://purl.obolibrary.org/obo/OBI_0000044 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000044">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111 xml:lang="en">physical document</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">a book is a physical document</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
@@ -3407,30 +3413,6 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
         <obo:IAO_0000232 xml:lang="en">BP: I have doubts about the utility of this.</obo:IAO_0000232>
         <obo:IAO_0000232 xml:lang="en">We need a better handling/modeling of time (January 2008)</obo:IAO_0000232>
         <rdfs:label xml:lang="en">waiting</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000047 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000047">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000111 xml:lang="en">processed material</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">Examples include gel matrices, filter paper, parafilm and buffer solutions, mass spectrometer, tissue samples</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">Is a material entity that is created or changed during material processing.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">processed material</rdfs:label>
     </owl:Class>
     
 
@@ -3806,7 +3788,7 @@ editor = PRS</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/OBI_0000079 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000079">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>culture medium</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">A growth medium or culture medium is a substance in which microorganisms or cells can grow.  Wikipedia, growth medium, Feb 29, 2008</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
@@ -5400,7 +5382,7 @@ for now.</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/OBI_0000286 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000286">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
@@ -6399,7 +6381,7 @@ activity)</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/OBI_0000423 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000423">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
@@ -6797,7 +6779,7 @@ that has_part some material entity is a material entity. If we add as equivalent
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000079"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6884,7 +6866,7 @@ that has_part some material entity is a material entity. If we add as equivalent
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>manufacturing</obo:IAO_0000111>
@@ -7297,7 +7279,7 @@ Eur J Cancer. 2009 Jan;45(1):74-81. PMID: 19008094</obo:IAO_0000112>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000111>device setting</obo:IAO_0000111>
@@ -8204,7 +8186,7 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
     <!-- http://purl.obolibrary.org/obo/OBI_0000722 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000722">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>paired-end library</obo:IAO_0000111>
         <obo:IAO_0000112>PMID: 19339662. Next-generation DNA sequencing of paired-end tags (PET) for transcriptome and genome analyses. Genome Res. 2009 Apr;19(4):521-32. Fullwood MJ, Wei CL, Liu ET, Ruan Y.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
@@ -8389,7 +8371,7 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>recombinant vector</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
         <obo:IAO_0000115 xml:lang="en">A recombinant vector is created by a recombinant vector cloning process, and contains nucleic acids that can be amplified. It retains functions of the original cloning vector.</obo:IAO_0000115>
@@ -8422,7 +8404,7 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
     <!-- http://purl.obolibrary.org/obo/OBI_0000735 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000735">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
@@ -8447,7 +8429,7 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
     <!-- http://purl.obolibrary.org/obo/OBI_0000736 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000736">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>single fragment library</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
         <obo:IAO_0000115 xml:lang="en">is a collection of short tags from DNA fragments, are extracted and covalently linked as single tag constructs</obo:IAO_0000115>
@@ -8766,7 +8748,7 @@ the role &apos;adjuvant role&apos; inheres in some &apos;material entity&apos; a
     <!-- http://purl.obolibrary.org/obo/OBI_0000788 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000788">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -9226,7 +9208,7 @@ http://en.wikipedia.org/wiki/Survival_rate</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/OBI_0000815 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000815">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>Berichrom(r) Antithrombin III (A) Kit</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 xml:lang="en">For the chromogenic determination of antithrombin III. Autoanalyzer method for undiluted samples. For the quantitative chromogenic determination of the functional activity of antithrombin III in plasma on autoanalyzers for the diagnosis of diminished AT III synthesis, increased consumption, and for monitoring substitution therapy. Berichrom(r) Antithrombin III (A) is used for the rapid determination of the physiologically active antithrombin III and permits the diagnosis of congenital and acquired antithrombin III deficiency, a condition frequently associated with an increased risk of thrombosis. Acquired antithrombin III deficiencies frequently occur due to consumption following major operations or due to disseminated intravascular coagulation (DIC) in cases of septicaemia, nephroses, liver parenchymal damage (hepatitis, drug intoxication, alcoholism) and estrogen-containing contraceptives. The test permits early detection of patients at increased risk for thrombosis. Kit contains: 6 x for 5.0 mL Thrombin (bovine), 3 x for 3.0 mL Substrate Reagent, 1 x 30.0 mL Buffer Solution</obo:IAO_0000115>
@@ -9421,7 +9403,7 @@ http://en.wikipedia.org/wiki/Survival_rate</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/OBI_0000827 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000827">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>pill</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 xml:lang="en">A dose of medicine or placebo in the form of a small pellet.</obo:IAO_0000115>
@@ -9508,7 +9490,7 @@ http://en.wikipedia.org/wiki/Survival_rate</obo:IAO_0000119>
     <!-- http://purl.obolibrary.org/obo/OBI_0000839 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000839">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -15217,7 +15199,7 @@ PMID: 23587118.
     <!-- http://purl.obolibrary.org/obo/OBI_0001876 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001876">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -16264,7 +16246,7 @@ The following are NOT conclusions based on data: data themselves; results from p
     <!-- http://purl.obolibrary.org/obo/OBI_0001912 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001912">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111>cell freezing medium</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
         <obo:IAO_0000115 xml:lang="en">A processed material that serves as a liquid vehicle for freezing cells for long term quiescent stroage, which contains chemicls needed to sustain cell viability across freeze-thaw cycles.</obo:IAO_0000115>
@@ -17130,7 +17112,7 @@ PMID: 23587118.
     <!-- http://purl.obolibrary.org/obo/OBI_0001970 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001970">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -17181,7 +17163,7 @@ Accelerated chromatin biochemistry using DNA-barcoded nucleosome libraries.</obo
     <!-- http://purl.obolibrary.org/obo/OBI_0002047 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002047">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -17854,7 +17836,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000026"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
@@ -17877,7 +17859,7 @@ https://www.doi.org/</obo:IAO_0000119>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000047"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000026"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001140"/>
@@ -18730,7 +18712,7 @@ JZ (3-30-20): discussed on the OBI call. Since the REO was never actually regist
     <!-- http://purl.obolibrary.org/obo/OBI_0002754 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002754">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111 xml:lang="en"></obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">cDNA library</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">cDNA library lacks the non-coding and regulatory elements found in genomic DNA</obo:IAO_0000112>
@@ -19194,7 +19176,7 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     <!-- http://purl.obolibrary.org/obo/OBI_0003030 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003030">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
@@ -20778,7 +20760,7 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     <!-- http://purl.obolibrary.org/obo/OBI_0100060 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100060">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
@@ -20873,7 +20855,7 @@ Stem cell functions assessed in clonal culture. Soc Gen Physiol Ser. 1988;43:39-
     <!-- http://purl.obolibrary.org/obo/OBI_0100064 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100064">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111 xml:lang="en">screening library</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">PMID: 15615535.J Med Chem. 2004 Dec 30;47(27):6864-74.A screening library for peptide activated G-protein coupled receptors. 1. The test set. [cdna_library, phage display library]</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
@@ -20920,7 +20902,7 @@ DS: Is this synthetic an oxymoron to the biomaterial?</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/OBI_0100066 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100066">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
@@ -25992,7 +25974,7 @@ Manual editing of automatically recorded data in an anesthesia information manag
     <!-- http://purl.obolibrary.org/obo/OBI_0400081 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0400081">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111 xml:lang="en">particle delivery vessel</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">FC 500 particle delivery vessel</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
@@ -26008,7 +25990,7 @@ Manual editing of automatically recorded data in an anesthesia information manag
     <!-- http://purl.obolibrary.org/obo/OBI_0400085 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0400085">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000085"/>
@@ -28091,7 +28073,7 @@ Possible ecological risks of transgenic organism release when transgenes affect 
     <!-- http://purl.obolibrary.org/obo/OBI_1000207 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_1000207">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
         <obo:IAO_0000111 xml:lang="en">assay bead</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">Dynabeads are commercially available magnetic beads which are precoated with antibodies specific for select cellular receptors and are used to separate cell populations.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
