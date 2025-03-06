@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2025-01-09
-date: 09:01:2025 18:12
+data-version: 2025-03-06
+date: 06:03:2025 13:02
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2025-01-09" xsd:string
+property_value: owl:versionInfo "2025-03-06" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1039,7 +1039,7 @@ is_a: CL:0000000 ! cell
 [Term]
 id: CL:0000077
 name: mesothelial cell
-def: "A flattened epithelial cell of mesenchymal origin that lines the serous cavity." []
+def: "A flat, squamous-like epithelial cell of mesodermal origin. It forms the mesothelium, which lines the body's serous cavities including the pleural, peritoneal, and pericardial spaces. This cell plays a crucial role in synthesizing and secreting lubricants, such as glycosaminoglycans and surfactants, which minimize friction between adjacent tissues during movement." []
 is_a: CL:0000066 ! epithelial cell
 
 [Term]
@@ -1290,7 +1290,7 @@ is_a: CLO:0000031 ! cell line
 
 [Term]
 id: COB:0000080
-name: complex of molecular entities
+name: complex of molecules
 def: "A complex of two or more molecular entities that are not covalently bound." []
 is_a: BFO:0000040 ! material entity
 
@@ -1322,7 +1322,7 @@ is_a: BFO:0000029 ! site
 id: GO:0000785
 name: chromatin
 def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome." []
-is_a: GO:0032991 ! protein-containing complex
+is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0001046
@@ -1456,7 +1456,7 @@ is_a: GO:0003824 ! catalytic activity
 [Term]
 id: GO:0003964
 name: RNA-directed DNA polymerase activity
-def: "Catalysis of the reaction: deoxynucleoside triphosphate + DNA(n) = diphosphate + DNA(n+1). Catalyzes RNA-template-directed extension of the 3'- end of a DNA strand by one deoxynucleotide at a time." []
+def: "Catalysis of the reaction: a 2'-deoxyribonucleoside 5'-triphosphate + DNA(n) = diphosphate + DNA(n+1); RNA-template-directed extension of the 3'-end of a DNA strand by one deoxynucleotide at a time." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1468,7 +1468,7 @@ is_a: GO:0003824 ! catalytic activity
 [Term]
 id: GO:0003997
 name: acyl-CoA oxidase activity
-def: "Catalysis of the reaction: acyl-CoA + O2 = trans-2,3-dehydroacyl-CoA + hydrogen peroxide." []
+def: "Catalysis of the reaction: a 2,3-saturated acyl-CoA + O2 = a (2E)-enoyl-CoA + H2O2." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -2000,7 +2000,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0034061
 name: DNA polymerase activity
-def: "Catalysis of the reaction: deoxynucleoside triphosphate + DNA(n) = diphosphate + DNA(n+1); the synthesis of DNA from deoxyribonucleotide triphosphates in the presence of a nucleic acid template and a 3'hydroxyl group." []
+def: "Catalysis of the reaction: a 2'-deoxyribonucleoside 5'-triphosphate + DNA(n) = diphosphate + DNA(n+1)." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -3030,6 +3030,7 @@ synonym: "Epstein Barr virus" EXACT []
 synonym: "Epstein-Barr virus" EXACT []
 synonym: "Epstein-Barr virus EBV" EXACT []
 synonym: "Human herpesvirus 4" EXACT []
+synonym: "Human herpesvirus 4 (Epstein-Barr virus)" EXACT []
 synonym: "Human herpesvirus type 4" EXACT []
 is_a: NCBITaxon:3044472 ! Orthoherpesviridae
 
@@ -3125,6 +3126,7 @@ is_a: NCBITaxon:10239 ! Viruses
 [Term]
 id: NCBITaxon:2732406
 name: Kitrinoviricota
+synonym: "Tombus-Noda-like virus sp." EXACT []
 is_a: NCBITaxon:2559587 ! Riboviria
 
 [Term]
@@ -14293,7 +14295,6 @@ name: chromatin immunoprecipitation with exonuclease sequencing assay
 def: "A ChIP-seq assay which uses immunoprecipitation to isolate protein bound DNA followed by an exonuclease step to degrade DNA that is not protein bound to provide greater resolution of the DNA binding site" []
 synonym: "ChIP-exo assay" EXACT []
 is_a: OBI:0000716 ! ChIP-seq assay
-is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0001926
@@ -14891,7 +14892,6 @@ def: "An epigenetic modification assay that identifies regions containing specif
 synonym: "histone modification ChIP-Seq" EXACT []
 is_a: OBI:0000716 ! ChIP-seq assay
 is_a: OBI:0002020 ! epigenetic modification assay
-is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0002018
@@ -14908,7 +14908,6 @@ def: "A transcription factor binding site assay that utilizes ChIP-seq technolog
 synonym: "TF Binding ChIP-Seq" EXACT []
 is_a: OBI:0000291 ! transcription factor binding site assay
 is_a: OBI:0000716 ! ChIP-seq assay
-is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0002020
@@ -19619,12 +19618,12 @@ is_a: OBI:0001977 ! cytometry assay
 id: OBI:0002947
 name: fluorescence imaging-based cell proliferation assay
 def: "A type of cell proliferation assay in which fluorescent dyes are ued to label and detect proteins or structures that can be used to count cells." []
-synonym: "fluroescence imaging-based cell count assay" EXACT []
+synonym: "fluorescence imaging-based cell count assay" EXACT []
 is_a: OBI:0000891 ! cell proliferation assay
 
 [Term]
 id: OBI:0002948
-name: fluroescence imaging-based cell cycle state assay
+name: fluorescence imaging-based cell cycle state assay
 def: "A type of cytometry assay in which fluorescent dyes are used to label and detect proteins or structures associated with particular cell cycle states." []
 is_a: OBI:0001977 ! cytometry assay
 
@@ -20679,19 +20678,19 @@ is_a: OBI:0003117 ! 3D molecular structure determination assay
 id: OBI:0003119
 name: antigen:antibody complex
 def: "A complex of molecular entitites which is the result of an antibody binding to an antigen." []
-is_a: COB:0000080 ! complex of molecular entities
+is_a: COB:0000080 ! complex of molecules
 
 [Term]
 id: OBI:0003120
 name: epitope:MHC:TCR complex
 def: "A complex of molecular entities which is the result of a T cell receptor binding to a MHC-epitope complex." []
-is_a: COB:0000080 ! complex of molecular entities
+is_a: COB:0000080 ! complex of molecules
 
 [Term]
 id: OBI:0003121
 name: MHC:ligand complex
 def: "A complex of molecular entities which is the result of a MHC molecule binding with a ligand." []
-is_a: COB:0000080 ! complex of molecular entities
+is_a: COB:0000080 ! complex of molecules
 
 [Term]
 id: OBI:0003122
@@ -30813,6 +30812,12 @@ id: ObsoleteClass
 name: Obsolete Class
 
 [Term]
+id: PATO:0000001
+name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
 id: PATO:0000011
 name: age
 def: "A time quality inhering in a bearer by virtue of how long the bearer has existed." []
@@ -30834,7 +30839,7 @@ is_a: PATO:0000141 ! structure
 id: PATO:0000033
 name: concentration of
 def: "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance." []
-is_a: PATO:0002182 ! molecular quality
+is_a: PATO:0000070 ! amount
 
 [Term]
 id: PATO:0000047
@@ -30847,6 +30852,12 @@ id: PATO:0000051
 name: morphology
 def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." []
 is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000070
+name: amount
+def: "The number of entities of this type that are part of the whole organism." []
+is_a: PATO:0103000 ! quantitative
 
 [Term]
 id: PATO:0000117
@@ -31228,12 +31239,6 @@ def: "A concentration quality inhering in a bearer by virtue of the bearer's amo
 is_a: PATO:0000033 ! concentration of
 
 [Term]
-id: PATO:0002182
-name: molecular quality
-def: "A quality which inheres in a molecular entity, a single molecule, atom, ion, radical etc." []
-is_a: PATO:0001241 ! physical object quality
-
-[Term]
 id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
@@ -31280,6 +31285,12 @@ id: PATO:0070060
 name: quality of interaction of a substance with electromagnetic radiation
 def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
 is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0103000
+name: quantitative
+def: "A quality of an entity that can be represented numerically, including anything that can be counted, measured, or given a numerical value." []
+is_a: PATO:0000001 ! quality
 
 [Term]
 id: PR:000000001
