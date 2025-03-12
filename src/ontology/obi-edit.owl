@@ -20776,6 +20776,65 @@ b) that the amount of analyte/measurand detected is over some predetermined thre
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003705 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003705">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000058"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0600015"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A plan specification that is part of a study design, executed as part of an investigation, and realized by assigning participants under investigation to a study design.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">study arm design</obo:IAO_0000118>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">study arm design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003706 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003706">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000181"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000097"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A population of organisms that are participants under investigation in the same study design execution.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">study arm population</obo:IAO_0000118>
+        <obo:IAO_0000233 xml:lang="en">https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">study arm population</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0005246 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0005246">
