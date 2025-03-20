@@ -111,6 +111,7 @@ MODULE_NAMES := administration\
  data-transformations\
  devices\
  epitope-assays\
+ investigations\
  medical-history\
  obsolete\
  physical-examination\

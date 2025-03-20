@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/modules/investigations.owl#"
+     xml:base="http://purl.obolibrary.org/obo/obi/dev/modules/investigations.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/modules/investigations.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000114 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000233 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000233"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000234 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000234"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001847 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001847"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003703 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0003703"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23367 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000572 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000572"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000040"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000066 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000066">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000572"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000471"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000339"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">investigation</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">Lung cancer investigation using expression profiling, a stem cell transplant investigation, biobanking is not an investigation, though it may be part of an investigation</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">a planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">Could add specific objective specification</obo:IAO_0000232>
+        <obo:IAO_0000232 xml:lang="en">Following OBI call November 2012,26th: it was decided there was no need for adding &quot;achieves objective of drawing conclusion&quot; as existing relations were providing equivalent ability. this note closes the issue and validates the class definition to be part of the OBI core editor = PRS</obo:IAO_0000232>
+        <obo:OBI_0001847>study</obo:OBI_0001847>
+        <rdfs:label xml:lang="en">investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000338 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000338"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000339 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000339"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000355 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000355">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111 xml:lang="en">hypothesis-driven investigation</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">is an investigation with the goal to test one or more hypothesis</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">hypothesis-driven investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000356 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000356">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111 xml:lang="en">hypothesis generating investigation</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">is an investigation in which data is generated and analyzed with the purpose of generating new hypothesis</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI branch derived</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">hypothesis generating investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000471 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000471"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000931"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001909 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001909"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002624 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002624"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002897 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002897">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111 xml:lang="en">surveillance process</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">An investigation in which some entity is monitored, and data concerning that entity collected, interpreted, and disseminated, for the purpose of managing, directing, or protecting that entity, or some other entity.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">Shane Babcock, OBI</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1181</obo:IAO_0000233>
+        <obo:IAO_0000234>IDO, VEuPathDB</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">surveillance process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003692 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003692">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0003703"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002624"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000111 xml:lang="en">case-control investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An investigation that has participants that bear either a &quot;case&quot; or &quot;control&quot; role and which examines the hypothesis that the presence of the outcome in case participants is associated with an &quot;exposure&quot; that is not associated with control participants.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI:0002624</obo:IAO_0000119>
+        <obo:IAO_0000234>IAKC</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">case-control investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003693 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003693">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0003703"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0300311"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000111 xml:lang="en">observational investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An investigation in which subjects are monitored in the absence of any active intervention by experimentalists.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI:0300311</obo:IAO_0000119>
+        <obo:IAO_0000234>IAKC</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">observational investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003694 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003694">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111 xml:lang="en">longitudinal investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An investigation that involves repeated observations of the same variables (e.g., people) over long periods of time.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Longitudinal_study</obo:IAO_0000119>
+        <obo:IAO_0000234>IAKC</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">longitudinal investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003695 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003695">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003692"/>
+        <obo:IAO_0000111 xml:lang="en">nested case-control investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A case–control investigation in which cases and controls are drawn from the population in a fully enumerated cohort.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://en.wikipedia.org/wiki/Nested_case–control_study</obo:IAO_0000119>
+        <obo:IAO_0000234>IAKC</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">nested case-control investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003696 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003696">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111 xml:lang="en">animal investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An investigation that has non-human animals as its subjects.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000234>IAKC</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">animal investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003697 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003697">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000066"/>
+        <obo:IAO_0000111 xml:lang="en">clinical investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">An investigation on human subjects with the objective to produce information on human health.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <obo:IAO_0000234>Charlie Hoyt</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">clinical investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003698 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003698">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003697"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0003703"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0300311"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000111 xml:lang="en">observational clinical investigation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A clinical investigation that does not involve an intervention.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <obo:IAO_0000234>Charlie Hoyt</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">observational clinical investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003699 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003699">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003697"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000931"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0003703"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000115"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">clinical trial</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A clinical investigation that involves an intervention.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <obo:IAO_0000234>Charlie Hoyt</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">clinical trial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003700 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003700">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003699"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001909"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000040"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">phase I clinical trial</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A clinical trial that produces information about the safety of a drug and the adverse events associated with that drug, and which is typically conducted with healthy participants.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://clinicaltrials.gov/study-basics/glossary#phase-1</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <obo:IAO_0000234>Charlie Hoyt</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">phase I clinical trial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003701 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003701">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003699"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001909"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000040"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">phase II clinical trial</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A clinical trial that produces information about a drug&apos;s effectiveness and short-term adverse events associated with the drug.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://clinicaltrials.gov/study-basics/glossary#phase-2</obo:IAO_0000119>
+        <obo:IAO_0000234>IAKC</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">phase II clinical trial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003702 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003702">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003699"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001909"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000040"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">phase III clinical trial</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A clinical trial that produces information about a drug&apos;s safety and effectiveness in different populations, with different dosages, and in combination with other drugs.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">https://clinicaltrials.gov/study-basics/glossary#phase-3</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1831</obo:IAO_0000233>
+        <obo:IAO_0000234>Charlie Hoyt</obo:IAO_0000234>
+        <rdfs:label xml:lang="en">phase III clinical trial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0300311 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0300311"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0500000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0500000"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+
