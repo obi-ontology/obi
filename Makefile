@@ -77,10 +77,28 @@ src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
 src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
 	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
-IMPORT_FILES := $(wildcard src/ontology/OntoFox_outputs/*_imports.owl)
+IMPORT_FILES := $(wildcard src/ontology/*_outputs/*_imports.owl)
 
 .PHONY: imports
 imports: $(IMPORT_FILES)
+
+build/%_import_source.owl:
+	curl -sL http://purl.obolibrary.org/obo/$*.owl -o $@
+
+src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl src/ontology/robot_inputs/Uberon_input.txt src/ontology/robot_inputs/Uberon_remove.txt
+	$(ROBOT) extract --method MIREOT --input $< \
+	--upper-term UBERON:0000465 \
+	--lower-terms $(word 2,$^) \
+	--intermediates minimal \
+	export --header IRI \
+	--export build/mireot_Uberon.txt
+	robot extract --method subset --input $< \
+	--term-file build/mireot_Uberon.txt \
+	--term BFO:0000050 \
+	--term BFO:0000051 \
+	remove --term-file $(word 3,$^) \
+	convert -o $@
+
 
 
 ### Templates
