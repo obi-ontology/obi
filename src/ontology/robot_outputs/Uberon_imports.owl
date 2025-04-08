@@ -854,6 +854,29 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
+        <obo:IAO_0000112 xml:lang="en">a flame</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a forest fire</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a human being</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a hurricane</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a photon</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a puff of smoke</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a sea wave</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a tornado</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">an aggregate of human beings.</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">an energy wave</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">an epidemic</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the undetached arm of a human being</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here.</obo:IAO_0000116>
+        <rdfs:label xml:lang="en">material entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0000002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000002">
@@ -2657,6 +2680,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000465 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>Anatomical entity that has mass.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33090"/>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
@@ -3641,6 +3665,12 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000956">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>The thin layer of gray matter on the surface of the cerebral hemisphere that develops from the telencephalon. It consists of the neocortex (6 layered cortex or isocortex), the hippocampal formation and the olfactory cortex.</obo:IAO_0000115>
         <obo:IAO_0000232>We follow NIFSTD in defining cerebral cortex and including both neocortex and hippocampal formation (DG+hippocampus).</obo:IAO_0000232>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117569"/>
@@ -5849,6 +5879,12 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000978"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>The tibial nerve is a branch of the sciatic nerve. The tibial nerve passes through the popliteal fossa to pass below the arch of soleus. In the popliteal fossa the nerve gives off branches to gastrocnemius, popliteus, soleus and plantaris muscles, an articular branch to the knee joint, and a cutaneous branch that will become the sural nerve. The sural nerve is joined by fibres from the common peroneal nerve and runs down the calf to supply the lateral side of the foot. Below the soleus muscle the nerve lies close to the tibia and supplies the tibialis posterior, the flexor digitorum longus and the flexor hallucis longus. The nerve passes into the foot running posterior to the medial malleolus. Here it is bound down by the flexor retinaculum in company with the posterior tibial artery. [WP,unvetted].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EMAPA:36512</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:19035</oboInOwl:hasDbXref>
@@ -7891,6 +7927,12 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001893"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Subcortical nucleus of telecephalic origin consisting of an elongated gray mass lying lateral to and bordering the lateral ventricle. It is divided into a head, body and tail in some species.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <obo:UBPROP_0000001>Nucleus of brain which is an elongated crescent-shaped mass lying parallel and adjacent to the lateral ventricle throughout its extent[FMA:61833].</obo:UBPROP_0000001>
@@ -7996,6 +8038,12 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001893"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Subcortical nucleus of telencephalic , which together with the caudate nucleus, forms the striatum. The putamen lies lateral to the internal capsule and medial to the external medullary lamina, and is separated from the caudate nucleus by the fibers of the internal capsule for most of its length, except at its anterior portion.</obo:IAO_0000115>
@@ -13091,6 +13139,12 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0013755"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>arterial blood</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>FMA:83066</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0013755"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>blood in artery</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:83066</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -13113,12 +13167,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <sssom:author_id rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
         <sssom:mapping_justification rdf:resource="https://w3id.org/semapv/vocab/ManualMappingCuration"/>
         <sssom:mapping_provider>https://github.com/biopragmatics/biomappings</sssom:mapping_provider>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0013755"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>arterial blood</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:83066</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
