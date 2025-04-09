@@ -85,7 +85,17 @@ imports: $(IMPORT_FILES)
 build/%_import_source.owl:
 	curl -sL http://purl.obolibrary.org/obo/$*.owl -o $@
 
-src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl src/ontology/robot_inputs/Uberon_input.txt src/ontology/robot_inputs/Uberon_remove.txt
+build/%_edit_module.owl: src/ontology/robot_inputs/%_template.tsv
+	echo "" > $@
+	robot merge \
+	--input src/ontology/obi-edit.owl \
+	template \
+	--template $< \
+	annotate \
+	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/Uberon_edit.owl" \
+	--output $@
+
+src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl src/ontology/robot_inputs/Uberon_input.txt src/ontology/robot_inputs/Uberon_remove.txt build/Uberon_edit_module.owl
 	$(ROBOT) extract --method MIREOT --input $< \
 	--upper-term UBERON:0000465 \
 	--lower-terms $(word 2,$^) \
@@ -97,6 +107,8 @@ src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl sr
 	--term BFO:0000050 \
 	--term BFO:0000051 \
 	remove --term-file $(word 3,$^) \
+	reduce --reasoner ELK \
+	merge --input $(word 4,$^) \
 	annotate --ontology-iri "http://purl.obolibrary/org/obo/obi/dev/import/Uberon_imports.owl" \
 	convert -o $@
 
