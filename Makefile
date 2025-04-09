@@ -97,6 +97,7 @@ src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl sr
 	--term BFO:0000050 \
 	--term BFO:0000051 \
 	remove --term-file $(word 3,$^) \
+	annotate --ontology-iri "http://purl.obolibrary/org/obo/obi/dev/import/Uberon_imports.owl" \
 	convert -o $@
 
 
