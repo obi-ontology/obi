@@ -85,7 +85,7 @@ imports: $(IMPORT_FILES)
 build/%_import_source.owl:
 	curl -sL http://purl.obolibrary.org/obo/$*.owl -o $@
 
-build/%_edit_module.owl: src/ontology/robot_inputs/%_template.tsv
+build/%_edit_module.owl: src/ontology/robot_inputs/%_edit.tsv
 	echo "" > $@
 	robot merge \
 	--input src/ontology/obi-edit.owl \
