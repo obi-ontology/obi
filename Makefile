@@ -95,7 +95,7 @@ build/%_edit_module.owl: src/ontology/robot_inputs/%_edit.tsv
 	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/Uberon_edit.owl" \
 	--output $@
 
-src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl src/ontology/robot_inputs/Uberon_input.txt src/ontology/robot_inputs/Uberon_remove.txt build/Uberon_edit_module.owl
+src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl src/ontology/robot_inputs/Uberon_input.txt src/ontology/robot_inputs/Uberon_block.txt build/Uberon_edit_module.owl
 	$(ROBOT) extract --method MIREOT --input $< \
 	--upper-term UBERON:0000465 \
 	--lower-terms $(word 2,$^) \
