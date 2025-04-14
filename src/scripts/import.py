@@ -155,21 +155,6 @@ def remove_term_from_file(term, path):
                 print(f"Removed {term} from {path}")
 
 
-def assert_parent(path, term, parent):
-    template_dict = TSV2dict(path)
-    parent_label = lookup_label(parent)
-    if term in template_dict.keys() and template_dict[term]["parent class"] == parent_label:
-        print(f"{term} is already a subclass of '{parent}' in {path}")
-    else:
-        template_dict[term] = {
-            "ontology ID": term,
-            "logical type": "subclass",
-            "parent class": parent_label,
-        }
-        dict2TSV(template_dict, path)
-        print(f"Asserted {term} is a subclass of '{parent}'")
-
-
 def add(term, ontology):
     inputs, blocklist, edit = get_paths(ontology)
     add_term_to_file(term, inputs)
@@ -193,8 +178,19 @@ def drop(term, ontology):
 def parent(term, parent, ontology):
     inputs, blocklist, edit = get_paths(ontology)
     add_term_to_file(term, inputs)
-    assert_parent(edit, term, parent)
     remove_term_from_file(term, blocklist)
+    template_dict = TSV2dict(edit)
+    parent_label = lookup_label(term)
+    if term in template_dict.keys() and template_dict[term]["parent class"] == parent_label:
+        print(f"{term} is already a subclass of '{parent}' in {edit}")
+    else:
+        template_dict[term] = {
+            "ontology ID": term,
+            "logical type": "subclass",
+            "parent class": parent_label,
+        }
+        dict2TSV(template_dict, edit)
+        print(f"Asserted {term} is a subclass of '{parent}'")
 
 
 def main():
@@ -207,7 +203,7 @@ def main():
     parser.add_argument("--term", "-t", type=str, required=True,
                         help="An ontology term ID, e.g., UBERON:0000465")
     parser.add_argument("--parent", "-p", type=str,
-                        help="Intended parent for term")
+                        help="Intended parent for term, e.g., 'material entity'")
     args = parser.parse_args()
     if check_files(args.ontology):
         if args.action == "add":
