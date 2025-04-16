@@ -57,8 +57,16 @@ def read_to_list(txt):
     return output
 
 
+def write_to_txt(items, txt):
+    line_broken_items = [f"{item}\n" for item in items]
+    with open(txt, "w") as file:
+        file.writelines(line_broken_items)
+        file.close()
+
+
 def convert(string, format):
-    iri = re.search(r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)", string)
+    iri = re.search(r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)",
+                    string)
     curie = re.search(r"([a-zA-Z]+):(\d+)", string)
     if not iri and not curie:
         output = None
@@ -176,10 +184,33 @@ def parent(term, parent, imports):
         print(f"Added {term} to import as a subclass of {parent}")
 
 
+def split(ontology, imports):
+    inputs, blocklist, parent = [], [], {}
+    inputs_path = os.path.join("build", f"{ontology}_input.txt")
+    blocklist_path = os.path.join("build", f"{ontology}_blocklist.txt")
+    parent_path = os.path.join("build", f"{ontology}_parent.tsv")
+    parent["robot"] = imports["robot"]
+    for id, row in imports.items():
+        label = row["label"]
+        if row["action"] == "input":
+            inputs.append(f"{id} # {label}")
+        elif row["action"] == "block":
+            blocklist.append(f"{id} # {label}")
+        elif row["action"] == "parent":
+            inputs.append(f"{id} # {label}")
+            parent[id] = row
+    inputs = sorted(inputs)
+    write_to_txt(inputs, inputs_path)
+    blocklist = sorted(blocklist)
+    write_to_txt(blocklist, blocklist_path)
+    dict2TSV(parent, parent_path)
+    print(f"Written:\n{inputs_path}\n{blocklist_path}\n{parent_path}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--action", "-a", type=str, required=True,
-                        choices=["add", "block", "drop", "parent"],
+                        choices=["add", "block", "drop", "parent", "split"],
                         help="Action to take for chosen term, e.g., add")
     parser.add_argument("--ontology", "-o", type=str, required=True,
                         help="Which ontology import to edit, e.g., Uberon")
@@ -197,7 +228,7 @@ def main():
     if not os.path.exists(path):
         print(f"Didn't find {path}")
         quit()
-    if not args.term and not args.termlist:
+    if args.action != "split" and not args.term and not args.termlist:
         print("Use --term or --termlist to indicate the term(s) to act on.")
         quit()
     imports = TSV2dict(path)
@@ -219,6 +250,8 @@ def main():
             quit()
         for term in terms:
             parent(term, args.parent, imports)
+    if args.action == "split":
+        split(args.ontology, imports)
     dict2TSV(imports, path)
 
 
