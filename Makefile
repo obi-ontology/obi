@@ -86,7 +86,7 @@ build/%_import_source.owl:
 	curl -sL http://purl.obolibrary.org/obo/$*.owl -o $@
 
 build/%_parent.tsv: src/ontology/robot_inputs/%_input.tsv
-	python3 src/scripts/import.py -a split -o %
+	python3 src/scripts/import.py -a split -o $*
 
 build/%_edit_module.owl: build/%_parent.tsv
 	echo "" > $@
@@ -100,7 +100,6 @@ build/%_edit_module.owl: build/%_parent.tsv
 
 src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl build/Uberon_input.txt build/Uberon_blocklist.txt build/Uberon_edit_module.owl
 	$(ROBOT) extract --method MIREOT --input $< \
-	--upper-term UBERON:0000465 \
 	--lower-terms $(word 2,$^) \
 	--intermediates minimal \
 	export --header IRI \
