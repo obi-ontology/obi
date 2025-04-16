@@ -88,32 +88,30 @@ build/%_import_source.owl:
 build/%_parent.tsv: src/ontology/robot_inputs/%_input.tsv
 	python3 src/scripts/import.py -a split -o $*
 
-build/%_edit_module.owl: build/%_parent.tsv
+build/%_parent.owl: build/%_parent.tsv
 	echo "" > $@
 	robot merge \
 	--input src/ontology/obi-edit.owl \
 	template \
 	--template $< \
 	annotate \
-	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/Uberon_edit.owl" \
+	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_parent.owl" \
 	--output $@
 
-src/ontology/robot_outputs/Uberon_imports.owl: build/Uberon_import_source.owl build/Uberon_input.txt build/Uberon_blocklist.txt build/Uberon_edit_module.owl
+src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_input.txt build/%_blocklist.txt build/%_parent.owl
 	$(ROBOT) extract --method MIREOT --input $< \
 	--lower-terms $(word 2,$^) \
 	--intermediates minimal \
-	export --header IRI \
-	--export build/mireot_Uberon.txt
-	robot extract --method subset --input $< \
-	--term-file build/mireot_Uberon.txt \
+	export --header IRI --export build/mireot_$*.txt
+	$(ROBOT) extract --method subset --input $< \
+	--term-file build/mireot_$*.txt \
 	--term BFO:0000050 \
 	--term BFO:0000051 \
 	remove --term-file $(word 3,$^) \
 	reduce --reasoner ELK \
 	merge --input $(word 4,$^) \
-	annotate --ontology-iri "http://purl.obolibrary/org/obo/obi/dev/import/Uberon_imports.owl" \
+	annotate --ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_imports.owl" \
 	convert -o $@
-
 
 
 ### Templates
