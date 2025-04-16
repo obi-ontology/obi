@@ -98,6 +98,9 @@ def lookup_label(id):
         adapter = get_adapter(f"sqlite:obo:{curie_base}")
         label = adapter.label(id)
         output = label
+        if "obsolete" in label.lower() or "deprecated" in label.lower():
+            print(f"WARN: {id} is deprecated and will not be included in this import")
+            output = "deprecated"
     return output
 
 
@@ -114,14 +117,15 @@ def add(term, imports):
                 act = True
     if act:
         label = lookup_label(term)
-        imports[term] = {
-            "ontology ID": term,
-            "label": label,
-            "action": "input",
-            "logical type": "",
-            "parent class": ""
-        }
-        print(f"Added {term} to import")
+        if label != "deprecated":
+            imports[term] = {
+                "ontology ID": term,
+                "label": label,
+                "action": "input",
+                "logical type": "",
+                "parent class": ""
+            }
+            print(f"Added {term} to import")
 
 
 def block(term, imports):
@@ -130,14 +134,15 @@ def block(term, imports):
         print(f"{term} is already blocked out of this import")
     else:
         label = lookup_label(term)
-        imports[term] = {
-            "ontology ID": term,
-            "label": label,
-            "action": "block",
-            "logical type": "",
-            "parent class": ""
-        }
-        print(f"Blocked {term} out of this import")
+        if label != "deprecated":
+            imports[term] = {
+                "ontology ID": term,
+                "label": label,
+                "action": "block",
+                "logical type": "",
+                "parent class": ""
+            }
+            print(f"Blocked {term} out of this import")
 
 
 def drop(term, imports):
@@ -174,14 +179,15 @@ def parent(term, parent, imports):
                 print(f"{term} is already imported as a subclass of {parent}")
     if act:
         label = lookup_label(term)
-        imports[term] = {
-            "ontology ID": term,
-            "label": label,
-            "action": "parent",
-            "logical type": "subclass",
-            "parent class": parent
-        }
-        print(f"Added {term} to import as a subclass of {parent}")
+        if label != "deprecated":
+            imports[term] = {
+                "ontology ID": term,
+                "label": label,
+                "action": "parent",
+                "logical type": "subclass",
+                "parent class": parent
+            }
+            print(f"Added {term} to import as a subclass of {parent}")
 
 
 def split(ontology, imports):
@@ -204,7 +210,7 @@ def split(ontology, imports):
     blocklist = sorted(blocklist)
     write_to_txt(blocklist, blocklist_path)
     dict2TSV(parent, parent_path)
-    print(f"Written:\n{inputs_path}\n{blocklist_path}\n{parent_path}")
+    print(f"Wrote {inputs_path}\nWrote {blocklist_path}\nWrote {parent_path}")
 
 
 def main():
