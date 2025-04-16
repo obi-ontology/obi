@@ -190,52 +190,36 @@ def main():
     parser.add_argument("--parent", "-p", type=str,
                         help="Intended parent for term, e.g., 'organ'")
     args = parser.parse_args()
-    path = os.path.join("src", "ontology", "robot_inputs", f"{args.ontology}_input.tsv")
+    path = os.path.join("src",
+                        "ontology",
+                        "robot_inputs",
+                        f"{args.ontology}_input.tsv")
     if not os.path.exists(path):
         print(f"Didn't find {path}")
-    elif not args.term and not args.termlist:
+        quit()
+    if not args.term and not args.termlist:
         print("Use --term or --termlist to indicate the term(s) to act on.")
-    else:
-        imports = TSV2dict(path)
-        if args.action == "add":
-            if args.term and args.parent:
-                add(args.term, imports)
-                parent(args.term, args.parent, imports)
-            elif args.term:
-                add(args.term, imports)
-            elif args.termlist and args.parent:
-                terms = read_to_list(args.termlist)
-                for term in terms:
-                    add(term, imports)
-                    parent(term, args.parent, imports)
-            elif args.termlist:
-                terms = read_to_list(args.termlist)
-                for term in terms:
-                    add(term, imports)
-        if args.action == "block":
-            if args.term:
-                block(args.term, imports)
-            elif args.termlist:
-                terms = read_to_list(args.termlist)
-                for term in terms:
-                    block(term, imports)
-        if args.action == "drop":
-            if args.term:
-                drop(args.term, imports)
-            elif args.termlist:
-                terms = read_to_list(args.termlist)
-                for term in terms:
-                    drop(term, imports)
-        if args.action == "parent":
-            if not args.parent:
-                print("No parent term specified. Use --parent to set parent")
-            elif args.term:
-                parent(args.term, args.parent, imports)
-            else:
-                terms = read_to_list(args.termlist)
-                for term in terms:
-                    parent(term, args.parent, imports)
-        dict2TSV(imports, path)
+        quit()
+    imports = TSV2dict(path)
+    terms = read_to_list(args.termlist) if args.termlist else [args.term,]
+    if args.action == "add":
+        for term in terms:
+            add(term, imports)
+            if args.parent:
+                parent(term, args.parent, imports)
+    if args.action == "block":
+        for term in terms:
+            block(term, imports)
+    if args.action == "drop":
+        for term in terms:
+            drop(term, imports)
+    if args.action == "parent":
+        if not args.parent:
+            print("No parent term specified. Use --parent or -p to set parent")
+            quit()
+        for term in terms:
+            parent(term, args.parent, imports)
+    dict2TSV(imports, path)
 
 
 if __name__ == "__main__":
