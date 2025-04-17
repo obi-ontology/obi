@@ -1,3 +1,25 @@
+"""
+Manage files to be used as inputs in the ROBOT import workflow.
+
+This script performs two basic functions: editing the main ROBOT input file
+(src/ontology/robot_inputs/*_inputs.tsv) and splitting that file into the
+three build files that are used directly in the ROBOT import workflow. The
+splitting function is called in the Makefile.
+
+The script can take the following actions on the ROBOT input file:
+    * ADD a term to the input file to be imported
+    * BLOCK a term from being imported
+    * DROP references to a term in the input file
+    * Set a PARENT for a term to be imported
+
+The script will not allow addition of terms that are already in the import
+file or terms that are deprecated. It also will not allow the user to set a
+parent for a term that is already a hierarchical parent of that term in the
+source ontology. It will ask for confirmation when overriding a block on
+a term by adding, dropping, or setting a parent for that term.
+"""
+
+
 import argparse
 import csv
 import os
@@ -49,6 +71,9 @@ def dict2TSV(xdict, path):
 
 
 def read_to_list(txt):
+    """
+    Make a list of lines in a text file with newline characters removed
+    """
     output = []
     with open(txt, "r") as file:
         lines = file.readlines()
@@ -58,6 +83,9 @@ def read_to_list(txt):
 
 
 def write_to_txt(items, txt):
+    """
+    Write a text file with one list item per line
+    """
     line_broken_items = [f"{item}\n" for item in items]
     with open(txt, "w") as file:
         file.writelines(line_broken_items)
@@ -65,6 +93,9 @@ def write_to_txt(items, txt):
 
 
 def convert(string, format):
+    """
+    Convert OBO IRIs to CURIEs and vice versa
+    """
     iri = re.search(r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)",
                     string)
     curie = re.search(r"([a-zA-Z]+):(\d+)", string)
@@ -90,6 +121,9 @@ def convert(string, format):
 
 
 def lookup_label(id):
+    """
+    Identify the label of a term based on its CURIE
+    """
     curie = re.search(r"([a-zA-Z]+):(\d+)", id)
     output = id
     if curie:
@@ -105,6 +139,9 @@ def lookup_label(id):
 
 
 def lookup_parents(id, mode):
+    """
+    Identify superclasses of a term based on its CURIE
+    """
     curie = re.search(r"([a-zA-Z]+):(\d+)", id)
     parents = set()
     if curie:
@@ -129,6 +166,9 @@ def lookup_parents(id, mode):
 
 
 def add(term, imports):
+    """
+    Add a term to be imported
+    """
     term = convert(term, "curie")
     act = True
     if term in imports.keys():
@@ -153,6 +193,9 @@ def add(term, imports):
 
 
 def block(term, imports):
+    """
+    Block a term from being imported
+    """
     term = convert(term, "curie")
     if term in imports.keys() and imports[term]["action"] == "block":
         print(f"{term} is already blocked out of this import")
@@ -170,6 +213,9 @@ def block(term, imports):
 
 
 def drop(term, imports):
+    """
+    Remove references to a term in the import dict
+    """
     term = convert(term, "curie")
     if term not in imports.keys():
         print(f"{term} is not in this import file")
@@ -189,6 +235,9 @@ def drop(term, imports):
 
 
 def parent(term, parent, imports):
+    """
+    Assert a parent class for a term to be imported
+    """
     term = convert(term, "curie")
     act = True
     parents = lookup_parents(term, "hard")
@@ -223,6 +272,9 @@ def parent(term, parent, imports):
 
 
 def split(ontology, imports):
+    """
+    Split imports into build files needed by ROBOT import workflow
+    """
     inputs, blocklist, parent = [], [], {}
     inputs_path = os.path.join("build", f"{ontology}_input.txt")
     blocklist_path = os.path.join("build", f"{ontology}_blocklist.txt")
@@ -246,6 +298,9 @@ def split(ontology, imports):
 
 
 def main():
+    """
+    Validate paths and take specified action(s)
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--action", "-a", type=str, required=True,
                         choices=["add", "block", "drop", "parent", "split"],
