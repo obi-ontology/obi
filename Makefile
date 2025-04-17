@@ -77,10 +77,41 @@ src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
 src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
 	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
-IMPORT_FILES := $(wildcard src/ontology/OntoFox_outputs/*_imports.owl)
+IMPORT_FILES := $(wildcard src/ontology/*_outputs/*_imports.owl)
 
 .PHONY: imports
 imports: $(IMPORT_FILES)
+
+build/%_import_source.owl:
+	curl -sL http://purl.obolibrary.org/obo/$*.owl -o $@
+
+build/%_parent.tsv: src/ontology/robot_inputs/%_input.tsv
+	python3 src/scripts/import.py -a split -o $*
+
+build/%_parent.owl: build/%_parent.tsv
+	echo "" > $@
+	robot merge \
+	--input src/ontology/obi-edit.owl \
+	template \
+	--template $< \
+	annotate \
+	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_parent.owl" \
+	--output $@
+
+src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_input.txt build/%_blocklist.txt build/%_parent.owl
+	$(ROBOT) extract --method MIREOT --input $< \
+	--lower-terms $(word 2,$^) \
+	--intermediates minimal \
+	export --header IRI --export build/mireot_$*.txt
+	$(ROBOT) extract --method subset --input $< \
+	--term-file build/mireot_$*.txt \
+	--term BFO:0000050 \
+	--term BFO:0000051 \
+	remove --term-file $(word 3,$^) \
+	reduce --reasoner ELK \
+	merge --input $(word 4,$^) \
+	annotate --ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_imports.owl" \
+	convert -o $@
 
 
 ### Templates
