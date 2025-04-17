@@ -104,6 +104,30 @@ def lookup_label(id):
     return output
 
 
+def lookup_parents(id, mode):
+    curie = re.search(r"([a-zA-Z]+):(\d+)", id)
+    parents = set()
+    if curie:
+        curie_base = curie.group(1)
+        curie_base = curie_base.lower()
+        adapter = get_adapter(f"sqlite:obo:{curie_base}")
+        parent_list = adapter.hierarchical_parents(id)
+        if mode == "soft":
+            parents = parent_list
+        elif mode == "hard":
+            while len(parent_list) != 0:
+                storage = set()
+                for i in parent_list:
+                    parents.add(i)
+                    storage.add(i)
+                parent_list = set()
+                for i in storage:
+                    upper_parents = adapter.hierarchical_parents(i)
+                    for i in upper_parents:
+                        parent_list.add(i)
+    return parents
+
+
 def add(term, imports):
     term = convert(term, "curie")
     act = True
@@ -167,6 +191,11 @@ def drop(term, imports):
 def parent(term, parent, imports):
     term = convert(term, "curie")
     act = True
+    parents = lookup_parents(term, "hard")
+    parent_labels = []
+    for parent_id in parents:
+        parent_label = lookup_label(parent_id)
+        parent_labels.append(parent_label)
     if term in imports.keys():
         if imports[term]["action"] == "block":
             act = False
@@ -177,6 +206,9 @@ def parent(term, parent, imports):
             if imports[term]["parent class"] == parent:
                 act = False
                 print(f"{term} is already imported as a subclass of {parent}")
+    if parent in parent_labels:
+        print(f"{term} is already a subclass of '{parent}' in the ontology")
+        act = False
     if act:
         label = lookup_label(term)
         if label != "deprecated":
