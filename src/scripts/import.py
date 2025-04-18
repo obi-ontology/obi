@@ -58,6 +58,14 @@ def dict2TSV(xdict, path):
     first = rows[0]
     fieldnames = [i for i in xdict[first].keys()]
     ids = []
+    if "robot" not in xdict.keys():
+        xdict["robot"] = {
+            "ontology ID": "ID",
+            "label": "",
+            "action": "",
+            "logical type": "CLASS_TYPE",
+            "parent class": "C %"
+        }
     for key in xdict.keys():
         if key != "robot":
             ids.append(key)
