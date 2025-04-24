@@ -140,6 +140,13 @@ def lookup_label(id):
         adapter = get_adapter(f"sqlite:obo:{curie_base}")
         label = adapter.label(id)
         output = label
+        if type(label) != str and curie_base == "bfo":
+            adapter = get_adapter("sqlite:obo:ro")
+            label = adapter.label(id)
+            if type(label) != str:
+                output = ""
+            else:
+                output = label
         if "obsolete" in label.lower() or "deprecated" in label.lower():
             print(f"WARN: {id} is deprecated and will not be included in this import")
             output = "deprecated"
@@ -173,7 +180,7 @@ def lookup_parents(id, mode):
     return parents
 
 
-def add(term, imports):
+def add(term, imports, relation=False):
     """
     Add a term to be imported
     """
@@ -197,6 +204,8 @@ def add(term, imports):
                 "logical type": "",
                 "parent class": ""
             }
+            if relation:
+                imports[term]["action"] = "relate"
             print(f"Added {term} to import")
 
 
@@ -283,10 +292,11 @@ def split(ontology, imports):
     """
     Split imports into build files needed by ROBOT import workflow
     """
-    inputs, blocklist, parent = [], [], {}
+    inputs, blocklist, parent, relations = [], [], {}, []
     inputs_path = os.path.join("build", f"{ontology}_input.txt")
     blocklist_path = os.path.join("build", f"{ontology}_blocklist.txt")
     parent_path = os.path.join("build", f"{ontology}_parent.tsv")
+    relations_path = os.path.join("build", f"{ontology}_relations.txt")
     parent["robot"] = imports["robot"]
     for id, row in imports.items():
         label = row["label"]
@@ -297,12 +307,17 @@ def split(ontology, imports):
         elif row["action"] == "parent":
             inputs.append(f"{id} # {label}")
             parent[id] = row
+        elif row["action"] == "relate":
+            relations.append(f"{id} # {label}")
     inputs = sorted(inputs)
     write_to_txt(inputs, inputs_path)
     blocklist = sorted(blocklist)
     write_to_txt(blocklist, blocklist_path)
     dict2TSV(parent, parent_path)
-    print(f"Wrote {inputs_path}\nWrote {blocklist_path}\nWrote {parent_path}")
+    relations = sorted(relations)
+    write_to_txt(relations, relations_path)
+    for i in inputs_path, blocklist_path, parent_path, relations_path:
+        print(f"Wrote {i}")
 
 
 def main():
@@ -321,6 +336,8 @@ def main():
                         help="A text file containing a list of ontology IDs")
     parser.add_argument("--parent", "-p", type=str,
                         help="Intended parent for term, e.g., 'organ'")
+    parser.add_argument("--relation", "-r", type=str,
+                        help="'--relation True' indicates term is a relation")
     args = parser.parse_args()
     path = os.path.join("src",
                         "ontology",
@@ -336,7 +353,7 @@ def main():
     terms = read_to_list(args.termlist) if args.termlist else [args.term,]
     if args.action == "add":
         for term in terms:
-            add(term, imports)
+            add(term, imports, args.relation)
             if args.parent:
                 parent(term, args.parent, imports)
     if args.action == "block":

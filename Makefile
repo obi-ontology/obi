@@ -105,8 +105,7 @@ src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_inpu
 	export --header IRI --export build/mireot_$*.txt
 	$(ROBOT) extract --method subset --input $< \
 	--term-file build/mireot_$*.txt \
-	--term BFO:0000050 \
-	--term BFO:0000051 \
+	--term-file build/$*_relations.txt \
 	remove --term-file $(word 3,$^) \
 	reduce --reasoner ELK \
 	merge --input $(word 4,$^) \
