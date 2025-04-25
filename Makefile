@@ -98,17 +98,18 @@ build/%_parent.owl: build/%_parent.tsv
 	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_parent.owl" \
 	--output $@
 
-src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_input.txt build/%_blocklist.txt build/%_parent.owl
+src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_upper.txt build/%_input.txt build/%_blocklist.txt build/%_parent.owl
 	$(ROBOT) extract --method MIREOT --input $< \
-	--lower-terms $(word 2,$^) \
+	--upper-terms $(word 2,$^) \
+	--lower-terms $(word 3,$^) \
 	--intermediates minimal \
 	export --header IRI --export build/mireot_$*.txt
 	$(ROBOT) extract --method subset --input $< \
 	--term-file build/mireot_$*.txt \
 	--term-file build/$*_relations.txt \
-	remove --term-file $(word 3,$^) \
+	remove --term-file $(word 4,$^) \
 	reduce --reasoner ELK \
-	merge --input $(word 4,$^) \
+	merge --input $(word 5,$^) \
 	annotate --ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_imports.owl" \
 	convert -o $@
 

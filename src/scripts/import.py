@@ -180,7 +180,7 @@ def lookup_parents(id, mode):
     return parents
 
 
-def add(term, imports, relation=False):
+def add(term, imports, relation=False, upper=False):
     """
     Add a term to be imported
     """
@@ -206,6 +206,8 @@ def add(term, imports, relation=False):
             }
             if relation:
                 imports[term]["action"] = "relate"
+            if upper:
+                imports[term]["action"] = "upper"
             print(f"Added {term} to import")
 
 
@@ -292,11 +294,12 @@ def split(ontology, imports):
     """
     Split imports into build files needed by ROBOT import workflow
     """
-    inputs, blocklist, parent, relations = [], [], {}, []
+    inputs, blocklist, parent, relation, upper = [], [], {}, [], []
     inputs_path = os.path.join("build", f"{ontology}_input.txt")
     blocklist_path = os.path.join("build", f"{ontology}_blocklist.txt")
     parent_path = os.path.join("build", f"{ontology}_parent.tsv")
-    relations_path = os.path.join("build", f"{ontology}_relations.txt")
+    relation_path = os.path.join("build", f"{ontology}_relations.txt")
+    upper_path = os.path.join("build", f"{ontology}_upper.txt")
     parent["robot"] = imports["robot"]
     for id, row in imports.items():
         label = row["label"]
@@ -308,15 +311,18 @@ def split(ontology, imports):
             inputs.append(f"{id} # {label}")
             parent[id] = row
         elif row["action"] == "relate":
-            relations.append(f"{id} # {label}")
-    inputs = sorted(inputs)
-    write_to_txt(inputs, inputs_path)
-    blocklist = sorted(blocklist)
-    write_to_txt(blocklist, blocklist_path)
+            relation.append(f"{id} # {label}")
+        elif row["action"] == "upper":
+            upper.append(f"{id} # {label}")
+    for (xlist, xpath) in [
+        (inputs, inputs_path),
+        (blocklist, blocklist_path),
+        (relation, relation_path),
+        (upper, upper_path)
+    ]:
+        write_to_txt(sorted(xlist), xpath)
     dict2TSV(parent, parent_path)
-    relations = sorted(relations)
-    write_to_txt(relations, relations_path)
-    for i in inputs_path, blocklist_path, parent_path, relations_path:
+    for i in inputs_path, blocklist_path, parent_path, relation_path, upper_path:
         print(f"Wrote {i}")
 
 
@@ -338,6 +344,8 @@ def main():
                         help="Intended parent for term, e.g., 'organ'")
     parser.add_argument("--relation", "-r", type=str,
                         help="'--relation True' indicates term is a relation")
+    parser.add_argument("--upper", "-u", type=str,
+                        help="'--upper True' sets the term as an upper term")
     args = parser.parse_args()
     path = os.path.join("src",
                         "ontology",
@@ -353,7 +361,7 @@ def main():
     terms = read_to_list(args.termlist) if args.termlist else [args.term,]
     if args.action == "add":
         for term in terms:
-            add(term, imports, args.relation)
+            add(term, imports, args.relation, args.upper)
             if args.parent:
                 parent(term, args.parent, imports)
     if args.action == "block":
