@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2025-03-06
-date: 06:03:2025 13:02
+data-version: 2025-05-01
+date: 01:05:2025 14:12
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2025-03-06" xsd:string
+property_value: owl:versionInfo "2025-05-01" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1025,6 +1025,12 @@ def: "A cell in vitro that is or has been maintained or propagated as part of a 
 is_a: CL:0000578 ! experimentally modified cell in vitro
 
 [Term]
+id: CL:0000019
+name: sperm
+def: "A mature male germ cell that develops from a spermatid." []
+is_a: CL:0000000 ! cell
+
+[Term]
 id: CL:0000057
 name: fibroblast
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." []
@@ -1139,6 +1145,12 @@ name: experimentally modified cell in vitro
 def: "A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure." []
 is_a: CL:0000000 ! cell
 is_a: OBI:0000047 ! processed material
+
+[Term]
+id: CL:0000623
+name: natural killer cell
+def: "A lymphocyte that can spontaneously kill a variety of target cells without prior antigenic activation via germline encoded activation receptors and also regulate immune responses via cytokine release and direct contact with other cells." []
+is_a: CL:0000542 ! lymphocyte
 
 [Term]
 id: CL:0000624
@@ -1378,6 +1390,19 @@ def: "The directed killing of a target cell by a T cell through the release of g
 is_a: GO:0001906 ! cell killing
 
 [Term]
+id: GO:0001964
+name: startle response
+def: "An action or movement due to the application of a sudden unexpected stimulus." []
+is_a: GO:0050896 ! response to stimulus
+is_a: GO:0050905 ! neuromuscular process
+
+[Term]
+id: GO:0002027
+name: regulation of heart rate
+def: "Any process that modulates the frequency or rate of heart contraction." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0002250
 name: adaptive immune response
 def: "An immune response mediated by cells expressing specific receptors for antigens produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." []
@@ -1422,6 +1447,12 @@ id: GO:0002534
 name: cytokine production involved in inflammatory response
 def: "The synthesis or release of a cytokine following a inflammatory stimulus as part of an inflammatory response, resulting in an increase in its intracellular or extracellular levels." []
 is_a: GO:0001816 ! cytokine production
+
+[Term]
+id: GO:0003016
+name: respiratory system process
+def: "A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0003094
@@ -1604,9 +1635,21 @@ def: "The progression of biochemical and morphological phases and events that oc
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0007283
+name: spermatogenesis
+def: "The developmental process by which male germ line stem cells self renew or give rise to successive cell types resulting in the development of a spermatozoa." []
+is_a: GO:0022414 ! reproductive process
+
+[Term]
 id: GO:0007596
 name: blood coagulation
 def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0007611
+name: learning or memory
+def: "The acquisition and processing of information and/or the storage and retrieval of this information over time." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -1615,6 +1658,12 @@ name: biological_process
 def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 is_a: BFO:0000015 ! process
 disjoint_from: OBI:0000011 ! planned process
+
+[Term]
+id: GO:0008217
+name: regulation of blood pressure
+def: "Any process that modulates the force with which blood travels through the circulatory system. The process is controlled by a balance of processes that increase pressure and decrease pressure." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0008228
@@ -1713,6 +1762,18 @@ def: "Binding to a specific domain of a protein." []
 is_a: OBI:0001588 ! binding
 
 [Term]
+id: GO:0021700
+name: developmental maturation
+def: "A developmental process, independent of morphogenetic (shape) change, that is required for an anatomical structure, cell or cellular component to attain its fully functional state." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0022414
+name: reproductive process
+def: "A biological process that directly contributes to the process of producing new individuals by one or two organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0030041
 name: actin filament polymerization
 def: "Assembly of actin filaments by the addition of actin monomers to a filament." []
@@ -1723,6 +1784,12 @@ id: GO:0030097
 name: hemopoiesis
 def: "The process whose specific outcome is the progression of the myeloid and lymphoid derived organ/tissue systems of the blood and other parts of the body over time, from formation to the mature structure. The site of hemopoiesis is variable during development, but occurs primarily in bone marrow or kidney in many adult vertebrates." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0030154
+name: cell differentiation
+def: "The cellular developmental process in which a relatively unspecialized cell, e.g. embryonic or regenerative cell, acquires specialized structural and/or functional features that characterize a specific cell. Differentiation includes the processes involved in commitment of a cell to a specific fate and its subsequent development to the mature state." []
+is_a: GO:0048869 ! cellular developmental process
 
 [Term]
 id: GO:0032601
@@ -2139,6 +2206,12 @@ def: "The appearance of chemokine (C-C motif) ligand 17 (CCL17) due to biosynthe
 is_a: GO:0032602 ! chemokine production
 
 [Term]
+id: GO:0045087
+name: innate immune response
+def: "Innate immune responses are defense responses mediated by germline encoded components that directly recognize components of potential pathogens." []
+is_a: GO:0006955 ! immune response
+
+[Term]
 id: GO:0047823
 name: D-glutamyltransferase activity
 def: "Catalysis of the reaction: D-glutamate + D-glutamine = gamma-D-glutamyl-D-glutamate + NH4+. Can also transfer additional glutamyl residues to a peptide, extending the polypeptide chain." []
@@ -2151,9 +2224,21 @@ def: "A biological process whose specific outcome is the progression of a cell o
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0048871
+name: multicellular organismal-level homeostasis
+def: "Any process involved in the maintenance of an internal steady state at the level of the multicellular organism." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0050896
 name: response to stimulus
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus and ends with a change in state or activity or the cell or organism." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0050905
+name: neuromuscular process
+def: "Any process pertaining to the functions of the nervous and muscular systems of an organism." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -3565,7 +3650,7 @@ def: "A device that facilitates the separation of mixtures. The function of a ch
 synonym: "chromatography instrument" EXACT []
 is_a: OBI:0000832 ! measurement device
 is_a: OBI:0000932 ! material separation device
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0000049
@@ -4471,7 +4556,7 @@ is_a: OBI:0000932 ! material separation device
 
 [Term]
 id: OBI:0000355
-name: hypothesis driven investigation
+name: hypothesis-driven investigation
 def: "is an investigation with the goal to test one or more hypothesis" []
 is_a: OBI:0000066 ! investigation
 
@@ -4627,13 +4712,13 @@ id: OBI:0000389
 name: isoelectric focusing device
 def: "An isoelectric focusing device is a device in which isoelectric focusing can be performed. An isoelectric focussing device had the function to contain and control the contained environment and transfer electrical energy from a power supply to a separation medium and the charged material to be separated." []
 synonym: "isoelectric focusing unit" EXACT []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0000390
 name: thermostatic circulator
 def: "A thermostatic circulator is a device which cools or heats a circulating liquid. It has the function to contain control the contained environment and transfer energy from or to the circulating liquid" []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0000391
@@ -4708,7 +4793,7 @@ is_a: OBI:0000372 ! material separation function
 id: OBI:0000404
 name: gel dryer
 def: "A gel dryer is a device which has the function to contain and to control the contained environment to facilitate the drying of gels" []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0000405
@@ -8438,13 +8523,13 @@ id: OBI:0001075
 name: hybridization oven
 def: "A device that creates an appropriate environment for nucleic acid hybridization." []
 is_a: OBI:0000136 ! incubator
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0001076
 name: incubator shaker
 def: "An incubating device that provides shaking motion for biomedical applications (e.g., cell cultures)." []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0001077
@@ -15427,7 +15512,7 @@ is_a: OBI:0000967 ! container
 
 [Term]
 id: OBI:0002089
-name: physical store
+name: container with environmental control
 def: "A container with an environmental control function." []
 is_a: OBI:0000967 ! container
 is_a: OBI:0001034 ! environmental control device
@@ -23908,6 +23993,202 @@ def: "A temperature control bath in which liquid nitrogen acts as contact medium
 is_a: OBI:0400120 ! temperature control bath
 
 [Term]
+id: OBI:0003692
+name: case-control investigation
+def: "An investigation that has participants that bear either a case or control role and which examines the hypothesis that the presence of the outcome in case participants is associated with an exposure that is not associated with control participants." []
+is_a: OBI:0000066 ! investigation
+
+[Term]
+id: OBI:0003693
+name: observational investigation
+def: "An investigation in which subjects are monitored in the absence of any active intervention by experimentalists." []
+is_a: OBI:0000066 ! investigation
+
+[Term]
+id: OBI:0003694
+name: longitudinal investigation
+def: "An investigation that involves repeated observations of the same variables (e.g., people) over long periods of time." []
+is_a: OBI:0000066 ! investigation
+
+[Term]
+id: OBI:0003695
+name: nested case-control investigation
+def: "A case–control investigation in which cases and controls are drawn from the population in a fully enumerated cohort." []
+is_a: OBI:0003692 ! case-control investigation
+
+[Term]
+id: OBI:0003696
+name: animal investigation
+def: "An investigation that has non-human animals as its subjects." []
+is_a: OBI:0000066 ! investigation
+
+[Term]
+id: OBI:0003697
+name: clinical investigation
+def: "An investigation on human subjects with the objective to produce information on human health." []
+is_a: OBI:0000066 ! investigation
+
+[Term]
+id: OBI:0003698
+name: observational clinical investigation
+def: "A clinical investigation that does not involve an intervention." []
+is_a: OBI:0003693 ! observational investigation
+is_a: OBI:0003697 ! clinical investigation
+
+[Term]
+id: OBI:0003699
+name: clinical trial
+def: "A clinical investigation that involves an intervention." []
+is_a: OBI:0003697 ! clinical investigation
+
+[Term]
+id: OBI:0003700
+name: phase I clinical trial
+def: "A clinical trial that produces information about the safety of a drug and the adverse events associated with that drug, and which is typically conducted with healthy participants." []
+is_a: OBI:0003699 ! clinical trial
+
+[Term]
+id: OBI:0003701
+name: phase II clinical trial
+def: "A clinical trial that produces information about a drug's effectiveness and short-term adverse events associated with the drug." []
+is_a: OBI:0003699 ! clinical trial
+
+[Term]
+id: OBI:0003702
+name: phase III clinical trial
+def: "A clinical trial that produces information about a drug's safety and effectiveness in different populations, with different dosages, and in combination with other drugs." []
+is_a: OBI:0003699 ! clinical trial
+
+[Term]
+id: OBI:0003705
+name: study arm design
+def: "A plan specification that is part of a study design, executed as part of an investigation, and realized by assigning participants under investigation to a study design." []
+synonym: "study arm design" EXACT []
+is_a: IAO:0000104 ! plan specification
+
+[Term]
+id: OBI:0003706
+name: study arm population
+def: "A population of organisms that are participants under investigation in the same study design execution." []
+synonym: "study arm population" EXACT []
+is_a: OBI:0000181 ! population
+
+[Term]
+id: OBI:0003707
+name: mortar and pestle device
+def: "A device which is a set of two tools used to crush or grind material into smaller particles. A mortar is used to contain the material, and a pestle is a handheld blunt object used to apply force to the material." []
+synonym: "mortar and pestle" EXACT []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0003708
+name: infrared gas analyzer
+def: "A measurement device that measures the concentration of gases in an air sample based on their absorption of infrared radiation." []
+is_a: OBI:0000832 ! measurement device
+
+[Term]
+id: OBI:0003709
+name: assessment of learning and/or memory response in an organism
+def: "A nervous system functionality assessment of learning or memory in an organism" []
+is_a: OBI:0003533 ! nervous system functionality assessment
+
+[Term]
+id: OBI:0003710
+name: assessment of startle response in an organism
+def: "A nervous system functionality assessment of auditory startle response in an organism in an anechoic chamber by exposing to sound." []
+is_a: OBI:0003533 ! nervous system functionality assessment
+
+[Term]
+id: OBI:0003711
+name: grip strength assay
+def: "A nervous system functionality assessment that uses the grip strength of a lab animal to measure neuromuscular function." []
+is_a: OBI:0003533 ! nervous system functionality assessment
+
+[Term]
+id: OBI:0003712
+name: assay of organismal behavior
+def: "A physical examination to assess behavior quality in a live organism." []
+is_a: OBI:0002441 ! physical examination of an organism
+
+[Term]
+id: OBI:0003713
+name: organism development assay
+def: "A physical examination of an organism that provides information about some developmental process in that organism." []
+is_a: OBI:0002441 ! physical examination of an organism
+
+[Term]
+id: OBI:0003714
+name: reproductive assay
+def: "A physical examination of an organism that provides information about some reproductive process in that organism." []
+is_a: OBI:0002441 ! physical examination of an organism
+
+[Term]
+id: OBI:0003715
+name: vital sign assay
+def: "An assay of a organism to measure basic physiological functions such as breathing, pulse, etc. (phylum bilateral)." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003716
+name: blood pressure assay
+def: "A vital sign assay that determines the blood pressure (force of blood against the artery walls) of an organism." []
+is_a: OBI:0003715 ! vital sign assay
+
+[Term]
+id: OBI:0003717
+name: heart rate variability assay
+def: "A pulse rate assay that measures beat to beat variability in heart beats." []
+is_a: OBI:0003718 ! pulse rate assay
+
+[Term]
+id: OBI:0003718
+name: pulse rate assay
+def: "A vital sign assay that measures the heart beat rate of an organism." []
+is_a: OBI:0003715 ! vital sign assay
+
+[Term]
+id: OBI:0003719
+name: respiratory assay
+def: "A vital sign assay that measures the quality of respiration / respiratory system of an organism" []
+is_a: OBI:0003715 ! vital sign assay
+
+[Term]
+id: OBI:0003720
+name: cell differentiation assay
+def: "A cytometry assay that monitors the differentiation stage of cells in culture." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003721
+name: cell based DNA damage assay
+def: "A cytometry assay that measures DNA damage in cells." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003722
+name: natural killer cell count assay
+def: "A cytometry assay to determine the number of natural killer cells in a specimen" []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003723
+name: natural killer cell percentage assay
+def: "A cytometry assay that measures the percentage of natural killer cells in a specimen." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003724
+name: sperm count assay
+def: "A cytometry assay to count the number of mature sperm in a specimen." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003725
+name: survey administration assay
+def: "An assay that obtains data from one or more participants by using a survey or questionnaire" []
+is_a: OBI:0000070 ! assay
+
+[Term]
 id: OBI:0005246
 name: injection function
 def: "The function of a device realized when administering a substance in vivo, applied particularly to the forcible insertion of a liquid or gas by means of a syringe, pump, etc." []
@@ -26057,7 +26338,7 @@ is_a: OBI:0000836 ! test tube
 id: OBI:0400094
 name: sheath tank
 def: "Part of the fluidics system. The sheath tank is the vessel that holds the sheath fluid at a constant pressure, allowing for it to be pushed into the flow chamber at a constant rate. The sheath tank holds the pressurized sheath fluid." []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0400095
@@ -26155,7 +26436,7 @@ is_a: OBI:0001033 ! perturbation device
 id: OBI:0400110
 name: hybridization chamber
 def: "A device which is used to maintain constant contact of a liquid on an array.  This can be either a glass vial or slide." []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0400111
@@ -26196,13 +26477,13 @@ synonym: "DNA_amplifier" EXACT []
 synonym: "PCR_machine" EXACT []
 synonym: "Polymerase_Chain_Reaction_ machine" EXACT []
 synonym: "thermocycler" EXACT []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0400117
 name: vacuum dryer
 def: "An instrument which removes liquid by the application of negative pressure,  i.e. vacuum." []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0400118
@@ -26221,7 +26502,7 @@ is_a: OBI:0001034 ! environmental control device
 id: OBI:0400120
 name: temperature control bath
 def: "A temperature_control_bath is a device that has the function to regulate the temperature of a material, the function to contain fluid and the function to vary and maintain the temperature of the contained fluid. Heat exchange (energy transfer) between the material and the heating element is facilitated via the contained fluid. A temperature_control_bath is composed of a container, a heating element and/or a cooling element and a means to adjust the needed temperature. In most cases also a timer and a means to stir the fluid is provided as well." []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0400121
@@ -26249,7 +26530,7 @@ name: gel tank
 def: "A device which holds a gel and running buffers to allow electrophoresis to be performed. A gel tank has the function to contain and to control the contained environment and transfer energy from an energy supply through the running buffers to the gel matrix and the material with charged molecules in an electric field across a porous matrix or medium with the objective to separate the charged molecules." []
 synonym: "electrophoresis box" EXACT []
 synonym: "electrophoresis unit" EXACT []
-is_a: OBI:0002089 ! physical store
+is_a: OBI:0002089 ! container with environmental control
 
 [Term]
 id: OBI:0400142
@@ -32824,6 +33105,21 @@ id: OBI:0003385
 name: has assay target context
 def: "A relation between  the target entity of an assay and a material entity, where the material entity is the environment in which the target entity of an assay is measured, such as a live mouse, cell culture, test tube, etc." []
 range: BFO:0000040 ! material entity
+
+[Typedef]
+id: OBI:0003703
+name: has study design
+def: "A relation between an investigation and a study design in which part of the investigation is a study design execution that carries out the study design." []
+domain: OBI:0000066 ! investigation
+range: OBI:0500000 ! study design
+inverse_of: OBI:0003704 ! is study design of
+
+[Typedef]
+id: OBI:0003704
+name: is study design of
+def: "A relation between a study design and an investigation when part of the investigation is a study design execution that carries out the study design." []
+domain: OBI:0500000 ! study design
+range: OBI:0000066 ! investigation
 
 [Typedef]
 id: OBI:1110060
