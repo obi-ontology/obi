@@ -62,7 +62,7 @@ def dict2TSV(xdict, path):
         xdict["robot"] = {
             "ontology ID": "ID",
             "label": "",
-            "action": "",
+            "status": "",
             "logical type": "CLASS_TYPE",
             "parent class": "C %"
         }
@@ -188,7 +188,7 @@ def add(term, imports, relation=False, upper=False):
     act = True
     if term in imports.keys():
         act = False
-        if imports[term]["action"] != "block":
+        if imports[term]["status"] != "block":
             print(f"{term} is already in this import file")
         else:
             override = input(f"{term} is blocked out of this import. Override? (y/n)\n")
@@ -200,14 +200,14 @@ def add(term, imports, relation=False, upper=False):
             imports[term] = {
                 "ontology ID": term,
                 "label": label,
-                "action": "input",
+                "status": "input",
                 "logical type": "",
                 "parent class": ""
             }
             if relation:
-                imports[term]["action"] = "relate"
+                imports[term]["status"] = "relate"
             if upper:
-                imports[term]["action"] = "upper"
+                imports[term]["status"] = "upper"
             print(f"Added {term} to import")
 
 
@@ -216,7 +216,7 @@ def block(term, imports):
     Block a term from being imported
     """
     term = convert(term, "curie")
-    if term in imports.keys() and imports[term]["action"] == "block":
+    if term in imports.keys() and imports[term]["status"] == "block":
         print(f"{term} is already blocked out of this import")
     else:
         label = lookup_label(term)
@@ -224,7 +224,7 @@ def block(term, imports):
             imports[term] = {
                 "ontology ID": term,
                 "label": label,
-                "action": "block",
+                "status": "block",
                 "logical type": "",
                 "parent class": ""
             }
@@ -239,7 +239,7 @@ def drop(term, imports):
     if term not in imports.keys():
         print(f"{term} is not in this import file")
     else:
-        if imports[term]["action"] == "block":
+        if imports[term]["status"] == "block":
             override = input(f"{term} is blocked out of this import. Drop the block? (y/n)\n")   
             if override.lower() == "y" or override.lower() == "yes":
                 act = True
@@ -265,12 +265,12 @@ def parent(term, parent, imports):
         parent_label = lookup_label(parent_id)
         parent_labels.append(parent_label)
     if term in imports.keys():
-        if imports[term]["action"] == "block":
+        if imports[term]["status"] == "block":
             act = False
             override = input(f"{term} is blocked out of this import. Do you want to import this term? (y/n)\n")
             if override.lower() == "y" or override.lower() == "yes":
                 act = True
-        elif imports[term]["action"] == "parent":
+        elif imports[term]["status"] == "parent":
             if imports[term]["parent class"] == parent:
                 act = False
                 print(f"{term} is already imported as a subclass of {parent}")
@@ -283,7 +283,7 @@ def parent(term, parent, imports):
             imports[term] = {
                 "ontology ID": term,
                 "label": label,
-                "action": "parent",
+                "status": "parent",
                 "logical type": "subclass",
                 "parent class": parent
             }
@@ -303,16 +303,16 @@ def split(ontology, imports):
     parent["robot"] = imports["robot"]
     for id, row in imports.items():
         label = row["label"]
-        if row["action"] == "input":
+        if row["status"] == "input":
             inputs.append(f"{id} # {label}")
-        elif row["action"] == "block":
+        elif row["status"] == "block":
             blocklist.append(f"{id} # {label}")
-        elif row["action"] == "parent":
+        elif row["status"] == "parent":
             inputs.append(f"{id} # {label}")
             parent[id] = row
-        elif row["action"] == "relate":
+        elif row["status"] == "relate":
             relation.append(f"{id} # {label}")
-        elif row["action"] == "upper":
+        elif row["status"] == "upper":
             upper.append(f"{id} # {label}")
     for (xlist, xpath) in [
         (inputs, inputs_path),
