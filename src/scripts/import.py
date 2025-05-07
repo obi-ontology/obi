@@ -189,7 +189,12 @@ def add(term, imports, relation=False, upper=False):
     if term in imports.keys():
         act = False
         if imports[term]["status"] != "block":
-            print(f"{term} is already in this import file")
+            if relation and imports[term]["status"] != "relate":
+                act = True
+            elif upper and imports[term]["status"] != "upper":
+                act = True
+            else:
+                print(f"{term} is already in this import file")
         else:
             override = input(f"{term} is blocked out of this import. Override? (y/n)\n")
             if override.lower() == "y" or override.lower() == "yes":
@@ -204,11 +209,14 @@ def add(term, imports, relation=False, upper=False):
                 "logical type": "",
                 "parent class": ""
             }
+            status_text = ""
             if relation:
                 imports[term]["status"] = "relate"
+                status_text = " as a relation"
             if upper:
                 imports[term]["status"] = "upper"
-            print(f"Added {term} to import")
+                status_text = " as an upper-level term"
+            print(f"Added {term} to import{status_text}")
 
 
 def block(term, imports):
