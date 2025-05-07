@@ -78,6 +78,24 @@ def dict2TSV(xdict, path):
             writer.writerow(xdict[id])
 
 
+def file_check(path):
+    if not os.path.exists(path):
+        override = input(f"Didn't find {path}. Create it? (y/n)\n")
+        if override.lower() == "y" or override.lower() == "yes":
+            robot_row = {
+                "ontology ID": "ID",
+                "label": "",
+                "status": "",
+                "logical type": "CLASS_TYPE",
+                "parent class": "C %"
+            }
+            starter_dict = {
+                "robot": robot_row,
+            }
+            dict2TSV(starter_dict, path)
+        else:
+            quit()
+
 def read_to_list(txt):
     """
     Make a list of lines in a text file with newline characters removed
@@ -359,9 +377,7 @@ def main():
                         "ontology",
                         "robot_inputs",
                         f"{args.ontology}_input.tsv")
-    if not os.path.exists(path):
-        print(f"Didn't find {path}")
-        quit()
+    file_check(path)
     if args.action != "split" and not args.term and not args.termlist:
         print("Use --term or --termlist to indicate the term(s) to act on.")
         quit()
