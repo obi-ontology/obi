@@ -86,7 +86,7 @@ build/%_import_source.owl:
 	curl -sL http://purl.obolibrary.org/obo/$*.owl -o $@
 
 build/%_parent.tsv: src/ontology/robot_inputs/%_input.tsv
-	python3 src/scripts/import.py -a split -o $*
+	python3 src/scripts/import.py split $*
 
 build/%_parent.owl: build/%_parent.tsv
 	echo "" > $@
@@ -98,7 +98,7 @@ build/%_parent.owl: build/%_parent.tsv
 	--ontology-iri "http://purl.obolibrary.org/obo/obi/dev/import/$*_parent.owl" \
 	--output $@
 
-src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_upper.txt build/%_input.txt build/%_blocklist.txt build/%_parent.owl
+src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl build/%_limit.txt build/%_import.txt build/%_ignore.txt build/%_parent.owl
 	$(ROBOT) extract --method MIREOT --input $< \
 	--upper-terms $(word 2,$^) \
 	--lower-terms $(word 3,$^) \
