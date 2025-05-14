@@ -25,6 +25,7 @@ import csv
 import os
 import re
 from oaklib import get_adapter
+from oaklib.datamodels.search import SearchProperty, SearchConfiguration
 
 
 def TSV2dict(path):
@@ -62,7 +63,7 @@ def dict2TSV(xdict, path):
         xdict["robot"] = {
             "ontology ID": "ID",
             "label": "",
-            "status": "",
+            "action": "",
             "logical type": "CLASS_TYPE",
             "parent class": "C %"
         }
@@ -85,7 +86,7 @@ def file_check(path):
             robot_row = {
                 "ontology ID": "ID",
                 "label": "",
-                "status": "",
+                "action": "",
                 "logical type": "CLASS_TYPE",
                 "parent class": "C %"
             }
@@ -95,6 +96,7 @@ def file_check(path):
             dict2TSV(starter_dict, path)
         else:
             quit()
+
 
 def read_to_list(txt):
     """
@@ -146,6 +148,94 @@ def convert(string, format):
     return output
 
 
+def lookup_curie_from_label(label, ontology):
+    """
+    Find the CURIE of a term based on its label
+    """
+    try:
+        adapter = get_adapter(f"sqlite:obo:{ontology.lower()}")
+        config = SearchConfiguration(properties=[SearchProperty.ALIAS])
+        curies = [id for id in adapter.basic_search(label, config=config)]
+        curie = curies[0]  # This may not be the right way.
+    except IndexError:
+        print(f"Didn't find a CURIE for {label} in {ontology}.")
+        curie = None
+    return curie
+
+
+def make_curie_dict(curie, ontology):
+    """
+    Make a dict of a term's CURIE, label, and OWL type
+    """
+    adapter = get_adapter(f"sqlite:obo:{ontology.lower()}")
+    label = adapter.label(curie)
+    owl_type = adapter.owl_type(curie)
+    term_info = {
+        "curie": curie,
+        "label": label,
+        "owl_type": owl_type
+    }
+    return term_info
+
+
+def obsolescence_check(label):
+    if "obsolete" in label.lower() or "deprecated" in label.lower():
+        print(f"Term '{label}' is deprecated and will not be imported")
+        obsolete = True
+    else:
+        obsolete = False
+    return obsolete
+
+
+def parse_term_input(string, ontology):
+    """
+    Handle term input that may be a CURIE, IRI, label, or path
+    """
+    error_message = "Try again with a text file, IRI, CURIE, or label."
+    if os.path.isfile(string):
+        root, ext = os.path.splitext(string)
+        try:
+            if ext.lower() != ".txt":
+                raise ValueError("This path doesn't point to a text file.")
+        except ValueError:
+            print(f"{string} isn't a text file.")
+            print(error_message)
+            quit()
+        term_list = read_to_list(string)
+    else:
+        term_list = [string,]
+    input_dict = {}
+    for term in term_list:
+        iri = re.search(
+            r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)",
+            term
+        )
+        curie = re.search(r"([a-zA-Z]+):(\d+)", term)
+        if iri:
+            term_curie = convert(term, "curie")
+            curie_dict = make_curie_dict(term_curie, ontology)
+            if not obsolescence_check(curie_dict["label"]):
+                input_dict[term_curie] = curie_dict
+        elif curie:
+            curie_dict = make_curie_dict(term, ontology)
+            if not obsolescence_check(curie_dict["label"]):
+                input_dict[term] = curie_dict
+        else:
+            try:
+                label_curie = lookup_curie_from_label(term, ontology)
+                if label_curie:
+                    curie_dict = make_curie_dict(label_curie, ontology)
+                    if not obsolescence_check(curie_dict["label"]):
+                        input_dict[label_curie] = curie_dict
+                else:
+                    raise ValueError("Couldn't find a term with this label")
+            except ValueError:
+                print(f"Label '{term}' wasn't found in {ontology}.")
+                print(error_message)
+                quit()
+    return input_dict
+
+
 def lookup_label(id):
     """
     Identify the label of a term based on its CURIE
@@ -154,8 +244,7 @@ def lookup_label(id):
     output = id
     if curie:
         curie_base = curie.group(1)
-        curie_base = curie_base.lower()
-        adapter = get_adapter(f"sqlite:obo:{curie_base}")
+        adapter = get_adapter(f"sqlite:obo:{curie_base.lower()}")
         label = adapter.label(id)
         output = label
         if type(label) != str and curie_base == "bfo":
@@ -180,7 +269,7 @@ def lookup_parents(id, mode):
     if curie:
         curie_base = curie.group(1)
         curie_base = curie_base.lower()
-        adapter = get_adapter(f"sqlite:obo:{curie_base}")
+        adapter = get_adapter(f"sqlite:obo:{curie_base.lower()}")
         parent_list = adapter.hierarchical_parents(id)
         if mode == "soft":
             parents = parent_list
@@ -198,157 +287,155 @@ def lookup_parents(id, mode):
     return parents
 
 
-def add(term, imports, relation=False, upper=False):
+def do_import(term_dict, imports, limit, parent):
     """
-    Add a term to be imported
+    Import a term
     """
-    term = convert(term, "curie")
-    act = True
-    if term in imports.keys():
-        act = False
-        if imports[term]["status"] != "block":
-            if relation and imports[term]["status"] != "relate":
-                act = True
-            elif upper and imports[term]["status"] != "upper":
-                act = True
+    for term, term_info in term_dict.items():
+        act = True
+        relate = False
+        if "owl:ObjectProperty" in term_info["owl_type"]:
+            relate = True
+        if term in imports.keys():
+            act = False
+            if imports[term]["action"] != "ignore":
+                act_conditions = [
+                    limit and imports[term]["action"] != "limit",
+                    relate and imports[term]["action"] != "relate",
+                    parent and imports[term]["parent class"] != parent
+                ]
+                if act_conditions != [False, False, False]:
+                    act = True
+                else:
+                    print(f"{term} is already imported")
             else:
-                print(f"{term} is already in this import file")
+                override = input(f"{term} is ignored. Override? [y/n]\n")
+                if override.lower() == "y" or override.lower() == "yes":
+                    act = True
+        if act:
+            imports[term] = {
+                "ontology ID": term,
+                "label": term_info["label"],
+                "action": "import",
+                "logical type": "",
+                "parent class": ""
+            }
+            confirmation_text = ""
+            if limit:
+                imports[term]["action"] = "limit"
+                confirmation_text = " as a limit"
+            if parent:
+                imports, confirmation_text = do_parent(
+                    term_info,
+                    parent,
+                    imports
+                )
+            if relate:
+                imports[term]["action"] = "relate"
+                confirmation_text = " as a relation"
+            print(f"Added {term} to import{confirmation_text}")
+
+
+def do_ignore(term_dict, imports):
+    """
+    Prevent a term from being imported
+    """
+    for term, term_info in term_dict.items():
+        if term in imports.keys() and imports[term]["action"] == "ignored":
+            print(f"{term} is already ignored")
         else:
-            override = input(f"{term} is blocked out of this import. Override? (y/n)\n")
-            if override.lower() == "y" or override.lower() == "yes":
-                act = True
-    if act:
-        label = lookup_label(term)
-        if label != "deprecated":
             imports[term] = {
                 "ontology ID": term,
-                "label": label,
-                "status": "input",
+                "label": term_info["label"],
+                "action": "ignore",
                 "logical type": "",
                 "parent class": ""
             }
-            status_text = ""
-            if relation:
-                imports[term]["status"] = "relate"
-                status_text = " as a relation"
-            if upper:
-                imports[term]["status"] = "upper"
-                status_text = " as an upper-level term"
-            print(f"Added {term} to import{status_text}")
+            print(f"Ignored {term}")
 
 
-def block(term, imports):
-    """
-    Block a term from being imported
-    """
-    term = convert(term, "curie")
-    if term in imports.keys() and imports[term]["status"] == "block":
-        print(f"{term} is already blocked out of this import")
-    else:
-        label = lookup_label(term)
-        if label != "deprecated":
-            imports[term] = {
-                "ontology ID": term,
-                "label": label,
-                "status": "block",
-                "logical type": "",
-                "parent class": ""
-            }
-            print(f"Blocked {term} out of this import")
-
-
-def drop(term, imports):
+def do_remove(term_dict, imports):
     """
     Remove references to a term in the import dict
     """
-    term = convert(term, "curie")
-    if term not in imports.keys():
-        print(f"{term} is not in this import file")
-    else:
-        if imports[term]["status"] == "block":
-            override = input(f"{term} is blocked out of this import. Drop the block? (y/n)\n")   
-            if override.lower() == "y" or override.lower() == "yes":
-                act = True
-            else:
-                act = False
-                print(f"{term} was not dropped from this import file")
+    for term, term_info in term_dict.items():
+        if term not in imports.keys():
+            print(f"{term} is not in this import file")
         else:
-            act = True
-        if act:
-            del imports[term]
-            print(f"Dropped {term} from this import file")
+            act = False
+            if imports[term]["action"] == "ignore":
+                override = input(f"{term} is ignored. Remove anyway? [y/n]\n")
+                if override.lower() == "y" or override.lower() == "yes":
+                    act = True
+                else:
+                    print(f"{term} was not dropped from this import file")
+            else:
+                act = True
+            if act:
+                del imports[term]
+                print(f"Dropped {term} from this import file")
 
 
-def parent(term, parent, imports):
+def do_parent(term_info, parent, imports):
     """
     Assert a parent class for a term to be imported
     """
-    term = convert(term, "curie")
+    confirmation_text = ""
+    term = term_info["curie"]
     act = True
     parents = lookup_parents(term, "hard")
     parent_labels = []
     for parent_id in parents:
         parent_label = lookup_label(parent_id)
         parent_labels.append(parent_label)
-    if term in imports.keys():
-        if imports[term]["status"] == "block":
-            act = False
-            override = input(f"{term} is blocked out of this import. Do you want to import this term? (y/n)\n")
-            if override.lower() == "y" or override.lower() == "yes":
-                act = True
-        elif imports[term]["status"] == "parent":
-            if imports[term]["parent class"] == parent:
-                act = False
-                print(f"{term} is already imported as a subclass of {parent}")
     if parent in parent_labels:
         print(f"{term} is already a subclass of '{parent}' in the ontology")
         act = False
     if act:
-        label = lookup_label(term)
-        if label != "deprecated":
-            imports[term] = {
-                "ontology ID": term,
-                "label": label,
-                "status": "parent",
-                "logical type": "subclass",
-                "parent class": parent
-            }
-            print(f"Added {term} to import as a subclass of {parent}")
+        imports[term] = {
+            "ontology ID": term,
+            "label": term_info["label"],
+            "action": "parent",
+            "logical type": "subclass",
+            "parent class": parent
+        }
+        confirmation_text = f" as a subclass of '{parent}'"
+    return imports, confirmation_text
 
 
-def split(ontology, imports):
+def split(ontology, imports_dict):
     """
     Split imports into build files needed by ROBOT import workflow
     """
-    inputs, blocklist, parent, relation, upper = [], [], {}, [], []
-    inputs_path = os.path.join("build", f"{ontology}_input.txt")
-    blocklist_path = os.path.join("build", f"{ontology}_blocklist.txt")
+    imports, ignore, parent, relation, limit = [], [], {}, [], []
+    imports_path = os.path.join("build", f"{ontology}_import.txt")
+    ignore_path = os.path.join("build", f"{ontology}_ignore.txt")
     parent_path = os.path.join("build", f"{ontology}_parent.tsv")
     relation_path = os.path.join("build", f"{ontology}_relations.txt")
-    upper_path = os.path.join("build", f"{ontology}_upper.txt")
-    parent["robot"] = imports["robot"]
-    for id, row in imports.items():
+    limit_path = os.path.join("build", f"{ontology}_limit.txt")
+    parent["robot"] = imports_dict["robot"]
+    for id, row in imports_dict.items():
         label = row["label"]
-        if row["status"] == "input":
-            inputs.append(f"{id} # {label}")
-        elif row["status"] == "block":
-            blocklist.append(f"{id} # {label}")
-        elif row["status"] == "parent":
-            inputs.append(f"{id} # {label}")
+        if row["action"] == "import":
+            imports.append(f"{id} # {label}")
+        elif row["action"] == "ignore":
+            ignore.append(f"{id} # {label}")
+        elif row["action"] == "parent":
+            imports.append(f"{id} # {label}")
             parent[id] = row
-        elif row["status"] == "relate":
+        elif row["action"] == "relate":
             relation.append(f"{id} # {label}")
-        elif row["status"] == "upper":
-            upper.append(f"{id} # {label}")
+        elif row["action"] == "limit":
+            limit.append(f"{id} # {label}")
     for (xlist, xpath) in [
-        (inputs, inputs_path),
-        (blocklist, blocklist_path),
+        (imports, imports_path),
+        (ignore, ignore_path),
         (relation, relation_path),
-        (upper, upper_path)
+        (limit, limit_path)
     ]:
         write_to_txt(sorted(xlist), xpath)
     dict2TSV(parent, parent_path)
-    for i in inputs_path, blocklist_path, parent_path, relation_path, upper_path:
+    for i in imports_path, ignore_path, parent_path, relation_path, limit_path:
         print(f"Wrote {i}")
 
 
@@ -357,51 +444,40 @@ def main():
     Validate paths and take specified action(s)
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--action", "-a", type=str, required=True,
-                        choices=["add", "block", "drop", "parent", "split"],
-                        help="Action to take for chosen term, e.g., add")
-    parser.add_argument("--ontology", "-o", type=str, required=True,
-                        help="Which ontology import to edit, e.g., Uberon")
-    parser.add_argument("--term", "-t", type=str,
-                        help="An ontology term ID, e.g., UBERON:0000465")
-    parser.add_argument("--termlist", "-l", type=str,
-                        help="A text file containing a list of ontology IDs")
-    parser.add_argument("--parent", "-p", type=str,
-                        help="Intended parent for term, e.g., 'organ'")
-    parser.add_argument("--relation", "-r", type=str,
-                        help="'--relation True' indicates term is a relation")
-    parser.add_argument("--upper", "-u", type=str,
-                        help="'--upper True' sets the term as an upper term")
+    parser.add_argument("action",
+                        choices=["import", "ignore", "remove", "split"],
+                        help="What to do, e.g., add, ignore, or remove a term")
+    parser.add_argument("ontology",
+                        help="Which ontology import to edit, e.g., VO or OGMS")
+    parser.add_argument("term",
+                        nargs="?",
+                        default=False,
+                        help="An ontology CURIE/IRI/label, or a TSV or TXT")
+    parser.add_argument("--limit", "-l", action="store_true",
+                        help="Sets term as an upper limit to the hierarchy")
+    parser.add_argument("--parent", "-p", default=False,
+                        help="Sets intended parent for term, e.g., 'organ'")
     args = parser.parse_args()
     path = os.path.join("src",
                         "ontology",
                         "robot_inputs",
                         f"{args.ontology}_input.tsv")
     file_check(path)
-    if args.action != "split" and not args.term and not args.termlist:
-        print("Use --term or --termlist to indicate the term(s) to act on.")
-        quit()
     imports = TSV2dict(path)
-    terms = read_to_list(args.termlist) if args.termlist else [args.term,]
-    if args.action == "add":
-        for term in terms:
-            add(term, imports, args.relation, args.upper)
-            if args.parent:
-                parent(term, args.parent, imports)
-    if args.action == "block":
-        for term in terms:
-            block(term, imports)
-    if args.action == "drop":
-        for term in terms:
-            drop(term, imports)
-    if args.action == "parent":
-        if not args.parent:
-            print("No parent term specified. Use --parent or -p to set parent")
-            quit()
-        for term in terms:
-            parent(term, args.parent, imports)
     if args.action == "split":
         split(args.ontology, imports)
+        quit()
+    if not args.term:
+        print("This action needs a term or terms to act on.")
+        print("Use a text file, IRI, CURIE, or label as the third argument.")
+        quit()
+    input_dict = parse_term_input(args.term, args.ontology)
+    if args.action == "import":
+        do_import(input_dict, imports, args.limit, args.parent)
+    if args.action == "ignore":
+        do_ignore(input_dict, imports)
+    if args.action == "remove":
+        do_remove(input_dict, imports)
     dict2TSV(imports, path)
 
 
