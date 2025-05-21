@@ -255,7 +255,7 @@ def lookup_label(id):
             else:
                 output = label
         if "obsolete" in label.lower() or "deprecated" in label.lower():
-            print(f"WARN: {id} is deprecated and will not be included in this import")
+            print(f"{id} '{label}' is deprecated and will not be included in this import")
             output = "deprecated"
     return output
 
@@ -294,6 +294,7 @@ def do_import(term_dict, imports, limit, parent):
     for term, term_info in term_dict.items():
         act = True
         relate = False
+        label = term_info["label"]
         if "owl:ObjectProperty" in term_info["owl_type"]:
             relate = True
         if term in imports.keys():
@@ -307,15 +308,15 @@ def do_import(term_dict, imports, limit, parent):
                 if act_conditions != [False, False, False]:
                     act = True
                 else:
-                    print(f"{term} is already imported")
+                    print(f"{term} '{label}' is already imported")
             else:
-                override = input(f"{term} is ignored. Override? [y/n]\n")
+                override = input(f"{term} '{label}' is ignored. Override? [y/n]\n")
                 if override.lower() == "y" or override.lower() == "yes":
                     act = True
         if act:
             imports[term] = {
                 "ontology ID": term,
-                "label": term_info["label"],
+                "label": label,
                 "action": "import",
                 "logical type": "",
                 "parent class": ""
@@ -333,7 +334,7 @@ def do_import(term_dict, imports, limit, parent):
             if relate:
                 imports[term]["action"] = "relate"
                 confirmation_text = " as a relation"
-            print(f"Added {term} to import{confirmation_text}")
+            print(f"Added {term} '{label}' to import{confirmation_text}")
 
 
 def do_ignore(term_dict, imports):
@@ -341,17 +342,18 @@ def do_ignore(term_dict, imports):
     Prevent a term from being imported
     """
     for term, term_info in term_dict.items():
+        label = term_info["label"]
         if term in imports.keys() and imports[term]["action"] == "ignored":
-            print(f"{term} is already ignored")
+            print(f"{term} '{label}' is already ignored")
         else:
             imports[term] = {
                 "ontology ID": term,
-                "label": term_info["label"],
+                "label": label,
                 "action": "ignore",
                 "logical type": "",
                 "parent class": ""
             }
-            print(f"Ignored {term}")
+            print(f"Ignored {term} '{label}'")
 
 
 def do_remove(term_dict, imports):
@@ -359,21 +361,22 @@ def do_remove(term_dict, imports):
     Remove references to a term in the import dict
     """
     for term, term_info in term_dict.items():
+        label = term_info["label"]
         if term not in imports.keys():
-            print(f"{term} is not in this import file")
+            print(f"{term} '{label}' is not in this import")
         else:
             act = False
             if imports[term]["action"] == "ignore":
-                override = input(f"{term} is ignored. Remove anyway? [y/n]\n")
+                override = input(f"{term} '{label}' is ignored. Remove anyway? [y/n]\n")
                 if override.lower() == "y" or override.lower() == "yes":
                     act = True
                 else:
-                    print(f"{term} was not dropped from this import file")
+                    print(f"{term} '{label}' was not removed from this import")
             else:
                 act = True
             if act:
                 del imports[term]
-                print(f"Dropped {term} from this import file")
+                print(f"Removed {term} '{label}' from this import")
 
 
 def do_parent(term_info, parent, imports):
@@ -382,6 +385,7 @@ def do_parent(term_info, parent, imports):
     """
     confirmation_text = ""
     term = term_info["curie"]
+    label = term_info["label"]
     act = True
     parents = lookup_parents(term, "hard")
     parent_labels = []
@@ -389,12 +393,12 @@ def do_parent(term_info, parent, imports):
         parent_label = lookup_label(parent_id)
         parent_labels.append(parent_label)
     if parent in parent_labels:
-        print(f"{term} is already a subclass of '{parent}' in the ontology")
+        print(f"{term} '{label}' is already a subclass of '{parent}' in the ontology")
         act = False
     if act:
         imports[term] = {
             "ontology ID": term,
-            "label": term_info["label"],
+            "label": label,
             "action": "parent",
             "logical type": "subclass",
             "parent class": parent
