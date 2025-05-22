@@ -24,8 +24,7 @@ import argparse
 import csv
 import os
 import re
-from oaklib import get_adapter
-from oaklib.datamodels.search import SearchProperty, SearchConfiguration
+from owl_reader import get_term_info, get_iri_from_label
 
 
 def TSV2dict(path):
@@ -79,7 +78,7 @@ def dict2TSV(xdict, path):
             writer.writerow(xdict[id])
 
 
-def file_check(path):
+def import_file_check(path):
     if not os.path.exists(path):
         override = input(f"Didn't find {path}. Create it? (y/n)\n")
         if override.lower() == "y" or override.lower() == "yes":
@@ -148,28 +147,24 @@ def convert(string, format):
     return output
 
 
-def lookup_curie_from_label(label, ontology):
+def lookup_curie_from_label(label, source):
     """
     Find the CURIE of a term based on its label
     """
-    try:
-        adapter = get_adapter(f"sqlite:obo:{ontology.lower()}")
-        config = SearchConfiguration(properties=[SearchProperty.ALIAS])
-        curies = [id for id in adapter.basic_search(label, config=config)]
-        curie = curies[0]  # This may not be the right way.
-    except IndexError:
-        print(f"Didn't find a CURIE for {label} in {ontology}.")
+    iri = get_iri_from_label(label, source)
+    if iri is None:
+        print(f"Didn't find a CURIE for {label} in {source}.")
         curie = None
+    else:
+        curie = convert(iri, "curie")
     return curie
 
 
-def make_curie_dict(curie, ontology):
+def make_curie_dict(curie, source):
     """
     Make a dict of a term's CURIE, label, and OWL type
     """
-    adapter = get_adapter(f"sqlite:obo:{ontology.lower()}")
-    label = adapter.label(curie)
-    owl_type = adapter.owl_type(curie)
+    owl_type, label, parent = get_term_info(curie, source)
     term_info = {
         "curie": curie,
         "label": label,
@@ -187,7 +182,7 @@ def obsolescence_check(label):
     return obsolete
 
 
-def parse_term_input(string, ontology):
+def parse_term_input(string, ontology, source):
     """
     Handle term input that may be a CURIE, IRI, label, or path
     """
@@ -213,18 +208,18 @@ def parse_term_input(string, ontology):
         curie = re.search(r"([a-zA-Z]+):(\d+)", term)
         if iri:
             term_curie = convert(term, "curie")
-            curie_dict = make_curie_dict(term_curie, ontology)
+            curie_dict = make_curie_dict(term_curie, source)
             if not obsolescence_check(curie_dict["label"]):
                 input_dict[term_curie] = curie_dict
         elif curie:
-            curie_dict = make_curie_dict(term, ontology)
+            curie_dict = make_curie_dict(term, source)
             if not obsolescence_check(curie_dict["label"]):
                 input_dict[term] = curie_dict
         else:
             try:
-                label_curie = lookup_curie_from_label(term, ontology)
+                label_curie = lookup_curie_from_label(term, source)
                 if label_curie:
-                    curie_dict = make_curie_dict(label_curie, ontology)
+                    curie_dict = make_curie_dict(label_curie, source)
                     if not obsolescence_check(curie_dict["label"]):
                         input_dict[label_curie] = curie_dict
                 else:
@@ -236,43 +231,35 @@ def parse_term_input(string, ontology):
     return input_dict
 
 
-def lookup_label(id):
+def lookup_label(id, source):
     """
     Identify the label of a term based on its CURIE
     """
     curie = re.search(r"([a-zA-Z]+):(\d+)", id)
     output = id
     if curie:
-        curie_base = curie.group(1)
-        adapter = get_adapter(f"sqlite:obo:{curie_base.lower()}")
-        label = adapter.label(id)
-        output = label
-        if type(label) != str and curie_base == "bfo":
-            adapter = get_adapter("sqlite:obo:ro")
-            label = adapter.label(id)
-            if type(label) != str:
-                output = ""
-            else:
-                output = label
+        termtype, label, parent = get_term_info(id, source)
         if "obsolete" in label.lower() or "deprecated" in label.lower():
             print(f"{id} '{label}' is deprecated and will not be included in this import")
             output = "deprecated"
     return output
 
 
-def lookup_parents(id, mode):
+def lookup_parents(id, mode, source):
     """
     Identify superclasses of a term based on its CURIE
     """
     curie = re.search(r"([a-zA-Z]+):(\d+)", id)
     parents = set()
     if curie:
-        curie_base = curie.group(1)
-        curie_base = curie_base.lower()
-        adapter = get_adapter(f"sqlite:obo:{curie_base.lower()}")
-        parent_list = adapter.hierarchical_parents(id)
+        _, _, parent = get_term_info(id, source)
+        if parent != "":
+            parent_curie = convert(parent, "curie")
+            parent_list = [parent_curie,]
+        else:
+            parent_list = []
         if mode == "soft":
-            parents = parent_list
+            parents = set(parent_list)
         elif mode == "hard":
             while len(parent_list) != 0:
                 storage = set()
@@ -281,13 +268,14 @@ def lookup_parents(id, mode):
                     storage.add(i)
                 parent_list = set()
                 for i in storage:
-                    upper_parents = adapter.hierarchical_parents(i)
-                    for i in upper_parents:
-                        parent_list.add(i)
+                    _, _, upper_parent = get_term_info(i, source)
+                    if upper_parent != "":
+                        upper_curie = convert(upper_parent, "curie")
+                        parent_list.add(upper_curie)
     return parents
 
 
-def do_import(term_dict, imports, limit, parent):
+def do_import(term_dict, imports, limit, parent, source):
     """
     Import a term
     """
@@ -329,7 +317,8 @@ def do_import(term_dict, imports, limit, parent):
                 imports, confirmation_text = do_parent(
                     term_info,
                     parent,
-                    imports
+                    imports,
+                    source
                 )
             if relate:
                 imports[term]["action"] = "relate"
@@ -379,7 +368,7 @@ def do_remove(term_dict, imports):
                 print(f"Removed {term} '{label}' from this import")
 
 
-def do_parent(term_info, parent, imports):
+def do_parent(term_info, parent, imports, source):
     """
     Assert a parent class for a term to be imported
     """
@@ -387,10 +376,10 @@ def do_parent(term_info, parent, imports):
     term = term_info["curie"]
     label = term_info["label"]
     act = True
-    parents = lookup_parents(term, "hard")
+    parents = lookup_parents(term, "hard", source)
     parent_labels = []
     for parent_id in parents:
-        parent_label = lookup_label(parent_id)
+        parent_label = lookup_label(parent_id, source)
         parent_labels.append(parent_label)
     if parent in parent_labels:
         print(f"{term} '{label}' is already a subclass of '{parent}' in the ontology")
@@ -461,12 +450,14 @@ def main():
                         help="Sets term as an upper limit to the hierarchy")
     parser.add_argument("--parent", "-p", default=False,
                         help="Sets intended parent for term, e.g., 'organ'")
+    parser.add_argument("--source", "-s", default=None,
+                        help="Path to a file to use as the source for the import")
     args = parser.parse_args()
     path = os.path.join("src",
                         "ontology",
                         "robot_inputs",
                         f"{args.ontology}_input.tsv")
-    file_check(path)
+    import_file_check(path)
     imports = TSV2dict(path)
     if args.action == "split":
         split(args.ontology, imports)
@@ -475,9 +466,18 @@ def main():
         print("This action needs a term or terms to act on.")
         print("Use a text file, IRI, CURIE, or label as the third argument.")
         quit()
-    input_dict = parse_term_input(args.term, args.ontology)
+    source = os.path.join("build", f"{args.ontology}_import_source.owl")
+    if args.source:
+        if not os.path.isfile(args.source):
+            print(f"Didn't find the source file {args.source}.")
+            override = input(f"Proceed with {source} instead? [y/n]")
+            if override.lower() not in ["y", "yes"]:
+                quit()
+        else:
+            source = args.source
+    input_dict = parse_term_input(args.term, args.ontology, source)
     if args.action == "import":
-        do_import(input_dict, imports, args.limit, args.parent)
+        do_import(input_dict, imports, args.limit, args.parent, source)
     if args.action == "ignore":
         do_ignore(input_dict, imports)
     if args.action == "remove":
