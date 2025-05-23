@@ -391,7 +391,7 @@ def do_parent(term_info, parent, imports, source):
         imports[term] = {
             "ontology ID": term,
             "label": label,
-            "action": "parent",
+            "action": "import",
             "logical type": "subclass",
             "parent class": parent
         }
@@ -414,11 +414,10 @@ def split(ontology, imports_dict):
         label = row["label"]
         if row["action"] == "import":
             imports.append(f"{id} # {label}")
+            if row["parent class"] != "":
+                parent[id] = row
         elif row["action"] == "ignore":
             ignore.append(f"{id} # {label}")
-        elif row["action"] == "parent":
-            imports.append(f"{id} # {label}")
-            parent[id] = row
         elif row["action"] == "relate":
             relation.append(f"{id} # {label}")
         elif row["action"] == "limit":
