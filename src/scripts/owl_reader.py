@@ -1,3 +1,13 @@
+"""
+Read RDF/XML OWL files and identify annotations for specific terms.
+
+This script is an accessory script for import.py that uses xml.sax to
+parse XML. It enables the following types of searches:
+    * Given a term's CURIE, return its OWL type, rdfs:label, and parent class
+    * Given a term's label, return its IRI
+"""
+
+
 from xml.sax import make_parser
 from xml.sax.saxutils import XMLFilterBase
 
@@ -83,6 +93,9 @@ class FindByLabel(XMLFilterBase):
 
 
 def get_term_info(curie, owl_file):
+    """
+    Return OWL type, label, and parent class of a term based on its CURIE
+    """
     label_text, parent_class = "", ""
     reader = TermFinder(curie, label_text, parent_class, make_parser())
     try:
@@ -93,6 +106,9 @@ def get_term_info(curie, owl_file):
 
 
 def get_iri_from_label(label, owl_file):
+    """
+    Return IRI of a term based on its label
+    """
     iri, parent_class = "", ""
     reader = FindByLabel(label, iri, parent_class, make_parser())
     try:

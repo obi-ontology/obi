@@ -1,22 +1,19 @@
 """
 Manage files to be used as inputs in the ROBOT import workflow.
 
-This script performs two basic functions: editing the main ROBOT input file
-(src/ontology/robot_inputs/*_inputs.tsv) and splitting that file into the
-three build files that are used directly in the ROBOT import workflow. The
-splitting function is called in the Makefile.
+This script automatically edits the main input file for an ontology import
+(src/ontology/robot_inputs/*_inputs.tsv).
 
-The script can take the following actions on the ROBOT input file:
-    * ADD a term to the input file to be imported
-    * BLOCK a term from being imported
-    * DROP references to a term in the input file
-    * Set a PARENT for a term to be imported
+The script can take the following actions:
+    * IMPORT terms
+    * IGNORE terms, preventing them from appearing in the resulting OWL file
+    * REMOVE terms from the input file
+    * SPLIT the input file into several build files to be passed to ROBOT
 
-The script will not allow addition of terms that are already in the import
-file or terms that are deprecated. It also will not allow the user to set a
-parent for a term that is already a hierarchical parent of that term in the
-source ontology. It will ask for confirmation when overriding a block on
-a term by adding, dropping, or setting a parent for that term.
+Flags modify the behavior of these actions:
+    * LIMIT (-l) imports terms as upper limits to the hierarchy
+    * PARENT (-p) sets a named parent for imported terms
+    * SOURCE (-s) sets a non-default file path to use as the import source
 """
 
 
@@ -79,6 +76,9 @@ def dict2TSV(xdict, path):
 
 
 def import_file_check(path):
+    """
+    Check if an input file exists and create it if not
+    """
     if not os.path.exists(path):
         override = input(f"Didn't find {path}. Create it? (y/n)\n")
         if override.lower() == "y" or override.lower() == "yes":
@@ -174,6 +174,9 @@ def make_curie_dict(curie, source):
 
 
 def obsolescence_check(label):
+    """
+    Return True if a term is obsolete/deprecated and False if not
+    """
     if "obsolete" in label.lower() or "deprecated" in label.lower():
         print(f"Term '{label}' is deprecated and will not be imported")
         obsolete = True
