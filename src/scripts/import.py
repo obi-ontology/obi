@@ -153,7 +153,7 @@ def lookup_curie_from_label(label, source):
     """
     iri = get_iri_from_label(label, source)
     if iri is None:
-        print(f"Didn't find a CURIE for {label} in {source}.")
+        print(f"Didn't find a CURIE for '{label}' in {source}.")
         curie = None
     else:
         curie = convert(iri, "curie")
