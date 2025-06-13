@@ -43,7 +43,7 @@ build build/views:
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.4/robot.jar
 
-ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
+ROBOT := export ROBOT_JAVA_ARGS=-Xmx16G && java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
 
 
 ### RDFTab
