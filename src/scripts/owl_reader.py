@@ -96,13 +96,17 @@ def get_term_info(curie, owl_file):
     """
     Return OWL type, label, and parent class of a term based on its CURIE
     """
+    found = False
     label_text, parent_class = "", ""
     reader = TermFinder(curie, label_text, parent_class, make_parser())
     try:
         reader.parse(owl_file)
     except InformationFound:
         pass
+        found = True
         return reader.termtype, reader.label_text, reader.parent_class
+    if not found:
+        raise ValueError(f"Didn't find {curie} in this OWL file.")
 
 
 def get_iri_from_label(label, owl_file):
