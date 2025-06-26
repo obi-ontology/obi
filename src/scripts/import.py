@@ -256,7 +256,7 @@ def lookup_parents(id, mode, source):
     parents = set()
     if curie:
         _, _, parent = get_term_info(id, source)
-        if parent != "":
+        if parent != "" and parent != "http://www.w3.org/2002/07/owl#Thing":
             parent_curie = convert(parent, "curie")
             parent_list = [parent_curie,]
         else:
@@ -272,7 +272,7 @@ def lookup_parents(id, mode, source):
                 parent_list = set()
                 for i in storage:
                     _, _, upper_parent = get_term_info(i, source)
-                    if upper_parent != "":
+                    if upper_parent != "" and upper_parent != "http://www.w3.org/2002/07/owl#Thing":
                         upper_curie = convert(upper_parent, "curie")
                         parent_list.add(upper_curie)
     return parents
