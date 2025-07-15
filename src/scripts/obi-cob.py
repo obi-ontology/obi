@@ -8,6 +8,10 @@ from xml.sax.saxutils import XMLGenerator
 
 
 class ImportModifier(xml.sax.ContentHandler):
+    """
+    Adjust imports by copying and modifying lines from obi-edit.owl
+    """
+
     def __init__(self, output_file):
         self.generator = XMLGenerator(output_file,
                                       "utf-8",
@@ -60,58 +64,11 @@ class ImportModifier(xml.sax.ContentHandler):
             self.generator.characters(content)
 
 
-def TSV2dict(path):
-    """
-    Make a dict from a ROBOT template with ontology IDs as dict keys
-    """
-    header_row = None
-    with open(path, "r", encoding="UTF-8") as infile:
-        reader = csv.DictReader(infile, delimiter="\t")
-        output = {}
-        for row in reader:
-            if not header_row:
-                header_row = list(row.keys())
-            id = row["ontology ID"].strip()
-            if id == "":
-                continue
-            if id == "ID":
-                for i in row:
-                    output["robot"] = row
-            else:
-                for i in row:
-                    output[id] = row
-        return output
-
-
-def dict2TSV(xdict, path):
-    """
-    Make a ROBOT template from a dict input with ontology IDs as dict keys
-    """
-    rows = [i for i in xdict.keys()]
-    first = rows[0]
-    fieldnames = [i for i in xdict[first].keys()]
-    ids = []
-    if "robot" not in xdict.keys():
-        xdict["robot"] = {
-            "ontology ID": "ID",
-            "label": "",
-            "action": "",
-            "logical type": "CLASS_TYPE",
-            "parent class": "C %"
-        }
-    for key in xdict.keys():
-        if key != "robot":
-            ids.append(key)
-    sorted_ids = sorted(ids)
-    with open(path, "w", newline="\n", encoding='utf-8') as tsv:
-        writer = csv.DictWriter(tsv, fieldnames=fieldnames, delimiter="\t")
-        writer.writeheader()
-        writer.writerow(xdict["robot"])
-        for id in sorted_ids:
-            writer.writerow(xdict[id])
-
-
 def line_edits(input, output):
+    """
+    Import COB, switch to OntoFox RO import, drop BFO, drop external-byhand
+    """
+    print("Importing COB")
     with open(input, "r") as infile, open(output, "w") as outfile:
         parser = xml.sax.make_parser()
         handler = ImportModifier(outfile)
@@ -119,7 +76,10 @@ def line_edits(input, output):
         parser.parse(infile)
 
 
-def build_merged(obi_cob_edit):
+def build_merged(obi_cob_edit, obi_cob_merged):
+    """
+    Convert edit file to merged file, format, and annotate
+    """
     run([
         "robot", "convert",
         "-i", obi_cob_edit,
@@ -150,16 +110,18 @@ def build_merged(obi_cob_edit):
         "--annotation", "owl:versionInfo", today,
         "--output", "build/obi_cob_merged.tmp.owl",
         ], capture_output=True)
-    with open("build/obi_cob_merged.owl", "w") as outfile:
+    with open(obi_cob_merged, "w") as outfile:
         run(["sed", '/<owl:imports/d', "build/obi_cob_merged.tmp.owl"],
             stdout=outfile)
     run([
         "rm", "build/obi_cob_merged.tmp.owl"
         ])
-    return "build/obi_cob_merged.owl"
 
 
 def diff(left, right):
+    """
+    Diff shortcut for ease of use
+    """
     run([
         "robot", "diff",
         "--left", left,
@@ -170,7 +132,11 @@ def diff(left, right):
             ])
 
 
-def obsolete(input):
+def obsolete(merged, obsoleted):
+    """
+    Return a dict of lines from obsoleted terms, to be replaced later
+    """
+    print("Deprecating and replacing terms")
     output_lines = []
     obsolete_terms = [
         "OBI_0000011",
@@ -179,6 +145,13 @@ def obsolete(input):
         "OBI_0000968",
         "OBI_0100026",
     ]
+    replacements = {
+        "OBI_0000011": "COB_0000035",
+        "OBI_0000047": "COB_0000026",
+        "OBI_0000094": "COB_0000110",
+        "OBI_0000968": "COB_0001300",
+        "OBI_0100026": "COB_0000022",
+    }
     obsolete_dict = {
         "OBI_0000011": [],
         "OBI_0000047": [],
@@ -197,7 +170,7 @@ def obsolete(input):
     obsolete = False
     in_axiom = False
     working_term = None
-    with open(input, "r") as infile:
+    with open(merged, "r") as infile:
         lines = infile.readlines()
         for line in lines:
             copy_line = True
@@ -224,21 +197,29 @@ def obsolete(input):
                     obsolete_label = r">obsolete \1<"
                     line = re.sub(r">([\w\s]+)<", obsolete_label, line)
                     add_obsolete_tag = True
-            if working_term is None and copy_line:
+            if copy_line and working_term is None:
                 output_lines.append(line)
-            if working_term is not None and copy_line:
+            elif copy_line:
                 line_list = obsolete_dict[working_term]
-                line_list.append(line)
                 if add_obsolete_tag:
+                    replacement = replacements[working_term]
+                    replaced_by = f"""        <obo:IAO_0100001 rdf:resource="{obo}{replacement}"/>"""
+                    line_list.append(replaced_by)
+                    line_list.append(line)
                     line_list.append("""        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>\n""")
                     add_obsolete_tag = False
+                else:
+                    line_list.append(line)
                 obsolete_dict[working_term] = line_list
-    with open("build/obi_cob_obsoleted.owl", "w") as outfile:
+    with open(obsoleted, "w") as outfile:
         outfile.writelines(output_lines)
-    return "build/obi_cob_obsoleted.owl", obsolete_dict
+    return obsolete_dict
 
 
 def restore_obsolete(renamed, obsolete_dict):
+    """
+    Add lines for obsoleted terms back in
+    """
     obsolete_terms = [i for i in obsolete_dict.keys()]
     term_start = "<!-- http://purl.obolibrary.org/obo/"
     in_classes = False
@@ -277,6 +258,9 @@ def restore_obsolete(renamed, obsolete_dict):
 
 
 def rename(obsoleted, renamed, replacements, obsolete_dict):
+    """
+    Rename uses of obsoleted terms to their COB equivalents
+    """
     run([
         "robot", "rename",
         "--input", obsoleted,
@@ -288,6 +272,10 @@ def rename(obsoleted, renamed, replacements, obsolete_dict):
 
 
 def clean_up_unused(renamed, cleaned):
+    """
+    Remove unused BFO classes and replace them as needed
+    """
+    print("Trimming unused BFO classes")
     run([
         "robot", "remove",
         "--input", renamed,
@@ -304,6 +292,10 @@ def clean_up_unused(renamed, cleaned):
 
 
 def finalize(cleaned, obi_cob):
+    """
+    Annotate the final output file
+    """
+    print("Annotating with version IRI")
     run([
         "robot",
         "convert",
@@ -321,21 +313,23 @@ def finalize(cleaned, obi_cob):
     run([
         "rm", "build/obi_cob.tmp.owl"
         ])
+    print("Wrote obi-cob.owl")
 
 
 def main():
     obi_edit = os.path.join("src", "ontology", "obi-edit.owl")
     obi_cob_edit = os.path.join("src", "ontology", "obi-cob-edit.owl")
-    line_edits(obi_edit, obi_cob_edit)
-    diff(obi_edit, obi_cob_edit)
-    merged = build_merged(obi_cob_edit)
-    obsoleted, obsolete_dict = obsolete(merged)
-    renamed = "build/obi_cob_renamed.owl"
-    replacements = "src/ontology/obi_cob_replacements.tsv"
-    rename(obsoleted, renamed, replacements, obsolete_dict)
-    cleaned = "build/obi_cob_cleaned.owl"
-    clean_up_unused(renamed, cleaned)
+    merged = os.path.join("build", "obi_cob_merged.owl")
+    obsoleted = os.path.join("build", "obi_cob_obsoleted.owl")
+    renamed = os.path.join("build", "obi_cob_renamed.owl")
+    replacements = os.path.join("src", "ontology", "obi_cob_replacements.tsv")
+    cleaned = os.path.join("build", "obi_cob_cleaned.owl")
     obi_cob = "obi-cob.owl"
+    line_edits(obi_edit, obi_cob_edit)
+    build_merged(obi_cob_edit, merged)
+    obsolete_dict = obsolete(merged, obsoleted)
+    rename(obsoleted, renamed, replacements, obsolete_dict)
+    clean_up_unused(renamed, cleaned)
     finalize(cleaned, obi_cob)
 
 
