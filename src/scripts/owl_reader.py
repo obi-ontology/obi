@@ -92,7 +92,7 @@ class FindByLabel(XMLFilterBase):
         pass
 
 
-def get_term_info(curie, owl_file):
+def get_term_info(curie, owl_file, listmode=False):
     """
     Return OWL type, label, and parent class of a term based on its CURIE
     """
@@ -105,7 +105,9 @@ def get_term_info(curie, owl_file):
         pass
         found = True
         return reader.termtype, reader.label_text, reader.parent_class
-    if not found:
+    if not found and listmode:
+        print(f"Didn't find {curie} in this OWL file.")
+    elif not found:
         raise ValueError(f"Didn't find {curie} in this OWL file.")
 
 

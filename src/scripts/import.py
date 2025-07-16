@@ -160,17 +160,20 @@ def lookup_curie_from_label(label, source):
     return curie
 
 
-def make_curie_dict(curie, source):
+def make_curie_dict(curie, source, listmode=False):
     """
     Make a dict of a term's CURIE, label, and OWL type
     """
-    owl_type, label, parent = get_term_info(curie, source)
-    term_info = {
-        "curie": curie,
-        "label": label,
-        "owl_type": owl_type
-    }
-    return term_info
+    try:
+        owl_type, label, parent = get_term_info(curie, source, listmode)
+        term_info = {
+            "curie": curie,
+            "label": label,
+            "owl_type": owl_type
+        }
+        return term_info
+    except TypeError:
+        return None
 
 
 def obsolescence_check(label):
@@ -190,7 +193,9 @@ def parse_term_input(string, ontology, source):
     Handle term input that may be a CURIE, IRI, label, or path
     """
     error_message = "Try again with a text file, IRI, CURIE, or label."
+    listmode = False
     if os.path.isfile(string):
+        listmode = True
         root, ext = os.path.splitext(string)
         try:
             if ext.lower() != ".txt":
@@ -211,18 +216,24 @@ def parse_term_input(string, ontology, source):
         curie = re.search(r"([a-zA-Z]+):(\d+)", term)
         if iri:
             term_curie = convert(term, "curie")
-            curie_dict = make_curie_dict(term_curie, source)
+            curie_dict = make_curie_dict(term_curie, source, listmode)
+            if curie_dict is None:
+                continue
             if not obsolescence_check(curie_dict["label"]):
                 input_dict[term_curie] = curie_dict
         elif curie:
-            curie_dict = make_curie_dict(term, source)
+            curie_dict = make_curie_dict(term, source, listmode)
+            if curie_dict is None:
+                continue
             if not obsolescence_check(curie_dict["label"]):
                 input_dict[term] = curie_dict
         else:
             try:
                 label_curie = lookup_curie_from_label(term, source)
                 if label_curie:
-                    curie_dict = make_curie_dict(label_curie, source)
+                    curie_dict = make_curie_dict(label_curie, source, listmode)
+                    if curie_dict is None:
+                        continue
                     if not obsolescence_check(curie_dict["label"]):
                         input_dict[label_curie] = curie_dict
                 else:
@@ -234,28 +245,28 @@ def parse_term_input(string, ontology, source):
     return input_dict
 
 
-def lookup_label(id, source):
+def lookup_label(id, source, listmode=False):
     """
     Identify the label of a term based on its CURIE
     """
     curie = re.search(r"([a-zA-Z]+):(\d+)", id)
     output = id
     if curie:
-        termtype, label, parent = get_term_info(id, source)
+        termtype, label, parent = get_term_info(id, source, listmode)
         if "obsolete" in label.lower() or "deprecated" in label.lower():
             print(f"{id} '{label}' is deprecated and will not be included in this import")
             output = "deprecated"
     return output
 
 
-def lookup_parents(id, mode, source):
+def lookup_parents(id, mode, source, listmode=False):
     """
     Identify superclasses of a term based on its CURIE
     """
     curie = re.search(r"([a-zA-Z]+):(\d+)", id)
     parents = set()
     if curie:
-        _, _, parent = get_term_info(id, source)
+        _, _, parent = get_term_info(id, source, listmode)
         if parent != "" and parent != "http://www.w3.org/2002/07/owl#Thing":
             parent_curie = convert(parent, "curie")
             parent_list = [parent_curie,]
@@ -271,7 +282,7 @@ def lookup_parents(id, mode, source):
                     storage.add(i)
                 parent_list = set()
                 for i in storage:
-                    _, _, upper_parent = get_term_info(i, source)
+                    _, _, upper_parent = get_term_info(i, source, listmode)
                     if upper_parent != "" and upper_parent != "http://www.w3.org/2002/07/owl#Thing":
                         upper_curie = convert(upper_parent, "curie")
                         parent_list.add(upper_curie)
