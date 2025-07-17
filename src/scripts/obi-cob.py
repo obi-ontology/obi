@@ -324,7 +324,7 @@ def main():
     renamed = os.path.join("build", "obi_cob_renamed.owl")
     replacements = os.path.join("src", "ontology", "obi_cob_replacements.tsv")
     cleaned = os.path.join("build", "obi_cob_cleaned.owl")
-    obi_cob = "obi-cob.owl"
+    obi_cob = os.path.join("views", "obi-cob.owl")
     line_edits(obi_edit, obi_cob_edit)
     build_merged(obi_cob_edit, merged)
     obsolete_dict = obsolete(merged, obsoleted)
