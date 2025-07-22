@@ -32,27 +32,19 @@ class ImportModifier(xml.sax.ContentHandler):
         self.current_element = name
         new_attrs = dict(attrs)
         self.copy_line = True
-        bfo = f"{OBO}/bfo/2014-05-03/classes-only.owl"
-        cob = f"{OBO}/cob/releases/2025-02-20/cob.owl"
-        obi_cob = f"{OBO}/obi/dev/obi-cob-edit.owl"
-        xbh = f"{OBO}/obi/dev/external-byhand.owl"
-        so_imp = f"{OBO}/obi/dev/import/SO_imports.owl"
-        ro_imp = f"{OBO}/obi/dev/import/RO_imports.owl"
-        ro = f"{OBO}/ro/releases/2024-04-24/core.owl"
-
         if name == "owl:Ontology" and "rdf:about" in attrs.keys():
-            new_attrs["rdf:about"] = obi_cob
+            new_attrs["rdf:about"] = f"{OBO}/obi/dev/obi-cob-edit.owl"
         if name == "owl:imports" and "rdf:resource" in attrs.keys():
-            if attrs["rdf:resource"] == bfo:
-                new_attrs["rdf:resource"] = cob
-            elif attrs["rdf:resource"] == xbh:
+            if attrs["rdf:resource"] == f"{OBO}/bfo/2014-05-03/classes-only.owl":
+                new_attrs["rdf:resource"] = f"{OBO}/cob/releases/2025-02-20/cob.owl"
+            elif attrs["rdf:resource"] == f"{OBO}/obi/dev/external-byhand.owl":
                 self.copy_line = False
-            elif attrs["rdf:resource"] == so_imp:
+            elif attrs["rdf:resource"] == f"{OBO}/obi/dev/import/SO_imports.owl":
                 RO_attrs = new_attrs.copy()
-                RO_attrs["rdf:resource"] = ro_imp
+                RO_attrs["rdf:resource"] = f"{OBO}/obi/dev/import/RO_imports.owl"
                 self.generator.startElement(name, RO_attrs)
                 self.generator.endElement(name)
-            elif attrs["rdf:resource"] == ro:
+            elif attrs["rdf:resource"] == f"{OBO}/ro/releases/2024-04-24/core.owl":
                 self.copy_line = False
         if self.copy_line:
             self.generator.startElement(name, new_attrs)
