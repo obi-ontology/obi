@@ -80,36 +80,10 @@ def build_merged(obi_cob_edit, obi_cob_merged):
         "--format", "owl",
         "-o", obi_cob_edit
     ])
-    run([
-        "robot", "merge",
-        "--input", obi_cob_edit,
-        "query",
-        "--format", "TTL",
-        "--construct",
-        "src/sparql/add-editor-preferred-term-construct.rq",
-        "build/editor-preferred-terms.ttl",
-        "--construct",
-        "src/sparql/add-curation-status-construct.rq",
-        "build/curation-status.ttl",
-        "merge",
-        "--input", "build/editor-preferred-terms.ttl",
-        "--input", "build/curation-status.ttl",
-        "query",
-        "--update", "src/sparql/fix-iao.rq",
-        "annotate",
-        "--ontology-iri",
-        f"{OBO}/obi/obi_cob_merged.owl",
-        "--version-iri",
-        f"{OBO}/obi/{TODAY}/obi_cob_merged.owl",
-        "--annotation", "owl:versionInfo", TODAY,
-        "--output", "build/obi_cob_merged.tmp.owl",
-        ], capture_output=True)
-    with open(obi_cob_merged, "w") as outfile:
-        run(["sed", '/<owl:imports/d', "build/obi_cob_merged.tmp.owl"],
-            stdout=outfile)
-    run([
-        "rm", "build/obi_cob_merged.tmp.owl"
-        ])
+    run(["cp", "src/ontology/obi-cob-edit.owl", "src/ontology/obi-edit.owl"])
+    run(["make", "build/obi_merged.owl"])
+    run(["cp", "build/obi_merged.owl", obi_cob_merged])
+    run(["git", "restore", "src/ontology/obi-edit.owl"])
 
 
 def diff(left, right):
