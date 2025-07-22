@@ -1,10 +1,13 @@
-import csv
 import os
 import re
 import xml.sax
 from datetime import date
 from subprocess import run
 from xml.sax.saxutils import XMLGenerator
+
+
+TODAY = date.today().strftime("%Y-%m-%d")
+OBO = "http://purl.obolibrary.org/obo"
 
 
 class ImportModifier(xml.sax.ContentHandler):
@@ -29,14 +32,13 @@ class ImportModifier(xml.sax.ContentHandler):
         self.current_element = name
         new_attrs = dict(attrs)
         self.copy_line = True
-        obo = "http://purl.obolibrary.org/obo/"
-        bfo = f"{obo}bfo/2014-05-03/classes-only.owl"
-        cob = f"{obo}cob/releases/2025-02-20/cob.owl"
-        obi_cob = f"{obo}obi/dev/obi-cob-edit.owl"
-        xbh = f"{obo}obi/dev/external-byhand.owl"
-        so_imp = f"{obo}obi/dev/import/SO_imports.owl"
-        ro_imp = f"{obo}obi/dev/import/RO_imports.owl"
-        ro = f"{obo}ro/releases/2024-04-24/core.owl"
+        bfo = f"{OBO}/bfo/2014-05-03/classes-only.owl"
+        cob = f"{OBO}/cob/releases/2025-02-20/cob.owl"
+        obi_cob = f"{OBO}/obi/dev/obi-cob-edit.owl"
+        xbh = f"{OBO}/obi/dev/external-byhand.owl"
+        so_imp = f"{OBO}/obi/dev/import/SO_imports.owl"
+        ro_imp = f"{OBO}/obi/dev/import/RO_imports.owl"
+        ro = f"{OBO}/ro/releases/2024-04-24/core.owl"
 
         if name == "owl:Ontology" and "rdf:about" in attrs.keys():
             new_attrs["rdf:about"] = obi_cob
@@ -104,10 +106,10 @@ def build_merged(obi_cob_edit, obi_cob_merged):
         "--update", "src/sparql/fix-iao.rq",
         "annotate",
         "--ontology-iri",
-        f"{obo}obi/obi_cob_merged.owl",
+        f"{OBO}/obi/obi_cob_merged.owl",
         "--version-iri",
-        f"{obo}obi/{today}/obi_cob_merged.owl",
-        "--annotation", "owl:versionInfo", today,
+        f"{OBO}/obi/{TODAY}/obi_cob_merged.owl",
+        "--annotation", "owl:versionInfo", TODAY,
         "--output", "build/obi_cob_merged.tmp.owl",
         ], capture_output=True)
     with open(obi_cob_merged, "w") as outfile:
@@ -203,7 +205,7 @@ def obsolete(merged, obsoleted):
                 line_list = obsolete_dict[working_term]
                 if add_obsolete_tag:
                     replacement = replacements[working_term]
-                    replaced_by = f"""        <obo:IAO_0100001 rdf:resource="{obo}{replacement}"/>"""
+                    replaced_by = f"""        <obo:IAO_0100001 rdf:resource="{OBO}/{replacement}"/>"""
                     line_list.append(replaced_by)
                     line_list.append(line)
                     line_list.append("""        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>\n""")
@@ -304,10 +306,10 @@ def finalize(cleaned, obi_cob):
         "--output", "build/obi_cob.tmp.owl",
         "annotate",
         "--ontology-iri",
-        f"{obo}obi/obi-cob.owl",
+        f"{OBO}/obi/obi-cob.owl",
         "--version-iri",
-        f"{obo}obi/{today}/obi-cob.owl",
-        "--annotation", "owl:versionInfo", today,
+        f"{OBO}/obi/{TODAY}/obi-cob.owl",
+        "--annotation", "owl:versionInfo", TODAY,
         "--output", obi_cob,
                     ])
     run([
@@ -334,6 +336,4 @@ def main():
 
 
 if __name__ == "__main__":
-    today = date.today().strftime("%Y-%m-%d")
-    obo = "http://purl.obolibrary.org/obo/"
     main()
