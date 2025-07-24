@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2025-05-01
-date: 01:05:2025 14:12
+data-version: 2025-07-24
+date: 24:07:2025 14:59
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2025-05-01" xsd:string
+property_value: owl:versionInfo "2025-07-24" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -572,7 +572,6 @@ is_a: CHEBI:23367 ! molecular entity
 id: CHEBI:29237
 name: deuterium atom
 def: "The stable isotope of hydrogen with relative atomic mass 2.014102 and a natural abundance of 0.0115 atom percent (from Greek deltaepsilonupsilontauepsilonrhoomicronnu, second)." []
-is_a: CHEBI:23367 ! molecular entity
 is_a: CHEBI:33250 ! atom
 
 [Term]
@@ -2456,6 +2455,12 @@ id: HP:0002664
 name: Neoplasm
 def: "An organ or organ-system abnormality that consists of uncontrolled autonomous cell-proliferation which can occur in any part of the body as a benign or malignant neoplasm (tumor)." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: HP:0012824
+name: Severity
+def: "The intensity or degree of a manifestation." []
+is_a: BFO:0000019 ! quality
 
 [Term]
 id: IAO:0000001
@@ -21408,8 +21413,8 @@ is_a: OBI:0000916 ! flow cytometry assay
 [Term]
 id: OBI:0003231
 name: leukapheresis
-def: "A blood harvesting process in which white blood cells are separated from a blood specimen." []
-is_a: OBI:1110095 ! blood harvesting
+def: "A blood specimen collection in which white blood cells are separated from a blood specimen." []
+is_a: OBI:1110095 ! blood specimen collection
 
 [Term]
 id: OBI:0003232
@@ -24187,6 +24192,69 @@ id: OBI:0003725
 name: survey administration assay
 def: "An assay that obtains data from one or more participants by using a survey or questionnaire" []
 is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003726
+name: maximum data transformation
+def: "A data transformation that has as its output the greatest value in the input data set." []
+is_a: OBI:0200000 ! data transformation
+
+[Term]
+id: OBI:0003727
+name: minimum data transformation
+def: "A data transformation that has as its output the least value in the input data set." []
+is_a: OBI:0200000 ! data transformation
+
+[Term]
+id: OBI:0003734
+name: clinical history collection assay
+def: "A clinical assay that produces a data item indicating whether an organism has ever had a particular disease, lifestyle factor, immune exposure, or medical procedure." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003735
+name: disease severity assay
+def: "An assay that measures the severity of a disease in an organism." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003736
+name: genetic characteristic assay
+def: "An assay that produces information about a genetic characteristic of an organism." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003738
+name: blood type assay
+def: "An assay that classifies an organism's blood within one or more blood group classification systems by identifying antigens present in the blood." []
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003739
+name: manual muscle testing 8 score
+def: "A clinical data item that quantifies the muscle function of a person based on the person's ability to hold a series of eight body positions that target different muscle groups." []
+synonym: "MMT-8" EXACT []
+is_a: OGMS:0000123 ! clinical data item
+
+[Term]
+id: OBI:0003740
+name: childhood myositis assessment scale score
+def: "A clinical data item that quantifies the degree of muscle function in a child with myositis based on performance of 14 tasks associated with muscular strength and endurance." []
+synonym: "CMAS" EXACT []
+is_a: OGMS:0000123 ! clinical data item
+
+[Term]
+id: OBI:0004001
+name: randomized clinical trial
+def: "A clinical trial in which the participants are divided by chance into separate groups that compare different treatments or other interventions. Using chance to divide people into groups means that the groups will be similar and that the effects of the treatments they receive can be compared more fairly. At the time of the trial, it is not known which treatment is best." []
+is_a: OBI:0003699 ! clinical trial
+
+[Term]
+id: OBI:0004002
+name: non-randomized clinical trial
+def: "A clinical trial in which the participants are not assigned by chance to different treatment groups. Participants may choose which group they want to be in, or they may be assigned to the groups by the researchers." []
+synonym: "nonrandomized clinical trial" EXACT []
+is_a: OBI:0003699 ! clinical trial
 
 [Term]
 id: OBI:0005246
@@ -27668,9 +27736,10 @@ is_a: GO:0008150 ! biological_process
 
 [Term]
 id: OBI:1110095
-name: blood harvesting
-def: "A material separation where blood is taken from an organism." []
-is_a: OBI:0600014 ! material component separation
+name: blood specimen collection
+def: "A specimen collection in which blood is collected from an organism." []
+synonym: "blood harvesting" EXACT []
+is_a: OBI:0600005 ! collecting specimen from organism
 
 [Term]
 id: OBI:1110099
@@ -31576,7 +31645,7 @@ is_a: PATO:0000001 ! quality
 [Term]
 id: PR:000000001
 name: protein
-def: "An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof." []
+def: "An amino acid chain that is canonically produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof." []
 is_a: CHEBI:16670 ! peptide
 
 [Term]
@@ -31795,6 +31864,12 @@ id: PR:000050469
 name: hemoglobin A1c
 def: "A hemoglobin complex that is composed of at least one beta-N-1-deoxy fructosyl hemoglobin subunit, in which the glycan is attached to the N-terminal valine (after initiator methionine removal) of one or both beta subunits." []
 is_a: GO:0032991 ! protein-containing complex
+
+[Term]
+id: PR:000085778
+name: modified histone
+def: "A histone that contains one or more amino acid modifications." []
+is_a: PR:000000001 ! protein
 
 [Term]
 id: REO:0000171
