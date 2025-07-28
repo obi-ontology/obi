@@ -231,6 +231,10 @@ def finalize(cleaned, obi_cob):
     Annotate the final output file
     """
     print("Annotating with version IRI")
+    run(["cp", cleaned, "build/obi_merged.owl"])
+    run(["make", "obi.owl"], capture_output=True)
+    run(["cp", "obi.owl", cleaned])
+    run(["git", "restore", "obi.owl"])
     run([
         "robot",
         "convert",
