@@ -75,7 +75,7 @@ def build_merged(obi_cob_edit, obi_cob_merged):
     Convert edit file to merged file, format, and annotate
     """
     run([
-        "robot", "convert",
+        "build/robot", "convert",
         "-i", obi_cob_edit,
         "--format", "owl",
         "-o", obi_cob_edit
@@ -92,7 +92,7 @@ def diff(left, right):
     Diff shortcut for ease of use
     """
     run([
-        "robot", "diff",
+        "build/robot", "diff",
         "--left", left,
         "--right", right,
         "--labels", "true",
@@ -193,12 +193,12 @@ def obsolete(merged, obsoleted, replacements, renamed):
         handler = MakeObsolete(outfile)
         parser.setContentHandler(handler)
         parser.parse(infile)
-    run(["robot", "repair",
+    run(["build/robot", "repair",
          "-i", obsoleted,
          "-o", renamed
          ])
     run([
-        "robot", "rename",
+        "build/robot", "rename",
         "--input", renamed,
         "--mappings", replacements,
         "--output", renamed,
@@ -212,7 +212,7 @@ def clean_up_unused(renamed, cleaned):
     """
     print("Trimming unused BFO classes")
     run([
-        "robot", "remove",
+        "build/robot", "remove",
         "--input", renamed,
         "--term", "BFO:0000028",
         "--term", "BFO:0000066",
@@ -231,8 +231,12 @@ def finalize(cleaned, obi_cob):
     Annotate the final output file
     """
     print("Annotating with version IRI")
+    run(["cp", cleaned, "build/obi_merged.owl"])
+    run(["make", "obi.owl"], capture_output=True)
+    run(["cp", "obi.owl", cleaned])
+    run(["git", "restore", "obi.owl"])
     run([
-        "robot",
+        "build/robot",
         "convert",
         "--input", cleaned,
         "--format", "owl",

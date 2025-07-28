@@ -43,7 +43,11 @@ build build/views:
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.4/robot.jar
 
-ROBOT := java -jar build/robot.jar --prefix "REO: http://purl.obolibrary.org/obo/REO_"
+build/robot: build/robot.jar
+	curl -L -o $@ https://raw.githubusercontent.com/ontodev/robot/master/bin/robot
+	chmod +x $@
+
+ROBOT := java -jar build/robot.jar --prefix 'REO: http://purl.obolibrary.org/obo/REO_'
 
 
 ### RDFTab
@@ -205,6 +209,9 @@ views/obi-base.owl: src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
+views/obi-cob.owl: src/scripts/obi-cob.py src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot
+	python3 $<
+
 views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	$(ROBOT) query \
 	--input $< \
@@ -276,7 +283,7 @@ views/NIAID-GSC-BRC.owl: obi.owl build/views/NIAID-GSC-BRC.txt src/ontology/view
 	rm $@.tmp.owl
 
 .PHONY: views
-views: views/obi.obo views/obi-base.owl views/obi_core.owl views/NIAID-GSC-BRC.owl
+views: views/obi-cob.owl views/obi.obo views/obi-base.owl views/obi_core.owl views/NIAID-GSC-BRC.owl
 
 
 ### Test
