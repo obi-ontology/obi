@@ -215,14 +215,14 @@ def parse_term_input(string, ontology, source):
         )
         curie = re.search(r"([a-zA-Z]+):(\d+)", term)
         if iri:
-            term_curie = convert(term, "curie")
+            term_curie = convert(iri.group(0), "curie")
             curie_dict = make_curie_dict(term_curie, source, listmode)
             if curie_dict is None:
                 continue
             if not obsolescence_check(curie_dict["label"]):
                 input_dict[term_curie] = curie_dict
         elif curie:
-            curie_dict = make_curie_dict(term, source, listmode)
+            curie_dict = make_curie_dict(curie.group(0), source, listmode)
             if curie_dict is None:
                 continue
             if not obsolescence_check(curie_dict["label"]):
