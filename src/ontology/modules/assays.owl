@@ -28344,6 +28344,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0003781 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003781">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000615"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -28409,6 +28410,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003784">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003785"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003787"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">A single cell sequencing assay that uses barcoding.</obo:IAO_0000115>
         <obo:IAO_0000117>HCC</obo:IAO_0000117>
         <obo:IAO_0000119>HCC</obo:IAO_0000119>
@@ -28461,6 +28475,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003788">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003785"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003787"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">single cell RNA sequencing assay that uses nucleotide barcoding to measure the identity and amount of RNA on a per cell basis.</obo:IAO_0000115>
         <obo:IAO_0000117>HCC</obo:IAO_0000117>
         <obo:IAO_0000118>CITE-Seq</obo:IAO_0000118>
@@ -28547,6 +28574,30 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000036195"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000036195"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">An analyte assay measuring bacterial flagellin in a plasma sample.</obo:IAO_0000115>
         <obo:IAO_0000117>HCC</obo:IAO_0000117>
         <obo:IAO_0000119>HCC</obo:IAO_0000119>
@@ -28590,6 +28641,30 @@
                                 </owl:intersectionOf>
                             </owl:Class>
                         </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000036195"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000036195"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -28641,6 +28716,30 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003800"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003800"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">An analyte assay measuring bacterial lipopolysaccharide in a plasma sample.</obo:IAO_0000115>
         <obo:IAO_0000117>HCC</obo:IAO_0000117>
         <obo:IAO_0000118>LPS</obo:IAO_0000118>
@@ -28685,6 +28784,30 @@
                                 </owl:intersectionOf>
                             </owl:Class>
                         </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003800"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003800"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -28821,6 +28944,12 @@
         <obo:IAO_0000234>SD</obo:IAO_0000234>
         <rdfs:label>analyte detection by flow based bead assay</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003800 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003800"/>
     
 
 
@@ -55521,6 +55650,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PR_000036195 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000036195"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PR_000036824 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000036824"/>
@@ -55623,5 +55758,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
 
