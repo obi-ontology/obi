@@ -42,16 +42,20 @@ def list_terms():
 
 
 @term.command('import')
+@click.argument('ontology_id', nargs=1)
 @click.argument('term_ids', nargs=-1)
-def import_terms(term_ids):
+def import_terms(ontology_id, term_ids):
     '''
     Import one or more terms from source ontologies
     '''
-    if len(term_ids) < 1:
-        print('ERROR: Please provide at least one term ID to import.')
-        exit(1)
+    if ":" in ontology_id or "_" in ontology_id:
+        id_tuple = ontology_id,
+        term_ids = id_tuple + term_ids
+        ontology_id = util.get_ontology_id(ontology_id)
+    print(f"Ontology ID: {ontology_id}")
+    print(f"Term IDS: {term_ids}")
     for term_id in term_ids:
-        import_term(term_id)
+        import_term(ontology_id, term_id)
 
 
 @cli.group('import')
@@ -59,7 +63,7 @@ def imports():
     '''
     Work with ontology imports
     '''
-    pass
+    print("importing")
 
 
 @imports.command('normalize')
