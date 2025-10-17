@@ -10,14 +10,13 @@ def import_term(ontology_id, term_id, label=None):
     if not label:
         term_id, label = util.split_id(term_id)
     path = Ontofox.find(ontology_id)
-    if path:
+    if imp.find(ontology_id):
+        print(f"Adding {term_id} to ROBOT import of {ontology_id}")
+        imp.full_import(ontology_id, term_id)
+    elif path:
         config = Ontofox(path)
         config.add(Term(term_id, label))
         config.sort()
         config.save()
-    elif imp.find(ontology_id):
-        print(f"Adding {term_id} to ROBOT import of {ontology_id}")
     else:
         raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
-
-

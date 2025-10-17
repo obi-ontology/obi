@@ -483,11 +483,14 @@ def get_import_source_file(path, ontology):
     """
     Download the import source file for an ontology
     """
-    import_source_dict = TSV2dict(path)
-    if ontology not in import_source_dict.keys():
+    if not os.path.isfile(path):
         iri = f"http://purl.obolibrary.org/obo/{ontology.lower()}.owl"
     else:
-        iri = import_source_dict[ontology]["IRI"]
+        import_source_dict = TSV2dict(path)
+        if ontology not in import_source_dict.keys():
+            iri = f"http://purl.obolibrary.org/obo/{ontology.lower()}.owl"
+        else:
+            iri = import_source_dict[ontology]["IRI"]
     file_destination = os.path.join("build", f"{ontology}_import_source.owl")
     run([
         "curl",
@@ -529,6 +532,23 @@ def check_input_file(ontology):
         if rowdict["label"] != label:
             rowdict["label"] = label
     dict2TSV(input_dict, input_path)
+
+
+def full_import(ontology, term):
+    import_sources = os.path.join("src", "ontology", "import_sources.tsv")
+    path = os.path.join("src",
+                        "ontology",
+                        "robot_inputs",
+                        f"{ontology}_input.tsv")
+    import_file_check(path)
+    imports = TSV2dict(path)
+    source = os.path.join("build", f"{ontology}_import_source.owl")
+    if not os.path.isfile(source):
+        import_sources = os.path.join("src", "ontology", "import_sources.tsv")
+        get_import_source_file(import_sources, ontology)
+    input_dict = parse_term_input(term, ontology, source)
+    do_import(input_dict, imports, False, False, source)
+    dict2TSV(imports, path)
 
 
 def main():
