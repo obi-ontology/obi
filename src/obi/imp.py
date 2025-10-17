@@ -27,8 +27,35 @@ import argparse
 import os
 import re
 from subprocess import run
-from owl_reader import get_term_info, get_iri_from_label
-from util import dict2TSV, TSV2dict
+from obi.owl_reader import get_term_info, get_iri_from_label
+from obi.util import dict2TSV, TSV2dict
+
+
+def list_files():
+    """
+    List ROBOT import configuration files
+    """
+    dir = os.path.join("src", "ontology", "robot_inputs")
+    filenames = os.listdir(dir)
+    filenames.sort()
+    results = []
+    for filename in filenames:
+        if filename.endswith(".tsv") and "_input" in filename:
+            path = os.path.join(dir, filename)
+            if os.path.isfile(path):
+                results.append(path)
+    return results
+
+
+def find(ontology_id):
+    """
+    Given an ontology ID, return the path to its ROBOT import config, or None
+    """
+    for path in list_files():
+        filename = os.path.basename(path)
+        filename, ext = os.path.splitext(filename)
+        if filename.lower().startswith(f"{ontology_id.lower()}"):
+            return path
 
 
 def import_file_check(path):

@@ -52,8 +52,6 @@ def import_terms(ontology_id, term_ids):
         id_tuple = ontology_id,
         term_ids = id_tuple + term_ids
         ontology_id = util.get_ontology_id(ontology_id)
-    print(f"Ontology ID: {ontology_id}")
-    print(f"Term IDS: {term_ids}")
     for term_id in term_ids:
         import_term(ontology_id, term_id)
 
