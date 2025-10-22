@@ -40,6 +40,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117"/>
@@ -592,6 +598,27 @@
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000228"/>
         <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/PATO_0002201"/>
         <rdfs:label>obsolete_handedness</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000968 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000968">
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000112>A voltmeter is a measurement device which is intended to perform some measure function.</obo:IAO_0000112>
+        <obo:IAO_0000112>An autoclave is a device that sterlizes instruments or contaminated waste by applying high temperature and pressure.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A material entity that is designed to perform a function in a scientific investigation, but is not a reagent.</obo:IAO_0000115>
+        <obo:IAO_0000116>2012-12-17 JAO: In common lab usage, there is a distinction made between devices and reagents that is difficult to model. Therefore we have chosen to specifically exclude reagents from the definition of &quot;device&quot;, and are enumerating the types of roles that a reagent can perform.</obo:IAO_0000116>
+        <obo:IAO_0000116>2013-6-5 MHB: The following clarifications are outcomes of the May 2013 Philly Workshop. Reagents are distinguished from devices that also participate in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in some chemical interaction or reaction during the realization of their experimental role. By contrast, devices do not participate in such chemical reactions/interactions.  Note that there are cases where devices use reagent components during their operation, where the reagent-device distinction is less clear.  For example: (1) An HPLC machine is considered a device, but has a column that holds a stationary phase resin as an operational component.  This resin qualifies as a device if it participates purely in size exclusion, but bears a reagent role that is realized in the running of a column if it interacts electrostatically or chemically with the evaluant. The container the resin is in (“the column”) considered alone is a device. So the entire column as well as the entire HPLC machine are devices that have a reagent as an operating part.  (2) A pH meter is a device, but its electrode component bears a reagent role in virtue of its interacting directly with the evaluant in execution of an assay. (3) A gel running  box  is a device that has a metallic lead as a component that participates in a chemical reaction with the running buffer when a charge is passed through it.  This metallic lead is considered to have a reagent role as a component of this device realized in the running of a gel. In the examples above, a reagent is an operational component of a device, but the device itself does not realize a reagent role (as bearing a reagent role is not transitive across the part_of relation).  In this way, the asserted disjointness between a reagent and device holds, as both roles are never realized in the same bearer during execution of an assay.</obo:IAO_0000116>
+        <obo:IAO_0000117>PERSON: Helen Parkinson</obo:IAO_0000117>
+        <obo:IAO_0000118>instrument</obo:IAO_0000118>
+        <obo:IAO_0000119>OBI development call 2012-12-17.</obo:IAO_0000119>
+        <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000228"/>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/COB_0001300"/>
+        <rdfs:label>obsolete device</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
