@@ -1254,9 +1254,9 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0001300"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0001300"/>
                         </owl:unionOf>
                     </owl:Class>
                     <owl:Restriction>
@@ -1581,12 +1581,6 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
     <!-- http://purl.obolibrary.org/obo/BFO_0000034 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000034"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
     
 
 
@@ -2127,13 +2121,9 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
 
     <!-- http://purl.obolibrary.org/obo/COB_0000035 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000035"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/COB_0000110110-->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000035"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000035">
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+    </owl:Class>
     
 
 
@@ -2277,9 +2267,7 @@ https://sourceforge.net/tracker/index.php?func=detail&amp;aid=3512902&amp;group_
 
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/COB_0000035"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
     
 
 
@@ -5322,8 +5310,8 @@ for now.</obo:IAO_0000116>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000013"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000011"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000013"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -27891,8 +27879,8 @@ discussed on obi-dev call 9/28/2015, details see: https://sourceforge.net/p/obi/
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000671"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/COB_0000022"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000671"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100060"/>
                         </owl:unionOf>
                     </owl:Class>
