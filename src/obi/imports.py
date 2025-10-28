@@ -34,7 +34,7 @@ def import_term(ontology_id, term_id, label=None):
         raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
 
 
-def remove_term(ontology_id, term_id):
+def remove_term(ontology_id, term_id, label=None):
     '''
     Remove a term from an import config file
     '''
@@ -43,6 +43,8 @@ def remove_term(ontology_id, term_id):
         imp.act('remove', ontology_id, term_id)
     elif path:
         config = Ontofox(path)
-        print("Removing from OntoFox file")
+        config.remove(Term(term_id, label))
+        config.sort()
+        config.save()
     else:
         raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
