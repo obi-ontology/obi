@@ -7,7 +7,7 @@ import obi.util as util
 
 from obi.ontofox import Ontofox
 from obi.template import Template
-from obi.imports import import_term
+from obi.imports import ignore_term, import_term, remove_term
 
 
 ### CLI
@@ -41,6 +41,21 @@ def list_terms():
             print(row[0], '\t', row[1])
 
 
+@term.command('ignore')
+@click.argument('ontology_id', nargs=1)
+@click.argument('term_ids', nargs=-1)
+def ignore_terms(ontology_id, term_ids):
+    '''
+    Set one or more terms as ignored in ROBOT import config files
+    '''
+    if ":" in ontology_id or "_" in ontology_id:
+        id_tuple = ontology_id,
+        term_ids = id_tuple + term_ids
+        ontology_id = util.get_ontology_id(ontology_id)
+    for term_id in term_ids:
+        ignore_term(ontology_id, term_id)
+
+
 @term.command('import')
 @click.argument('ontology_id', nargs=1)
 @click.argument('term_ids', nargs=-1)
@@ -54,6 +69,21 @@ def import_terms(ontology_id, term_ids):
         ontology_id = util.get_ontology_id(ontology_id)
     for term_id in term_ids:
         import_term(ontology_id, term_id)
+
+
+@term.command('remove')
+@click.argument('ontology_id', nargs=1)
+@click.argument('term_ids', nargs=-1)
+def remove_terms(ontology_id, term_ids):
+    '''
+    Remove one or more terms from import config files
+    '''
+    if ":" in ontology_id or "_" in ontology_id:
+        id_tuple = ontology_id,
+        term_ids = id_tuple + term_ids
+        ontology_id = util.get_ontology_id(ontology_id)
+    for term_id in term_ids:
+        remove_term(ontology_id, term_id)
 
 
 @cli.group('import')

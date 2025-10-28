@@ -534,7 +534,7 @@ def check_input_file(ontology):
     dict2TSV(input_dict, input_path)
 
 
-def full_import(ontology, term):
+def act(action, ontology, term):
     import_sources = os.path.join("src", "ontology", "import_sources.tsv")
     path = os.path.join("src",
                         "ontology",
@@ -547,7 +547,12 @@ def full_import(ontology, term):
         import_sources = os.path.join("src", "ontology", "import_sources.tsv")
         get_import_source_file(import_sources, ontology)
     input_dict = parse_term_input(term, ontology, source)
-    do_import(input_dict, imports, False, False, source)
+    if action == "ignore":
+        do_ignore(input_dict, imports)
+    elif action == "import":
+        do_import(input_dict, imports, False, False, source)
+    elif action == "remove":
+        do_remove(input_dict, imports)
     dict2TSV(imports, path)
 
 
