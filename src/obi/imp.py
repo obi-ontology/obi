@@ -31,6 +31,9 @@ from obi.owl_reader import get_term_info, get_iri_from_label
 from obi.util import dict2TSV, TSV2dict
 
 
+import_source_file = os.path.join("src", "ontology", "import_source_iris.tsv")
+
+
 def list_files():
     """
     List ROBOT import configuration files
@@ -447,46 +450,37 @@ def universalize(action, input_dict, path, limit, parent, source):
             dict2TSV(secondary_imports, secondary_path)
 
 
-def update_import_source_tsv(path, ontology, iri):
+def change_source_iri(ontology, iri):
     """
-    Specify an IRI of a file to be used as the import source for an ontology
+    Change the source IRI for a particular ROBOT import
     """
-    if os.path.isfile(path):
-        import_source_dict = TSV2dict(path)
+    if os.path.isfile(import_source_file):
+        import_source_dict = TSV2dict(import_source_file)
+        if iri == "":
+            if ontology not in import_source_dict.keys():
+                raise Exception(f"No source set for {ontology}")
+    elif iri == "":
+        raise Exception("Did not find import_source_iris.tsv to remove from")
     else:
         import_source_dict = {}
-    import_source_dict[ontology] = {
-        "ontology": ontology,
-        "IRI": iri
-    }
-    dict2TSV(import_source_dict, path)
-    print(f"Set source for {ontology} as {iri}")
-
-
-def remove_import_source(path, ontology):
-    """
-    Remove a line in the import source file
-    """
-    if not os.path.isfile(path):
-        print(f"Didn't find {path}")
-        quit()
-    import_source_dict = TSV2dict(path)
-    if ontology in import_source_dict.keys():
+    if iri == "":
         del import_source_dict[ontology]
-        dict2TSV(import_source_dict, path)
-        print(f"Removed source for {ontology}")
     else:
-        print(f"No source for {ontology} found in file")
+        import_source_dict[ontology] = {
+            "ontology": ontology,
+            "IRI": iri
+        }
+    dict2TSV(import_source_dict, import_source_file)
 
 
-def get_import_source_file(path, ontology):
+def reload_source_file(ontology):
     """
-    Download the import source file for an ontology
+    Download the source file for a particular ROBOT import
     """
-    if not os.path.isfile(path):
+    if not os.path.isfile(import_source_file):
         iri = f"http://purl.obolibrary.org/obo/{ontology.lower()}.owl"
     else:
-        import_source_dict = TSV2dict(path)
+        import_source_dict = TSV2dict(import_source_file)
         if ontology not in import_source_dict.keys():
             iri = f"http://purl.obolibrary.org/obo/{ontology.lower()}.owl"
         else:
@@ -591,13 +585,13 @@ def main():
         if not args.iri:
             print("Use --iri or -i to specify an IRI to set as the source.")
             quit()
-        update_import_source_tsv(import_sources, args.ontology, args.iri)
+        change_source_iri(args.ontology, args.iri)
         quit()
     if args.action == "remove-source":
-        remove_import_source(import_sources, args.ontology)
+        change_source_iri(args.ontology, "")
         quit()
     if args.action == "get-source" or args.reload:
-        get_import_source_file(import_sources, args.ontology)
+        reload_source_file(args.ontology)
         quit()
     if args.action == "check-labels":
         check_input_file(args.ontology)

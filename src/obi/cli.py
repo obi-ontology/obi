@@ -8,6 +8,7 @@ import obi.util as util
 from obi.ontofox import Ontofox
 from obi.template import Template
 from obi.imports import ignore_term, import_term, remove_term
+from obi.imp import change_source_iri, reload_source_file
 
 
 ### CLI
@@ -91,7 +92,35 @@ def imports():
     '''
     Work with ontology imports
     '''
-    print("importing")
+    pass
+
+
+@imports.command('change-source')
+@click.argument('ontology', nargs=1)
+@click.argument('iri', nargs=1)
+def change_source(ontology, iri):
+    '''
+    Change the IRI of the import source file for a ROBOT import
+    '''
+    change_source_iri(ontology, iri)
+
+
+@imports.command('remove-source')
+@click.argument('ontology', nargs=1)
+def remove_source(ontology):
+    '''
+    Remove an IRI from the TSV of import source file IRIs
+    '''
+    change_source_iri(ontology, "")
+
+
+@imports.command('reload-source')
+@click.argument('ontology', nargs=1)
+def reload_source(ontology):
+    '''
+    Download the import source file for a ROBOT import
+    '''
+    reload_source_file(ontology)
 
 
 @imports.command('normalize')
