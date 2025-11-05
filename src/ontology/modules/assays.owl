@@ -28388,85 +28388,7 @@
         <obo:IAO_0000117>SD</obo:IAO_0000117>
         <obo:IAO_0000119>HCC</obo:IAO_0000119>
         <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>metabolomics mass spectrometry assay</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003783 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003783">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001977"/>
-        <obo:IAO_0000115 xml:lang="en">A cytometry assay that provides information on a per cell basis.</obo:IAO_0000115>
-        <obo:IAO_0000117>SD</obo:IAO_0000117>
-        <obo:IAO_0000119>HCC</obo:IAO_0000119>
-        <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>single cell  assay</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003784 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003784">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003785"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003787"/>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">A single cell sequencing assay that uses barcoding.</obo:IAO_0000115>
-        <obo:IAO_0000117>SD</obo:IAO_0000117>
-        <obo:IAO_0000119>HCC</obo:IAO_0000119>
-        <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>barcoding single cell sequencing assay </rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003785 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003785">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600047"/>
-        <obo:IAO_0000115 xml:lang="en">A sequencing assay that provides information on a per cell basis</obo:IAO_0000115>
-        <obo:IAO_0000117>SD</obo:IAO_0000117>
-        <obo:IAO_0000119>HCC</obo:IAO_0000119>
-        <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>single cell sequencing assay</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003786 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003786">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002744"/>
-        <obo:IAO_0000115 xml:lang="en">A molecular label composed of short stretches of DNA used to label nucleotides</obo:IAO_0000115>
-        <obo:IAO_0000117>SD</obo:IAO_0000117>
-        <obo:IAO_0000119>HCC</obo:IAO_0000119>
-        <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>nucleotide barcode</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003787 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003787">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600038"/>
-        <obo:IAO_0000115 xml:lang="en">An addition of molecular label process whereby barcodes are used to label nucleotides</obo:IAO_0000115>
-        <obo:IAO_0000117>SD</obo:IAO_0000117>
-        <obo:IAO_0000119>HCC</obo:IAO_0000119>
-        <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>nucleotide barcoding</rdfs:label>
+        <rdfs:label>metabolomics by mass spectrometry assay</rdfs:label>
     </owl:Class>
     
 
@@ -28474,7 +28396,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0003788 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003788">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003785"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -28482,13 +28404,13 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003787"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600047"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">single cell RNA sequencing assay that uses nucleotide barcoding to measure the identity and amount of RNA on a per cell basis.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An assay performed on single cells that simultaneously measures transcript expression via single-cell RNA sequencing and profiles surface proteins via sequencing of DNA-barcodes attached to antibodies recognizing particular surface proteins from individual cells.</obo:IAO_0000115>
         <obo:IAO_0000117>SD</obo:IAO_0000117>
         <obo:IAO_0000118>CITE-Seq</obo:IAO_0000118>
         <obo:IAO_0000119>HCC</obo:IAO_0000119>
@@ -28501,12 +28423,12 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0003789 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003789">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0600047"/>
-        <obo:IAO_0000115 xml:lang="en">A sequencing assay that determines the sequence of a DNA or RNA molecules that encode the repertoire of B cell receptors or T cell receptors within an input sample.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000115 xml:lang="en">An assay that determines the sequence of a DNA or RNA molecules that encode the repertoire of B cell receptors or T cell receptors within an input sample.</obo:IAO_0000115>
         <obo:IAO_0000117>SD</obo:IAO_0000117>
         <obo:IAO_0000119>HCC</obo:IAO_0000119>
         <obo:IAO_0000234>HCC</obo:IAO_0000234>
-        <rdfs:label>immune receptor repertoire sequencing assay</rdfs:label>
+        <rdfs:label>immune receptor repertoire profiling assay</rdfs:label>
     </owl:Class>
     
 
@@ -28826,6 +28748,30 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003795">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000443"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000275"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000003707"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000003707"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">An analyte assay measuring adenosine deaminase activity in a sample.</obo:IAO_0000115>
         <obo:IAO_0000117>SD</obo:IAO_0000117>
         <obo:IAO_0000118>ADA</obo:IAO_0000118>
@@ -29540,12 +29486,6 @@
         <obo:IAO_0000119>IEDB</obo:IAO_0000119>
         <rdfs:label>enzyme-linked immunospot assay</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0600038 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600038"/>
     
 
 
@@ -55503,6 +55443,12 @@
     <!-- http://purl.obolibrary.org/obo/PR_000003252 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000003252"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000003707 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000003707"/>
     
 
 
