@@ -473,7 +473,7 @@ def change_source_iri(ontology, iri):
     dict2TSV(import_source_dict, import_source_file)
 
 
-def reload_source_file(ontology):
+def download_source_file(ontology):
     """
     Download the source file for a particular ROBOT import
     """
