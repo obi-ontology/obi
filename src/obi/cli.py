@@ -119,12 +119,12 @@ def source():
     pass
 
 
-@source.command('change')
+@source.command('set')
 @click.argument('ontology', nargs=1)
 @click.argument('iri', nargs=1)
-def change_source(ontology, iri):
+def set_source(ontology, iri):
     '''
-    Change the IRI of the import source file for a ROBOT import
+    Set the IRI of the import source file for a ROBOT import
     '''
     change_source_iri(ontology, iri)
 
