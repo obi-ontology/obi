@@ -151,9 +151,9 @@ class Ontofox:
         Remove a term from this configuration
         '''
         del self.terms[term.iri]
-        for i, j in self.terms.items():
-            if j.subClassOf and j.subClassOf == term:
-                j.subClassOf = None
+        for i in self.terms.values():
+            if i.subClassOf and i.subClassOf == term:
+                i.subClassOf = None
 
     def sort(self):
         '''
