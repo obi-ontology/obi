@@ -49,7 +49,7 @@ def ignore_terms(ontology_id, term_ids):
     '''
     Set one or more terms as ignored in ROBOT import config files
     '''
-    if ":" in ontology_id or "_" in ontology_id:
+    if not util.is_ontology_name(ontology_id):
         id_tuple = ontology_id,
         term_ids = id_tuple + term_ids
         ontology_id = util.get_ontology_id(ontology_id)
@@ -64,7 +64,7 @@ def import_terms(ontology_id, term_ids):
     '''
     Import one or more terms from source ontologies
     '''
-    if ":" in ontology_id or "_" in ontology_id:
+    if not util.is_ontology_name(ontology_id):
         id_tuple = ontology_id,
         term_ids = id_tuple + term_ids
         ontology_id = util.get_ontology_id(ontology_id)
@@ -79,7 +79,7 @@ def remove_terms(ontology_id, term_ids):
     '''
     Remove one or more terms from import config files
     '''
-    if ":" in ontology_id or "_" in ontology_id:
+    if not util.is_ontology_name(ontology_id):
         id_tuple = ontology_id,
         term_ids = id_tuple + term_ids
         ontology_id = util.get_ontology_id(ontology_id)

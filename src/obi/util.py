@@ -6,6 +6,17 @@ OBO = 'http://purl.obolibrary.org/obo/'
 
 ### Utilities
 
+
+def is_ontology_name(string):
+    '''
+    Return None if an input string is an ID rather than an ontology name.
+    '''
+    if re.fullmatch(r'\w+', string):
+        return string
+    else:
+        return None
+
+
 def expand(curie):
     if re.match(r'\w+:\d+', curie):
         ontology_id, local_name = curie.split(':')
