@@ -10,10 +10,10 @@ def ignore_term(ontology_id, term_id, label=None):
     if not label:
         term_id, label = util.split_id(term_id)
     if imp.find(ontology_id):
-        imp.act('ignore', ontology_id, term_id)
+        term_dict, imports = imp.prepare(ontology_id, term_id)
+        imp.do_ignore(ontology_id, term_dict, imports)
     else:
         raise Exception(f'No ROBOT configuration file for {ontology_id}: {term_id}')
-
 
 
 def import_term(ontology_id, term_id, label=None):
@@ -24,7 +24,8 @@ def import_term(ontology_id, term_id, label=None):
         term_id, label = util.split_id(term_id)
     path = Ontofox.find(ontology_id)
     if imp.find(ontology_id):
-        imp.act('import', ontology_id, term_id)
+        term_dict, imports = imp.prepare(ontology_id, term_id)
+        imp.do_import(ontology_id, term_dict, imports)
     elif path:
         config = Ontofox(path)
         config.add(Term(term_id, label))
@@ -40,7 +41,8 @@ def remove_term(ontology_id, term_id, label=None):
     '''
     path = Ontofox.find(ontology_id)
     if imp.find(ontology_id):
-        imp.act('remove', ontology_id, term_id)
+        term_dict, imports = imp.prepare(ontology_id, term_id)
+        imp.do_remove(ontology_id, term_dict, imports)
     elif path:
         config = Ontofox(path)
         config.remove(Term(term_id, label))

@@ -275,7 +275,7 @@ def lookup_parents(id, mode, source, listmode=False):
     return parents
 
 
-def do_import(term_dict, imports, limit, parent, source):
+def do_import(ontology, term_dict, imports, limit=None, parent=None, source=None):
     """
     Import a term
     """
@@ -324,9 +324,14 @@ def do_import(term_dict, imports, limit, parent, source):
                 imports[term]["action"] = "relate"
                 confirmation_text = " as a relation"
             print(f"Added {term} '{label}' to import{confirmation_text}")
+    path = os.path.join("src",
+                        "ontology",
+                        "robot_inputs",
+                        f"{ontology}_input.tsv")
+    dict2TSV(imports, path)
 
 
-def do_ignore(term_dict, imports):
+def do_ignore(ontology, term_dict, imports):
     """
     Prevent a term from being imported
     """
@@ -343,9 +348,15 @@ def do_ignore(term_dict, imports):
                 "parent class": ""
             }
             print(f"Ignored {term} '{label}'")
+    path = os.path.join("src",
+                        "ontology",
+                        "robot_inputs",
+                        f"{ontology}_input.tsv")
+    dict2TSV(imports, path)
 
 
-def do_remove(term_dict, imports):
+
+def do_remove(ontology, term_dict, imports):
     """
     Remove references to a term in the import dict
     """
@@ -366,6 +377,11 @@ def do_remove(term_dict, imports):
             if act:
                 del imports[term]
                 print(f"Removed {term} '{label}' from this import")
+    path = os.path.join("src",
+                        "ontology",
+                        "robot_inputs",
+                        f"{ontology}_input.tsv")
+    dict2TSV(imports, path)
 
 
 def do_parent(term_info, parent, imports, source):
@@ -528,7 +544,10 @@ def check_input_file(ontology):
     dict2TSV(input_dict, input_path)
 
 
-def act(action, ontology, term):
+def prepare(ontology, term):
+    """
+    Return a dict of term info and a dict of the import config file
+    """
     import_sources = os.path.join("src", "ontology", "import_sources.tsv")
     path = os.path.join("src",
                         "ontology",
@@ -539,15 +558,9 @@ def act(action, ontology, term):
     source = os.path.join("build", f"{ontology}_import_source.owl")
     if not os.path.isfile(source):
         import_sources = os.path.join("src", "ontology", "import_sources.tsv")
-        get_import_source_file(import_sources, ontology)
+        download_source_file(import_sources, ontology)
     input_dict = parse_term_input(term, ontology, source)
-    if action == "ignore":
-        do_ignore(input_dict, imports)
-    elif action == "import":
-        do_import(input_dict, imports, False, False, source)
-    elif action == "remove":
-        do_remove(input_dict, imports)
-    dict2TSV(imports, path)
+    return input_dict, imports
 
 
 def main():
