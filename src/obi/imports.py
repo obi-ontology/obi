@@ -22,31 +22,33 @@ def import_term(ontology_id, term_id, label=None):
     '''
     if not label:
         term_id, label = util.split_id(term_id)
-    path = Ontofox.find(ontology_id)
     if imp.find(ontology_id):
         term_dict, imports = imp.prepare(ontology_id, term_id)
         imp.do_import(ontology_id, term_dict, imports)
-    elif path:
-        config = Ontofox(path)
-        config.add(Term(term_id, label))
-        config.sort()
-        config.save()
     else:
-        raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
+        path = Ontofox.find(ontology_id)
+        if path:
+            config = Ontofox(path)
+            config.add(Term(term_id, label))
+            config.sort()
+            config.save()
+        else:
+            raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
 
 
 def remove_term(ontology_id, term_id, label=None):
     '''
     Remove a term from an import config file
     '''
-    path = Ontofox.find(ontology_id)
     if imp.find(ontology_id):
         term_dict, imports = imp.prepare(ontology_id, term_id)
         imp.do_remove(ontology_id, term_dict, imports)
-    elif path:
-        config = Ontofox(path)
-        config.remove(Term(term_id, label))
-        config.sort()
-        config.save()
     else:
-        raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
+        path = Ontofox.find(ontology_id)
+        if path:
+            config = Ontofox(path)
+            config.remove(Term(term_id, label))
+            config.sort()
+            config.save()
+        else:
+            raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
