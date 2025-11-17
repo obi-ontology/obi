@@ -7,7 +7,7 @@ import obi.util as util
 
 from obi.ontofox import Ontofox
 from obi.template import Template
-from obi.imports import ignore_term, import_term, remove_term
+from obi.imports import ignore_term, import_term, remove_term, refresh
 from obi.imp import change_source_iri, download_source_file
 
 
@@ -93,6 +93,15 @@ def imports():
     Work with ontology imports
     '''
     pass
+
+
+@imports.command('refresh')
+@click.argument('ontology_id', nargs=1)
+def refresh_module(ontology_id):
+    '''
+    Rebuild the OWL file of a particular ontology import
+    '''
+    refresh(ontology_id)
 
 
 @imports.command('normalize')

@@ -1,3 +1,4 @@
+import obi.cmd as cmd
 import obi.imp as imp
 import obi.util as util
 from obi.ontofox import Ontofox, Term
@@ -52,3 +53,17 @@ def remove_term(ontology_id, term_id, label=None):
             config.save()
         else:
             raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}: {term_id}')
+
+
+def refresh(ontology_id):
+    '''
+    Refresh the OWL file of an import module
+    '''
+    if imp.find(ontology_id):
+        imp.refresh_module(ontology_id)
+    else:
+        path = Ontofox.find(ontology_id)
+        if path:
+            cmd.build_ontofox_module(ontology_id)
+        else:
+            raise Exception(f'No Ontofox or ROBOT configuration file for {ontology_id}')

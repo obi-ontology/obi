@@ -27,6 +27,7 @@ import argparse
 import os
 import re
 from subprocess import run
+from obi.cmd import prepare_robot_module, build_robot_module
 from obi.owl_reader import get_term_info, get_iri_from_label
 from obi.util import dict2TSV, TSV2dict
 
@@ -420,7 +421,7 @@ def split(ontology, imports_dict):
     imports_path = os.path.join("build", f"{ontology}_import.txt")
     ignore_path = os.path.join("build", f"{ontology}_ignore.txt")
     parent_path = os.path.join("build", f"{ontology}_parent.tsv")
-    relation_path = os.path.join("build", f"{ontology}_relations.txt")
+    relation_path = os.path.join("build", f"{ontology}_relation.txt")
     limit_path = os.path.join("build", f"{ontology}_limit.txt")
     parent["robot"] = imports_dict["robot"]
     for id, row in imports_dict.items():
@@ -443,8 +444,6 @@ def split(ontology, imports_dict):
     ]:
         write_to_txt(sorted(xlist), xpath)
     dict2TSV(parent, parent_path)
-    for i in imports_path, ignore_path, parent_path, relation_path, limit_path:
-        print(f"Wrote {i}")
 
 
 def universalize(action, input_dict, path, limit, parent, source):
@@ -561,6 +560,23 @@ def prepare(ontology, term):
         download_source_file(import_sources, ontology)
     input_dict = parse_term_input(term, ontology, source)
     return input_dict, imports
+
+
+def refresh_module(ontology):
+    """
+    Refresh the OWL file associated with a ROBOT import
+    """
+    source = os.path.join("build", f"{ontology}_import_source.owl")
+    if not os.path.isfile(source):
+        download_source_file(ontology)
+    config_path = os.path.join("src",
+                               "ontology",
+                               "robot_inputs",
+                               f"{ontology}_input.tsv")
+    imports = TSV2dict(config_path)
+    split(ontology, imports)
+    prepare_robot_module(ontology)
+    build_robot_module(ontology)
 
 
 def main():
