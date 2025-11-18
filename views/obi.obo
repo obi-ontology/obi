@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2025-07-28
-date: 28:07:2025 11:44
+data-version: 2025-10-14
+date: 14:10:2025 11:30
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2025-07-28" xsd:string
+property_value: owl:versionInfo "2025-10-14" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1105,7 +1105,7 @@ is_a: CL:0002319 ! neural cell
 id: CL:0000542
 name: lymphocyte
 def: "A lymphocyte is a leukocyte commonly found in the blood and lymph that has the characteristics of a large nucleus, a neutral staining cytoplasm, and prominent heterochromatin." []
-is_a: CL:0000842 ! mononuclear cell
+is_a: CL:0000842 ! mononuclear leukocyte
 
 [Term]
 id: CL:0000556
@@ -1136,7 +1136,7 @@ id: CL:0000576
 name: monocyte
 def: "Myeloid mononuclear recirculating leukocyte that can act as a precursor of tissue macrophages, osteoclasts and some populations of tissue dendritic cells." []
 is_a: CL:0000738 ! leukocyte
-is_a: CL:0000842 ! mononuclear cell
+is_a: CL:0000842 ! mononuclear leukocyte
 
 [Term]
 id: CL:0000578
@@ -1225,7 +1225,7 @@ is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000842
-name: mononuclear cell
+name: mononuclear leukocyte
 def: "A leukocyte with a single non-segmented nucleus in the mature form." []
 is_a: CL:0000000 ! cell
 
@@ -1263,11 +1263,12 @@ is_a: CL:0000775 ! neutrophil
 id: CL:2000001
 name: peripheral blood mononuclear cell
 def: "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood." []
-is_a: CL:0000842 ! mononuclear cell
+is_a: CL:0000842 ! mononuclear leukocyte
 
 [Term]
 id: CLO:0000001
 name: cell line cell
+comment: 'derives from' is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.
 is_a: OBI:0001866 ! secondary cultured cell
 
 [Term]
@@ -1558,7 +1559,7 @@ is_a: GO:0003824 ! catalytic activity
 [Term]
 id: GO:0004540
 name: RNA nuclease activity
-def: "Catalysis of the hydrolysis of phosphodiester bonds in chains of RNA." []
+def: "Catalysis of the cleavage of phosphodiester bonds in chains of RNA." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -3188,7 +3189,7 @@ is_a: NCBITaxon:11050 ! Flaviviridae
 [Term]
 id: NCBITaxon:160
 name: Treponema pallidum
-is_a: NCBITaxon:2 ! Bacteria
+is_a: NCBITaxon:3379134 ! Pseudomonadati
 
 [Term]
 id: NCBITaxon:197562
@@ -3281,6 +3282,11 @@ is_a: NCBITaxon:33154 ! Opisthokonta
 id: NCBITaxon:33213
 name: Bilateria
 is_a: NCBITaxon:33208 ! Metazoa
+
+[Term]
+id: NCBITaxon:3379134
+name: Pseudomonadati
+is_a: NCBITaxon:2 ! Bacteria
 
 [Term]
 id: NCBITaxon:3702
@@ -3397,7 +3403,7 @@ is_a: NCBITaxon:33213 ! Bilateria
 [Term]
 id: NCBITaxon:784
 name: Orientia tsutsugamushi
-is_a: NCBITaxon:2 ! Bacteria
+is_a: NCBITaxon:3379134 ! Pseudomonadati
 
 [Term]
 id: NCBITaxon:7955
@@ -24244,6 +24250,13 @@ synonym: "CMAS" EXACT []
 is_a: OGMS:0000123 ! clinical data item
 
 [Term]
+id: OBI:0003741
+name: capillary electrophoresis mass spectrometry assay
+def: "A mass spectrometry assay where a sample mixture is first separated by capillary electrophoresis before being analysed by mass spectrometry." []
+synonym: "CE-MS" EXACT []
+is_a: OBI:0000470 ! mass spectrometry assay
+
+[Term]
 id: OBI:0004001
 name: randomized clinical trial
 def: "A clinical trial in which the participants are divided by chance into separate groups that compare different treatments or other interventions. Using chance to divide people into groups means that the groups will be similar and that the effects of the treatments they receive can be compared more fairly. At the time of the trial, it is not known which treatment is best." []
@@ -32793,7 +32806,7 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: VO:0000002
 name: vaccination
-def: "A process of administering a vaccine in vivo to a recipient (e.g., human) with the intent to invoke a protective or therapeutic adaptive immune response." []
+def: "Process of administering a vaccine in vivo to a recipient (e.g., a human), with the intent to invoke a protective or therapeutic adaptive immune response." []
 is_a: OBI:0600007 ! administering substance in vivo
 
 [Typedef]
