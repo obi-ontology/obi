@@ -17,6 +17,12 @@ def is_ontology_name(string):
         return None
 
 
+def contract(iri):
+    base, num = iri.replace(OBO, '').split('_', maxsplit=1)
+    curie = f"{base}:{num}"
+    return curie
+
+
 def expand(curie):
     if re.match(r'\w+:\d+', curie):
         ontology_id, local_name = curie.split(':')

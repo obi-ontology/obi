@@ -3,6 +3,7 @@
 import click
 import csv
 
+import obi.ontofox2robot as ontofox2robot
 import obi.util as util
 
 from obi.ontofox import Ontofox
@@ -93,6 +94,16 @@ def imports():
     Work with ontology imports
     '''
     pass
+
+
+@imports.command('convert')
+@click.argument('ontology_id', nargs=1)
+def convert(ontology_id):
+    '''
+    Create a ROBOT config file based on an Ontofox config file
+    '''
+    ontology_id = ontology_id.upper()
+    ontofox2robot.convert(ontology_id)
 
 
 @imports.command('refresh')
