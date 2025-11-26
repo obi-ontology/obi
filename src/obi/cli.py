@@ -2,6 +2,7 @@
 
 import click
 import csv
+import os
 
 import obi.ontofox2robot as ontofox2robot
 import obi.util as util
@@ -10,6 +11,7 @@ from obi.ontofox import Ontofox
 from obi.template import Template
 from obi.imports import ignore_term, import_term, remove_term, refresh
 from obi.imp import change_source_iri, download_source_file
+from obi.clean_ontofox_imports import check_file
 
 
 ### CLI
@@ -129,6 +131,22 @@ def normalize_import(ontology_ids):
             path = Ontofox.find(ontology_id)
             if path:
                 Ontofox.normalize(path)
+
+
+@imports.command('clean')
+@click.argument('ontology_ids', nargs=-1)
+def clean_import(ontology_ids):
+    '''
+    Remove unused terms from import config files
+    '''
+    if len(ontology_ids) < 1:
+        for path in Ontofox.list():
+            filename = os.path.basename(path)
+            ontology_id = filename.replace('_input.txt', '')
+            check_file(ontology_id)
+    else:
+        for ontology_id in ontology_ids:
+            check_file(ontology_id)
 
 
 @cli.group('source')
