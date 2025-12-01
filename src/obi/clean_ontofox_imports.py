@@ -21,7 +21,8 @@ class UsageFinder(XMLFilterBase):
         super().__init__(parent)
 
     def startElement(self, name, attrs):
-        axioms = ["rdfs:subClassOf", "owl:equivalentClass", "owl:disjointWith"]
+        axioms = ["rdfs:subClassOf", "owl:equivalentClass",
+                  "owl:disjointWith", "rdf:type"]
         if name in axioms and not self.in_axiom:
             self.in_axiom = True
             self.axiom_type = name
