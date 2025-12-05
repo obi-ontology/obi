@@ -383,8 +383,9 @@ verify-entities: build/dropped-entities.tsv
 
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
-reason: build/obi_merged.owl | build/robot.jar
+reason: build/obi_merged.owl views/obi-bfo.owl | build/robot.jar
 	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed none
+	$(ROBOT) reason --input $(word 2,$^) --reasoner hermit --equivalent-classes-allowed none
 
 # Find any IRIs using undefined namespaces
 .PHONY: validate-iris
