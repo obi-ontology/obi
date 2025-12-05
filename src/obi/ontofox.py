@@ -146,6 +146,15 @@ class Ontofox:
         '''
         self.terms[term.iri] = term
 
+    def remove(self, term):
+        '''
+        Remove a term from this configuration
+        '''
+        del self.terms[term.iri]
+        for i in self.terms.values():
+            if i.subClassOf and i.subClassOf == term:
+                i.subClassOf = None
+
     def sort(self):
         '''
         Sort terms by ID

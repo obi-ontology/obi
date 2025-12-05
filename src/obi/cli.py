@@ -2,12 +2,16 @@
 
 import click
 import csv
+import os
 
+import obi.ontofox2robot as ontofox2robot
 import obi.util as util
 
 from obi.ontofox import Ontofox
 from obi.template import Template
-from obi.imports import import_term
+from obi.imports import ignore_term, import_term, remove_term, refresh
+from obi.imp import change_source_iri, download_source_file
+from obi.clean_ontofox_imports import check_file
 
 
 ### CLI
@@ -41,17 +45,49 @@ def list_terms():
             print(row[0], '\t', row[1])
 
 
-@term.command('import')
+@term.command('ignore')
+@click.argument('ontology_id', nargs=1)
 @click.argument('term_ids', nargs=-1)
-def import_terms(term_ids):
+def ignore_terms(ontology_id, term_ids):
+    '''
+    Set one or more terms as ignored in ROBOT import config files
+    '''
+    if not util.is_ontology_name(ontology_id):
+        id_tuple = ontology_id,
+        term_ids = id_tuple + term_ids
+        ontology_id = util.get_ontology_id(ontology_id)
+    for term_id in term_ids:
+        ignore_term(ontology_id, term_id)
+
+
+@term.command('import')
+@click.argument('ontology_id', nargs=1)
+@click.argument('term_ids', nargs=-1)
+def import_terms(ontology_id, term_ids):
     '''
     Import one or more terms from source ontologies
     '''
-    if len(term_ids) < 1:
-        print('ERROR: Please provide at least one term ID to import.')
-        exit(1)
+    if not util.is_ontology_name(ontology_id):
+        id_tuple = ontology_id,
+        term_ids = id_tuple + term_ids
+        ontology_id = util.get_ontology_id(ontology_id)
     for term_id in term_ids:
-        import_term(term_id)
+        import_term(ontology_id, term_id)
+
+
+@term.command('remove')
+@click.argument('ontology_id', nargs=1)
+@click.argument('term_ids', nargs=-1)
+def remove_terms(ontology_id, term_ids):
+    '''
+    Remove one or more terms from import config files
+    '''
+    if not util.is_ontology_name(ontology_id):
+        id_tuple = ontology_id,
+        term_ids = id_tuple + term_ids
+        ontology_id = util.get_ontology_id(ontology_id)
+    for term_id in term_ids:
+        remove_term(ontology_id, term_id)
 
 
 @cli.group('import')
@@ -60,6 +96,25 @@ def imports():
     Work with ontology imports
     '''
     pass
+
+
+@imports.command('convert')
+@click.argument('ontology_id', nargs=1)
+def convert(ontology_id):
+    '''
+    Create a ROBOT config file based on an Ontofox config file
+    '''
+    ontology_id = ontology_id.upper()
+    ontofox2robot.convert(ontology_id)
+
+
+@imports.command('refresh')
+@click.argument('ontology_id', nargs=1)
+def refresh_module(ontology_id):
+    '''
+    Rebuild the OWL file of a particular ontology import
+    '''
+    refresh(ontology_id)
 
 
 @imports.command('normalize')
@@ -76,6 +131,58 @@ def normalize_import(ontology_ids):
             path = Ontofox.find(ontology_id)
             if path:
                 Ontofox.normalize(path)
+
+
+@imports.command('clean')
+@click.argument('ontology_ids', nargs=-1)
+def clean_import(ontology_ids):
+    '''
+    Remove unused terms from import config files
+    '''
+    if len(ontology_ids) < 1:
+        for path in Ontofox.list():
+            filename = os.path.basename(path)
+            ontology_id = filename.replace('_input.txt', '')
+            check_file(ontology_id)
+    else:
+        for ontology_id in ontology_ids:
+            check_file(ontology_id)
+
+
+@cli.group('source')
+def source():
+    '''
+    Work with ROBOT import source files
+    '''
+    pass
+
+
+@source.command('set')
+@click.argument('ontology', nargs=1)
+@click.argument('iri', nargs=1)
+def set_source(ontology, iri):
+    '''
+    Set the IRI of the import source file for a ROBOT import
+    '''
+    change_source_iri(ontology, iri)
+
+
+@source.command('download')
+@click.argument('ontology', nargs=1)
+def download_source(ontology):
+    '''
+    Download the import source file for a ROBOT import
+    '''
+    download_source_file(ontology)
+
+
+@source.command('remove')
+@click.argument('ontology', nargs=1)
+def remove_source(ontology):
+    '''
+    Remove an IRI from the TSV of import source file IRIs
+    '''
+    change_source_iri(ontology, "")
 
 
 @cli.group()
