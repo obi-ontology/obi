@@ -77,7 +77,7 @@ def get_labels():
     Get a dictionary from label to ID for all OBI terms
     '''
     export_terms()
-    read_term_table('build/obi-terms.tsv')
+    return read_term_table('build/obi-terms.tsv')
 
 
 def read_term_table(path):
@@ -90,7 +90,7 @@ def read_term_table(path):
         for row in csv.reader(f, delimiter='\t'):
             id = row[0].strip()
             label = row[1].strip()
-            if id == '' or label != '':
+            if id == '' or label == '':
                 continue
             if id.lower() in ['id', 'ontology id']:
                 continue
