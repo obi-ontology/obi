@@ -209,8 +209,12 @@ views/obi-base.owl: src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi-cob.owl: src/scripts/obi-cob.py src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot
-	python3 $<
+# Build a version of OBI with BFO domains and ranges merged in from RO-core
+views/obi-bfo.owl: obi.owl
+	curl -sL $(OBO)/ro/releases/2025-06-24/core.owl -o build/ro-core.owl
+	$(ROBOT) merge --input $< \
+	--input build/ro-core.owl \
+	--output $@
 
 views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	$(ROBOT) query \
@@ -379,8 +383,9 @@ verify-entities: build/dropped-entities.tsv
 
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
-reason: build/obi_merged.owl | build/robot.jar
+reason: build/obi_merged.owl views/obi-bfo.owl | build/robot.jar
 	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed none
+	$(ROBOT) reason --input $(word 2,$^) --reasoner hermit --equivalent-classes-allowed none
 
 # Find any IRIs using undefined namespaces
 .PHONY: validate-iris
