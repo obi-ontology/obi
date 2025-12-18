@@ -212,8 +212,11 @@ views/obi-base.owl: src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot.jar
 # Build a version of OBI with BFO domains and ranges merged in from RO-core
 views/obi-bfo.owl: obi.owl
 	curl -sL $(OBO)/ro/releases/2025-06-24/core.owl -o build/ro-core.owl
+	echo "<http://purl.obolibrary.org/obo/IAO_0000030> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000031> ." > build/cob-bfo-shim.ttl
 	$(ROBOT) merge --input $< \
 	--input build/ro-core.owl \
+	--input build/cob-bfo-shim.ttl \
+	reason --reasoner ELK \
 	--output $@
 
 views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
@@ -233,7 +236,7 @@ views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
 	rm $(basename $@)-temp.obo
 
-views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
+views/obi_core.owl: views/obi-bfo.owl src/ontology/views/core.txt | build/robot.jar
 	$(ROBOT) remove \
 	--input $< \
 	--term obo:OBI_0600036 \
