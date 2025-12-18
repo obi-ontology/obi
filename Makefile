@@ -216,6 +216,7 @@ views/obi-bfo.owl: obi.owl
 	$(ROBOT) merge --input $< \
 	--input build/ro-core.owl \
 	--input build/cob-bfo-shim.ttl \
+	reason --reasoner ELK \
 	--output $@
 
 views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
