@@ -213,7 +213,6 @@ views/obi-base.owl: src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot.jar
 views/obi-bfo.owl: obi.owl
 	curl -sL $(OBO)/ro/releases/2025-06-24/core.owl -o build/ro-core.owl
 	echo "<http://purl.obolibrary.org/obo/IAO_0000030> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000031> ." > build/cob-bfo-shim.ttl
-	rm -f $@
 	$(ROBOT) merge --input $< \
 	--input build/ro-core.owl \
 	--input build/cob-bfo-shim.ttl \
