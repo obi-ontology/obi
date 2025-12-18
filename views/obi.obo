@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2025-10-14
-date: 14:10:2025 11:30
+data-version: 2025-12-18
+date: 18:12:2025 17:24
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,118 +80,26 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2025-10-14" xsd:string
-
-[Term]
-id: BFO:0000001
-name: entity
-
-[Term]
-id: BFO:0000002
-name: continuant
-def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
-is_a: BFO:0000001 ! entity
-disjoint_from: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000003
-name: occurrent
-def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
-is_a: BFO:0000001 ! entity
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-comment: A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
-
-[Term]
-id: BFO:0000006
-name: spatial region
-is_a: BFO:0000141 ! immaterial entity
-disjoint_from: BFO:0000029 ! site
-
-[Term]
-id: BFO:0000008
-name: temporal region
-is_a: BFO:0000003 ! occurrent
-disjoint_from: BFO:0000011 ! spatiotemporal region
-
-[Term]
-id: BFO:0000009
-name: two-dimensional spatial region
-is_a: BFO:0000006 ! spatial region
-disjoint_from: BFO:0000018 ! zero-dimensional spatial region
-
-[Term]
-id: BFO:0000011
-name: spatiotemporal region
-is_a: BFO:0000003 ! occurrent
+property_value: owl:versionInfo "2025-12-18" xsd:string
 
 [Term]
 id: BFO:0000015
 name: process
-comment: An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t.
-is_a: BFO:0000003 ! occurrent
 
 [Term]
 id: BFO:0000016
 name: disposition
 is_a: BFO:0000017 ! realizable entity
-disjoint_from: BFO:0000023 ! role
 
 [Term]
 id: BFO:0000017
 name: realizable entity
-def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
-is_a: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000019 ! quality
-
-[Term]
-id: BFO:0000018
-name: zero-dimensional spatial region
-is_a: BFO:0000006 ! spatial region
-
-[Term]
-id: BFO:0000019
-name: quality
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-comment: A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
+is_a: COB:0000502 ! characteristic
 
 [Term]
 id: BFO:0000023
 name: role
-def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
 is_a: BFO:0000017 ! realizable entity
-
-[Term]
-id: BFO:0000024
-name: fiat object
-is_a: BFO:0000040 ! material entity
-
-[Term]
-id: BFO:0000026
-name: one-dimensional spatial region
-is_a: BFO:0000006 ! spatial region
-
-[Term]
-id: BFO:0000027
-name: object aggregate
-is_a: BFO:0000040 ! material entity
-
-[Term]
-id: BFO:0000028
-name: three-dimensional spatial region
-is_a: BFO:0000006 ! spatial region
 
 [Term]
 id: BFO:0000029
@@ -199,176 +107,114 @@ name: site
 is_a: BFO:0000141 ! immaterial entity
 
 [Term]
-id: BFO:0000030
-name: object
-is_a: BFO:0000040 ! material entity
-
-[Term]
-id: BFO:0000031
-name: generically dependent continuant
-comment: A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time.
-is_a: BFO:0000002 ! continuant
-
-[Term]
 id: BFO:0000034
 name: function
 is_a: BFO:0000016 ! disposition
 
 [Term]
-id: BFO:0000035
-name: process boundary
-is_a: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000038
-name: one-dimensional temporal region
-is_a: BFO:0000008 ! temporal region
-disjoint_from: BFO:0000148 ! zero-dimensional temporal region
-
-[Term]
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000004 ! independent continuant
-disjoint_from: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000140
-name: continuant fiat boundary
-is_a: BFO:0000141 ! immaterial entity
 
 [Term]
 id: BFO:0000141
 name: immaterial entity
-is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: BFO:0000142
-name: one-dimensional continuant fiat boundary
-is_a: BFO:0000140 ! continuant fiat boundary
-disjoint_from: BFO:0000146 ! two-dimensional continuant fiat boundary
-
-[Term]
-id: BFO:0000144
-name: process profile
-is_a: BFO:0000015 ! process
-disjoint_from: BFO:0000182 ! history
-
-[Term]
-id: BFO:0000145
-name: relational quality
-is_a: BFO:0000019 ! quality
-
-[Term]
-id: BFO:0000146
-name: two-dimensional continuant fiat boundary
-is_a: BFO:0000140 ! continuant fiat boundary
-
-[Term]
-id: BFO:0000147
-name: zero-dimensional continuant fiat boundary
-is_a: BFO:0000140 ! continuant fiat boundary
-
-[Term]
-id: BFO:0000148
-name: zero-dimensional temporal region
-synonym: "temporal instant." EXACT []
-is_a: BFO:0000008 ! temporal region
-
-[Term]
-id: BFO:0000182
-name: history
-is_a: BFO:0000015 ! process
+id: CHEBI:10545
+name: electron
+def: "Elementary particle not affected by the strong force having a spin 1/2, a negative elementary charge and a rest mass of 0.000548579903(13) u, or 0.51099906(15) MeV." []
+is_a: CHEBI:36342 ! subatomic particle
 
 [Term]
 id: CHEBI:145810
 name: insulin
-def: "A peptide hormone which consists of two polypeptide chains, A- and B- chains which are linked together by disulfide bonds. The amino acid sequence of insulin varies across species and certain segments of the molecule are highly conserved. In most species, the A chain consists of 21 amino acids and the B chain consists of 30 amino acids. In mammals, insulin is synthesised in the pancreas within the beta cells whereas in certain species of fish, the insulin-producing tissue is uniquely located in separate structures called Brockmann bodies." []
+def: "A peptide hormone which consists of two polypeptide chains, A- and B- chains which are linked together by disulfide bonds. The amino acid sequence of insulin varies across species and certain segments of the molecule are highly conserved. In most species, the A chain consists of 21 amino acids and the B chain consists of 30 amino acids. In mammals, insulin is synthesised in the pancreas within the β cells whereas in certain species of fish, the insulin-producing tissue is uniquely located in separate structures called Brockmann bodies." []
 is_a: CHEBI:16670 ! peptide
 
 [Term]
 id: CHEBI:15377
 name: water
 def: "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms" []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:15422
 name: ATP
 def: "An adenosine 5'-phosphate in which the 5'-phosphate is a triphosphate group. It is involved in the transportation of chemical energy during metabolic pathways." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:15956
 name: biotin
-def: "An organic heterobicyclic compound that consists of 2-oxohexahydro-1H-thieno[3,4-d]imidazole having a valeric acid substituent attached to the tetrahydrothiophene ring. The parent of the class of biotins." []
+def: "An organic heterobicyclic compound that consists of 2-oxohexahydro-1<em>H</em>-thieno[3,4-<em>d</em>]imidazole having a valeric acid substituent attached to the tetrahydrothiophene ring. The parent of the class of biotins." []
 is_a: OBI:0002744 ! molecular label
 
 [Term]
 id: CHEBI:16113
 name: cholesterol
-def: "A cholestanoid consisting of cholestane having a double bond at the 5,6-position as well as a 3beta-hydroxy group." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A cholestanoid consisting of cholestane having a double bond at the 5,6-position as well as a 3β-hydroxy group." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16134
 name: ammonia
 def: "An azane that consists of a single nitrogen atom covelently bonded to three hydrogen atoms." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16247
 name: phospholipid
 def: "A lipid containing phosphoric acid as a mono- or di-ester. The term encompasses phosphatidic acids and phosphoglycerides." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16301
 name: nitrite
 def: "The nitrogen oxoanion formed by loss of a proton from nitrous acid." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16526
 name: carbon dioxide
-def: "A one-carbon compound with formula CO2 in which the carbon is attached to each oxygen atom by a double bond. A colourless, odourless gas under normal conditions, it is produced during respiration by all animals, fungi and microorganisms that depend directly or indirectly on living or decaying plants for food." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A one-carbon compound with formula CO<small><sub>2</sub></small> in which the carbon is attached to each oxygen atom by a double bond. A colourless, odourless gas under normal conditions, it is produced during respiration by all animals, fungi and microorganisms that depend directly or indirectly on living or decaying plants for food." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16670
 name: peptide
-def: "Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid. X = OH, OR, NH2, NHR, etc." []
+def: "Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from α-amino acids, but it includes those derived from any amino carboxylic acid. X = OH, OR, NH2, NHR, etc." []
 is_a: CHEBI:33839 ! macromolecule
 
 [Term]
 id: CHEBI:166899
 name: globulin type
 def: "One of the major classifications of proteins, which may be further divided into the euglobulins and the pseudoglobulins. The former group is insoluble in water but soluble in saline solutions and may be precipitated in water that has been half-saturated with a salt such as ammonium sulfate. The latter group is soluble in water and has properties that resemble those of the true globulins. Globulins are an important source of protein in seed plants and are found in minute amounts in cereals. Globulins found in animal fluids are enzymes, antibodies, and fibrous and contractile proteins usually contained in the blood plasma." []
-is_a: CHEBI:33839 ! macromolecule
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16737
 name: creatinine
 def: "A lactam obtained by formal cyclocondensation of creatine. It is a metabolite of creatine." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:168396
 name: mycophenolic acid
-def: "A member of the class of 2-benzofurans that is 2-benzofuran-1(3H)-one which is substituted at positions 4, 5, 6, and 7 by methyl, methoxy, (2E)-5-carboxy-3-methylpent-2-en-1-yl, and hydroxy groups, respectively. It is an antibiotic produced by Penicillium brevi-compactum, P. stoloniferum, P. echinulatum and related species. An immunosuppressant, it is widely used (partiularly as its sodium salt and as the 2-(morpholin-4-yl)ethyl ester prodrug, mycophenolate mofetil) to prevent tissue rejection following organ transplants and for the treatment of certain autoimmune diseases." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A member of the class of 2-benzofurans that is 2-benzofuran-1(3<em>H</em>)-one which is substituted at positions 4, 5, 6, and 7 by methyl, methoxy, (2<i>E</i>)-5-carboxy-3-methylpent-2-en-1-yl, and hydroxy groups, respectively. It is an antibiotic produced by <em>Penicillium brevi-compactum, P. stoloniferum, P. echinulatum</em> and related species. An immunosuppressant, it is widely used (partiularly as its sodium salt and as the 2-(morpholin-4-yl)ethyl ester prodrug, mycophenolate mofetil) to prevent tissue rejection following organ transplants and for the treatment of certain autoimmune diseases." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16919
 name: creatine
 def: "A glycine derivative having methyl and amidino groups attached to the nitrogen." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16990
 name: bilirubin IXalpha
 def: "A member of the class of  biladienes that is a linear tetrapyrrole with the dipyrrole units being of both exovinyl and endovinyl type. A product of heme degradation, it is produced in the reticuloendothelial system by the reduction of biliverdin and transported to the liver as a complex with serum albumin." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:16991
@@ -379,211 +225,217 @@ is_a: CHEBI:33696 ! nucleic acid
 [Term]
 id: CHEBI:17026
 name: progesterone
-def: "A C21-steroid hormone in which a pregnane skeleton carries oxo substituents at positions 3 and 20 and is unsaturated at C(4)-C(5). As a hormone, it is involved in the female menstrual cycle, pregnancy and embryogenesis of humans and other species." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A C<small><sub>21</sub></small>-steroid hormone in which a pregnane skeleton carries oxo substituents at positions 3 and 20 and is unsaturated at C(4)-C(5). As a hormone, it is involved in the female menstrual cycle, pregnancy and embryogenesis of humans and other species." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17137
 name: hydrogensulfite
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17230
 name: homocysteine
 def: "A sulfur-containing amino acid consisting of a glycine core with a 2-mercaptoethyl side-chain." []
-is_a: CHEBI:33709 ! amino acid
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17234
 name: glucose
 def: "An aldohexose used as a source of energy and metabolic intermediate." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17347
 name: testosterone
-def: "An androstanoid having 17beta-hydroxy and 3-oxo groups, together with unsaturation at C-4-C-5.." []
-is_a: CHEBI:23367 ! molecular entity
+def: "An androstanoid having 17β-hydroxy and 3-oxo groups, together with unsaturation at C-4‒C-5.." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17423
 name: methemoglobin
-def: "A hemoprotein that is the ferric (Fe(3+)) form of hemoglobin." []
-is_a: CHEBI:33839 ! macromolecule
+def: "A hemoprotein that is the ferric (Fe<small><sup>3+</small></sup>) form of hemoglobin." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17544
 name: hydrogencarbonate
 def: "The carbon oxoanion resulting from the removal of a proton from carbonic acid." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17650
 name: cortisol
-def: "A 17alpha-hydroxy-C21-steroid that is pregn-4-ene substituted by oxo groups at positions 3 and 20 and hydroxy groups at positions 11, 17 and 21. Cortisol is a corticosteroid hormone or glucocorticoid produced by zona fasciculata of the adrenal cortex, which is a part of the adrenal gland. It is usually referred to as the \"stress hormone\" as it is involved in response to stress and anxiety, controlled by corticotropin-releasing hormone (CRH). It increases blood pressure and blood sugar, and reduces immune responses." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A 17α-hydroxy-C<small><sub>21</sub></small>-steroid that is pregn-4-ene substituted by oxo groups at positions 3 and 20 and hydroxy groups at positions 11, 17 and 21. Cortisol is a corticosteroid hormone or glucocorticoid produced by zona fasciculata of the adrenal cortex, which is a part of the adrenal gland. It is usually referred to as the \"stress hormone\" as it is involved in response to stress and anxiety, controlled by corticotropin-releasing hormone (CRH). It increases blood pressure and blood sugar, and reduces immune responses." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17709
 name: 5'-adenylyl sulfate
 def: "An adenosine 5'-phosphate having a sulfo group attached to one the phosphate OH groups." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17855
 name: triglyceride
 def: "Any glyceride resulting from the condensation of all three hydroxy groups of glycerol (propane-1,2,3-triol) with fatty acids." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:17996
 name: chloride
 def: "A halide anion formed when chlorine picks up an electron to form an an anion." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:20067
 name: 3-hydroxybutyric acid
 def: "A straight-chain 3-hydroxy monocarboxylic acid comprising a butyric acid core with a single hydroxy substituent in the 3- position; a ketone body whose levels are raised during ketosis, used as an energy source by the brain during fasting in humans. Also used to synthesise biodegradable plastics." []
-is_a: CHEBI:35366 ! fatty acid
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:22868
 name: bile salt
 def: "A sodium salt of the conjugate of any bile acid with either glycine or taurine." []
-is_a: CHEBI:23367 ! molecular entity
-
-[Term]
-id: CHEBI:23367
-name: molecular entity
-def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." []
-is_a: BFO:0000040 ! material entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:23528
 name: cytochalasin
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:23965
 name: estradiol
 def: "A 3-hydroxy steroid that is estra-1,3,5(10)-triene substituted by hydroxy groups at positions 3 and 17." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:23995
 name: N-ethyl-N-nitrosourea
-def: "A member of the class of N-nitrosoureas that is urea in which one of the nitrogens is substituted by ethyl and nitroso groups." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A member of the class of <em>N</em>-nitrosoureas that is urea in which one of the nitrogens is substituted by ethyl and nitroso groups." []
+is_a: COB:0000013 ! molecule
+
+[Term]
+id: CHEBI:24621
+name: hormone
+def: "Originally referring to an endogenous compound that is formed in specialized organ or group of cells and carried to another organ or group of cells, in the same organism, upon which it has a specific regulatory function, the term is now commonly used to include non-endogenous, semi-synthetic and fully synthetic analogues of such compounds." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:24636
 name: proton
-def: "Nuclear particle of charge number +1, spin 1/2 and rest mass of 1.007276470(12) u." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: CHEBI:36342 ! subatomic particle
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:24875
 name: iron cation
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:25078
 name: luciferin
 def: "A low-molecular-mass compound present in bioluminescent organisms that emits light when oxidized in presence of enzyme luciferase." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:2637
 name: amikacin
 def: "An amino cyclitol glycoside that is kanamycin A acylated at the N-1 position by a 4-amino-2-hydroxybutyryl group." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:26710
 name: sodium chloride
 def: "An inorganic chloride salt having sodium(1+) as the counterion." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:27226
 name: uric acid
 def: "An oxopurine that is the final oxidation product of purine metabolism." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:27889
 name: lead(0)
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:28001
 name: vancomycin
-def: "A complex glycopeptide from Streptomyces orientalis. It inhibits a specific step in the synthesis of the peptidoglycan layer in the Gram-positive bacteria Staphylococcus aureus and Clostridium difficile." []
-is_a: CHEBI:16670 ! peptide
+def: "A complex glycopeptide from <em>Streptomyces orientalis</em>. It inhibits a specific step in the synthesis of the peptidoglycan layer in the Gram-positive bacteria <em>Staphylococcus aureus</em> and <em>Clostridium difficile</em>." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:28358
 name: rac-lactic acid
-def: "A racemate comprising equimolar amounts of (R)- and (S)-lactic acid." []
+def: "A racemate comprising equimolar amounts of (<i>R</i>)- and (<i>S</i>)-lactic acid." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: CHEBI:28619
 name: acrylamide
 def: "A member of the class of acrylamides that results from the formal condensation of acrylic acid with ammonia." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:28689
 name: dehydroepiandrosterone
-def: "An androstanoid that is androst-5-ene substituted by a beta-hydroxy group at position 3 and an oxo group at position 17. It is a naturally occurring steroid hormone produced by the adrenal glands." []
-is_a: CHEBI:23367 ! molecular entity
+def: "An androstanoid that is androst-5-ene substituted by a β-hydroxy group at position 3 and an oxo group at position 17. It is a naturally occurring steroid hormone produced by the adrenal glands." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:28774
 name: 3,3',5'-triiodothyronine
-is_a: CHEBI:33709 ! amino acid
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:28864
 name: tobramycin
 def: "A amino cyclitol glycoside that is kanamycin B lacking the 3-hydroxy substituent from the 2,6-diaminoglucose ring." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:29101
 name: sodium(1+)
 def: "A monoatomic monocation obtained from sodium." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:29103
 name: potassium(1+)
 def: "A monoatomic monocation obtained from potassium." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:29191
 name: hydroxyl
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:29237
 name: deuterium atom
-def: "The stable isotope of hydrogen with relative atomic mass 2.014102 and a natural abundance of 0.0115 atom percent (from Greek deltaepsilonupsilontauepsilonrhoomicronnu, second)." []
-is_a: CHEBI:33250 ! atom
+def: "The stable isotope of hydrogen with relative atomic mass 2.014102 and a natural abundance of 0.0115 atom percent (from Greek δευτερον, second)." []
+is_a: COB:0000011 ! atom
+
+[Term]
+id: CHEBI:30222
+name: neutron
+def: "Nuclear particle of zero charge, spin 1/2 and rest mass of 1.008664904(14) u." []
+is_a: CHEBI:36342 ! subatomic particle
 
 [Term]
 id: CHEBI:30660
 name: thyroxine
 def: "An iodothyronine compound having iodo substituents at the 3-, 3'-, 5- and 5'-positions." []
-is_a: CHEBI:33709 ! amino acid
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:30682
 name: ruthenium atom
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:31624
@@ -595,68 +447,68 @@ is_a: OBI:0002744 ! molecular label
 id: CHEBI:31642
 name: gadodiamide hydrate
 def: "The hydrate of gadodiamide." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:31643
 name: gadoteridol
 def: "A non-ionic gadolinium chelate having a macrocyclic tetraamine framework. It is used as a paramagnetic contrast agent in magnetic resonance imaging (MRI)." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:31991
 name: phenol red
-def: "3H-2,1-Benzoxathiole 1,1-dioxide in which both of the hydrogens at position 3 have been substituted by 4-hydroxyphenyl groups. A pH indicator changing colour from yellow below pH 6.8 to bright pink above pH 8.2, it is commonly used as an indicator in cell cultures and in home swimming pool test kits. It is also used in the (now infrequently performed) phenolsulfonphthalein (PSP) test for estimation of overall blood flow through the kidney." []
-is_a: CHEBI:23367 ! molecular entity
+def: "3<em>H</em>-2,1-Benzoxathiole 1,1-dioxide in which both of the hydrogens at position 3 have been substituted by 4-hydroxyphenyl groups. A pH indicator changing colour from yellow below pH 6.8 to bright pink above pH 8.2, it is commonly used as an indicator in cell cultures and in home swimming pool test kits. It is also used in the (now infrequently performed) phenolsulfonphthalein (PSP) test for estimation of overall blood flow through the kidney." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:32142
 name: sodium citrate dihydrate
 def: "The dihydrate of trisodium citrate." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:32875
 name: methyl group
 def: "An alkyl group that is the univalent group derived from methane by removal of a hydrogen atom." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
-id: CHEBI:33250
-name: atom
-def: "A chemical entity constituting the smallest component of an element having the chemical properties of the element." []
-is_a: BFO:0000040 ! material entity
+id: CHEBI:33252
+name: atomic nucleus
+def: "A nucleus is the positively charged central portion of an atom, excluding the orbital electrons." []
+is_a: CHEBI:36342 ! subatomic particle
 
 [Term]
 id: CHEBI:33262
 name: elemental oxygen
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:33321
 name: rare earth metal atom
-is_a: CHEBI:33250 ! atom
+is_a: COB:0000011 ! atom
 
 [Term]
 id: CHEBI:33359
 name: rhodium atom
 def: "A cobalt group element atom of atomic number 45." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:33375
 name: gadolinium atom
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:33376
 name: terbium atom
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:33696
 name: nucleic acid
-def: "A macromolecule made up of nucleotide units and hydrolysable into certain pyrimidine or purine bases (usually adenine, cytosine, guanine, thymine, uracil), D-ribose or 2-deoxy-D-ribose and phosphoric acid." []
+def: "A macromolecule made up of nucleotide units and hydrolysable into certain pyrimidine or purine bases (usually adenine, cytosine, guanine, thymine, uracil), <small>D</small>-ribose or 2-deoxy-<small>D</small>-ribose and phosphoric acid." []
 is_a: CHEBI:33839 ! macromolecule
 
 [Term]
@@ -669,66 +521,73 @@ is_a: CHEBI:33696 ! nucleic acid
 id: CHEBI:33709
 name: amino acid
 def: "A carboxylic acid containing one or more amino groups." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:33839
 name: macromolecule
 def: "A macromolecule is a molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
 synonym: "polymer" EXACT []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:35143
 name: hemoglobin
-is_a: CHEBI:33839 ! macromolecule
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:35366
 name: fatty acid
 def: "Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax. Natural fatty acids commonly have a chain of 4 to 28 carbons (usually unbranched and even-numbered), which may be saturated or unsaturated. By extension, the term is sometimes used to embrace all acyclic aliphatic carboxylic acids." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:35729
 name: gadolinium molecular entity
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:35780
 name: phosphate ion
 def: "A phosphorus oxoanion that is the conjugate base of phosphoric acid." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
+
+[Term]
+id: CHEBI:36342
+name: subatomic particle
+def: "A particle smaller than an atom." []
+is_a: BFO:0000040 ! material entity
+disjoint_from: COB:0000011 ! atom
 
 [Term]
 id: CHEBI:37333
 name: gadodiamide
 def: "A non-ionic gadolinium chelate having a macrocyclic triamine framework. It is used as a paramagnetic contrast agent in magnetic resonance imaging (MRI)." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:37445
 name: folic acids
-def: "A group of heterocyclic compounds based on the pteroic acid skeleton conjugated with one or more L-glutamic acid units." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A group of heterocyclic compounds based on the pteroic acid skeleton conjugated with one or more <small>L</small>-glutamic acid units." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:37586
 name: sodium phosphate
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:37972
 name: phosphorus-32 atom
 def: "The radioactive isotope of phosphorus with relative atomic mass 31.973907 and half-life of 14.26 days." []
-is_a: CHEBI:33250 ! atom
+is_a: COB:0000011 ! atom
 is_a: OBI:0001879 ! reagent
 
 [Term]
 id: CHEBI:37973
 name: phosphorus-33 atom
-def: "The radioactive isotope of phosphorus with relative atomic mass 32.971725, half-life of 25.34 days and nuclear spin (1)/2." []
-is_a: CHEBI:33250 ! atom
+def: "The radioactive isotope of phosphorus with relative atomic mass 32.971725, half-life of 25.34 days and nuclear spin <small><sup>1</small></sup>/<small><sub>2</sub></small>." []
+is_a: COB:0000011 ! atom
 is_a: OBI:0001879 ! reagent
 
 [Term]
@@ -762,18 +621,18 @@ is_a: CHEBI:6495 ! lipoprotein
 [Term]
 id: CHEBI:39123
 name: calcium cation
-is_a: CHEBI:39124 ! calcium ion
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:39124
 name: calcium ion
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:39127
 name: magnesium cation
 def: "Any magnesium ion that is positively charged." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:39867
@@ -784,26 +643,26 @@ is_a: CHEBI:35366 ! fatty acid
 [Term]
 id: CHEBI:42098
 name: digoxigenin
-def: "A hydroxy steroid that consists of 5beta-cardanolide having a double bond at the 20(22)-position as well as hydroxy groups at the 3beta-, 12beta- and 14beta-positions. It has been isolated from the plant species of the genus Digitalis." []
+def: "A hydroxy steroid that consists of 5β-cardanolide having a double bond at the 20(22)-position as well as hydroxy groups at the 3β-, 12β- and 14β-positions. It has been isolated from the plant species of the genus <em>Digitalis</em>." []
 is_a: OBI:0002744 ! molecular label
 
 [Term]
 id: CHEBI:42191
 name: EDTA(4-)
 def: "A tetracarboxylic acid anion formed by deprotonation of all four carboxy groups in ethylenediaminetetraacetic acid (EDTA)." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:4431
 name: deoxyribonucleotide
 def: "A nucleotide in which the ribose moiety has one or more of its hydroxy groups substituted by hydrogen." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:4551
 name: digoxin
-def: "A  cardenolide glycoside that is digitoxin beta-hydroxylated at C-12. A cardiac glycoside extracted from the foxglove plant, Digitalis lanata, it is used to control ventricular rate in atrial fibrillation and in the management of congestive heart failure with atrial fibrillation, but the margin between toxic and therapeutic doses is small." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A  cardenolide glycoside that is digitoxin β-hydroxylated at C-12. A cardiac glycoside extracted from the foxglove plant, <em>Digitalis lanata</em>, it is used to control ventricular rate in atrial fibrillation and in the management of congestive heart failure with atrial fibrillation, but the margin between toxic and therapeutic doses is small." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:4705
@@ -814,25 +673,30 @@ is_a: CHEBI:16991 ! deoxyribonucleic acid
 id: CHEBI:472552
 name: 5-bromo-2'-deoxyuridine
 def: "A pyrimidine 2'-deoxyribonucleoside compound having 5-bromouracil as the nucleobase." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:47774
 name: low-density lipoprotein cholesterol
 def: "Cholesterol esters and free cholesterol which are contained in or bound to low-density lipoproteins (LDL)." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:47775
 name: high-density lipoprotein cholesterol
 def: "Cholesterol esters and free cholesterol which are contained in or bound to high-density lipoproteins (HDL)." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:50076
 name: chromium-51
-def: "A synthetic radioactive isotope of chromium having a half-life of 27.7 days and decaying by electron capture with emission of gamma rays (0.32 MeV); it is used to label red blood cells for measurement of mass or volume, survival time, and sequestration studies, for the diagnosis of gastrointestinal bleeding, and to label platelets to study their survival." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A synthetic radioactive isotope of chromium having a half-life of 27.7 days and decaying by electron capture with emission of γ rays (0.32 MeV); it is used to label red blood cells for measurement of mass or volume, survival time, and sequestration studies, for the diagnosis of gastrointestinal bleeding, and to label platelets to study their survival." []
+is_a: COB:0000013 ! molecule
+
+[Term]
+id: CHEBI:51602
+name: resorufin
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:51756
@@ -854,100 +718,100 @@ is_a: OBI:0002744 ! molecular label
 id: CHEBI:53526
 name: tritiated thymidine
 def: "Thymidine linked to the radioisotope tritium. Used to label DNA in the study of cellular and viral DNA synthesis." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59050
 name: dimethyl sulfate
 def: "The dimethyl ester of sulfuric acid." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59051
 name: diethyl pyrocarbonate
 def: "The diethyl ester of dicarbonic acid." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59052
 name: 1,1-dihydroxy-3-ethoxy-2-butanone
 def: "A butanone derivative having two hydroxy substituents at the 1-position and an ethoxy substituent at the 3-position." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59053
 name: N-cyclohexyl-N'-(2-(4-morpholinyl)ethyl)carbodiimide
-def: "A carbodiimide having cyclcohexyl and 2-(4-morpholinyl)ethyl as the two N-substituents." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A carbodiimide having cyclcohexyl and 2-(4-morpholinyl)ethyl as the two <em>N</em>-substituents." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59054
 name: N-methylisatoic anhydride
-def: "A 3,1-benzoxazin-1,4-dione having an N-methyl substituent." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A 3,1-benzoxazin-1,4-dione having an <em>N</em>-methyl substituent." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59055
 name: (S)-1-(4-bromoacetamidobenzyl)EDTA
-def: "A tetracarboxylic acid consisting of ethylenediaminetetraacetic acid having a 4-bromoacetamidobenzyl group at the C1-position and (S)-configuration." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A tetracarboxylic acid consisting of ethylenediaminetetraacetic acid having a 4-bromoacetamidobenzyl group at the C1-position and (<i>S</i>)-configuration." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59056
 name: EDTA methidiumpropylamide
 def: "A combined intercalating and chelating reagent. The iron chelate, prepared by adding Fe(NH4)2(SO4)2, effects random oxidative cleavage of DNA in the presence of O2 and a reducing agent. This activity is useful as a footprinting probe." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:59424
 name: bromophenol blue
-def: "3H-2,1-Benzoxathiole 1,1-dioxide in which both of the hydrogens at position 3 have been substituted by 3,5-dibromo-4-hydroxyphenyl groups. It is used as a laboratory indicator, changing from yellow below pH 3 to purple at pH 4.6, and as a size marker for monitoring the progress of agarose gel and polyacrylamide gel electrophoresis. It has also been used as an industrial dye." []
-is_a: CHEBI:23367 ! molecular entity
+def: "3<em>H</em>-2,1-Benzoxathiole 1,1-dioxide in which both of the hydrogens at position 3 have been substituted by 3,5-dibromo-4-hydroxyphenyl groups. It is used as a laboratory indicator, changing from yellow below pH 3 to purple at pH 4.6, and as a size marker for monitoring the progress of agarose gel and polyacrylamide gel electrophoresis. It has also been used as an industrial dye." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:61057
 name: tacrolimus hydrate
 def: "A hydrate that is the monohydrate form of tacrolimus." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:61073
 name: oxygen radical
 def: "An inorganic radical in which a free electron resides on one or more oxygen atoms of an oxygen species." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:6495
 name: lipoprotein
 def: "A clathrate complex consisting of a lipid enwrapped in a protein host without covalent binding in such a way that the complex has a hydrophilic outer surface consisting of all the protein and the polar ends of any phospholipids." []
-is_a: CHEBI:33839 ! macromolecule
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:81567
 name: thyroid stimulating hormone
-is_a: CHEBI:33839 ! macromolecule
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:81568
 name: Luteinizing hormone
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:81569
 name: Follicle stimulating hormone
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:86319
 name: 25-hydroxyvitamin D2
-def: "A hydroxycalciol that is vitamin D2 in which the hydrogen at position 25 has been replaced by a hydroxy group." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A hydroxycalciol that is vitamin D<small><sub>2</sub></small> in which the hydrogen at position 25 has been replaced by a hydroxy group." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:9754
 name: tris
-def: "A primary amino compound that is tert-butylamine in which one hydrogen attached to each methyl group is replaced by a hydroxy group. A compound widely used as a biological buffer substance in the pH range 7--9; pKa = 8.3 at 20 degreeC; pKa = 7.82 at 37 degreeC." []
-is_a: CHEBI:23367 ! molecular entity
+def: "A primary amino compound that is <em>tert</em>-butylamine in which one hydrogen attached to each methyl group is replaced by a hydroxy group. A compound widely used as a biological buffer substance in the pH range 7—9; p<em>K</em><small><sub>a</sub></small> = 8.3 at 20 °C; p<em>K</em><small><sub>a</sub></small> = 7.82 at 37 °C." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHMO:0000087
@@ -1003,7 +867,7 @@ is_a: OBI:0003540 ! tandem mass spectrometry assay
 id: CL:0000000
 name: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." []
-is_a: BFO:0000040 ! material entity
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: CL:0000001
@@ -1058,6 +922,12 @@ id: CL:0000097
 name: mast cell
 def: "A cell that is found in almost all tissues containing numerous basophilic granules and capable of releasing large amounts of histamine and heparin upon activation. Progenitors leave bone marrow and mature in connective and mucosal tissue. Mature mast cells are found in all tissues, except the bloodstream. Their phenotype is CD117-high, CD123-negative, CD193-positive, CD200R3-positive, and FceRI-high. Stem-cell factor (KIT-ligand; SCF) is the main controlling signal of their survival and development." []
 is_a: CL:0000000 ! cell
+
+[Term]
+id: CL:0000128
+name: oligodendrocyte
+def: "A class of large neuroglial (macroglial) cells in the central nervous system. Form the insulating myelin sheath of axons in the central nervous system." []
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000182
@@ -1143,7 +1013,6 @@ id: CL:0000578
 name: experimentally modified cell in vitro
 def: "A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure." []
 is_a: CL:0000000 ! cell
-is_a: OBI:0000047 ! processed material
 
 [Term]
 id: CL:0000623
@@ -1301,10 +1170,135 @@ def: "A cell line is able to support only a limited number of passages in vitro.
 is_a: CLO:0000031 ! cell line
 
 [Term]
+id: COB:0000005
+name: obsolete elementary charge
+is_obsolete: true
+
+[Term]
+id: COB:0000011
+name: atom
+def: "A material entity consisting of exactly one atomic nucleus and the electron(s) orbiting it." []
+is_a: BFO:0000040 ! material entity
+disjoint_from: COB:0000013 ! molecule
+
+[Term]
+id: COB:0000013
+name: molecule
+def: "A material entity that consists of two or more atoms that are all connected via covalent bonds such that any atom can be transitively connected with any other atom." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: COB:0000014
+name: obsolete macromolecular entity
+is_obsolete: true
+
+[Term]
+id: COB:0000020
+name: obsolete subcellular structure
+is_obsolete: true
+replaced_by: GO:0110165
+
+[Term]
+id: COB:0000021
+name: gross anatomical part
+def: "A part of a multicellular organism that is a collection of cell components that are not all contained in one cell." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: COB:0000022
+name: organism
+def: "A material entity that is a maximal functionally integrated unit that develops from a program encoded in a genome" []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: COB:0000026
+name: processed material entity
+def: "A material entity processed by human activity with an intent to produce it." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: COB:0000032
+name: obsolete geographical location
+is_obsolete: true
+
+[Term]
+id: COB:0000035
+name: completely executed planned process
+is_a: COB:0000082 ! planned process
+disjoint_from: COB:0000083 ! failed planned process
+disjoint_from: GO:0008150 ! biological_process
+
+[Term]
+id: COB:0000049
+name: nucleic acid chain
+def: "A molecule that consists of nucleotides (unmodified nucleotide residues and/or modified nucleotide residues) linked by phosphodiester bonds or derivatives of such bonds." []
+is_a: COB:0000013 ! molecule
+
+[Term]
+id: COB:0000056
+name: obsolete immaterial anatomical entity
+is_obsolete: true
+replaced_by: UBERON:0000466
+
+[Term]
+id: COB:0000073
+name: obsolete gene product
+is_obsolete: true
+
+[Term]
+id: COB:0000077
+name: obsolete action specification
+is_obsolete: true
+replaced_by: IAO:0000007
+
+[Term]
 id: COB:0000080
 name: complex of molecules
-def: "A complex of two or more molecular entities that are not covalently bound." []
+def: "A complex of two or more molecules that are not covalently bound." []
 is_a: BFO:0000040 ! material entity
+
+[Term]
+id: COB:0000082
+name: planned process
+def: "A process that is initiated by an agent who intends to carry out a plan to achieve an objective through one or more actions as described in a plan specification." []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: COB:0000083
+name: failed planned process
+is_a: COB:0000082 ! planned process
+
+[Term]
+id: COB:0000110
+name: material processing
+def: "A completely executed planned process that intends to output material entities from input material entities" []
+is_a: COB:0000035 ! completely executed planned process
+
+[Term]
+id: COB:0000116
+name: obsolete cellular membrane
+is_obsolete: true
+
+[Term]
+id: COB:0000122
+name: obsolete physical information carrier
+is_obsolete: true
+
+[Term]
+id: COB:0000502
+name: characteristic
+
+[Term]
+id: COB:0001000
+name: exposure of organism
+def: "A process during which an organism comes into contact with another entity." []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: COB:0001300
+name: device
+def: "A processed material entity which is designed to be capable of a process." []
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: ENVO:00001998
@@ -1323,6 +1317,24 @@ id: ENVO:00010483
 name: environmental material
 def: "A material entity which other material entities in an environmental system are primarily or partially composed of." []
 is_a: BFO:0000040 ! material entity
+
+[Term]
+id: ENVO:01000813
+name: geophysical entity
+def: "A material part of an astronomical body." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: ENVO:01001110
+name: ecosystem
+def: "An environmental system which includes both living and non-living components." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: ENVO:02500000
+name: environmental system process
+def: "A process in which includes the components of an environmental system as participants." []
+is_a: BFO:0000015 ! process
 
 [Term]
 id: GAZ:00000448
@@ -1605,6 +1617,12 @@ def: "The cellular metabolic process in which a cell duplicates one or more mole
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0006282
+name: regulation of DNA repair
+def: "Any process that modulates the frequency, rate or extent of DNA repair." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0006338
 name: chromatin remodeling
 def: "A dynamic process of chromatin reorganization resulting in changes to chromatin structure. These changes allow DNA metabolic processes such as transcriptional regulation, DNA recombination, DNA repair, and DNA replication." []
@@ -1615,6 +1633,12 @@ id: GO:0006909
 name: phagocytosis
 def: "A vesicle-mediated transport process that results in the engulfment of external particulate material by phagocytes and their delivery to the lysosome. The particles are initially contained within phagocytic vacuoles (phagosomes), which then fuse with primary lysosomes to effect digestion of the particles." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0006915
+name: apoptotic process
+def: "A programmed cell death process which begins when a cell receives an internal (e.g. DNA damage) or external signal (e.g. an extracellular death ligand), and proceeds through a series of biochemical events (signaling pathway phase) which trigger an execution phase. The execution phase is the last step of an apoptotic process, and is typically characterized by rounding-up of the cell, retraction of pseudopodes, reduction of cellular volume (pyknosis), chromatin condensation, nuclear fragmentation (karyorrhexis), plasma membrane blebbing and fragmentation of the cell into apoptotic bodies. When the execution phase is completed, the cell has died." []
+is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0006955
@@ -1629,6 +1653,12 @@ def: "Any process that results in a change in state or activity of a cell (in te
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0007009
+name: plasma membrane organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the plasma membrane." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0007049
 name: cell cycle
 def: "The progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events. Canonically, the cell cycle comprises the replication and segregation of genetic material followed by the division of the cell, but in endocycles or syncytial cells nuclear replication or nuclear division may not be followed by cell division." []
@@ -1638,6 +1668,12 @@ is_a: GO:0008150 ! biological_process
 id: GO:0007283
 name: spermatogenesis
 def: "The developmental process by which male germ line stem cells self renew or give rise to successive cell types resulting in the development of a spermatozoa." []
+is_a: GO:0022414 ! reproductive process
+
+[Term]
+id: GO:0007566
+name: embryo implantation
+def: "Attachment of the blastocyst to the uterine lining." []
 is_a: GO:0022414 ! reproductive process
 
 [Term]
@@ -1657,7 +1693,6 @@ id: GO:0008150
 name: biological_process
 def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 is_a: BFO:0000015 ! process
-disjoint_from: OBI:0000011 ! planned process
 
 [Term]
 id: GO:0008217
@@ -1732,6 +1767,12 @@ def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-glucosamin
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
+id: GO:0016491
+name: oxidoreductase activity
+def: "Catalysis of an oxidation-reduction (redox) reaction, a reversible chemical reaction in which the oxidation state of an atom or atoms within a molecule is altered. One substrate acts as a hydrogen or electron donor and becomes oxidized, while the other acts as hydrogen or electron acceptor and becomes reduced." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
 id: GO:0016788
 name: hydrolase activity, acting on ester bonds
 def: "Catalysis of the hydrolysis of any ester bond." []
@@ -1748,6 +1789,12 @@ id: GO:0019815
 name: B cell receptor complex
 def: "An immunoglobulin complex that is present in the plasma membrane of B cells and that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains and a signaling subunit, a heterodimer of the Ig-alpha and Ig-beta proteins." []
 is_a: OBI:1110022 ! adaptive immune receptor
+
+[Term]
+id: GO:0019835
+name: cytolysis
+def: "The rupture of cell membranes and the loss of cytoplasm." []
+is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0019882
@@ -1790,6 +1837,18 @@ id: GO:0030154
 name: cell differentiation
 def: "The cellular developmental process in which a relatively unspecialized cell, e.g. embryonic or regenerative cell, acquires specialized structural and/or functional features that characterize a specific cell. Differentiation includes the processes involved in commitment of a cell to a specific fate and its subsequent development to the mature state." []
 is_a: GO:0048869 ! cellular developmental process
+
+[Term]
+id: GO:0030182
+name: neuron differentiation
+def: "The process in which a relatively unspecialized cell acquires specialized features of a neuron." []
+is_a: GO:0030154 ! cell differentiation
+
+[Term]
+id: GO:0031175
+name: neuron projection development
+def: "The process whose specific outcome is the progression of a neuron projection over time, from its formation to the mature structure. A neuron projection is any process extending from a neural cell, such as axons or dendrites (collectively called neurites)." []
+is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0032601
@@ -2056,7 +2115,8 @@ id: GO:0032991
 name: protein-containing complex
 def: "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together." []
 synonym: "protein complex" EXACT []
-is_a: BFO:0000040 ! material entity
+is_a: COB:0000080 ! complex of molecules
+is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0033036
@@ -2143,6 +2203,18 @@ def: "The change in morphology and behavior of a mature or immature T cell resul
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0042446
+name: hormone biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any hormone, naturally occurring substances secreted by specialized cells that affects the metabolism or behavior of other cells possessing functional receptors for the hormone." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0042447
+name: hormone catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of any hormone, naturally occurring substances secreted by specialized cells that affects the metabolism or behavior of other cells possessing functional receptors for the hormone." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0042571
 name: immunoglobulin complex, circulating
 def: "An immunoglobulin complex that is secreted into extracellular space and found in mucosal areas or other tissues or circulating in the blood or lymph. In its canonical form, a circulating immunoglobulin complex is composed of two identical heavy chains and two identical light chains, held together by disulfide bonds. Some forms of are polymers of the basic structure and contain additional components such as J-chain and the secretory component." []
@@ -2170,6 +2242,12 @@ def: "A transmembrane protein complex composed of an MHC alpha chain and, in mos
 is_a: GO:0032991 ! protein-containing complex
 
 [Term]
+id: GO:0043005
+name: neuron projection
+def: "A prolongation or process extending from a nerve cell, e.g. an axon or dendrite." []
+is_a: GO:0005575 ! cellular_component
+
+[Term]
 id: GO:0043227
 name: membrane-bounded organelle
 def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." []
@@ -2186,6 +2264,12 @@ id: GO:0043565
 name: sequence-specific DNA binding
 def: "Binding to DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA e.g. promotor binding or rDNA binding." []
 is_a: OBI:0001588 ! binding
+
+[Term]
+id: GO:0044423
+name: virion component
+def: "Any constituent part of a virion, a complete fully infectious extracellular virus particle." []
+is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0044807
@@ -2206,16 +2290,40 @@ def: "The appearance of chemokine (C-C motif) ligand 17 (CCL17) due to biosynthe
 is_a: GO:0032602 ! chemokine production
 
 [Term]
+id: GO:0045005
+name: DNA-templated DNA replication maintenance of fidelity
+def: "A DNA metabolic process that prevents or corrects errors to ensure that DNA is replicated accurately. Errors can be corrected either by intrinsic DNA polymerase proofreading activity or via mismatch repair." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0045087
 name: innate immune response
 def: "Innate immune responses are defense responses mediated by germline encoded components that directly recognize components of potential pathogens." []
 is_a: GO:0006955 ! immune response
 
 [Term]
+id: GO:0045202
+name: synapse
+def: "The junction between an axon of one neuron and a dendrite of another neuron, a muscle fiber or a glial cell. As the axon approaches the synapse it enlarges into a specialized structure, the presynaptic terminal bouton, which contains mitochondria and synaptic vesicles. At the tip of the terminal bouton is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic terminal bouton secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." []
+is_a: GO:0005575 ! cellular_component
+
+[Term]
 id: GO:0047823
 name: D-glutamyltransferase activity
 def: "Catalysis of the reaction: D-glutamate + D-glutamine = gamma-D-glutamyl-D-glutamate + NH4+. Can also transfer additional glutamyl residues to a peptide, extending the polypeptide chain." []
 is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0048709
+name: oligodendrocyte differentiation
+def: "The process in which a relatively unspecialized cell acquires the specialized features of an oligodendrocyte. An oligodendrocyte is a type of glial cell involved in myelinating the axons of neurons in the central nervous system." []
+is_a: GO:0030154 ! cell differentiation
+
+[Term]
+id: GO:0048856
+name: anatomical structure development
+def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0048869
@@ -2252,6 +2360,18 @@ id: GO:0052689
 name: carboxylic ester hydrolase activity
 def: "Catalysis of the hydrolysis of a carboxylic ester bond." []
 is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0060136
+name: embryonic process involved in female pregnancy
+def: "A reproductive process occurring in the embryo or fetus that allows the embryo or fetus to develop within the mother." []
+is_a: GO:0022414 ! reproductive process
+
+[Term]
+id: GO:0060206
+name: estrous cycle phase
+def: "The progression of physiological phases, occurring in the endometrium during the estrous cycle that recur at regular intervals during the reproductive years. The estrous cycle is an ovulation cycle where the endometrium is resorbed if pregnancy does not occur." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0070288
@@ -2368,6 +2488,12 @@ def: "The appearance of tumor necrosis factor superfamily member 11 (TNFSF11; RA
 is_a: GO:0071706 ! tumor necrosis factor superfamily cytokine production
 
 [Term]
+id: GO:0090128
+name: regulation of synapse maturation
+def: "Any process that modulates the extent of synapse maturation, the process that organizes a synapse so that it attains its fully functional state." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0097087
 name: interleukin-17A production
 def: "The appearance of interleukin-17A due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
@@ -2434,6 +2560,19 @@ def: "The appearance of chemokine (C-X-C motif) ligand 16 (CXCL16) due to biosyn
 is_a: GO:0032602 ! chemokine production
 
 [Term]
+id: GO:0110165
+name: cellular anatomical entity
+def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex." []
+is_a: GO:0005575 ! cellular_component
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: GO:0140058
+name: neuron projection arborization
+def: "The process in which the anatomical structures of a neuron projection are generated and organized into branches. A neuron projection is any process extending from a neural cell, such as axons or dendrites." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0140730
 name: amphiregulin production
 def: "The appearance of amphiregulin due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels. Amphiregulin (AREG) is a ligand of the epidermal growth factor receptor (EGFR), a widely expressed transmembrane tyrosine kinase. AREG is synthesized as a membrane-anchored precursor protein that can engage in juxtacrine signaling on adjacent cells. Alternatively, after proteolytic processing by cell membrane proteases, mainly TACE/ADAM17, AREG is secreted and behaves as an autocrine or paracrine factor." []
@@ -2444,6 +2583,12 @@ id: GO:0140779
 name: XCL1 production
 def: "The appearance of XCL1 due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
 is_a: GO:0001816 ! cytokine production
+
+[Term]
+id: GO:1990505
+name: mitotic DNA replication maintenance of fidelity
+def: "Any maintenance of fidelity that is involved in mitotic cell cycle DNA replication." []
+is_a: GO:0045005 ! DNA-templated DNA replication maintenance of fidelity
 
 [Term]
 id: HP:0000855
@@ -2461,7 +2606,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: HP:0012824
 name: Severity
 def: "The intensity or degree of a manifestation." []
-is_a: BFO:0000019 ! quality
+is_a: COB:0000502 ! characteristic
 
 [Term]
 id: IAO:0000001
@@ -2486,6 +2631,12 @@ id: IAO:0000006
 name: narrative object
 def: "A narrative object is an information content entity that is a set of propositions." []
 is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:0000007
+name: action specification
+def: "A directive information entity that describes an action the bearer will take." []
+is_a: IAO:0000033 ! directive information entity
 
 [Term]
 id: IAO:0000009
@@ -2515,7 +2666,6 @@ is_a: IAO:0000030 ! information content entity
 id: IAO:0000030
 name: information content entity
 def: "A generically dependent continuant that is about some thing." []
-is_a: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: IAO:0000032
@@ -2731,7 +2881,7 @@ is_a: IAO:0000030 ! information content entity
 id: IAO:0000572
 name: documenting
 def: "A planned process in which a document is created or added to by including the specified input in it." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: IAO:0000573
@@ -2743,7 +2893,7 @@ is_a: IAO:0000038 ! graph
 id: IAO:0000574
 name: assigning a centrally registered identifier
 def: "A planned process in which a new CRID is created, associated with an entity, and stored in the CRID registry thereby registering it as being associated with some entity" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: IAO:0000577
@@ -2922,6 +3072,12 @@ id: IDO:0000666
 name: human pathogenicity disposition
 def: "A disposition to initiate processes that result in a disorder in a human organism." []
 is_a: IDO:0000450 ! pathogenic disposition
+
+[Term]
+id: MOP:0000543
+name: physico-chemical process
+def: "A process in which at least one of the participants is a molecule." []
+is_a: BFO:0000015 ! process
 
 [Term]
 id: MRO:0000013
@@ -3107,7 +3263,7 @@ is_a: NCBITaxon:39107 ! Murinae
 [Term]
 id: NCBITaxon:10239
 name: Viruses
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: NCBITaxon:10358
@@ -3187,6 +3343,11 @@ name: Dengue virus
 is_a: NCBITaxon:11050 ! Flaviviridae
 
 [Term]
+id: NCBITaxon:131567
+name: cellular organism
+is_a: COB:0000022 ! organism
+
+[Term]
 id: NCBITaxon:160
 name: Treponema pallidum
 is_a: NCBITaxon:3379134 ! Pseudomonadati
@@ -3200,12 +3361,12 @@ is_a: NCBITaxon:6656 ! Arthropoda
 id: NCBITaxon:2
 name: Bacteria
 synonym: "eubacteria" EXACT []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: NCBITaxon:2157
 name: Archaea
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: NCBITaxon:2559587
@@ -3230,7 +3391,7 @@ id: NCBITaxon:2759
 name: Eukaryota
 synonym: "eucaryotes" EXACT []
 synonym: "eukaryotes" EXACT []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: NCBITaxon:3044472
@@ -3445,7 +3606,7 @@ is_a: NCBITaxon:314146 ! Euarchontoglires
 [Term]
 id: OBA:0000001
 name: biological attribute
-is_a: BFO:0000019 ! quality
+is_a: COB:0000502 ! characteristic
 
 [Term]
 id: OBA:2060180
@@ -3521,9 +3682,11 @@ is_a: IAO:0000109 ! measurement datum
 
 [Term]
 id: OBI:0000011
-name: planned process
+name: obsolete planned process
 def: "A process that realizes a plan which is the concretization of a plan specification." []
-is_a: BFO:0000015 ! process
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0000035
 
 [Term]
 id: OBI:0000014
@@ -3628,7 +3791,7 @@ is_a: BFO:0000023 ! role
 id: OBI:0000041
 name: pump valve switch
 def: "A pump valve switch is a cardinal part of a liquid chromatography instrument that controls the flow." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000043
@@ -3640,7 +3803,7 @@ is_a: OBI:0000105 ! transplantation
 id: OBI:0000044
 name: physical document
 def: "A physical document is an object serving as a record of information by means of symbolic marks." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000045
@@ -3650,9 +3813,11 @@ is_a: OBI:0600009 ! exposure of material to environment
 
 [Term]
 id: OBI:0000047
-name: processed material
+name: obsolete processed material
 def: "Is a material entity that is created or changed during material processing." []
-is_a: BFO:0000040 ! material entity
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0000026
 
 [Term]
 id: OBI:0000048
@@ -3738,14 +3903,14 @@ is_a: OBI:0000025 ! reference substance role
 id: OBI:0000065
 name: polyethylene glycol p-(1,1,3,3-tetramethylbutyl)-phenyl ether
 def: "triton X100 is a chemical entity which belongs to the group of The pluronics which are triblock copolymers of ethylene oxide and propylene oxide. Triton x-100 is_used_as detergent due to its non-ionic surfactant properties" []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: OBI:0000066
 name: investigation
 def: "a planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s)." []
 synonym: "study" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000067
@@ -3769,7 +3934,7 @@ synonym: "any method" EXACT []
 synonym: "measuring" EXACT []
 synonym: "scientific observation" EXACT []
 synonym: "study assay" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 disjoint_from: OBI:0000339 ! planning
 disjoint_from: OBI:0200000 ! data transformation
 disjoint_from: OBI:0600013 ! information acquisition
@@ -3785,7 +3950,7 @@ id: OBI:0000073
 name: sample preparation for assay
 def: "A sample_preparation_for_assay is a protocol_application including material_enrollments and biomaterial_transformations. definition_source: OBI." []
 synonym: "study" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000075
@@ -3809,7 +3974,7 @@ is_a: IAO:0000030 ! information content entity
 id: OBI:0000079
 name: culture medium
 def: "a processed material that provides the needed nourishment for microorganisms or cells grown in vitro." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000083
@@ -3860,11 +4025,11 @@ is_a: BFO:0000023 ! role
 
 [Term]
 id: OBI:0000094
-name: material processing
+name: obsolete material processing
 def: "A planned process which results in physical changes in a specified input material" []
-synonym: "material transformation" EXACT []
-is_a: OBI:0000011 ! planned process
-disjoint_from: OBI:0600010 ! material acquisition
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0000110
 
 [Term]
 id: OBI:0000096
@@ -3909,7 +4074,7 @@ is_a: OBI:0000102 ! responsible party role
 id: OBI:0000105
 name: transplantation
 def: "a protocol application to replace an organ or tissue of an organism" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000109
@@ -4044,7 +4209,7 @@ is_a: OBI:0000932 ! material separation device
 id: OBI:0000153
 name: cell co-culturing
 def: "A material combination in which cell cultures of two or more different types are are combined and allowed to culture as one." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000154
@@ -4310,7 +4475,7 @@ is_a: IAO:0000572 ! documenting
 id: OBI:0000231
 name: enzymatic cleavage
 def: "a material processing that digests the fraction of input material that is susceptible to that enzyme" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0000232
@@ -4400,7 +4565,7 @@ is_a: OBI:0000198 ! biological replicate role
 id: OBI:0000253
 name: artificially induced nucleic acid hybridization
 def: "Is a material transformation in which strands of nucleic acids that are (somewhat) complementary form a double-stranded molecule. Has input at least two single stranded molecules of nucleic acid molecules." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000257
@@ -4411,7 +4576,7 @@ is_a: OBI:0666667 ! nucleic acid extraction
 [Term]
 id: OBI:0000260
 name: plan
-def: "A plan is a realizable entity that is the inheres in a bearer who is committed to realizing it as a planned process." []
+def: "A plan is a realizable entity that is the inheres in a bearer who is committed to realizing it as a completely executed planned process." []
 is_a: BFO:0000017 ! realizable entity
 
 [Term]
@@ -4478,7 +4643,7 @@ id: OBI:0000286
 name: precipitate
 def: "a precipitate is a material entity which is output of a precipitation process" []
 synonym: "precipited material" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000288
@@ -4511,7 +4676,7 @@ id: OBI:0000318
 name: eluate
 def: "a eluate is a material entity which results from an elution, e.g. from a chromatography column. it has as part a material entity with role mobile phase" []
 synonym: "eluted material" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0000319
@@ -4530,7 +4695,7 @@ is_obsolete: true
 id: OBI:0000338
 name: drawing a conclusion based on data
 def: "A planned process in which data gathered in an investigation is evaluated in the context of existing knowledge with the objective to generate more general conclusions or to conclude that the data does not allow one to draw general conclusion" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000339
@@ -4549,7 +4714,6 @@ replaced_by: IAO:0000572
 id: OBI:0000341
 name: histological sample preparation
 def: "histological sample preparation is the preparation of an input tissue via slicing and labeling to make tissue microstructure of interest visible in a future histology assay" []
-is_a: OBI:0000094 ! material processing
 is_a: OBI:0000659 ! specimen collection process
 
 [Term]
@@ -4581,7 +4745,7 @@ is_a: OBI:0000066 ! investigation
 id: OBI:0000361
 name: ion source
 def: "An ion source is a device that is part of a mass spectrometer that ionizes the material under analysis. The ions are then transported by magnetic or electric fields to the mass analyzer.  Techniques for ionization have been key to determining what types of samples can be analyzed by mass spectrometry. Electron ionization and chemical ionization are used for gases and vapors. In chemical ionization sources, the material is ionized by chemical ion-molecule reactions during collisions in the source. Two techniques often used with liquid and solid biological samples include electrospray ionization (due to John Fenn PMID 2675315.) and matrix-assisted laser desorption/ionization (MALDI, due to M. Karas and F. Hillenkamp (Measuring Mass: From Positive Rays to Proteins by Michael A. Grayson (Editor) (ISBN 0-941901-31-9)))." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000364
@@ -4637,7 +4801,7 @@ is_a: BFO:0000034 ! function
 id: OBI:0000373
 name: ionize process
 def: "a physical process of converting an atom or molecule into an ion by adding or removing charged particles such as electrons or other ions. This excludes chemical processes of dissociation." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000374
@@ -4755,7 +4919,7 @@ is_a: OBI:0000392 ! information processor function
 id: OBI:0000394
 name: blot module
 def: "A blot module is a device which has the function to conatin and facilitate the material transfer process blotting to be realised" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000395
@@ -4848,7 +5012,7 @@ is_a: OBI:0000319 ! material to be added role
 id: OBI:0000413
 name: cell cycle synchronization
 def: "a process with the objective to obtain a cell culture in which all cells are in the same stage of the cell cycle" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000415
@@ -4887,14 +5051,14 @@ is_obsolete: true
 id: OBI:0000422
 name: syringe
 def: "A processed material which is used to introduce or draw fluids from a material entity. A syringe is made of a piston and body. the movement of the piston in the body determines the amount/volume of fluid to inject or draw" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000423
 name: extract
 def: "an extract is a material entity which results from an extraction process" []
 synonym: "extracted material" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000424
@@ -4944,7 +5108,7 @@ is_a: OBI:0000426 ! injection
 id: OBI:0000432
 name: polyacrylamide gel
 def: "a material entity resulting from the polymerization of acrylamide with TEMED in some buffer solution" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0000433
@@ -4970,7 +5134,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:0000436
 name: needle
 def: "A needle is a sharp, hollow device used to penetrate tissue or soft material. When attached to a syringe. it allows delivery of a specific volume of liquid or gaseous mixture." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000437
@@ -4988,7 +5152,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0000439
 name: agarose gel
 def: "a material entity resulting from the polymerization of agarose after heating agarose suspended in some buffer solution" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0000441
@@ -5088,7 +5252,7 @@ is_a: IAO:0000005 ! objective specification
 id: OBI:0000457
 name: manufacturing
 def: "A planned process with the objective to produce a processed material which will have a function for future use." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000458
@@ -5149,7 +5313,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0000471
 name: study design execution
 def: "a planned process that carries out a study design" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000473
@@ -5222,7 +5386,7 @@ is_a: OBI:0000599 ! tecmag NMR console
 id: OBI:0000484
 name: NMR sample holder
 def: "An NMR sample holder is the part of an NMR instrument, which carries the NMR probe,sample tube and the nmr sample." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000485
@@ -5300,13 +5464,13 @@ is_a: OBI:0000048 ! chromatography device
 id: OBI:0000498
 name: NMR tube washing system
 def: "An automatic cleaning system for NMR tubes that removes previous probe and sample residues in order to allow for tube recycling." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000499
 name: NMR console
 def: "A component of an NMR instrument that controls the activities of the other components." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000500
@@ -5410,7 +5574,7 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0000517
 name: NMR magnet
 def: "A magnet which induces a certain frequency (MHz) and which has a certain bore diameter.n  alt The NMR signal is a natural physical property of the certain atomic nuclei but it can only be detected with an external magnetic field. A magnet is a fundamental part of an NMR instrument which induces an electromagnetic force field (RF pulse) and by this excites and aligns the spins of the electrons of the NMR acquisition nucleus. It is usually a big (superconducting) electromagnet which is cooled by liquid helium and can be adjusted to a frequency between 200 and 950 MHz. The magnetic field strength is measured in Tesla or Gauss." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000518
@@ -5450,7 +5614,7 @@ id: OBI:0000523
 name: magic angle spinning rotor
 def: "A rotor device that holds the NMR sample and enables the adjustment of the orientation of the rotation axis for a sample in a NMR instrument in the magic angle." []
 synonym: "MAS rotor" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000524
@@ -5578,7 +5742,7 @@ is_a: OBI:0000592 ! chromatography detector filter
 id: OBI:0000544
 name: Bruker SampleRail system
 def: "This Instrument system automatically prepares an NMR sample, inserts it into an NMR magnet, performs NMR experiments on the sample, and transports it back to the preparation system.   The SampleRail fulfills the transporting tasks from the preparation system into the NMR magnet and back." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000545
@@ -5646,7 +5810,7 @@ is_a: OBI:0000542 ! gas chromatography equipment
 id: OBI:0000555
 name: autosampler
 def: "An optional part of an NMR instrument used to hold samples prior to NMR analysis and that sequentially loads these samples into the analytical part of the NMR instrument. n   alt The autosampler is an automatic sample changer device." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000556
@@ -6099,7 +6263,7 @@ is_a: OBI:0000561 ! Bruker NMR probe
 [Term]
 id: OBI:0000630
 name: hematology assay
-def: "An assay that studies blood and blood producing organs using a variety of techniques and instruments" []
+def: "An assay that studies phenotypes of an organism involving its blood and blood producing organs using a variety of techniques and instruments" []
 synonym: "blood analysis" EXACT []
 synonym: "haematology" EXACT []
 is_a: OBI:0000070 ! assay
@@ -6208,7 +6372,7 @@ is_a: OBI:2000009 ! bodily fluid specimen
 id: OBI:0000652
 name: material combination
 def: "is a material processing with the objective to combine two or more material entities as input into a single material entity as output." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0000653
@@ -6220,7 +6384,7 @@ is_a: OBI:0200166 ! data transformation objective
 id: OBI:0000654
 name: device setting
 def: "a quality inheres_in some device and is concretization of some (device_setting_specification and is_about a quality of the device" []
-is_a: BFO:0000019 ! quality
+is_a: COB:0000502 ! characteristic
 
 [Term]
 id: OBI:0000655
@@ -6247,7 +6411,7 @@ id: OBI:0000659
 name: specimen collection process
 def: "A planned process with the objective to obtain a material entity for potential use as an input upon which measurements or observations are performed." []
 synonym: "specimen collection" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000660
@@ -6454,7 +6618,7 @@ is_a: OBI:0600047 ! sequencing assay
 id: OBI:0000694
 name: animal feeding
 def: "animal feeding is a process in which animals are provided with food" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000695
@@ -6547,7 +6711,7 @@ is_a: OBI:0200000 ! data transformation
 id: OBI:0000708
 name: laboratory animal care
 def: "a process that realizes an animal care protocol that specifies how animals are kept and maintained" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000709
@@ -6568,7 +6732,7 @@ id: OBI:0000711
 name: library preparation
 def: "is a process which results in the creation of a library from fragments of DNA using cloning vectors or oligonucleotides with the role of adaptors." []
 synonym: "library construction" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000712
@@ -6617,7 +6781,7 @@ is_a: BFO:0000023 ! role
 id: OBI:0000719
 name: vaccine production
 def: "A planned process with the objective to create a vaccine." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000720
@@ -6637,7 +6801,7 @@ name: paired-end library
 def: "is a collection of short paired tags from the two ends of DNA fragments are extracted and covalently linked as ditag constructs" []
 synonym: "mate-paired library" EXACT []
 synonym: "paired-end tag (PET) library" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000723
@@ -6695,7 +6859,7 @@ is_a: OBI:0000734 ! DNA sequencing by synthesis assay
 id: OBI:0000731
 name: recombinant vector
 def: "A recombinant vector is created by a recombinant vector cloning process, and contains nucleic acids that can be amplified. It retains functions of the original cloning vector." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000732
@@ -6713,21 +6877,19 @@ is_a: OBI:0000626 ! DNA sequencing assay
 id: OBI:0000735
 name: NTP-2000
 def: "a material consisting of 14.5% protein, 8.5% fat and 9.5% fiber produced to feed rodents" []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000736
 name: single fragment library
 def: "is a collection of short tags from DNA fragments, are extracted and covalently linked as single tag constructs" []
 synonym: "fragment library" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000737
 name: cloning vector
 def: "A cloning vector is an engineered material that is used as an input material for a recombinant vector cloning process to carry inserted nucleic acids. It contains an origin of replication for a specific destination host organism, encodes for a selectable gene product and contains a cloning site." []
-is_a: CHEBI:33696 ! nucleic acid
-is_a: OBI:0000047 ! processed material
 is_a: OBI:1110108 ! material to be added
 
 [Term]
@@ -6759,7 +6921,6 @@ id: OBI:0000742
 name: nucleic acid restriction enzyme digest
 def: "A nucleic acid digest is a material that is the output of a process in which nucleic acids are combined with a restriction enzyme resulting in digested fragments with defined ends based on the enzymes cleavage site" []
 is_a: CHEBI:33696 ! nucleic acid
-is_a: OBI:0000047 ! processed material
 
 [Term]
 id: OBI:0000743
@@ -6837,6 +6998,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:0000788
 name: fluorescently labeled MHC multimer
 def: "A complex of two or more linked MHC molecules including a fluorescent label that can be loaded with a ligand, and is used in flow cytometry assay to bind to T cell receptors of T cells specific for the ligand" []
+is_a: COB:0000026 ! processed material entity
 is_a: OBI:0001936 ! molecular-labeled material
 
 [Term]
@@ -6914,7 +7076,7 @@ is_a: OBI:0600064 ! recombinant vector cloning
 id: OBI:0000800
 name: cross linking
 def: "A process in which bonds are created that link one polymer to another" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000801
@@ -6933,13 +7095,13 @@ is_a: OBI:0000070 ! assay
 id: OBI:0000803
 name: denaturing
 def: "Is a process in which the tertiary or secondary structure of a polymer is disrupted" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000804
 name: informing investigator of subject study arm
 def: "A planned process with the objective to make the investigator aware of which study arm a patient is participating in." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000805
@@ -6959,7 +7121,7 @@ id: OBI:0000807
 name: presentation of stimulus
 def: "A planned process with the objective to expose an organism to a stimulus." []
 synonym: "stimulation of organism" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000808
@@ -6972,19 +7134,19 @@ id: OBI:0000809
 name: amplified DNA
 def: "DNA that has been produced in an enzymatic amplification process" []
 is_a: CHEBI:16991 ! deoxyribonucleic acid
-is_a: OBI:0000047 ! processed material
 
 [Term]
 id: OBI:0000810
 name: informed consent process
 def: "A planned process with the objective to inform a person or their legal representative of legally and ethically relevant facts about a process that the person in question is asked to participate in, and which results in a documented decision as to whether the person in question will participate." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000811
-name: primary structure of DNA macromolecule
-def: "a quality of a DNA molecule that inheres in its bearer due to the order of its DNA nucleotide residues." []
-is_a: SO:0000001 ! region
+name: obsolete primary structure of DNA macromolecule
+def: "a quality of a DNA molecule that inheres in its bearer due to the order of its DNA nucleotide residues" []
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
 
 [Term]
 id: OBI:0000812
@@ -7008,7 +7170,7 @@ is_a: BFO:0000040 ! material entity
 id: OBI:0000815
 name: Berichrom(r) Antithrombin III (A) Kit
 def: "For the chromogenic determination of antithrombin III. Autoanalyzer method for undiluted samples. For the quantitative chromogenic determination of the functional activity of antithrombin III in plasma on autoanalyzers for the diagnosis of diminished AT III synthesis, increased consumption, and for monitoring substitution therapy. Berichrom(r) Antithrombin III (A) is used for the rapid determination of the physiologically active antithrombin III and permits the diagnosis of congenital and acquired antithrombin III deficiency, a condition frequently associated with an increased risk of thrombosis. Acquired antithrombin III deficiencies frequently occur due to consumption following major operations or due to disseminated intravascular coagulation (DIC) in cases of septicaemia, nephroses, liver parenchymal damage (hepatitis, drug intoxication, alcoholism) and estrogen-containing contraceptives. The test permits early detection of patients at increased risk for thrombosis. Kit contains: 6 x for 5.0 mL Thrombin (bovine), 3 x for 3.0 mL Substrate Reagent, 1 x 30.0 mL Buffer Solution" []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000816
@@ -7021,13 +7183,13 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0000817
 name: fucoidan
 def: "Fucoidan is a sulfated polysaccharide (MW: average 20,000) found mainly in various species of brown seaweed such as kombu, limu moui,bladderwrack, wakame, mozuku, and hijiki (variant forms of fucoidan have also been found in animal species, including the sea cucumber)." []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: OBI:0000818
 name: calibration
 def: "A planned process with the objective to establish the relationship between data produced by a measurement device and physical qualities. This is done by using the measurement device under defined conditions, and either tuning it to adjust the measured output, or record the output and use it as a reference in future measurements." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000819
@@ -7076,13 +7238,13 @@ is_a: OBI:0000097 ! participant under investigation role
 id: OBI:0000826
 name: treatment portion of study execution
 def: "A planned process, part of a study design execution, during which the treatment of subjects is ongoing" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000827
 name: pill
 def: "A dose of medicine or placebo in the form of a small pellet." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0000828
@@ -7107,7 +7269,7 @@ is_a: PATO:0001241 ! physical object quality
 id: OBI:0000832
 name: measurement device
 def: "A device in which a measure function inheres." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000834
@@ -7139,31 +7301,32 @@ is_a: OBI:0000952 ! oral administration
 id: OBI:0000838
 name: material maintenance
 def: "A planned process with the objective to maintain some or all of the characteristics of an input material over time." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000839
 name: labeled oligonucleotide
 def: "a labeled oligonucleotide is a short nucleic acid which underwent a labeling process resulting in a radioactive isotope such as P32 or P33 added to its backbone for instance by end labeling with polynucleotide kinase which added radiolabeled ATP to the 5' end of oligonucleotide" []
+is_a: COB:0000026 ! processed material entity
 is_a: OBI:0001936 ! molecular-labeled material
 
 [Term]
 id: OBI:0000840
 name: unblinding process
 def: "A planned process that is the part of the study execution in which the subjects are told what study arm they are in and in which the investigators are told which subjects are in which trials." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000841
 name: subject agrees they understand informed consent document
 def: "A planned process in which a subject receives an informed consent document and agrees that they have understood it." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000842
 name: informing subject of study arm
 def: "A planned process with the objective to make the subject aware of which study arm they are participating in." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000843
@@ -7181,9 +7344,10 @@ replaced_by: OMRSE:00000056
 
 [Term]
 id: OBI:0000845
-name: primary structure of RNA molecule
+name: obsolete primary structure of RNA molecule
 def: "The primary structure of an RNA molecule that is completely defined by the set of its nucleic residue parts and the linear order induced by the peptide bonds that hold them together" []
-is_a: SO:0000001 ! region
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
 
 [Term]
 id: OBI:0000847
@@ -7485,13 +7649,13 @@ id: OBI:0000906
 name: induced hemagglutination
 def: "The clumping or clustering of red blood cells caused by certain viruses, antibodies, or other substances" []
 synonym: "hemeagglutination" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0000907
 name: supplying
 def: "A planned process with the objective to provide material entities to be used in an investigation." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000908
@@ -7603,14 +7767,14 @@ is_a: OBI:0001146 ! binding assay
 id: OBI:0000924
 name: labeled specimen
 def: "A specimen  that has been modified in order to be able to detect it in future experiments" []
-is_a: OBI:0000953 ! processed specimen
 is_a: OBI:0001936 ! molecular-labeled material
+is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0000925
 name: infectious agent
 def: "is a material entity bearing the disposition to infect an organism" []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: OBI:0000926
@@ -7649,13 +7813,13 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0000931
 name: study intervention
 def: "A planned process that is the part of the execution of an intervention design study which is varied between two or more subjects in the study." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000932
 name: material separation device
 def: "A device with a separation function realized in a planed process" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000933
@@ -7675,7 +7839,7 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: OBI:0000935
 name: micromanipulator
 def: "A device that is used to physically interact with a sample under a microscope, where a level of precision of movement is necessary that cannot be achieved by the unaided human hand." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000936
@@ -7701,7 +7865,7 @@ is_a: IAO:0000109 ! measurement datum
 id: OBI:0000939
 name: training process
 def: "a process that achieves a training objective" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000940
@@ -7726,7 +7890,7 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: OBI:0000943
 name: chemical cleavage
 def: "chemical cleavage is a protocol application relying on a chemical compound to cause the fragmentation of an input material that is susceptible to that chemical agent" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0000944
@@ -7787,7 +7951,7 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: OBI:0000953
 name: processed specimen
 def: "A specimen that has been intentionally physically modified." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 is_a: OBI:0100051 ! specimen
 
 [Term]
@@ -7801,7 +7965,7 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: OBI:0000955
 name: electrode puller
 def: "A device used in the first step in making electrodes, that applies constant tension on a glass capillary tube and eventually breaks it while heating it; this produces a very fine point on the capillary tube." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000956
@@ -7869,14 +8033,16 @@ is_a: OBI:0000070 ! assay
 id: OBI:0000967
 name: container
 def: "A device that can be used to restrict the location of material entities over time" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0000968
-name: device
+name: obsolete device
 def: "A material entity that is designed to perform a function in a scientific investigation, but is not a reagent." []
 synonym: "instrument" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0001300
 
 [Term]
 id: OBI:0000969
@@ -7907,8 +8073,8 @@ is_obsolete: true
 [Term]
 id: OBI:0000973
 name: sequence data
-def: "A measurement datum that representing the primary structure of a macromolecule(it's sequence) sometimes associated with an indicator of confidence of that measurement." []
-is_a: IAO:0000109 ! measurement datum
+def: "A data item that representing the primary structure of a macromolecule(it's sequence) sometimes associated with an indicator of confidence of that measurement." []
+is_a: IAO:0000027 ! data item
 
 [Term]
 id: OBI:0000974
@@ -8041,7 +8207,7 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: OBI:0000995
 name: administration of material to specimen
 def: "The directed combination of a material entity with a specimen." []
-is_a: OBI:0000274 ! adding a material entity into a target
+is_a: OBI:0000652 ! material combination
 
 [Term]
 id: OBI:0000996
@@ -8100,7 +8266,7 @@ id: OBI:0001007
 name: image creation
 def: "A planned process that captures an image of an object." []
 synonym: "image acquisition" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001008
@@ -8120,7 +8286,7 @@ is_obsolete: true
 id: OBI:0001010
 name: nucleic acid extract
 def: "An extract that is the output of an extraction process in which nucleic acid molecules are isolated from a specimen." []
-is_a: OBI:0000953 ! processed specimen
+is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0001011
@@ -8271,19 +8437,19 @@ is_a: OBI:0001007 ! image creation
 id: OBI:0001032
 name: light emission device
 def: "A device which has a function to emit light." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001033
 name: perturbation device
 def: "A perturbation device is a device which is designed to perform a perturb function" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001034
 name: environmental control device
 def: "An environmental control device is a device which has the function to control some aspect of the environment such as temperature, or humidity." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001035
@@ -8352,7 +8518,7 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0001045
 name: capillary blotter
 def: "A device that is used to transfer nucleic acids from agarose gels onto a membrane, based on the movement of buffer from a reservoir through the gel and the blotting membrane to a stack of dry blotting paper by capillary force. The molecules are carried to the blotting membrane on which they are adsorbed." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001046
@@ -8376,7 +8542,7 @@ is_a: OBI:0000398 ! image creation device
 id: OBI:0001049
 name: chip spotting device
 def: "A device for dropping and immobilizing a solution of biomolecules, for example, nucleic acids such as probe DNA, mRNA, and peptide nucleic acid (PNA), and proteins on a DNA microarray surface to manufacture a DNA microarray." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001050
@@ -8406,7 +8572,7 @@ is_a: OBI:0000932 ! material separation device
 id: OBI:0001054
 name: PET synthesizer
 def: "A device that is used to produce targeted molecular pharmaceuticals for use in positron emission tomography." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001055
@@ -8442,13 +8608,13 @@ is_a: OBI:0001058 ! microplate reader
 id: OBI:0001060
 name: spot cutter
 def: "A robotic device that is used to excise spots from gels." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001061
 name: microwave synthesis system
 def: "A device that is used to apply microwave irradiation to chemical reactions." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001062
@@ -8460,13 +8626,13 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0001063
 name: automatic staining machine
 def: "A device that is used to automatically stain tissue sections on slides or tissue specimens." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001064
 name: automatic tissue processor
 def: "A device for processing histological tissue having a tissue carrier basket suspended from a turntable overlying a plurality of beakers suspended from a carrier plate. The turntable is raised, indexed, and lowered by a suitable driving mechanism to move the tissue basket sequentially through the beakers. Timers can each be programmed to control the movement of the turntable to provide various different cycles for processing the tissue. Some of the beakers are received in individual thermal baths to heat and control the temperature of the substances received in the beakers for treating the tissue." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001065
@@ -8484,7 +8650,7 @@ is_a: OBI:0001135 ! balance
 id: OBI:0001067
 name: perfusion station
 def: "A device or system in which perfusion units are integrated." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001068
@@ -8521,13 +8687,13 @@ is_a: OBI:0001034 ! environmental control device
 id: OBI:0001073
 name: microtome knife maker
 def: "A glass cutting and breaking device that is used to produce glass knives used in ultramicrotomy." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001074
 name: cryofixation device
 def: "A device that is used for the fixation or stabilization of biological materials as the first step in specimen preparation for electron microscopy." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001075
@@ -8588,7 +8754,7 @@ is_a: OBI:0001118 ! multichannel pipette
 id: OBI:0001084
 name: vitrification apparatus
 def: "A device that is used to effect the transition of a substance into a glass." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001085
@@ -8606,7 +8772,7 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0001087
 name: lyophilizer
 def: "A device that is used to freeze dry material." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001088
@@ -8642,13 +8808,13 @@ is_a: OBI:0400107 ! computer
 id: OBI:0001093
 name: microtome knife sharpener
 def: "A device that is used to sharpen knives used in microtomy." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001094
 name: plate shaker
 def: "A device that provides shaking motion for microplates." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001095
@@ -8702,7 +8868,7 @@ is_a: OBI:0400115 ! spectrophotometer
 id: OBI:0001103
 name: rocker
 def: "A device that provides three-dimensional motion for biomedical applications (e.g., gel trays)." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001104
@@ -8726,7 +8892,7 @@ is_a: OBI:0001121 ! gel electrophoresis system
 id: OBI:0001107
 name: tissue embedding station
 def: "A device that is used to perform paraffin embedding of tissue specimens." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001108
@@ -8763,7 +8929,7 @@ is_a: OBI:0001034 ! environmental control device
 id: OBI:0001113
 name: microplate washer
 def: "A device that is used to wash immunoassays in microwell strips and plates with professional accuracy. WHAT IS PROFESSIONAL ACCURACY??" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001114
@@ -8781,7 +8947,7 @@ is_a: OBI:0001113 ! microplate washer
 id: OBI:0001116
 name: vacuum manifold
 def: "A device that is used for the vacuum-driven processing of multiwell strips or plates, or spin columns. IS THIS AN INSTRUMENT? IS THE DEFINTION CORRECT - TO DISTRIBUTE PRESSURE EVENLY." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001117
@@ -8799,7 +8965,7 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0001119
 name: cell harvester
 def: "A device that is used to harvest cells from microplates and deposit samples on a filter mat. NOT AN INSTRUMENT?" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001120
@@ -8823,13 +8989,13 @@ is_a: OBI:0000832 ! measurement device
 id: OBI:0001123
 name: microdissection instrument
 def: "A device that is used for the dissection of tissues under magnification." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001124
 name: micropipette puller
 def: "A device that is used to fabricate glass micropipettes." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001125
@@ -8847,7 +9013,7 @@ is_a: OBI:0400169 ! microscope
 id: OBI:0001127
 name: freeze substitution system
 def: "A device or system for dehydrating and then chemically fixing electron microscopy samples at low temperatures in preparation for various treatments including embedding in resins." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001128
@@ -8915,7 +9081,7 @@ id: OBI:0001138
 name: X-ray source
 def: "A device that is used to generate X-rays." []
 synonym: "x-ray generator" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001139
@@ -8970,7 +9136,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0001147
 name: cell culture expansion
 def: "a process that results in the increase of cell numbers" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001148
@@ -8994,7 +9160,7 @@ is_a: OBI:0600043 ! genetic transformation
 id: OBI:0001151
 name: genetically modified material
 def: "a material entity, organism or cell,  that is the output of a genetic transformation process." []
-is_a: OBI:0000047 ! processed material
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: OBI:0001152
@@ -9128,7 +9294,7 @@ is_a: IAO:0000573 ! line graph
 id: OBI:0001173
 name: service
 def: "A planned process in which a service provider performs a task (i.e. a planned process) for a service consumer." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001174
@@ -9208,7 +9374,7 @@ def: "An organism that is bred to have some uniform behavioral, morphological, p
 synonym: "cultivar" EXACT []
 synonym: "ecotype" EXACT []
 synonym: "strain" EXACT []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: OBI:0001186
@@ -11159,7 +11325,7 @@ is_a: OBI:0100051 ! specimen
 id: OBI:0001480
 name: phage display library panning
 def: "Phage display library panning is a process in which a diverse collection of phages encoding peptides or proteins are screened and the ones encoding active peptides/proteins are selected in an iterative process similar to natural selection." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0001481
@@ -11319,7 +11485,7 @@ is_a: OBI:0001588 ! binding
 id: OBI:0001504
 name: dissection
 def: "A planned process that separates and isolates tissues for surgical purposes, or for the analysis or study of their structures." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001505
@@ -12257,7 +12423,7 @@ is_a: OBI:0600017 ! assay detecting a molecular label
 id: OBI:0001633
 name: purified material
 def: "A material entity that is generated by a purification process in which an input material is separated to obtain a fraction with a higher concentration of a desired component" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0001634
@@ -13762,7 +13928,7 @@ is_a: OBI:0001773 ! assay measuring epitope specific interleukin-17A production 
 id: OBI:0001834
 name: drawing a conclusion
 def: "A planned process in which new information is inferred from existing information." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001835
@@ -13884,7 +14050,7 @@ def: "A transcription profiling assay that determines transcripts, gene structur
 synonym: "RNA-PET" EXACT []
 synonym: "RNA-PET assay" EXACT []
 is_a: OBI:0000424 ! transcription profiling assay
-is_a: OBI:0600047 ! sequencing assay
+is_a: OBI:0001177 ! RNA sequencing assay
 
 [Term]
 id: OBI:0001851
@@ -13978,7 +14144,7 @@ is_a: OBI:0600047 ! sequencing assay
 id: OBI:0001865
 name: assay array
 def: "A device made to be used in an analyte assay for immobilization of substances that bind the analyte at regular spatial positions on a surface." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0001866
@@ -14051,7 +14217,7 @@ id: OBI:0001876
 name: cell culture
 def: "A material entity comprised of cultured cells and the media in which they are being propagated or stored." []
 comment: A cell culture includes the cells in culture, as well as the media and all additives in which the cells are being grown or in which they are stored.
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0001877
@@ -14072,7 +14238,7 @@ id: OBI:0001879
 name: reagent
 def: "A biological or chemical entity that bears a reagent role in virtue of it being intended for application in a scientific technique  to participate in (or have molecular parts that participate in) a chemical reaction that facilitates the generation of data about some distinct entity, or the generation of some distinct material specified output." []
 comment: (copied from ReO)\nReagents are distinguished from devices/instruments that also serve as facilitators in scientific techniques by the fact that reagents are chemical or biological in nature and necessarily participate in or have parts that participate in some chemical interaction or reaction during their intended participation in some technique.  By contrast, devices do not participate in a chemical reaction/interaction during the technique.\n\nReagents are distinguished from study subjects/evaluants in that study subjects and evaluants are that about which conclusions are drawn and knowledge is sought in an investigation - while reagents, by definition, are not.  It should be noted, however, that reagent and study subject/evaluant roles can be borne by instances of the same type of material entity - but a given instance can only realize one of these roles in the execution of a given  assay. For example, taq polymerase can bear a reagent role or an evaluant role.  In a DNA sequencing assay aimed at generating sequence data about some plasmid, the reagent role of the taq polymerase is realized. In an assay to evaluate the quality of the taq polymerase itself, the evaluant/study subject role of the taq is realized, but not the reagent role since the taq is the subject about which data is generated.\n\nIn regard to the statement that reagents are 'distinct' from the specified outputs of a technique:  note that a reagent may be incorporated into a material output of a technique, as long as the IDENTITY of this output is distinct from that of the bearer of the reagent role.  For example, dNTPs input into a PCR are reagents that become part of the material output of this technique, but this output has a new identity (ie that of a 'nucleic acid molecule') that is distinct from the identity of the dNTPs that comprise it.  Similarly, a biotin molecule input into a cell labeling technique are reagents that become part of the specified output, but the identity of the output is that of some modified cell specimen which shares identity with the input unmodified cell specimen, and not with the biotin label. Thus, we see that an important criteria of 'reagent-ness' is that it is a facilitator, and not the primary focus of an investigation or material processing technique (ie not the specified subject/evaluant about which knowledge is sought, or the specified output material of the technique).
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0001880
@@ -14291,7 +14457,7 @@ is_a: OBI:0001876 ! cell culture
 id: OBI:0001912
 name: cell freezing medium
 def: "A processed material that serves as a liquid vehicle for freezing cells for long term quiescent stroage, which contains chemicls needed to sustain cell viability across freeze-thaw cycles." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0001913
@@ -14405,7 +14571,7 @@ id: OBI:0001928
 name: selection
 def: "A planned process with the objective to create a group of entities by applying a predefined criteria to a larger group of entities." []
 synonym: "selection process" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001929
@@ -14429,7 +14595,7 @@ is_a: OBI:0001933 ! value specification
 id: OBI:0001932
 name: comparing prediction to measurement
 def: "A planned process in which predicted values for some thing are compared to measured values for that thing." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001933
@@ -14453,7 +14619,7 @@ is_a: OBI:0001934 ! predicted value
 id: OBI:0001936
 name: molecular-labeled material
 def: "a material entity that is the specified output of an addition of molecular label process that aims to label some molecular target to allow for its detection in a detection of molecular label assay" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0001939
@@ -14491,7 +14657,7 @@ is_a: IAO:0000104 ! plan specification
 id: OBI:0001944
 name: sequence annotation
 def: "A planned process that identifies and reports sequence features (e.g. protein coding regions) in sequence data." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001945
@@ -14549,7 +14715,7 @@ is_a: OBI:0001953 ! freezing
 id: OBI:0001953
 name: freezing
 def: "A planned process with the objective to bring some material entity to a temperature below its freezing point." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0001954
@@ -14586,7 +14752,7 @@ is_a: OBI:0500000 ! study design
 id: OBI:0001959
 name: multiplexed nucleotide library sequencing
 def: "A planned process which consists in running a set of samples as a pool on a sequencing instrument, while retaining the ability to associate individual results to each of the individual input samples through the use of a ligated oligonucleotide (the \"multiplex identifier sequence\"). This oligonucleotide is  introduced during the sequence library preparation, and is unique to and specific for all library fragments derived from each sample in a sample pool." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0001960
@@ -14659,7 +14825,7 @@ id: OBI:0001970
 name: multiplexed sequencing library
 def: "a multiplexed library is a material entity which is the output of a library preparation process that uses a ligation step to attach a unique multiplexing sequence identifier to a specific sample, then mixes several such tagged samples prior to the library amplification process proper. A multiplexed library allows the sequencing of several samples in one sequencing run." []
 synonym: "DNA-barcoded sequencing library" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0001971
@@ -15215,13 +15381,13 @@ def: "A device that is used as a binding surface for ligand during a surface pla
 synonym: "biosensor chip" EXACT []
 synonym: "sensor chip" EXACT []
 synonym: "SPR sensor chip" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002047
 name: enzyme-linked antibody
 def: "A processed material that is comprised of an antibody that is covalently linked to an enzyme through bioconjugation. The enzyme can be used as a detection method when the enzyme's reaction produces a detectable signal, for example a color change when the substrate is added." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0002048
@@ -15569,7 +15735,7 @@ is_a: OBI:0000748 ! bisulfite sequencing assay
 id: OBI:0002095
 name: specimen family creation
 def: "A material processing that has as its input a specimen and as its output a collection of specimens." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0002096
@@ -16234,7 +16400,7 @@ is_a: OBI:0400168 ! microtome
 id: OBI:0002195
 name: microtome blade
 def: "A device that is the part of a microtome used to slice specimens to a desired thickness." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002196
@@ -16272,7 +16438,7 @@ is_a: OBI:0002199 ! reason for lack of data item
 id: OBI:0002201
 name: determination if assay will provide reliable results
 def: "A planned process that is used to assess whether an assay will provide reliable results based on the conditions or qualities of the inputs, devices, and other participants of the assay." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000082 ! planned process
 
 [Term]
 id: OBI:0002202
@@ -16685,7 +16851,7 @@ id: OBI:0002406
 name: delivery form for hormonal replacement therapy
 def: "A processed material used for delivery of hormones in hormone replacement therapy." []
 synonym: "form of hormone replacement therapy" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0002407
@@ -17044,13 +17210,13 @@ is_a: IAO:0000098 ! data format specification
 id: OBI:0002462
 name: ERCC RNA spike-in
 def: "A processed material developed by the External RNA Controls Consortium (ERCC) that  consists of 92 transcripts, derived and traceable from NIST-certified DNA plasmids." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0002463
 name: SIRV RNA spike-in
 def: "A processed material that consists of transcript isoforms of 7 spike-in RNA variant (SIRV) genes and possibly the 92 External RNA Controls Consortium (ERCC) RNA spike-in genes." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0002464
@@ -17208,7 +17374,7 @@ is_a: OBI:0000932 ! material separation device
 id: OBI:0002488
 name: pipette
 def: "A device that is a laboratory tool commonly used in chemistry, biology and medicine to transport a measured volume of liquid, often as a media dispenser." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002489
@@ -17765,13 +17931,13 @@ name: digital acquisition card
 def: "The digital acquisition card acts as the interface between the computer and a measurement device via the computer bus. It converts the signal generated by a measurement device (output from device) to a digital signal via an analog-to-digital converter, ADC. It also converts a digital signal to an analog signal via a digital-to-analog converter, DAC. This analog signal (e.g., stimulus) is fed to a measurement device (input to device)." []
 synonym: "DAQ device" EXACT []
 synonym: "digital acquisition and digital generation card" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002587
 name: machine learning
 def: "A planned process with the objective to give a computer the ability to use patterns in data to progressively improve its performance on a specific task, achieved by using statistical techniques instead of explicitly programming the ability." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0002588
@@ -18877,7 +19043,7 @@ id: OBI:0002744
 name: molecular label
 def: "A molecular reagent intended to associate with some molecular target to serve as a proxy for the presence, abundance, or location of this target in a detection of molecular label assay" []
 synonym: "molecular tracer" EXACT []
-is_a: CHEBI:23367 ! molecular entity
+is_a: COB:0000013 ! molecule
 is_a: OBI:0001879 ! reagent
 
 [Term]
@@ -18897,7 +19063,7 @@ is_a: OBI:0002508 ! sputum specimen
 id: OBI:0002747
 name: passage process
 def: "A material processing that consists of first growing an organism in an environmental system and then removing the organism to be grown in another environmental system, a process which may be repeated with the objective of altering the organism or increasing its number." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0002748
@@ -18938,7 +19104,7 @@ is_a: OBI:0002692 ! polymerase chain reaction assay
 id: OBI:0002754
 name: cDNA library
 def: "A collection of DNA molecules with sequences complementary to a specified set of mRNA molecules and commonly developed by enzymatic reverse transcription." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0002756
@@ -19131,7 +19297,7 @@ name: personal protective device
 def: "A device which is a wearable garment designed to protect the wearer's body from injury or infection." []
 synonym: "personal protective equipment" EXACT []
 synonym: "PPE" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002787
@@ -19210,7 +19376,7 @@ is_a: OBI:0002800 ! personal protective clothing item
 id: OBI:0002797
 name: apron
 def: "A garment which is worn over other clothing and covers mainly the front of the body." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002798
@@ -19254,7 +19420,7 @@ id: OBI:0002805
 name: transparent droplet barrier
 def: "A device which is a transparent constructed barrier, usually made out of acrylic (Plexiglass) or polycarbonate plastic, installed in facilities to intercept respiratory droplets, encourage physical distancing requirements." []
 synonym: "transparent partition" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002806
@@ -19319,7 +19485,7 @@ is_a: OBI:0002800 ! personal protective clothing item
 id: OBI:0002814
 name: specimen collection device
 def: "A device used to collect a specimen." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002816
@@ -19356,7 +19522,7 @@ name: cotton swab
 def: "A device which is a cotton pad mounted on one or both ends of a stick." []
 synonym: "Q-tip" EXACT []
 synonym: "swab-sampler" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002822
@@ -19380,7 +19546,7 @@ is_a: OBI:0002814 ! specimen collection device
 id: OBI:0002830
 name: catheter
 def: "A device which is a flexible tube inserted into a body and which enables transfer of fluids into or out of a body." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002897
@@ -19538,7 +19704,7 @@ is_a: OBI:0002913 ! arthropod specimen collection process
 id: OBI:0002920
 name: arthropod trap
 def: "A device designed to catch arthropods." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002921
@@ -19562,7 +19728,7 @@ is_a: OBI:0002920 ! arthropod trap
 id: OBI:0002924
 name: BG-Counter
 def: "A device manufactured by BioGents that is designed to count mosquitoes passing through the device, differentiating the mosquitoes from other arthropods." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002925
@@ -19582,7 +19748,7 @@ id: OBI:0002927
 name: dipper for arthropod immatures
 def: "A device that is designed for the collection of arthropod larvae or pupae from water and has the shape of a ladle or a pan." []
 synonym: "dipper for immatures" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0002928
@@ -20035,7 +20201,7 @@ id: OBI:0002995
 name: blood meal source organism
 def: "An organism that is the source of a blood meal." []
 synonym: "blood meal host organism" EXACT []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: OBI:0002996
@@ -20097,13 +20263,13 @@ is_a: OBI:0002904 ! adult arthropod specimen collection process
 id: OBI:0003005
 name: device for collection of resting adult arthropods
 def: "A device that is designed to provide a solid surface that is attractive to an arthropod as a place to rest during a period of inactivity." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003006
 name: well net for arthropod immatures
 def: "A device that is designed for the collection of arthropod larvae or pupae from water and consists of a conical net." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003007
@@ -20242,8 +20408,7 @@ is_a: OBI:0000067 ! evaluant role
 id: OBI:0003030
 name: oligonucleotide primer set
 def: "A processed material that consists of oligonucleotides that bear a primer role." []
-is_a: CHEBI:33696 ! nucleic acid
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0003031
@@ -20357,13 +20522,13 @@ id: OBI:0003048
 name: BG-lure scent dispenser
 def: "A device manufactured by BioGents that is designed for operation with the BG-Sentinel trap and releases an attractant that mimics the scent of human skin." []
 synonym: "BG-lure" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003049
 name: hand-held sweep net
 def: "A device that consists of a network of mesh and is designed to capture adult arthropods." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003050
@@ -21785,7 +21950,7 @@ is_a: OBI:0000911 ! real time reverse-transcription polymerase chain reaction as
 id: OBI:0003289
 name: mosquito membrane feeding device
 def: "A device that contains blood in a membrane penetrable to mosquitoes, designed to feed mosquitoes without the need for an animal host." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003290
@@ -22276,7 +22441,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0003369
 name: assay kit
 def: "A device that consists of reagents and devices that enable the performance of a specific type of assay, which could, in addition, require specific instruments not included in the kit." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003371
@@ -22833,7 +22998,7 @@ is_a: OBI:0003498 ! organism detection assay
 id: OBI:0003481
 name: cow-baited arthropod trap
 def: "A resting arthropod trap that consists of a tent inside which an adult cow is tethered to the ground, in order to attract arthropods and collect those that rest on the interior walls of the tent." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003482
@@ -23856,7 +24021,7 @@ is_a: OBI:0100017 ! blood serum specimen
 id: OBI:0003653
 name: fasting
 def: "A planned process in which an organism drinks only water and does not eat for a specified period of time." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0003654
@@ -23935,7 +24100,6 @@ is_a: OBI:0003685 ! Illumina NovaSeq series instrument
 id: OBI:0003666
 name: lavage fluid specimen
 def: "A specimen obtained through a lavage process which includes fluid in addition to cells and/or cellular secretions." []
-is_a: OBI:0000953 ! processed specimen
 is_a: OBI:0001479 ! specimen from organism
 
 [Term]
@@ -24089,7 +24253,7 @@ id: OBI:0003707
 name: mortar and pestle device
 def: "A device which is a set of two tools used to crush or grind material into smaller particles. A mortar is used to contain the material, and a pestle is a handheld blunt object used to apply force to the material." []
 synonym: "mortar and pestle" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0003708
@@ -24257,6 +24421,212 @@ synonym: "CE-MS" EXACT []
 is_a: OBI:0000470 ! mass spectrometry assay
 
 [Term]
+id: OBI:0003750
+name: neurite outgrowth assay
+def: "A cell differentiation assay that detects neurite outgrowth and/or branching" []
+is_a: OBI:0003720 ! cell differentiation assay
+
+[Term]
+id: OBI:0003751
+name: neuronal differentiation assay
+def: "A cell differentiation assay that measures differentiation of neurons." []
+is_a: OBI:0003720 ! cell differentiation assay
+
+[Term]
+id: OBI:0003752
+name: oligodendrocyte differentiation assay
+def: "A cell differentiation assay that measures differentiation of oligodendrocytes." []
+is_a: OBI:0003720 ! cell differentiation assay
+
+[Term]
+id: OBI:0003753
+name: regulation of synapse maturation assay
+def: "A cell differentiation assay that measures synapse formation and maturation using antibodies to protein found in synaptic puncta." []
+is_a: OBI:0003720 ! cell differentiation assay
+
+[Term]
+id: OBI:0003754
+name: Ames assay
+def: "A cell based DNA damage assay that uses several constructed bacterial strains to detect mutations." []
+is_a: OBI:0003721 ! cell based DNA damage assay
+
+[Term]
+id: OBI:0003755
+name: micronucleus assay
+def: "A cell based DNA damage assay in eukaryotic cells that detects cytoplasmic micronuclei." []
+is_a: OBI:0003721 ! cell based DNA damage assay
+
+[Term]
+id: OBI:0003756
+name: PIG-a assay
+def: "A cell based DNA damage assay in eukaryotic cells that detects loss of function through mutation of the X-linked (single-copy) Pig-a gene." []
+is_a: OBI:0003721 ! cell based DNA damage assay
+
+[Term]
+id: OBI:0003757
+name: cell viability assay based on detection of resorufin
+def: "A cell viability assay using the NAD(P)H-aided conversion of resazurin to resorufin by metabolically active cells." []
+synonym: "Alamar Blue viability assay" EXACT []
+is_a: OBI:0003583 ! cell viability assay
+
+[Term]
+id: OBI:0003758
+name: cell death assay using caspase abundance to detect apoptosis
+def: "A cell death assay that uses fluorescence imaging-based detection of caspases involved in apoptosis" []
+is_a: OBI:0003759 ! cell death assay
+
+[Term]
+id: OBI:0003759
+name: cell death assay
+def: "A cell viability assay which measures the number or proportion of dead cells in a population." []
+is_a: OBI:0003583 ! cell viability assay
+
+[Term]
+id: OBI:0003760
+name: cell viability assay based on detection of resorufin using fluorescence to qualtify the presence of resorufin.
+def: "A cell viability assay based on detection of resorufin that uses fluorescence to quantify resorufin" []
+synonym: "CellTiter Blue viability assay" EXACT []
+is_a: OBI:0003757 ! cell viability assay based on detection of resorufin
+
+[Term]
+id: OBI:0003761
+name: cell death assay detecting lactate dehydrogenase (LDH) release
+def: "A cell death assay that measures the release of intracellular LDH." []
+is_a: OBI:0003759 ! cell death assay
+
+[Term]
+id: OBI:0003762
+name: cell death assay detecting lactate dehydrogenase (LDH) release using absorbance detection.
+def: "A cell death assay detecting lactate dehydrogenase (LDH) release by absorbance of substrate" []
+synonym: "Cytotox 96 assay" EXACT []
+is_a: OBI:0003761 ! cell death assay detecting lactate dehydrogenase (LDH) release
+
+[Term]
+id: OBI:0003763
+name: ovulation assessment in rodent assay
+def: "A histological assay that measures the number of corpora lutea (UBERON:0002512) in the ovary of an organism; corpora lutea develop from the postovulatory follicle." []
+synonym: "Corpus luteum count" EXACT []
+is_a: OBI:0600020 ! histological assay
+
+[Term]
+id: OBI:0003764
+name: macroscopic examination of material anatomical entity assay
+def: "An assay that performs a macroscopic assessment of a material anatomical entity using the sense of sight." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003765
+name: pathological macroscopic examination of specimen assay
+def: "A macroscopic examination of material anatomical entity assay performed on a post-mortem anatomical specimen." []
+synonym: "Gross pathology assessment" EXACT []
+is_a: OBI:0003764 ! macroscopic examination of material anatomical entity assay
+
+[Term]
+id: OBI:0003766
+name: estrous cycle assay based on tissue morphology
+def: "A histological assay that evaluates cells in the vaginal endometrium to assess the estrous cycle phase the subject was in at the time of specimen collection." []
+is_a: OBI:0600020 ! histological assay
+
+[Term]
+id: OBI:0003767
+name: organism development assay in late embryo
+def: "An organism development assay performed with a late embryo stage subject." []
+synonym: "fetal examination" EXACT []
+is_a: OBI:0003713 ! organism development assay
+
+[Term]
+id: OBI:0003768
+name: pregnancy assessment based on tissue morphology assay
+def: "A histological assay that measures the number of implantation sites in an organism." []
+synonym: "implantation site count" EXACT []
+is_a: OBI:0600020 ! histological assay
+
+[Term]
+id: OBI:0003769
+name: cell death assay using  vital dye
+def: "A cell death assay that uses the Trypan blue vital dye to stain cells which have lost membrane integrity." []
+is_a: OBI:0003759 ! cell death assay
+
+[Term]
+id: OBI:0003770
+name: neurite length assay
+def: "A cytometry assay that uses a distance measurement assay to determine the length of a neurite." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003771
+name: neurite degree of arborization assay
+def: "A cytometry assay that measures the degree of arborization, or branching, in neuronal processes" []
+synonym: "neurite branch point count" EXACT []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003772
+name: neurite count assay
+def: "A cytometry assay that measures the number of neurites in a cultured specimen." []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003773
+name: neuron count assay
+def: "A cytometry assay that measures the number of neurons in a sample" []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003774
+name: cell-body-associated presynaptic puncta count assay
+def: "A regulation of synapse maturation assay that determines the number of  synaptic puncta in the cell body compartment of a neuron." []
+is_a: OBI:0003753 ! regulation of synapse maturation assay
+
+[Term]
+id: OBI:0003775
+name: dendrite-associated presynaptic puncta count assay
+def: "A regulation of synapse maturation assay that determines the number of synaptic puncta in the dendritic compartment of a neuron." []
+is_a: OBI:0003753 ! regulation of synapse maturation assay
+
+[Term]
+id: OBI:0003776
+name: synapse per neuron assay
+def: "A regulation of synapse maturation assay that determines the number of synaptic puncta in a culture and normalizes it by the number of neurons in the culture." []
+is_a: OBI:0003753 ! regulation of synapse maturation assay
+
+[Term]
+id: OBI:0003777
+name: absorbance quality detection assay
+def: "An assay that measures the absorbance quality of the evaluant" []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003778
+name: hormone assay
+def: "The analyte assay that measures the abundance of a hormone in a specimen." []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003806
+name: electrocardiograph
+def: "An instrument for recording the changes of electrical potential occurring during the heartbeat used especially in diagnosing abnormalities of heart action." []
+is_a: OBI:0000832 ! measurement device
+
+[Term]
+id: OBI:0003807
+name: biotelemeter
+def: "A measurement device that also transmits the measurement information from a biological material to a distant station." []
+is_a: OBI:0000832 ! measurement device
+
+[Term]
+id: OBI:0003808
+name: multi-electrode array plate
+def: "A measurement device consisting of grid of tightly spaced microscopic electrodes that can detect the electrical signals of cells in close proximity." []
+is_a: OBI:0000832 ! measurement device
+
+[Term]
+id: OBI:0003809
+name: Transepithelial Electrical Resistance (TEER) device
+def: "A measurement device that measures monolayer barrier integrity via measurement of membrane potential and electrical resistance across a cell monolayer in culture." []
+is_a: OBI:0000832 ! measurement device
+
+[Term]
 id: OBI:0004001
 name: randomized clinical trial
 def: "A clinical trial in which the participants are divided by chance into separate groups that compare different treatments or other interventions. Using chance to divide people into groups means that the groups will be similar and that the effects of the treatments they receive can be compared more fairly. At the time of the trial, it is not known which treatment is best." []
@@ -24279,13 +24649,13 @@ is_a: BFO:0000034 ! function
 id: OBI:0100010
 name: Epstein Barr virus transformed B cell
 def: "A material entity which results from viral transformation process using EBV as transformation agent when applied to B-cell entity" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0100014
 name: chimera
 def: "An organism which contains cells or tissues with a different genotype" []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: OBI:0100015
@@ -24300,7 +24670,6 @@ name: blood plasma specimen
 def: "a material entity which corresponds to the liquid component of blood, in which the blood cells are suspended." []
 synonym: "plasma" EXACT []
 is_a: OBI:0000655 ! blood specimen
-is_a: OBI:0000953 ! processed specimen
 
 [Term]
 id: OBI:0100017
@@ -24310,9 +24679,11 @@ is_a: OBI:0100016 ! blood plasma specimen
 
 [Term]
 id: OBI:0100026
-name: organism
+name: obsolete organism
 def: "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs." []
-is_a: BFO:0000040 ! material entity
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0000022
 
 [Term]
 id: OBI:0100035
@@ -24363,7 +24734,7 @@ id: OBI:0100058
 name: xenograft
 def: "A material entity which results from the transplantation of living cells, tissues or organs  from on organism of one species to an organism of another species." []
 synonym: "xenotransplant" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0100060
@@ -24371,7 +24742,7 @@ name: cultured cell population
 def: "A processed material comprised of a collection of cultured cells that has been continuously maintained together in culture and shares a common propagation history." []
 comment: The extent of a 'cultured cell population' is restricted only in that all cell members must share a propagation history (ie be derived through a common lineage of passages from an initial culture). In being defined in this way, this class can be used to refer to the populations that researchers actually use in the practice of science - ie are the inputs to culturing, experimentation, and sharing. The cells in such populations will be a relatively uniform population as they have experienced similar selective pressures due to their continuous co-propagation. And this population will also have a single passage number, again owing to their common passaging history. Cultured cell populations represent only a collection of cells (ie do not include media, culture dishes, etc), and include populations of cultured unicellular organisms or cultured multicellular organism cells. They can exist under active culture, stored in a quiescent state for future use, or applied experimentally.
 synonym: "cell culture sample" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0100061
@@ -24401,20 +24772,19 @@ is_a: OBI:0100060 ! cultured cell population
 id: OBI:0100064
 name: screening library
 def: "a screening library is a collection of materials engineered to identify qualities of a subset of its members during a screening process?" []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0100065
 name: synthetic peptide
 def: "a synthetic peptide is an material entity which is artificially engineered and results from the synthesis of a chain of amino acids which may also be found in natural protein and be identical in sequence to a protein fragment" []
 is_a: CHEBI:16670 ! peptide
-is_a: OBI:0000047 ! processed material
 
 [Term]
 id: OBI:0100066
 name: organ section
 def: "A processed material which derives from an organ and results from a process of dissection or histological sample preparation a portion(formerly an organ section is portion of an organ removed from the context of the organ)" []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0100067
@@ -24440,10 +24810,10 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: OBI:0200000
 name: data transformation
-def: "A planned process that produces output data from input data." []
+def: "A completely executed planned process that produces output data from input data." []
 synonym: "data analysis" EXACT []
 synonym: "data processing" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 disjoint_from: OBI:0600013 ! information acquisition
 
 [Term]
@@ -25062,7 +25432,7 @@ name: data visualization
 def: "A planned process with the objective to graphically represent some data by inputing the data and outputting images, diagrams or animations." []
 synonym: "data encoding as image" EXACT []
 synonym: "visualization" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0200113
@@ -25633,7 +26003,7 @@ is_obsolete: true
 id: OBI:0302716
 name: pool of specimens
 def: "A pool of specimens is a mixture of a population of samples which have been gathered from one or more sample populations, obtained by the physical process of mixing individual specimens, e.g.  mixing the DNA collected from the individual fish." []
-is_a: OBI:0000953 ! processed specimen
+is_a: OBI:0100051 ! specimen
 
 [Term]
 id: OBI:0302729
@@ -25697,13 +26067,12 @@ id: OBI:0302835
 name: denatured polymer
 def: "Is a polymer which has lost secondary or tertiary structure" []
 is_a: CHEBI:33839 ! macromolecule
-is_a: OBI:0000047 ! processed material
 
 [Term]
 id: OBI:0302837
 name: decapitated organism
 def: "decapitated organism is an organism which has had it's head removed" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:0302838
@@ -25728,14 +26097,13 @@ id: OBI:0302847
 name: methylated polymer
 def: "A methylated polymer which has artificially acquired one or more methyl groups" []
 is_a: CHEBI:33839 ! macromolecule
-is_a: OBI:0000047 ! processed material
 
 [Term]
 id: OBI:0302859
 name: genetically modified organism
 def: "an organism that is the output of a genetic transformation process" []
+is_a: COB:0000022 ! organism
 is_a: OBI:0001151 ! genetically modified material
-is_a: OBI:0100026 ! organism
 
 [Term]
 id: OBI:0302867
@@ -25783,25 +26151,25 @@ is_a: OBI:0600014 ! material component separation
 id: OBI:0302887
 name: staining
 def: "Staining is a process which results in the addition a class-specific (DNA, proteins, lipids, carbohydrates) dye to a substrate to qualify or quantify the presence of a specific compound." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302888
 name: washing
 def: "washing is a process by which a material entity acting as  contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302889
 name: planned irradiation
 def: "A planned process by which a material entity is exposed to radiative energy, which could be ionizing radiation (such as gamma rays, X-rays, charged particles or neutrons) or non-ionizing radiation (such as UV light or microwaves)" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302890
 name: polymerization
 def: "polymerization is process by which molecular entity of small mass are aggregated in motifs over the course of a chemical reaction catalyzed by enzymes or other molecular entities acting as catalyst. polymerization results in molecular entity of high molecular weight" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302891
@@ -25813,7 +26181,7 @@ is_a: OBI:0600056 ! protease cleavage
 id: OBI:0302892
 name: enzymatic ligation
 def: "An enzymatic ligation is a planned process in which molecules  are joined by covalent bonds through the action of an material entity with a ligase activity" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0302893
@@ -25875,20 +26243,20 @@ is_obsolete: true
 id: OBI:0302902
 name: immobilization
 def: "immbolization is a process by which material entity become (possibly covalently but not necessarily) attached to the surface of another material entity used a substratum." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302903
 name: nucleic acid hybridization
 def: "a planned process by which totally or partially complementary, single-stranded nucleic acids are  combined into a single molecule called heteroduplex or homoduplex to an extent depending on the amount of complementarity." []
 synonym: "hybridization assay" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0302905
 name: elution
 def: "the process of extracting one material from another by washing with a solvent to remove adsorbed material from an adsorbent (as in washing of loaded ion-exchange resins to remove captured ions)" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302906
@@ -25900,19 +26268,19 @@ is_a: OBI:0600014 ! material component separation
 id: OBI:0302908
 name: document editing
 def: "is a planned process with specified input original document and specified output edited document" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302910
 name: prediction
 def: "a process by which an  event or an entity is described before it actually happens or is being discovered and identified." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302911
 name: validation
 def: "a planned process with objective to check that the accuracy or the quality of a claim or prediction  satisfies some criteria and which is assessed by comparing with independent results" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0302912
@@ -25945,7 +26313,7 @@ name: analog-to-digital converter
 def: "An analog-to-digital_converter is an instrument that converts an infinite resolution analog signal to a finite resolution digital signal." []
 synonym: "A-D" EXACT []
 synonym: "A2D" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400008
@@ -26017,7 +26385,7 @@ is_a: OBI:0400008 ! flow cytometer analyzer
 id: OBI:0400019
 name: charge plate
 def: "Part of the fluidics subsystem. Charge plates are used or sorters. They create an charged electric field when particles deemed to be desired for further analysis are shaken form the piexo electric crystal. The charged particles are drawn toward the charged plate, and the altered drop location causes the particles to fall into a collection tube. Charge plates enable sorting." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400020
@@ -26352,13 +26720,13 @@ is_a: OBI:0000932 ! material separation device
 id: OBI:0400080
 name: optical subsystem
 def: "A device or part of a device that deals with the behavior and properties of light and the interaction of light with matter. Commonly optical subsystems consist of an excitation optics and collection optics. The excitation optics of a flow cytometer optical subsystem consist of the laser and lenses that are used to shape and focus the laser beam. The collections optics consist of a collection lens to collect light emitted from the particle laser beam interaction and a system of optical mirrors and filters to route specified wavelengths of the collected light to designated optical detectors. The optical subsystem in a flow cytometer consists of the equipment used to irradiate particles, and collect the light either emitted or scattered by those particles." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400081
 name: particle delivery vessel
 def: "Part of the fluidics subsystem. A particle delivery vessel is used to introduce either a single sample or multiple samples to a flow cytometer. The most common particle delivery vessel is a sample tube." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0400082
@@ -26383,13 +26751,13 @@ is_a: OBI:0000967 ! container
 id: OBI:0400085
 name: piezo electric crystal
 def: "Apparatus in the fluidic subsystem of sorters that vibrates to break up the stream coming out of the flow chamber into droplets for sorting. The peizo electric crystal vibrates in a manner that breaks off droplets at regular intervals. Not all droplets contain a cell." []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:0400086
 name: plate loader
 def: "Part of the fluidics system. A plate loader positions the wells of a multi-well plate under the aspiration tube is a preset order. A plate loader is used for high throughput applications." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400087
@@ -26462,7 +26830,7 @@ is_a: OBI:0000967 ! container
 id: OBI:0400101
 name: voltage amplifier
 def: "A voltage amplifier is a device that amplifies the voltage signal." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400102
@@ -26486,7 +26854,7 @@ is_a: OBI:0000398 ! image creation device
 id: OBI:0400105
 name: arrayer
 def: "A device which deposits biological material onto a substrate in a defined pattern." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400106
@@ -26499,7 +26867,7 @@ is_a: OBI:0000932 ! material separation device
 id: OBI:0400107
 name: computer
 def: "A computer is an instrument which manipulates (stores, retrieves, and processes) data according to a list of instructions." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400108
@@ -26530,7 +26898,7 @@ id: OBI:0400112
 name: liquid handler
 def: "A device that is used for automated liquid transfer and handling." []
 synonym: "liquid_handling_instrument" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400113
@@ -26621,7 +26989,7 @@ synonym: "electrical power supply" EXACT []
 synonym: "power pack" EXACT []
 synonym: "power supply unit" EXACT []
 synonym: "PSU" EXACT []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400143
@@ -26678,7 +27046,7 @@ is_a: OBI:0400120 ! temperature control bath
 id: OBI:0400158
 name: digital-to-analog converter
 def: "A digital-to-analog_converter is an instrument that converts a finite resolution digital signal into an infinite resolution analog signal." []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400168
@@ -26696,7 +27064,7 @@ is_a: OBI:0000398 ! image creation device
 id: OBI:0400170
 name: microscope slide
 def: "A microscope slide is a device usually made of glass which is used as a solid matrix for (biological) material deposited on its surface and which is compatible for use with a microscope instrument" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
 
 [Term]
 id: OBI:0400171
@@ -26919,7 +27287,7 @@ synonym: "death status type" EXACT []
 synonym: "euthanisia" EXACT []
 synonym: "life termination" EXACT []
 synonym: "sacrifice" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600007
@@ -26937,7 +27305,7 @@ is_a: OBI:0001928 ! selection
 id: OBI:0600009
 name: exposure of material to environment
 def: "a planned process in which an input material is exposed to a defined set of conditions in a controlled environment. The environment is a specified input." []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600010
@@ -26969,7 +27337,7 @@ is_a: OBI:0600008 ! acquisition
 id: OBI:0600014
 name: material component separation
 def: "a material processing in which components of an input material become segregated in space" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0600015
@@ -26977,7 +27345,7 @@ name: group assignment
 def: "group assignment is a process which has an organism as specified input and during which a role is assigned" []
 synonym: "cohort assignment" EXACT []
 synonym: "study assignment" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600016
@@ -27018,7 +27386,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0600021
 name: cell fixation
 def: "a protocol application to preserve defined  qualities of cells or tissues (sample) which may otherwise change over time" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600022
@@ -27055,13 +27423,13 @@ is_a: OBI:0000070 ! assay
 id: OBI:0600027
 name: artificially induced cell membrane lysis
 def: "a material transformation to break the membranes of cells, releasing the cells contents; input=>cells; output=>cell_lysate" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600028
 name: artificially induced reverse transcription
 def: "a protocol with the objective to transcribe single-stranded RNA into complementary DNA (cDNA)" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600029
@@ -27073,7 +27441,7 @@ is_a: OBI:0600014 ! material component separation
 id: OBI:0600030
 name: experimental disease induction
 def: "a protocol application to induce a specific disease in an organism" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600031
@@ -27087,13 +27455,13 @@ is_a: OBI:0003587 ! cell culture assay
 id: OBI:0600032
 name: artificially induced DNA repair
 def: "a protocol application to repair damaged DNA molecules" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600033
 name: cell permeabilization
 def: "A protocol application to permeabilize cell membranes, allowing molecules to more easily pass through the membrane than was possible prior to the protocol application" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600034
@@ -27106,7 +27474,7 @@ id: OBI:0600036
 name: establishing cell culture
 def: "a process through which a new type of cell culture or cell line is created, either through the isolation and culture of one or more cells from a fresh source, or the deliberate experimental modification of an existing cell culture (e.g passaging a primary culture to become a secondary culture or line, or the immortalization or stable genetic modification of an existing culture or line)." []
 comment: A 'cell culture' as used here referes to a new lineage of cells in culture deriving from a single biological source.. New cultures are established through the initial isolation and culturing of cells from an organismal source, or through changes in an existing cell culture or line that result in a new culture with unique characteristics.  This can occur through the passaging/selection of a primary culture into a secondary culture or line, or experimental modifications of an existing cell culture or line such as an immortalization process or other stable genetic modification. This class covers establishment of cultures of either multicellular organism cells or unicellular organisms.
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000110 ! material processing
 
 [Term]
 id: OBI:0600037
@@ -27121,20 +27489,20 @@ id: OBI:0600038
 name: addition of molecular label
 def: "a material processing technique intended to add a molecular label to some input material entity, to allow detection of the molecular target of this label in a detection of molecular label assay" []
 synonym: "labeling" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600039
 name: artificially induced methylation
 def: "A planned process of adding methyl groups to polymers" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600040
 name: synthesis
 def: "the construction of a biomaterial from simpler biomaterials" []
 synonym: "synthesize" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600041
@@ -27153,7 +27521,7 @@ id: OBI:0600043
 name: genetic transformation
 def: "the introduction. alteration or integration of genetic material into a cell or organism" []
 synonym: "genetic modification" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600044
@@ -27220,7 +27588,7 @@ is_a: OBI:0600014 ! material component separation
 id: OBI:0600054
 name: selection by survival
 def: "the use of environmental conditions to select for the organism or cells that have a certain trait" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600055
@@ -27245,7 +27613,7 @@ is_a: OBI:0600058 ! enzymatic amplification
 id: OBI:0600058
 name: enzymatic amplification
 def: "the use of enzymes to increase the number of molecules of a biomaterial" []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600059
@@ -27270,7 +27638,7 @@ id: OBI:0600064
 name: recombinant vector cloning
 def: "a planned process with the objective to insert genetic material into a cloning vector for future replication of the inserted material" []
 synonym: "molecular cloning" EXACT []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:0600065
@@ -27301,13 +27669,13 @@ is_a: OBI:0302884 ! extraction
 id: OBI:1000023
 name: cell culture supernatant
 def: "Supernatant of a cell culture is a material entity which contains media, supplements, and secreted products of the cells and becomes the environment of cultivated cell." []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:1000024
 name: cell pellet
 def: "A material entity which results from the aggregation of cells produced by the application of centrifugal force to a liquid containing cells in suspension" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:1000029
@@ -27322,13 +27690,13 @@ name: cell lysate
 def: "a cell lysate is a material entity which is output of a cell lysis process" []
 synonym: "lysate" EXACT []
 synonym: "lysed material" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:1000042
 name: peptide construct
 def: "a material entity synthesized to contain a number of peptides conjugated together in a non-linear fashion" []
-is_a: OBI:0000047 ! processed material
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: OBI:1000048
@@ -27342,14 +27710,13 @@ name: whole mount tissue
 def: "A whole organism preparation resulting from a histological preparation known as whole mount preparation where the whole specimen is mounted or spread on the microscope (glass) slide" []
 synonym: "whole mount sample" EXACT []
 is_a: OBI:0000680 ! whole organism preparation
-is_a: OBI:0000953 ! processed specimen
 
 [Term]
 id: OBI:1000207
 name: assay bead
 def: "A globular or round particle of defined physicochemical properties and size which can be exploited as either the primary substance for detection or as a secondary solid platform for the attachment of bioactive molecules." []
 synonym: "bead" EXACT []
-is_a: OBI:0000047 ! processed material
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: OBI:1110001
@@ -27449,7 +27816,7 @@ is_a: OBI:1110111 ! environmental proximity to infectious agent
 id: OBI:1110020
 name: Immunization in vitro
 def: "A planned process with the objective to administer an object playing the role of immunogen to a cell culture." []
-is_a: OBI:0000094 ! material processing
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OBI:1110021
@@ -27479,7 +27846,7 @@ is_a: GO:0008150 ! biological_process
 id: OBI:1110026
 name: host of immune response
 def: "An organism in which an immune response process occurs." []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: OBI:1110028
@@ -27564,7 +27931,6 @@ is_a: OGMS:0000031 ! disease
 id: OBI:1110041
 name: lymph node cell specimen
 def: "A cell specimen comprised of a mixed population of cells obtained by processing whole lymph node into individual cells, typically performed using a sieve. This population includes T cells, B cells, macrophages, and other cell types." []
-is_a: OBI:0000953 ! processed specimen
 is_a: OBI:0001468 ! cell specimen
 
 [Term]
@@ -27803,7 +28169,6 @@ is_a: OBI:1110111 ! environmental proximity to infectious agent
 id: OBI:1110116
 name: splenocyte specimen
 def: "A cell specimen comprised of a mixed cell population obtained by processing whole spleen into individual cells, typically performed using a sieve or blender. This population includes T cells, B cells, macrophages, and other cell types." []
-is_a: OBI:0000953 ! processed specimen
 is_a: OBI:0001468 ! cell specimen
 
 [Term]
@@ -28485,7 +28850,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:2100024
 name: calcium cation assay
 def: "An analyte assay that measures the abundance of calcium cation" []
-is_a: OBI:0003012 ! ionized calcium assay
+is_a: OBI:0000443 ! analyte assay
 
 [Term]
 id: OBI:2100025
@@ -31093,12 +31458,6 @@ def: "A series of statements representing health-relevant qualities of a patient
 is_a: IAO:0000030 ! information content entity
 
 [Term]
-id: OGMS:0000023
-name: phenotype
-def: "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species." []
-is_a: BFO:0000019 ! quality
-
-[Term]
 id: OGMS:0000031
 name: disease
 def: "A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism." []
@@ -31120,7 +31479,7 @@ is_a: IAO:0000027 ! data item
 id: OGMS:0000090
 name: treatment
 def: "A planned process whose completion is hypothesized by a health care provider to eliminate, prevent, or alleviate a disorder, the signs and symptoms of a disorder, or a pathological process" []
-is_a: OBI:0000011 ! planned process
+is_a: COB:0000035 ! completely executed planned process
 
 [Term]
 id: OGMS:0000123
@@ -31162,7 +31521,7 @@ is_a: OBI:0000245 ! organization
 id: OPL:0000232
 name: parasite organism
 def: "An organism living in, with, or on another organism in parasitism. Individual members of parasite species, such as Leishmania, Plasmodium, Trypanosoma, etc. are members of this class." []
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 
 [Term]
 id: OPL:0000267
@@ -31178,7 +31537,7 @@ name: Obsolete Class
 id: PATO:0000001
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
-is_a: BFO:0000020 ! specifically dependent continuant
+is_a: COB:0000502 ! characteristic
 
 [Term]
 id: PATO:0000011
@@ -31346,7 +31705,19 @@ is_a: PATO:0000140 ! position
 id: PATO:0001241
 name: physical object quality
 def: "A quality which inheres in a continuant." []
-is_a: BFO:0000019 ! quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001292
+name: full-spectrum EM radiation quality
+def: "An EM radiation quality that is independent of the EM wavelength range." []
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
+
+[Term]
+id: PATO:0001293
+name: absorption quality
+def: "A scalar EM radiation quality which obtains by the capacity of the bearer to retain radiation." []
+is_a: PATO:0001292 ! full-spectrum EM radiation quality
 
 [Term]
 id: PATO:0001296
@@ -31602,6 +31973,12 @@ def: "A concentration quality inhering in a bearer by virtue of the bearer's amo
 is_a: PATO:0000033 ! concentration of
 
 [Term]
+id: PATO:0002193
+name: electric charge
+def: "A molecular quality that inheres in a molecular entity by virtue of the overall electric charge of the molecule, which is due to a comparison between the total number of electrons and the total number of protons." []
+is_a: COB:0000502 ! characteristic
+
+[Term]
 id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
@@ -31656,10 +32033,22 @@ def: "A quality of an entity that can be represented numerically, including anyt
 is_a: PATO:0000001 ! quality
 
 [Term]
+id: PCO:0000000
+name: collection of organisms
+def: "A material entity that consists of two or more organisms, viruses, or viroids." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: PO:0025131
+name: plant anatomical entity
+def: "An anatomical entity that is or was part of a plant." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: PR:000000001
 name: protein
-def: "An amino acid chain that is canonically produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof." []
 is_a: CHEBI:16670 ! peptide
+is_a: PR:000018263 ! amino acid chain
 
 [Term]
 id: PR:000001004
@@ -31780,6 +32169,12 @@ id: PR:000016801
 name: transthyretin
 def: "A protein that is a translation product of the human TTR gene or a 1:1 ortholog thereof." []
 is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000018263
+name: amino acid chain
+def: "An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: PR:000023089
@@ -31906,7 +32301,7 @@ name: region
 def: "A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids." []
 synonym: "primary structure of sequence macromolecule" EXACT []
 synonym: "sequence" EXACT []
-is_a: BFO:0000031 ! generically dependent continuant
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: SO:0000104
@@ -32048,6 +32443,12 @@ def: "A substance produced by the cervix and endocervical glands[BTO]. Thick aci
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
+id: UBERON:0000323
+name: late embryo
+def: "An embryo that is at the late embryonic stage; this stage covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0000341
 name: throat
 def: "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]." []
@@ -32070,6 +32471,14 @@ id: UBERON:0000465
 name: material anatomical entity
 def: "Anatomical entity that has mass." []
 is_a: BFO:0000040 ! material entity
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000466
+name: immaterial anatomical entity
+def: "Anatomical entity that has no mass." []
+is_a: BFO:0000141 ! immaterial entity
+is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
 id: UBERON:0000473
@@ -32190,6 +32599,11 @@ id: UBERON:0001052
 name: rectum
 def: "The terminal portion of the intestinal tube, terminating with the anus." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
 
 [Term]
 id: UBERON:0001087
@@ -32576,6 +32990,12 @@ def: "A mucosa that is part of a esophagus [Automatically generated definition].
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0002512
+name: corpus luteum
+def: "A transient endocrine gland that develops from the postovulatory or atretic follicles and secretes progesterone; it is thought to be related to egg retention[PMID]." []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
 id: UBERON:0002812
 name: left cerebral hemisphere
 def: "A cerebral hemisphere that is in the left side of a brain." []
@@ -32798,6 +33218,12 @@ name: rate unit
 is_a: IAO:0000003 ! measurement unit label
 
 [Term]
+id: UPHENO:0001001
+name: phenotype
+def: "A phenotypic effect related to http://www.w3.org/2002/07/owl#Thing." []
+is_a: PATO:0000001 ! quality
+
+[Term]
 id: VO:0000001
 name: vaccine
 def: "Material entity that is manufactured to realize the vaccine function." []
@@ -32813,71 +33239,51 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: BFO:0000050
 name: part of
 def: "a core relation that holds between a part and its whole" []
-synonym: "part_of" EXACT []
-is_transitive: true
-inverse_of: BFO:0000051 ! has part
 
 [Typedef]
 id: BFO:0000051
 name: has part
 def: "a core relation that holds between a whole and its part" []
-synonym: "has_part" EXACT []
 is_transitive: true
 
 [Typedef]
 id: BFO:0000054
 name: realized in
-comment: Paraphrase of elucidation: a relation between a realizable entity and a process, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
-synonym: "is realized by" EXACT []
-synonym: "realized_in" EXACT []
-domain: BFO:0000017 ! realizable entity
-range: BFO:0000015 ! process
-inverse_of: BFO:0000055 ! realizes
 
 [Typedef]
 id: BFO:0000055
 name: realizes
-comment: Paraphrase of elucidation: a relation between a process and a realizable entity, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
+def: "Paraphrase of elucidation: a relation between a process and a realizable entity, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process" []
 domain: BFO:0000015 ! process
 range: BFO:0000017 ! realizable entity
 
 [Typedef]
 id: BFO:0000062
 name: preceded by
-synonym: "is preceded by" EXACT []
-synonym: "preceded_by" EXACT []
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
+def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 is_transitive: true
-inverse_of: BFO:0000063 ! precedes
 
 [Typedef]
 id: BFO:0000063
 name: precedes
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 is_transitive: true
-is_a: RO:0002222 ! temporal relation
 
 [Typedef]
-id: BFO:0000066
-name: occurs in
-def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
-comment: Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant
-synonym: "occurs_in" EXACT []
-synonym: "unfolds in" EXACT []
-synonym: "unfolds_in" EXACT []
-domain: BFO:0000003 ! occurrent
-range: BFO:0000004 ! independent continuant
-holds_over_chain: BFO:0000050 BFO:0000066
-inverse_of: BFO:0000067 ! contains process
-transitive_over: BFO:0000050 ! part of
+id: COB:0000016
+name: executed by
 
 [Typedef]
-id: BFO:0000067
-name: contains process
-def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
-comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
+id: COB:0000081
+name: intended to realize
+
+[Typedef]
+id: COB:0000084
+name: has plan
+
+[Typedef]
+id: COB:0000085
+name: intended plan process type
 
 [Typedef]
 id: IAO:0000039
@@ -32889,6 +33295,7 @@ is_a: BFO:0000051 ! has part
 id: IAO:0000136
 name: is about
 def: "A (currently) primitive relation that relates an information artifact to an entity." []
+domain: IAO:0000030 ! information content entity
 
 [Typedef]
 id: IAO:0000219
@@ -32937,7 +33344,7 @@ range: IAO:0000027 ! data item
 id: OBI:0000293
 name: has specified input
 def: "The inverse property of is specified input of" []
-domain: OBI:0000011 ! planned process
+domain: COB:0000035 ! completely executed planned process
 is_a: RO:0000057 ! has participant
 inverse_of: OBI:0000295 ! is specified input of
 
@@ -32951,8 +33358,8 @@ is_obsolete: true
 [Typedef]
 id: OBI:0000295
 name: is specified input of
-def: "A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of." []
-range: OBI:0000011 ! planned process
+def: "A relation between a completely executed planned process and a continuant participating in that process that is not created during the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of." []
+range: COB:0000035 ! completely executed planned process
 is_a: RO:0000056 ! participates in
 
 [Typedef]
@@ -32973,7 +33380,7 @@ is_obsolete: true
 id: OBI:0000299
 name: has specified output
 def: "The inverse property of is specified output of" []
-domain: OBI:0000011 ! planned process
+domain: COB:0000035 ! completely executed planned process
 is_a: RO:0000057 ! has participant
 inverse_of: OBI:0000312 ! is specified output of
 
@@ -33045,8 +33452,8 @@ is_obsolete: true
 [Typedef]
 id: OBI:0000312
 name: is specified output of
-def: "A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of." []
-range: OBI:0000011 ! planned process
+def: "A relation between a completely executed planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of." []
+range: COB:0000035 ! completely executed planned process
 is_a: RO:0000056 ! participates in
 
 [Typedef]
@@ -33086,7 +33493,7 @@ is_obsolete: true
 id: OBI:0000417
 name: achieves_planned_objective
 def: "This relation obtains between a planned process and a objective specification when the criteria specified in the objective specification are met at the end of the planned process." []
-domain: OBI:0000011 ! planned process
+domain: COB:0000035 ! completely executed planned process
 range: IAO:0000005 ! objective specification
 inverse_of: OBI:0000833 ! objective_achieved_by
 
@@ -33134,7 +33541,7 @@ id: OBI:0000833
 name: objective_achieved_by
 def: "This relation obtains between an objective specification and a planned process when the criteria specified in the objective specification are met at the end of the planned process." []
 domain: IAO:0000005 ! objective specification
-range: OBI:0000011 ! planned process
+range: COB:0000035 ! completely executed planned process
 
 [Typedef]
 id: OBI:0000846
@@ -33185,7 +33592,7 @@ id: OBI:0001950
 name: has performer
 def: "A relation between a planned process and a continuant where the continuant can be a person, organization or device (such as a robot controlled by software workflow management system) that performs the planned process." []
 comment: The 'has performer' relation covers the need to report on who performed a planned processed. It has to cover processes done by People or Devices (such as a robot controlled by software  WF management system).
-domain: OBI:0000011 ! planned process
+domain: COB:0000035 ! completely executed planned process
 is_a: RO:0000057 ! has participant
 
 [Typedef]
@@ -33232,249 +33639,147 @@ range: BFO:0000040 ! material entity
 id: RO:0000052
 name: characteristic of
 def: "a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence." []
-comment: Note that this relation was previously called "inheres in", but was changed to be called "characteristic of" because BFO2 uses "inheres in" in a more restricted fashion. This relation differs from BFO2:inheres_in in two respects: (1) it does not impose a range constraint, and thus it allows qualities of processes, as well as of information entities, whereas BFO2 restricts inheres_in to only apply to independent continuants (2) it is declared functional, i.e. something can only be a characteristic of one thing.
-synonym: "inheres_in" EXACT []
-is_functional: true
-inverse_of: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000053
 name: has characteristic
 def: "Inverse of characteristic_of" []
-synonym: "bearer_of" EXACT []
-synonym: "is bearer of" EXACT []
-range: BFO:0000020 ! specifically dependent continuant
-is_inverse_functional: true
 
 [Typedef]
 id: RO:0000056
 name: participates in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
-synonym: "participates_in" EXACT []
-domain: BFO:0000002 ! continuant
-range: BFO:0000003 ! occurrent
-inverse_of: RO:0000057 ! has participant
 
 [Typedef]
 id: RO:0000057
 name: has participant
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
-synonym: "has_participant" EXACT []
-property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:has_participant" xsd:string
-domain: BFO:0000003 ! occurrent
-range: BFO:0000002 ! continuant
 
 [Typedef]
 id: RO:0000058
 name: is concretized as
 def: "A relationship between a generically dependent continuant and a specifically dependent continuant, in which the generically dependent continuant depends on some independent continuant in virtue of the fact that the specifically dependent continuant also depends on that same independent continuant. A generically dependent continuant may be concretized as multiple specifically dependent continuants." []
-domain: BFO:0000031 ! generically dependent continuant
-range: BFO:0000020 ! specifically dependent continuant
-inverse_of: RO:0000059 ! concretizes
 
 [Typedef]
 id: RO:0000059
 name: concretizes
 def: "A relationship between a specifically dependent continuant and a generically dependent continuant, in which the generically dependent continuant depends on some independent continuant in virtue of the fact that the specifically dependent continuant also depends on that same independent continuant. Multiple specifically dependent continuants can concretize the same generically dependent continuant." []
-domain: BFO:0000020 ! specifically dependent continuant
-range: BFO:0000031 ! generically dependent continuant
 
 [Typedef]
 id: RO:0000079
 name: function of
 def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-synonym: "function_of" EXACT []
-synonym: "is function of" EXACT []
-domain: BFO:0000034 ! function
-is_a: RO:0000052 ! characteristic of
-inverse_of: RO:0000085 ! has function
 
 [Typedef]
 id: RO:0000080
 name: quality of
 def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-synonym: "is quality of" EXACT []
-synonym: "quality_of" EXACT []
-is_a: RO:0000052 ! characteristic of
-inverse_of: RO:0000086 ! has quality
 
 [Typedef]
 id: RO:0000081
 name: role of
 def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-synonym: "is role of" EXACT []
-synonym: "role_of" EXACT []
-is_a: RO:0000052 ! characteristic of
-inverse_of: RO:0000087 ! has role
 
 [Typedef]
 id: RO:0000085
 name: has function
 def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
-synonym: "has_function" EXACT []
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000034 ! function
-is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000086
 name: has quality
 def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
-synonym: "has_quality" EXACT []
-range: BFO:0000019 ! quality
-is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000087
 name: has role
 def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
-synonym: "has_role" EXACT []
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000023 ! role
-is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000091
 name: has disposition
 def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000016 ! disposition
-is_a: RO:0000053 ! has characteristic
-inverse_of: RO:0000092 ! disposition of
 
 [Typedef]
 id: RO:0000092
 name: disposition of
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-is_a: RO:0000052 ! characteristic of
+def: "inverse of has disposition" []
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
-synonym: "derives_from" EXACT []
-inverse_of: RO:0001001 ! derives into
-
-[Typedef]
-id: RO:0001001
-name: derives into
-def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
-synonym: "derives_into" EXACT []
 
 [Typedef]
 id: RO:0001015
 name: location of
 def: "a relation between two independent continuants, the location and the target, in which the target is entirely within the location" []
-synonym: "location_of" EXACT []
-is_transitive: true
-inverse_of: RO:0001025 ! located in
 
 [Typedef]
 id: RO:0001025
 name: located in
 def: "a relation between two independent continuants, the target and the location, in which the target is entirely within the location" []
-synonym: "located_in" EXACT []
-property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:located_in" xsd:string
 is_transitive: true
-
-[Typedef]
-id: RO:0002000
-name: 2D boundary of
-def: "a relation between a 2D immaterial entity (the boundary) and a material entity, in which the boundary delimits the material entity" []
-synonym: "2D_boundary_of" EXACT []
-synonym: "boundary of" EXACT []
-synonym: "is 2D boundary of" EXACT []
-synonym: "is boundary of" EXACT []
-inverse_of: RO:0002002 ! has 2D boundary
-
-[Typedef]
-id: RO:0002002
-name: has 2D boundary
-def: "a relation between a material entity and a 2D immaterial entity (the boundary), in which the boundary delimits the material entity" []
-synonym: "has boundary" EXACT []
-synonym: "has_2D_boundary" EXACT []
-domain: BFO:0000040 ! material entity
-range: BFO:0000141 ! immaterial entity
 
 [Typedef]
 id: RO:0002087
 name: immediately preceded by
-comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
-synonym: "starts_at_end_of" EXACT []
-is_a: BFO:0000062 ! preceded by
-inverse_of: RO:0002090 ! immediately precedes
 
 [Typedef]
 id: RO:0002090
 name: immediately precedes
-comment: X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)
-synonym: "ends_at_start_of" EXACT []
-synonym: "meets" EXACT []
-is_a: BFO:0000063 ! precedes
 
 [Typedef]
 id: RO:0002180
 name: has component
 def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
-is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: RO:0002215
 name: capable of
-def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process." []
-synonym: "has function realized in" EXACT []
-domain: BFO:0000004 ! independent continuant
 range: BFO:0000015 ! process
 
 [Typedef]
 id: RO:0002219
 name: surrounded by
-def: "x surrounded_by y if and only if x is adjacent to y and for every region r that is adjacent to x, r overlaps y" []
-is_a: RO:0002220 ! adjacent to
+def: "x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x" []
 
 [Typedef]
 id: RO:0002220
 name: adjacent to
 
 [Typedef]
+id: RO:0002221
+name: surrounds
+def: "inverse of surrounded by" []
+
+[Typedef]
 id: RO:0002222
-name: temporal relation
-comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
-range: BFO:0000003 ! occurrent
+name: temporally related to
 
 [Typedef]
 id: RO:0002223
 name: starts
 def: "inverse of starts with" []
-is_a: BFO:0000050 ! part of
-is_a: RO:0002222 ! temporal relation
 
 [Typedef]
-id: RO:0002350
-name: member of
-def: "is member of is a mereological relation between a item and a collection." []
-synonym: "is member of" EXACT []
-synonym: "member part of" EXACT []
-is_a: BFO:0000050 ! part of
-inverse_of: RO:0002351 ! has member
+id: RO:0002233
+name: has input
+def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
+domain: BFO:0000015 ! process
+
+[Typedef]
+id: RO:0002234
+name: has output
+def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present in the same state at the beginning of p." []
+
+[Typedef]
+id: RO:0002333
+name: enabled by
+def: "inverse of enables" []
 
 [Typedef]
 id: RO:0002351
 name: has member
 def: "has member is a mereological relation between a collection and an item." []
-is_a: BFO:0000051 ! has part
-
-[Typedef]
-id: RO:0004096
-name: DEPRECATED inheres in
-comment: DEPRECATED This relation is similar to but different in important respects to the characteristic-of relation. See comments on that relation for more information.
-is_obsolete: true
-
-[Typedef]
-id: RO:0004097
-name: DEPRECATED bearer of
-is_obsolete: true
 
