@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/import/OPL_imports.owl#"
-     xml:base="http://purl.obolibrary.org/obo/obi/dev/import/OPL_imports.owl"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/obi/dev/import/UPHENO_imports.owl#"
+     xml:base="http://purl.obolibrary.org/obo/obi/dev/import/UPHENO_imports.owl"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/import/OPL_imports.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/dev/import/UPHENO_imports.owl"/>
     
 
 
@@ -35,8 +35,10 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+        <obo:IAO_0000111>definition</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">definition</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
+        <rdfs:label>definition</rdfs:label>
         <rdfs:label xml:lang="en">definition</rdfs:label>
     </owl:AnnotationProperty>
     
@@ -47,6 +49,12 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
         <rdfs:label xml:lang="en">imported from</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     
 
 
@@ -61,38 +69,20 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/COB_0000022 -->
+    <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000022"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001"/>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_5820 -->
+    <!-- http://purl.obolibrary.org/obo/UPHENO_0001001 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_5820"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OPL_0000232 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OPL_0000232">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
-        <obo:IAO_0000111>parasite organism</obo:IAO_0000111>
-        <obo:IAO_0000115>An organism living in, with, or on another organism in parasitism. Individual members of parasite species, such as Leishmania, Plasmodium, Trypanosoma, etc. are members of this class.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/opl.owl"/>
-        <rdfs:label>parasite organism</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OPL_0000267 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OPL_0000267">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_5820"/>
-        <obo:IAO_0000111>Plasmodium gametocyte</obo:IAO_0000111>
-        <obo:IAO_0000115>A Plasmodium that is located either in the bloodstream of the vertebrate host or midgut of mosquito vector during gametocyte stage. Gametocytes are the precursor cells of the macro- or microgametes</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/opl.owl"/>
-        <rdfs:label>Plasmodium gametocyte</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <obo:IAO_0000111>phenotype</obo:IAO_0000111>
+        <obo:IAO_0000115>A phenotypic effect related to http://www.w3.org/2002/07/owl#Thing.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/upheno.owl"/>
+        <rdfs:label>phenotype</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
