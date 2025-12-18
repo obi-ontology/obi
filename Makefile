@@ -236,7 +236,7 @@ views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
 	rm $(basename $@)-temp.obo
 
-views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
+views/obi_core.owl: views/obi-bfo.owl src/ontology/views/core.txt | build/robot.jar
 	$(ROBOT) remove \
 	--input $< \
 	--term obo:OBI_0600036 \
