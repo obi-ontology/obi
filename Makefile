@@ -72,6 +72,7 @@ build/rdftab: | build
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
 	curl -s -F file=@$< -o $@ https://ontofox.hegroup.org/service.php
+	$(ROBOT) export --input $@ --header "ID|LABEL" --export views/imported_terms/$*_terms.tsv
 
 # Remove annotation properties from CLO to avoid weird labels.
 src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
