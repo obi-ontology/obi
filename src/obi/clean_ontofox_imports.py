@@ -1,4 +1,3 @@
-import os
 from xml.sax import make_parser
 from xml.sax.saxutils import XMLFilterBase
 from obi.ontofox import Ontofox, Term
@@ -21,17 +20,14 @@ class UsageFinder(XMLFilterBase):
         super().__init__(parent)
 
     def startElement(self, name, attrs):
-        axioms = ["rdfs:subClassOf", "owl:equivalentClass",
-                  "owl:disjointWith", "rdf:type"]
+        axioms = ["rdfs:subClassOf", "owl:equivalentClass", "owl:disjointWith", "rdf:type"]
         if name in axioms and not self.in_axiom:
             self.in_axiom = True
             self.axiom_type = name
         if self.in_axiom:
-            if "rdf:about" in attrs.keys() and \
-                    attrs["rdf:about"] == self.iri:
+            if "rdf:about" in attrs.keys() and attrs["rdf:about"] == self.iri:
                 raise UsageFound
-            elif "rdf:resource" in attrs.keys() and \
-                    attrs["rdf:resource"] == self.iri:
+            elif "rdf:resource" in attrs.keys() and attrs["rdf:resource"] == self.iri:
                 raise UsageFound
         if self.in_axiom and "rdf:resource" in attrs.keys():
             if attrs["rdf:resource"] == self.iri:
@@ -64,7 +60,7 @@ def check_file(ontology):
     unused = []
     path = Ontofox.find(ontology)
     if not path:
-        raise Exception(f'No OntoFox configuration file for {ontology}')
+        raise Exception(f"No OntoFox configuration file for {ontology}")
     config = Ontofox(path)
     for key in config.terms.keys():
         if not is_used_in(key, "obi.owl"):

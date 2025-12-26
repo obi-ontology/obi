@@ -23,7 +23,6 @@ Other actions can be used to choose a specific ontology file to import from:
 """
 
 
-import argparse
 import os
 import re
 from subprocess import run
@@ -74,7 +73,7 @@ def import_file_check(path):
                 "label": "",
                 "action": "",
                 "logical type": "CLASS_TYPE",
-                "parent class": "C %"
+                "parent class": "C %",
             }
             starter_dict = {
                 "robot": robot_row,
@@ -110,8 +109,7 @@ def convert(string, format):
     """
     Convert OBO IRIs to CURIEs and vice versa
     """
-    iri = re.search(r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)",
-                    string)
+    iri = re.search(r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)", string)
     curie = re.search(r"([a-zA-Z]+):(\d+)", string)
     if not iri and not curie:
         output = None
@@ -153,11 +151,7 @@ def make_curie_dict(curie, source, listmode=False):
     """
     try:
         owl_type, label, parent = get_term_info(curie, source, listmode)
-        term_info = {
-            "curie": curie,
-            "label": label,
-            "owl_type": owl_type
-        }
+        term_info = {"curie": curie, "label": label, "owl_type": owl_type}
         return term_info
     except TypeError:
         return None
@@ -193,13 +187,12 @@ def parse_term_input(string, ontology, source):
             quit()
         term_list = read_to_list(string)
     else:
-        term_list = [string,]
+        term_list = [
+            string,
+        ]
     input_dict = {}
     for term in term_list:
-        iri = re.search(
-            r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)",
-            term
-        )
+        iri = re.search(r"http:\/\/purl\.obolibrary\.org\/obo\/([a-zA-Z]+)_(\d+)", term)
         curie = re.search(r"([a-zA-Z]+):(\d+)", term)
         if iri:
             term_curie = convert(iri.group(0), "curie")
@@ -256,7 +249,9 @@ def lookup_parents(id, mode, source, listmode=False):
         _, _, parent = get_term_info(id, source, listmode)
         if parent != "" and parent != "http://www.w3.org/2002/07/owl#Thing":
             parent_curie = convert(parent, "curie")
-            parent_list = [parent_curie,]
+            parent_list = [
+                parent_curie,
+            ]
         else:
             parent_list = []
         if mode == "soft":
@@ -292,7 +287,7 @@ def do_import(ontology, term_dict, imports, limit=None, parent=None, source=None
                 act_conditions = [
                     limit and imports[term]["action"] != "limit",
                     relate and imports[term]["action"] != "relate",
-                    parent and imports[term]["parent class"] != parent
+                    parent and imports[term]["parent class"] != parent,
                 ]
                 if act_conditions != [False, False, False]:
                     act = True
@@ -308,27 +303,19 @@ def do_import(ontology, term_dict, imports, limit=None, parent=None, source=None
                 "label": label,
                 "action": "import",
                 "logical type": "",
-                "parent class": ""
+                "parent class": "",
             }
             confirmation_text = ""
             if limit:
                 imports[term]["action"] = "limit"
                 confirmation_text = " as a limit"
             if parent:
-                imports, confirmation_text = do_parent(
-                    term_info,
-                    parent,
-                    imports,
-                    source
-                )
+                imports, confirmation_text = do_parent(term_info, parent, imports, source)
             if relate:
                 imports[term]["action"] = "relate"
                 confirmation_text = " as a relation"
             print(f"Added {term} '{label}' to import{confirmation_text}")
-    path = os.path.join("src",
-                        "ontology",
-                        "robot_inputs",
-                        f"{ontology}_input.tsv")
+    path = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
     dict2TSV(imports, path)
 
 
@@ -346,15 +333,11 @@ def do_ignore(ontology, term_dict, imports):
                 "label": label,
                 "action": "ignore",
                 "logical type": "",
-                "parent class": ""
+                "parent class": "",
             }
             print(f"Ignored {term} '{label}'")
-    path = os.path.join("src",
-                        "ontology",
-                        "robot_inputs",
-                        f"{ontology}_input.tsv")
+    path = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
     dict2TSV(imports, path)
-
 
 
 def do_remove(ontology, term_dict, imports):
@@ -378,10 +361,7 @@ def do_remove(ontology, term_dict, imports):
             if act:
                 del imports[term]
                 print(f"Removed {term} '{label}' from this import")
-    path = os.path.join("src",
-                        "ontology",
-                        "robot_inputs",
-                        f"{ontology}_input.tsv")
+    path = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
     dict2TSV(imports, path)
 
 
@@ -407,7 +387,7 @@ def do_parent(term_info, parent, imports, source):
             "label": label,
             "action": "import",
             "logical type": "subclass",
-            "parent class": parent
+            "parent class": parent,
         }
         confirmation_text = f" as a subclass of '{parent}'"
     return imports, confirmation_text
@@ -436,11 +416,11 @@ def split(ontology, imports_dict):
             relation.append(f"{id} # {label}")
         elif row["action"] == "limit":
             limit.append(f"{id} # {label}")
-    for (xlist, xpath) in [
+    for xlist, xpath in [
         (imports, imports_path),
         (ignore, ignore_path),
         (relation, relation_path),
-        (limit, limit_path)
+        (limit, limit_path),
     ]:
         write_to_txt(sorted(xlist), xpath)
     dict2TSV(parent, parent_path)
@@ -481,10 +461,7 @@ def change_source_iri(ontology, iri):
     if iri == "":
         del import_source_dict[ontology]
     else:
-        import_source_dict[ontology] = {
-            "ontology": ontology,
-            "IRI": iri
-        }
+        import_source_dict[ontology] = {"ontology": ontology, "IRI": iri}
     dict2TSV(import_source_dict, import_source_file)
 
 
@@ -501,13 +478,7 @@ def download_source_file(ontology):
         else:
             iri = import_source_dict[ontology]["IRI"]
     file_destination = os.path.join("build", f"{ontology}_import_source.owl")
-    run([
-        "curl",
-        "-sL",
-        iri,
-        "-o",
-        file_destination
-    ])
+    run(["curl", "-sL", iri, "-o", file_destination])
     print(f"Downloaded {ontology} import source file")
 
 
@@ -516,10 +487,7 @@ def check_input_file(ontology):
     Check that labels in input file are up to date & replace as needed
     NOTE: This is still buggy.
     """
-    input_path = os.path.join("src",
-                              "ontology",
-                              "robot_inputs",
-                              f"{ontology}_input.tsv")
+    input_path = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
     input_dict = TSV2dict(input_path)
     source_file = os.path.join("build", f"{ontology}_import_source.owl")
     for id, rowdict in input_dict.items():
@@ -548,10 +516,7 @@ def prepare(ontology, term):
     Return a dict of term info and a dict of the import config file
     """
     import_sources = os.path.join("src", "ontology", "import_sources.tsv")
-    path = os.path.join("src",
-                        "ontology",
-                        "robot_inputs",
-                        f"{ontology}_input.tsv")
+    path = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
     import_file_check(path)
     imports = TSV2dict(path)
     source = os.path.join("build", f"{ontology}_import_source.owl")
@@ -569,10 +534,7 @@ def refresh_module(ontology):
     source = os.path.join("build", f"{ontology}_import_source.owl")
     if not os.path.isfile(source):
         download_source_file(ontology)
-    config_path = os.path.join("src",
-                               "ontology",
-                               "robot_inputs",
-                               f"{ontology}_input.tsv")
+    config_path = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
     imports = TSV2dict(config_path)
     split(ontology, imports)
     prepare_robot_module(ontology)

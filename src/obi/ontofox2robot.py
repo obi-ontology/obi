@@ -14,8 +14,7 @@ def convert(ontology):
         config = Ontofox(path)
         for key, value in config.terms.items():
             curie = contract(key)
-            module = os.path.join("src", "ontology",
-                                  "OntoFox_outputs", f"{ontology}_imports.owl")
+            module = os.path.join("src", "ontology", "OntoFox_outputs", f"{ontology}_imports.owl")
             try:
                 term_type, label, _ = get_term_info(curie, module)
                 if "owl:ObjectProperty" in term_type:
@@ -27,12 +26,11 @@ def convert(ontology):
                     "label": label,
                     "action": action,
                     "logical type": "",
-                    "parent class": ""
+                    "parent class": "",
                 }
             except ValueError:
                 print(f"WARN: {curie} appears in OntoFox config file but not in OntoFox module")
                 print(f"{curie} was not added to ROBOT config file")
-        output = os.path.join("src", "ontology",
-                              "robot_inputs", f"{ontology}_input.tsv")
+        output = os.path.join("src", "ontology", "robot_inputs", f"{ontology}_input.tsv")
         dict2TSV(imports, output)
         print(f"Converted {ontology} to ROBOT")

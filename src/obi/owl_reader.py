@@ -34,8 +34,12 @@ class TermFinder(XMLFilterBase):
 
     def startElement(self, name, attrs):
         self.label_text = ""
-        options = ["owl:Class", "owl:AnnotationProperty",
-                   "owl:ObjectProperty", "owl:NamedIndividual"]
+        options = [
+            "owl:Class",
+            "owl:AnnotationProperty",
+            "owl:ObjectProperty",
+            "owl:NamedIndividual",
+        ]
         parent_options = ["rdfs:subClassOf", "rdfs:subPropertyOf"]
         if name in options:
             if "rdf:about" in attrs.keys():
