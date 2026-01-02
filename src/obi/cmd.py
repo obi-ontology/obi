@@ -44,7 +44,6 @@ def build_robot_module(ontology):
     """
     Generate the OWL file associated with a ROBOT import module
     """
-    ontology = ontology.upper()
     iri = IRI_base + f"{ontology}_imports.owl"
     ignore = os.path.join("build", f"{ontology}_ignore.txt")
     limit = os.path.join("build", f"{ontology}_limit.txt")
@@ -117,7 +116,6 @@ def build_robot_module(ontology):
 
 
 def build_ontofox_module(ontology):
-    ontology = ontology.upper()
     config = os.path.join("src", "ontology", "OntoFox_inputs", f"{ontology}_input.txt")
     build_module = os.path.join("build", f"{ontology}_imports.owl")
     output = os.path.join("src", "ontology", "OntoFox_outputs", f"{ontology}_imports.owl")

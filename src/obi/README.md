@@ -108,11 +108,11 @@ obi import normalize UBERON PATO
 # Sorts and formats the UBERON and PATO config files
 ```
 
-#### Refresh
-`obi import refresh` rebuilds an import module from its config file. It acts on modules listed as arguments, or all modules if no arguments are provided:
+#### Rebuild
+`obi import rebuild` rebuilds an import module from its config file. It acts on modules listed as arguments, or all modules if no arguments are provided:
 
 ```
-obi import refresh GO
+obi import rebuild GO
 # Creates src/ontology/*_outputs/GO_imports.owl based on src/ontology/*_inputs/GO_input.*
 ```
 

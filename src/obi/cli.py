@@ -10,7 +10,7 @@ import obi.util as util
 from obi.ontofox import Ontofox
 from obi.template import Template
 from obi.imports import ignore_term, import_term, remove_term, refresh
-from obi.imp import change_source_iri, download_source_file
+from obi.imp import change_source_iri, download_source_file, list_files
 from obi.clean_ontofox_imports import check_file
 
 
@@ -109,13 +109,26 @@ def convert(ontology_id):
     ontofox2robot.convert(ontology_id)
 
 
-@imports.command("refresh")
-@click.argument("ontology_id", nargs=1)
-def refresh_module(ontology_id):
+@imports.command("rebuild")
+@click.argument("ontology_ids", nargs=-1)
+def rebuild_module(ontology_ids):
     """
     Rebuild the OWL file of a particular ontology import
     """
-    refresh(ontology_id)
+    if len(ontology_ids) < 1:
+        ontofox_paths = Ontofox.list()
+        robot_paths = list_files()
+        module_paths = ontofox_paths + robot_paths
+        ontology_ids = []
+        for path in module_paths:
+            basename = os.path.basename(path)
+            filename, _ = os.path.splitext(basename)
+            module_name = filename.replace("_input", "")
+            ontology_ids.append(module_name)
+    for ontology_id in ontology_ids:
+        if ontology_id.lower() == "uo_instance":
+            continue
+        refresh(ontology_id)
 
 
 @imports.command("normalize")
