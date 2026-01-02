@@ -100,13 +100,22 @@ def imports():
 
 
 @imports.command("convert")
-@click.argument("ontology_id", nargs=1)
-def convert(ontology_id):
+@click.argument("ontology_ids", nargs=-1)
+def convert(ontology_ids):
     """
     Create a ROBOT config file based on an Ontofox config file
     """
-    ontology_id = ontology_id.upper()
-    ontofox2robot.convert(ontology_id)
+    if len(ontology_ids) < 1:
+        ontology_ids = []
+        ontofox_paths = Ontofox.list()
+        for path in ontofox_paths:
+            basename = os.path.basename(path)
+            filename, _ = os.path.splitext(basename)
+            module_name = filename.replace("_input", "")
+            ontology_ids.append(module_name)
+    for ontology_id in ontology_ids:
+        ontology_id = ontology_id.upper()
+        ontofox2robot.convert(ontology_id)
 
 
 @imports.command("rebuild")

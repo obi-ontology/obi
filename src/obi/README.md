@@ -92,7 +92,7 @@ obi import clean UBERON PATO
 
 #### Convert
 
-`obi import convert` creates a ROBOT import config file based on an OntoFox import config file:
+`obi import convert` creates a ROBOT import config file based on an OntoFox import config file. It acts on config files listed as arguments, or all config files if no arguments are provided:
 
 ```
 obi import convert GO
