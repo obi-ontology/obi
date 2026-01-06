@@ -6,8 +6,8 @@ IRI_base = "http://purl.obolibrary.org/obo/obi/dev/import/"
 ROBOT = ["java", "-jar", "build/robot.jar", "--prefix", "REO: http://purl.obolibrary.org/obo/REO_"]
 
 
-def check_relation_length(relation_path):
-    size = os.path.getsize(relation_path)
+def check_file_length(path):
+    size = os.path.getsize(path)
     if size == 0:
         return False
     else:
@@ -107,7 +107,7 @@ def build_robot_module(ontology):
     ]
     mireot_command = ROBOT + mireot_args
     subset_command = ROBOT + subset_args
-    if check_relation_length(relation):
+    if check_file_length(ignore):
         subset_command += remove_args
     subset_command += finalize_args
     run(mireot_command)
