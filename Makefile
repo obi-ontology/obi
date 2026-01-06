@@ -426,6 +426,11 @@ build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/re
 .PHONY: all
 all: test obi.owl views build/terms-report.csv
 
+# Run linting/formatting on src/obi/ scripts
+lint:
+	black --line-length 100 src/obi
+	flake8 --max-line-length 100 --ignore E203,W503 src/obi
+
 # Remove generated files
 .PHONY: clean
 clean:
