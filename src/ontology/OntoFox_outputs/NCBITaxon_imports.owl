@@ -53,6 +53,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/COB_0000022 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000022"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_10090 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090">
@@ -84,7 +90,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <obo:IAO_0000111>Viruses</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Viruses</rdfs:label>
@@ -254,8 +260,9 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <obo:IAO_0000111>Bacteria</obo:IAO_0000111>
+        <obo:IAO_0000118>bacteria</obo:IAO_0000118>
         <obo:IAO_0000118>eubacteria</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Bacteria</rdfs:label>
@@ -266,7 +273,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2157 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <obo:IAO_0000111>Archaea</obo:IAO_0000111>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Archaea</rdfs:label>
@@ -280,6 +287,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
         <obo:IAO_0000111>Riboviria</obo:IAO_0000111>
         <obo:IAO_0000118>RNA viruses</obo:IAO_0000118>
+        <obo:IAO_0000118>RNA viruses and retroviruses</obo:IAO_0000118>
         <obo:IAO_0000118>RNA viruses and viroids</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Riboviria</rdfs:label>
@@ -313,9 +321,8 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <obo:IAO_0000111>Eukaryota</obo:IAO_0000111>
-        <obo:IAO_0000118>eucaryotes</obo:IAO_0000118>
         <obo:IAO_0000118>eukaryotes</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Eukaryota</rdfs:label>
@@ -328,6 +335,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3044472">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
         <obo:IAO_0000111>Orthoherpesviridae</obo:IAO_0000111>
+        <obo:IAO_0000118>Herpesviridae</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Orthoherpesviridae</rdfs:label>
     </owl:Class>
@@ -403,6 +411,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
         <obo:IAO_0000111>Metazoa</obo:IAO_0000111>
+        <obo:IAO_0000118>animals</obo:IAO_0000118>
         <obo:IAO_0000118>metazoans</obo:IAO_0000118>
         <obo:IAO_0000118>multicellular animals</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
@@ -508,7 +517,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_4890">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
         <obo:IAO_0000111>Ascomycota</obo:IAO_0000111>
-        <obo:IAO_0000118>ascomycetes</obo:IAO_0000118>
+        <obo:IAO_0000118>ascomycete fungi</obo:IAO_0000118>
         <obo:IAO_0000118>sac fungi</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Ascomycota</rdfs:label>
@@ -533,6 +542,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_4932">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_716545"/>
         <obo:IAO_0000111>Saccharomyces cerevisiae</obo:IAO_0000111>
+        <obo:IAO_0000118>Saccharomyces boulardii</obo:IAO_0000118>
         <obo:IAO_0000118>Saccharomyces cerevisiae &apos;var. diastaticus&apos;</obo:IAO_0000118>
         <obo:IAO_0000118>baker&apos;s yeast</obo:IAO_0000118>
         <obo:IAO_0000118>brewer&apos;s yeast</obo:IAO_0000118>
@@ -730,15 +740,10 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314146"/>
         <obo:IAO_0000111>Rodentia</obo:IAO_0000111>
         <obo:IAO_0000118>rodent</obo:IAO_0000118>
+        <obo:IAO_0000118>rodents</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Rodentia</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
 </rdf:RDF>
 
 
