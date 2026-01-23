@@ -20,6 +20,7 @@ def prepare_robot_module(ontology):
     """
     ontology = ontology.upper()
     source_path = os.path.join("build", f"{ontology}_import_source.owl")
+    obi_edit = os.path.join("src", "ontology", "obi-edit.owl")
     parent_tsv_path = os.path.join("build", f"{ontology}_parent.tsv")
     parent_owl_path = os.path.join("build", f"{ontology}_parent.owl")
     iri = IRI_base + f"{ontology.upper()}_imports.owl"
@@ -27,6 +28,8 @@ def prepare_robot_module(ontology):
         "merge",
         "--input",
         source_path,
+        "--input",
+        obi_edit,
         "template",
         "--template",
         parent_tsv_path,
