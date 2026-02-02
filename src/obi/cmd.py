@@ -94,6 +94,19 @@ def build_robot_module(ontology):
         "--term-file",
         ignore,
     ]
+    filter_args = [
+        "filter",
+        "--include-term",
+        "rdfs:label",
+        "--include-term",
+        "rdfs:label",
+        "--include-term",
+        "IAO:0000115",
+        "--select",
+        "annotation-properties",
+        "--select",
+        "complement",
+    ]
     finalize_args = [
         "reduce",
         "--reasoner",
@@ -112,6 +125,7 @@ def build_robot_module(ontology):
     subset_command = ROBOT + subset_args
     if check_file_length(ignore):
         subset_command += remove_args
+    subset_command += filter_args
     subset_command += finalize_args
     run(mireot_command)
     run(subset_command)
