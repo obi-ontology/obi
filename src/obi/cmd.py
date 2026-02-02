@@ -99,8 +99,6 @@ def build_robot_module(ontology):
         "--include-term",
         "rdfs:label",
         "--include-term",
-        "oboInOwl:id",
-        "--include-term",
         "rdfs:label",
         "--include-term",
         "IAO:0000115",
