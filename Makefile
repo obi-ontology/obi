@@ -363,6 +363,11 @@ build/modules/merged.owl: src/ontology/obi-edit.owl $(PHONY_MODULES) | build/rob
 	reason --equivalent-classes-allowed none \
 	--output $@
 
+# Run Hermit over the BFO-based OBI artifact
+.PHONY: bfo-reason
+bfo-reason: views/obi-bfo.owl
+	$(ROBOT) reason --input $< --reasoner hermit --equivalent-classes-allowed none
+
 # Run all validation queries and exit on error.
 .PHONY: verify
 verify: verify-modules verify-merged verify-entities
@@ -387,9 +392,8 @@ verify-entities: build/dropped-entities.tsv
 
 # Run a basic reasoner to find inconsistencies
 .PHONY: reason
-reason: build/obi_merged.owl views/obi-bfo.owl | build/robot.jar
+reason: build/obi_merged.owl | build/robot.jar
 	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed none
-	$(ROBOT) reason --input $(word 2,$^) --reasoner hermit --equivalent-classes-allowed none
 
 # Find any IRIs using undefined namespaces
 .PHONY: validate-iris
@@ -424,7 +428,7 @@ build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/re
 #
 # Full build
 .PHONY: all
-all: test obi.owl views build/terms-report.csv
+all: test bfo-reason obi.owl views build/terms-report.csv
 
 # Run linting/formatting on src/obi/ scripts
 lint:
