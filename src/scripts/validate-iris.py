@@ -14,7 +14,7 @@ def main():
     args = p.parse_args()
 
     obi = args.obi
-    namespaces = []
+    namespaces = ["https://orcid.org/"]
 
     next(obi)
     line = next(obi)
