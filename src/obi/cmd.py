@@ -3,7 +3,7 @@ from subprocess import run
 
 
 IRI_base = "http://purl.obolibrary.org/obo/obi/dev/import/"
-ROBOT = ["java", "-jar", "build/robot.jar", "--prefix", "REO: http://purl.obolibrary.org/obo/REO_"]
+ROBOT = ["java", "-Xmx16G", "-jar", "build/robot.jar", "--prefix", "REO: http://purl.obolibrary.org/obo/REO_"]
 
 
 def check_file_length(path):
