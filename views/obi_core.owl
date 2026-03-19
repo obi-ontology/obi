@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/obi/obi_core.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2025-12-18/obi_core.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/obi/2026-03-19/obi_core.owl"/>
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <obo:IAO_0000589 xml:lang="en">Ontology for Biomedical Investigations</obo:IAO_0000589>
         <dc:contributor xml:lang="en">Advisors for this project come from the IFOMIS group, Saarbruecken and from the Co-ODE group in Manchester</dc:contributor>
@@ -80,7 +80,7 @@
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title>Ontology for Biomedical Investigations</terms:title>
         <rdfs:comment>Please cite the OBI consortium http://purl.obolibrary.org/obo/obi where traditional citation is called for. However it is adequate that individual terms be attributed simply by use of the identifying PURL for the term, in projects that refer to them.</rdfs:comment>
-        <owl:versionInfo>2025-12-18</owl:versionInfo>
+        <owl:versionInfo>2026-03-19</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -105,6 +105,7 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111">
+        <obo:IAO_0000111>editor preferred label</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">editor preferred label</obo:IAO_0000111>
         <obo:IAO_0000111>editor preferred term</obo:IAO_0000111>
         <obo:IAO_0000111 xml:lang="en">editor preferred term</obo:IAO_0000111>
@@ -113,6 +114,7 @@
         <obo:IAO_0000115 xml:lang="en">The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
+        <rdfs:label>editor preferred label</rdfs:label>
         <rdfs:label xml:lang="en">editor preferred label</rdfs:label>
         <rdfs:label>editor preferred term</rdfs:label>
         <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
@@ -153,8 +155,11 @@
         <obo:IAO_0000111 xml:lang="en">definition</obo:IAO_0000111>
         <obo:IAO_0000111>textual definition</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>A property representing the English language definitions of what NCI means by the concept. They may also include information about the definition&apos;s source and attribution in a form that can easily be interpreted by software.</obo:IAO_0000115>
+        <obo:IAO_0000115>English language definitions of what NCI means by the concept. These are limited to 1024 characters. They may also include information about the definition&apos;s source and attribution in a form that can easily be interpreted by software.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">The official OBI definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
+        <obo:IAO_0000115>The official definition.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">2012-04-05: 
 Barry Smith
 
@@ -472,6 +477,7 @@ https://sourceforge.net/tracker/?func=detail&amp;aid=3603413&amp;group_id=177891
 A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">part_of</obo:IAO_0000118>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
+        <rdfs:label>part of</rdfs:label>
         <rdfs:label xml:lang="en">part of</rdfs:label>
         <rdfs:seeAlso>http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
     </owl:ObjectProperty>
@@ -1287,18 +1293,16 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/CLO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CLO_0000001">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001866"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111>cell line cell</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A cultured cell that is part of a cell line - a stable and homogeneous population of cells with a common biological origin and propagation history in culture</obo:IAO_0000115>
         <obo:IAO_0000115>A cultured cell that is part of a cell line - a stable and homogeneous population of cells with a common biological origin and propagation history in culture
 </obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
         <rdfs:comment xml:lang="en">&apos;derives from&apos; is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.</rdfs:comment>
         <rdfs:label>cell line cell</rdfs:label>
     </owl:Class>
@@ -1309,12 +1313,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-        <obo:IAO_0000111>cell</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">PMID:18089833.Cancer Res. 2007 Dec 15;67(24):12018-25. &quot;...Epithelial cells were harvested from histologically confirmed adenocarcinomas ..&quot;</obo:IAO_0000112>
         <obo:IAO_0000115>A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">CL and GO definitions of cell differ based on inclusive or exclusive of cell wall, etc.</obo:IAO_0000116>
         <obo:IAO_0000116 xml:lang="en">We struggled with this definition. We are worried about circularity. We also considered requiring the capability of metabolism.</obo:IAO_0000116>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>cell</rdfs:label>
     </owl:Class>
     
@@ -1324,9 +1326,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000010"/>
-        <obo:IAO_0000111>primary cultured cell</obo:IAO_0000111>
         <obo:IAO_0000115>A cultured cell that is freshly isolated from a organismal source, or derives in culture from such a cell prior to the culture being passaged.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>primary cultured cell</rdfs:label>
     </owl:Class>
     
@@ -1336,9 +1336,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000578"/>
-        <obo:IAO_0000111>cultured cell</obo:IAO_0000111>
         <obo:IAO_0000115>A cell in vitro that is or has been maintained or propagated as part of a cell culture.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>cultured cell</rdfs:label>
     </owl:Class>
     
@@ -1354,9 +1352,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/COB_0000110"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000111>experimentally modified cell in vitro</obo:IAO_0000111>
         <obo:IAO_0000115>A cell in vitro that has undergone physical changes as a consequence of a deliberate and specific experimental procedure.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>experimentally modified cell in vitro</rdfs:label>
     </owl:Class>
     
@@ -1990,7 +1986,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <obo:IAO_0000111>Eukaryota</obo:IAO_0000111>
-        <obo:IAO_0000118>eucaryotes</obo:IAO_0000118>
         <obo:IAO_0000118>eukaryotes</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Eukaryota</rdfs:label>
@@ -2049,6 +2044,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
         <obo:IAO_0000111>Metazoa</obo:IAO_0000111>
+        <obo:IAO_0000118>animals</obo:IAO_0000118>
         <obo:IAO_0000118>metazoans</obo:IAO_0000118>
         <obo:IAO_0000118>multicellular animals</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
@@ -3123,28 +3119,6 @@ http://sourceforge.net/p/obi/obi-terms/716/</obo:IAO_0000116>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0001866 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001866">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000010"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>secondary cultured cell</obo:IAO_0000111>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A cultured cell that has been passaged or derives from a cell that has been passaged in culture.</obo:IAO_0000115>
-        <obo:IAO_0000116>The term &apos;secondary cell culture&apos; is generally used in biological texts/protocols to refer to any culture following an initial passage.  We include it here because there are often a number of passages between a primary culture and the establishment of a stable, homogenous cell line.  Such cultures are considered to be &apos;secondary cultures&apos; but not &apos;cell lines&apos; during this intermediate passaging/selection period between their derivation from a &apos;primary cell culture&apos; and derivation into a &apos;cell line&apos;, which is a more specific type of secondary culture.</obo:IAO_0000116>
-        <obo:IAO_0000117>Person: Matthew Brush</obo:IAO_0000117>
-        <obo:IAO_0000119>PERSON: Matthew Brush</obo:IAO_0000119>
-        <rdfs:comment>A secondary cultured cell has been passaged in culture or is a descendant of such a cell that is derived through propagation in culture.</rdfs:comment>
-        <rdfs:label>secondary cultured cell</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/OBI_0001879 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001879">
@@ -3769,9 +3743,7 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-        <obo:IAO_0000111>material anatomical entity</obo:IAO_0000111>
         <obo:IAO_0000115>Anatomical entity that has mass.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>material anatomical entity</rdfs:label>
     </owl:Class>
     
@@ -3791,10 +3763,8 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     <!-- http://purl.obolibrary.org/obo/UBERON_0000477 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000111>anatomical cluster</obo:IAO_0000111>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <obo:IAO_0000115>Anatomical group whose component anatomical structures lie in close proximity to each other.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <rdfs:label>anatomical cluster</rdfs:label>
     </owl:Class>
     

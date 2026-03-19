@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2025-12-18
-date: 18:12:2025 17:24
+data-version: 2026-03-19
+date: 19:03:2026 13:38
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2025-12-18" xsd:string
+property_value: owl:versionInfo "2026-03-19" xsd:string
 
 [Term]
 id: BFO:0000015
@@ -601,6 +601,11 @@ name: Cy5 dye
 is_a: OBI:0002744 ! molecular label
 
 [Term]
+id: CHEBI:38559
+name: cytochrome P450
+is_a: COB:0000013 ! molecule
+
+[Term]
 id: CHEBI:39025
 name: high-density lipoprotein
 def: "A class of lipoproteins of small size (4-13 nm) and dense (greater than 1.063 g/ml) particles. They are synthesized in the liver without a lipid core, accumulate cholesterol esters from peripheral tissues and transport them to the liver for re-utilization or elimination from the body (the reverse cholesterol transport)." []
@@ -691,6 +696,11 @@ is_a: COB:0000013 ! molecule
 id: CHEBI:50076
 name: chromium-51
 def: "A synthetic radioactive isotope of chromium having a half-life of 27.7 days and decaying by electron capture with emission of γ rays (0.32 MeV); it is used to label red blood cells for measurement of mass or volume, survival time, and sequestration studies, for the diagnosis of gastrointestinal bleeding, and to label platelets to study their survival." []
+is_a: COB:0000013 ! molecule
+
+[Term]
+id: CHEBI:51232
+name: 2'-(4-ethoxyphenyl)-5-(4-methylpiperazin-1-yl)-2,5'-bibenzimidazole
 is_a: COB:0000013 ! molecule
 
 [Term]
@@ -876,12 +886,6 @@ def: "A cultured cell that is freshly isolated from a organismal source, or deri
 is_a: CL:0000010 ! cultured cell
 
 [Term]
-id: CL:0000003
-name: obsolete native cell
-def: "OBSOLETE. A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." []
-is_a: CL:0000000 ! cell
-
-[Term]
 id: CL:0000010
 name: cultured cell
 def: "A cell in vitro that is or has been maintained or propagated as part of a cell culture." []
@@ -904,12 +908,19 @@ id: CL:0000066
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." []
 is_a: CL:0000000 ! cell
+disjoint_from: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0000077
 name: mesothelial cell
 def: "A flat, squamous-like epithelial cell of mesodermal origin. It forms the mesothelium, which lines the body's serous cavities including the pleural, peritoneal, and pericardial spaces. This cell plays a crucial role in synthesizing and secreting lubricants, such as glycosaminoglycans and surfactants, which minimize friction between adjacent tissues during movement." []
 is_a: CL:0000066 ! epithelial cell
+
+[Term]
+id: CL:0000081
+name: blood cell
+def: "A cell found predominately in the blood." []
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000084
@@ -921,7 +932,7 @@ is_a: CL:0000542 ! lymphocyte
 id: CL:0000097
 name: mast cell
 def: "A cell that is found in almost all tissues containing numerous basophilic granules and capable of releasing large amounts of histamine and heparin upon activation. Progenitors leave bone marrow and mature in connective and mucosal tissue. Mature mast cells are found in all tissues, except the bloodstream. Their phenotype is CD117-high, CD123-negative, CD193-positive, CD200R3-positive, and FceRI-high. Stem-cell factor (KIT-ligand; SCF) is the main controlling signal of their survival and development." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0000128
@@ -939,19 +950,19 @@ is_a: CL:0000066 ! epithelial cell
 id: CL:0000232
 name: erythrocyte
 def: "A red blood cell. In mammals, mature erythrocytes are biconcave disks containing hemoglobin whose function is to transport oxygen." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000081 ! blood cell
 
 [Term]
 id: CL:0000233
 name: platelet
 def: "A non-nucleated disk-shaped cell formed by extrusion from megakaryocytes, found in the blood of all mammals, and mainly involved in blood coagulation." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000081 ! blood cell
 
 [Term]
 id: CL:0000235
 name: macrophage
 def: "A mononuclear phagocyte present in variety of tissues, typically differentiated from monocytes, capable of phagocytosing a variety of extracellular particulate material, including immune complexes, microorganisms, and dead cells." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000842 ! mononuclear leukocyte
 
 [Term]
 id: CL:0000236
@@ -963,7 +974,8 @@ is_a: CL:0000542 ! lymphocyte
 id: CL:0000451
 name: dendritic cell
 def: "A cell of hematopoietic origin, typically resident in particular tissues, specialized in the uptake, processing, and transport of antigens to lymph nodes for the purpose of stimulating an immune response via T cell activation. These cells are lineage negative (CD3-negative, CD19-negative, CD34-negative, and CD56-negative)." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000842 ! mononuclear leukocyte
+disjoint_from: CL:0000542 ! lymphocyte
 
 [Term]
 id: CL:0000540
@@ -1005,7 +1017,6 @@ is_a: CL:0000232 ! erythrocyte
 id: CL:0000576
 name: monocyte
 def: "Myeloid mononuclear recirculating leukocyte that can act as a precursor of tissue macrophages, osteoclasts and some populations of tissue dendritic cells." []
-is_a: CL:0000738 ! leukocyte
 is_a: CL:0000842 ! mononuclear leukocyte
 
 [Term]
@@ -1025,12 +1036,19 @@ id: CL:0000624
 name: CD4-positive, alpha-beta T cell
 def: "A mature alpha-beta T cell that expresses an alpha-beta T cell receptor and the CD4 coreceptor." []
 is_a: CL:0000789 ! alpha-beta T cell
+disjoint_from: CL:0000625 ! CD8-positive, alpha-beta T cell
 
 [Term]
 id: CL:0000625
 name: CD8-positive, alpha-beta T cell
 def: "A T cell expressing an alpha-beta T cell receptor and the CD8 coreceptor." []
 is_a: CL:0000789 ! alpha-beta T cell
+
+[Term]
+id: CL:0000681
+name: radial glial cell
+def: "A cell present in the developing CNS. Functions as both a precursor cell and as a scaffold to support neuronal migration." []
+is_a: CL:0002319 ! neural cell
 
 [Term]
 id: CL:0000738
@@ -1042,18 +1060,21 @@ is_a: CL:0000000 ! cell
 id: CL:0000767
 name: basophil
 def: "Any of the immature or mature forms of a granular leukocyte that in its mature form has an irregularly shaped, pale-staining nucleus that is partially constricted into two lobes, and with cytoplasm that contains coarse, bluish-black granules of variable size. Basophils contain vasoactive amines such as histamine and serotonin, which are released on appropriate stimulation. A basophil is CD123-positive, CD193-positive, CD203c-positive, and FceRIa-positive." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000081 ! blood cell
+is_a: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0000771
 name: eosinophil
 def: "Any of the immature or mature forms of a granular leukocyte with a nucleus that usually has two lobes connected by one or more slender threads of chromatin, and cytoplasm containing coarse, round granules that are uniform in size and which can be stained by the dye eosin. Eosinophils are CD9-positive, CD191-positive, and CD193-positive." []
+is_a: CL:0000081 ! blood cell
 is_a: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0000775
 name: neutrophil
 def: "Any of the immature or mature forms of a granular leukocyte that in its mature form has a nucleus with three to five lobes connected by slender threads of chromatin, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes." []
+is_a: CL:0000081 ! blood cell
 is_a: CL:0000738 ! leukocyte
 
 [Term]
@@ -1066,7 +1087,7 @@ is_a: CL:0000775 ! neutrophil
 id: CL:0000786
 name: plasma cell
 def: "A terminally differentiated, post-mitotic, antibody secreting cell of the B cell lineage with the phenotype CD138-positive, surface immunonoglobulin-negative, and MHC Class II-negative. Plasma cells are oval or round with extensive rough endoplasmic reticulum, a well-developed Golgi apparatus, and a round nucleus having a characteristic cartwheel heterochromatin pattern and are devoted to producing large amounts of immunoglobulin." []
-is_a: CL:0000236 ! B cell
+is_a: CL:0000542 ! lymphocyte
 
 [Term]
 id: CL:0000789
@@ -1096,7 +1117,7 @@ is_a: CL:0000000 ! cell
 id: CL:0000842
 name: mononuclear leukocyte
 def: "A leukocyte with a single non-segmented nucleus in the mature form." []
-is_a: CL:0000000 ! cell
+is_a: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0001064
@@ -1123,6 +1144,12 @@ def: "A cell that is part of the nervous system." []
 is_a: CL:0000000 ! cell
 
 [Term]
+id: CL:0011012
+name: neural crest cell
+def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." []
+is_a: CL:0000000 ! cell
+
+[Term]
 id: CL:0011114
 name: segmented neutrophil of bone marrow
 def: "A segmented neutrophilic cell of the bone marrow reserve pool that expresses CD11b (integrin alpha-M) and high levels of CD16 (low affinity immunoglobulin gamma Fc region receptor III) on its cell surface." []
@@ -1138,7 +1165,7 @@ is_a: CL:0000842 ! mononuclear leukocyte
 id: CLO:0000001
 name: cell line cell
 comment: 'derives from' is transitive, so even cell line cells created through modification of an existing cell line cell have derived_from some initial primary cultured cell that existed at some point in time.
-is_a: OBI:0001866 ! secondary cultured cell
+is_a: CL:0000010 ! cultured cell
 
 [Term]
 id: CLO:0000018
@@ -1155,7 +1182,7 @@ is_a: CLO:0000001 ! cell line cell
 [Term]
 id: CLO:0000031
 name: cell line
-is_a: OBI:0001905 ! secondary cultured cell population
+is_a: OBI:0100060 ! cultured cell population
 
 [Term]
 id: CLO:0009828
@@ -1337,6 +1364,29 @@ def: "A process in which includes the components of an environmental system as p
 is_a: BFO:0000015 ! process
 
 [Term]
+id: FOODON:00002147
+name: food material by consumer group
+is_a: FOODON:00002403 ! food material
+
+[Term]
+id: FOODON:00002403
+name: food material
+def: "Any substance that can be consumed by an organism to satisfy nutritional or other health needs, or to provide a social or organoleptic food experience" []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: FOODON:00004325
+name: animal feed
+def: "Food material which can be used to meet nutritional requirements of animals, particularly livestock such as cattle, goats, sheep, horses, chickens and pigs." []
+is_a: FOODON:03309997 ! food material for animals
+
+[Term]
+id: FOODON:03309997
+name: food material for animals
+def: "Food product for animal covers foods intended for consumption by domesticated animals." []
+is_a: FOODON:00002147 ! food material by consumer group
+
+[Term]
 id: GAZ:00000448
 name: geographic location
 def: "A reference to a place on the Earth, by its name or by its geographical location." []
@@ -1370,6 +1420,18 @@ id: GO:0001508
 name: action potential
 def: "A process in which membrane potential cycles through a depolarizing spike, triggered in response to depolarization above some threshold, followed by repolarization. This cycle is driven by the flow of ions through various voltage gated channels with different thresholds and ion specificities." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0001755
+name: neural crest cell migration
+def: "The characteristic movement of cells from the dorsal ridge of the neural tube to a variety of locations in a vertebrate embryo." []
+is_a: GO:0016477 ! cell migration
+
+[Term]
+id: GO:0001764
+name: neuron migration
+def: "The characteristic movement of an immature neuron from germinal zones to specific positions where they will reside as they mature." []
+is_a: GO:0016477 ! cell migration
 
 [Term]
 id: GO:0001788
@@ -1671,6 +1733,12 @@ def: "The developmental process by which male germ line stem cells self renew or
 is_a: GO:0022414 ! reproductive process
 
 [Term]
+id: GO:0007565
+name: female pregnancy
+def: "The set of physiological processes that allow an embryo or foetus to develop within the body of a female animal. It covers the time from fertilization of a female ovum by a male spermatozoon until birth." []
+is_a: GO:0022414 ! reproductive process
+
+[Term]
 id: GO:0007566
 name: embryo implantation
 def: "Attachment of the blastocyst to the uterine lining." []
@@ -1687,6 +1755,12 @@ id: GO:0007611
 name: learning or memory
 def: "The acquisition and processing of information and/or the storage and retrieval of this information over time." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0008083
+name: growth factor activity
+def: "The function that stimulates a cell to grow or proliferate. Most growth factors have other actions besides the induction of cell growth or proliferation." []
+is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0008150
@@ -1719,10 +1793,22 @@ def: "The multiplication or reproduction of cells, resulting in the expansion of
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0008347
+name: glial cell migration
+def: "The orderly movement of a glial cell, non-neuronal cells that provide support and nutrition, maintain homeostasis, form myelin, and participate in signal transmission in the nervous system." []
+is_a: GO:0016477 ! cell migration
+
+[Term]
 id: GO:0009566
 name: fertilization
 def: "The union of gametes of opposite sexes during the process of sexual reproduction to form a zygote. It involves the fusion of the gametic nuclei (karyogamy) and cytoplasm (plasmogamy)." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0009636
+name: response to toxic substance
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a toxic stimulus." []
+is_a: GO:0050896 ! response to stimulus
 
 [Term]
 id: GO:0009987
@@ -1765,6 +1851,12 @@ id: GO:0016231
 name: beta-N-acetylglucosaminidase activity
 def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-glucosamine residues in N-acetyl-beta-D-glucosaminides." []
 is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016477
+name: cell migration
+def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues." []
+is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0016491
@@ -2185,6 +2277,12 @@ def: "The appearance of chemokine (C-C motif) ligand 20 (CCL20) due to biosynthe
 is_a: GO:0032602 ! chemokine production
 
 [Term]
+id: GO:0040008
+name: regulation of growth
+def: "Any process that modulates the frequency, rate or extent of the growth of all or part of an organism so that it occurs at its proper speed, either globally or in a specific part of the organism's development." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0042098
 name: T cell proliferation
 def: "The expansion of a T cell population by cell division. Follows T cell activation." []
@@ -2240,6 +2338,12 @@ id: GO:0042611
 name: MHC protein complex
 def: "A transmembrane protein complex composed of an MHC alpha chain and, in most cases, either an MHC class II beta chain or an invariant beta2-microglobin chain, and with or without a bound peptide, lipid, or polysaccharide antigen." []
 is_a: GO:0032991 ! protein-containing complex
+
+[Term]
+id: GO:0042756
+name: drinking behavior
+def: "The specific behavior of an organism relating to the intake of liquids, especially water." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0043005
@@ -2308,6 +2412,12 @@ def: "The junction between an axon of one neuron and a dendrite of another neuro
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0045289
+name: luciferin monooxygenase activity
+def: "Catalysis of the generalized reaction: luciferin + O2 = oxidized luciferin + CO2 + light. There may be additional substrates and reactants involved in the reaction. The reaction results in light emission as luciferin returns to the ground state after enzymatic oxidation." []
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
 id: GO:0047823
 name: D-glutamyltransferase activity
 def: "Catalysis of the reaction: D-glutamate + D-glutamine = gamma-D-glutamyl-D-glutamate + NH4+. Can also transfer additional glutamyl residues to a peptide, extending the polypeptide chain." []
@@ -2371,6 +2481,12 @@ is_a: GO:0022414 ! reproductive process
 id: GO:0060206
 name: estrous cycle phase
 def: "The progression of physiological phases, occurring in the endometrium during the estrous cycle that recur at regular intervals during the reproductive years. The estrous cycle is an ovulation cycle where the endometrium is resorbed if pregnancy does not occur." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0060259
+name: regulation of feeding behavior
+def: "Any process that modulates the rate, frequency or extent of the behavior associated with the intake of food." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -2560,6 +2676,12 @@ def: "The appearance of chemokine (C-X-C motif) ligand 16 (CXCL16) due to biosyn
 is_a: GO:0032602 ! chemokine production
 
 [Term]
+id: GO:0099536
+name: synaptic signaling
+def: "Cell-cell signaling to, from or within a synapse." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0110165
 name: cellular anatomical entity
 def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex." []
@@ -2583,6 +2705,12 @@ id: GO:0140779
 name: XCL1 production
 def: "The appearance of XCL1 due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
 is_a: GO:0001816 ! cytokine production
+
+[Term]
+id: GO:1903339
+name: negative regulation of cell wall organization or biogenesis
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cell wall organization or biogenesis." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:1990505
@@ -3360,6 +3488,7 @@ is_a: NCBITaxon:6656 ! Arthropoda
 [Term]
 id: NCBITaxon:2
 name: Bacteria
+synonym: "bacteria" EXACT []
 synonym: "eubacteria" EXACT []
 is_a: COB:0000022 ! organism
 
@@ -3372,6 +3501,7 @@ is_a: COB:0000022 ! organism
 id: NCBITaxon:2559587
 name: Riboviria
 synonym: "RNA viruses" EXACT []
+synonym: "RNA viruses and retroviruses" EXACT []
 synonym: "RNA viruses and viroids" EXACT []
 is_a: NCBITaxon:10239 ! Viruses
 
@@ -3389,13 +3519,13 @@ is_a: NCBITaxon:2559587 ! Riboviria
 [Term]
 id: NCBITaxon:2759
 name: Eukaryota
-synonym: "eucaryotes" EXACT []
 synonym: "eukaryotes" EXACT []
 is_a: COB:0000022 ! organism
 
 [Term]
 id: NCBITaxon:3044472
 name: Orthoherpesviridae
+synonym: "Herpesviridae" EXACT []
 is_a: NCBITaxon:10239 ! Viruses
 
 [Term]
@@ -3435,6 +3565,7 @@ is_a: NCBITaxon:2759 ! Eukaryota
 [Term]
 id: NCBITaxon:33208
 name: Metazoa
+synonym: "animals" EXACT []
 synonym: "metazoans" EXACT []
 synonym: "multicellular animals" EXACT []
 is_a: NCBITaxon:33154 ! Opisthokonta
@@ -3486,7 +3617,7 @@ is_a: NCBITaxon:2759 ! Eukaryota
 [Term]
 id: NCBITaxon:4890
 name: Ascomycota
-synonym: "ascomycetes" EXACT []
+synonym: "ascomycete fungi" EXACT []
 synonym: "sac fungi" EXACT []
 is_a: NCBITaxon:33154 ! Opisthokonta
 
@@ -3501,6 +3632,7 @@ id: NCBITaxon:4932
 name: Saccharomyces cerevisiae
 synonym: "baker's yeast" EXACT []
 synonym: "brewer's yeast" EXACT []
+synonym: "Saccharomyces boulardii" EXACT []
 synonym: "Saccharomyces cerevisiae 'var. diastaticus'" EXACT []
 is_a: NCBITaxon:716545 ! saccharomyceta
 
@@ -3601,6 +3733,7 @@ is_a: NCBITaxon:314146 ! Euarchontoglires
 id: NCBITaxon:9989
 name: Rodentia
 synonym: "rodent" EXACT []
+synonym: "rodents" EXACT []
 is_a: NCBITaxon:314146 ! Euarchontoglires
 
 [Term]
@@ -5591,7 +5724,7 @@ is_a: OBI:0000516 ! NMR probe
 [Term]
 id: OBI:0000520
 name: clinical chemistry assay
-def: "An analyte assay which uses analytical methods to produce measurements and data on the concentration of chemical parameters (analytes) present in a bodily fluid collected from an organism." []
+def: "An analyte assay which uses analytical methods to produce measurements and data on the concentration of chemical parameters (analytes) present in a specimen collected from an organism in order to determine a phenotype of that organism." []
 synonym: "chemical pathology" EXACT []
 synonym: "detection of analyte in blood sample" EXACT []
 is_a: OBI:0000443 ! analyte assay
@@ -17630,7 +17763,7 @@ id: OBI:0002535
 name: esophagus muscularis mucosa specimen
 def: "A specimen that is derived from esophagus muscularis mucosa." []
 synonym: "esophagus muscularis specimen" EXACT []
-is_a: OBI:0003483 ! digestive tract specimen
+is_a: OBI:0002532 ! esophagus mucosa specimen
 
 [Term]
 id: OBI:0002536
@@ -17662,7 +17795,7 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002540
 name: coronary artery specimen
 def: "A specimen that is derived from coronary artery." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002520 ! heart specimen
 
 [Term]
 id: OBI:0002541
@@ -17704,7 +17837,7 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002547
 name: minor salivary gland specimen
 def: "A specimen that is derived from minor salivary gland." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0003483 ! digestive tract specimen
 
 [Term]
 id: OBI:0002548
@@ -17722,7 +17855,7 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002550
 name: sigmoid colon specimen
 def: "A specimen that is derived from sigmoid colon." []
-is_a: OBI:0003483 ! digestive tract specimen
+is_a: OBI:0002533 ! colon specimen
 
 [Term]
 id: OBI:0002551
@@ -24603,6 +24736,154 @@ def: "The analyte assay that measures the abundance of a hormone in a specimen."
 is_a: OBI:0000443 ! analyte assay
 
 [Term]
+id: OBI:0003779
+name: chemiluminescent assay
+def: "An analyte assay that detects a substance by measuring the release of light triggered by a chemical reaction." []
+synonym: "CLIA" EXACT []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003780
+name: electrochemiluminescence assay
+def: "A chemiluminescent assay that detects a substance by measuring the release of light triggered by an electrochemical reaction." []
+synonym: "ECL" EXACT []
+synonym: "Meso Scale Discovery ECL" EXACT []
+is_a: OBI:0003779 ! chemiluminescent assay
+
+[Term]
+id: OBI:0003781
+name: proteomics by mass spectrometry assay
+def: "A mass spectrometry assay that identifies and measures proteins." []
+is_a: OBI:0000615 ! protein expression profiling assay
+
+[Term]
+id: OBI:0003782
+name: metabolomics by mass spectrometry assay
+def: "A mass spectrometry assay that identifies and measures metabolites." []
+is_a: OBI:0000366 ! metabolite profiling assay
+
+[Term]
+id: OBI:0003788
+name: cellular indexing of transcriptomes and epitopes by sequencing
+def: "An assay performed on single cells that simultaneously measures transcript expression via single-cell RNA sequencing and profiles surface proteins via sequencing of DNA-barcodes attached to antibodies recognizing particular surface proteins from individual cells." []
+synonym: "CITE-Seq" EXACT []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003789
+name: immune receptor repertoire profiling assay
+def: "An assay that determines the sequence of a DNA or RNA molecules that encode the repertoire of B cell receptors or T cell receptors within an input sample." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003790
+name: antibody-dependent complement deposition assay
+def: "An assay measuring antibody-dependent complement-dependent cytotoxicity." []
+synonym: "ADCD" EXACT []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003791
+name: bacterial flagellin detection in plasma assay
+def: "An analyte assay measuring bacterial flagellin in a plasma sample." []
+is_a: OBI:0003040 ! blood assay
+is_a: OBI:2100023 ! protein assay
+
+[Term]
+id: OBI:0003792
+name: bacterial flagellin detection in feces assay
+def: "An analyte assay measuring bacterial flagellin in a feces sample." []
+is_a: OBI:0003237 ! feces assay
+is_a: OBI:2100023 ! protein assay
+
+[Term]
+id: OBI:0003793
+name: bacterial lipopolysaccharide detection in plasma assay
+def: "An analyte assay measuring bacterial lipopolysaccharide in a plasma sample." []
+synonym: "LPS" EXACT []
+is_a: OBI:0000443 ! analyte assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003794
+name: bacterial lipopolysaccharide detection in feces assay
+def: "An analyte assay measuring bacterial lipopolysaccharide in a feces sample." []
+synonym: "LPS" EXACT []
+is_a: OBI:0000443 ! analyte assay
+is_a: OBI:0003237 ! feces assay
+
+[Term]
+id: OBI:0003795
+name: adenosine deaminase activity assay
+def: "An analyte assay measuring adenosine deaminase activity in a sample." []
+synonym: "ADA" EXACT []
+is_a: OBI:2100023 ! protein assay
+
+[Term]
+id: OBI:0003796
+name: pathogen neutralization assay
+def: "An assay that measures neutralization of a pathogen." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003797
+name: bacterial neutralization assay
+def: "A pathogen neutralization assay measuring neutralization of bacteria." []
+is_a: OBI:0003796 ! pathogen neutralization assay
+
+[Term]
+id: OBI:0003798
+name: viral plaque assay
+def: "An analyte assay measuring the number of discrete viral plaques." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003799
+name: analyte detection by flow based bead assay
+def: "An analyte assay that uses beads to measure the concentration of an analyte with a flow cytometer." []
+is_a: OBI:0000920 ! cytometric bead array assay
+
+[Term]
+id: OBI:0003800
+name: bacterial lipopolysaccharide
+def: "A molecule that is a component of the outermost membrane of the cell envelope of gram-negative bacteria and which consists of three parts: an outer core polysaccharide termed the O-antigen, an inner core oligosaccharide, and Lipid A, all covalently linked." []
+comment: Temporary term created for HCC & intended to be replaced with a term from a different ontology once one can be NTRed.
+is_a: COB:0000013 ! molecule
+
+[Term]
+id: OBI:0003801
+name: urine opacity assay
+def: "A histological assay with urine evaluant that measures opacity of the urine" []
+is_a: OBI:0003043 ! urine assay
+is_a: OBI:0600020 ! histological assay
+
+[Term]
+id: OBI:0003802
+name: urine color assay
+def: "A histological assay with urine evaluant that measures color." []
+is_a: OBI:0003043 ! urine assay
+is_a: OBI:0600020 ! histological assay
+
+[Term]
+id: OBI:0003803
+name: urine histological assay
+def: "A histological assay with urine sediment as evaluant." []
+is_a: OBI:0003043 ! urine assay
+is_a: OBI:0600020 ! histological assay
+
+[Term]
+id: OBI:0003804
+name: color detection assay
+def: "An assay that measures the color of the evaluant" []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003805
+name: opacity determination assay
+def: "An assay that measures the opacity of the evaluant" []
+is_a: OBI:0000070 ! assay
+
+[Term]
 id: OBI:0003806
 name: electrocardiograph
 def: "An instrument for recording the changes of electrical potential occurring during the heartbeat used especially in diagnosing abnormalities of heart action." []
@@ -24625,6 +24906,245 @@ id: OBI:0003809
 name: Transepithelial Electrical Resistance (TEER) device
 def: "A measurement device that measures monolayer barrier integrity via measurement of membrane potential and electrical resistance across a cell monolayer in culture." []
 is_a: OBI:0000832 ! measurement device
+
+[Term]
+id: OBI:0003811
+name: estrous cycle count assay
+def: "An estrous cycle assay based on tissue morphology that determines the number of estrous cycles observed in a defined time." []
+is_a: OBI:0003766 ! estrous cycle assay based on tissue morphology
+
+[Term]
+id: OBI:0003812
+name: estrous cycle duration assay
+def: "An estrous cycle assay based on tissue morphology that determines the average length of a full estrous cycle observed in a defined time." []
+is_a: OBI:0003766 ! estrous cycle assay based on tissue morphology
+
+[Term]
+id: OBI:0003813
+name: organism development assay in late embryo based on examination of surface structure
+def: "An organism development assay in late embryo that evaluates only the external surface structure of the organism" []
+synonym: "external fetal exam" EXACT []
+is_a: OBI:0003767 ! organism development assay in late embryo
+
+[Term]
+id: OBI:0003814
+name: organism development assay in late embryo based on examination of skeletal system
+def: "An organism development assay in late embryo that evaluates the skeletal system of the organism" []
+synonym: "skeletal fetal exam" EXACT []
+is_a: OBI:0003767 ! organism development assay in late embryo
+
+[Term]
+id: OBI:0003815
+name: organism development assay in late embryo based on examination of anatomical system
+def: "An organism development assay in late embryo that evaluates the anatomical system of the organism" []
+synonym: "visceral fetal exam" EXACT []
+is_a: OBI:0003767 ! organism development assay in late embryo
+
+[Term]
+id: OBI:0003816
+name: distance measurement assay
+def: "An assay that measures the space between two entities." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003817
+name: length measurement assay
+def: "An assay that measures the distance between two points." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003818
+name: crown rump length
+def: "A length measurement assay that measures the length of a neonate or fetus from crown of head to base of torso (rump)" []
+is_a: OBI:0003817 ! length measurement assay
+
+[Term]
+id: OBI:0003819
+name: path length assay
+def: "An assay that measures the distance traveled in a defined period of time." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003820
+name: cell migration assay
+def: "A distance measurement assay in which the migration of cells in culture is monitored by measuring the distance between the start position and the cell's location when observed." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0003816 ! distance measurement assay
+
+[Term]
+id: OBI:0003821
+name: oligodendrocyte migration assay
+def: "A cell migration assay that measures migration of an oligodendrocyte" []
+is_a: OBI:0003820 ! cell migration assay
+
+[Term]
+id: OBI:0003822
+name: radial glial migration assay
+def: "A cell migration assay that measures migration of a radial glia cell" []
+is_a: OBI:0003820 ! cell migration assay
+
+[Term]
+id: OBI:0003823
+name: neuron migration assay
+def: "A cell migration assay that measures migration of a neuron" []
+is_a: OBI:0003820 ! cell migration assay
+
+[Term]
+id: OBI:0003824
+name: neural crest cell migration assay
+def: "A cell migration assay that measures migration of a neural crest cell" []
+is_a: OBI:0003820 ! cell migration assay
+
+[Term]
+id: OBI:0003825
+name: acidity quality assay
+def: "An assay that measures the acidity of a specimen on the pH scale." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003826
+name: specific gravity assay
+def: "An assay that measures the specific gravity of a sample." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003827
+name: speed measurement assay
+def: "An assay to determine the speed of an evaluant." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003828
+name: velocity measurement assay
+def: "An assay to measure the velocity of an evaluant" []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003829
+name: luminescence detection assay
+def: "An assay that measures the luminescence of the evaluant" []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003830
+name: cell viability assay using luciferase to detect ATP in the cell
+def: "A cell viability assay that uses an ATP bioluminescence assay to detect ATP in the living cell" []
+is_a: OBI:0003583 ! cell viability assay
+
+[Term]
+id: OBI:0003831
+name: population count assay
+def: "An assay that measures the number of elements in a portion of a population" []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003832
+name: hemolysis assay
+def: "A hematology assay that measures the fragility of red blood cells by observing spillage of hemoglobin from burst cells." []
+is_a: OBI:0000630 ! hematology assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003833
+name: neuron action potential rate assay
+def: "An electrophysiology assay that measures action potential events in neurons during a time period." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003834
+name: neuron burst rate assay
+def: "An electrophysiology assay that measures the number of action potential bursts in neurons during a time period." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003835
+name: neuron interburst interval assay
+def: "An electrophysiology assay that measures the elapsed time between consecutive action potential bursts in neurons." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003836
+name: neuron burst duration assay
+def: "An electrophysiology assay that measures the time elapsed between the first action potential in a neuron burst and the last in that burst." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003837
+name: action potential interval assay
+def: "An electrophysiology assay that measures the time elapsed between the peaks of consecutive action potential spikes in a neuron burst." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003838
+name: rate of action potentials in neuron burst assay
+def: "An electrophysiology assay that measures the number of action potential spikes occurring within a neuron burst" []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003839
+name: body mass assay
+def: "A mass measurement assay with evaluant an individual organism." []
+is_a: OBI:0000445 ! mass measurement assay
+
+[Term]
+id: OBI:0003840
+name: body mass change assay
+def: "A body mass assay that measures the change in body mass for a subject over a period of time." []
+is_a: OBI:0600026 ! longitudinal mass measurement assay
+
+[Term]
+id: OBI:0003841
+name: body weight assay at death
+def: "A body weight assay with evaluant individual organism specimen with quality dead." []
+is_a: OBI:0003839 ! body mass assay
+
+[Term]
+id: OBI:0003842
+name: tissue mass assay
+def: "A mass measurement assay with evaluant tissue or bodily fluid specimen." []
+is_a: OBI:0000445 ! mass measurement assay
+
+[Term]
+id: OBI:0003843
+name: tissue mass percent of body mass assay
+def: "A mass measurement assay with evaluant tissue expressed as a percentage of the body weight of the organism from which the specimen was derived." []
+is_a: OBI:0000445 ! mass measurement assay
+
+[Term]
+id: OBI:0003844
+name: developmental marker age of attainment assessment
+def: "An age determination assay which determines the age of the subject at the time of the change from a state where it did not have a developmental stage marker to one in which it does." []
+is_a: OBI:0001158 ! age determination assay
+
+[Term]
+id: OBI:0003850
+name: cytochrome P450 assay
+def: "A protein assay that measures the abundance of cytochrome P450 in a specimen." []
+is_a: OBI:2100023 ! protein assay
+
+[Term]
+id: OBI:0003851
+name: growth factor assay
+def: "An analyte assay to measure the abundance of one or more growth factors in a volume of sample." []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003852
+name: Hoechst dye assay
+def: "A fluorescence imaging-based cell morphology assay that uses Hoechst dye 33342" []
+is_a: OBI:0002951 ! fluorescence imaging-based cell morphology assay
+
+[Term]
+id: OBI:0003853
+name: hypersensitivity assay
+def: "An immune response assay to assess the hypersensitivity response in an organism or cell culture." []
+is_a: OBI:0000743 ! immune response assay
 
 [Term]
 id: OBI:0004001
@@ -26033,12 +26553,13 @@ is_a: BFO:0000023 ! role
 
 [Term]
 id: OBI:0302736
-name: comet assay
-def: "An assay that measures DNA damage (DNA breakage) in eucaryotic cells exposed to a challenge by determining the size and shape of DNA migration by detecting fluorescently labeled DNA from a cell placed in an electric field using gel electrophoresis" []
+name: DNA damage comet assay
+def: "A cell based DNA damage assay that measures DNA damage (DNA breakage) in eucaryotic cells exposed to a challenge by determining the size and shape of DNA migration by detecting fluorescently labeled DNA from a cell placed in an electric field using gel electrophoresis" []
+synonym: "comet assay" EXACT []
 synonym: "SCGE assay" EXACT []
 synonym: "single cell gel electrophoresis assay" EXACT []
 is_a: OBI:0001501 ! fluorescence detection assay
-is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0003721 ! cell based DNA damage assay
 
 [Term]
 id: OBI:0302737
@@ -31502,7 +32023,7 @@ is_a: OMIABIS:0000050 ! fixed tissue specimen
 [Term]
 id: OMRSE:00000012
 name: health care provider role
-def: "A human health care role inhering in an organization or human being that is realized by a process of providing health care services to an organism." []
+def: "A health care role inhering in an organization or human being that is realized by a process of providing health care services to an organism." []
 is_a: BFO:0000023 ! role
 
 [Term]
@@ -31540,10 +32061,23 @@ def: "A dependent entity that inheres in a bearer by virtue of how the bearer is
 is_a: COB:0000502 ! characteristic
 
 [Term]
+id: PATO:0000008
+name: speed
+def: "A physical quality inhering in a bearer by virtue of the bearer's scalar absolute value of the rate of change of the bearer's position." []
+is_a: PATO:0001906 ! movement quality
+
+[Term]
 id: PATO:0000011
 name: age
 def: "A time quality inhering in a bearer by virtue of how long the bearer has existed." []
 is_a: PATO:0000165 ! time
+
+[Term]
+id: PATO:0000014
+name: color
+def: "A composite chromatic quality composed of hue, saturation and intensity parts." []
+is_a: PATO:0000051 ! morphology
+is_a: PATO:0001300 ! optical quality
 
 [Term]
 id: PATO:0000018
@@ -31562,6 +32096,12 @@ id: PATO:0000033
 name: concentration of
 def: "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance." []
 is_a: PATO:0000070 ! amount
+
+[Term]
+id: PATO:0000040
+name: distance
+def: "A quality that is the extent of space between two entities." []
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0000047
@@ -31654,10 +32194,22 @@ def: "A 3-D extent quality inhering in a bearer by virtue of the bearer's amount
 is_a: PATO:0001710 ! 3-D extent
 
 [Term]
+id: PATO:0000957
+name: opacity
+def: "An optical quality which obtains by virtue of the ability of the bearer to absorb visible light." []
+is_a: PATO:0001300 ! optical quality
+
+[Term]
 id: PATO:0001018
 name: physical quality
 def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
 is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001019
+name: mass density
+def: "A physical quality which inheres in a bearer by virtue of some influence is exerted by the bearer's mass per unit size." []
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0001020
@@ -31931,6 +32483,12 @@ def: "A spatial quality inhering in a bearer by virtue of the bearer's being loc
 is_a: PATO:0000140 ! position
 
 [Term]
+id: PATO:0001842
+name: acidity
+def: "A concentration quality inhering in a bearer by virtue of the bearer's containing acid (hydrogen ions)." []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
 id: PATO:0001894
 name: phenotypic sex
 def: "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics." []
@@ -32009,6 +32567,12 @@ def: "Handedness where the organism exhibits no overall dominance in the use of 
 is_a: PATO:0002201 ! handedness
 
 [Term]
+id: PATO:0002242
+name: velocity
+def: "A physical quality inhering in a bearer by virtue of the bearer's rate of change of the position." []
+is_a: PATO:0001906 ! movement quality
+
+[Term]
 id: PATO:0002243
 name: fluid flow rate
 def: "A physical quality inhering in a fluid (liquid or gas) by virtue of the amount of fluid which passes through a given surface per unit time." []
@@ -32072,6 +32636,12 @@ is_a: PR:000000001 ! protein
 id: PR:000003252
 name: antithrombin-III
 def: "A serpin that is a translation product of the human SERPINC1 gene or a 1:1 ortholog thereof." []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000003707
+name: adenosine deaminase
+def: "A protein that is a translation product of the human ADA gene or a 1:1 ortholog thereof." []
 is_a: PR:000000001 ! protein
 
 [Term]
@@ -32238,6 +32808,18 @@ name: protein-glutamine gamma-glutamyltransferase
 is_a: PR:000000001 ! protein
 
 [Term]
+id: PR:000034459
+name: luciferase-like monooxygenase
+def: "A protein that is a translation product of the Escherichia coli K-12 yhbW gene or a 1:1 ortholog thereof." []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000036195
+name: bacterial protein
+def: "A protein that is encoded in the genome of some Bacteria <prokaryote>." []
+is_a: PR:000000001 ! protein
+
+[Term]
 id: PR:000036824
 name: NS1
 def: "A dengue virus genome polyprotein proteolytic cleavage product that is the N-terminal most non-structural protein within the dengue virus genome polyprotein. Example: UniProtKB:P29990, 776-1127, Asn-905/Asn-982, MOD:00160." []
@@ -32368,31 +32950,43 @@ is_a: SO:0000001 ! region
 id: UBERON:0000002
 name: uterine cervix
 def: "Lower, narrow portion of the uterus where it joins with the top end of the vagina." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000007
 name: pituitary gland
 def: "The pituitary gland is an endocrine gland that secretes hormones that regulate many other glands [GO]. An endocrine gland located ventral to the diencephalon and derived from mixed neuroectodermal and non neuroectodermal origin [ZFIN]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: UBERON:0000010
 name: peripheral nervous system
 def: "A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000029
 name: lymph node
 def: "Any of the rounded masses of lymphoid tissue that are surrounded by a capsule of connective tissue, are distributed along the lymphatic vessels, and contain numerous lymphocytes which filter the flow of lymph." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0000057
 name: urethra
 def: "The fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening." []
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0000061
+name: anatomical structure
+def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." []
 is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000062
+name: organ
+def: "Anatomical structure that performs a specific function or group of functions [WP]." []
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000105
@@ -32404,13 +32998,13 @@ is_a: GO:0008150 ! biological_process
 id: UBERON:0000162
 name: cloaca
 def: "Common chamber into which the intestines and excretory system opens. Arises during development in all vertebrates, but in many it becomes subdivided, lost or incorporated into other structures." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000165
 name: mouth
 def: "The proximal portion of the digestive tract, containing the oral cavity and bounded by the oral opening. In vertebrates, this extends to the pharynx and includes gums, lips, tongue and parts of the palate. Typically also includes the teeth, except where these occur elsewhere (e.g. pharyngeal jaws) or protrude from the mouth (tusks)." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000173
@@ -32428,13 +33022,13 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0000305
 name: amnion
 def: "The thin innermost layer of the extraembryonic membranes that contains the amniotic fluid; the membrane forms a closed sac in which the embryo and later, the fetus, is suspended and protected." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000310
 name: breast
 def: "The upper ventral region of the torso of an organism." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000316
@@ -32446,13 +33040,13 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0000323
 name: late embryo
 def: "An embryo that is at the late embryonic stage; this stage covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000341
 name: throat
 def: "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000362
@@ -32481,28 +33075,35 @@ is_a: BFO:0000141 ! immaterial entity
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
+id: UBERON:0000467
+name: anatomical system
+def: "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
 id: UBERON:0000473
 name: testis
 def: "A gonad of a male animal. A gonad produces and releases sperm." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
+disjoint_from: UBERON:0000992 ! ovary
 
 [Term]
 id: UBERON:0000477
 name: anatomical cluster
 def: "Anatomical group whose component anatomical structures lie in close proximity to each other." []
-is_a: BFO:0000040 ! material entity
+is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0000479
 name: tissue
 def: "Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000481
 name: multi-tissue structure
 def: "Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000483
@@ -32514,91 +33115,93 @@ is_a: UBERON:0000479 ! tissue
 id: UBERON:0000945
 name: stomach
 def: "An expanded region of the vertebrate alimentary tract that serves as a food storage compartment and digestive organ. A stomach is lined, in whole or in part by a glandular epithelium." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0000947
 name: aorta
 def: "The main trunk of the systemic arterial system that carries blood from the heart to all the organs and other structures of the body, bringing oxygenated blood to all parts of the body in the systemic circulation." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0001981 ! blood vessel
 
 [Term]
 id: UBERON:0000948
 name: heart
 def: "A myogenic muscular circulatory organ found in the vertebrate cardiovascular system composed of chambers of cardiac muscle. It is the primary circulatory organ." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0000955
 name: brain
 def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0000956
 name: cerebral cortex
 def: "The thin layer of gray matter on the surface of the cerebral hemisphere that develops from the telencephalon. It consists of the neocortex (6 layered cortex or isocortex), the hippocampal formation and the olfactory cortex." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000970
 name: eye
 def: "An organ that detects light." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0000978
 name: leg
 def: "The portion of the hindlimb that contains both the stylopod and zeugopod." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000992
 name: ovary
 def: "The gonad of a female organism which contains germ cells." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0000995
 name: uterus
 def: "The female muscular organ of gestation in which the developing embryo or fetus is nourished until birth." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0000996
 name: vagina
 def: "A fibromuscular tubular tract leading from the uterus to the exterior of the body in female placental mammals and marsupials, or to the cloaca in female birds, monotremes, and some reptiles[WP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001003
 name: skin epidermis
 def: "The outer epithelial layer of the skin that is superficial to the dermis." []
 is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0003102 ! surface structure
 
 [Term]
 id: UBERON:0001004
 name: respiratory system
 def: "Functional system which consists of structures involved in respiration." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+disjoint_from: UBERON:0001434 ! skeletal system
 
 [Term]
 id: UBERON:0001013
 name: adipose tissue
 def: "Portion of connective tissue composed of adipocytes enmeshed in areolar tissue." []
-is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0002384 ! connective tissue
 
 [Term]
 id: UBERON:0001037
 name: strand of hair
 def: "A filament, mostly protein, that grows from follicles found in the dermis[WP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001052
 name: rectum
 def: "The terminal portion of the intestinal tube, terminating with the anus." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001062
@@ -32633,43 +33236,43 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0001103
 name: diaphragm
 def: "A thin musculomebranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0001134
 name: skeletal muscle tissue
 def: "Muscle tissue that consists primarily of skeletal muscle fibers." []
-is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0002385 ! muscle tissue
 
 [Term]
 id: UBERON:0001155
 name: colon
 def: "A portion of the large intestine before it becomes the rectum. In mammals, the colon is the most part of the large intestine, excluding the vermiform appendix, the rectum and the anal canal." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001159
 name: sigmoid colon
 def: "The part of the large intestine that is closest to the rectum and anus. It forms a loop that averages about 40 cm. in length, and normally lies within the pelvis, but on account of its freedom of movement it is liable to be displaced into the abdominal cavity." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001225
 name: cortex of kidney
 def: "Outer cortical portion of the kidney, between the renal capsule and the renal medulla." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001255
 name: urinary bladder
 def: "Distensible musculomembranous organ situated in the anterior part of the pelvic cavity in which urine collects before excretion[MP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0001264
 name: pancreas
 def: "An endoderm derived structure that produces precursors of digestive enzymes and blood glucose regulating hormones[GO]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0001268
@@ -32681,7 +33284,7 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0001323
 name: tibial nerve
 def: "The tibial nerve is a branch of the sciatic nerve. The tibial nerve passes through the popliteal fossa to pass below the arch of soleus. In the popliteal fossa the nerve gives off branches to gastrocnemius, popliteus, soleus and plantaris muscles, an articular branch to the knee joint, and a cutaneous branch that will become the sural nerve. The sural nerve is joined by fibres from the common peroneal nerve and runs down the calf to supply the lateral side of the foot. Below the soleus muscle the nerve lies close to the tibia and supplies the tibialis posterior, the flexor digitorum longus and the flexor hallucis longus. The nerve passes into the foot running posterior to the medial malleolus. Here it is bound down by the flexor retinaculum in company with the posterior tibial artery. [WP,unvetted]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001359
@@ -32690,22 +33293,28 @@ def: "A clear, colorless, bodily fluid, that occupies the subarachnoid space and
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
+id: UBERON:0001434
+name: skeletal system
+def: "Anatomical system that is a multi-element, multi-tissue anatomical cluster that consists of the skeleton and the articular system." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
 id: UBERON:0001460
 name: arm
 def: "The part of the forelimb extending from the shoulder to the autopod[cjm]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001485
 name: knee joint
 def: "The knee joint joins the thigh with the leg and consists of two articulations: one between the femur and tibia, and one between the femur and patella. It is the largest and most complicated joint in the human body. The knee is a mobile trocho-ginglymus (i.e. a pivotal hinge joint), which permits flexion and extension as well as a slight medial and lateral rotation[WP,unvetted]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001488
 name: ankle joint
 def: "A joint that connects the hindlimb autopod and zeugopod skeletons." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001530
@@ -32717,31 +33326,31 @@ is_a: UBERON:0001637 ! artery
 id: UBERON:0001555
 name: digestive tract
 def: "A tube extending from the mouth to the anus." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001557
 name: upper respiratory tract
 def: "The segment of the respiratory tract that starts proximally with the nose and ends distally with the cricoid cartilage, before continuing to the trachea." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001558
 name: lower respiratory tract
 def: "The segment of the respiratory tract that starts proximally with the trachea and includes all distal structures including the lungs[WP,modified]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001567
 name: cheek
 def: "A fleshy subdivision of one side of the face bounded by an eye, ear and the nose." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001577
 name: facial muscle
 def: "A muscle innervated by a facial nerve." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0001621
@@ -32753,31 +33362,31 @@ is_a: UBERON:0001637 ! artery
 id: UBERON:0001637
 name: artery
 def: "An epithelial tube or tree of tibes that transports blood away from the heart[modified from AEO definition]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0001981 ! blood vessel
 
 [Term]
 id: UBERON:0001638
 name: vein
 def: "Any of the tubular branching vessels that carry blood from the capillaries toward the heart." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0001981 ! blood vessel
 
 [Term]
 id: UBERON:0001723
 name: tongue
 def: "A muscular organ in the floor of the mouth." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0001728
 name: nasopharynx
 def: "The section of the pharynx that lies above the soft palate." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001729
 name: oropharynx
 def: "The portion of the pharynx that lies between the soft palate and the upper edge of the epiglottis." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001797
@@ -32789,19 +33398,19 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0001811
 name: conjunctiva
 def: "The mucous membrane that lines the inner surface of the eyelids and the front of the eyeball." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001826
 name: nasal cavity mucosa
 def: "The mucous membrane that lines the nasal cavity[MP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001830
 name: minor salivary gland
 def: "One of the smaller, largely mucus-secreting, exocrine glands of the oral cavity, consisting of the labial, buccal, molar, lingual, and palatine glands[MP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: UBERON:0001836
@@ -32813,13 +33422,13 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0001873
 name: caudate nucleus
 def: "Subcortical nucleus of telecephalic origin consisting of an elongated gray mass lying lateral to and bordering the lateral ventricle. It is divided into a head, body and tail in some species." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001874
 name: putamen
 def: "Subcortical nucleus of telencephalic , which together with the caudate nucleus, forms the striatum. The putamen lies lateral to the internal capsule and medial to the external medullary lamina, and is separated from the caudate nucleus by the fibers of the internal capsule for most of its length, except at its anterior portion." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0001893
@@ -32846,10 +33455,16 @@ def: "Vital aqueous secretion of the liver that is formed by hepatocytes and mod
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
+id: UBERON:0001981
+name: blood vessel
+def: "A vessel through which blood circulates in the body." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
 id: UBERON:0001987
 name: placenta
 def: "Organ of metabolic interchange between fetus and mother, partly of embryonic origin and partly of maternal origin[GO]. The fetal portion of the placenta is known as the villous chorion. The maternal portion is known as the decidua basalis. The two portions are held together by anchoring villi that are anchored to the decidua basalis by the cytotrophoblastic shell." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0001988
@@ -32861,7 +33476,7 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0002032
 name: areola
 def: "Subdivision of breast which consists of skin, connective tissue and smooth muscle bundle and modified sebaceous glands and which surrounds the nipple." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002037
@@ -32873,55 +33488,55 @@ is_a: UBERON:0000481 ! multi-tissue structure
 id: UBERON:0002046
 name: thyroid gland
 def: "A two-lobed endocrine gland found in all vertebrates, located in front of and on either side of the trachea in humans, and producing various hormones, such as triiodothyronine and calcitonin[BTO]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: UBERON:0002048
 name: lung
 def: "Respiration organ that develops as an outpocketing of the esophagus." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0002067
 name: dermis
 def: "The dermis is a layer of skin between the epidermis (with which it makes up the skin) and subcutaneous tissues, and is composed of two layers, the papillary and reticular dermis[WP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002072
 name: hypodermis
 def: "Lowermost layer of the integumentary system in vertebrates. Types of cells that are found in the hypodermis are fibroblasts, adipose cells, and macrophages. It is derived from the mesoderm, but unlike the dermis, it is not derived from the dermatome region of the mesoderm. The hypodermis is used mainly for fat storage[WP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002097
 name: skin of body
 def: "The organ covering the body that consists of the dermis and epidermis." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0002106
 name: spleen
 def: "The organ that functions to filter blood and to store red corpuscles and platelets." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0002107
 name: liver
 def: "An exocrine gland which secretes bile and functions in metabolism of protein and carbohydrate and fat, synthesizes substances involved in the clotting of the blood, synthesizes vitamin A, detoxifies poisonous substances, stores glycogen, and breaks down worn-out erythrocytes[GO]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: UBERON:0002116
 name: ileum
 def: "The portion of the small intestine that extends from the jejunum to the colon." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002199
 name: integument
 def: "The dermis, epidermis and hypodermis." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002358
@@ -32933,13 +33548,13 @@ is_a: UBERON:0000481 ! multi-tissue structure
 id: UBERON:0002367
 name: prostate gland
 def: "The prostate gland is a partly muscular, partly glandular body that is situated near the base of the mammalian male urethra and secretes an alkaline viscid fluid which is a major constituent of the ejaculatory fluid." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: UBERON:0002369
 name: adrenal gland
 def: "Either of a pair of complex endocrine organs near the anterior medial border of the kidney consisting of a mesodermal cortex that produces glucocorticoid, mineralocorticoid, and androgenic hormones and an ectodermal medulla that produces epinephrine and norepinephrine[BTO]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: UBERON:0002371
@@ -32948,16 +33563,28 @@ def: "The soft tissue that fills the cavities of bones." []
 is_a: UBERON:0000479 ! tissue
 
 [Term]
+id: UBERON:0002384
+name: connective tissue
+def: "Tissue with cells that deposit non-polarized extracellular matrix including connective tissue fibers and ground substance." []
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0002385
+name: muscle tissue
+def: "Muscle tissue is a contractile tissue made up of actin and myosin fibers[GO]." []
+is_a: UBERON:0000479 ! tissue
+
+[Term]
 id: UBERON:0002386
 name: forelimb zeugopod
 def: "The middle limb segment of the pectoral free limb, between the autopod and stylopod segments. Includes as parts the forelimb zeugopodial skeleton, which includes as parts the radius and ulna, or their cartilage precursors, or evolutionary variants." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002389
 name: manual digit
 def: "A digit that is part of a manus (hand)." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002391
@@ -32975,79 +33602,91 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0002415
 name: tail
 def: "An external caudal extension of the body. In chordates, the tail is post-anal, in other animals the anus ends in the tail." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002465
 name: lymphoid system
 def: "The lymphatic system in vertebrates is a network of conduits that carry a clear fluid called lymph. It also includes the lymphoid tissue through which the lymph travels. Lymphoid tissue is found in many organs, particularly the lymph nodes, and in the lymphoid follicles associated with the digestive system such as the tonsils. The system also includes all the structures dedicated to the circulation and production of lymphocytes, which includes the spleen, thymus, bone marrow and the lymphoid tissue associated with the digestive system[WP]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000467 ! anatomical system
 
 [Term]
 id: UBERON:0002469
 name: esophagus mucosa
 def: "A mucosa that is part of a esophagus [Automatically generated definition]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002512
 name: corpus luteum
 def: "A transient endocrine gland that develops from the postovulatory or atretic follicles and secretes progesterone; it is thought to be related to egg retention[PMID]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0002530
+name: gland
+def: "An organ that functions as a secretory or excretory organ." []
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0002812
 name: left cerebral hemisphere
 def: "A cerebral hemisphere that is in the left side of a brain." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0002813
 name: right cerebral hemisphere
 def: "A cerebral hemisphere that is in the right side of a brain." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0003102
+name: surface structure
+def: "Anatomical structure that overlaps the outer epithelial layer and is adjacent to the space surrounding the organism." []
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0003126
 name: trachea
 def: "The trachea is the portion of the airway that attaches to the bronchi as it branches [GO:dph]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0003128
 name: cranium
 def: "Upper portion of the skull that excludes the mandible (when present in the organism)." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0003688
 name: omentum
 def: "A fold of peritoneum originating at the stomach and supporting the viscera." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0004648
 name: esophagus muscularis mucosa
 def: "A muscularis mucosa that is part of a esophagus." []
-is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0002385 ! muscle tissue
 
 [Term]
 id: UBERON:0005022
 name: mucosa of nasopharynx
 def: "A mucosa that is part of a nasopharynx [Automatically generated definition]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0005023
 name: mucosa of oropharynx
 def: "A mucosa that is part of a oropharynx [Automatically generated definition]." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0005921
 name: middle nasal concha
 def: "The medial surface of the labyrinth of ethmoid consists of a thin lamella, which descends from the under surface of the cribriform plate, and ends below in a free, convoluted margin, the middle nasal concha. It is rough, and marked above by numerous grooves, directed nearly vertically downward from the cribriform plate; they lodge branches of the olfactory nerves, which are distributed to the mucous membrane covering the superior nasal concha." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0006314
@@ -33100,13 +33739,25 @@ is_a: UBERON:0001637 ! artery
 id: UBERON:0007650
 name: esophagogastric junction
 def: "The junction between the esophagus and the stomach epithelium." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0008188
 name: tendon of biceps brachii
 def: "A tendon that attaches_to a biceps brachii." []
-is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0008979
+name: carcass
+def: "A body of a multi-cellular organism that is no longer living." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0009097
+name: gravid organism
+def: "An organism containing a developing embryo, fetus, or unborn offspring within the body." []
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0010414
@@ -33118,7 +33769,7 @@ is_a: UBERON:0001013 ! adipose tissue
 id: UBERON:0011011
 name: brachioradialis
 def: "Brachioradialis is a muscle of the forearm that acts to flex the forearm at the elbow. It is also capable of both pronation and supination, depending on the position of the forearm. It is attached to the distal styloid process of the radius by way of the brachioradialis tendon, and to the lateral supracondylar ridge of the humerus." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0012168
@@ -33148,13 +33799,13 @@ is_a: UBERON:0000178 ! blood
 id: UBERON:0036149
 name: suprapubic skin
 def: "Area of skin in the hypoastric region of the abdomen." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:3000016
 name: anterior nasal wall
 def: "Paired, vertical, and relatively straight plates that form the anterior limit of the nasal capsule." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:8470000
@@ -33193,6 +33844,11 @@ name: concentration unit
 is_a: IAO:0000003 ! measurement unit label
 
 [Term]
+id: UO:0000060
+name: speed/velocity unit
+is_a: IAO:0000003 ! measurement unit label
+
+[Term]
 id: UO:0000095
 name: volume unit
 is_a: IAO:0000003 ! measurement unit label
@@ -33224,6 +33880,12 @@ def: "A phenotypic effect related to http://www.w3.org/2002/07/owl#Thing." []
 is_a: PATO:0000001 ! quality
 
 [Term]
+id: UPHENO:0056253
+name: increased number of material anatomical entity in the urine
+def: "The presence of an increased number of material anatomical entity in the urine." []
+is_a: UPHENO:0001001 ! phenotype
+
+[Term]
 id: VO:0000001
 name: vaccine
 def: "Material entity that is manufactured to realize the vaccine function." []
@@ -33239,6 +33901,8 @@ is_a: OBI:0600007 ! administering substance in vivo
 id: BFO:0000050
 name: part of
 def: "a core relation that holds between a part and its whole" []
+is_transitive: true
+inverse_of: BFO:0000051 ! has part
 
 [Typedef]
 id: BFO:0000051
