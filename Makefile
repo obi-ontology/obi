@@ -41,7 +41,7 @@ build build/views:
 #
 # We use the official development version of ROBOT for most things.
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.4/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.9.8/robot.jar
 
 build/robot: build/robot.jar
 	curl -L -o $@ https://raw.githubusercontent.com/ontodev/robot/master/bin/robot
@@ -72,6 +72,7 @@ build/rdftab: | build
 # Use Ontofox to import various modules.
 build/%_imports.owl: src/ontology/OntoFox_inputs/%_input.txt | build
 	curl -s -F file=@$< -o $@ https://ontofox.hegroup.org/service.php
+	$(ROBOT) export --input $@ --header "ID|LABEL" --export views/imported_terms/$*_terms.tsv
 
 # Remove annotation properties from CLO to avoid weird labels.
 src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
@@ -209,8 +210,15 @@ views/obi-base.owl: src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot.jar
 	--annotation owl:versionInfo "$(TODAY)" \
 	--output $@
 
-views/obi-cob.owl: src/scripts/obi-cob.py src/ontology/obi-edit.owl $(MODULE_FILES) | build/robot
-	python3 $<
+# Build a version of OBI with BFO domains and ranges merged in from RO-core
+views/obi-bfo.owl: obi.owl
+	curl -sL $(OBO)/ro/releases/2025-06-24/core.owl -o build/ro-core.owl
+	echo "<http://purl.obolibrary.org/obo/IAO_0000030> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/BFO_0000031> ." > build/cob-bfo-shim.ttl
+	$(ROBOT) merge --input $< \
+	--input build/ro-core.owl \
+	--input build/cob-bfo-shim.ttl \
+	reason --reasoner ELK \
+	--output $@
 
 views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	$(ROBOT) query \
@@ -229,7 +237,7 @@ views/obi.obo: obi.owl src/scripts/remove-for-obo.txt | build/robot.jar
 	perl -lpe 'print "date: $(TS)" if $$. == 3'  > $@ && \
 	rm $(basename $@)-temp.obo
 
-views/obi_core.owl: obi.owl src/ontology/views/core.txt | build/robot.jar
+views/obi_core.owl: views/obi-bfo.owl src/ontology/views/core.txt | build/robot.jar
 	$(ROBOT) remove \
 	--input $< \
 	--term obo:OBI_0600036 \
@@ -355,6 +363,11 @@ build/modules/merged.owl: src/ontology/obi-edit.owl $(PHONY_MODULES) | build/rob
 	reason --equivalent-classes-allowed none \
 	--output $@
 
+# Run Hermit over the BFO-based OBI artifact
+.PHONY: bfo-reason
+bfo-reason: views/obi-bfo.owl
+	$(ROBOT) reason --input $< --reasoner hermit --equivalent-classes-allowed none
+
 # Run all validation queries and exit on error.
 .PHONY: verify
 verify: verify-modules verify-merged verify-entities
@@ -415,7 +428,12 @@ build/reservations-updated.tsv: src/scripts/update-term-reservations.py build/re
 #
 # Full build
 .PHONY: all
-all: test obi.owl views build/terms-report.csv
+all: test bfo-reason obi.owl views build/terms-report.csv
+
+# Run linting/formatting on src/obi/ scripts
+lint:
+	black --line-length 100 src/obi
+	flake8 --max-line-length 100 --ignore E203,W503 src/obi
 
 # Remove generated files
 .PHONY: clean

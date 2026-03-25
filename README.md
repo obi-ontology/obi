@@ -85,7 +85,7 @@ src/scripts/locate.py "assay" "fluorescence microscopy" "chromatin"
 
 The OBI repo includes some Python scripts to help developers efficiently edit both `obi-edit.owl` and OBI templates. These scripts require Python 3.
 
-The scripts also require that you first to build two databases (one from OBI edit, and one from a merged version of OBI):
+The scripts also require that you first build two databases (one from OBI edit, and one from a merged version of OBI):
 ```
 make obi-dbs
 ```
