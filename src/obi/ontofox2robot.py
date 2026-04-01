@@ -21,12 +21,18 @@ def convert(ontology):
                     action = "relate"
                 else:
                     action = "import"
+                if value.subClassOf:
+                    parent = str(value.subClassOf)
+                    parent = parent.split(" ")
+                    parent = contract(parent[0])
+                else:
+                    parent = ""
                 imports[curie] = {
                     "ontology ID": curie,
                     "label": label,
                     "action": action,
                     "logical type": "",
-                    "parent class": "",
+                    "parent class": parent,
                 }
             except ValueError:
                 print(f"WARN: {curie} appears in OntoFox config file but not in OntoFox module")
