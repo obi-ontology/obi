@@ -521,8 +521,7 @@ def prepare(ontology, term):
     imports = TSV2dict(path)
     source = os.path.join("build", f"{ontology}_import_source.owl")
     if not os.path.isfile(source):
-        import_sources = os.path.join("src", "ontology", "import_sources.tsv")
-        download_source_file(import_sources, ontology)
+        download_source_file(ontology)
     input_dict = parse_term_input(term, ontology, source)
     return input_dict, imports
 
