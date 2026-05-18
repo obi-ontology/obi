@@ -82,7 +82,16 @@ src/ontology/OntoFox_outputs/CLO_imports.owl: build/CLO_imports.owl
 src/ontology/OntoFox_outputs/%_imports.owl: build/%_imports.owl
 	$(ROBOT) convert -i build/$*_imports.owl -o $@
 
-IMPORT_FILES := $(wildcard src/ontology/OntoFox_outputs/*_imports.owl)
+# Refresh the source files for ROBOT imports
+build/%_import_source.owl: src/ontology/robot_inputs/%_input.tsv
+	obi source download $*
+
+# Rebuild ROBOT imports
+src/ontology/robot_outputs/%_imports.owl: build/%_import_source.owl
+	obi import rebuild $*
+	$(ROBOT) export --input $@ --header "ID|LABEL" --export views/imported_terms/$*_terms.tsv
+
+IMPORT_FILES := $(wildcard src/ontology/*_outputs/*_imports.owl)
 
 .PHONY: imports
 imports: $(IMPORT_FILES)
