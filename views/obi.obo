@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2026-03-19
-date: 19:03:2026 13:38
+data-version: 2026-05-08
+date: 08:05:2026 11:34
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2026-03-19" xsd:string
+property_value: owl:versionInfo "2026-05-08" xsd:string
 
 [Term]
 id: BFO:0000015
@@ -340,6 +340,10 @@ def: "A low-molecular-mass compound present in bioluminescent organisms that emi
 is_a: COB:0000013 ! molecule
 
 [Term]
+id: CHEBI:25555
+name: nitrogen atom
+
+[Term]
 id: CHEBI:2637
 name: amikacin
 def: "An amino cyclitol glycoside that is kanamycin A acylated at the N-1 position by a 4-amino-2-hydroxybutyryl group." []
@@ -436,6 +440,11 @@ is_a: COB:0000013 ! molecule
 id: CHEBI:30682
 name: ruthenium atom
 is_a: COB:0000013 ! molecule
+
+[Term]
+id: CHEBI:3098
+name: bile acid
+def: "Any member of a group of hydroxy-5β-cholanic acids occuring in bile, where they are present as the sodium salts of their amides with glycine or taurine. In mammals bile acids almost invariably have 5β-configuration." []
 
 [Term]
 id: CHEBI:31624
@@ -779,6 +788,11 @@ def: "3<em>H</em>-2,1-Benzoxathiole 1,1-dioxide in which both of the hydrogens a
 is_a: COB:0000013 ! molecule
 
 [Term]
+id: CHEBI:60343
+name: 1-methyl-7-nitroisatoic anhydride
+def: "A 3,1-benzoxazin-1,4-dione having an <em>N</em>-methyl substituent and a nitro group at the 7-position." []
+
+[Term]
 id: CHEBI:61057
 name: tacrolimus hydrate
 def: "A hydrate that is the monohydrate form of tacrolimus." []
@@ -971,6 +985,12 @@ def: "A lymphocyte of B lineage that is capable of B cell mediated immunity." []
 is_a: CL:0000542 ! lymphocyte
 
 [Term]
+id: CL:0000404
+name: electrically signaling cell
+def: "A cell that initiates an electrical signal and passes that signal to another cell." []
+is_a: CL:0000000 ! cell
+
+[Term]
 id: CL:0000451
 name: dendritic cell
 def: "A cell of hematopoietic origin, typically resident in particular tissues, specialized in the uptake, processing, and transport of antigens to lymph nodes for the purpose of stimulating an immune response via T cell activation. These cells are lineage negative (CD3-negative, CD19-negative, CD34-negative, and CD56-negative)." []
@@ -981,6 +1001,7 @@ disjoint_from: CL:0000542 ! lymphocyte
 id: CL:0000540
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." []
+is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
 
 [Term]
@@ -1142,6 +1163,12 @@ id: CL:0002319
 name: neural cell
 def: "A cell that is part of the nervous system." []
 is_a: CL:0000000 ! cell
+
+[Term]
+id: CL:0002368
+name: respiratory tract epithelial cell
+def: "An epithelial cell of the respiratory tract epithelium.  These cells have an endodermal origin." []
+is_a: CL:0000066 ! epithelial cell
 
 [Term]
 id: CL:0011012
@@ -1477,6 +1504,12 @@ def: "Any process that modulates the frequency or rate of heart contraction." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0002244
+name: hematopoietic progenitor cell differentiation
+def: "The process in which precursor cell type acquires the specialized features of a hematopoietic progenitor cell, a class of cell types including myeloid progenitor cells and lymphoid progenitor cells." []
+is_a: GO:0030154 ! cell differentiation
+
+[Term]
 id: GO:0002250
 name: adaptive immune response
 def: "An immune response mediated by cells expressing specific receptors for antigens produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." []
@@ -1523,6 +1556,18 @@ def: "The synthesis or release of a cytokine following a inflammatory stimulus a
 is_a: GO:0001816 ! cytokine production
 
 [Term]
+id: GO:0003014
+name: renal system process
+def: "An organ system process carried out by any of the organs or tissues of the renal system. The renal system maintains fluid balance, and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products. In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels; in other species, the renal system may comprise related structures (e.g., nephrocytes and malpighian tubules in Drosophila)." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0003015
+name: heart process
+def: "A circulatory system process carried out by the heart. The heart is a hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood. The heart is a hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0003016
 name: respiratory system process
 def: "A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange." []
@@ -1532,7 +1577,7 @@ is_a: GO:0008150 ! biological_process
 id: GO:0003094
 name: glomerular filtration
 def: "The process in which plasma is filtered through the glomerular membrane which consists of capillary endothelial cells, the basement membrane, and epithelial cells. The glomerular filtrate is the same as plasma except it has no significant amount of protein." []
-is_a: GO:0008150 ! biological_process
+is_a: GO:0003014 ! renal system process
 
 [Term]
 id: GO:0003674
@@ -1578,8 +1623,8 @@ is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0004021
-name: L-alanine:2-oxoglutarate aminotransferase activity
-def: "Catalysis of the reaction: 2-oxoglutarate + L-alanine = L-glutamate + pyruvate." []
+name: L-alanine:2-oxoglutarate transaminase activity
+def: "Catalysis of the reaction: L-alanine + 2-oxoglutarate = pyruvate + L-glutamate." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1590,7 +1635,7 @@ is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0004069
-name: L-aspartate:2-oxoglutarate aminotransferase activity
+name: L-aspartate:2-oxoglutarate transaminase activity
 def: "Catalysis of the reaction: L-aspartate + 2-oxoglutarate = oxaloacetate + L-glutamate." []
 is_a: GO:0003824 ! catalytic activity
 
@@ -1608,14 +1653,14 @@ is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0004353
-name: glutamate dehydrogenase [NAD(P)+] activity
-def: "Catalysis of the reaction: L-glutamate + H2O + NAD(P)+ = 2-oxoglutarate + NH3 + NAD(P)H + H+." []
+name: L-glutamate dehydrogenase [NAD(P)+] activity
+def: "Catalysis of the reaction: L-glutamate + NAD(P)+ + H2O = 2-oxoglutarate + NH4+ + NAD(P)H + H+." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0004364
 name: glutathione transferase activity
-def: "Catalysis of the reaction: R-X + glutathione = H-X + R-S-glutathione. R may be an aliphatic, aromatic or heterocyclic group; X may be a sulfate, nitrile or halide group." []
+def: "Catalysis of the reaction: RX + glutathione = an S-substituted glutathione + a halide anion + H+." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -2490,6 +2535,13 @@ def: "Any process that modulates the rate, frequency or extent of the behavior a
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0061028
+name: establishment of endothelial barrier
+def: "The establishment of a barrier between endothelial cell layers, such as those in the brain, lung or intestine, to exert specific and selective control over the passage of water and solutes, thus allowing formation and maintenance of compartments that differ in fluid and solute composition." []
+is_a: GO:0048856 ! anatomical structure development
+is_a: GO:0048869 ! cellular developmental process
+
+[Term]
 id: GO:0070288
 name: ferritin complex
 def: "A protein complex that binds iron and acts as a major iron storage system. There are three major subclasses of ferritins: the classical ferritins (Ftn), the heme-containing bacterioferritins (Bfr) and the DNA-binding proteins from starved cells (Dps). Ftn and Bfr are made of 24 subunits, whereas Dps are smaller with 12 subunits. Ftn is found in most kindoms, while Bfr and Dps are restricted to prokaryotes." []
@@ -2781,7 +2833,6 @@ is_a: IAO:0000104 ! plan specification
 [Term]
 id: IAO:0000027
 name: data item
-def: "An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -2857,7 +2908,7 @@ is_a: IAO:0000033 ! directive information entity
 
 [Term]
 id: IAO:0000100
-name: data set
+name: homogenous data collection
 def: "A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets." []
 is_a: IAO:0000027 ! data item
 
@@ -3872,7 +3923,7 @@ id: OBI:0000023
 name: classified data set
 def: "A data set that is produced as the output of a class prediction data transformation and consists of a data set with assigned class labels." []
 synonym: "data set with assigned class labels" EXACT []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000025
@@ -4258,7 +4309,7 @@ is_a: OBI:0000070 ! assay
 id: OBI:0000118
 name: gene list
 def: "A data set of the names or identifiers of genes that are the outcome of an analysis or have been put together for the purpose of an analysis." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000119
@@ -4686,7 +4737,7 @@ is_a: OBI:0002743 ! molecular label role
 id: OBI:0000251
 name: cluster
 def: "A data set which is a subset of data that are a similar to each other in some way." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000252
@@ -5354,7 +5405,7 @@ is_a: OBI:0000245 ! organization
 id: OBI:0000451
 name: normalized data set
 def: "A data set that is produced as the output of a normalization data transformation." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000453
@@ -6481,13 +6532,13 @@ id: OBI:0000648
 name: clustered data set
 def: "A data set that is produced as the output of a class discovery data transformation and consists of a data set with assigned discovered class labels." []
 synonym: "data set with assigned discovered class labels" EXACT []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000649
 name: data set of features
 def: "A data set that is produced as the output of a descriptive statistical calculation data transformation and consists of producing a data set that represents one or more features of interest about the input data set." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000650
@@ -6529,7 +6580,7 @@ is_a: OBI:2000009 ! bodily fluid specimen
 id: OBI:0000656
 name: data set of predicted values according to fitted curve
 def: "A data set which is the output of a curve fitting data transformation in which the aim is to find a curve which matches a series of data points and possibly other constraints." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000658
@@ -6550,7 +6601,7 @@ is_a: COB:0000035 ! completely executed planned process
 id: OBI:0000660
 name: background corrected data set
 def: "A data set that is produced as the output of a background correction data transformation." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000661
@@ -6563,7 +6614,7 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:0000662
 name: error corrected data set
 def: "A data set that is produced as the output of an error correction data transformation and consists of producing a data set which has had erroneous contributions from the input to the data transformation removed (corrected for)." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000663
@@ -6648,7 +6699,7 @@ is_a: OBI:0200166 ! data transformation objective
 id: OBI:0000676
 name: reduced dimension data set
 def: "A data set that is produced as the output of a data vector reduction data transformation and consists of producing a data set which has fewer vectors than the input data set." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0000678
@@ -16020,7 +16071,7 @@ is_a: OBI:0001977 ! cytometry assay
 
 [Term]
 id: OBI:0002116
-name: high performance liquid chromotography assay
+name: high performance liquid chromatography assay
 def: "An analytical chromatography assay that utilizes a high performance liquid chromatography instrument for separation of compounts in a solution." []
 synonym: "HPLC" EXACT []
 is_a: OBI:0001630 ! analytical chromatography
@@ -18038,7 +18089,7 @@ is_a: OBI:0000973 ! sequence data
 id: OBI:0002582
 name: sequence library feature count data
 def: "The results of a sequence data feature count tabulation." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0002583
@@ -18050,7 +18101,7 @@ is_a: OBI:0000973 ! sequence data
 id: OBI:0002584
 name: differential expression analysis data
 def: "The results of a differential expression analysis." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0002585
@@ -21792,7 +21843,7 @@ is_a: OBI:0003498 ! organism detection assay
 [Term]
 id: OBI:0003243
 name: blood assay datum
-def: "A data item that is the specified output of a blood assay." []
+def: "A data entity that is the specified output of a blood assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -21805,7 +21856,7 @@ is_a: OBI:0003243 ! blood assay datum
 [Term]
 id: OBI:0003245
 name: feces assay datum
-def: "A data item that is the specified output of a feces assay." []
+def: "A data entity that is the specified output of a feces assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -21818,7 +21869,7 @@ is_a: OBI:0003245 ! feces assay datum
 [Term]
 id: OBI:0003247
 name: urine assay datum
-def: "A data item that is the specified output of a urine assay." []
+def: "A data entity that is the specified output of a urine assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -21831,7 +21882,7 @@ is_a: OBI:0003247 ! urine assay datum
 [Term]
 id: OBI:0003249
 name: induced sputum assay datum
-def: "A data item that is the specified output of a induced sputum assay." []
+def: "A data entity that is the specified output of a induced sputum assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -21851,7 +21902,7 @@ is_a: OBI:0003249 ! induced sputum assay datum
 [Term]
 id: OBI:0003252
 name: cerebrospinal fluid assay datum
-def: "A data item that is the specified output of a cerebrospinal fluid assay." []
+def: "A data entity that is the specified output of a cerebrospinal fluid assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -21895,7 +21946,7 @@ is_a: OBI:0003064 ! organism detection datum
 [Term]
 id: OBI:0003259
 name: umbilical cord blood assay datum
-def: "A data item that is the specified output of an umbilical cord blood assay." []
+def: "A data entity that is the specified output of an umbilical cord blood assay." []
 is_a: OBI:0003243 ! blood assay datum
 
 [Term]
@@ -22325,7 +22376,7 @@ is_a: OBI:1110125 ! assay measuring MHC ligand processing and presentation
 id: OBI:0003327
 name: image data set
 def: "A data set that is comprised of multidimensional structured measurements and metadata required for a morphological representation of an entity. An image data set can be the source from which an image (such as a 2D image using pixels or a 3D image using voxels) is produced." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
 id: OBI:0003328
@@ -22549,7 +22600,7 @@ is_a: OBI:0003361 ! lesion mask
 [Term]
 id: OBI:0003365
 name: milk assay datum
-def: "A data item that is the specified output of a milk assay." []
+def: "A data entity that is the specified output of a milk assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -22793,7 +22844,7 @@ is_a: IAO:0000408 ! length measurement datum
 [Term]
 id: OBI:0003417
 name: antigen specific antibodies assay datum
-def: "A data item that is the specified output of an antigen specific antibodies assay." []
+def: "A data entity that is the specified output of an antigen specific antibodies assay." []
 is_a: IAO:0000027 ! data item
 
 [Term]
@@ -25145,6 +25196,219 @@ id: OBI:0003853
 name: hypersensitivity assay
 def: "An immune response assay to assess the hypersensitivity response in an organism or cell culture." []
 is_a: OBI:0000743 ! immune response assay
+
+[Term]
+id: OBI:0003882
+name: super-resolution microscopy assay
+def: "A type of light microscopy assay where the images are taken with a resolution higher than the diffraction limit." []
+synonym: "super resolution microscopy assay" EXACT []
+is_a: OBI:0002119 ! microscopy assay
+
+[Term]
+id: OBI:0003883
+name: multiphoton microscope
+def: "A microscope that uses simultaneous absorption of multiple photons to excite fluorescent molecules." []
+synonym: "MPLSM" EXACT []
+synonym: "multiphoton laser scanning microscope" EXACT []
+synonym: "two-photon excitation microscope" EXACT []
+is_a: OBI:0400169 ! microscope
+
+[Term]
+id: OBI:0003884
+name: light sheet microscope
+def: "A microscope that uses illumination and detection objectives to image a sample illuminated with a thin sheet of laser light." []
+synonym: "light-sheet microscope" EXACT []
+synonym: "lightsheet microscope" EXACT []
+is_a: OBI:0400169 ! microscope
+
+[Term]
+id: OBI:0003885
+name: 1M7 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 1-methyl-7-nitroisatoic anhydride as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using 1M7 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003886
+name: NAI RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 2-methylnicotinic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using NAI probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003887
+name: NAI-N3 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 2-(azidomethyl)nicotinic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using NAI-N3 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003888
+name: 2A3 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 2-aminopyridine-3-carboxylic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using 2A3 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003889
+name: I5 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using indoline-5-carboxylic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using I5 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003890
+name: 1M4 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 1-methylimidazole-4-carboxylic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using 1M4 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003891
+name: 6A3 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 6-aminopyridine-3-carboxylic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using 6A3 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003892
+name: B5 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using benzotriazole-5-carboxylic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using B5 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003893
+name: NIC RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using nicotinic acid imidazolide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using NIC probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003894
+name: BzCN RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using benzoyl cyanide as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using BzCN probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003895
+name: 1M6 RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 1-methyl-6-nitroisatoic anhydride as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using 1M6 probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003896
+name: 5NIA RNA structure mapping assay
+def: "A single-nucleotide-resolution ribonucleic acid structure mapping assay that determines nucleic acid secondary structure at the nucleotide resolution scale using 5-nitroisatoic anhydride as reagent and chemical probe" []
+synonym: "SHAPE mapping assay" EXACT []
+synonym: "single nucleotide resolution mapping assay using 5NIA probe" EXACT []
+is_a: OBI:0001017 ! single-nucleotide-resolution nucleic acid structure mapping assay using chemical probing
+
+[Term]
+id: OBI:0003897
+name: cell count assay
+def: "An assay that measures the number of cells in a portion of a cell culture or tissue or bodily fluid" []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003898
+name: differential leukocyte count assay
+def: "A hematology assay that measures the percentage of classes of leukocytes in a sample." []
+is_a: OBI:0000630 ! hematology assay
+is_a: OBI:0003040 ! blood assay
+
+[Term]
+id: OBI:0003899
+name: electrocardiogram assay
+def: "An electrophysiology assay that measures heart activity using electrodes placed to detect electrical signals from the heart." []
+is_a: OBI:0002176 ! electrophysiology assay
+
+[Term]
+id: OBI:0003900
+name: telemeter sensor detection assay
+def: "An assay which uses an implanted telemeter to measure physiological data in a living organism and transmit the measures via radio waves to a recording device." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003901
+name: multi-electrode array assay
+def: "A multi-unit recording assay using a multi-electrode array (MEA) on the surface of a well on a cell culture plate." []
+is_a: OBI:0001977 ! cytometry assay
+is_a: OBI:0002188 ! multi-unit recording
+
+[Term]
+id: OBI:0003902
+name: transepithelial / transendothelial electrical resistance (TEER) assay
+def: "An extracellular electrophysiology recording assay to measure the integrity of a cell monolayer" []
+is_a: OBI:0000454 ! extracellular electrophysiology recording assay
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003903
+name: count of multi-electrode plate electrodes detecting action potential assay
+def: "A multi-electrode array assay that measures the number of electrodes in a well where the mean rate of action potentials is at least 5 spikes per minute." []
+is_a: OBI:0003901 ! multi-electrode array assay
+
+[Term]
+id: OBI:0003904
+name: count of multi-electrode plate electrodes detecting neuron burst assay
+def: "A multi-electrode array assay that measures the number of electrodes in a well where the burst rate is at least 0.5 bursts per minute." []
+is_a: OBI:0003901 ! multi-electrode array assay
+
+[Term]
+id: OBI:0003905
+name: neural network spike rate assay
+def: "An multi-electrode assay that measures the number of events when multiple electrodes simultaneously detect an action potential during a time period." []
+is_a: OBI:0003901 ! multi-electrode array assay
+
+[Term]
+id: OBI:0003906
+name: neural network spike duration assay
+def: "A multi-electrode assay that measures the mean duration of events when multiple electrodes detect an action potential" []
+is_a: OBI:0003901 ! multi-electrode array assay
+
+[Term]
+id: OBI:0003907
+name: count of multi-electrode plate electrodes detecting spike peak assay
+def: "A multi-electrode array assay that measures the average number of electrodes detecting a network spike, measured at the peak of a network spike." []
+is_a: OBI:0003901 ! multi-electrode array assay
+
+[Term]
+id: OBI:0003908
+name: mean interspike interval in network spike
+def: "A multi-electrode assay that measures the average interval between network spikes, events where multiple electrodes simultaneously detect an action potential." []
+is_a: OBI:0003901 ! multi-electrode array assay
+
+[Term]
+id: OBI:0003909
+name: bile acid concentration assay
+def: "An analyte assay that measures the abundance of bile acid in a volume of sample." []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003910
+name: urea nitrogen assay
+def: "An analyte assay that measures the abundance of urea nitrogen." []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003911
+name: urea nitrogen concentration assay
+def: "A urea nitrogen assay that measures the abundance of urea nitrogen in a specimen" []
+is_a: OBI:0003910 ! urea nitrogen assay
 
 [Term]
 id: OBI:0004001
@@ -32440,6 +32704,12 @@ def: "A physical quality inhering in a bearer by virtue of the bearer's motion c
 is_a: PATO:0001906 ! movement quality
 
 [Term]
+id: PATO:0001585
+name: conductivity
+def: "A physical quality inhering in a bearer by virtue of the bearer's disposition to transmit of an entity through a medium." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001632
 name: anterior to
 def: "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the front of an organism relative to another entity." []
@@ -32469,6 +32739,12 @@ id: PATO:0001741
 name: radioactive
 def: "A radiation quality inhering in bearer by virtue of the bearer's exhibiting or being caused by radioactivity." []
 is_a: PATO:0001740 ! activity (of a radionuclide)
+
+[Term]
+id: PATO:0001757
+name: electrical conductivity
+def: "A conductivity quality inhering in a bearer by virtue of the bearer's ability to convey electricity." []
+is_a: PATO:0001585 ! conductivity
 
 [Term]
 id: PATO:0001792
@@ -33889,7 +34165,7 @@ is_a: UPHENO:0001001 ! phenotype
 id: VO:0000001
 name: vaccine
 def: "Material entity that is manufactured to realize the vaccine function." []
-is_a: BFO:0000040 ! material entity
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: VO:0000002
@@ -33952,8 +34228,8 @@ name: intended plan process type
 [Typedef]
 id: IAO:0000039
 name: has measurement unit label
+range: IAO:0000003 ! measurement unit label
 is_functional: true
-is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: IAO:0000136
@@ -33965,29 +34241,33 @@ domain: IAO:0000030 ! information content entity
 id: IAO:0000219
 name: denotes
 def: "A primitive, instance-level, relation obtaining between an information content entity and some portion of reality. Denotation is what happens when someone creates an information content entity E in order to specifically refer to something. The only relation between E and the thing is that E can be used to 'pick out' the thing. This relation connects those two together. Freedictionary.com sense 3: To signify directly; refer to specifically" []
+domain: IAO:0000030 ! information content entity
 is_a: IAO:0000136 ! is about
+inverse_of: IAO:0000235 ! denoted by
 
 [Typedef]
 id: IAO:0000221
 name: is quality measurement of
 def: "m is a quality measurement of q at t. When q is a quality, there is a measurement process p that has specified output m, a measurement datum, that is about q" []
+domain: IAO:0000109 ! measurement datum
 is_a: IAO:0000136 ! is about
 
 [Typedef]
 id: IAO:0000235
 name: denoted by
 def: "inverse of the relation 'denotes'" []
+range: IAO:0000030 ! information content entity
 
 [Typedef]
 id: IAO:0000407
 name: has coordinate unit label
 is_functional: true
-is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: IAO:0000413
 name: is duration of
 def: "relates a process to a time-measurement-datum that represents the duration of the process" []
+domain: IAO:0000416 ! time measurement datum
 is_a: IAO:0000136 ! is about
 
 [Typedef]
