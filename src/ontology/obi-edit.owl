@@ -30416,6 +30416,113 @@ realizes some &apos;host of immune response role&apos;</obo:IAO_0000232>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0003916 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003916">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>channel</obo:IAO_0000111>
+        <obo:IAO_0000112>DAPI fluorescence channel in a confocal microscopy image.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">A data item that is a component of a digital image that represents spatially registered measurements collected for a specific spectral band, detector, or sensor output.</obo:IAO_0000115>
+        <obo:IAO_0000117>Lachlan Whitehead</obo:IAO_0000117>
+        <obo:IAO_0000117>Pradeep Rajasekhar</obo:IAO_0000117>
+        <obo:IAO_0000117>Marek Cmero</obo:IAO_0000117>
+        <obo:IAO_0000117>Michael Milton</obo:IAO_0000117>
+        <obo:IAO_0000118>image channel</obo:IAO_0000118>
+        <obo:IAO_0000118>fluorescence channel</obo:IAO_0000118>
+        <obo:IAO_0000118>color channel</obo:IAO_0000118>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Channel_(digital_image)</obo:IAO_0000119>
+        <rdfs:label>channel</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003917 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003917">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003355"/>
+        <obo:IAO_0000111>image transformation</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">A data transformation that applies a rule or formula to each pixel or set of pixels in an image to change that image in some way. Produces a transformed image data set or derived data item.</obo:IAO_0000115>
+        <obo:IAO_0000117>Lachlan Whitehead</obo:IAO_0000117>
+        <obo:IAO_0000117>Pradeep Rajasekhar</obo:IAO_0000117>
+        <obo:IAO_0000117>Marek Cmero</obo:IAO_0000117>
+        <obo:IAO_0000117>Michael Milton</obo:IAO_0000117>
+        <obo:IAO_0000118>image processing transformation</obo:IAO_0000118>
+        <obo:IAO_0000118>digital image transformation</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.1242/dev.076414</obo:IAO_0000119>
+        <rdfs:label>image transformation</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003918 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003918">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003917"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003360"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>image segmentation</obo:IAO_0000111>
+        <obo:IAO_0000112>Segmentation of cell nuclei in a fluorescence image to create a binary mask indicating presence or absence of a cell nucleus at each pixel coordinate.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An image transformation that partitions an image into distinct objects, groups, or regions. Typically represented by spatial coordinates or an image mask of integer values at each pixel or voxel position.</obo:IAO_0000115>
+        <obo:IAO_0000117>Lachlan Whitehead</obo:IAO_0000117>
+        <obo:IAO_0000117>Pradeep Rajasekhar</obo:IAO_0000117>
+        <obo:IAO_0000117>Marek Cmero</obo:IAO_0000117>
+        <obo:IAO_0000117>Michael Milton</obo:IAO_0000117>
+        <obo:IAO_0000118>pixel classification</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.1242/dev.076414</obo:IAO_0000119>
+        <rdfs:label>image segmentation</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003919 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003919">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003917"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003333"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>geometric image transformation</obo:IAO_0000111>
+        <obo:IAO_0000112>Rotation, translation, scaling, skewing, or warping of an image.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An image transformation that alters the geometrical structure of images by shifting image pixels from their original positions to new positions, ideally without modifying the original pixel values. Produces a geometrically modified image data set.</obo:IAO_0000115>
+        <obo:IAO_0000117>Lachlan Whitehead</obo:IAO_0000117>
+        <obo:IAO_0000117>Pradeep Rajasekhar</obo:IAO_0000117>
+        <obo:IAO_0000117>Marek Cmero</obo:IAO_0000117>
+        <obo:IAO_0000117>Michael Milton</obo:IAO_0000117>
+        <obo:IAO_0000118>geometric transformation</obo:IAO_0000118>
+        <obo:IAO_0000118>spatial transformation</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.1016/j.array.2022.100258</obo:IAO_0000119>
+        <rdfs:label>geometric image transformation</rdfs:label>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003920 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003920">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003917"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0003333"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>point operation</obo:IAO_0000111>
+        <obo:IAO_0000112>Gamma correction, inversion, or normalization of an image.</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An image transformation that modifies pixel values using a mathematical operation that is independent of neighboring pixels or spatial location of those pixels. Produces a mathematically transformed image data set.</obo:IAO_0000115>
+        <obo:IAO_0000117>Lachlan Whitehead</obo:IAO_0000117>
+        <obo:IAO_0000117>Pradeep Rajasekhar</obo:IAO_0000117>
+        <obo:IAO_0000117>Marek Cmero</obo:IAO_0000117>
+        <obo:IAO_0000117>Michael Milton</obo:IAO_0000117>
+        <obo:IAO_0000118>pixel operation</obo:IAO_0000118>
+        <obo:IAO_0000118>pixel-wise operation</obo:IAO_0000118>
+        <obo:IAO_0000119>https://bioimagebook.github.io/chapters/2-processing/2-point_operations/point_operations.html</obo:IAO_0000119>
+        <rdfs:label>point operation</rdfs:label>
+    </owl:Class>
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#ObsoleteClass -->
 
     <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass">
