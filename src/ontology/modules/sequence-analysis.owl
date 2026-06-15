@@ -34,6 +34,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117"/>
@@ -49,6 +55,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000233 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000233"/>
     
 
 
@@ -311,7 +323,19 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002585 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002585">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200187"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002569"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">A data transformation in which subsequences of a molecular sequence are cut (removed).</obo:IAO_0000115>
         <rdfs:label>sequence trimming</rdfs:label>
     </owl:Class>
@@ -470,6 +494,48 @@
         <obo:IAO_0000117>John Judkins</obo:IAO_0000117>
         <obo:IAO_0000119>VEuPathDB</obo:IAO_0000119>
         <rdfs:label>proportion mapped reads</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003924 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003924">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200187"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A data transformation that partitions assembled metagenomic sequences into groups (bins), each representing the genome of a single organism or population recovered from a metagenome (a metagenome-assembled genome).</obo:IAO_0000115>
+        <obo:IAO_0000116>No term for this process exists in any OBO ontology; the nearest external coverage is EDAM (operation-level, without BFO grounding). The output, a metagenome-assembled genome, has no OBI data class yet, so it is described in the definition rather than asserted as a &apos;has specified output&apos; axiom.</obo:IAO_0000116>
+        <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>genome binning</obo:IAO_0000118>
+        <obo:IAO_0000118>metagenome genome binning</obo:IAO_0000118>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1967</obo:IAO_0000233>
+        <rdfs:label>metagenome binning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003925 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003925">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200187"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A data transformation that assigns taxonomic labels to individual sequencing reads, or to a set of reads, by comparison against a reference sequence database and without prior assembly.</obo:IAO_0000115>
+        <obo:IAO_0000116>Distinct from OBI:0001960 &apos;taxonomic diversity assessment by targeted gene survey&apos; (an amplicon assay): this is the read-based (shotgun) computational classification process. Related process concepts exist in GENEPIO and in EDAM (operation_3460); requested for OBI/BFO grounding.</obo:IAO_0000116>
+        <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>read-based taxonomic profiling</obo:IAO_0000118>
+        <obo:IAO_0000118>taxonomic read classification</obo:IAO_0000118>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1967</obo:IAO_0000233>
+        <rdfs:label>read-based taxonomic classification</rdfs:label>
     </owl:Class>
     
 
