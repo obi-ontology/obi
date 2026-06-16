@@ -502,7 +502,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">A data transformation that partitions assembled metagenomic sequences into groups (bins), each representing the genome of a single organism or population recovered from a metagenome (a metagenome-assembled genome).</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A data transformation that partitions metagenomic sequence data into groups (bins), each representing the putative genome of a single organism or population present in a metagenome.</obo:IAO_0000115>
         <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
         <obo:IAO_0000118>genome binning</obo:IAO_0000118>
         <obo:IAO_0000118>metagenome genome binning</obo:IAO_0000118>
@@ -528,6 +528,44 @@
         <obo:IAO_0000118>taxonomic read classification</obo:IAO_0000118>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1967</obo:IAO_0000233>
         <rdfs:label>read-based taxonomic classification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003926 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003926">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003924"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A metagenome binning that partitions assembled metagenomic sequences (contigs) into groups (bins), each representing the genome of a single organism or population recovered from a metagenome (a metagenome-assembled genome).</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>contig binning</obo:IAO_0000118>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1967</obo:IAO_0000233>
+        <rdfs:label>assembly-based metagenome binning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003927 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003927">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003924"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000973"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A metagenome binning that clusters unassembled sequencing reads into groups (bins) by sequence composition, abundance, or overlap, without prior assembly and without comparison to a reference sequence database.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>read binning</obo:IAO_0000118>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1967</obo:IAO_0000233>
+        <rdfs:label>read-based metagenome binning</rdfs:label>
     </owl:Class>
     
 
