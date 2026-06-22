@@ -7143,6 +7143,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002632">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0001856"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000111>PacBio Sequel</obo:IAO_0000111>
         <obo:IAO_0000112>The cDNAs were sequenced on the PacBio Sequel platform.</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation with long reads and high consensus accuracy, and manufactured by the Pacific Biosciences corporation</obo:IAO_0000115>
@@ -7159,6 +7165,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002633">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0001856"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000111>PacBio Sequel II</obo:IAO_0000111>
         <obo:IAO_0000112>The cDNAs were sequenced on the PacBio Sequel II platform.</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation of highly accurate (&quot;HiFi&quot;) long reads, and which is manufactured by the Pacific Biosciences corporation.</obo:IAO_0000115>
@@ -9501,6 +9513,54 @@
         <obo:IAO_0000118>lightsheet microscope</obo:IAO_0000118>
         <obo:IAO_0000119>doi:10.1016/B978-0-12-420138-5.00011-2</obo:IAO_0000119>
         <rdfs:label>light sheet microscope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003921 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003921">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0001856"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>PacBio Sequel IIe</obo:IAO_0000111>
+        <obo:IAO_0000112>Soil and freshwater sediment metagenomes in the MicroFlora Danica project were sequenced on the PacBio Sequel IIe (NCBI BioProject PRJNA1071982).</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A DNA sequencer that is manufactured by the Pacific Biosciences corporation, built upon single molecule real-time sequencing technology, that shares the SMRT Cell design and chemistry of the Sequel II and adds on-instrument computational processing to generate highly accurate (&quot;HiFi&quot;) long reads.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>Pacific Biosciences Sequel IIe</obo:IAO_0000118>
+        <obo:IAO_0000118>Sequel IIe</obo:IAO_0000118>
+        <obo:IAO_0000119>https://www.pacb.com/sequel-system/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1984</obo:IAO_0000233>
+        <rdfs:label>PacBio Sequel IIe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003922 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003922">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000304"/>
+                <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/OBI_0001856"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>PacBio Revio</obo:IAO_0000111>
+        <obo:IAO_0000112>Bacterial enrichment cultures from activated sludge were sequenced on the PacBio Revio (NCBI BioProject PRJEB85528).</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <obo:IAO_0000115 xml:lang="en">A DNA sequencer that is manufactured by the Pacific Biosciences corporation, built upon single molecule real-time sequencing technology, that uses SMRT Cell 25M flow cells to generate highly accurate (&quot;HiFi&quot;) long reads at high throughput.</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Mark Andrew Miller</obo:IAO_0000117>
+        <obo:IAO_0000118>Pacific Biosciences Revio</obo:IAO_0000118>
+        <obo:IAO_0000118>Revio</obo:IAO_0000118>
+        <obo:IAO_0000119>https://www.pacb.com/revio/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1985</obo:IAO_0000233>
+        <rdfs:label>PacBio Revio</rdfs:label>
     </owl:Class>
     
 
