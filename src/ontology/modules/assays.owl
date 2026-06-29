@@ -8069,7 +8069,20 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001271 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001271">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001177"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
@@ -8082,11 +8095,11 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA sequencing assay that determines an RNA sequence by analyzing the transcibed regions of the genome and or to quantitate transcript abundance.</obo:IAO_0000115>
-        <obo:IAO_0000117>James Malone</obo:IAO_0000117>
-        <obo:IAO_0000118>transcription profiling by high throughput sequencing</obo:IAO_0000118>
-        <obo:IAO_0000119>EFO:0002770</obo:IAO_0000119>
-        <rdfs:label>RNA-seq assay</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A type of transcription profiling assay where transcripts are extracted from a sample, usually (but not always) transformed into cDNA, and then sequenced. Sequence reads are generally mapped to a reference and quantified to establish levels of gene transcription.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>RNA-seq assay</obo:IAO_0000118>
+        <rdfs:label>transcription profiling by RNA sequencing assay</rdfs:label>
     </owl:Class>
     
 
@@ -8131,7 +8144,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001282 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001282">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000443"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
@@ -9415,7 +9428,20 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001673 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001673">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
@@ -9446,10 +9472,11 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112>Linking promoters to functional transcripts in small samples with nanoCAGE and CAGEscan._PMID:20543846</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A transcription profiling assay that is performed using a very low amount (nanogram scale) of mRNA samples using Cap analysis gene expression (CAGE).</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that is performed using a very low amount (nanogram scale) of mRNA samples using Cap analysis gene expression (CAGE).</obo:IAO_0000115>
         <obo:IAO_0000117>Marcus Chibucos</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>nano-CAGE</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:20543846</obo:IAO_0000119>
         <rdfs:label>nano-cap analysis of gene expression assay</rdfs:label>
@@ -9460,7 +9487,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001674 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001674">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -9493,6 +9520,19 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000880"/>
             </owl:Restriction>
@@ -9521,10 +9561,11 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112>5&apos; end-centered expression profiling using cap-analysis gene expression and next-generation sequencing. PMID:22362160</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A transcription profiling assay which measures RNA transcript abundances in biological samples by extracting 5&apos; ends of capped transcripts, RTPCR and sequence those. Copy numbers of CAGE tags provide a way of quantification and provide a measure of expression of the transcriptome</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay which measures RNA transcript abundances in biological samples by extracting 5&apos; ends of capped transcripts, RTPCR and sequence those. Copy numbers of CAGE tags provide a way of quantification and provide a measure of expression of the transcriptome</obo:IAO_0000115>
         <obo:IAO_0000117>Marcus Chibucos</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>CAGE</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:14663149</obo:IAO_0000119>
         <rdfs:label>cap analysis of gene expression assay</rdfs:label>
@@ -10281,7 +10322,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001850 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001850">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -10361,25 +10402,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001573"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001331"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000112>Ruan, et al. Genome wide full-length transcript analysis using 5&apos; and 3&apos; paired-end-tag next generation sequencing (RNA-PET). Methods Mol Biol. 2012;809:535-62. [PMID:22113299]</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A transcription profiling assay that determines transcripts, gene structures, and gene expressions using Paired-End Tags and sequencing technology.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that employs paired-end sequencing of RNA transcripts to determine things such as gene expression, gene structure, and alternative transcript structure.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Venkat Malladi</obo:IAO_0000117>
         <obo:IAO_0000118>RNA-PET</obo:IAO_0000118>
         <obo:IAO_0000118>RNA-PET assay</obo:IAO_0000118>
-        <obo:IAO_0000119>PMID:22113299</obo:IAO_0000119>
         <rdfs:label>transcript analysis by paired-end tag sequencing assay</rdfs:label>
     </owl:Class>
     
@@ -11119,7 +11155,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001864 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001864">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -11196,8 +11232,8 @@
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600047"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -11217,9 +11253,11 @@
         </rdfs:subClassOf>
         <obo:IAO_0000112>Batut et al. High-fidelity promoter profiling reveals widespread alternative promoter usage and transposon-driven developmental gene expression. Genome Research. 2013 Jan;23(1):169-80. [PMID:22936248]</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">An transcription profiling assay that identifies transcription start sites (TSS), the quantification of their expression and the characterization of their transcripts using high throughput sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that identifies transcription start sites (TSS), the quantification of their expression and the characterization of their transcripts using high throughput sequencing.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Venkat Malladi</obo:IAO_0000117>
         <obo:IAO_0000118>RAMPAGE</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:22936248</obo:IAO_0000119>
@@ -13504,7 +13542,7 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002029 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002029">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000424"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -13541,8 +13579,8 @@
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
-                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0600047"/>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
@@ -13550,10 +13588,12 @@
         </rdfs:subClassOf>
         <obo:IAO_0000112>PMID:15905473</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
-        <obo:IAO_0000115 xml:lang="en">A transcription profiling assay that quantifies RNA through creating short signature tags of the messages and ligating them into a larger molecule than was sequenced.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that quantifies RNA through creating short signature tags of the messages and ligating them into a larger molecule that is then sequenced.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Janos Demeter</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>SAGE</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:7570003</obo:IAO_0000119>
         <obo:IAO_0000233>https://sourceforge.net/p/obi/obi-terms/720/</obo:IAO_0000233>
@@ -13723,13 +13763,27 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002033 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002033">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001282"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>pmid:23580730</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that combines TL-seq with polysome fractionation</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A translation profiling assay that combines transcript leader sequencing with polysome fractionation. TATL-seq works by applying TL-seq across fractions of a polysome gradient, generating TL-specific translational measurements to identify how different transcript leader sequences effect translation.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Janos Demeter</obo:IAO_0000117>
         <obo:IAO_0000118>TATL-seq</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:23580730</obo:IAO_0000119>
+        <obo:IAO_0000119>http://hdl.handle.net/1721.1/83763</obo:IAO_0000119>
         <obo:IAO_0000233>https://sourceforge.net/p/obi/obi-terms/725/</obo:IAO_0000233>
         <rdfs:label>translation-associated transcript leader sequencing assay</rdfs:label>
     </owl:Class>
@@ -13740,10 +13794,25 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002034">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>pmid:23580730</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that combines enzymatic capture of m(7)G-capped mRNA 5&apos; ends with high-throughput sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that combines enzymatic capture of m(7)G-capped mRNA 5&apos; ends with high-throughput sequencing.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Janos Demeter</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>TL-seq</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:23580730</obo:IAO_0000119>
         <obo:IAO_0000233>https://sourceforge.net/p/obi/obi-terms/725/</obo:IAO_0000233>
@@ -13801,11 +13870,26 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002038 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002038">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001282"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>Aspden et al., (August 2014). &quot;Extensive translation of small open reading frames revealed by poly-ribo-seq.&quot; eLIFE 2014;3:e03528</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">A RNA-seq assay that sequences only mRNA protected by the ribosome during translation.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A translation profiling assay that sequences only mRNA protected by the ribosome during translation and thus provides information on which transcipts are undergoing active translation.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Venkat Malladi</obo:IAO_0000117>
         <obo:IAO_0000118>Ribo-seq</obo:IAO_0000118>
         <obo:IAO_0000118>Ribo-seq assay</obo:IAO_0000118>
@@ -13868,8 +13952,21 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002041">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>Bohla et al., (September 2014). &quot;A functional insulator screen identifies NURF and dREAM components to be required for enhancer-blocking.&quot; PLoS One 9(9):e107765. doi: 10.1371/journal.pone.0107765.</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that identifies the sequences that act as transcriptional enhancers in a direct, quantitative, and genome-wide manner from sheared genomic DNA.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An assay that identifies the sequences that act as transcriptional enhancers in a direct, quantitative, and genome-wide manner from sheared genomic DNA.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000117>Venkat Malladi</obo:IAO_0000117>
@@ -13921,8 +14018,21 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0002044 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002044">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that comprehensively characterizes sequence and structural specificity of RNA binding proteins (RBPs).</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001146"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An assay that comprehensively characterizes sequence and structural specificity of RNA binding proteins (RBPs).</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
         <obo:IAO_0000117>Venkat Malladi</obo:IAO_0000117>
@@ -13939,10 +14049,25 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002045">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>Wu et al., (July 2014). &quot;Genome-wide determination of poly(A) sites in Medicago truncatula: evolutionary conservation of alternative poly(A) site choice. BMC Genomics. 2014 Jul 21;15:615. doi: 10.1186/1471-2164-15-615.</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">A RNA-seq assay that quantitatively profiles RNA polyadenylation at the transcriptome level.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that quantitatively profiles RNA polyadenylation at the transcriptome level.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jie Zheng</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Venkat Malladi</obo:IAO_0000117>
         <obo:IAO_0000118>PAS-seq</obo:IAO_0000118>
         <obo:IAO_0000118>PAS-seq assay</obo:IAO_0000118>
@@ -14129,11 +14254,25 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002112">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay which is targeting small RNA (&lt; 200 bp) sequences such as, but not exclusive to, miRNAs using, for example, small RNA library preparation kits.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay which is targeting small RNA (&lt; 200 bp) sequences such as, but not exclusive to, miRNAs using, for example, small RNA library preparation kits.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jason Hilton</obo:IAO_0000117>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>short RNA-seq</obo:IAO_0000118>
         <obo:IAO_0000118>small RNA-seq</obo:IAO_0000118>
         <obo:IAO_0000119>url:http://science.sciencemag.org/content/316/5830/1484.full</obo:IAO_0000119>
@@ -14148,10 +14287,24 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002113">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay to identify spans of nascent transcription in the genome through isolation of recent bromouridine (Bru) labelled RNAs.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay used to identify spans of nascent transcription in the genome through isolation of recent bromouridine (Bru) labelled RNAs.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jason Hilton</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>Bru-seq</obo:IAO_0000118>
         <obo:IAO_0000119>PMC:4009065</obo:IAO_0000119>
         <rdfs:label>bromouridine labeling and sequencing assay</rdfs:label>
@@ -14163,10 +14316,24 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002114">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay to identify RNA populations of specific ages through isolation of RNAs first labelled with bromouridine (Bru) followed by chasing in uridine for different periods of time.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay used to identify RNA populations of specific ages through isolation of RNAs first labelled with bromouridine (Bru) followed by chasing in uridine for different periods of time.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jason Hilton</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>BruChase-seq</obo:IAO_0000118>
         <obo:IAO_0000119>PMC:4009065</obo:IAO_0000119>
         <rdfs:label>bromouridine pulse-chase and sequencing assay</rdfs:label>
@@ -14518,10 +14685,24 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002143">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay to identify transcription start sites and active enhancer elements through isolation of bromouridine (Bru) labelled RNAs after UV light exposure introduces transcription-blocking lesions.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay used to identify transcription start sites and active enhancer elements through isolation of bromouridine (Bru) labelled RNAs after UV light exposure introduces transcription-blocking lesions.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Stoeckert</obo:IAO_0000117>
         <obo:IAO_0000117>Jason Hilton</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>BruUV-seq</obo:IAO_0000118>
         <obo:IAO_0000119>PMC:4675984</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/827</obo:IAO_0000233>
@@ -16554,8 +16735,23 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000552"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that maps the genome-wide distribution of transcriptionally-engaged Pol II at base-pair resolution by using biotin-labeled ribonucleotide triphosphate analogs (biotin-NTP) for nuclear run-on reactions, allowing the efficient affinity purification of nascent RNAs for high throughput sequencing from their 3&apos; ends.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that maps the genome-wide distribution of transcriptionally-engaged Pol II at base-pair resolution by using biotin-labeled ribonucleotide triphosphate analogs (biotin-NTP) for nuclear run-on reactions, allowing the efficient affinity purification of nascent RNAs for high throughput sequencing from their 3&apos; ends.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>PRO-Seq</obo:IAO_0000118>
         <obo:IAO_0000118>precision nuclear run-on and sequencing assay</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:23430654</obo:IAO_0000119>
@@ -16752,13 +16948,28 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000869"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay to study transcriptomes through the enrichment of polyadenylated transcripts or removal of ribosomal RNA prior to high-throughput sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay to study transcriptomes through the enrichment of polyadenylated transcripts or removal of ribosomal RNA prior to high-throughput sequencing.</obo:IAO_0000115>
         <obo:IAO_0000117>Jason Hilton</obo:IAO_0000117>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>mRNA-seq</obo:IAO_0000118>
         <obo:IAO_0000119>url:https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-15-419</obo:IAO_0000119>
         <obo:IAO_0000234>ENCODE</obo:IAO_0000234>
@@ -16773,13 +16984,28 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002573"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay to study non-polyadenylated transcripts, such as, but not exclusive to unspliced and circular isoforms, through the depletion of polyadenylated transcripts prior to high-throughput sequencing.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay to study non-polyadenylated transcripts, such as, but not exclusive to unspliced and circular isoforms, through the depletion of polyadenylated transcripts prior to high-throughput sequencing.</obo:IAO_0000115>
         <obo:IAO_0000117>Jason Hilton</obo:IAO_0000117>
         <obo:IAO_0000117>Mark A. Miller</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>polyA-depleted RNA-seq</obo:IAO_0000118>
         <obo:IAO_0000119>url:http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0030733</obo:IAO_0000119>
         <obo:IAO_0000119>url:http://www.tandfonline.com/doi/full/10.1080/15476286.2015.1110676</obo:IAO_0000119>
@@ -16799,8 +17025,23 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002575">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>Novel transcript forms were assessed by isoform sequencing.</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">A method for sequencing isoforms by enriching a cDNA library for full-length reads spanning entire transcript isoforms.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay for sequencing isoforms by enriching a cDNA library for full-length reads spanning entire transcript isoforms.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>ISO-seq</obo:IAO_0000118>
         <obo:IAO_0000119>url:http://www.pacb.com/blog/intro-to-iso-seq-method-full-leng/</obo:IAO_0000119>
         <rdfs:label>isoform sequencing</rdfs:label>
@@ -17071,13 +17312,30 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0002631">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000112>Single-cell RNA sequencing (scRNA-seq) assays provide the expression profiles of individual cells.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA sequencing assay that uses RNA extracts as input that can be traced to a single cell of origin.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that uses as input RNA extracts that can be traced to a single cell of origin. These extracts may come from the entire cell or only a part of the cell such as the nucleus or the cytoplasm.</obo:IAO_0000115>
         <obo:IAO_0000117>Dan Berrios</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000118>scRNA-seq</obo:IAO_0000118>
+        <obo:IAO_0000118>single-cell RNA sequencing assay</obo:IAO_0000118>
+        <obo:IAO_0000118>single-cell RNA-seq</obo:IAO_0000118>
         <obo:IAO_0000119>Anna Maria Masci</obo:IAO_0000119>
-        <rdfs:label>single-cell RNA sequencing assay</rdfs:label>
+        <obo:IAO_0000119>Michelle Giglio</obo:IAO_0000119>
+        <rdfs:label>single-cell transcription profiling by RNA sequencing assay</rdfs:label>
     </owl:Class>
     
 
@@ -19224,6 +19482,19 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0002627"/>
             </owl:Restriction>
@@ -19234,11 +19505,13 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001331"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay in which highly abundant ribosomal RNAs are removed from total RNA before sequencing, resulting in more efficient transcript/gene detection.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay in which highly abundant ribosomal RNAs are removed from total RNA before sequencing, resulting in more efficient transcript/gene detection.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
         <obo:IAO_0000118>rRNA-deleted RNA sequencing assay</obo:IAO_0000118>
+        <obo:IAO_0000118>rRNA-depleted RNA sequencing assay</obo:IAO_0000118>
         <obo:IAO_0000119>PMID:29556074</obo:IAO_0000119>
         <obo:IAO_0000234>CFDE</obo:IAO_0000234>
         <rdfs:label>ribosomal RNA-depleted RNA sequencing assay</rdfs:label>
@@ -19252,17 +19525,31 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000417"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001331"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that determines the RNA sequence of microbial transcripts from a microbioal community of mixed species from a given microbiome.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that determines the RNA sequence of microbial transcripts from a microbioal community of mixed species from a given microbiome.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
         <obo:IAO_0000119>PMID:31450270</obo:IAO_0000119>
         <obo:IAO_0000234>CFDE</obo:IAO_0000234>
-        <rdfs:label>metatranscriptome sequencing assay</rdfs:label>
+        <rdfs:label>metatranscriptome profiling assay</rdfs:label>
     </owl:Class>
     
 
@@ -21674,9 +21961,23 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003090">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay in which the sample that is sequenced is derived from a collection of cells, such as a tissue sample or entire cell culture, and therefore provides results representative of the aggregate of sample cells.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay in which the sample that is sequenced is derived from a collection of cells, such as a tissue sample or entire cell culture, and therefore provides results representative of the aggregate of sample cells.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
         <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
         <obo:IAO_0000119>url:https://www.biostars.org/p/458516/</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1396</obo:IAO_0000233>
@@ -22075,10 +22376,24 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003105">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002631"/>
-        <obo:IAO_0000115 xml:lang="en">A single-cell RNA sequencing assay that involves single cell combinatorial indexing (&apos;sci-&apos;) strategy to profile the transcriptomes of single cells or nuclei without single cell isolation.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A single-cell transcription profiling by RNA sequencing assay that involves single cell combinatorial indexing (&apos;sci-&apos;) strategy to profile the transcriptomes of single cells or nuclei without single cell isolation.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
         <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
+        <obo:IAO_0000118>sci-RNA-seq</obo:IAO_0000118>
         <obo:IAO_0000118>sciRNAseq</obo:IAO_0000118>
         <obo:IAO_0000119>url:https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5894354/</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1412</obo:IAO_0000233>
@@ -22109,7 +22424,20 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003107">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000115 xml:lang="en">An RNA-seq assay that involves transfer of RNA from tissue sections onto a surface covered in DNA-barcoded beads with known positions, allowing the locations of the RNA to be inferred by sequencing.</obo:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A transcription profiling by RNA sequencing assay that involves transfer of RNA from tissue sections onto a surface covered in DNA-barcoded beads with known positions, allowing the locations of the RNA to be inferred by sequencing.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
         <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
@@ -22124,8 +22452,8 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0003108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003108">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003109"/>
-        <obo:IAO_0000115 xml:lang="en">A single-nucleus RNA sequencing assay that involves joint profiling of accessible chromatin and RNA within the same cells which enables direct matching of transcriptional regulation to its outputs.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000115 xml:lang="en">An assay that involves joint profiling of accessible chromatin and RNA within the same cells which enables direct matching of transcriptional regulation to its outputs.</obo:IAO_0000115>
         <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
         <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
         <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
@@ -22135,26 +22463,6 @@
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1416</obo:IAO_0000233>
         <obo:IAO_0000234>CFDE</obo:IAO_0000234>
         <rdfs:label>single-nucleus chromatin accessibility and mRNA expression sequencing assay</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0003109 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003109">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001271"/>
-        <obo:IAO_0000115 xml:lang="en">A RNA-seq assay that is used for profiling gene expression in individual nuclei with optimized next generation sequencing (NGS) technologies. This allows the RNA-seq profiling of cell types that are more vulnerable to the tissue dissociation process, and that are therefore underrepresented in the final data set in single cell sequencing.</obo:IAO_0000115>
-        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
-        <obo:IAO_0000117>Rebecca Jackson</obo:IAO_0000117>
-        <obo:IAO_0000117>Suvarna Nadendla</obo:IAO_0000117>
-        <obo:IAO_0000118>sNuc-seq</obo:IAO_0000118>
-        <obo:IAO_0000118>single nuclei RNA sequencing</obo:IAO_0000118>
-        <obo:IAO_0000118>snRNA-seq</obo:IAO_0000118>
-        <obo:IAO_0000119>EFO:0009809</obo:IAO_0000119>
-        <obo:IAO_0000119>url:https://www.biocompare.com/Editorial-Articles/557506-Advantages-of-Single-Nucleus-RNA-Sequencing/</obo:IAO_0000119>
-        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1415</obo:IAO_0000233>
-        <obo:IAO_0000234>CFDE</obo:IAO_0000234>
-        <rdfs:label>single-nucleus RNA sequencing assay</rdfs:label>
     </owl:Class>
     
 
@@ -25504,6 +25812,131 @@
         <obo:IAO_0000119>OBI</obo:IAO_0000119>
         <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1488</obo:IAO_0000233>
         <rdfs:label>detection technique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003375 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003375">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000115 xml:lang="en">An assay that combines electrophysiological, transcriptomic, and morphological characterization of individual neurons. In this approach, patch-clamp is used to generate an electrophysiological recording of the neuron, then the neuron&apos;s cytoplasm and/or nucleus is collected and processed for RNAseq, and finally the cell is simultaneously filled with a dye that allows for subsequent morphological reconstruction.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Patrick Lloyd Ray</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119>https://en.wikipedia.org/wiki/Patch-sequencing</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1457</obo:IAO_0000233>
+        <obo:IAO_0000234>Patrick Lloyd Ray</obo:IAO_0000234>
+        <rdfs:label>patch-seq assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003376 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003376">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002631"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A single-cell transcription profiling by RNA sequencing assay that analyzes mRNA transcripts from droplets of individual cells. The process involves the following steps: (1) prepare a single-cell suspension from a tissue; (2) co-encapsulate each cell with a distinctly barcoded microparticle (bead) in a nanoliter-scale droplet; (3) lyse cells after they have been isolated in droplets; (4) capture a cell’s mRNAs on its companion microparticle, forming STAMPs (single-cell transcriptomes attached to microparticles); (5) reverse-transcribe, amplify, and sequence.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Patrick Lloyd Ray</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>Drop-seq</obo:IAO_0000118>
+        <obo:IAO_0000118>Dropseq</obo:IAO_0000118>
+        <obo:IAO_0000118>dropseq</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.1016/j.cell.2015.05.002</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1457</obo:IAO_0000233>
+        <obo:IAO_0000234>Patrick Lloyd Ray</obo:IAO_0000234>
+        <rdfs:label>droplet-based single-cell RNA sequencing assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003377 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003377">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <obo:IAO_0000115 xml:lang="en">An assay that uses combinatorial indexing to generate a library of cDNA and open chromatin gDNA fragments by tagmenting a single nuclei and open chromatin, and encapsulating those in a droplet including both an oligo-dT-containing barcoded bead and a splint oligonucleotide, which links the tagmented gDNA fragments to the bead which capture both mRNAs and open chromatin fragments.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Patrick Lloyd Ray</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>SNARE-seq2</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.1038/s12276-020-0420-2</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1457</obo:IAO_0000233>
+        <obo:IAO_0000234>Patrick Lloyd Ray</obo:IAO_0000234>
+        <rdfs:label>single-nucleus chromatin accessibility and mRNA expression sequencing 2 assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003378 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003378">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002631"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A single cell transcription profiling by RNA sequencing assay wherein cells are lysed and their recovered RNA is hybridized to an oligo(dT) that primes a reverse transcription reaction, the outcome of which are cDNA’s that have PCR handles on both ends. The cDNA&apos;s are then amplified using PCR, and the products are sequenced.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Patrick Lloyd Ray</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>SMARTseq</obo:IAO_0000118>
+        <obo:IAO_0000119>http://www.enseqlopedia.com/wiki-entry/rna-sequencing-methods/low-level-rna-detection/smart-seq/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1457</obo:IAO_0000233>
+        <obo:IAO_0000234>Patrick Lloyd Ray</obo:IAO_0000234>
+        <rdfs:label>switching mechanism at the 5&apos; end of RNA template sequencing assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003379 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003379">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002631"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A single cell transcription profiling by RNA sequencing assay that is a variation on the switching mechanism at the 5&apos; end of RNA template sequencing assay (SMARTseq) that allows the generation of full-length cDNA and sequencing libraries by using standard reagents.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Patrick Lloyd Ray</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>SMARTseq2</obo:IAO_0000118>
+        <obo:IAO_0000119>https://doi.org/10.1038/nprot.2014.006</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1457</obo:IAO_0000233>
+        <obo:IAO_0000234>Patrick Lloyd Ray</obo:IAO_0000234>
+        <rdfs:label>switching mechanism at the 5&apos; end of RNA template sequencing 2 assay</rdfs:label>
     </owl:Class>
     
 
@@ -35616,6 +36049,124 @@
         <obo:IAO_0000116>urea nitrogen is the nitrogen component of urea found in a biological specimen</obo:IAO_0000116>
         <obo:IAO_0000117>Jennifer Fostel</obo:IAO_0000117>
         <rdfs:label>urea nitrogen concentration assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003912 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003912">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0003659"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000626"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">An in vitro CRISPR screen assay that uses single-cell ATAC-Seq to detect induced changes in chromatin accessibility</obo:IAO_0000115>
+        <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119>https://pmc.ncbi.nlm.nih.gov/articles/PMC11291144/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1920</obo:IAO_0000233>
+        <obo:IAO_0000234>Jennifer Jou</obo:IAO_0000234>
+        <rdfs:label>in vitro CRISPR screen using single-cell ATAC-seq</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003913 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003913">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002631"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A single-cell transcription profiling by RNA sequencing assay in which mRNA transcripts are metabolically labeled with 4-thiouridine to investigate temporal RNA dynamics.</obo:IAO_0000115>
+        <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000119>https://pmc.ncbi.nlm.nih.gov/articles/PMC8103797/</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1922</obo:IAO_0000233>
+        <obo:IAO_0000234>Jennifer Jou</obo:IAO_0000234>
+        <rdfs:label>single-cell metabolically labeled new RNA tagging sequencing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003914 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003914">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002675"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A massively parallel reporter assay in which libraries of reporter constructs are transfected into samples and then measured via single cell transcriptomic methods to enable discovery of cell-specific transcriptional regulatory activity</obo:IAO_0000115>
+        <obo:IAO_0000117>Jennifer Jou</obo:IAO_0000117>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>scMPRA</obo:IAO_0000118>
+        <obo:IAO_0000118>scQer</obo:IAO_0000118>
+        <obo:IAO_0000119>https://pubmed.ncbi.nlm.nih.gov/36635387/ </obo:IAO_0000119>
+        <obo:IAO_0000119>https://www.nature.com/articles/s41592-024-02260-3</obo:IAO_0000119>
+        <obo:IAO_0000233>https://github.com/obi-ontology/obi/issues/1924</obo:IAO_0000233>
+        <obo:IAO_0000234>Jennifer Jou</obo:IAO_0000234>
+        <rdfs:label>single cell massively parallel reporter assay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0003915 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0003915">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0002631"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001177"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0003368"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A single-cell transcription profiling by RNA sequencing assay that involves single cell combinatorial indexing (&apos;sci-&apos;) to profile the transcriptomes of single cells or nuclei in an ultra high-throughput manor via changes to the method, as compared to sci-RNA-seq, that include extraction of nuclei directly from fresh tissue, use of hairpin ligation for the third level of indexing, optimization of enxymatic reactions, and use of dilution instead of FACS sorting.</obo:IAO_0000115>
+        <obo:IAO_0000117>Michelle Giglio</obo:IAO_0000117>
+        <obo:IAO_0000117>Sebastian Duesing</obo:IAO_0000117>
+        <obo:IAO_0000118>sci-RNA-seq3</obo:IAO_0000118>
+        <obo:IAO_0000118>sciRNAseq3</obo:IAO_0000118>
+        <obo:IAO_0000119>https://pmc.ncbi.nlm.nih.gov/articles/PMC6434952/</obo:IAO_0000119>
+        <rdfs:label>ultra high throughput single-cell combinatorial indexing RNA sequencing 3 assay</rdfs:label>
     </owl:Class>
     
 
