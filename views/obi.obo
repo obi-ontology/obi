@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2026-05-08
-date: 08:05:2026 11:34
+data-version: 2026-07-23
+date: 23:07:2026 15:24
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2026-05-08" xsd:string
+property_value: owl:versionInfo "2026-07-23" xsd:string
 
 [Term]
 id: BFO:0000015
@@ -342,6 +342,7 @@ is_a: COB:0000013 ! molecule
 [Term]
 id: CHEBI:25555
 name: nitrogen atom
+is_a: COB:0000011 ! atom
 
 [Term]
 id: CHEBI:2637
@@ -445,6 +446,7 @@ is_a: COB:0000013 ! molecule
 id: CHEBI:3098
 name: bile acid
 def: "Any member of a group of hydroxy-5β-cholanic acids occuring in bile, where they are present as the sodium salts of their amides with glycine or taurine. In mammals bile acids almost invariably have 5β-configuration." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:31624
@@ -791,6 +793,7 @@ is_a: COB:0000013 ! molecule
 id: CHEBI:60343
 name: 1-methyl-7-nitroisatoic anhydride
 def: "A 3,1-benzoxazin-1,4-dione having an <em>N</em>-methyl substituent and a nitro group at the 7-position." []
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:61057
@@ -10144,10 +10147,10 @@ is_a: OBI:0001264 ! assay measuring epitope specific transforming growth factor-
 
 [Term]
 id: OBI:0001271
-name: RNA-seq assay
-def: "An RNA sequencing assay that determines an RNA sequence by analyzing the transcibed regions of the genome and or to quantitate transcript abundance." []
-synonym: "transcription profiling by high throughput sequencing" EXACT []
-is_a: OBI:0001177 ! RNA sequencing assay
+name: transcription profiling by RNA sequencing assay
+def: "A type of transcription profiling assay where transcripts are extracted from a sample, usually (but not always) transformed into cDNA, and then sequenced. Sequence reads are generally mapped to a reference and quantified to establish levels of gene transcription." []
+synonym: "RNA-seq assay" EXACT []
+is_a: OBI:0000424 ! transcription profiling assay
 
 [Term]
 id: OBI:0001272
@@ -10227,7 +10230,7 @@ is_a: OBI:0001308 ! assay measuring epitope specific IP-10 production by T cells
 id: OBI:0001282
 name: translation profiling assay
 def: "An assay in which surface-bound, translationally competent ribosome complexes are used to generate a translation profile for mRNA, which mRNA may be a single molecular species, or a combination of species, including complex mixtures such as those found in the set of mRNAs isolated from a cell or tissue. One or more components of the surface-bound ribosome complex may be labeled at specific positions to permit analysis of multiple or single molecules for determination of ribosomal conformational changes and translation kinetics. Translation profiles are used as the basis for comparison of an mRNA or set of mRNA species. The translation profile can be used to determine such characteristics as kinetics of initiation, kinetic of elongation, identity of the polypeptide product, and the like. Analysis of translation profiles may be used to determine differential gene expression, optimization of mRNA sequences for expression, screening drug candidates for an effect on translation." []
-is_a: OBI:0000443 ! analyte assay
+is_a: OBI:0000070 ! assay
 
 [Term]
 id: OBI:0001283
@@ -12899,18 +12902,18 @@ is_a: OBI:0003587 ! cell culture assay
 [Term]
 id: OBI:0001673
 name: nano-cap analysis of gene expression assay
-def: "A transcription profiling assay that is performed using a very low amount (nanogram scale) of mRNA samples using Cap analysis gene expression (CAGE)." []
+def: "A transcription profiling by RNA sequencing assay that is performed using a very low amount (nanogram scale) of mRNA samples using Cap analysis gene expression (CAGE)." []
 synonym: "nano-CAGE" EXACT []
-is_a: OBI:0000424 ! transcription profiling assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0001674
 name: cap analysis of gene expression assay
-def: "A transcription profiling assay which measures RNA transcript abundances in biological samples by extracting 5' ends of capped transcripts, RTPCR and sequence those. Copy numbers of CAGE tags provide a way of quantification and provide a measure of expression of the transcriptome" []
+def: "A transcription profiling by RNA sequencing assay which measures RNA transcript abundances in biological samples by extracting 5' ends of capped transcripts, RTPCR and sequence those. Copy numbers of CAGE tags provide a way of quantification and provide a measure of expression of the transcriptome" []
 synonym: "CAGE" EXACT []
-is_a: OBI:0000424 ! transcription profiling assay
+is_a: OBI:0001177 ! RNA sequencing assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 is_a: OBI:0002692 ! polymerase chain reaction assay
-is_a: OBI:0600047 ! sequencing assay
 
 [Term]
 id: OBI:0001675
@@ -14230,11 +14233,10 @@ is_a: OBI:0000626 ! DNA sequencing assay
 [Term]
 id: OBI:0001850
 name: transcript analysis by paired-end tag sequencing assay
-def: "A transcription profiling assay that determines transcripts, gene structures, and gene expressions using Paired-End Tags and sequencing technology." []
+def: "A transcription profiling by RNA sequencing assay that employs paired-end sequencing of RNA transcripts to determine things such as gene expression, gene structure, and alternative transcript structure." []
 synonym: "RNA-PET" EXACT []
 synonym: "RNA-PET assay" EXACT []
-is_a: OBI:0000424 ! transcription profiling assay
-is_a: OBI:0001177 ! RNA sequencing assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0001851
@@ -14319,10 +14321,10 @@ is_a: OBI:0000748 ! bisulfite sequencing assay
 [Term]
 id: OBI:0001864
 name: RNA Annotation and Mapping of Promoters for the Analysis of Gene Expression assay
-def: "An transcription profiling assay that identifies transcription start sites (TSS), the quantification of their expression and the characterization of their transcripts using high throughput sequencing." []
+def: "A transcription profiling by RNA sequencing assay that identifies transcription start sites (TSS), the quantification of their expression and the characterization of their transcripts using high throughput sequencing." []
 synonym: "RAMPAGE" EXACT []
-is_a: OBI:0000424 ! transcription profiling assay
-is_a: OBI:0600047 ! sequencing assay
+is_a: OBI:0001177 ! RNA sequencing assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0001865
@@ -14374,7 +14376,7 @@ is_a: OBI:0400008 ! flow cytometer analyzer
 id: OBI:0001872
 name: sequence assembly process
 def: "A data transformation that assembles two or more individual sequence reads into contiguous sequences (i.e., contigs)." []
-is_a: OBI:0200000 ! data transformation
+is_a: OBI:0200187 ! sequence analysis data transformation
 
 [Term]
 id: OBI:0001873
@@ -15427,9 +15429,9 @@ is_a: OBI:0000711 ! library preparation
 [Term]
 id: OBI:0002029
 name: serial analysis of gene expression assay
-def: "A transcription profiling assay that quantifies RNA through creating short signature tags of the messages and ligating them into a larger molecule than was sequenced." []
+def: "A transcription profiling by RNA sequencing assay that quantifies RNA through creating short signature tags of the messages and ligating them into a larger molecule that is then sequenced." []
 synonym: "SAGE" EXACT []
-is_a: OBI:0000424 ! transcription profiling assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002030
@@ -15455,16 +15457,16 @@ is_a: OBI:0001014 ! single-nucleotide-resolution nucleic acid structure mapping 
 [Term]
 id: OBI:0002033
 name: translation-associated transcript leader sequencing assay
-def: "An RNA-seq assay that combines TL-seq with polysome fractionation" []
+def: "A translation profiling assay that combines transcript leader sequencing with polysome fractionation. TATL-seq works by applying TL-seq across fractions of a polysome gradient, generating TL-specific translational measurements to identify how different transcript leader sequences effect translation." []
 synonym: "TATL-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001282 ! translation profiling assay
 
 [Term]
 id: OBI:0002034
 name: transcript leader sequencing assay
-def: "An RNA-seq assay that combines enzymatic capture of m(7)G-capped mRNA 5' ends with high-throughput sequencing." []
+def: "A transcription profiling by RNA sequencing assay that combines enzymatic capture of m(7)G-capped mRNA 5' ends with high-throughput sequencing." []
 synonym: "TL-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002035
@@ -15489,11 +15491,11 @@ is_a: OBI:0002036 ! array based nucleic acid structure mapping assay
 [Term]
 id: OBI:0002038
 name: ribosomal profiling by sequencing assay
-def: "A RNA-seq assay that sequences only mRNA protected by the ribosome during translation." []
+def: "A translation profiling assay that sequences only mRNA protected by the ribosome during translation and thus provides information on which transcipts are undergoing active translation." []
 synonym: "Ribo-seq" EXACT []
 synonym: "Ribo-seq assay" EXACT []
 synonym: "ribosomal profiling" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001282 ! translation profiling assay
 
 [Term]
 id: OBI:0002039
@@ -15515,11 +15517,11 @@ is_a: OBI:0000874 ! detection of specific nucleic acid polymers with complementa
 [Term]
 id: OBI:0002041
 name: self-transcribing active regulatory region sequencing assay
-def: "An RNA-seq assay that identifies the sequences that act as transcriptional enhancers in a direct, quantitative, and genome-wide manner from sheared genomic DNA." []
+def: "An assay that identifies the sequences that act as transcriptional enhancers in a direct, quantitative, and genome-wide manner from sheared genomic DNA." []
 synonym: "self-transcribing active regulatory region sequencing" EXACT []
 synonym: "STARR-seq" EXACT []
 synonym: "STARR-seq assay" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002042
@@ -15542,21 +15544,21 @@ is_a: OBI:0001858 ! cross-linking immunoprecipitation high-throughput sequencing
 [Term]
 id: OBI:0002044
 name: RNA Bind-n-Seq assay
-def: "An RNA-seq assay that comprehensively characterizes sequence and structural specificity of RNA binding proteins (RBPs)." []
+def: "An assay that comprehensively characterizes sequence and structural specificity of RNA binding proteins (RBPs)." []
 synonym: "RBNS" EXACT []
 synonym: "RNA Bind-n-Seq" EXACT []
 synonym: "RNBS assay" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001146 ! binding assay
 
 [Term]
 id: OBI:0002045
 name: polyA-site sequencing assay
-def: "A RNA-seq assay that quantitatively profiles RNA polyadenylation at the transcriptome level." []
+def: "A transcription profiling by RNA sequencing assay that quantitatively profiles RNA polyadenylation at the transcriptome level." []
 synonym: "PAS-seq" EXACT []
 synonym: "PAS-seq assay" EXACT []
 synonym: "Poly(A)-site sequencing" EXACT []
 synonym: "poly(A)-site sequencing assay" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002046
@@ -16042,24 +16044,24 @@ is_a: OBI:0002043 ! individual-nucleotide resolution cross-linking and immunopre
 [Term]
 id: OBI:0002112
 name: small RNA sequencing assay
-def: "An RNA-seq assay which is targeting small RNA (< 200 bp) sequences such as, but not exclusive to, miRNAs using, for example, small RNA library preparation kits." []
+def: "A transcription profiling by RNA sequencing assay which is targeting small RNA (< 200 bp) sequences such as, but not exclusive to, miRNAs using, for example, small RNA library preparation kits." []
 synonym: "short RNA-seq" EXACT []
 synonym: "small RNA-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002113
 name: bromouridine labeling and sequencing assay
-def: "An RNA-seq assay to identify spans of nascent transcription in the genome through isolation of recent bromouridine (Bru) labelled RNAs." []
+def: "A transcription profiling by RNA sequencing assay used to identify spans of nascent transcription in the genome through isolation of recent bromouridine (Bru) labelled RNAs." []
 synonym: "Bru-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002114
 name: bromouridine pulse-chase and sequencing assay
-def: "An RNA-seq assay to identify RNA populations of specific ages through isolation of RNAs first labelled with bromouridine (Bru) followed by chasing in uridine for different periods of time." []
+def: "A transcription profiling by RNA sequencing assay used to identify RNA populations of specific ages through isolation of RNAs first labelled with bromouridine (Bru) followed by chasing in uridine for different periods of time." []
 synonym: "BruChase-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002115
@@ -16133,13 +16135,13 @@ is_a: OBI:0302887 ! staining
 id: OBI:0002125
 name: H&E-stained fixed tissue slide specimen
 def: "A fixed tissue slide specimen that is the output of H&E slide staining." []
-is_a: OMIABIS:0000052 ! fixed tissue slide specimen
+is_a: OBIB:0000661 ! fixed tissue slide specimen
 
 [Term]
 id: OBI:0002126
 name: IHC-stained fixed tissue slide specimen
 def: "A fixed tissue slide specimen that is the output of immunohistochemistry slide staining." []
-is_a: OMIABIS:0000052 ! fixed tissue slide specimen
+is_a: OBIB:0000661 ! fixed tissue slide specimen
 
 [Term]
 id: OBI:0002127
@@ -16245,9 +16247,9 @@ is_a: OBI:0001926 ! microRNA profiling assay
 [Term]
 id: OBI:0002143
 name: bromouride labeling and sequencing after UV exposure
-def: "An RNA-seq assay to identify transcription start sites and active enhancer elements through isolation of bromouridine (Bru) labelled RNAs after UV light exposure introduces transcription-blocking lesions." []
+def: "A transcription profiling by RNA sequencing assay used to identify transcription start sites and active enhancer elements through isolation of bromouridine (Bru) labelled RNAs after UV light exposure introduces transcription-blocking lesions." []
 synonym: "BruUV-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002144
@@ -17356,10 +17358,10 @@ is_a: OBI:0500027 ! inclusion criterion
 [Term]
 id: OBI:0002457
 name: precision nuclear run-on sequencing assay
-def: "An RNA-seq assay that maps the genome-wide distribution of transcriptionally-engaged Pol II at base-pair resolution by using biotin-labeled ribonucleotide triphosphate analogs (biotin-NTP) for nuclear run-on reactions, allowing the efficient affinity purification of nascent RNAs for high throughput sequencing from their 3' ends." []
+def: "A transcription profiling by RNA sequencing assay that maps the genome-wide distribution of transcriptionally-engaged Pol II at base-pair resolution by using biotin-labeled ribonucleotide triphosphate analogs (biotin-NTP) for nuclear run-on reactions, allowing the efficient affinity purification of nascent RNAs for high throughput sequencing from their 3' ends." []
 synonym: "precision nuclear run-on and sequencing assay" EXACT []
 synonym: "PRO-Seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 is_a: OBI:0002692 ! polymerase chain reaction assay
 
 [Term]
@@ -18031,16 +18033,16 @@ is_a: OBI:0001865 ! assay array
 [Term]
 id: OBI:0002571
 name: polyA-selected RNA sequencing assay
-def: "An RNA-seq assay to study transcriptomes through the enrichment of polyadenylated transcripts or removal of ribosomal RNA prior to high-throughput sequencing." []
+def: "A transcription profiling by RNA sequencing assay to study transcriptomes through the enrichment of polyadenylated transcripts or removal of ribosomal RNA prior to high-throughput sequencing." []
 synonym: "mRNA-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002572
 name: polyA-depleted RNA sequencing assay
-def: "An RNA-seq assay to study non-polyadenylated transcripts, such as, but not exclusive to unspliced and circular isoforms, through the depletion of polyadenylated transcripts prior to high-throughput sequencing." []
+def: "A transcription profiling by RNA sequencing assay to study non-polyadenylated transcripts, such as, but not exclusive to unspliced and circular isoforms, through the depletion of polyadenylated transcripts prior to high-throughput sequencing." []
 synonym: "polyA-depleted RNA-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002573
@@ -18057,9 +18059,9 @@ is_a: OBI:0666666 ! RNA extraction
 [Term]
 id: OBI:0002575
 name: isoform sequencing
-def: "A method for sequencing isoforms by enriching a cDNA library for full-length reads spanning entire transcript isoforms." []
+def: "A transcription profiling by RNA sequencing assay for sequencing isoforms by enriching a cDNA library for full-length reads spanning entire transcript isoforms." []
 synonym: "ISO-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002578
@@ -18107,7 +18109,7 @@ is_a: IAO:0000100 ! homogenous data collection
 id: OBI:0002585
 name: sequence trimming
 def: "A data transformation in which subsequences of a molecular sequence are cut (removed)." []
-is_a: OBI:0200000 ! data transformation
+is_a: OBI:0200187 ! sequence analysis data transformation
 
 [Term]
 id: OBI:0002586
@@ -18405,10 +18407,12 @@ is_a: OBI:0003685 ! Illumina NovaSeq series instrument
 
 [Term]
 id: OBI:0002631
-name: single-cell RNA sequencing assay
-def: "An RNA sequencing assay that uses RNA extracts as input that can be traced to a single cell of origin." []
+name: single-cell transcription profiling by RNA sequencing assay
+def: "A transcription profiling by RNA sequencing assay that uses as input RNA extracts that can be traced to a single cell of origin. These extracts may come from the entire cell or only a part of the cell such as the nucleus or the cytoplasm." []
 synonym: "scRNA-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+synonym: "single-cell RNA sequencing assay" EXACT []
+synonym: "single-cell RNA-seq" EXACT []
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002632
@@ -19299,15 +19303,16 @@ is_a: OBI:0001930 ! categorical value specification
 [Term]
 id: OBI:0002759
 name: ribosomal RNA-depleted RNA sequencing assay
-def: "An RNA-seq assay in which highly abundant ribosomal RNAs are removed from total RNA before sequencing, resulting in more efficient transcript/gene detection." []
+def: "A transcription profiling by RNA sequencing assay in which highly abundant ribosomal RNAs are removed from total RNA before sequencing, resulting in more efficient transcript/gene detection." []
 synonym: "rRNA-deleted RNA sequencing assay" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+synonym: "rRNA-depleted RNA sequencing assay" EXACT []
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002760
-name: metatranscriptome sequencing assay
-def: "An RNA-seq assay that determines the RNA sequence of microbial transcripts from a microbioal community of mixed species from a given microbiome." []
-is_a: OBI:0001271 ! RNA-seq assay
+name: metatranscriptome profiling assay
+def: "A transcription profiling by RNA sequencing assay that determines the RNA sequence of microbial transcripts from a microbioal community of mixed species from a given microbiome." []
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0002761
@@ -20925,8 +20930,8 @@ is_a: OBI:0002039 ! assay for transposase-accessible chromatin using sequencing
 [Term]
 id: OBI:0003090
 name: bulk RNA-seq assay
-def: "An RNA-seq assay in which the sample that is sequenced is derived from a collection of cells, such as a tissue sample or entire cell culture, and therefore provides results representative of the aggregate of sample cells." []
-is_a: OBI:0001271 ! RNA-seq assay
+def: "A transcription profiling by RNA sequencing assay in which the sample that is sequenced is derived from a collection of cells, such as a tissue sample or entire cell culture, and therefore provides results representative of the aggregate of sample cells." []
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0003091
@@ -21028,9 +21033,10 @@ is_a: OBI:0002039 ! assay for transposase-accessible chromatin using sequencing
 [Term]
 id: OBI:0003105
 name: single-cell combinatorial indexing RNA sequencing assay
-def: "A single-cell RNA sequencing assay that involves single cell combinatorial indexing ('sci-') strategy to profile the transcriptomes of single cells or nuclei without single cell isolation." []
+def: "A single-cell transcription profiling by RNA sequencing assay that involves single cell combinatorial indexing ('sci-') strategy to profile the transcriptomes of single cells or nuclei without single cell isolation." []
+synonym: "sci-RNA-seq" EXACT []
 synonym: "sciRNAseq" EXACT []
-is_a: OBI:0002631 ! single-cell RNA sequencing assay
+is_a: OBI:0002631 ! single-cell transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0003106
@@ -21042,25 +21048,27 @@ is_a: OBI:0003094 ! fluorescence in-situ hybridization assay
 [Term]
 id: OBI:0003107
 name: slide-seq assay
-def: "An RNA-seq assay that involves transfer of RNA from tissue sections onto a surface covered in DNA-barcoded beads with known positions, allowing the locations of the RNA to be inferred by sequencing." []
-is_a: OBI:0001271 ! RNA-seq assay
+def: "A transcription profiling by RNA sequencing assay that involves transfer of RNA from tissue sections onto a surface covered in DNA-barcoded beads with known positions, allowing the locations of the RNA to be inferred by sequencing." []
+is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0003108
 name: single-nucleus chromatin accessibility and mRNA expression sequencing assay
-def: "A single-nucleus RNA sequencing assay that involves joint profiling of accessible chromatin and RNA within the same cells which enables direct matching of transcriptional regulation to its outputs." []
+def: "An assay that involves joint profiling of accessible chromatin and RNA within the same cells which enables direct matching of transcriptional regulation to its outputs." []
 synonym: "SNARE-seq" EXACT []
 synonym: "SNAREseq" EXACT []
-is_a: OBI:0003109 ! single-nucleus RNA sequencing assay
+is_a: OBI:0000070 ! assay
 
 [Term]
 id: OBI:0003109
-name: single-nucleus RNA sequencing assay
+name: obsolete single-nucleus RNA sequencing assay
 def: "A RNA-seq assay that is used for profiling gene expression in individual nuclei with optimized next generation sequencing (NGS) technologies. This allows the RNA-seq profiling of cell types that are more vulnerable to the tissue dissociation process, and that are therefore underrepresented in the final data set in single cell sequencing." []
 synonym: "single nuclei RNA sequencing" EXACT []
 synonym: "snRNA-seq" EXACT []
 synonym: "sNuc-seq" EXACT []
-is_a: OBI:0001271 ! RNA-seq assay
+is_a: ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: OBI:0002631
 
 [Term]
 id: OBI:0003110
@@ -22655,6 +22663,42 @@ name: remote patient assessment
 def: "An organism diagnostic process which involves a remote assessment of a patient by a clinician." []
 synonym: "telehealth patient assessment" EXACT []
 is_a: OBI:0003366 ! organism diagnostic process
+
+[Term]
+id: OBI:0003375
+name: patch-seq assay
+def: "An assay that combines electrophysiological, transcriptomic, and morphological characterization of individual neurons. In this approach, patch-clamp is used to generate an electrophysiological recording of the neuron, then the neuron's cytoplasm and/or nucleus is collected and processed for RNAseq, and finally the cell is simultaneously filled with a dye that allows for subsequent morphological reconstruction." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003376
+name: droplet-based single-cell RNA sequencing assay
+def: "A single-cell transcription profiling by RNA sequencing assay that analyzes mRNA transcripts from droplets of individual cells. The process involves the following steps: (1) prepare a single-cell suspension from a tissue; (2) co-encapsulate each cell with a distinctly barcoded microparticle (bead) in a nanoliter-scale droplet; (3) lyse cells after they have been isolated in droplets; (4) capture a cell’s mRNAs on its companion microparticle, forming STAMPs (single-cell transcriptomes attached to microparticles); (5) reverse-transcribe, amplify, and sequence." []
+synonym: "Drop-seq" EXACT []
+synonym: "Dropseq" EXACT []
+synonym: "dropseq" EXACT []
+is_a: OBI:0002631 ! single-cell transcription profiling by RNA sequencing assay
+
+[Term]
+id: OBI:0003377
+name: single-nucleus chromatin accessibility and mRNA expression sequencing 2 assay
+def: "An assay that uses combinatorial indexing to generate a library of cDNA and open chromatin gDNA fragments by tagmenting a single nuclei and open chromatin, and encapsulating those in a droplet including both an oligo-dT-containing barcoded bead and a splint oligonucleotide, which links the tagmented gDNA fragments to the bead which capture both mRNAs and open chromatin fragments." []
+synonym: "SNARE-seq2" EXACT []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003378
+name: switching mechanism at the 5' end of RNA template sequencing assay
+def: "A single cell transcription profiling by RNA sequencing assay wherein cells are lysed and their recovered RNA is hybridized to an oligo(dT) that primes a reverse transcription reaction, the outcome of which are cDNA’s that have PCR handles on both ends. The cDNA's are then amplified using PCR, and the products are sequenced." []
+synonym: "SMARTseq" EXACT []
+is_a: OBI:0002631 ! single-cell transcription profiling by RNA sequencing assay
+
+[Term]
+id: OBI:0003379
+name: switching mechanism at the 5' end of RNA template sequencing 2 assay
+def: "A single cell transcription profiling by RNA sequencing assay that is a variation on the switching mechanism at the 5' end of RNA template sequencing assay (SMARTseq) that allows the generation of full-length cDNA and sequencing libraries by using standard reagents." []
+synonym: "SMARTseq2" EXACT []
+is_a: OBI:0002631 ! single-cell transcription profiling by RNA sequencing assay
 
 [Term]
 id: OBI:0003380
@@ -25409,6 +25453,123 @@ id: OBI:0003911
 name: urea nitrogen concentration assay
 def: "A urea nitrogen assay that measures the abundance of urea nitrogen in a specimen" []
 is_a: OBI:0003910 ! urea nitrogen assay
+
+[Term]
+id: OBI:0003912
+name: in vitro CRISPR screen using single-cell ATAC-seq
+def: "An in vitro CRISPR screen assay that uses single-cell ATAC-Seq to detect induced changes in chromatin accessibility" []
+is_a: OBI:0003659 ! in vitro CRISPR screen assay
+
+[Term]
+id: OBI:0003913
+name: single-cell metabolically labeled new RNA tagging sequencing
+def: "A single-cell transcription profiling by RNA sequencing assay in which mRNA transcripts are metabolically labeled with 4-thiouridine to investigate temporal RNA dynamics." []
+is_a: OBI:0002631 ! single-cell transcription profiling by RNA sequencing assay
+
+[Term]
+id: OBI:0003914
+name: single cell massively parallel reporter assay
+def: "A massively parallel reporter assay in which libraries of reporter constructs are transfected into samples and then measured via single cell transcriptomic methods to enable discovery of cell-specific transcriptional regulatory activity" []
+synonym: "scMPRA" EXACT []
+synonym: "scQer" EXACT []
+is_a: OBI:0002675 ! massively parallel reporter assay
+
+[Term]
+id: OBI:0003915
+name: ultra high throughput single-cell combinatorial indexing RNA sequencing 3 assay
+def: "A single-cell transcription profiling by RNA sequencing assay that involves single cell combinatorial indexing ('sci-') to profile the transcriptomes of single cells or nuclei in an ultra high-throughput manor via changes to the method, as compared to sci-RNA-seq, that include extraction of nuclei directly from fresh tissue, use of hairpin ligation for the third level of indexing, optimization of enxymatic reactions, and use of dilution instead of FACS sorting." []
+synonym: "sci-RNA-seq3" EXACT []
+synonym: "sciRNAseq3" EXACT []
+is_a: OBI:0002631 ! single-cell transcription profiling by RNA sequencing assay
+
+[Term]
+id: OBI:0003916
+name: digital image channel
+def: "A data item that is a component of a digital image that represents spatially registered measurements collected for a specific spectral band, detector, or sensor output." []
+synonym: "color channel" EXACT []
+synonym: "fluorescence channel" EXACT []
+synonym: "image channel" EXACT []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: OBI:0003917
+name: image transformation
+def: "A data transformation that applies a rule or formula to each pixel or set of pixels in an image to change that image in some way. Produces a transformed image data set or derived data item." []
+synonym: "digital image transformation" EXACT []
+synonym: "image processing transformation" EXACT []
+is_a: OBI:0003355 ! image data set analysis
+
+[Term]
+id: OBI:0003918
+name: image segmentation
+def: "An image transformation that partitions an image into distinct objects, groups, or regions. Typically represented by spatial coordinates or an image mask of integer values at each pixel or voxel position." []
+synonym: "pixel classification" EXACT []
+is_a: OBI:0003917 ! image transformation
+
+[Term]
+id: OBI:0003919
+name: geometric image transformation
+def: "An image transformation that alters the geometrical structure of images by shifting image pixels from their original positions to new positions, ideally without modifying the original pixel values. Produces a geometrically modified image data set." []
+synonym: "geometric transformation" EXACT []
+synonym: "spatial transformation" EXACT []
+is_a: OBI:0003917 ! image transformation
+
+[Term]
+id: OBI:0003920
+name: point operation
+def: "An image transformation that modifies pixel values using a mathematical operation that could be independent of neighboring pixels or spatial location of those pixels. Produces a mathematically transformed image data set." []
+synonym: "pixel operation" EXACT []
+synonym: "pixel-wise operation" EXACT []
+is_a: OBI:0003917 ! image transformation
+
+[Term]
+id: OBI:0003921
+name: PacBio Sequel IIe
+def: "A DNA sequencer that is manufactured by the Pacific Biosciences corporation, built upon single molecule real-time sequencing technology, that shares the SMRT Cell design and chemistry of the Sequel II and adds on-instrument computational processing to generate highly accurate (\"HiFi\") long reads." []
+synonym: "Pacific Biosciences Sequel IIe" EXACT []
+synonym: "Sequel IIe" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003922
+name: PacBio Revio
+def: "A DNA sequencer that is manufactured by the Pacific Biosciences corporation, built upon single molecule real-time sequencing technology, that uses SMRT Cell 25M flow cells to generate highly accurate (\"HiFi\") long reads at high throughput." []
+synonym: "Pacific Biosciences Revio" EXACT []
+synonym: "Revio" EXACT []
+is_a: OBI:0400103 ! DNA sequencer
+
+[Term]
+id: OBI:0003924
+name: metagenome binning
+def: "A data transformation that partitions metagenomic sequence data into groups (bins), each representing the putative genome of a single organism or population present in a metagenome." []
+synonym: "genome binning" EXACT []
+synonym: "metagenomic binning" EXACT []
+is_a: OBI:0200187 ! sequence analysis data transformation
+
+[Term]
+id: OBI:0003925
+name: read-based taxonomic classification
+def: "A data transformation that assigns taxonomic labels to individual sequencing reads, or to a set of reads, by comparison against a reference sequence database and without prior assembly." []
+synonym: "read-based taxonomic profiling" EXACT []
+synonym: "taxonomic read classification" EXACT []
+is_a: OBI:0200187 ! sequence analysis data transformation
+
+[Term]
+id: OBI:0003926
+name: assembly-based metagenome binning
+def: "A metagenome binning that clusters contigs assembled from shotgun metagenomic reads into bins based on their putative genomic origin, yielding metagenome-assembled genomes (MAGs)." []
+synonym: "assembly-based binning" EXACT []
+synonym: "contig binning" EXACT []
+is_a: OBI:0003924 ! metagenome binning
+
+[Term]
+id: OBI:0003927
+name: read-based metagenome binning
+def: "A metagenome binning that clusters unassembled shotgun metagenomic reads de novo into bins by sequence composition, abundance, or overlap, without prior assembly into contigs and without comparison to a reference sequence database." []
+synonym: "binning shotgun reads" EXACT []
+synonym: "read binning" EXACT []
+synonym: "read-based binning" EXACT []
+is_a: OBI:0003924 ! metagenome binning
 
 [Term]
 id: OBI:0004001
@@ -32237,6 +32398,18 @@ def: "An in vitro cell killing assay in which radioactive chromium is absorbed b
 is_a: OBI:0000903 ! in vitro cell killing assay
 
 [Term]
+id: OBIB:0000659
+name: fixed tissue specimen
+def: "A processed specimen that is the output of a fixation process." []
+is_a: OBI:0000953 ! processed specimen
+
+[Term]
+id: OBIB:0000661
+name: fixed tissue slide specimen
+def: "A fixed tissue specimen that is placed in a slide." []
+is_a: OBIB:0000659 ! fixed tissue specimen
+
+[Term]
 id: OGMS:0000015
 name: clinical history
 def: "A series of statements representing health-relevant qualities of a patient and of a patient's family." []
@@ -32271,18 +32444,6 @@ id: OGMS:0000123
 name: clinical data item
 def: "A data item that is about a patient and is the specified output of a health care process assay or diagnostic process" []
 is_a: IAO:0000027 ! data item
-
-[Term]
-id: OMIABIS:0000050
-name: fixed tissue specimen
-def: "A processed specimen that is the output of a fixation process." []
-is_a: OBI:0000953 ! processed specimen
-
-[Term]
-id: OMIABIS:0000052
-name: fixed tissue slide specimen
-def: "A fixed tissue specimen that is placed in a slide." []
-is_a: OMIABIS:0000050 ! fixed tissue specimen
 
 [Term]
 id: OMRSE:00000012
