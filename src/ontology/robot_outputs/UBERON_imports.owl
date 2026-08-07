@@ -77,35 +77,17 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
-        <rdfs:label xml:lang="en">entity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">independent continuant</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <rdfs:label xml:lang="en">process</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/COB_0000022 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000022"/>
     
 
 
@@ -427,12 +409,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000316">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>A substance produced by the cervix and endocervical glands[BTO]. Thick acidic mucus that blocks the cervical os after mestruation[WP]. This &apos;infertile&apos; mucus blocks spermatozoa from entering the uterus.</obo:IAO_0000115>
         <rdfs:label>cervical mucus</rdfs:label>
     </owl:Class>
@@ -495,7 +471,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000465 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000115>Anatomical entity that has mass.</obo:IAO_0000115>
         <rdfs:label>material anatomical entity</rdfs:label>
     </owl:Class>
@@ -527,6 +502,7 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000468 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -687,12 +663,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000956">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>The thin layer of gray matter on the surface of the cerebral hemisphere that develops from the telencephalon. It consists of the neocortex (6 layered cortex or isocortex), the hippocampal formation and the olfactory cortex.</obo:IAO_0000115>
         <rdfs:label>cerebral cortex</rdfs:label>
     </owl:Class>
@@ -919,12 +889,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001090">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Joint fluid is a transudate of plasma that is actively secreted by synovial cells.</obo:IAO_0000115>
         <rdfs:label>synovial fluid</rdfs:label>
     </owl:Class>
@@ -1587,12 +1551,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation.</obo:IAO_0000115>
         <rdfs:label>milk</rdfs:label>
     </owl:Class>
@@ -1619,12 +1577,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001970">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium.</obo:IAO_0000115>
         <rdfs:label>bile</rdfs:label>
     </owl:Class>
@@ -1917,12 +1869,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A neural nucleus that is part of the brain.</obo:IAO_0000115>
