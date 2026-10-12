@@ -1,0 +1,97 @@
+# Measuring glucose concentration in blood.
+# Instance-level rendering of Figure 2 in Bandrowski et al. 2016,
+# "The Ontology for Biomedical Investigations", PLOS ONE 11(4): e0154556,
+# https://doi.org/10.1371/journal.pone.0154556
+#
+# James A. Overton made an earlier Turtle rendering of the same figure in 2015,
+# reviewed on obi-devel (https://sourceforge.net/p/obi/mailman/message/34388448/):
+# https://github.com/jamesaoverton/obi-experiment/blob/master/glucose.ttl
+# The measured value, 1.2 milligram per milliliter, is the one shown in Figure 2.
+#
+# Every individual below is a made-up example; every class and property is an OBI term
+# or a term OBI imports. Labels on individuals are for readers only.
+#
+# Issue: https://github.com/obi-ontology/obi/issues/1886
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix ex:   <http://example.org/obi-example/blood-glucose/> .
+
+<http://example.org/obi-example/blood-glucose> a owl:Ontology ;
+    owl:imports <http://purl.obolibrary.org/obo/obi.owl> ;
+    rdfs:comment "Example OBI instance data: drawing blood from a mouse and measuring its glucose concentration." .
+
+# --- Participants -------------------------------------------------------------
+
+ex:mouse1 a owl:NamedIndividual, obo:NCBITaxon_10090 ;          # Mus musculus
+    rdfs:label "mouse 1" .
+
+ex:syringe1 a owl:NamedIndividual, obo:OBI_0000422 ;            # syringe
+    rdfs:label "syringe 1" .
+
+ex:tube1 a owl:NamedIndividual, obo:OBI_0000967 ;               # container
+    rdfs:label "tube 1" .
+
+ex:glucometer1 a owl:NamedIndividual, obo:OBI_0000795 ;         # glucometer
+    rdfs:label "glucometer 1" .
+
+ex:blood_specimen1 a owl:NamedIndividual, obo:OBI_0000655 ;     # blood specimen
+    rdfs:label "blood specimen 1" ;
+    obo:RO_0001025 ex:tube1 .                                   # located in
+
+# The glucose molecules in the specimen ('Glucose molecules' in Figure 2).
+ex:glucose_portion1 a owl:NamedIndividual, obo:CHEBI_17234 ;    # glucose
+    rdfs:label "glucose molecules in blood specimen 1" ;
+    obo:BFO_0000050 ex:blood_specimen1 .                        # part of
+
+# Roles and the function realized in the assay. Each is a characteristic of
+# ('inheres in' in Figure 2) its bearer.
+ex:specimen_role1 a owl:NamedIndividual, obo:OBI_0000112 ;      # specimen role
+    rdfs:label "specimen role of blood specimen 1" ;
+    obo:RO_0000052 ex:blood_specimen1 .                         # characteristic of
+
+ex:evaluant_role1 a owl:NamedIndividual, obo:OBI_0000067 ;      # evaluant role
+    rdfs:label "evaluant role of blood specimen 1" ;
+    obo:RO_0000052 ex:blood_specimen1 .                         # characteristic of
+
+ex:analyte_role1 a owl:NamedIndividual, obo:OBI_0000275 ;       # analyte role
+    rdfs:label "analyte role of glucose molecules in blood specimen 1" ;
+    obo:RO_0000052 ex:glucose_portion1 .                        # characteristic of
+
+ex:measure_function1 a owl:NamedIndividual, obo:OBI_0000453 ;   # measure function
+    rdfs:label "measure function of glucometer 1" ;
+    obo:RO_0000052 ex:glucometer1 .                             # characteristic of
+
+# --- Process 1: collecting specimen from organism -----------------------------
+
+ex:collection1 a owl:NamedIndividual, obo:OBI_0600005 ;         # collecting specimen from organism
+    rdfs:label "drawing blood from mouse 1" ;
+    obo:OBI_0000293 ex:mouse1, ex:syringe1, ex:tube1 ;          # has specified input
+    obo:OBI_0000299 ex:blood_specimen1 .                        # has specified output
+
+# --- Process 2: analyte assay --------------------------------------------------
+
+ex:assay1 a owl:NamedIndividual, obo:OBI_0000443 ;              # analyte assay
+    rdfs:label "measuring glucose concentration in blood specimen 1" ;
+    obo:OBI_0000293 ex:blood_specimen1, ex:glucometer1 ;        # has specified input
+    obo:OBI_0000299 ex:glucose_datum1 ;                         # has specified output
+    obo:BFO_0000055 ex:specimen_role1, ex:evaluant_role1,
+        ex:analyte_role1, ex:measure_function1 ;                # realizes
+    obo:OBI_0000417 ex:objective1 .                             # achieves_planned_objective
+
+ex:objective1 a owl:NamedIndividual, obo:OBI_0000437 ;          # analyte measurement objective
+    rdfs:label "objective: measure glucose concentration" .
+
+# --- Output: the measurement ---------------------------------------------------
+
+ex:glucose_datum1 a owl:NamedIndividual, obo:IAO_0000032 ;      # scalar measurement datum
+    rdfs:label "glucose concentration measurement for blood specimen 1" ;
+    obo:OBI_0001938 ex:glucose_value1 .                         # has value specification
+
+ex:glucose_value1 a owl:NamedIndividual, obo:OBI_0001931 ;      # scalar value specification
+    rdfs:label "1.2 milligram per milliliter" ;
+    obo:OBI_0001937 "1.2"^^xsd:decimal ;                        # has specified numeric value
+    obo:IAO_0000039 obo:UO_0000176 .                            # has measurement unit label: milligram per milliliter
