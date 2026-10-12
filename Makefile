@@ -416,7 +416,14 @@ build/dl-validation.txt: build/obi_merged.owl
 	$(ROBOT) validate-profile --input $< --profile dl --output $@
 
 .PHONY: test
-test: reason verify validate-iris validate-dl build/obi-base-report.tsv
+test: reason verify validate-iris validate-dl build/obi-base-report.tsv verify-examples
+
+# Reason over the RDF examples merged with OBI to find inconsistencies
+.PHONY: verify-examples
+verify-examples: build/obi_merged.owl | build/robot.jar
+	$(ROBOT) merge --catalog src/examples/catalog-v001.xml \
+	$(foreach x,$(wildcard src/examples/*.ttl),--input $(x)) \
+	reason --reasoner hermit --equivalent-classes-allowed none
 
 
 ### Term reservations
