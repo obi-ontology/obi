@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 2026-07-27
-date: 27:07:2026 12:09
+data-version: 2026-11-03
+date: 03:11:2026 15:38
 synonymtypedef: OMO:0003000 "abbreviation"
 synonymtypedef: OMO:0003001 "ambiguous synonym"
 synonymtypedef: OMO:0003002 "dubious synonym"
@@ -80,7 +80,7 @@ property_value: http://purl.org/dc/elements/1.1/subject "An ontology for the ann
 property_value: http://purl.org/dc/terms/license "http://creativecommons.org/licenses/by/4.0/" xsd:string
 property_value: http://purl.org/dc/terms/title "Ontology for Biomedical Investigations" xsd:string
 property_value: IAO:0000589 "Ontology for Biomedical Investigations" xsd:string
-property_value: owl:versionInfo "2026-07-27" xsd:string
+property_value: owl:versionInfo "2026-11-03" xsd:string
 
 [Term]
 id: BFO:0000015
@@ -161,6 +161,12 @@ id: CHEBI:16134
 name: ammonia
 def: "An azane that consists of a single nitrogen atom covelently bonded to three hydrogen atoms." []
 is_a: COB:0000013 ! molecule
+
+[Term]
+id: CHEBI:16240
+name: hydrogen peroxide
+def: "An inorganic peroxide consisting of two hydroxy groups joined by a covalent oxygen-oxygen single bond." []
+is_a: CHEBI:26523 ! reactive oxygen species
 
 [Term]
 id: CHEBI:16247
@@ -351,6 +357,12 @@ def: "An amino cyclitol glycoside that is kanamycin A acylated at the N-1 positi
 is_a: COB:0000013 ! molecule
 
 [Term]
+id: CHEBI:26523
+name: reactive oxygen species
+def: "Molecules or ions formed by the incomplete one-electron reduction of oxygen. They contribute to the microbicidal activity of phagocytes, regulation of signal transduction and gene expression, and the oxidative damage to biopolymers." []
+is_a: COB:0000013 ! molecule
+
+[Term]
 id: CHEBI:26710
 name: sodium chloride
 def: "An inorganic chloride salt having sodium(1+) as the counterion." []
@@ -415,6 +427,11 @@ def: "A monoatomic monocation obtained from potassium." []
 is_a: COB:0000013 ! molecule
 
 [Term]
+id: CHEBI:29105
+name: zinc(2+)
+is_a: COB:0000011 ! atom
+
+[Term]
 id: CHEBI:29191
 name: hydroxyl
 is_a: COB:0000013 ! molecule
@@ -424,6 +441,11 @@ id: CHEBI:29237
 name: deuterium atom
 def: "The stable isotope of hydrogen with relative atomic mass 2.014102 and a natural abundance of 0.0115 atom percent (from Greek δευτερον, second)." []
 is_a: COB:0000011 ! atom
+
+[Term]
+id: CHEBI:29917
+name: thiol group
+is_a: COB:0000013 ! molecule
 
 [Term]
 id: CHEBI:30222
@@ -839,56 +861,6 @@ id: CHEBI:9754
 name: tris
 def: "A primary amino compound that is <em>tert</em>-butylamine in which one hydrogen attached to each methyl group is replaced by a hydroxy group. A compound widely used as a biological buffer substance in the pH range 7—9; p<em>K</em><small><sub>a</sub></small> = 8.3 at 20 °C; p<em>K</em><small><sub>a</sub></small> = 7.82 at 37 °C." []
 is_a: COB:0000013 ! molecule
-
-[Term]
-id: CHMO:0000087
-name: fluorescence microscopy assay
-def: "Any type of light microscopy assay where the specimen can be made to fluoresce (emit energy as visible light) by illuminating it with light of specific wavelengths. These specimens are called fluorophores." []
-synonym: "fluorescence imaging" EXACT []
-synonym: "fluorescence microscopic imaging" EXACT []
-synonym: "FM" EXACT []
-is_a: CHMO:0000102 ! light microscopy assay
-is_a: OBI:0001501 ! fluorescence detection assay
-
-[Term]
-id: CHMO:0000089
-name: confocal fluorescence microscopy assay
-def: "Microscopy where the specimen can be made to fluoresce (emit energy as visible light) by scanning a gas (Ar or Kr) laser spot of specific wavelength over its surface and using a spatial pinhole to eliminate out-of-focus fluorescence." []
-synonym: "CLSM" EXACT []
-synonym: "confocal fluorescence imaging" EXACT []
-synonym: "confocal laser scanning fluorescence microscopy" EXACT []
-synonym: "confocal laser scanning microscopy" EXACT []
-synonym: "confocal-laser scanning microscopy" EXACT []
-synonym: "fluorescence confocal microscopy" EXACT []
-synonym: "fluorescence confocal scanning laser microscopy" EXACT []
-synonym: "LSCM" EXACT []
-synonym: "scanning confocal fluorescence microscopy" EXACT []
-is_a: OBI:0002119 ! microscopy assay
-
-[Term]
-id: CHMO:0000102
-name: light microscopy assay
-def: "Microscopy where the specimen is illuminated with visible light and a system of lenses is used to produce an image." []
-synonym: "light microscopy" EXACT []
-synonym: "OM" EXACT []
-synonym: "optical microscopy" EXACT []
-is_a: OBI:0002119 ! microscopy assay
-
-[Term]
-id: CHMO:0000701
-name: liquid chromatography-tandem mass spectrometry
-def: "A method where a sample mixture is first separated by liquid chromatography before being ionised and characterised by mass-to-charge ratio and relative abundance using two mass spectrometers in series." []
-synonym: "LC-MS-MS" EXACT []
-synonym: "LC-MS/MS" EXACT []
-synonym: "LC-MS2" EXACT []
-synonym: "LC-MSMS" EXACT []
-synonym: "LC/MS/MS" EXACT []
-synonym: "LCMSMS" EXACT []
-synonym: "liquid chromatography tandem mass spectrometry" EXACT []
-synonym: "liquid chromatography tandem mass spectroscopy" EXACT []
-synonym: "liquid chromatography-tandem mass spectroscopy" EXACT []
-is_a: OBI:0003097 ! liquid chromatography mass spectrometry assay
-is_a: OBI:0003540 ! tandem mass spectrometry assay
 
 [Term]
 id: CL:0000000
@@ -1443,7 +1415,7 @@ is_a: OBI:0001588 ! binding
 id: GO:0001172
 name: RNA-templated transcription
 def: "The synthesis of an RNA transcript from an RNA template." []
-is_a: GO:0009987 ! cellular process
+is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0001508
@@ -1763,6 +1735,12 @@ def: "Any process that results in a change in state or activity of a cell (in te
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0006979
+name: response to oxidative stress
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of oxidative stress, a state often resulting from exposure to high levels of reactive oxygen species, e.g. superoxide anions, hydrogen peroxide (H2O2), and hydroxyl radicals." []
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
 id: GO:0007009
 name: plasma membrane organization
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the plasma membrane." []
@@ -1805,6 +1783,12 @@ def: "The acquisition and processing of information and/or the storage and retri
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0007617
+name: mating behavior
+def: "The behavioral interactions between organisms for the purpose of mating, or sexual reproduction resulting in the formation of zygotes." []
+is_a: GO:0022414 ! reproductive process
+
+[Term]
 id: GO:0008083
 name: growth factor activity
 def: "The function that stimulates a cell to grow or proliferate. Most growth factors have other actions besides the induction of cell growth or proliferation." []
@@ -1815,6 +1799,12 @@ id: GO:0008150
 name: biological_process
 def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0008152
+name: metabolic process
+def: "A cellular process consisting of the biochemical pathways by which a living organism transforms chemical substances. This includes including anabolism (biosynthetic process) and catabolism (catabolic process). Metabolic processes includes the transformation of small molecules, as well  macromolecular processes such as DNA repair and replication, protein synthesis and degradation." []
+is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0008217
@@ -1831,7 +1821,7 @@ is_a: GO:0006909 ! phagocytosis
 [Term]
 id: GO:0008253
 name: 5'-nucleotidase activity
-def: "Catalysis of the reaction: a 5'-ribonucleotide + H2O = a ribonucleoside + phosphate." []
+def: "Catalysis of the reaction: a nucleoside 5'-phosphate + H2O = a nucleoside + phosphate." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -1904,7 +1894,7 @@ is_a: GO:0003824 ! catalytic activity
 id: GO:0016477
 name: cell migration
 def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues." []
-is_a: GO:0009987 ! cellular process
+is_a: GO:0048870 ! cell motility
 
 [Term]
 id: GO:0016491
@@ -1983,6 +1973,13 @@ id: GO:0030182
 name: neuron differentiation
 def: "The process in which a relatively unspecialized cell acquires specialized features of a neuron." []
 is_a: GO:0030154 ! cell differentiation
+
+[Term]
+id: GO:0030539
+name: male genitalia development
+def: "The process whose specific outcome is the progression of the male genitalia over time, from its formation to the mature structure." []
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0048856 ! anatomical structure development
 
 [Term]
 id: GO:0031175
@@ -2325,6 +2322,12 @@ def: "The appearance of chemokine (C-C motif) ligand 20 (CCL20) due to biosynthe
 is_a: GO:0032602 ! chemokine production
 
 [Term]
+id: GO:0040007
+name: growth
+def: "The increase in size or mass of an entire organism, a part of an organism or a cell." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0040008
 name: regulation of growth
 def: "Any process that modulates the frequency, rate or extent of the growth of all or part of an organism so that it occurs at its proper speed, either globally or in a specific part of the organism's development." []
@@ -2352,13 +2355,13 @@ is_a: GO:0008150 ! biological_process
 id: GO:0042446
 name: hormone biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of any hormone, naturally occurring substances secreted by specialized cells that affects the metabolism or behavior of other cells possessing functional receptors for the hormone." []
-is_a: GO:0009987 ! cellular process
+is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0042447
 name: hormone catabolic process
 def: "The chemical reactions and pathways resulting in the breakdown of any hormone, naturally occurring substances secreted by specialized cells that affects the metabolism or behavior of other cells possessing functional receptors for the hormone." []
-is_a: GO:0009987 ! cellular process
+is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0042571
@@ -2445,13 +2448,19 @@ is_a: GO:0032602 ! chemokine production
 id: GO:0045005
 name: DNA-templated DNA replication maintenance of fidelity
 def: "A DNA metabolic process that prevents or corrects errors to ensure that DNA is replicated accurately. Errors can be corrected either by intrinsic DNA polymerase proofreading activity or via mismatch repair." []
-is_a: GO:0009987 ! cellular process
+is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0045087
 name: innate immune response
 def: "Innate immune responses are defense responses mediated by germline encoded components that directly recognize components of potential pathogens." []
 is_a: GO:0006955 ! immune response
+
+[Term]
+id: GO:0045137
+name: development of primary sexual characteristics
+def: "The process whose specific outcome is the progression of the primary sexual characteristics over time, from their formation to the mature structures. The primary sexual characteristics are the testes in males and the ovaries in females and they develop in response to sex hormone secretion." []
+is_a: GO:0022414 ! reproductive process
 
 [Term]
 id: GO:0045202
@@ -2490,9 +2499,21 @@ def: "A biological process whose specific outcome is the progression of a cell o
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0048870
+name: cell motility
+def: "Any process involved in the controlled self-propelled movement of a cell that results in translocation of the cell from one place to another." []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0048871
 name: multicellular organismal-level homeostasis
 def: "Any process involved in the maintenance of an internal steady state at the level of the multicellular organism." []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0050793
+name: regulation of developmental process
+def: "Any process that modulates the frequency, rate or extent of development, the biological process whose specific outcome is the progression of a multicellular organism over time from an initial condition (e.g. a zygote, or a young adult) to a later condition (e.g. a multicellular animal or an aged adult)." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -2662,7 +2683,7 @@ is_a: GO:0071706 ! tumor necrosis factor superfamily cytokine production
 id: GO:0090128
 name: regulation of synapse maturation
 def: "Any process that modulates the extent of synapse maturation, the process that organizes a synapse so that it attains its fully functional state." []
-is_a: GO:0008150 ! biological_process
+is_a: GO:0050793 ! regulation of developmental process
 
 [Term]
 id: GO:0097087
@@ -2766,6 +2787,12 @@ id: GO:1903339
 name: negative regulation of cell wall organization or biogenesis
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of cell wall organization or biogenesis." []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:1990359
+name: stress response to zinc ion
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a disturbance in organismal or cellular homeostasis caused by a zinc ion stimulus." []
+is_a: GO:0050896 ! response to stimulus
 
 [Term]
 id: GO:1990505
@@ -2913,7 +2940,7 @@ is_a: IAO:0000033 ! directive information entity
 id: IAO:0000100
 name: homogenous data collection
 def: "A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets." []
-is_a: IAO:0000027 ! data item
+is_a: IAO:0001000 ! data collection
 
 [Term]
 id: IAO:0000101
@@ -3094,6 +3121,12 @@ id: IAO:0000594
 name: software application
 def: "A software application is software that can be directly executed by some processing unit." []
 is_a: IAO:0000010 ! software
+
+[Term]
+id: IAO:0001000
+name: data collection
+def: "A data entity that consists of multiple data entities." []
+is_a: IAO:0000027 ! data item
 
 [Term]
 id: IAO:8000000
@@ -3474,12 +3507,6 @@ synonym: "human hepatitis B virus HBV" EXACT []
 is_a: NCBITaxon:2732514 ! Revtraviricetes
 
 [Term]
-id: NCBITaxon:11050
-name: Flaviviridae
-synonym: "Flavivirus (arbovirus group B)" EXACT []
-is_a: NCBITaxon:2732406 ! Kitrinoviricota
-
-[Term]
 id: NCBITaxon:11646
 name: Lentivirus
 synonym: "Lentivirinae" EXACT []
@@ -3522,7 +3549,7 @@ is_a: NCBITaxon:33213 ! Bilateria
 [Term]
 id: NCBITaxon:12637
 name: Dengue virus
-is_a: NCBITaxon:11050 ! Flaviviridae
+is_a: NCBITaxon:2732545 ! Amarillovirales
 
 [Term]
 id: NCBITaxon:131567
@@ -3533,11 +3560,6 @@ is_a: COB:0000022 ! organism
 id: NCBITaxon:160
 name: Treponema pallidum
 is_a: NCBITaxon:3379134 ! Pseudomonadati
-
-[Term]
-id: NCBITaxon:197562
-name: Pancrustacea
-is_a: NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: NCBITaxon:2
@@ -3571,6 +3593,11 @@ name: Revtraviricetes
 is_a: NCBITaxon:2559587 ! Riboviria
 
 [Term]
+id: NCBITaxon:2732545
+name: Amarillovirales
+is_a: NCBITaxon:2732406 ! Kitrinoviricota
+
+[Term]
 id: NCBITaxon:2759
 name: Eukaryota
 synonym: "eukaryotes" EXACT []
@@ -3584,20 +3611,21 @@ is_a: NCBITaxon:10239 ! Viruses
 
 [Term]
 id: NCBITaxon:3052230
-name: Hepacivirus hominis
+name: Orthohepacivirus hominis
 synonym: "Hepacivirus C" EXACT []
+synonym: "Hepacivirus hominis" EXACT []
 synonym: "Hepatitis C virus" EXACT []
 synonym: "hepatitis C virus HCV" EXACT []
 synonym: "human hepatitis C virus" EXACT []
 synonym: "human hepatitis C virus HCV" EXACT []
 synonym: "human hepatitis virus C HCV" EXACT []
 synonym: "post-transfusion hepatitis non A non B virus" EXACT []
-is_a: NCBITaxon:11050 ! Flaviviridae
+is_a: NCBITaxon:2732545 ! Amarillovirales
 
 [Term]
 id: NCBITaxon:314146
 name: Euarchontoglires
-is_a: NCBITaxon:40674 ! Mammalia
+is_a: NCBITaxon:9347 ! Eutheria
 
 [Term]
 id: NCBITaxon:32523
@@ -3633,6 +3661,11 @@ is_a: NCBITaxon:33208 ! Metazoa
 id: NCBITaxon:3379134
 name: Pseudomonadati
 is_a: NCBITaxon:2 ! Bacteria
+
+[Term]
+id: NCBITaxon:3701030
+name: Allotriocarida
+is_a: NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: NCBITaxon:3702
@@ -3697,7 +3730,9 @@ is_a: NCBITaxon:716545 ! saccharomyceta
 
 [Term]
 id: NCBITaxon:5820
-name: Plasmodium
+name: Plasmodium <genus>
+synonym: "Plasmodium" EXACT []
+synonym: "Plasmodium (Plasmodium)" EXACT []
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
@@ -3715,13 +3750,13 @@ is_a: NCBITaxon:1206794 ! Ecdysozoa
 id: NCBITaxon:6668
 name: Daphnia
 synonym: "common water fleas" EXACT []
-is_a: NCBITaxon:197562 ! Pancrustacea
+is_a: NCBITaxon:3701030 ! Allotriocarida
 
 [Term]
 id: NCBITaxon:7147
 name: Diptera
 synonym: "flies" EXACT []
-is_a: NCBITaxon:197562 ! Pancrustacea
+is_a: NCBITaxon:3701030 ! Allotriocarida
 
 [Term]
 id: NCBITaxon:7157
@@ -3775,6 +3810,14 @@ synonym: "chicken" EXACT []
 synonym: "chickens" EXACT []
 synonym: "Gallus domesticus" EXACT []
 is_a: NCBITaxon:32524 ! Amniota
+
+[Term]
+id: NCBITaxon:9347
+name: Eutheria
+synonym: "eutherian mammals" EXACT []
+synonym: "placental mammals" EXACT []
+synonym: "placentals" EXACT []
+is_a: NCBITaxon:40674 ! Mammalia
 
 [Term]
 id: NCBITaxon:9606
@@ -8362,7 +8405,7 @@ is_a: OBI:0400116 ! thermal cycler
 [Term]
 id: OBI:0000990
 name: electron microscope
-def: "A microscope that produces an image of an object by targeting it with an electron beam" []
+def: "A microscope that produces an image of an object by targeting it with an electron beam." []
 is_a: OBI:0400169 ! microscope
 
 [Term]
@@ -12598,6 +12641,8 @@ is_a: OBI:0000443 ! analyte assay
 id: OBI:0001631
 name: electron microscopy imaging assay
 def: "An imaging assay in which an electrons are used to probe the density, shape and composition of an input material which are detected in an electron microscope and utilized to produce an image of the material." []
+synonym: "electron microscopy" EXACT []
+synonym: "EM" EXACT []
 is_a: OBI:0002119 ! microscopy assay
 
 [Term]
@@ -16096,6 +16141,7 @@ is_a: OBI:0000626 ! DNA sequencing assay
 id: OBI:0002119
 name: microscopy assay
 def: "An imaging assay that utilizes a microscope to magnify features of the visualized material of interest that are not visible to naked eye." []
+synonym: "microscopy" EXACT []
 is_a: OBI:0000185 ! imaging assay
 
 [Term]
@@ -17226,7 +17272,7 @@ id: OBI:0002437
 name: widefield microscopy assay
 def: "A fluorescence microscopy technique where the specimen under investigation is fully bathed in light, as opposed to confocal microscopy in which only a small portion of the specimen is illuminated." []
 synonym: "WFM" EXACT []
-is_a: CHMO:0000087 ! fluorescence microscopy assay
+is_a: OBI:0003855 ! fluorescence microscopy assay
 
 [Term]
 id: OBI:0002438
@@ -17866,7 +17912,7 @@ is_a: OBI:0001479 ! specimen from organism
 id: OBI:0002543
 name: atrial appendage specimen
 def: "A specimen that is derived from the atrium auricular region." []
-is_a: OBI:0001479 ! specimen from organism
+is_a: OBI:0002520 ! heart specimen
 
 [Term]
 id: OBI:0002544
@@ -19311,7 +19357,7 @@ is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 [Term]
 id: OBI:0002760
 name: metatranscriptome profiling assay
-def: "A transcription profiling by RNA sequencing assay that determines the RNA sequence of microbial transcripts from a microbioal community of mixed species from a given microbiome." []
+def: "A transcription profiling by RNA sequencing assay that determines the RNA sequence of microbial transcripts from a microbial community of mixed species from a given microbiome." []
 is_a: OBI:0001271 ! transcription profiling by RNA sequencing assay
 
 [Term]
@@ -19331,7 +19377,7 @@ is_a: OBI:0002039 ! assay for transposase-accessible chromatin using sequencing
 [Term]
 id: OBI:0002763
 name: 16s ribosomal gene sequencing assay
-def: "An amplicon sequencing assay in which the amplicon is derived from universal primers used to amplify the 16S ribosomal RNA gene from isolate bacterial genomic DNA or metagenomic DNA from a microbioal community. Resulting sequences are compared to reference 16S sequence databases to identify or classify bacteria present within a given sample." []
+def: "An amplicon sequencing assay in which the amplicon is derived from universal primers used to amplify the 16S ribosomal RNA gene from isolate bacterial genomic DNA or metagenomic DNA from a microbial community. Resulting sequences are compared to reference 16S sequence databases to identify or classify bacteria present within a given sample." []
 synonym: "16S rRNA sequencing assay" EXACT []
 is_a: OBI:0001960 ! taxonomic diversity assessment by targeted gene survey
 is_a: OBI:0002767 ! amplicon sequencing assay
@@ -19346,7 +19392,7 @@ is_a: OBI:0002039 ! assay for transposase-accessible chromatin using sequencing
 [Term]
 id: OBI:0002765
 name: microbiome protein expression profiling assay
-def: "A protein expression profiling assay of microbial proteins extracted from a microbioal community of mixed species from a given microbiome." []
+def: "A protein expression profiling assay of microbial proteins extracted from a microbial community of mixed species from a given microbiome." []
 synonym: "metaproteomic assay" EXACT []
 is_a: OBI:0000615 ! protein expression profiling assay
 
@@ -20986,7 +21032,7 @@ is_a: OBI:0000470 ! mass spectrometry assay
 id: OBI:0003098
 name: lightsheet fluorescence microscopy assay
 def: "A fluorescence microscopy that involves capturing of photons emitted by fluorophores excited with a thin sheet of laser light in a sample only in a relatively narrow plane by a detection objective oriented perpendicularly to the light sheet and imaged onto a detection device such as a CCD camera." []
-is_a: CHMO:0000087 ! fluorescence microscopy assay
+is_a: OBI:0003855 ! fluorescence microscopy assay
 
 [Term]
 id: OBI:0003099
@@ -25242,6 +25288,50 @@ def: "An immune response assay to assess the hypersensitivity response in an org
 is_a: OBI:0000743 ! immune response assay
 
 [Term]
+id: OBI:0003854
+name: light microscopy assay
+def: "A microscopy assay in which the specimen is illuminated with visible light and a system of lenses is used to produce an image." []
+synonym: "light microscopy" EXACT []
+synonym: "OM" EXACT []
+synonym: "optical microscopy" EXACT []
+is_a: OBI:0002119 ! microscopy assay
+
+[Term]
+id: OBI:0003855
+name: fluorescence microscopy assay
+def: "Any type of light microscopy assay in which the specimen can be made to fluoresce (emit energy as visible light) by illuminating it with light of specific wavelengths. These specimens are called fluorophores." []
+synonym: "fluorescence imaging" EXACT []
+synonym: "fluorescence microscopic imaging" EXACT []
+synonym: "FM" EXACT []
+is_a: OBI:0001501 ! fluorescence detection assay
+is_a: OBI:0003854 ! light microscopy assay
+
+[Term]
+id: OBI:0003856
+name: fluorescence laser scanning microscopy assay
+def: "A fluorescence microscopy assay in which the specimen can be made to fluoresce (emit energy as visible light) by scanning a laser spot of specific wavelength over its surface." []
+synonym: "FLSM" EXACT []
+synonym: "laser scanning fluorescence microscopy" EXACT []
+synonym: "laser scanning microscopy" EXACT []
+synonym: "LSM" EXACT []
+is_a: OBI:0003855 ! fluorescence microscopy assay
+
+[Term]
+id: OBI:0003857
+name: confocal fluorescence microscopy assay
+def: "A fluorescence laser scanning microscopy assay in which the specimen can be made to fluoresce (emit energy as visible light) by scanning a gas (Ar or Kr) laser spot of specific wavelength over its surface and using a spatial pinhole to eliminate out-of-focus fluorescence." []
+synonym: "CLSM" EXACT []
+synonym: "confocal fluorescence imaging" EXACT []
+synonym: "confocal laser scanning fluorescence microscopy" EXACT []
+synonym: "confocal laser scanning microscopy" EXACT []
+synonym: "confocal-laser scanning microscopy" EXACT []
+synonym: "fluorescence confocal microscopy" EXACT []
+synonym: "fluorescence confocal scanning laser microscopy" EXACT []
+synonym: "LSCM" EXACT []
+synonym: "scanning confocal fluorescence microscopy" EXACT []
+is_a: OBI:0003856 ! fluorescence laser scanning microscopy assay
+
+[Term]
 id: OBI:0003882
 name: super-resolution microscopy assay
 def: "A type of light microscopy assay where the images are taken with a resolution higher than the diffraction limit." []
@@ -25580,6 +25670,476 @@ synonym: "read-based binning" EXACT []
 is_a: OBI:0003924 ! metagenome binning
 
 [Term]
+id: OBI:0003930
+name: liquid chromatography-tandem mass spectrometry assay
+def: "A tandem mass spectrometry assay where a sample mixture is first separated by liquid chromatography before being ionised and characterised by mass-to-charge ratio and relative abundance using two mass spectrometers in series." []
+synonym: "LC-MS-MS" EXACT []
+synonym: "LC-MS/MS" EXACT []
+synonym: "LC-MS2" EXACT []
+synonym: "LC-MSMS" EXACT []
+synonym: "LC/MS/MS" EXACT []
+synonym: "LCMSMS" EXACT []
+synonym: "liquid chromatography tandem mass spectrometry" EXACT []
+synonym: "liquid chromatography tandem mass spectroscopy" EXACT []
+synonym: "liquid chromatography-tandem mass spectroscopy" EXACT []
+is_a: OBI:0003097 ! liquid chromatography mass spectrometry assay
+is_a: OBI:0003540 ! tandem mass spectrometry assay
+
+[Term]
+id: OBI:0003931
+name: cell death assay detecting lactate dehydrogenase (LDH) release using luminescence detection
+def: "a cell death assay detecting lactate dehydrogenase (LDH) release assay measured by luminescence detection of substrate." []
+synonym: "LDH-Glo assay" EXACT []
+is_a: OBI:0003761 ! cell death assay detecting lactate dehydrogenase (LDH) release
+
+[Term]
+id: OBI:0003932
+name: substance distribution in an organism assay
+def: "a substance detection assay that measures the abundance of a substance in one or more of the tissues of an organism." []
+synonym: "internal dose" EXACT []
+is_a: OBI:0600025 ! substance detection assay
+
+[Term]
+id: OBI:0003933
+name: cell motility assay
+def: "a cytometry assay that measures quality and/or abundance of motile cells able to move by their own activities in a specimen from organism" []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003934
+name: tissue mass percent of brain mass assay
+def: "a mass measurement assay with evaluant tissue expressed as a percentage of the brain weight of the organism from which the tissue specimen was derived." []
+is_a: OBI:0000445 ! mass measurement assay
+
+[Term]
+id: OBI:0003935
+name: assessment of startle response magnitude in an organism
+def: "an assessment of startle response in an organism that measures the magnitude of the physical reaction of the organism to the presented stimulus" []
+synonym: "startle amplitude" EXACT []
+is_a: OBI:0003710 ! assessment of startle response in an organism
+
+[Term]
+id: OBI:0003936
+name: assessment of startle response habituation in an organism
+def: "an assessment of startle response in an organism that measures the progressive decline in the magnitude of the physical reaction of the organism as repeated stimuli are presented" []
+synonym: "startle habituation" EXACT []
+is_a: OBI:0003710 ! assessment of startle response in an organism
+
+[Term]
+id: OBI:0003937
+name: assessment of startle response latency in an organism
+def: "an assessment of startle response in an organism that measures the time delay between presentation of the stimulus and the physical reaction of the organism" []
+synonym: "startle latency" EXACT []
+is_a: OBI:0003710 ! assessment of startle response in an organism
+
+[Term]
+id: OBI:0003938
+name: assessment of learning and/or memory response using a dry-environment maze
+def: "an assessment of learning and/or memory in an organism that uses a dry-environment maze to measure time, distance and / or number of false starts by an organism finding the way to a target location" []
+synonym: "dry maze assay" EXACT []
+is_a: OBI:0003709 ! assessment of learning and/or memory response in an organism
+
+[Term]
+id: OBI:0003939
+name: assessment of learning and/or memory response using a water maze
+def: "an assessment of learning and/or memory in an organism that uses a water maze to measure time, distance and number of successful and / or false starts by an organism finding the way to a submerged target location" []
+synonym: "water maze assay" EXACT []
+is_a: OBI:0003709 ! assessment of learning and/or memory response in an organism
+
+[Term]
+id: OBI:0003940
+name: assessment of learning and/or memory response using an active avoidance challenge
+def: "an assessment of learning and/or memory in an organism that uses learned response to a stimulus to measure time and / or number of false starts by an organism learning behavior in response to a stimulus" []
+synonym: "active avoidance assay" EXACT []
+is_a: OBI:0003709 ! assessment of learning and/or memory response in an organism
+
+[Term]
+id: OBI:0003941
+name: assessment of learning and/or memory response using a passive avoidance challenge
+def: "an assessment of learning and/or memory in an organism that uses learned response to a stimulus to measure time and / or number of false starts by organism to learning to avoid habitual behavior in response to a stimulus" []
+synonym: "passive avoidance assay" EXACT []
+is_a: OBI:0003709 ! assessment of learning and/or memory response in an organism
+
+[Term]
+id: OBI:0003942
+name: assessment of learning and/or memory latency time in dry maze
+def: "an assessment of learning and/or memory response using a dry-environment maze that measures the time needed by an organism to find the target location" []
+synonym: "dry maze latency" EXACT []
+is_a: OBI:0003938 ! assessment of learning and/or memory response using a dry-environment maze
+
+[Term]
+id: OBI:0003943
+name: assessment of learning and/or memory path length in dry maze
+def: "an assessment of learning and/or memory response using a dry-environment maze that measures the path length traversed by an organism before finding the target location" []
+synonym: "dry maze path length assay" EXACT []
+is_a: OBI:0003938 ! assessment of learning and/or memory response using a dry-environment maze
+
+[Term]
+id: OBI:0003944
+name: assessment of learning and/or memory latency time in water maze
+def: "an assessment of learning and/or memory response using a water maze that measures the time needed by an organism to find the target location" []
+synonym: "water maze latency assay" EXACT []
+is_a: OBI:0003939 ! assessment of learning and/or memory response using a water maze
+
+[Term]
+id: OBI:0003945
+name: assessment of learning and/or memory path length in water maze
+def: "an assessment of learning and/or memory response using a water maze that measures the path length traversed by an organism before finding the target location" []
+synonym: "water maze path length assay" EXACT []
+is_a: OBI:0003939 ! assessment of learning and/or memory response using a water maze
+
+[Term]
+id: OBI:0003946
+name: assessment of learning and/or memory latency time in active avoidance
+def: "an assessment of learning and/or memory response using an active avoidance challenge that measures the time to correct response by the organism" []
+synonym: "active avoidance latency assay" EXACT []
+is_a: OBI:0003940 ! assessment of learning and/or memory response using an active avoidance challenge
+
+[Term]
+id: OBI:0003947
+name: assessment of learning and/or memory latency time in passive avoidance
+def: "an assessment of learning and/or memory response using an passive avoidance challenge that measures the time to correct response by an organism" []
+synonym: "passive avoidance latency assay" EXACT []
+is_a: OBI:0003941 ! assessment of learning and/or memory response using a passive avoidance challenge
+
+[Term]
+id: OBI:0003948
+name: assessment of learning and/or memory crossing number in passive avoidance
+def: "an assessment of learning and/or memory response using a passive avoidance challenge that measures the distance traversed by an organism before making the correct response" []
+synonym: "passive avoidance crossings assay" EXACT []
+is_a: OBI:0003941 ! assessment of learning and/or memory response using a passive avoidance challenge
+
+[Term]
+id: OBI:0003949
+name: sperm motility assay
+def: "a cell motility assay that measures the motility of sperm cells in a specimen from organism" []
+is_a: OBI:0003933 ! cell motility assay
+
+[Term]
+id: OBI:0003950
+name: large unstained cell count assay
+def: "a hematology assay that measures the number of cells with large unstained cell phenotype in a specimen from organism" []
+synonym: "large unstained call count" EXACT []
+is_a: OBI:0000630 ! hematology assay
+
+[Term]
+id: OBI:0003951
+name: large unstained cell percentage assay
+def: "a hematology assay that assesses the ratio of cells with large unstained cell phenotype to white blood cell number in a specimen from organism" []
+synonym: "large unstained call percentage" EXACT []
+is_a: OBI:0000630 ! hematology assay
+
+[Term]
+id: OBI:0003952
+name: thiol assay
+def: "an analyte assay that measures the abundance of thiol groups" []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003953
+name: thiol concentration assay
+def: "a thiol assay that measures the abundance of thiol groups that are not conjugated to protein in a specimen from organism" []
+synonym: "Nonprotein sulfhydryl concentration assay" EXACT []
+is_a: OBI:0003952 ! thiol assay
+
+[Term]
+id: OBI:0003954
+name: thiol ratio of protein-bound and unbound assay
+def: "a thiol assay that measures the ratio of protein-bound thiols to unbound thiols in a specimen from organism" []
+synonym: "Tissue sulfhydryls and non protein sulfhydryls ratio assay" EXACT []
+is_a: OBI:0003952 ! thiol assay
+
+[Term]
+id: OBI:0003955
+name: zinc(2+) assay
+def: "an analyte assay that measures the abundance of zinc(2+)" []
+is_a: OBI:0000443 ! analyte assay
+
+[Term]
+id: OBI:0003956
+name: zinc(2+) concentration assay
+def: "a zinc(2+) assay that measures the abundance of zinc(2+) ions in a specimen from organism" []
+is_a: OBI:0003955 ! zinc(2+) assay
+
+[Term]
+id: OBI:0003957
+name: organismal viability assessment
+def: "a physical examination of an organism that determines if an multicellular organism is alive" []
+is_a: OBI:0002441 ! physical examination of an organism
+
+[Term]
+id: OBI:0003958
+name: number of nipples assay
+def: "a physical examination of an organism assay that determines the nipple quantity on an animal" []
+synonym: "nipple count" EXACT []
+is_a: OBI:0002441 ! physical examination of an organism
+
+[Term]
+id: OBI:0003959
+name: anogenital distance assay
+def: "a distance measurement assay that measures the distance between the center of the anus and the genital tubercle" []
+is_a: OBI:0003816 ! distance measurement assay
+
+[Term]
+id: OBI:0003960
+name: auditory canal opening age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of ear canal opening" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003961
+name: eye opening age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of eyelid opening" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003962
+name: hair development age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of hair development" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003963
+name: incisor eruption age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of incisor eruption" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003964
+name: pinna unfolding age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of pinna detachment" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003965
+name: preputial separation age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of preputial separation" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003966
+name: vaginal opening age of attainment assay
+def: "a developmental marker age of attainment assessment that measures time of vaginal opening" []
+is_a: OBI:0003844 ! developmental marker age of attainment assessment
+
+[Term]
+id: OBI:0003967
+name: gamma-H2AX DNA damage assay
+def: "a cell based DNA damage assay that measures phosphorylation of histone H2AX" []
+is_a: OBI:0003721 ! cell based DNA damage assay
+
+[Term]
+id: OBI:0003968
+name: reactive oxygen species assay
+def: "cytometry assay that measures the abundance of reactive oxygen species" []
+is_a: OBI:0001977 ! cytometry assay
+
+[Term]
+id: OBI:0003969
+name: hydrogen peroxide from cell assay
+def: "a reactive oxygen species assay that measures the abundance of hydrogen peroxide from a cultured cell population" []
+synonym: "ROS-GLO assay" EXACT []
+is_a: OBI:0003968 ! reactive oxygen species assay
+
+[Term]
+id: OBI:0003970
+name: methemoglobin concentration assay
+def: "a methemoglobin assay that measures the abundance of methemoglobin in a blood specimen" []
+is_a: OBI:2100040 ! methemoglobin assay
+
+[Term]
+id: OBI:0003971
+name: morphometric assay
+def: "an assay used to measure, statistically evaluate, and mathematically model the shape, dimensions and / or proportion of a material entity." []
+is_a: OBI:0000070 ! assay
+
+[Term]
+id: OBI:0003972
+name: food consumed mass assay
+def: "a mass measurement assay that measures the mass of the food consumed by an organism over a defined time period" []
+synonym: "food consumption" EXACT []
+is_a: OBI:0000445 ! mass measurement assay
+
+[Term]
+id: OBI:0003973
+name: conceptus count assay
+def: "a reproductive assay to determine the conceptus quantity for a viviparous animal" []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0003974
+name: fetus count assay
+def: "a conceptus count assay that determines the fetus quantity for a viviparous animal" []
+is_a: OBI:0003973 ! conceptus count assay
+
+[Term]
+id: OBI:0003975
+name: viable fetus count assay
+def: "a fetus count assay that determines the viable fetus quantity for a viviparous animal" []
+is_a: OBI:0003974 ! fetus count assay
+
+[Term]
+id: OBI:0003976
+name: non-viable fetus count assay
+def: "a fetus count assay that determines the non-viable fetus quantity for a viviparous animal" []
+is_a: OBI:0003974 ! fetus count assay
+
+[Term]
+id: OBI:0003977
+name: early resorption count assay
+def: "a non-viable fetus count assay that determines the number of dead fetuses with incomplete organogenesis" []
+is_a: OBI:0003976 ! non-viable fetus count assay
+
+[Term]
+id: OBI:0003978
+name: late resorption count assay
+def: "a non-viable fetus count assay that determines the number of dead fetuses that have completed organogenesis, and are necrotic." []
+is_a: OBI:0003976 ! non-viable fetus count assay
+
+[Term]
+id: OBI:0003979
+name: live fetus percentage assay
+def: "a viable fetus count assay that determines the ratio of live fetuses to the total number of fetuses in a litter, multiplied by 100" []
+synonym: "Percent of live fetuses per litter" EXACT []
+is_a: OBI:0003975 ! viable fetus count assay
+
+[Term]
+id: OBI:0003980
+name: fetus mass assay
+def: "a mass measurement assay that measures the mass of a fetus" []
+is_a: OBI:0000445 ! mass measurement assay
+
+[Term]
+id: OBI:0003981
+name: viable fetus in litter mass assay
+def: "a fetus mass assay that measures the mass of all viable fetuses in a litter" []
+synonym: "Live fetal weight, litter mean (g)" EXACT []
+is_a: OBI:0003980 ! fetus mass assay
+
+[Term]
+id: OBI:0003982
+name: post-implantation loss assay
+def: "a conceptus count assay that determines the number conceptuses that died after implantation and before birth in a viviparous animal" []
+is_a: OBI:0003973 ! conceptus count assay
+
+[Term]
+id: OBI:0003983
+name: pre-implantation loss assay
+def: "a conceptus count assay that determines embryo deaths occurring after fertilization and before implantation in a viviparous animal" []
+is_a: OBI:0003973 ! conceptus count assay
+
+[Term]
+id: OBI:0003984
+name: mating status assay
+def: "a reproductive assay that determines if a viviparous animal has signs of having mated" []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0003985
+name: mated female animal count assay
+def: "a mating status assay that determines the number of female animals in a population observed to have mated" []
+synonym: "Number of mated females" EXACT []
+is_a: OBI:0003984 ! mating status assay
+
+[Term]
+id: OBI:0003986
+name: mated proportion assay
+def: "a mating status assay that determines the ratio of the number of females with evidence of mating to the number cohabited female animals" []
+synonym: "female mating index" EXACT []
+is_a: OBI:0003984 ! mating status assay
+
+[Term]
+id: OBI:0003987
+name: pregnancy status assay
+def: "a reproductive assay that determines if a viviparous animal is pregnant" []
+synonym: "Pregnancy status" EXACT []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0003988
+name: pregnant count assay
+def: "a pregnancy status assay that determines the number of animals which are pregnant in a population" []
+is_a: OBI:0003987 ! pregnancy status assay
+
+[Term]
+id: OBI:0003989
+name: pregnant animal percentage assay
+def: "a pregnancy status assay that determines the percentage of mated females in a population which have successfully became pregnant." []
+synonym: "fertility index" EXACT []
+is_a: OBI:0003987 ! pregnancy status assay
+
+[Term]
+id: OBI:0003990
+name: precoital interval length assay
+def: "a reproductive assay that measures the time after start of cohabitation when visible signs of mating were observed for a viviparous animal" []
+synonym: "precoital interval" EXACT []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0003991
+name: gestation length assessment
+def: "a reproductive assay that measures the time in days between observed mating and onset of parturition for a viviparous animal" []
+synonym: "gestational length" EXACT []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0003992
+name: single birth offspring quality assay
+def: "a reproductive assay that determines characteristics of a litter-bearing animal based on their offspring quality for a single litter" []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0003993
+name: animal with whole litter stillborn count assay
+def: "a single birth offspring quality assay that counts litter-bearing animals where all pups in the litter were born dead." []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0003994
+name: animal with dystocia count assay
+def: "a single birth offspring quality assay that counts animals in dystocia" []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0003995
+name: animal with runt in litter count assay
+def: "a single birth offspring quality assay that counts litter-bearing animals with one or more pups with significantly decreased body size in a litter" []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0003996
+name: premature birth assessment
+def: "a single birth offspring quality assay that determines if the day of birth for an offspring occurring in late gestation falls earlier than the time window expected for the full gestation period for that animal" []
+synonym: "premature delivery" EXACT []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0003997
+name: premature birth litter count assay
+def: "premature birth assessment that determines the number of litter-bearing animals with one or more premature births in the litter" []
+synonym: "early delivery count" EXACT []
+is_a: OBI:0003996 ! premature birth assessment
+
+[Term]
+id: OBI:0003998
+name: animal with live birth count assay
+def: "a single birth offspring quality assay that counts the number of litter-bearing animals with one or more live pups in the litter." []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0003999
+name: live birth proportion assay
+def: "a single birth offspring quality assay that determines the ratio of the number of pregnant females with one or more live pups to the total number of pregnant females in the population" []
+synonym: "fecundity" EXACT []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0004000
+name: animal with miscarried fetus assessment
+def: "a single birth offspring quality assay that records evidence of a spontaneous abortion." []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
 id: OBI:0004001
 name: randomized clinical trial
 def: "A clinical trial in which the participants are divided by chance into separate groups that compare different treatments or other interventions. Using chance to divide people into groups means that the groups will be similar and that the effects of the treatments they receive can be compared more fairly. At the time of the trial, it is not known which treatment is best." []
@@ -25591,6 +26151,88 @@ name: non-randomized clinical trial
 def: "A clinical trial in which the participants are not assigned by chance to different treatment groups. Participants may choose which group they want to be in, or they may be assigned to the groups by the researchers." []
 synonym: "nonrandomized clinical trial" EXACT []
 is_a: OBI:0003699 ! clinical trial
+
+[Term]
+id: OBI:0004003
+name: animal with miscarriage count assay
+def: "an animal with miscarried fetus assessment that determines the number of animals with evidence of a spontaneous abortion" []
+is_a: OBI:0004000 ! animal with miscarried fetus assessment
+
+[Term]
+id: OBI:0004004
+name: animal delivering proportion assay
+def: "a single birth offspring quality assay that determines the ratio of animals delivering one or more offspring to the number of cohabited female animals" []
+synonym: "littering index" EXACT []
+is_a: OBI:0003992 ! single birth offspring quality assay
+
+[Term]
+id: OBI:0004005
+name: offspring quantity assay
+def: "a reproductive assay to determine the number of offspring for a viviparous animal" []
+is_a: OBI:0003714 ! reproductive assay
+
+[Term]
+id: OBI:0004006
+name: single birth offspring quantity assay
+def: "an offspring quantity assay that determines the number of offspring born to one viviparous animal in one reproductive cycle" []
+synonym: "litter size" EXACT []
+is_a: OBI:0004005 ! offspring quantity assay
+
+[Term]
+id: OBI:0004007
+name: viable offspring quantity assay
+def: "a single birth offspring quantity assay that determines the number of offspring alive at time of parturition" []
+synonym: "live litter size" EXACT []
+is_a: OBI:0004006 ! single birth offspring quantity assay
+
+[Term]
+id: OBI:0004008
+name: stillborn offspring quantity assay
+def: "a single birth offspring quantity assay that determines the number of offspring dead at time of parturition" []
+synonym: "number of dead pups" EXACT []
+is_a: OBI:0004006 ! single birth offspring quantity assay
+
+[Term]
+id: OBI:0004009
+name: number of females with loss of all pups prior to weaning assay
+def: "a single birth offspring quantity assay that determines the number of females for which all pups in the litter died prior to weaning" []
+synonym: "total litter loss" EXACT []
+is_a: OBI:0004006 ! single birth offspring quantity assay
+
+[Term]
+id: OBI:0004010
+name: late pup survival proportion assay
+def: "a single birth offspring quantity assay that compares the number of offspring in a litter at weaning to the number at litter standardization" []
+synonym: "lactation survival index" EXACT []
+is_a: OBI:0004006 ! single birth offspring quantity assay
+
+[Term]
+id: OBI:0004011
+name: male offspring proportion assay
+def: "a single birth offspring quantity assay that determines the ratio of male offspring to the total number of pups in a litter" []
+synonym: "sex ratio" EXACT []
+is_a: OBI:0004006 ! single birth offspring quantity assay
+
+[Term]
+id: OBI:0004012
+name: pup survival proportion assay
+def: "a single-birth offspring quantity assay that measures the ratio between the number of pups alive at a pre-determined time to the number alive at birth" []
+synonym: "viability index" EXACT []
+is_a: OBI:0004006 ! single birth offspring quantity assay
+
+[Term]
+id: OBI:0004013
+name: cumulative offspring quantity
+def: "an offspring quantity assay that determines the lifetime offspring quantity for a viviparous animal" []
+is_a: OBI:0004005 ! offspring quantity assay
+
+[Term]
+id: OBI:0004014
+name: Oxford Nanopore Flongle
+def: "A single-use, disposable flow cell with an adapter that provides pipette-free sample application manufactured by Oxford Nanopore Technologies, compatible with the MinION and GridION sequencers, that enables lower-throughput sequencing runs." []
+synonym: "Flongle" EXACT []
+synonym: "Flongle flow cell" EXACT []
+is_a: OBI:0400043 ! flow cell
 
 [Term]
 id: OBI:0005246
@@ -32481,7 +33123,7 @@ is_a: COB:0000022 ! organism
 id: OPL:0000267
 name: Plasmodium gametocyte
 def: "A Plasmodium that is located either in the bloodstream of the vertebrate host or midgut of mosquito vector during gametocyte stage. Gametocytes are the precursor cells of the macro- or microgametes" []
-is_a: NCBITaxon:5820 ! Plasmodium
+is_a: NCBITaxon:5820 ! Plasmodium <genus>
 
 [Term]
 id: ObsoleteClass
@@ -33392,6 +34034,13 @@ def: "A region of sequence that is involved in the control of a biological proce
 is_a: SO:0000001 ! region
 
 [Term]
+id: UBERON:0000001
+name: gross anatomical part
+def: "Anatomical structure that is part of a multicellular organism and is at the gross anatomical level, e.g. above the level of a cell.  Included are portions of organism substances such as blood, multi-cell-part structures such as axon tracts, acellular anatomical structures such as hair, and organism subdivisions such as head. Excluded is the whole organism and more granular parts of the organism, such as atoms, molecules, macromolecular complexes and cells." []
+is_a: UBERON:0000465 ! material anatomical entity
+disjoint_from: UBERON:0000468 ! multicellular organism
+
+[Term]
 id: UBERON:0000002
 name: uterine cervix
 def: "Lower, narrow portion of the uterus where it joins with the top end of the vagina." []
@@ -33461,6 +34110,7 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0000178
 name: blood
 def: "A fluid that is composed of blood plasma and erythrocytes." []
+is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
@@ -33485,7 +34135,7 @@ is_a: UBERON:0006314 ! bodily fluid
 id: UBERON:0000323
 name: late embryo
 def: "An embryo that is at the late embryonic stage; this stage covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0000341
@@ -33503,7 +34153,8 @@ is_a: UBERON:0000481 ! multi-tissue structure
 id: UBERON:0000463
 name: organism substance
 def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000001 ! gross anatomical part
+disjoint_from: UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0000465
@@ -33523,6 +34174,13 @@ is_a: UBERON:0001062 ! anatomical entity
 id: UBERON:0000467
 name: anatomical system
 def: "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0000468
+name: multicellular organism
+def: "Anatomical structure that is an individual member of a species and consists of more than one cell." []
+is_a: COB:0000022 ! organism
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -33555,6 +34213,12 @@ id: UBERON:0000483
 name: epithelium
 def: "Portion of tissue, that consists of one or more layers of epithelial cells connected to each other by cell junctions and which is underlain by a basal lamina. Examples: simple squamous epithelium, glandular cuboidal epithelium, transitional epithelium, myoepithelium[CARO]." []
 is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0000922
+name: embryo
+def: "Anatomical entity that comprises the organism in the early stages of growth and differentiation that are characterized by cleavage, the laying down of fundamental tissues, and the formation of primitive organs and organ systems. For example, for mammals, the process would begin with zygote formation and end with birth. For insects, the process would begin at zygote formation and end with larval hatching. For plant zygotic embryos, this would be from zygote formation to the end of seed dormancy. For plant vegetative embryos, this would be from the initial determination of the cell or group of cells to form an embryo until the point when the embryo becomes independent of the parent plant." []
+is_a: UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0000945
@@ -33867,13 +34531,13 @@ is_a: UBERON:0000463 ! organism substance
 id: UBERON:0001873
 name: caudate nucleus
 def: "Subcortical nucleus of telecephalic origin consisting of an elongated gray mass lying lateral to and bordering the lateral ventricle. It is divided into a head, body and tail in some species." []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002308 ! nucleus of brain
 
 [Term]
 id: UBERON:0001874
 name: putamen
 def: "Subcortical nucleus of telencephalic , which together with the caudate nucleus, forms the striatum. The putamen lies lateral to the internal capsule and medial to the external medullary lamina, and is separated from the caudate nucleus by the fibers of the internal capsule for most of its length, except at its anterior portion." []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002308 ! nucleus of brain
 
 [Term]
 id: UBERON:0001893
@@ -33981,6 +34645,12 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0002199
 name: integument
 def: "The dermis, epidermis and hypodermis." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0002308
+name: nucleus of brain
+def: "A neural nucleus that is part of the brain." []
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -34116,6 +34786,12 @@ def: "A muscularis mucosa that is part of a esophagus." []
 is_a: UBERON:0002385 ! muscle tissue
 
 [Term]
+id: UBERON:0004716
+name: conceptus
+def: "The embryo and its adnexa (appendages or adjunct parts) or associated membranes (i.e. the products of conception) The conceptus includes all structures that develop from the zygote, both embryonic and extraembryonic. It includes the embryo as well as the embryonic part of the placenta and its associated membranes - amnion, chorion (gestational sac), and yolk sac[WP]." []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
 id: UBERON:0005022
 name: mucosa of nasopharynx
 def: "A mucosa that is part of a nasopharynx [Automatically generated definition]." []
@@ -34157,10 +34833,16 @@ name: digestive system secreted substance
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
+id: UBERON:0007021
+name: sexually immature organism
+def: "A multicellular organism that is at the juvenile stage." []
+is_a: UBERON:0000468 ! multicellular organism
+
+[Term]
 id: UBERON:0007106
 name: chorionic villus
 def: "One of the minute vascular projections of the fetal chorion that combines with maternal uterine tissue to form the placenta." []
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000001 ! gross anatomical part
 
 [Term]
 id: UBERON:0007109
@@ -34196,13 +34878,13 @@ is_a: UBERON:0002384 ! connective tissue
 id: UBERON:0008979
 name: carcass
 def: "A body of a multi-cellular organism that is no longer living." []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0009097
 name: gravid organism
 def: "An organism containing a developing embryo, fetus, or unborn offspring within the body." []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0010414
@@ -34323,6 +35005,12 @@ id: UPHENO:0001001
 name: phenotype
 def: "A phenotypic effect related to http://www.w3.org/2002/07/owl#Thing." []
 is_a: PATO:0000001 ! quality
+
+[Term]
+id: UPHENO:0051255
+name: sperm motility phenotype
+def: "Changed sperm motility." []
+is_a: UPHENO:0001001 ! phenotype
 
 [Term]
 id: UPHENO:0056253
