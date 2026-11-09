@@ -329,9 +329,15 @@ build/obi-previous-release.owl: | build
 
 build/released-entities.tsv: build/obi-previous-release.owl src/sparql/get-obi-entities.rq | build/robot.jar
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
+	mv $@ $@.tmp
+	tail -n+2 $@.tmp > $@
+	rm -f $@.tmp
 
 build/current-entities.tsv: build/obi_merged.owl src/sparql/get-obi-entities.rq | build/robot.jar
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
+	mv $@ $@.tmp
+	tail -n+2 $@.tmp > $@
+	rm -f $@.tmp
 
 build/terms-report.tsv: build/obi_merged.owl src/sparql/terms-report.rq | build
 	$(ROBOT) query --input $< --select $(word 2,$^) $@
