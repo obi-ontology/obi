@@ -1,0 +1,53 @@
+# Collecting a specimen from a patient, extracting DNA from it, and sequencing the exome.
+# Instance-level rendering of the biobank part of the graph on the 2019 poster
+# "TURBO: Transforming and Unifying Research with Biomedical Ontologies",
+# https://github.com/PennTURBO/Turbo-Documentation/blob/master/IBI_CIC_TURBO_MAM_20190102.pdf
+#
+# Every individual below is a made-up example; every class and property is an OBI term
+# or a term OBI imports. Labels on individuals are for readers only.
+#
+# Issue: https://github.com/obi-ontology/obi/issues/1886
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix ex:   <http://example.org/obi-example/exome-sequencing/> .
+
+<http://example.org/obi-example/exome-sequencing> a owl:Ontology ;
+    owl:imports <http://purl.obolibrary.org/obo/obi.owl> .
+
+ex:patient1 a owl:NamedIndividual, obo:NCBITaxon_9606 ;          # Homo sapiens
+    rdfs:label "patient 1" ;
+    obo:RO_0000087 ex:patient_role1,                              # has role
+        ex:participant_under_investigation_role1 .
+
+ex:patient_role1 a owl:NamedIndividual, obo:OBI_0000093 ;        # patient role
+    rdfs:label "patient role 1" .
+
+ex:participant_under_investigation_role1 a owl:NamedIndividual, obo:OBI_0000097 ;  # participant under investigation role
+    rdfs:label "participant under investigation role 1" .
+
+ex:specimen_collection1 a owl:NamedIndividual, obo:OBI_0000659 ; # specimen collection process
+    rdfs:label "specimen collection 1" ;
+    obo:OBI_0000293 ex:patient1 ;                                 # has specified input
+    obo:OBI_0000299 ex:specimen1 .                                # has specified output
+
+ex:specimen1 a owl:NamedIndividual, obo:OBI_0001479 ;            # specimen from organism
+    rdfs:label "specimen 1" .
+
+ex:dna_extraction1 a owl:NamedIndividual, obo:OBI_0000257 ;      # DNA extraction
+    rdfs:label "DNA extraction 1" ;
+    obo:OBI_0000293 ex:specimen1 ;                                # has specified input
+    obo:OBI_0000299 ex:dna_extract1 .                             # has specified output
+
+ex:dna_extract1 a owl:NamedIndividual, obo:OBI_0001051 ;         # DNA extract
+    rdfs:label "DNA extract 1" .
+
+ex:exome_sequencing1 a owl:NamedIndividual, obo:OBI_0002118 ;    # exome sequencing assay
+    rdfs:label "exome sequencing 1" ;
+    obo:OBI_0000293 ex:dna_extract1 ;                             # has specified input
+    obo:OBI_0000299 ex:sequence_data1 .                           # has specified output
+
+ex:sequence_data1 a owl:NamedIndividual, obo:OBI_0001573 ;       # DNA sequence data
+    rdfs:label "DNA sequence data 1" .
