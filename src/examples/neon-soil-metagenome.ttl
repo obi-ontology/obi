@@ -1,0 +1,107 @@
+# Pooling soil samples, extracting DNA, sequencing the metagenome, and assembling, annotating and binning the reads.
+# The steps follow National Microbiome Data Collaborative (NMDC) records for the
+# National Ecological Observatory Network (NEON) soil metagenomes study,
+# https://data.microbiomedata.org/details/study/nmdc:sty-11-34xj1150
+#
+# Every individual below is a made-up example; every class and property is an OBI term
+# or a term OBI imports. Labels on individuals are for readers only.
+# Three samples are pooled, as in most of those records. Each set of reads, contigs or bins
+# is one data item here; NMDC records several files for each.
+#
+# Issue: https://github.com/obi-ontology/obi/issues/1886
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix ex:   <http://example.org/obi-example/neon-soil-metagenome/> .
+
+<http://example.org/obi-example/neon-soil-metagenome> a owl:Ontology ;
+    owl:imports <http://purl.obolibrary.org/obo/obi.owl> .
+
+# Materials
+
+ex:soil_sample1 a owl:NamedIndividual, obo:OBI_0000747, obo:ENVO_00001998 ;  # material sample, soil
+    rdfs:label "soil sample 1" .
+
+ex:soil_sample2 a owl:NamedIndividual, obo:OBI_0000747, obo:ENVO_00001998 ;  # material sample, soil
+    rdfs:label "soil sample 2" .
+
+ex:soil_sample3 a owl:NamedIndividual, obo:OBI_0000747, obo:ENVO_00001998 ;  # material sample, soil
+    rdfs:label "soil sample 3" .
+
+ex:pool1 a owl:NamedIndividual, obo:OBI_0302716 ;                # pool of specimens
+    rdfs:label "pool 1" .
+
+ex:dna_extract1 a owl:NamedIndividual, obo:OBI_0001051 ;         # DNA extract
+    rdfs:label "DNA extract 1" .
+
+# OBI has no general sequencing library class, so the library is only a processed material entity.
+ex:library1 a owl:NamedIndividual, obo:COB_0000026 ;             # processed material entity
+    rdfs:label "sequencing library 1" .
+
+ex:sequencer1 a owl:NamedIndividual, obo:OBI_0003387 ;           # Illumina NextSeq 550
+    rdfs:label "sequencer 1" .
+
+# Lab processes
+
+ex:pooling1 a owl:NamedIndividual, obo:OBI_0600016 ;             # pooling specimens
+    rdfs:label "pooling 1" ;
+    obo:OBI_0000293 ex:soil_sample1, ex:soil_sample2, ex:soil_sample3 ;  # has specified input
+    obo:OBI_0000299 ex:pool1 .                                    # has specified output
+
+ex:dna_extraction1 a owl:NamedIndividual, obo:OBI_0000257 ;      # DNA extraction
+    rdfs:label "DNA extraction 1" ;
+    obo:OBI_0000293 ex:pool1 ;                                    # has specified input
+    obo:OBI_0000299 ex:dna_extract1 .                             # has specified output
+
+ex:library_preparation1 a owl:NamedIndividual, obo:OBI_0000711 ; # library preparation
+    rdfs:label "library preparation 1" ;
+    obo:OBI_0000293 ex:dna_extract1 ;                             # has specified input
+    obo:OBI_0000299 ex:library1 .                                 # has specified output
+
+ex:sequencing1 a owl:NamedIndividual, obo:OBI_0002623 ;          # whole metagenome sequencing assay
+    rdfs:label "metagenome sequencing 1" ;
+    obo:OBI_0000293 ex:library1, ex:sequencer1 ;                  # has specified input
+    obo:OBI_0000299 ex:raw_reads1 .                               # has specified output
+
+# Data
+
+ex:raw_reads1 a owl:NamedIndividual, obo:OBI_0001573 ;           # DNA sequence data
+    rdfs:label "raw reads 1" .
+
+ex:filtered_reads1 a owl:NamedIndividual, obo:OBI_0001573 ;      # DNA sequence data
+    rdfs:label "filtered reads 1" .
+
+ex:contigs1 a owl:NamedIndividual, obo:OBI_0001573 ;             # DNA sequence data
+    rdfs:label "assembly contigs 1" .
+
+ex:annotations1 a owl:NamedIndividual, obo:OBI_0000905 ;         # sequence feature annotation
+    rdfs:label "sequence annotations 1" .
+
+# OBI has no class for metagenome-assembled genomes, so the bins are only DNA sequence data.
+ex:bins1 a owl:NamedIndividual, obo:OBI_0001573 ;                # DNA sequence data
+    rdfs:label "metagenome bins 1" .
+
+# Analysis
+
+# OBI has no read quality control term, so this uses the parent data transformation.
+ex:read_qc1 a owl:NamedIndividual, obo:OBI_0200187 ;             # sequence analysis data transformation
+    rdfs:label "read quality control 1" ;
+    obo:OBI_0000293 ex:raw_reads1 ;                               # has specified input
+    obo:OBI_0000299 ex:filtered_reads1 .                          # has specified output
+
+ex:assembly1 a owl:NamedIndividual, obo:OBI_0001872 ;            # sequence assembly process
+    rdfs:label "metagenome assembly 1" ;
+    obo:OBI_0000293 ex:filtered_reads1 ;                          # has specified input
+    obo:OBI_0000299 ex:contigs1 .                                 # has specified output
+
+ex:annotation1 a owl:NamedIndividual, obo:OBI_0001944 ;          # sequence annotation
+    rdfs:label "metagenome annotation 1" ;
+    obo:OBI_0000293 ex:contigs1 ;                                 # has specified input
+    obo:OBI_0000299 ex:annotations1 .                             # has specified output
+
+ex:binning1 a owl:NamedIndividual, obo:OBI_0003926 ;             # assembly-based metagenome binning
+    rdfs:label "metagenome binning 1" ;
+    obo:OBI_0000293 ex:contigs1, ex:annotations1 ;                # has specified input
+    obo:OBI_0000299 ex:bins1 .                                    # has specified output
