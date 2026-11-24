@@ -1,5 +1,7 @@
-# Collecting a specimen from a patient, extracting DNA from it, and sequencing the exome.
-# Instance-level rendering of the biobank part of the graph on the 2019 poster
+# Collecting a specimen from a patient in a biobank encounter, extracting DNA from it,
+# sequencing the exome, and calling alleles from the sequence data, plus a health care
+# encounter with a diagnosis and a prescription.
+# Instance-level rendering of the graph on the 2019 poster
 # "TURBO: Transforming and Unifying Research with Biomedical Ontologies",
 # https://github.com/PennTURBO/Turbo-Documentation/blob/master/IBI_CIC_TURBO_MAM_20190102.pdf
 #
@@ -51,3 +53,44 @@ ex:exome_sequencing1 a owl:NamedIndividual, obo:OBI_0002118 ;    # exome sequenc
 
 ex:sequence_data1 a owl:NamedIndividual, obo:OBI_0001573 ;       # DNA sequence data
     rdfs:label "DNA sequence data 1" .
+
+# --- Biobank encounter ------------------------------------------------------------
+# OBI says a 'participant under investigation role' is realized only in a
+# 'study design execution', so the biobank encounter is typed as one.
+ex:biobank_encounter1 a owl:NamedIndividual, obo:OBI_0000471 ;   # study design execution
+    rdfs:label "biobank encounter 1" ;
+    obo:RO_0000057 ex:patient1 .                                  # has participant
+
+ex:specimen_collection1 obo:BFO_0000050 ex:biobank_encounter1 .   # part of
+ex:participant_under_investigation_role1 obo:BFO_0000054 ex:biobank_encounter1 .  # realized in
+
+# --- Health care encounter ----------------------------------------------------------
+# OBI has no health care encounter class, so the encounter is typed with the
+# OBI planned process parent. Its outputs are a diagnosis and a prescription.
+ex:health_care_encounter1 a owl:NamedIndividual, obo:COB_0000035 ;  # completely executed planned process
+    rdfs:label "health care encounter 1" ;
+    obo:RO_0000057 ex:patient1 ;                                  # has participant
+    obo:OBI_0000299 ex:diagnosis1, ex:prescription1 .             # has specified output
+
+ex:patient_role1 obo:BFO_0000054 ex:health_care_encounter1 .      # realized in
+
+ex:diagnosis1 a owl:NamedIndividual, obo:OGMS_0000073 ;          # diagnosis
+    rdfs:label "diagnosis 1: ICD10 I21.9" .
+
+# OBI has no prescription class; 'directive information entity' is the nearest parent.
+ex:prescription1 a owl:NamedIndividual, obo:IAO_0000033 ;        # directive information entity
+    rdfs:label "prescription 1: Plavix 300 mg PO tabs" .
+
+# --- From sequence data to allele information -------------------------------------------
+ex:loss_of_function_calling1 a owl:NamedIndividual, obo:OBI_0200000 ;  # data transformation
+    rdfs:label "loss of function calling 1" ;
+    obo:OBI_0000293 ex:sequence_data1 ;                           # has specified input
+    obo:OBI_0000299 ex:allele_information1 .                      # has specified output
+
+ex:genotype_information1 a owl:NamedIndividual, obo:OBI_0001305 ;  # genotype information
+    rdfs:label "genotype information 1" ;
+    obo:IAO_0000136 ex:patient1 .                                 # is about
+
+ex:allele_information1 a owl:NamedIndividual, obo:OBI_0001352 ;  # allele information
+    rdfs:label "CYP2C19 *2 allele information 1" ;
+    obo:BFO_0000050 ex:genotype_information1 .                    # part of
