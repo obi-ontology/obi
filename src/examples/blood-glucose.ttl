@@ -47,12 +47,19 @@ ex:glucose_portion1 a owl:NamedIndividual, obo:CHEBI_17234 ;    # glucose
     rdfs:label "glucose molecules in blood specimen 1" ;
     obo:BFO_0000050 ex:blood_specimen1 .                        # part of
 
-# Roles and the function realized in the assay. Each is a characteristic of
-# ('inheres in' in Figure 2) its bearer.
-ex:specimen_role1 a owl:NamedIndividual, obo:OBI_0000112 ;      # specimen role
-    rdfs:label "specimen role of blood specimen 1" ;
-    obo:RO_0000052 ex:blood_specimen1 .                         # characteristic of
-
+# Roles realized in the assay. Each is a characteristic of ('inheres in' in
+# Figure 2) its bearer.
+#
+# Figure 2 also shows a specimen role on the blood specimen and a measure function
+# on the glucometer. They are left out here because OBI's class definitions already
+# imply them: 'specimen' is defined as a material entity that has some specimen role,
+# and every 'glucometer' has some measure function. Typing blood_specimen1 as a
+# 'blood specimen' and glucometer1 as a 'glucometer' says the same thing.
+#
+# The evaluant role and the analyte role are kept. OBI says every assay realizes an
+# evaluant role borne by some input, but not which input, so the triple below says
+# it is the blood specimen. Nothing in OBI implies the analyte role, and it is the
+# only statement in this file that says glucose is what the assay measures.
 ex:evaluant_role1 a owl:NamedIndividual, obo:OBI_0000067 ;      # evaluant role
     rdfs:label "evaluant role of blood specimen 1" ;
     obo:RO_0000052 ex:blood_specimen1 .                         # characteristic of
@@ -60,10 +67,6 @@ ex:evaluant_role1 a owl:NamedIndividual, obo:OBI_0000067 ;      # evaluant role
 ex:analyte_role1 a owl:NamedIndividual, obo:OBI_0000275 ;       # analyte role
     rdfs:label "analyte role of glucose molecules in blood specimen 1" ;
     obo:RO_0000052 ex:glucose_portion1 .                        # characteristic of
-
-ex:measure_function1 a owl:NamedIndividual, obo:OBI_0000453 ;   # measure function
-    rdfs:label "measure function of glucometer 1" ;
-    obo:RO_0000052 ex:glucometer1 .                             # characteristic of
 
 # --- Process 1: collecting specimen from organism -----------------------------
 
@@ -78,8 +81,7 @@ ex:assay1 a owl:NamedIndividual, obo:OBI_0000443 ;              # analyte assay
     rdfs:label "measuring glucose concentration in blood specimen 1" ;
     obo:OBI_0000293 ex:blood_specimen1, ex:glucometer1 ;        # has specified input
     obo:OBI_0000299 ex:glucose_datum1 ;                         # has specified output
-    obo:BFO_0000055 ex:specimen_role1, ex:evaluant_role1,
-        ex:analyte_role1, ex:measure_function1 ;                # realizes
+    obo:BFO_0000055 ex:evaluant_role1, ex:analyte_role1 ;       # realizes
     obo:OBI_0000417 ex:objective1 .                             # achieves_planned_objective
 
 ex:objective1 a owl:NamedIndividual, obo:OBI_0000437 ;          # analyte measurement objective

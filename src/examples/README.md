@@ -2,7 +2,7 @@
 
 Turtle examples of OBI instance data, requested in https://github.com/obi-ontology/obi/issues/1886
 
-`blood-glucose.ttl` renders Figure 2 of https://doi.org/10.1371/journal.pone.0154556 . James A. Overton made an earlier rendering of the same figure in 2015, https://github.com/jamesaoverton/obi-experiment/blob/master/glucose.ttl .
+`blood-glucose.ttl` renders Figure 2 of https://doi.org/10.1371/journal.pone.0154556 . James A. Overton made an earlier rendering of the same figure in 2015, https://github.com/jamesaoverton/obi-experiment/blob/master/glucose.ttl . It leaves out the figure's specimen role and measure function, because OBI's definitions of 'blood specimen' and 'glucometer' already imply them, and keeps the evaluant and analyte roles, which OBI does not imply. A comment in the file gives the details.
 
 `exome-sequencing.ttl` renders the biobank encounter, specimen collection, DNA extraction, exome sequencing, allele calling and health care encounter parts of the graph on the 2019 TURBO poster, https://github.com/PennTURBO/Turbo-Documentation/blob/master/IBI_CIC_TURBO_MAM_20190102.pdf .
 
