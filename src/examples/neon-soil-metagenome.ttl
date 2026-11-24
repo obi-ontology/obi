@@ -36,12 +36,7 @@ ex:pool1 a owl:NamedIndividual, obo:OBI_0302716 ;                # pool of speci
 ex:dna_extract1 a owl:NamedIndividual, obo:OBI_0001051 ;         # DNA extract
     rdfs:label "DNA extract 1" .
 
-# OBI has no general sequencing library class. OBI's 'library preparation' says its
-# output is a clonal cDNA library, a paired-end library, a single fragment library or a
-# phage display library, but the NMDC records for this study do not say which, so the
-# library is only a processed material entity. NCIT has 'Sequencing Library'
-# (NCIT:C148073), but it is not used here because NCIT is not built on BFO and places
-# that class under both 'Material' and 'Conceptual Entity'.
+# OBI has no general sequencing library class, so this uses 'processed material entity'.
 ex:library1 a owl:NamedIndividual, obo:COB_0000026 ;             # processed material entity
     rdfs:label "sequencing library 1" .
 
@@ -84,19 +79,13 @@ ex:contigs1 a owl:NamedIndividual, obo:OBI_0001573 ;             # DNA sequence 
 ex:annotations1 a owl:NamedIndividual, obo:OBI_0000905 ;         # sequence feature annotation
     rdfs:label "sequence annotations 1" .
 
-# OBI has no class for metagenome-assembled genomes, and no class for them was found in
-# OLS. GENEPIO has only an identifier field for one (GENEPIO:0100753), which is not
-# the genome itself. OBI does have the binning process used below, 'assembly-based
-# metagenome binning'. The bins are typed as DNA sequence data.
+# OBI has no metagenome-assembled genome class, so this uses 'DNA sequence data'.
 ex:bins1 a owl:NamedIndividual, obo:OBI_0001573 ;                # DNA sequence data
     rdfs:label "metagenome bins 1" .
 
 # Analysis
 
-# OBI has no read quality control term. The nearest term found in OLS, GENEPIO's
-# 'read adapter trimming' (GENEPIO:0000084), is not used here because GENEPIO places
-# it under 'data entity', not under a process, so it cannot type a process. The step
-# uses OBI's parent class, 'sequence analysis data transformation'.
+# OBI has no read quality control class, so this uses 'sequence analysis data transformation'.
 ex:read_qc1 a owl:NamedIndividual, obo:OBI_0200187 ;             # sequence analysis data transformation
     rdfs:label "read quality control 1" ;
     obo:OBI_0000293 ex:raw_reads1 ;                               # has specified input
