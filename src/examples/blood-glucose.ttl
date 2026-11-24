@@ -50,16 +50,9 @@ ex:glucose_portion1 a owl:NamedIndividual, obo:CHEBI_17234 ;    # glucose
 # Roles realized in the assay. Each is a characteristic of ('inheres in' in
 # Figure 2) its bearer.
 #
-# Figure 2 also shows a specimen role on the blood specimen and a measure function
-# on the glucometer. They are left out here because OBI's class definitions already
-# imply them: 'specimen' is defined as a material entity that has some specimen role,
-# and every 'glucometer' has some measure function. Typing blood_specimen1 as a
-# 'blood specimen' and glucometer1 as a 'glucometer' says the same thing.
-#
-# The evaluant role and the analyte role are kept. OBI says every assay realizes an
-# evaluant role borne by some input, but not which input, so the triple below says
-# it is the blood specimen. Nothing in OBI implies the analyte role, and it is the
-# only statement in this file that says glucose is what the assay measures.
+# Figure 2 also shows a specimen role and a measure function. They are left out
+# because typing the specimen as 'blood specimen' and the device as 'glucometer'
+# already implies them.
 ex:evaluant_role1 a owl:NamedIndividual, obo:OBI_0000067 ;      # evaluant role
     rdfs:label "evaluant role of blood specimen 1" ;
     obo:RO_0000052 ex:blood_specimen1 .                         # characteristic of
