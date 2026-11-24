@@ -65,8 +65,12 @@ ex:specimen_collection1 obo:BFO_0000050 ex:biobank_encounter1 .   # part of
 ex:participant_under_investigation_role1 obo:BFO_0000054 ex:biobank_encounter1 .  # realized in
 
 # --- Health care encounter ----------------------------------------------------------
-# OBI has no health care encounter class, so the encounter is typed with the
-# OBI planned process parent. Its outputs are a diagnosis and a prescription.
+# OBI has no health care encounter class. OGMS has one, 'health care encounter'
+# (OGMS:0000097), and it fits this individual. It is not used here because OBI does
+# not import it, so using it would mean importing OGMS into the examples, and because
+# OGMS places it under 'planned process' (OBI:0000011), which OBI has made obsolete.
+# The encounter is typed with the class that replaced it, 'completely executed
+# planned process'. Its outputs are a diagnosis and a prescription.
 ex:health_care_encounter1 a owl:NamedIndividual, obo:COB_0000035 ;  # completely executed planned process
     rdfs:label "health care encounter 1" ;
     obo:RO_0000057 ex:patient1 ;                                  # has participant
@@ -77,8 +81,12 @@ ex:patient_role1 obo:BFO_0000054 ex:health_care_encounter1 .      # realized in
 ex:diagnosis1 a owl:NamedIndividual, obo:OGMS_0000073 ;          # diagnosis
     rdfs:label "diagnosis 1: ICD10 I21.9" .
 
-# OBI has no prescription class; 'directive information entity' is the nearest parent.
-ex:prescription1 a owl:NamedIndividual, obo:IAO_0000033 ;        # directive information entity
+# OBI has no prescription class. The Prescription of Drugs Ontology (PDRO) has
+# 'drug prescription' (PDRO:0000024), a kind of 'health care prescription'
+# (PDRO:0000001), and it fits this individual. It is not used here because OBI does
+# not import PDRO. PDRO places prescriptions under IAO 'document', which OBI does
+# import, so the prescription is typed as a document.
+ex:prescription1 a owl:NamedIndividual, obo:IAO_0000310 ;        # document
     rdfs:label "prescription 1: Plavix 300 mg PO tabs" .
 
 # --- From sequence data to allele information -------------------------------------------
